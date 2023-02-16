@@ -4,18 +4,23 @@ project:
 
 website:
   title: "Shreyas Meher"
+  favicon: favicon.png
   navbar:
-    left:
+    title: shreyasmeher
+    right: 
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: CV_2022.pdf
+        text: CV
+
+
 
 format:
   html:
     theme: 
-      light: litera
-      dark: cyborg
-    css: styles.css
+      - mystyles.scss
+    mainfont: Lato
+    toc: true
 
 editor: visual
 
