@@ -1,7 +1,19 @@
 ---
-title: "shreyasmeher.github.io"
+title: "Shreyas Meher"
+image: headshot.jpg
+about: 
+  template: trestles
+  image-shape: rounded
+  image-width: 15em
+  links:
+    - text: LinkedIn
+      href: https://www.linkedin.com/in/shreyasmeher/
+    - text: Twitter
+      href: https://twitter.com/Onlinecape
+    - text: GitHub
+      href: https://github.com/shreyasmeher
+    - text: Email
+      href: mailto:srm170003@utdallas.edu
 ---
 
-Hey all, this is my academic website!
-
-You can contact me on [shreyas.meher@utdallas.edu](shreyas.meher@utdallas.edu) or [shreyasmeher@gmail.com](shreyasmeher@gmail.com)
+I am a PhD Candidate in Public Policy & Political Economy at the University of Texas at Dallas. My research interests lie within the intersection of global finance and economic development. Through my research, I want to look at growing concerns regarding globalization and finance access in developing and poor countries in Africa. Areas of research topics include foreign aid, censorship, public policy and technology policy. 
