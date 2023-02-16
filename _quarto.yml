@@ -12,9 +12,10 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme: 
+      light: litera
+      dark: cyborg
     css: styles.css
-    toc: true
 
 editor: visual
 
