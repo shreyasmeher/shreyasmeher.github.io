@@ -6,7 +6,9 @@ website:
   title: "Shreyas Meher"
   favicon: favicon.png
   navbar:
-    title: shreyasmeher
+    title: false
+    logo: favicon.png
+    logo-alt: "shreyasmeher"
     right: 
       - href: index.qmd
         text: Home

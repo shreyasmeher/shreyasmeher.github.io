@@ -4,25 +4,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 // Colors
-$light-sage-green: #D1D9CE;
-$dark-sage-green: #98A08D;
+$light-orange: #e1dbd6;
+$dark-orange: #d1d1d1;
 $cream: #FDFBF7;
 $gray: #64605f;
 $light-gray: #949799;
-$purple: #AE8BD1;
+$blue: #95b8d1;
+
 
 // Base document colors
 $navbar-bg: $cream; // navbar
-$navbar-fg: $dark-sage-green; // navbar foreground elements
-$navbar-hl: $purple; // highlight color when hovering over navbar links
-$body-bg: $light-sage-green; // page background 
+$navbar-fg: $dark-orange; // navbar foreground elements
+$navbar-hl: $blue; // highlight color when hovering over navbar links
+$body-bg: $light-orange; // page background 
 $body-color: $gray; // page text 
 $footer-bg: $cream; // footer 
-$link-color: $purple; // hyperlinks 
+$link-color: $blue; // hyperlinks 
 
 // Inline code
 $code-bg: $cream; // inline code background color
-$code-color: $purple; // inline code text color
+$code-color: $blue; // inline code text color
 
 // Code blocks
 $code-block-bg: $cream; // code block background color
