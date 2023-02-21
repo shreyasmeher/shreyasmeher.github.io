@@ -39,14 +39,15 @@ $yiq-text-dark: $black;
 $table-head-bg: $primary;
 
 // navbar
-$navbar-bg: $primary;
-$body-bg: $quinary;
+$navbar-bg: $quaternary-dark;
+$body-bg: $primary-dark;
 
 // body
-$code-color: $violet;
+$body-color: $quaternary-light;
+$code-color: $secondary;
 
 // footer
-$footer-bg: $quinary-dark;
+$footer-bg: $black;
 
 // fonts
 @import "https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap";
@@ -59,7 +60,11 @@ $font-size-root: 14pt;
 /*-- scss:rules --*/
 
 a {
-  color: $violet;
+  color: $secondary-dark;
+}
+
+a:hover {
+  color: $secondary;
 }
 
 .anchored {
@@ -69,6 +74,17 @@ a {
 blockquote, .blockquote {
   font-style: italic;
   font-weight: 400;
+  color: $quaternary-light;
+}
+
+.btn-secondary {
+  background-color: $secondary-dark;
+  border-color: $secondary-dark;
+}
+
+.btn-secondary:hover {
+  background-color: $secondary;
+  border-color: $secondary;
 }
 
 .card p {
@@ -152,7 +168,7 @@ div.sourceCode {
 
 .feature p:first-of-type {
   margin-bottom: 1rem;
-  color: rgb(84, 85, 85);
+  color: $primary-light;
 }
 
 h1 {
@@ -200,11 +216,6 @@ h6 {
   height: 100%;
 }
 
-#img-me {
-  height: auto;
-  width: 300px;
-}
-
 nav {
   font-weight: 200;
 }
@@ -212,10 +223,6 @@ nav {
 .navbar-brand img {
   max-height: 30px;
   width: auto;
-}
-
-.sidebar nav[role="doc-toc"] ul > li > a.active {
-  color: $violet !important;
 }
 
 p {
