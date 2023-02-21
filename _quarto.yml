@@ -4,31 +4,42 @@ project:
 
 website:
   title: "Shreyas Meher"
-  description: "Up, up and away!""
+  description: "Up, up and away!"
   
   twitter-card:
     creator: "@onlinecape"
-  
   navbar:
-    right:
-        text: Home
+    title: false
+    background: primary
+    left:
       - href: index.qmd
-        text: CV
+        text: "{{< fa house-user >}} Home"
+      - href: about.qmd
+        text: "{{< fa address-card >}} About"
       - href: CV_2022.pdf
-        text: Projects
-        href: projects
+        text: "{{< fa paperclip >}} Vitae"
+      - href: mailto:shreyas.meher@utdallas.edu
+        text: "{{< fa paper-plane >}} Contact"
+    right: 
+    - icon: linkedin
+      href: https://www.linkedin.com/in/shreyasmeher/
+    - icon: twitter
+      href: https://twitter.com/Onlinecape
+    - icon: github
+      href: https://github.com/shreyasmeher
 
   page-footer: 
-    left: "@ Copyright 2023 Shreyas Meher."
+    left: "@ Copyright 2023, Shreyas Meher"
   sidebar:
     pinned: true
     align: center
 
 format:
   html:
-      theme: cosmo
-      css: styles.css
-      toc: true
+    theme:
+      light: [flatly, mystyles.scss]
+      dark: [darkly, custom-dark.scss]
+    css: styles.css
       
 
 

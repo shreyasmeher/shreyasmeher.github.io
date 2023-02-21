@@ -1,1 +1,26 @@
-Hello world!
+---
+title: "About"
+image: "headshot.jpg"
+about:
+  template: jolla
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/onlinecape
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/shreyasmeher/
+    - icon: github
+      text: Github
+      href: https://github.com/shreyasmeher
+---
+### Professionally
+
+I am a PhD Candidate in Public Policy & Political Economy at the University of Texas at Dallas. My research interests lie within the intersection of global finance and economic development. Through my research, I want to look at growing concerns regarding globalization and finance access in developing and poor countries in Africa. Areas of research topics include foreign aid, censorship, public policy and technology policy. I integrate various quantitative methods techniques such as Natural language processing (NLP), Hierarchical Modeling and others to conduct research.
+
+<br>
+
+### Personally
+
+Apart from work, I enjoy watching football (not soccer) - especially Inter Milan matches. I also love cooking and scouring the internet and cookbooks for the next Dim Sum recipe. 
+
