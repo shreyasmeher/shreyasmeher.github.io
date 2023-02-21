@@ -39,7 +39,6 @@ format:
     theme:
       light: [flatly, mystyles.scss]
       dark: [darkly, custom-dark.scss]
-    css: styles.css
       
 
 
