@@ -12,7 +12,7 @@ title: ""
 
 ### Little about me
 
-> International Finance {{< fa coins >}} Developmental Economics {{< fa handshake >}} Python{{< fa python>}} Forza inter! {{< fa futbol >}}
+> International Finance {{< fa coins >}} Developmental Economics {{< fa handshake >}} Python {{< fa code >}}
 
 ### Currently at
 
