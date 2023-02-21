@@ -8,10 +8,9 @@ website:
   
   twitter-card:
     creator: "@onlinecape"
-  navbar:
-    title: false
-    background: primary
-    left:
+  sidebar:
+    style: "docked"
+    contents:
       - href: index.qmd
         text: "{{< fa house-user >}} Home"
       - href: about.qmd
@@ -20,19 +19,23 @@ website:
         text: "{{< fa paperclip >}} Vitae"
       - href: mailto:shreyas.meher@utdallas.edu
         text: "{{< fa paper-plane >}} Contact"
-    right: 
-    - icon: linkedin
-      href: https://www.linkedin.com/in/shreyasmeher/
-    - icon: twitter
-      href: https://twitter.com/Onlinecape
-    - icon: github
-      href: https://github.com/shreyasmeher
+        contents:
+      - section: "{{< fa square-code >}} Assignments"
+        contents:
+          - href: "assignments/labs/lab.qmd"
+            text: Labs
+          - href: "assignments/a2/a2.qmd"
+            text: Assignment 2
+      - icon: linkedin
+        href: https://www.linkedin.com/in/shreyasmeher/
+      - icon: twitter
+        href: https://twitter.com/Onlinecape
+      - icon: github
+        href: https://github.com/shreyasmeher
 
   page-footer: 
     left: "@ Copyright 2023, Shreyas Meher"
-  sidebar:
-    pinned: true
-    align: center
+
 
 format:
   html:

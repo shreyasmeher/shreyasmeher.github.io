@@ -1,0 +1,70 @@
+---
+title: "Assignment 2"
+---
+## Load in packages
+
+
+```{r}
+
+library(haven)
+library(ggmice)
+library(ggplot2)
+library(tidyverse)
+library(Ecdat)
+library(dplyr)
+library(corrplot)
+library(ggcorrplot)
+library(naniar)
+library(cli)
+
+TEDS_2016<-read_stata("https://github.com/datageneration/home/blob/master/DataProgramming/data/TEDS_2016.dta?raw=true")
+
+```
+
+## Missingness plots
+
+
+```{r}
+colSums(is.na(TEDS_2016)) / nrow(TEDS_2016)
+
+plot_pattern(TEDS_2016)
+
+TEDS_2016 %>%
+  # Create an UpSet plot
+  gg_miss_upset(., nsets = 10)
+
+table(TEDS_2016$Tondu)
+
+
+```
+
+## Some plots
+
+```{r}
+barplot(table(TEDS_2016$Tondu))
+counts <- table(TEDS_2016$Tondu, TEDS_2016$Sex)
+mosaicplot(counts, xlab='Tondu', ylab='Sex',main='Tondu by Sex', col='orange')
+
+```
+
+## Correlation plots
+
+```{r}
+
+sel_dat<-TEDS_2016%>%
+  select(Tondu,female, DPP, age, income, edu, Taiwanese, Econ_worse,votetsai)
+
+cormat <- sel_dat %>%
+  cor(., use = "pairwise.complete.obs")
+
+corrplot(cormat, # correlation matrix
+         order = "hclust", # hierarchical clustering of correlations
+         addrect = 2) # number of rectangles to draw around clusters
+
+ggcorrplot(cormat, # correlation matrix
+           type = "lower", # print the lower part of the correlation matrix
+           hc.order = TRUE, # hierarchical clustering of correlations
+           lab = TRUE) # add correlation values as labels
+
+
+```
