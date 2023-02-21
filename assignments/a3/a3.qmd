@@ -1,0 +1,74 @@
+---
+title: "Assignment 3"
+editor: visual
+---
+
+## Load in packages & data
+
+```{r}
+#| echo: true
+#| warning: false
+pacman::p_load(ggplot2, tidyr, dplyr, haven, gridExtra, ggExtra)
+TEDS_2016 <- read_stata("https://github.com/datageneration/home/blob/master/DataProgramming/data/TEDS_2016.dta?raw=true")
+TEDS_2016$Tondu<-as.numeric(TEDS_2016$Tondu,labels=c("Unificationnow”,“Statusquo,unif.infuture”,“Statusquo,decidelater","Statusquoforever","Statusquo,indep.infuture","Independencenow”,“Noresponse"))
+head(TEDS_2016$Tondu)
+
+```
+
+#### Recode Tondu & create a subset of the original dataset
+
+
+```{r}
+sel_dat<-TEDS_2016%>%select(Tondu,female, DPP, age, income, edu, Taiwanese, Econ_worse,votetsai)
+
+```
+
+#### Fit regressions 
+
+```{r}
+#| warning: false
+fit1<-lm(Tondu~age, data=sel_dat)
+summary(fit1)
+
+ta<-ggplot(sel_dat, aes(x=age,y=Tondu))+
+  geom_smooth(method = "lm", se = F, show.legend = F)+
+  geom_point(show.legend = F, position = "jitter",alpha=.5, pch=16) + ggthemes::theme_few() +
+  labs(x="Age", y="TONDU preferences")
+
+te<-ggplot(sel_dat, aes(x=edu,y=Tondu))+
+  geom_smooth(method = "lm", se = F, show.legend = F)+
+  geom_point(show.legend = F, position = "jitter",alpha=.5, pch=16) + ggthemes::theme_few() +
+  labs(x="Education", y="TONDU preferences")
+
+ti<-ggplot(sel_dat, aes(x=income,y=Tondu))+
+  geom_smooth(method = "lm", se = F, show.legend = F)+
+  geom_point(show.legend = F, position = "jitter",alpha=.5, pch=16) + ggthemes::theme_few() +
+  labs(x="Income", y="TONDU preferences")
+
+grid.arrange(ta,te,ti,ncol=3,nrow=1)
+
+```
+
+#### Additional Plots
+
+```{r}
+#| warning: false
+
+
+taei<-ggplot(sel_dat, aes(age, Tondu, colour=votetsai))+
+  geom_point()
+
+ggMarginal(taei, type="histogram")
+
+```
+
+#### What is the problem here?
+
+The dependent variable has too many values, which we can find out using the unique() function. A multinomial logit would be better to use here, or other statistical methods to fit the model as linear regression is pretty weak here.  
+
+```{r}
+#| warning: false
+
+unique(sel_dat$Tondu)
+barplot(table(sel_dat$Tondu),xlab="Tondu")
+```

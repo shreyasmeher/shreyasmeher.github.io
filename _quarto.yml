@@ -26,6 +26,8 @@ website:
             text: Lab Assignments
           - href: "assignments/a2/a2.qmd"
             text: Assignment 2
+          - href: "assignments/a3/a3.qmd"
+            text: Assignment 3
       - icon: linkedin
         href: https://www.linkedin.com/in/shreyasmeher/
       - icon: twitter
