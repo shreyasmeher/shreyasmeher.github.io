@@ -4,24 +4,31 @@ project:
 
 website:
   title: "Shreyas Meher"
-  favicon: favicon.png
+  description: "Up, up and away!""
+  
+  twitter-card:
+    creator: "@onlinecape"
+  
   navbar:
-    title: false
-    logo: favicon.png
-    logo-alt: "shreyasmeher"
-    right: 
-      - href: index.qmd
+    right:
         text: Home
-      - href: CV_2022.pdf
+      - href: index.qmd
         text: CV
+      - href: CV_2022.pdf
+        text: Projects
+        href: projects
 
-
+  page-footer: 
+    left: "@ Copyright 2023 Shreyas Meher."
+  sidebar:
+    pinned: true
+    align: center
 
 format:
   html:
-    theme:
-      light: [flatly, mystyles.scss]
-      dark: [darkly, custom-dark.scss]
+    theme: [sandstone, mystyles.scss]
+    css: styles.css
+      
 
-freeze: true
+
 
