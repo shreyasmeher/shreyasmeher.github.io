@@ -20,7 +20,7 @@ website:
 format:
   html:
     theme:
-      light: [flatly, custom.scss]
+      light: [flatly, mystyles.scss]
       dark: [darkly, custom-dark.scss]
 
 freeze: true
