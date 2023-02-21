@@ -19,11 +19,9 @@ website:
 
 format:
   html:
-    theme: 
-      light: [flatly, mystyles.scss]
+    theme:
+      light: [flatly, custom.scss]
       dark: [darkly, custom-dark.scss]
-    mainfont: Lato
-    toc: true
 
-editor: visual
+freeze: true
 
