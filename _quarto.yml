@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "Shreyas Meher"
@@ -25,8 +26,9 @@ website:
 
 format:
   html:
-    theme: [sandstone, mystyles.scss]
-    css: styles.css
+      theme: cosmo
+      css: styles.css
+      toc: true
       
 
 
