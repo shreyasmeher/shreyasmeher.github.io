@@ -20,7 +20,7 @@ website:
       - href: mailto:shreyas.meher@utdallas.edu
         text: "{{< fa paper-plane >}} Contact"
         contents:
-      - section: "{{< fa square-code >}} Assignments"
+      - section: "{{< fa blog >}} Assignments"
         contents:
           - href: "assignments/labs/lab.qmd"
             text: Lab Assignments
@@ -32,6 +32,11 @@ website:
         href: https://twitter.com/Onlinecape
       - icon: github
         href: https://github.com/shreyasmeher
+        contents:
+      - section: "{{< fa diagram-project >}} Projects"
+        contents:
+            - href: "projects/BLScraper/bls.html"
+              text: BLScraper
 
   page-footer: 
     left: "@ Copyright 2023, Shreyas Meher"
