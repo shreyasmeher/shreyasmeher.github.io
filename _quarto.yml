@@ -23,7 +23,7 @@ website:
       - section: "{{< fa square-code >}} Assignments"
         contents:
           - href: "assignments/labs/lab.qmd"
-            text: Labs
+            text: Lab Assignments
           - href: "assignments/a2/a2.qmd"
             text: Assignment 2
       - icon: linkedin
