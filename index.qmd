@@ -1,6 +1,5 @@
 ---
 title: ""
-
 ---
 
 ::: {#img-me .center}
@@ -11,24 +10,12 @@ title: ""
 ### Hey there! My name is Shreyas Meher. This website is a work in progress but it has a few posts and some ways to get in touch with me if you need to; cheers {{< fa champagne-glasses >}}
 :::
 
-
-
 ### Little about me
 
 > International Finance {{< fa coins >}} Developmental Economics {{< fa handshake >}} Python{{< fa python>}} Forza inter! {{< fa futbol >}}
 
-
-
-
-
 ### Currently at
 
-> **The University of Texas at Dallas** <br> **Research Assistant** <br> *Dr. Pengfei Zhang (2022-present) <br> Dr. Lauren Pinson (2021-present) <br> Dr. Jonas Bunte (2020-2021)*
+> **The University of Texas at Dallas** <br> **Research Assistant** <br> *Dr. Pengfei Zhang (2022-present)* <br> Dr. Lauren Pinson (2021-present) <br> Dr. Jonas Bunte (2020-2021)
 
-> **Teaching Assistant** <br>
-*Dr. Vito D'Orazio (2020-2021) <br> Dr. Richard Scotch (2020)*
-
-
-
-
-
+> **Teaching Assistant** <br> *Dr. Vito D'Orazio (2020-2021)* <br> Dr. Richard Scotch (2020)
