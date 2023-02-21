@@ -20,7 +20,7 @@ website:
 format:
   html:
     theme: 
-      light: [flatly,mystyles.scss]
+      light: [flatly, mystyles.scss]
       dark: [darkly, custom-dark.scss]
     mainfont: Lato
     toc: true
