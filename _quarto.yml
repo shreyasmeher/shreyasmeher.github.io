@@ -28,6 +28,8 @@ website:
             text: Assignment 2
           - href: "assignments/a3/a3.qmd"
             text: Assignment 3
+          - href: "assignments/proposal/prop-2-22-23.qmd"
+            text: Project Proposal
       - icon: linkedin
         href: https://www.linkedin.com/in/shreyasmeher/
       - icon: twitter

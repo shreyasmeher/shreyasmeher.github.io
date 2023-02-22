@@ -1,0 +1,31 @@
+---
+title: "Knowledge Mining Proposal"
+editor: visual
+---
+### Authors - Arslan Khalid, Kiwan Park, Shreyas Meher
+
+### Media Coverage of U.S. Foreign Policy
+
+#### Area/Topic 
+
+The news media often regards itself as the fourth branch of government.  Some have referred to it as a watchdog that checks government access and holds elected officials accountable. However, research shows that media is influenced by a number of factors. Particularly, when reporting on foreign affairs the media is susceptible to “contesting government propaganda campaigns where the government can employ ideological weapons like anti-communism, a demonized enemy or alleged national security threats” (Herman, 1993).
+	Research also shows that the media does not report on issues in an unbiased way. Some of the factors affecting media coverage that have been noted in research are: 
+	
+1. Dominant media are themselves corporate elite establishment 
+2. Economic incentives of media companies 
+3. Structural aspects of media, i.e. who owns the media companies 
+4. Ideological bend of news organizations  
+
+This research looks to compare media outlets’ coverage and reporting of foreign policy issues in the United States. **Our hypothesis is that media companies shift their coverage of foreign policy issues depending on which political party is in power.**
+
+### Research Statement 
+
+How does the media’s coverage of U.S. foreign policy change with respect to which political party is in power? Specifically, this research will focus on the change in the President’s office after the 2016 election. 
+
+### Methods
+
+We look to conduct a sentiment and network analysis of a large dataset. The dataset that we use is the All the News 2.0 dataset compiled by Andrew Thompson [link to data](https://components.one/datasets/all-the-news-2-news-articles-dataset). This dataset is useful for us as it contains text and publication data on a number of US news media websites such as Fox News, CNN, NYT, etc. along with essay websites such as Politico, New Yorker, etc. It will be interesting to see the number of clusters that we can form where we categorize these 27 American websites and conduct sentiment and network analysis for each one of this cluster to highlight differences and even similarities. Additionally, as we are required to add to the database, we look to use web scraping tools such as BeautifulSoup to further expand the dataset (possibly bring in news media from outside the U.S. such as Al Jazeera). 
+
+
+
+
