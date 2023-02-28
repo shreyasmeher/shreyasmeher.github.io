@@ -1,0 +1,176 @@
+---
+title: "Assignment 4"
+author: Shreyas Meher
+format: html
+---
+
+
+## Introduction
+
+Foreign aid and migration are two closely intertwined topics that have gained significant attention in recent years. Foreign aid refers to the financial or material assistance provided by one country to another, typically with the aim of promoting economic, social, or political development in the recipient country. Migration, on the other hand, refers to the movement of people from one country to another, usually in search of better economic opportunities, political stability, or refuge from conflict or persecution.
+
+Foreign aid can have both positive and negative effects on migration. On the one hand, aid can help to reduce poverty and create economic opportunities in recipient countries, which may discourage people from emigrating in search of better prospects. On the other hand, aid can also contribute to the creation of a dependent relationship between donor and recipient countries, which may perpetuate economic and political instability and ultimately drive people to migrate.
+
+Moreover, the impact of migration on recipient countries can also vary depending on the context. While migration can bring new skills, ideas, and resources to host countries, it can also pose challenges in terms of social integration, labor market competition, and cultural differences.
+
+Overall, the relationship between foreign aid and migration is complex and multifaceted, and requires careful consideration and analysis to understand its implications and potential solutions.
+
+## Data
+
+The World Development Indicators (WDI) package in R is a tool used to access and manipulate data from the World Bank's World Development Indicators database. The package provides functions for downloading and extracting data on a wide range of indicators related to economic and social development, such as population, GDP, education, health, and poverty.
+
+The WDI package in R allows users to easily retrieve data from the World Bank database in a format that is suitable for analysis and visualization. The package includes functions for filtering and aggregating data, as well as for merging data from multiple indicators and countries.
+
+
+```{r}
+#| echo: false
+
+pacman::p_load(ggplot2, dplyr, WDI, animation, ggdendro, stats,mice, factoextra)
+
+migration<-WDI(country = "ET", indicator = "SM.POP.NETM", 
+               start = 1970, end = 2020)
+migration=subset(migration, select = c(country, year, SM.POP.NETM))
+
+aid<-WDI(country = "ET",indicator = "DT.ODA.ODAT.CD",
+         start = 1970, end = 2020)
+aid=subset(aid, select = c(country, year, DT.ODA.ODAT.CD))
+
+inflation<-WDI(country = "ET",indicator = "FP.CPI.TOTL.ZG",
+         start = 1970, end = 2020)
+inflation=subset(inflation, select = c(country, year, FP.CPI.TOTL.ZG))
+
+df <- merge(migration, aid, by=c("country","year"), all=TRUE)
+df <-merge(df, inflation, by=c("country","year"), all=TRUE)
+colnames(df)<-c("country","year","migr","fa","inf")
+names(df)
+
+
+```
+
+
+## Scaling all of the data 
+
+Scaling data before applying the k-means clustering algorithm is important because it helps to ensure that variables with larger scales or variances do not dominate the analysis.
+
+K-means clustering is a distance-based clustering algorithm, which means that it uses the Euclidean distance between variables to form clusters. If variables have different scales, those with larger scales or variances will have a greater impact on the distance calculation, and thus, the clustering outcome.
+
+By scaling the data, we can ensure that each variable has a similar range of values and variance, which allows the k-means algorithm to equally weigh each variable in the clustering process. This can improve the accuracy and robustness of the clustering results.
+
+Additionally, scaling the data can also help to improve the interpretability of the results. Since the variables are on the same scale, it is easier to compare the contributions of each variable to the cluster formation and to understand the relative importance of each variable in differentiating between the clusters.
+
+
+```{r}
+#| echo: false
+rescaled_comp <- df[3:5] %>%
+  mutate(mig_scale = scale(migr),
+         fa_scale = scale(fa), 
+        inf_scale = scale(inf)) %>%
+  select(c(mig_scale, fa_scale, inf_scale))
+
+ggplot(data = rescaled_comp, aes(x = mig_scale, y = fa_scale, size = inf_scale)) +
+  geom_point(pch = 20, col = "blue") +
+  scale_size_continuous(name = "Inflation, consumer prices (annual %)", range = c(2, 8)) +
+  theme_bw() +
+  labs(x = "Net Migration", y ="Net official development assistance received (current US$)")
+```
+
+
+## Animated clusterplot
+
+![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGMwZjdlMDQzMTdjMWViMzVjZTA0ZTY2MTkxZWM4NzE2MGQ3N2YwNCZjdD1n/lhXBuebTF2qazw8Ima/giphy.gif)
+
+
+```{r}
+#| echo: false
+
+#set.seed(2345)
+#kmeans.ani(rescaled_comp[1:3], centers = 4, pch = 15:18, col = 1:4) 
+
+```
+
+
+## Hierarchical Clustering
+
+
+```{r}
+#| echo: false
+
+# Compute hierarchical clustering
+hc <- hclust(dist(rescaled_comp), method = "ward.D2")
+
+# Create a vector of labels with the year variable
+labels <- paste0("Year: ", df$year)
+
+# Plot dendrogram with labels
+plot(hc, main = "Dendrogram of Clustered Data", xlab = "Observation Index", labels = labels)
+
+```
+
+
+
+## Clustering plots & figuring out optimum cluster number
+
+
+```{r}
+#| echo: false
+
+## Create cluster using k-means, k = 3, with 25 initial configurations
+fa_cluster <- kmeans(rescaled_comp, centers = 3,
+                       iter.max = 10,
+                       nstart = 25)
+
+fa_cluster
+
+# Create a function to compute and plot total within-cluster sum of square (within-ness)
+wssplot <- function(data, nc=15, seed=1234){
+  wss <- (nrow(data)-1)*sum(apply(data,2,var))
+  for (i in 2:nc){
+    set.seed(seed)
+    wss[i] <- sum(kmeans(data, centers=i)$withinss)}
+  plot(1:nc, wss, type="b", xlab="Number of Clusters",
+       ylab="Within groups sum of squares")
+}
+
+# plotting values for each cluster starting from 1 to 9
+wssplot(rescaled_comp, nc = 9)
+
+```
+
+
+### Further plots
+
+
+```{r}
+#| echo: false
+# Plot results by dimensions
+fa_cluster$cluster = as.factor(fa_cluster$cluster)
+pairs(df[3:5],
+      col = c("firebrick1", "darkblue", "forestgreen")[fa_cluster$cluster],
+      pch = c(15:17)[fa_cluster$cluster],
+      main = "K-Means Clusters: FA data")
+
+table(fa_cluster$cluster)
+
+get_cluster_wss <- function(data, clusters, method = "wss") {
+  wss_values <- c()
+  
+  for(i in clusters) {
+    model <- kmeans(data, centers = i)
+    if(method == "wss") {
+      wss_values <- c(wss_values, sum(model$withinss))
+    } else {
+      wss_values <- c(wss_values, silhouette(model$cluster, dist(data))[["avg.width"]])
+    }
+  }
+  
+  return(wss_values)
+}
+
+fa.km <- eclust(rescaled_comp, "kmeans", k = 3, nboot = 2)
+
+
+fviz_silhouette(fa.km)
+
+
+```
+
