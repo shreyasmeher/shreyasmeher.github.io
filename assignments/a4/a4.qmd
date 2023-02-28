@@ -70,7 +70,7 @@ ggplot(data = rescaled_comp, aes(x = mig_scale, y = fa_scale, size = inf_scale))
   labs(x = "Net Migration", y ="Net official development assistance received (current US$)")
 ```
 
-## Various plots
+## Animated clusterplot
 
 ![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGMwZjdlMDQzMTdjMWViMzVjZTA0ZTY2MTkxZWM4NzE2MGQ3N2YwNCZjdD1n/lhXBuebTF2qazw8Ima/giphy.gif)
 
