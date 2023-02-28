@@ -19,6 +19,7 @@ library(cli)
 
 TEDS_2016<-read_stata("https://github.com/datageneration/home/blob/master/DataProgramming/data/TEDS_2016.dta?raw=true")
 
+
 ```
 
 ## Missingness plots
@@ -50,9 +51,7 @@ mosaicplot(counts, xlab='Tondu', ylab='Sex',main='Tondu by Sex', col='orange')
 ## Correlation plots
 
 ```{r}
-
-sel_dat<-TEDS_2016%>%
-  select(Tondu,female, DPP, age, income, edu, Taiwanese, Econ_worse,votetsai)
+sel_dat<-TEDS_2016%>%select(Tondu,female, DPP, age, income, edu, Taiwanese, Econ_worse,votetsai)
 
 cormat <- sel_dat %>%
   cor(., use = "pairwise.complete.obs")
