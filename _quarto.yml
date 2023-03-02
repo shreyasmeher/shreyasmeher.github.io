@@ -43,7 +43,7 @@ website:
         contents:
             - href: "projects/BLScraper/bls.html"
               text: BLScraper
-            - href: "projects/CPU/CPU.qmd"
+            - href: "projects/CPU/CPU.html"
               text: CPU Usage Monitor
 
   page-footer: 
