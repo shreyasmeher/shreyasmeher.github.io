@@ -44,7 +44,7 @@ website:
             - href: "projects/BLScraper/bls.html"
               text: BLScraper
             - href: "projects/CPU/CPU.html"
-              text: CPU Usage Monitor
+              text: CPU-Usage-Monitor
 
   page-footer: 
     left: "@ Copyright 2023, Shreyas Meher"
