@@ -1,0 +1,73 @@
+---
+title: "Assignment 5"
+author: Shreyas Meher
+format: html
+---
+
+## Introduction & Background of Data
+
+The website at http://www.analytictech.com/mb021/mlk.htm provides access to the full text of the famous "I Have a Dream" speech delivered by Martin Luther King Jr. on August 28, 1963, during the March on Washington for Jobs and Freedom. The speech is widely considered to be one of the most important speeches of the 20th century, and has become a landmark moment in the American Civil Rights Movement.
+
+The speech was delivered at the Lincoln Memorial in Washington D.C., and was attended by over 200,000 people. It called for an end to racial segregation and discrimination in the United States, and expressed a vision of a future where all people, regardless of their race or color, could live in harmony and equality.
+
+The speech is notable for its powerful use of language and imagery, and its iconic closing lines in which Dr. King declared, "Free at last! Free at last! Thank God Almighty, we are free at last!"
+
+The website provides the full text of the speech, as well as some background information on its historical context and significance. It is a valuable resource for anyone interested in the history of the American Civil Rights Movement or the art of public speaking.
+
+## Coding
+
+```{r}
+#| echo: false
+#| warning: false
+pacman::p_load(XML,wordcloud,RColorBrewer,NLP,tm,quanteda,quanteda.textstats)
+
+
+## Download text data from website
+mlk_speech <-URLencode("http://www.analytictech.com/mb021/mlk.htm")
+
+
+doc.html <- xml2::read_html(mlk_speech)
+mlk <- xml2::xml_find_all(doc.html, "//p") %>%
+  xml2::xml_text() %>%
+  unlist()
+
+head(mlk, 3)
+
+words.vec <- tm::VectorSource(mlk)
+
+## Check the class of words.vec
+
+class(words.vec)
+
+### Create Corpus object for preprocessing
+words.corpus <- tm::Corpus(words.vec)
+tm::inspect(words.corpus)
+
+### Turn all words to lower case
+words.corpus <- tm::tm_map(words.corpus, content_transformer(tolower))
+
+### Remove punctuations, numbers
+words.corpus <- tm::tm_map(words.corpus, tm::removePunctuation)
+words.corpus <- tm::tm_map(words.corpus, tm::removeNumbers)
+
+### How about stopwords, then uniform bag of words created
+words.corpus <- tm::tm_map(words.corpus, tm::removeWords, stopwords("english"))
+
+### Create Term Document Matrix
+tdm <- tm::TermDocumentMatrix(words.corpus)
+tm::inspect(tdm)
+
+m <- as.matrix(tdm)
+wordCounts <- rowSums(m)
+wordCounts <- sort(wordCounts, decreasing=TRUE)
+head(wordCounts)
+
+### Create Wordcloud
+cloudFrame <- data.frame(word=names(wordCounts),freq=wordCounts)
+
+set.seed(1234)
+wordcloud::wordcloud(cloudFrame$word,cloudFrame$freq)
+wordcloud::wordcloud(names(wordCounts),wordCounts, min.freq=1,random.order=FALSE, max.words=200,scale=c(4,.5), rot.per=0.35,colors=RColorBrewer::brewer.pal(8,"Dark2"))
+
+```
+

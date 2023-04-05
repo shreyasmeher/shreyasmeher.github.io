@@ -30,6 +30,8 @@ website:
             text: Assignment 3
           - href: "assignments/a4/a4.qmd"
             text: Assignment 4
+          - href: "assignments/a5/a5.qmd"
+            text: Assignment 5
           - href: "assignments/proposal/prop-2-22-23.qmd"
             text: Project Proposal
       - icon: linkedin
