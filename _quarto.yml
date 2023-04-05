@@ -5,20 +5,24 @@ project:
 website:
   title: "Shreyas Meher"
   description: "Up, up and away!"
+  
   twitter-card:
     creator: "@onlinecape"
+    
   navbar:
     style: "sticky"
     brand:
       href: index.qmd
       text: "{{< fa house-user >}} Home"
     items:
-      - href: about.qmd
-        text: "{{< fa address-card >}} About"
-      - href: CV_2022.pdf
-        text: "{{< fa paperclip >}} Vitae"
-      - href: mailto:shreyas.meher@utdallas.edu
-        text: "{{< fa paper-plane >}} Contact"
+      - section: "Main"
+        items:
+          - href: about.qmd
+            text: "{{< fa address-card >}} About"
+          - href: CV_2022.pdf
+            text: "{{< fa paperclip >}} Vitae"
+          - href: mailto:shreyas.meher@utdallas.edu
+            text: "{{< fa paper-plane >}} Contact"
       - section: "{{< fa blog >}} Assignments"
         items:
           - href: "assignments/labs/lab.qmd"
@@ -39,13 +43,10 @@ website:
             text: BLScraper
           - href: "projects/CPU/CPU.html"
             text: CPU Usage Monitor
-    right:
-      - icon: linkedin
-        href: https://www.linkedin.com/in/shreyasmeher/
-      - icon: twitter
-        href: https://twitter.com/Onlinecape
       - icon: github
         href: https://github.com/shreyasmeher
+        aria-label: GitHub
+        align: "right"
 
   page-footer: 
     left: "© 2023 Shreyas Meher"
