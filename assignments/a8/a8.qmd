@@ -1,0 +1,87 @@
+---
+title: "Assignment 8"
+author: "Shreyas Meher"
+---
+
+```{r}
+#| echo: false
+#| warning: false
+
+set.seed(1)
+X = rnorm(100)
+eps = rnorm(100)
+```
+
+## Generate predictor X and noise vector 𝜀along with response vector 𝑦 and plot x and y:
+
+```{r}
+#| echo: false
+#| warning: false
+
+beta0 = 4
+beta1 = 9
+beta2 = 2
+beta3 = 1
+
+y = beta0 + beta1 * X + beta2 * X^2 + beta3 * X^3 + eps
+
+plot(X, y, main = "Plot of X and Y", xlab = "X", ylab = "Y", pch = 20, col = "steelblue")
+```
+
+## Load the leaps package and use the regsubsets() function:
+
+```{r}
+#| echo: false
+#| warning: false
+
+pacman::p_load(leaps)
+
+model = regsubsets(y ~ poly(X, 10, raw = T), data = data.frame(y, X), nvmax = 10)
+summary(model)
+```
+
+## Find the best model according to Cp, BIC, and adjusted R2, and report the coefficients of the best model:
+
+```{r}
+#| echo: false
+#| warning: false
+
+# Plot the Cp, BIC, and adjusted R2 statistics
+par(mfrow = c(2, 2))
+plot(model, scale = "Cp", main = "Cp Plot")
+plot(model, scale = "bic", main = "BIC Plot")
+plot(model, scale = "adjr2", main = "Adjusted R2 Plot")
+
+# Identify the best model for each statistic
+best_cp = which.min(summary(model)$cp)
+best_bic = which.min(summary(model)$bic)
+best_adjr2 = which.max(summary(model)$adjr2)
+
+cat("Best Model (Cp):", best_cp, "\n")
+cat("Best Model (BIC):", best_bic, "\n")
+cat("Best Model (Adjusted R2):", best_adjr2, "\n")
+
+# Coefficients of the best model (according to BIC, since it is often a good criterion)
+coef(model, id = best_bic)
+```
+
+## Repeat step 3 using forward stepwise selection and backward stepwise selection and compare the results:
+
+```{r}
+#| echo: false
+#| warning: false
+
+# Forward stepwise selection
+forward_model = regsubsets(y ~ poly(X, 10, raw = T), data = data.frame(y, X), nvmax = 10, method = "forward")
+summary(forward_model)
+
+# Backward stepwise selection
+backward_model = regsubsets(y ~ poly(X, 10, raw = T), data = data.frame(y, X), nvmax = 10, method = "backward")
+summary(backward_model)
+
+# Compare the best models
+cat("Best Model (Forward, BIC):", which.min(summary(forward_model)$bic), "\n")
+cat("Best Model (Backward, BIC):", which.min(summary(backward_model)$bic), "\n")
+
+
+```
