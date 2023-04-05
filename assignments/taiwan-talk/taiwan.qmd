@@ -3,7 +3,6 @@ title: "Taiwan Talk - Cunningham"
 author: "Shreyas Meher"
 ---
 
-## Read in required libraries and the text
 ```{r}
 #| echo: false
 #| warning: false
