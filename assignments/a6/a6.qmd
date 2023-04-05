@@ -1,0 +1,219 @@
+---
+title: "Assignment 6"
+author: "Shreyas Meher"
+---
+
+## Lab Assignment
+
+```{r}
+#| echo: false
+#| warning: false
+pacman::p_load(MASS, ISLR, arm)
+
+## Load datasets from MASS and ISLR packages
+attach(Boston)
+
+### Simple linear regression
+names(Boston)
+# What is the Boston dataset?
+plot(medv~lstat,Boston, pch=20, cex=.8, col="steelblue")
+fit1=lm(medv~lstat,data=Boston)
+fit1
+summary(fit1)
+abline(fit1,col="firebrick")
+names(fit1)
+confint(fit1) # confidence intervals
+
+# Predictions using values in lstat
+predict(fit1,data.frame(lstat=c(0,5,10,15)),interval="confidence") # confidence intervals
+predict(fit1,data.frame(lstat=c(0,5,10,15)),interval="prediction") # prediction intervals
+
+# Prediction interval uses sample mean and takes into account the variability of the estimators for μ and σ.
+# Therefore, the interval will be wider.
+
+### Multiple linear regression
+fit2=lm(medv~lstat+age,data=Boston)
+summary(fit2)
+fit3=lm(medv~.,Boston)
+summary(fit3)
+par(mfrow=c(2,2))
+plot(fit3,pch=20, cex=.8, col="steelblue")
+mtext("fit3", side = 3, line = - 2, cex = 2, outer = TRUE)
+
+# Update function to re-specify the model, i.e. include all but age and indus variables
+fit4=update(fit3,~.-age-indus)
+summary(fit4)
+
+# Set the next plot configuration
+par(mfrow=c(2,2), main="fit4")
+plot(fit4,pch=20, cex=.8, col="steelblue")
+mtext("fit4", side = 3, line = - 2, cex = 2, outer = TRUE)
+
+# Uses coefplot to plot coefficients.  Note the line at 0.
+par(mfrow=c(1,1))
+arm::coefplot(fit4)
+
+### Nonlinear terms and Interactions
+fit5=lm(medv~lstat*age,Boston) # include both variables and the interaction term x1:x2
+summary(fit5)
+
+## I() identity function for squared term to interpret as-is
+## Combine two command lines with semicolon
+fit6=lm(medv~lstat +I(lstat^2),Boston); summary(fit6)
+par(mfrow=c(1,1))
+plot(medv~lstat, pch=20, col="forestgreen")
+
+points(lstat,fitted(fit6),col="firebrick",pch=20)
+fit7=lm(medv~poly(lstat,4))
+points(lstat,fitted(fit7),col="steelblue",pch=20)
+
+###Qualitative predictors
+names(Carseats)
+summary(Carseats)
+fit1=lm(Sales~.+Income:Advertising+Age:Price,Carseats) # add two interaction terms
+summary(fit1)
+attach(Carseats)
+contrasts(Carseats$ShelveLoc) # what is contrasts function?
+
+### Writing an R function to combine the lm, plot and abline functions to 
+### create a one step regression fit plot function
+regplot=function(x,y){
+  fit=lm(y~x)
+  plot(x,y, pch=20)
+  abline(fit,col="firebrick")
+}
+attach(Carseats)
+regplot(Price,Sales)
+
+## Allow extra room for additional arguments/specifications
+regplot=function(x,y,...){
+  fit=lm(y~x)
+  plot(x,y,...)
+  abline(fit,col="firebrick")
+}
+regplot(Price,Sales,xlab="Price",ylab="Sales",col="steelblue",pch=20)
+
+```
+
+## Trying out for Taiwan data
+
+```{r}
+#| echo: false
+#| warning: false
+
+library(haven)
+TEDS_2016<-read_stata("https://github.com/datageneration/home/blob/master/DataProgramming/data/TEDS_2016.dta?raw=true")
+names(TEDS_2016)
+
+glm.vt=glm(votetsai~female, data=TEDS_2016,family=binomial)
+summary(glm.vt)
+```
+
+## Interpreting the first logistic regression model
+
+Based on the output of the logistic regression model, the coefficient for the female variable is -0.06517, and the p-value is 0.576. Since the p-value is greater than the standard significance level of 0.05, we fail to reject the null hypothesis, and there is no evidence to suggest that female voters are more likely to vote for President Tsai than male voters in this model.
+
+The intercept of the model is 0.54971, which represents the log-odds of votetsai (voting for Tsai Ing-wen) for the reference group (male voters) in this case. The negative coefficient for the female variable (-0.06517) indicates that the log-odds of votetsai for female voters are slightly lower than for male voters, but this difference is not statistically significant.
+
+It is essential to note that this model only includes the female predictor variable. Adding more variables (e.g., party ID, demographics, or issue-specific variables) may improve the model and provide more insights into factors affecting voting for President Tsai, which is what the next section will attempt to do. 
+
+```{r}
+#| echo: false
+#| warning: false
+
+glm.vt_improved = glm(votetsai ~ female + KMT + DPP + age + edu + income, data=TEDS_2016, family=binomial)
+summary(glm.vt_improved)
+```
+
+## Interpretation for the updated model
+
+Based on the output of the logistic regression model with additional predictors, here is the interpretation of the results:
+
+Female: The coefficient for the female variable is 0.047406 with a p-value of 0.78930. The p-value is greater than 0.05, so the effect of the female variable is not statistically significant. This means that there is no evidence to suggest that female voters are more likely to vote for President Tsai compared to male voters, after controlling for other variables.
+
+KMT: The coefficient for the KMT variable is -3.156273 with a p-value close to 0 (p < 2e-16). This indicates that respondents with a stronger KMT party affiliation are significantly less likely to vote for President Tsai.
+
+DPP: The coefficient for the DPP variable is 2.888943 with a p-value close to 0 (p < 2e-16). This suggests that respondents with a stronger DPP party affiliation are significantly more likely to vote for President Tsai.
+
+Age: The coefficient for the age variable is -0.011808 with a p-value of 0.09931. The p-value is slightly greater than 0.05, so the effect of age is not statistically significant at the 0.05 level. However, the negative coefficient suggests that older respondents are somewhat less likely to vote for President Tsai, but this relationship is weak.
+
+Edu: The coefficient for the edu variable is -0.184604 with a p-value of 0.02632. The negative coefficient indicates that respondents with higher education levels are more likely to vote for President Tsai, and this effect is statistically significant (p < 0.05).
+
+Income: The coefficient for the income variable is 0.013727 with a p-value of 0.68971. The p-value is greater than 0.05, so the effect of income is not statistically significant. This means that there is no evidence to suggest that income levels significantly influence the likelihood of voting for President Tsai.
+
+In summary, the most significant predictors in this model are KMT and DPP party affiliations, which have strong and statistically significant effects on the likelihood of voting for President Tsai. Education also has a significant effect, while the female, age, and income variables are not statistically significant in this model.
+
+## Coefficient plots for the two models
+
+```{r}
+#| echo: false
+#| warning: false
+
+# Install the required packages if not already installed
+pacman::p_load(broom,ggplot2)
+
+# Tidy the model coefficients
+model1_tidy <- tidy(glm.vt)
+model2_tidy <- tidy(glm.vt_improved)
+
+# Plot the coefficients with confidence intervals
+ggplot(model1_tidy, aes(x = term, y = estimate, ymin = estimate - 1.96 * std.error, ymax = estimate + 1.96 * std.error)) +
+  geom_point() +
+  geom_errorbar(width = 0.1) +
+  coord_flip() +
+  ggtitle("Model 1: Coefficients and Confidence Intervals")
+
+ggplot(model2_tidy, aes(x = term, y = estimate, ymin = estimate - 1.96 * std.error, ymax = estimate + 1.96 * std.error)) +
+  geom_point() +
+  geom_errorbar(width = 0.1) +
+  coord_flip() +
+  ggtitle("Model 2: Coefficients and Confidence Intervals")
+```
+
+
+```{r}
+#| echo: false
+#| warning: false
+
+library(MASS)
+full_model <- glm(votetsai ~ female + KMT + DPP + age + edu + income +
+                    Independence + Econ_worse + Govt_dont_care +
+                    Minnan_father + Mainland_father + Taiwanese,
+                  family = binomial, data = TEDS_2016)
+
+best_model <- stepAIC(full_model, direction = "both")
+summary(best_model)
+
+# Tidy the best model coefficients
+best_model_tidy <- tidy(best_model)
+
+# Plot the coefficients with confidence intervals
+ggplot(best_model_tidy, aes(x = term, y = estimate, ymin = estimate - 1.96 * std.error, ymax = estimate + 1.96 * std.error)) +
+  geom_point() +
+  geom_errorbar(width = 0.1) +
+  coord_flip() +
+  ggtitle("Best Model: Coefficients and Confidence Intervals")
+
+```
+
+## Interpreting the best model
+
+This is the best model selected by stepAIC based on AIC criteria. The model predicts the likelihood of voting for Tsai Ing-wen (votetsai) using the following predictors: KMT, DPP, edu, Independence, Econ_worse, Mainland_father, and Taiwanese.
+
+Here's the interpretation of the model:
+
+KMT (Kuomintang) Party ID: The coefficient is -2.88317, and it is highly significant (p < 2e-16). A one-unit increase in KMT affiliation is associated with a decrease in the log-odds of voting for Tsai Ing-wen by 2.88317 units, holding other variables constant. In other words, KMT supporters are less likely to vote for Tsai Ing-wen.
+
+DPP (Democratic Progressive Party) Party ID: The coefficient is 2.47837, and it is highly significant (p < 2e-16). A one-unit increase in DPP affiliation is associated with an increase in the log-odds of voting for Tsai Ing-wen by 2.47837 units, holding other variables constant. DPP supporters are more likely to vote for Tsai Ing-wen.
+
+Education (edu): The coefficient is -0.10296, and it is marginally significant (p = 0.09989). A one-unit increase in education level is associated with a decrease in the log-odds of voting for Tsai Ing-wen by 0.10296 units, holding other variables constant. More educated individuals are slightly less likely to vote for Tsai Ing-wen.
+
+Independence: The coefficient is 1.00339, and it is highly significant (p = 5.07e-05). A one-unit increase in support for Taiwan's independence is associated with an increase in the log-odds of voting for Tsai Ing-wen by 1.00339 units, holding other variables constant. Those who support Taiwan's independence are more likely to vote for Tsai Ing-wen.
+
+Economic evaluation (Econ_worse): The coefficient is 0.30187, and it is not significant (p = 0.10535). A one-unit increase in negative economic evaluation is associated with an increase in the log-odds of voting for Tsai Ing-wen by 0.30187 units, holding other variables constant. However, this effect is not statistically significant.
+
+Mainland father (Mainland_father): The coefficient is -0.85644, and it is significant (p = 0.00956). A one-unit increase in being a descendent of mainland China is associated with a decrease in the log-odds of voting for Tsai Ing-wen by 0.85644 units, holding other variables constant. Individuals with mainland Chinese ancestry are less likely to vote for Tsai Ing-wen.
+
+Self-identified Taiwanese (Taiwanese): The coefficient is 0.86729, and it is highly significant (p = 8.28e-06). A one-unit increase in self-identification as Taiwanese is associated with an increase in the log-odds of voting for Tsai Ing-wen by 0.86729 units, holding other variables constant. Self-identified Taiwanese are more likely to vote for Tsai Ing-wen.
+
+The model has an AIC of 784.87, and the residual deviance is 768.87 on 1249 degrees of freedom. This model provides a better fit compared
