@@ -5,6 +5,9 @@ author: "Shreyas Meher"
 
 ## Read in required libraries and the text
 ```{r}
+#| echo: false
+#| warning: false
+
 # Load required libraries
 library(tm)
 library(wordcloud)
@@ -17,6 +20,7 @@ text <- "Taiwan, China, Nationalize, Policy-makers, Taiwan Strait, War, Soldiers
 ## Creation of the Corpus for data analysis
 
 ```{r}
+#| warning: false
 # Create a corpus from the text
 corpus <- Corpus(VectorSource(text))
 
@@ -41,6 +45,7 @@ df <- data.frame(word = names(v), freq = v)
 
 
 ```{r}
+#| warning: false
 # Generate a word cloud
 wordcloud(words = df$word, freq = df$freq, scale=c(5,0.5), min.freq = 1, max.words=Inf, random.order=FALSE, rot.per=0.35, colors=brewer.pal(8, "Dark2"))
 
