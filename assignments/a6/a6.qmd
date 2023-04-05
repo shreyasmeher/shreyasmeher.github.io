@@ -3,99 +3,7 @@ title: "Assignment 6"
 author: "Shreyas Meher"
 ---
 
-## Lab Assignment
-
-```{r}
-#| echo: false
-#| warning: false
-pacman::p_load(MASS, ISLR, arm)
-
-## Load datasets from MASS and ISLR packages
-attach(Boston)
-
-### Simple linear regression
-names(Boston)
-# What is the Boston dataset?
-plot(medv~lstat,Boston, pch=20, cex=.8, col="steelblue")
-fit1=lm(medv~lstat,data=Boston)
-fit1
-summary(fit1)
-abline(fit1,col="firebrick")
-names(fit1)
-confint(fit1) # confidence intervals
-
-# Predictions using values in lstat
-predict(fit1,data.frame(lstat=c(0,5,10,15)),interval="confidence") # confidence intervals
-predict(fit1,data.frame(lstat=c(0,5,10,15)),interval="prediction") # prediction intervals
-
-# Prediction interval uses sample mean and takes into account the variability of the estimators for μ and σ.
-# Therefore, the interval will be wider.
-
-### Multiple linear regression
-fit2=lm(medv~lstat+age,data=Boston)
-summary(fit2)
-fit3=lm(medv~.,Boston)
-summary(fit3)
-par(mfrow=c(2,2))
-plot(fit3,pch=20, cex=.8, col="steelblue")
-mtext("fit3", side = 3, line = - 2, cex = 2, outer = TRUE)
-
-# Update function to re-specify the model, i.e. include all but age and indus variables
-fit4=update(fit3,~.-age-indus)
-summary(fit4)
-
-# Set the next plot configuration
-par(mfrow=c(2,2), main="fit4")
-plot(fit4,pch=20, cex=.8, col="steelblue")
-mtext("fit4", side = 3, line = - 2, cex = 2, outer = TRUE)
-
-# Uses coefplot to plot coefficients.  Note the line at 0.
-par(mfrow=c(1,1))
-arm::coefplot(fit4)
-
-### Nonlinear terms and Interactions
-fit5=lm(medv~lstat*age,Boston) # include both variables and the interaction term x1:x2
-summary(fit5)
-
-## I() identity function for squared term to interpret as-is
-## Combine two command lines with semicolon
-fit6=lm(medv~lstat +I(lstat^2),Boston); summary(fit6)
-par(mfrow=c(1,1))
-plot(medv~lstat, pch=20, col="forestgreen")
-
-points(lstat,fitted(fit6),col="firebrick",pch=20)
-fit7=lm(medv~poly(lstat,4))
-points(lstat,fitted(fit7),col="steelblue",pch=20)
-
-###Qualitative predictors
-names(Carseats)
-summary(Carseats)
-fit1=lm(Sales~.+Income:Advertising+Age:Price,Carseats) # add two interaction terms
-summary(fit1)
-attach(Carseats)
-contrasts(Carseats$ShelveLoc) # what is contrasts function?
-
-### Writing an R function to combine the lm, plot and abline functions to 
-### create a one step regression fit plot function
-regplot=function(x,y){
-  fit=lm(y~x)
-  plot(x,y, pch=20)
-  abline(fit,col="firebrick")
-}
-attach(Carseats)
-regplot(Price,Sales)
-
-## Allow extra room for additional arguments/specifications
-regplot=function(x,y,...){
-  fit=lm(y~x)
-  plot(x,y,...)
-  abline(fit,col="firebrick")
-}
-regplot(Price,Sales,xlab="Price",ylab="Sales",col="steelblue",pch=20)
-
-```
-
-## Trying out for Taiwan data
+## Taiwan Election Data
 
 ```{r}
 #| echo: false
@@ -217,3 +125,95 @@ Mainland father (Mainland_father): The coefficient is -0.85644, and it is signif
 Self-identified Taiwanese (Taiwanese): The coefficient is 0.86729, and it is highly significant (p = 8.28e-06). A one-unit increase in self-identification as Taiwanese is associated with an increase in the log-odds of voting for Tsai Ing-wen by 0.86729 units, holding other variables constant. Self-identified Taiwanese are more likely to vote for Tsai Ing-wen.
 
 The model has an AIC of 784.87, and the residual deviance is 768.87 on 1249 degrees of freedom. This model provides a better fit compared
+
+## Lab Assignment
+
+```{r}
+#| echo: false
+#| warning: false
+pacman::p_load(MASS, ISLR, arm)
+
+## Load datasets from MASS and ISLR packages
+attach(Boston)
+
+### Simple linear regression
+names(Boston)
+# What is the Boston dataset?
+plot(medv~lstat,Boston, pch=20, cex=.8, col="steelblue")
+fit1=lm(medv~lstat,data=Boston)
+fit1
+summary(fit1)
+abline(fit1,col="firebrick")
+names(fit1)
+confint(fit1) # confidence intervals
+
+# Predictions using values in lstat
+predict(fit1,data.frame(lstat=c(0,5,10,15)),interval="confidence") # confidence intervals
+predict(fit1,data.frame(lstat=c(0,5,10,15)),interval="prediction") # prediction intervals
+
+# Prediction interval uses sample mean and takes into account the variability of the estimators for μ and σ.
+# Therefore, the interval will be wider.
+
+### Multiple linear regression
+fit2=lm(medv~lstat+age,data=Boston)
+summary(fit2)
+fit3=lm(medv~.,Boston)
+summary(fit3)
+par(mfrow=c(2,2))
+plot(fit3,pch=20, cex=.8, col="steelblue")
+mtext("fit3", side = 3, line = - 2, cex = 2, outer = TRUE)
+
+# Update function to re-specify the model, i.e. include all but age and indus variables
+fit4=update(fit3,~.-age-indus)
+summary(fit4)
+
+# Set the next plot configuration
+par(mfrow=c(2,2), main="fit4")
+plot(fit4,pch=20, cex=.8, col="steelblue")
+mtext("fit4", side = 3, line = - 2, cex = 2, outer = TRUE)
+
+# Uses coefplot to plot coefficients.  Note the line at 0.
+par(mfrow=c(1,1))
+arm::coefplot(fit4)
+
+### Nonlinear terms and Interactions
+fit5=lm(medv~lstat*age,Boston) # include both variables and the interaction term x1:x2
+summary(fit5)
+
+## I() identity function for squared term to interpret as-is
+## Combine two command lines with semicolon
+fit6=lm(medv~lstat +I(lstat^2),Boston); summary(fit6)
+par(mfrow=c(1,1))
+plot(medv~lstat, pch=20, col="forestgreen")
+
+points(lstat,fitted(fit6),col="firebrick",pch=20)
+fit7=lm(medv~poly(lstat,4))
+points(lstat,fitted(fit7),col="steelblue",pch=20)
+
+###Qualitative predictors
+names(Carseats)
+summary(Carseats)
+fit1=lm(Sales~.+Income:Advertising+Age:Price,Carseats) # add two interaction terms
+summary(fit1)
+attach(Carseats)
+contrasts(Carseats$ShelveLoc) # what is contrasts function?
+
+### Writing an R function to combine the lm, plot and abline functions to 
+### create a one step regression fit plot function
+regplot=function(x,y){
+  fit=lm(y~x)
+  plot(x,y, pch=20)
+  abline(fit,col="firebrick")
+}
+attach(Carseats)
+regplot(Price,Sales)
+
+## Allow extra room for additional arguments/specifications
+regplot=function(x,y,...){
+  fit=lm(y~x)
+  plot(x,y,...)
+  abline(fit,col="firebrick")
+}
+regplot(Price,Sales,xlab="Price",ylab="Sales",col="steelblue",pch=20)
+
+```
