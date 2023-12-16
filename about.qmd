@@ -16,12 +16,11 @@ about:
 ---
 ### Professionally
 
-I am a PhD Candidate in Public Policy & Political Economy at the University of Texas at Dallas. My research interests lie within the intersection of global finance and economic development. Through my research, I want to look at growing concerns regarding globalization and finance access in developing and poor countries in Africa. Areas of research topics include foreign aid, censorship, public policy and technology policy. I integrate various quantitative methods techniques such as natural language processing (NLP), Hierarchical Modeling and others to conduct research.
-
+I am a PhD Candidate in Public Policy & Political Economy at the University of Texas at Dallas. My research bridges the gap between political science and computational linguistics, focusing on areas such as global finance, economic development, and the impact of internet censorship in different political regimes. I have been actively involved in the ConfliBERT Research Lab with Dr. Patrick Brandt, contributing to the development of a language model for analyzing political conflict and violence. My upcoming dissertation examines censorship efforts across democracies and autocracies, with a focus on electoral accountability, employing methods like DID in India and synthetic control in China.
 
 ### Personally
 
-Apart from work, I enjoy watching football (not soccer) - especially Inter Milan matches. I also love cooking and scouring the internet and cookbooks for the next Dim Sum recipe. 
+I'm an avid football fan, rooting for Inter Milan, and a culinary enthusiast who loves exploring and creating new Dim Sum recipes.
 
 ### Education
 
@@ -35,7 +34,4 @@ Apart from work, I enjoy watching football (not soccer) - especially Inter Milan
 **Msc Management Sciences,** 2020
 
 ###### The University of Texas at Dallas
-**Phd Public Policy & Political Economy,** 2025
-
-
-
+**Phd Public Policy & Political Economy,** Expected 2025
