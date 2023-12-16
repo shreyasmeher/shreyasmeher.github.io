@@ -20,7 +20,26 @@ website:
         text: "{{< fa paperclip >}} Vitae"
       - href: mailto:shreyas.meher@utdallas.edu
         text: "{{< fa paper-plane >}} Contact"
-        
+      - section: "{{< fa blog >}} Assignments"
+        contents:
+          - href: "assignments/labs/lab.qmd"
+            text: Lab Assignments
+          - href: "assignments/a2/a2.qmd"
+            text: Assignment 2
+          - href: "assignments/a3/a3.qmd"
+            text: Assignment 3
+          - href: "assignments/a4/a4.qmd"
+            text: Assignment 4
+          - href: "assignments/a5/a5.qmd"
+            text: Assignment 5
+          - href: "assignments/a6/a6.qmd"
+            text: Assignment 6          
+          - href: "assignments/a8/a8.qmd"
+            text: Assignment 8
+          - href: "assignments/taiwan-talk/taiwan.qmd"
+            text: Taiwan Talk - Cunningham
+          - href: "assignments/proposal/prop-2-22-23.qmd"
+            text: Project Proposal
       - icon: linkedin
         href: https://www.linkedin.com/in/shreyasmeher/
       - icon: twitter
