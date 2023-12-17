@@ -2,8 +2,6 @@
 title: "Research"
 ---
 
-# Research
-
 Welcome to my research page. Here, you'll find a selection of my work on various topics within political science and computational linguistics.
 
 ## Democracy and Internet Control: Theory and Evidence from Transparency Reports (with Pengfei Zhang)
