@@ -14,14 +14,12 @@ website:
     contents:
       - href: index.qmd
         text: "{{< fa house-user >}} Home"
-      - href: about.qmd
-        text: "{{< fa address-card >}} About"
+      - href: research.qmd
+        text: "{{< fa microchip >}} Research"
       - href: CV_2022.pdf
         text: "{{< fa paperclip >}} Vitae"
       - href: mailto:shreyas.meher@utdallas.edu
         text: "{{< fa paper-plane >}} Contact"
-      - href: research.qmd
-        text: "{{< fa microchip >}} Research"
       - icon: linkedin
         href: https://www.linkedin.com/in/shreyasmeher/
       - icon: twitter
