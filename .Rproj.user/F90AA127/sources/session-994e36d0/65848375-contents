@@ -1,0 +1,37 @@
+---
+title: "About"
+image: "headshot.jpg"
+about:
+  template: solana
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/onlinecape
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/shreyasmeher/
+    - icon: github
+      text: Github
+      href: https://github.com/shreyasmeher
+---
+### Professionally
+
+I am a PhD Candidate in Public Policy & Political Economy at the University of Texas at Dallas. My research bridges the gap between political science and computational linguistics, focusing on areas such as global finance, economic development, and the impact of internet censorship in different political regimes. I have been actively involved in the ConfliBERT Research Lab with Dr. Patrick Brandt, contributing to the development of a language model for analyzing political conflict and violence. My upcoming dissertation examines censorship efforts across democracies and autocracies, with a focus on electoral accountability, employing methods like DID in India and synthetic control in China.
+
+### Personally
+
+I'm an avid football fan, rooting for Inter Milan, and a culinary enthusiast who loves exploring and creating new Dim Sum recipes.
+
+### Education
+
+###### Narsee Monjee Institute of Management Studies
+**Bsc Economics,** 2016
+
+###### University of Mumbai
+**Ma Public Policy,** 2018
+
+###### The University of Texas at Dallas
+**Msc Management Sciences,** 2020
+
+###### The University of Texas at Dallas
+**Phd Public Policy & Political Economy,** Expected 2025
