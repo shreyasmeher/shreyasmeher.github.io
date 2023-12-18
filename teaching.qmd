@@ -1,9 +1,6 @@
 ---
 title: "Teaching"
 ---
-
-# Teaching Experience
-
 ## EPPS 6313 - Introduction to Quantitative Methods
 *Lectured by Dr. Pengfei Zhang*
 
