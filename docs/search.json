@@ -488,5 +488,26 @@
     "title": "Research",
     "section": "ConfliBERT Usage Manual & Finetuning guide (With ConfliBERT Lab)",
     "text": "ConfliBERT Usage Manual & Finetuning guide (With ConfliBERT Lab)\nThis document (continually updated!) walks political scientists through the usage of a Large Language Model (LLM) on various tasks such as classification, masking, named entity recognition & question answering. Furthermore, the document outlines the process of finetuning the LLM on the users datasets with the help of a Google Colab script.\nView Manual"
+  },
+  {
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Teaching",
+    "section": "",
+    "text": "Lectured by Dr. Pengfei Zhang\nIn my capacity as a Teaching Assistant for EPPS 6313 - Introduction to Quantitative Methods, lectured by Dr. Pengfei Zhang, I led lab sessions focused on utilizing STATA for regression analysis and other essential statistical methods. My primary goal in these labs was to bridge the gap between theory and practice, ensuring students gain a thorough understanding of quantitative methods and their application. The sessions are designed to provide hands-on experience in STATA, equipping students with the necessary skills to conduct robust policy analysis and research.\n\n\n\nLectured by Dr. Vito D’Orazio\nAs a Teaching Assistant for EPPS 6316 - Applied Regression, under Dr. Vito D’Orazio’s tutelage, my responsibilities included conducting advanced lab sessions that predominantly use R. These labs explore more complex aspects of regression analysis, expanding upon the foundational knowledge imparted in earlier courses. My focus in these sessions was to challenge and enhance students’ understanding of applied regression, especially in the context of econometric analysis. Through practical exercises in R, students develop a deeper proficiency in handling sophisticated data analyses and are well-prepared for demanding research tasks in their academic and professional pursuits."
+  },
+  {
+    "objectID": "teaching.html#epps-6313---introduction-to-quantitative-methods",
+    "href": "teaching.html#epps-6313---introduction-to-quantitative-methods",
+    "title": "Teaching",
+    "section": "",
+    "text": "Lectured by Dr. Pengfei Zhang\nIn my capacity as a Teaching Assistant for EPPS 6313 - Introduction to Quantitative Methods, lectured by Dr. Pengfei Zhang, I led lab sessions focused on utilizing STATA for regression analysis and other essential statistical methods. My primary goal in these labs was to bridge the gap between theory and practice, ensuring students gain a thorough understanding of quantitative methods and their application. The sessions are designed to provide hands-on experience in STATA, equipping students with the necessary skills to conduct robust policy analysis and research."
+  },
+  {
+    "objectID": "teaching.html#epps-6316---applied-regression",
+    "href": "teaching.html#epps-6316---applied-regression",
+    "title": "Teaching",
+    "section": "",
+    "text": "Lectured by Dr. Vito D’Orazio\nAs a Teaching Assistant for EPPS 6316 - Applied Regression, under Dr. Vito D’Orazio’s tutelage, my responsibilities included conducting advanced lab sessions that predominantly use R. These labs explore more complex aspects of regression analysis, expanding upon the foundational knowledge imparted in earlier courses. My focus in these sessions was to challenge and enhance students’ understanding of applied regression, especially in the context of econometric analysis. Through practical exercises in R, students develop a deeper proficiency in handling sophisticated data analyses and are well-prepared for demanding research tasks in their academic and professional pursuits."
   }
 ]

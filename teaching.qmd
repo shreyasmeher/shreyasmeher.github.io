@@ -1,0 +1,15 @@
+---
+title: "Teaching"
+---
+
+# Teaching Experience
+
+## EPPS 6313 - Introduction to Quantitative Methods
+*Lectured by Dr. Pengfei Zhang*
+
+In my capacity as a Teaching Assistant for EPPS 6313 - Introduction to Quantitative Methods, lectured by Dr. Pengfei Zhang, I led lab sessions focused on utilizing STATA for regression analysis and other essential statistical methods. My primary goal in these labs was to bridge the gap between theory and practice, ensuring students gain a thorough understanding of quantitative methods and their application. The sessions are designed to provide hands-on experience in STATA, equipping students with the necessary skills to conduct robust policy analysis and research.
+
+## EPPS 6316 - Applied Regression
+*Lectured by Dr. Vito D'Orazio*
+
+As a Teaching Assistant for EPPS 6316 - Applied Regression, under Dr. Vito D'Orazio's tutelage, my responsibilities included conducting advanced lab sessions that predominantly use R. These labs explore more complex aspects of regression analysis, expanding upon the foundational knowledge imparted in earlier courses. My focus in these sessions was to challenge and enhance students' understanding of applied regression, especially in the context of econometric analysis. Through practical exercises in R, students develop a deeper proficiency in handling sophisticated data analyses and are well-prepared for demanding research tasks in their academic and professional pursuits.
