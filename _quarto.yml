@@ -9,10 +9,9 @@ website:
   twitter-card:
     creator: "@onlinecape"
     
-  navbar:
-    background: primary
-    search: true
-    left:
+  sidebar:
+    style: "floating"
+    contents:
       - href: index.qmd
         text: "{{< fa house-user >}} Home"
       - href: research.qmd
