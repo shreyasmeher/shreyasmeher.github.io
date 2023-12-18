@@ -10,7 +10,7 @@ website:
     creator: "@onlinecape"
     
   sidebar:
-    style: "floating"
+    style: "docked"
     contents:
       - href: index.qmd
         text: "{{< fa house-user >}} Home"
