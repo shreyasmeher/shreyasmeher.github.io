@@ -1557,10 +1557,6 @@ Khan, Shreyas Meher, Javier Osorio, Marcus Sianan</h4>
 </div>
 
 
-<p>&gt; If you are looking for event data - you should not be here. If
-you want to make your own event data - you are in the right place. If
-you want datasets that are already event-coded using ML. Go to GTD,
-Uppsala, etc. Not in the intro specifically.</p>
 <p>Whether you are a seasoned data scientist or new to machine learning,
 this guide is structured to help you navigate through the varied
 functionalities of ConfliBERT with ease. For a hands-on introduction and
@@ -1574,10 +1570,10 @@ the section on <a href="#masking-and-coding-tasks-with-conflibert">Masking and C
 Tasks with ConfliBERT</a>. The section on <a href="#computational-considerations-and-benchmarks-for-conflibert">Computational
 Considerations and Benchmarks for ConfliBERT</a> covers vital aspects of
 performance optimization.To explore the various adaptations of
-ConfliBERT, see the section on <a href="#conflibert-variants">ConfliBERT
-Variants</a>. At any point, you can refer to the <a href="#references-citations">References / Citations</a> for further
-reading and information sources that have informed the development and
-use of ConfliBERT.</p>
+ConfliBERT, see the section on [ConfliBERT Variants]. At any point, you
+can refer to the <a href="#references-citations">References /
+Citations</a> for further reading and information sources that have
+informed the development and use of ConfliBERT.</p>
 <div id="demo-usage" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Demo usage</h1>
 <p>For a hands-on example of ConfliBERT in action, check out the <a href="https://colab.research.google.com/drive/1d4557lxoDWKTx0FWcmSPlLx9UEn2BdcA?usp=sharing">Google
@@ -1748,10 +1744,6 @@ domain-specific language models for political conflict and violence,
 offering researchers and practitioners a tool that has been pre-trained
 on relevant data, thus ensuring better performance on domain-related
 tasks.</p>
-<blockquote>
-<p>Imagine a specific political science usecase that an user can have -
-why would they use machine-coded event data creation techniques?</p>
-</blockquote>
 <div id="what-does-conflibert-do-and-why" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> What does ConfliBERT
 do and why?:</h2>
@@ -1903,10 +1895,6 @@ and agencies.</li>
 fine-tuned on conflict and event data. This specialized focus enables it
 to be more effective in contexts related to political science,
 international relations, and conflict studies.</p>
-<blockquote>
-<p>What are you trying to get out of this? Actors or statements (verbs)?
-Sentence has been NER’d vs</p>
-</blockquote>
 <div id="fine-tuning-for-custom-entities" class="section level3" number="3.0.1">
 <h3><span class="header-section-number">3.0.1</span> Fine-Tuning for
 Custom Entities</h3>
@@ -2382,7 +2370,6 @@ context and content of the input text.</p>
 <div id="expanding-classification-categories" class="section level3" number="4.0.1">
 <h3><span class="header-section-number">4.0.1</span> Expanding
 Classification Categories</h3>
-<p><span class="citation">(<strong>osorio2019translating?</strong>)</span></p>
 <p>Similar to entity recognition, classification categories can be
 tailored. Researchers can introduce additional categories like “Economic
 Sanctions”, “Legal Actions”, “Diplomatic Events”, etc., by fine-tuning
@@ -3125,11 +3112,6 @@ performances on the masking task.</p></li>
 <div id="computational-considerations-and-benchmarks-for-conflibert" class="section level1" number="6">
 <h1><span class="header-section-number">6</span> Computational
 Considerations and Benchmarks for ConfliBERT</h1>
-<blockquote>
-<p>Sultan &amp; Dr. Osorio - Benchmarks. Relative time - 4, 8 vs 16
-cores for ConfliBERT vs denominator being BERT/…BERT. Do the same for
-GPUs. Graphs would be nice for this task - scale factors for future.</p>
-</blockquote>
 <p>When implementing BERT-based models such as ConfliBERT, one needs to
 consider the computational implications. While BERT benchmarks provide
 useful insights, ConfliBERT, as a derivative of BERT, might exhibit
@@ -3210,30 +3192,6 @@ ascertain the exact requirements for ConfliBERT. Always consider the
 scale of the task, available budget, and desired processing time when
 choosing the computational infrastructure.</p>
 </div>
-<div id="apple-silicon-arm-computing-architectures" class="section level3" number="6.3.2">
-<h3><span class="header-section-number">6.3.2</span> Apple Silicon &amp;
-ARM Computing Architectures</h3>
-</div>
-</div>
-<div id="experience-with-atlas-delta" class="section level2" number="6.4">
-<h2><span class="header-section-number">6.4</span> Experience with ATLAS
-/ DELTA</h2>
-</div>
-</div>
-<div id="conflibert-variants" class="section level1" number="7">
-<h1><span class="header-section-number">7</span> ConfliBERT
-Variants</h1>
-<div id="conflibert-arabic-ar" class="section level2" number="7.1">
-<h2><span class="header-section-number">7.1</span> ConfliBERT Arabic
-(AR)</h2>
-</div>
-<div id="conflibert-spanish-es" class="section level2" number="7.2">
-<h2><span class="header-section-number">7.2</span> ConfliBERT Spanish
-(ES)</h2>
-</div>
-<div id="extending-conflibert-to-other-languages" class="section level2" number="7.3">
-<h2><span class="header-section-number">7.3</span> Extending ConfliBERT
-to other languages</h2>
 </div>
 </div>
 <div id="references-citations" class="section level1 unnumbered">

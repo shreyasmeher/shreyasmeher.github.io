@@ -1,7 +1,6 @@
 ---
 title: "Research"
 ---
-
 Welcome to my research page. Here, you'll find a selection of my work on various topics within political science and computational linguistics.
 
 ## Democracy and Internet Control: Theory and Evidence from Transparency Reports (with Pengfei Zhang)
@@ -25,7 +24,7 @@ My dissertation examines internet censorship across various regimes, focusing on
 [View Presentation](research/dissertation-proposal-presentation.pdf)
 [Read Proposal](research/dissertation-proposal-paper.pdf)
 
-## ConfliBERT Usage Manual & Finetuning guide
+## ConfliBERT Usage Manual & Finetuning guide (With ConfliBERT Lab)
 
 This document (continually updated!) walks political scientists through the usage of a Large Language Model (LLM) on various tasks such as classification, masking, named entity recognition & question answering. Furthermore, the document outlines the process of finetuning the LLM on the users datasets with the help of a Google Colab script.
 

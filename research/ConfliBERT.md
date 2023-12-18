@@ -20,10 +20,6 @@ editor_options:
     wrap: 72
 ---
 
-\> If you are looking for event data - you should not be here. If you
-want to make your own event data - you are in the right place. If you
-want datasets that are already event-coded using ML. Go to GTD, Uppsala,
-etc. Not in the intro specifically.
 
 Whether you are a seasoned data scientist or new to machine learning,
 this guide is structured to help you navigate through the varied
@@ -170,7 +166,6 @@ offering researchers and practitioners a tool that has been pre-trained
 on relevant data, thus ensuring better performance on domain-related
 tasks.
 
-> Imagine a specific political science usecase that an user can have - why would they use machine-coded event data creation techniques? 
 
 ## What does ConfliBERT do and why?:
 
@@ -317,8 +312,6 @@ ConfliBERT enhances BERT's capabilities by being specifically fine-tuned
 on conflict and event data. This specialized focus enables it to be more
 effective in contexts related to political science, international
 relations, and conflict studies.
-
-> What are you trying to get out of this? Actors or statements (verbs)? Sentence has been NER'd vs 
 
 ### Fine-Tuning for Custom Entities
 
@@ -700,8 +693,6 @@ Cooperation', 'Verbal Conflict', and 'Material Conflict', based on the
 context and content of the input text.
 
 ### Expanding Classification Categories
-
-@osorio2019translating
 
 Similar to entity recognition, classification categories can be
 tailored. Researchers can introduce additional categories like "Economic
@@ -1223,10 +1214,6 @@ be structured and pre-processed according to specific guidelines.
 
 # Computational Considerations and Benchmarks for ConfliBERT
 
-> Sultan & Dr. Osorio - Benchmarks. Relative time - 4, 8 vs 16 cores for
-> ConfliBERT vs denominator being BERT/...BERT. Do the same for GPUs.
-> Graphs would be nice for this task - scale factors for future.
-
 When implementing BERT-based models such as ConfliBERT, one needs to
 consider the computational implications. While BERT benchmarks provide
 useful insights, ConfliBERT, as a derivative of BERT, might exhibit
@@ -1296,16 +1283,5 @@ exact requirements for ConfliBERT. Always consider the scale of the
 task, available budget, and desired processing time when choosing the
 computational infrastructure.
 
-### Apple Silicon & ARM Computing Architectures
-
-## Experience with ATLAS / DELTA
-
-# ConfliBERT Variants
-
-## ConfliBERT Arabic (AR)
-
-## ConfliBERT Spanish (ES)
-
-## Extending ConfliBERT to other languages
 
 # References / Citations
