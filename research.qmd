@@ -38,6 +38,25 @@ Intrigued by the concept of contagion in IGO withdrawals, this extension explore
 
 [Read the Paper](research/expanding-horizons-extension.pdf)
 
+## Polarization within U.S. Foreign Media (With Arslan Khalid & Kiwan Park)
 
+### Abstract
 
+In today's highly polarized media landscape, understanding the potential biases
+and relationships between news publications has become increasingly important. This study
+aims to investigate the existence of media bias by examining the content of online news
+articles. We leverage a dataset containing over 200,000 articles from various media outlets,
+spanning diverse political orientations and subject matter. Using unsupervised machine
+learning techniques, we first employ clustering algorithms, such as k-means and hierarchical
+clustering, to group similar articles based on their content. This analysis enables us to
+identify patterns and common themes within the clusters, shedding light on the potential
+ideological leanings of the publications. Our DID analysis shows that, on average, there is a
+slight negative shift in sentiment scores before and after the 2016 US presidential election for
+articles published by liberal-leaning publications compared to those published by
+conservative-leaning publications. The regression analysis indicates that the ideological
+leaning of the publication was significantly associated with the overall sentiment score of
+articles, with liberal-leaning publications having higher sentiment scores on average
+compared to conservative-leaning publications.
+
+[Read the Paper](research/media-polarization.pdf)
 
