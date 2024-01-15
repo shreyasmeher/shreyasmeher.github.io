@@ -3,6 +3,8 @@ title: "Research"
 ---
 Welcome to my research page. Here, you'll find a selection of my work on various topics within political science and computational linguistics.
 
+# Working Papers
+
 ## Democracy and Internet Control: Theory and Evidence from Transparency Reports (with Pengfei Zhang)
 
 ::: {.callout-caution collapse="true"}
@@ -20,18 +22,8 @@ Commentators have long observed significant differences in national internet-fil
 We discover four distinct regime types: pervasive control regime (e.g., China), influence operation regime (e.g., Russia), user empowerment regime (e.g., the United States), and selective intervention regime (e.g., Singapore). 
 The four regime types are supported by country-specfic studies. We also use the four regime types to predict socio-economic outcomes.  Among them, we find regimes differ significantly in their volume and validity of removal requests to Google. We provide a political economy explanation for understanding the differences and similarities between the four regime types. Every regime type is a result of the institutional trade-off between the censorship risk and the pandering risk. 
 :::
-## Dissertation Proposal
 
-My dissertation examines internet censorship across various regimes, focusing on the intricacies of content moderation and the political implications thereof.
 
-[View Presentation](research/dissertation-proposal-presentation.pdf)
-[Read Proposal](research/dissertation-proposal-paper.pdf)
-
-## ConfliBERT Usage Manual & Finetuning guide (With ConfliBERT Lab)
-
-This document (continually updated!) walks political scientists through the usage of a Large Language Model (LLM) on various tasks such as classification, masking, named entity recognition & question answering. Furthermore, the document outlines the process of finetuning the LLM on the users datasets with the help of a Google Colab script.
-
-[View Manual](research/ConfliBERT.html)
 
 ## How do Interest Groups adapt their Communication Strategy to Big Shocks? An analysis of the Medicare-For-All Debate on Twitter during COVID-19. (With Sushant Kumar & Pengfei Zhang)
 
@@ -40,15 +32,6 @@ This document (continually updated!) walks political scientists through the usag
 
 COVID-19 has reinvigorated the policy debate for a universal healthcare system, attracting much attention on social media. In this paper, we study the online discourse of Medicare-For-All before and after COVID-19 by examining the Twitter feeds of two opposing health advocacy groups -- Physicians for a National Health Program (PNHP) and Partnership for America’s Healthcare Future (P4AHCF). Our empirical results show a sharp contrast between the two interest groups’ communication strategies. PNHP’s tweets show more personalized stories, whereas P4AHCF’s tweets show more statistics and scientific reports. The difference in text styles is consequential. PNHP has higher engagement of Twitter users and is more adaptive to a pandemic narrative. By contrast, P4AHCF stopped tweeting entirely about Medicare-For-All after COVID-19 was declared a pandemic. We argue that the distinctive social media strategies can be explained by the groups’ different audiences and objectives. The findings add to our understanding of American’s activism on social media and the implication of the pandemic for health policy reform.
 :::
-
-
-## Expanding the Horizons: Extension of Borzyskowski & Vabulas (2019)
-
-::: {.callout-caution collapse="true"}
-### Overview
-Intrigued by the concept of contagion in IGO withdrawals, this extension explores the network structures and social dynamics within international organizations.
-:::
-[Read the Paper](research/expanding-horizons-extension.pdf)
 
 ## Polarization within U.S. Foreign Media (With Arslan Khalid & Kiwan Park)
 ::: {.callout-caution collapse="true"}
@@ -71,4 +54,41 @@ articles, with liberal-leaning publications having higher sentiment scores on av
 compared to conservative-leaning publications.
 :::
 [Read the Paper](research/media-polarization.pdf)
+
+## Introducing the ConfliBERT Family of Language Models for Political Science (with Patrick Brandt, Vito D'Orazio & Javier Osorio)
+
+::: {.callout-caution collapse="true"}
+
+### Abstract
+For decades, conflict scholars used rule-based approaches to extract information about political violence from newspapers around the world with limited results. Recent technological development in Natural Language Processing allowed us to overcome the rigidity of rule-based approaches. We review our recent ConfliBERT language model (Hu et al. 2022) and its applications in political science.  ConfliBERT is a Large Language Model (LLM) specifically developed to process text related to politics and violence. It was trained on a large domain-specific corpus in English with text related to conflict, political violence, and international politics with global coverage. When fine-tuned, results show that ConfliBERT has superior performance over other LLMs within its relevant domains. We then discuss multi-lingual extensions of ConfliBERT for Spanish and Arabic source texts and show that ConfliBERT also outperforms alternative models in their native languages. Finally, we discuss limitations of the models and propose further extensions.
+
+:::
+
+
+
+## Expanding the Horizons: Extension of Borzyskowski & Vabulas (2019)
+
+::: {.callout-caution collapse="true"}
+### Overview
+Intrigued by the concept of contagion in IGO withdrawals, this extension explores the network structures and social dynamics within international organizations.
+:::
+[Read the Paper](research/expanding-horizons-extension.pdf)
+
+# Dissertation
+
+## Dissertation Proposal
+
+My dissertation examines internet censorship across various regimes, focusing on the intricacies of content moderation and the political implications thereof.
+
+[View Presentation](research/dissertation-proposal-presentation.pdf)
+[Read Proposal](research/dissertation-proposal-paper.pdf)
+
+# Large Language Models
+
+## ConfliBERT Usage Manual & Finetuning guide (With ConfliBERT Lab)
+
+This document (continually updated!) walks political scientists through the usage of a Large Language Model (LLM) on various tasks such as classification, masking, named entity recognition & question answering. Furthermore, the document outlines the process of finetuning the LLM on the users datasets with the help of a Google Colab script.
+
+[View Manual](research/ConfliBERT.html)
+
 
