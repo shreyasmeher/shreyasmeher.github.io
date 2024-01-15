@@ -5,18 +5,21 @@ Welcome to my research page. Here, you'll find a selection of my work on various
 
 ## Democracy and Internet Control: Theory and Evidence from Transparency Reports (with Pengfei Zhang)
 
+::: {.callout-caution collapse="true"}
+
 ### Abstract
 Internet control has long been considered a feature of authoritarian regimes alone. Drawing data from Google and Twitter transparency reports, we observe that democratic countries remove an equal amount of content as their authoritarian counterparts. The distinction between the two regimes lies not in the quantity but in the method of content removal. Democracy refrains from government takedown and instead delegates the removal right to the users. This paper conjectures that politicians' reputation concern is the key to understanding this phenomenon. To that end, we develop a political agency model that explains the stylized facts and derives testable hypotheses. Using the timing of elections as a natural experiment, we provide supporting evidence that the takedown requests from democratic governments decreased significantly as the election approached. This reputation effect is not observed in authoritarian regimes or other types of requests.  
+:::
 
 [Read the Paper](research/democracy-and-internet-control.pdf)
 
 ## Two Types of Censorship (with Pengfei Zhang)
-
+::: {.callout-caution collapse="true"}
 ### Abstract
 Commentators have long observed significant differences in national internet-filtering strategies, with some described as censorship and some as moderation. This paper presents the first taxonomy of internet filtering regimes around the world. Internet filtering behaviors are measured by the cross-country data from OpenNet Initiative and the Freedom House. Using an unsupervised learning technique of cluster analysis, we group the governments' filtering behaviors based on multi-dimensional indicators of internet access, content restriction, and technological barriers.
 We discover four distinct regime types: pervasive control regime (e.g., China), influence operation regime (e.g., Russia), user empowerment regime (e.g., the United States), and selective intervention regime (e.g., Singapore). 
 The four regime types are supported by country-specfic studies. We also use the four regime types to predict socio-economic outcomes.  Among them, we find regimes differ significantly in their volume and validity of removal requests to Google. We provide a political economy explanation for understanding the differences and similarities between the four regime types. Every regime type is a result of the institutional trade-off between the censorship risk and the pandering risk. 
-
+:::
 ## Dissertation Proposal
 
 My dissertation examines internet censorship across various regimes, focusing on the intricacies of content moderation and the political implications thereof.
@@ -41,13 +44,14 @@ COVID-19 has reinvigorated the policy debate for a universal healthcare system, 
 
 ## Expanding the Horizons: Extension of Borzyskowski & Vabulas (2019)
 
+::: {.callout-caution collapse="true"}
 ### Overview
 Intrigued by the concept of contagion in IGO withdrawals, this extension explores the network structures and social dynamics within international organizations.
-
+:::
 [Read the Paper](research/expanding-horizons-extension.pdf)
 
 ## Polarization within U.S. Foreign Media (With Arslan Khalid & Kiwan Park)
-
+::: {.callout-caution collapse="true"}
 ### Abstract
 
 In today's highly polarized media landscape, understanding the potential biases
@@ -65,6 +69,6 @@ conservative-leaning publications. The regression analysis indicates that the id
 leaning of the publication was significantly associated with the overall sentiment score of
 articles, with liberal-leaning publications having higher sentiment scores on average
 compared to conservative-leaning publications.
-
+:::
 [Read the Paper](research/media-polarization.pdf)
 
