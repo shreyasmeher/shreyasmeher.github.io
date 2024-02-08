@@ -18,7 +18,7 @@ website:
         text: "{{< fa microchip >}} Research"
       - href: teaching.qmd
         text: "{{< fa pencil >}} Teaching"
-      - href: CV_2023.pdf
+      - href: CV_2024.pdf
         text: "{{< fa paperclip >}} Vitae"
       - href: mailto:shreyas.meher@utdallas.edu
         text: "{{< fa paper-plane >}} Contact"
