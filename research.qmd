@@ -88,6 +88,6 @@ My dissertation examines internet censorship across various regimes, focusing on
 
 This document (continually updated!) walks political scientists through the usage of a Large Language Model (LLM) on various tasks such as classification, masking, named entity recognition & question answering. Furthermore, the document outlines the process of finetuning the LLM on the users datasets with the help of a Google Colab script.
 
-[View Manual](research/ConfliBERT.html)
+[View Manual](https://github.com/eventdata/ConfliBERT-Manual)
 
 
