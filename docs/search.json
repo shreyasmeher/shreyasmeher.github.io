@@ -458,7 +458,7 @@
     "href": "research.html#democracy-and-internet-control-theory-and-evidence-from-transparency-reports-with-pengfei-zhang",
     "title": "Research",
     "section": "Democracy and Internet Control: Theory and Evidence from Transparency Reports (with Pengfei Zhang)",
-    "text": "Democracy and Internet Control: Theory and Evidence from Transparency Reports (with Pengfei Zhang)\n\n\n\n\n\n\nAbstract\n\n\n\n\n\nInternet control has long been considered a feature of authoritarian regimes alone. Drawing data from Google and Twitter transparency reports, we observe that democratic countries remove an equal amount of content as their authoritarian counterparts. The distinction between the two regimes lies not in the quantity but in the method of content removal. Democracy refrains from government takedown and instead delegates the removal right to the users. This paper conjectures that politicians’ reputation concern is the key to understanding this phenomenon. To that end, we develop a political agency model that explains the stylized facts and derives testable hypotheses. Using the timing of elections as a natural experiment, we provide supporting evidence that the takedown requests from democratic governments decreased significantly as the election approached. This reputation effect is not observed in authoritarian regimes or other types of requests.\n\n\n\nRead the Paper",
+    "text": "Democracy and Internet Control: Theory and Evidence from Transparency Reports (with Pengfei Zhang)\n\n\n\n\n\n\nAbstract\n\n\n\n\n\nInternet control has long been considered a feature of authoritarian regimes alone. Drawing data from Google and Twitter transparency reports, we observe that democratic countries remove an equal amount of content as their authoritarian counterparts. The distinction between the two regimes lies not in the quantity but in the method of content removal. Democracy refrains from government takedown and instead delegates the removal right to the users. This paper conjectures that politicians’ reputation concern is the key to understanding this phenomenon. To that end, we develop a political agency model that explains the stylized facts and derives testable hypotheses. Using the timing of elections as a natural experiment, we provide supporting evidence that the takedown requests from democratic governments decreased significantly as the election approached. This reputation effect is not observed in authoritarian regimes or other types of requests.",
     "crumbs": [
       "{{< fa microchip >}} Research"
     ]
@@ -488,7 +488,7 @@
     "href": "research.html#expanding-the-horizons-extension-of-borzyskowski-vabulas-2019",
     "title": "Research",
     "section": "Expanding the Horizons: Extension of Borzyskowski & Vabulas (2019)",
-    "text": "Expanding the Horizons: Extension of Borzyskowski & Vabulas (2019)\n\n\n\n\n\n\nOverview\n\n\n\n\n\nIntrigued by the concept of contagion in IGO withdrawals, this extension explores the network structures and social dynamics within international organizations.\n\n\n\nRead the Paper",
+    "text": "Expanding the Horizons: Extension of Borzyskowski & Vabulas (2019)\n\n\n\n\n\n\nOverview\n\n\n\n\n\nPerplexed by the concept of contagion in IGO withdrawals, this extension explores the network structures and social dynamics within international organizations.",
     "crumbs": [
       "{{< fa microchip >}} Research"
     ]
@@ -515,28 +515,37 @@
     "href": "teaching.html",
     "title": "Teaching",
     "section": "",
-    "text": "Lectured by Dr. Pengfei Zhang\nIn my capacity as a Teaching Assistant for EPPS 6313 - Introduction to Quantitative Methods, lectured by Dr. Pengfei Zhang, I led lab sessions focused on utilizing STATA for regression analysis and other essential statistical methods. My primary goal in these labs was to bridge the gap between theory and practice, ensuring students gain a thorough understanding of quantitative methods and their application. The sessions are designed to provide hands-on experience in STATA, equipping students with the necessary skills to conduct robust policy analysis and research."
+    "text": "EPPS Math & Coding Camp\nLead Instructor for R Programming, August 2024\n\nCreated and maintained course website eppsmathcodingcamp.github.io\nTaught R programming fundamentals, data manipulation (dplyr), and visualization (ggplot2)\nDeveloped interactive tutorials and exercises for 5-day intensive program\nBuilt GitHub-based infrastructure for version control and content delivery\n\n\n\nEPPS 6313 - Introduction to Quantitative Methods\nTeaching Assistant for Dr. Pengfei Zhang\n\nLed weekly STATA lab sessions focusing on regression analysis\nGuided students through practical applications of statistical methods\nProvided individualized support for data analysis projects\n\n\n\nEPPS 6316 - Applied Regression\nTeaching Assistant for Dr. Vito D’Orazio\n\nConducted advanced R programming labs\nFocused on complex regression techniques and econometric analysis\nDeveloped practical exercises for applied data analysis",
+    "crumbs": [
+      "{{< fa pencil >}} Teaching"
+    ]
   },
   {
     "objectID": "teaching.html#epps-6313---introduction-to-quantitative-methods",
     "href": "teaching.html#epps-6313---introduction-to-quantitative-methods",
     "title": "Teaching",
-    "section": "",
-    "text": "Lectured by Dr. Pengfei Zhang\nIn my capacity as a Teaching Assistant for EPPS 6313 - Introduction to Quantitative Methods, lectured by Dr. Pengfei Zhang, I led lab sessions focused on utilizing STATA for regression analysis and other essential statistical methods. My primary goal in these labs was to bridge the gap between theory and practice, ensuring students gain a thorough understanding of quantitative methods and their application. The sessions are designed to provide hands-on experience in STATA, equipping students with the necessary skills to conduct robust policy analysis and research."
+    "section": "EPPS 6313 - Introduction to Quantitative Methods",
+    "text": "EPPS 6313 - Introduction to Quantitative Methods\nLectured by Dr. Pengfei Zhang\nIn my capacity as a Teaching Assistant for EPPS 6313 - Introduction to Quantitative Methods, lectured by Dr. Pengfei Zhang, I led lab sessions focused on utilizing STATA for regression analysis and other essential statistical methods. My primary goal in these labs was to bridge the gap between theory and practice, ensuring students gain a thorough understanding of quantitative methods and their application. The sessions are designed to provide hands-on experience in STATA, equipping students with the necessary skills to conduct robust policy analysis and research.",
+    "crumbs": [
+      "{{< fa pencil >}} Teaching"
+    ]
   },
   {
     "objectID": "teaching.html#epps-6316---applied-regression",
     "href": "teaching.html#epps-6316---applied-regression",
     "title": "Teaching",
     "section": "EPPS 6316 - Applied Regression",
-    "text": "EPPS 6316 - Applied Regression\nLectured by Dr. Vito D’Orazio\nAs a Teaching Assistant for EPPS 6316 - Applied Regression, under Dr. Vito D’Orazio’s tutelage, my responsibilities included conducting advanced lab sessions that predominantly use R. These labs explore more complex aspects of regression analysis, expanding upon the foundational knowledge imparted in earlier courses. My focus in these sessions was to challenge and enhance students’ understanding of applied regression, especially in the context of econometric analysis. Through practical exercises in R, students develop a deeper proficiency in handling sophisticated data analyses and are well-prepared for demanding research tasks in their academic and professional pursuits."
+    "text": "EPPS 6316 - Applied Regression\nLectured by Dr. Vito D’Orazio\nAs a Teaching Assistant for EPPS 6316 - Applied Regression, under Dr. Vito D’Orazio’s tutelage, my responsibilities included conducting advanced lab sessions that predominantly use R. These labs explore more complex aspects of regression analysis, expanding upon the foundational knowledge imparted in earlier courses. My focus in these sessions was to challenge and enhance students’ understanding of applied regression, especially in the context of econometric analysis. Through practical exercises in R, students develop a deeper proficiency in handling sophisticated data analyses and are well-prepared for demanding research tasks in their academic and professional pursuits.",
+    "crumbs": [
+      "{{< fa pencil >}} Teaching"
+    ]
   },
   {
     "objectID": "research.html#polarization-within-u.s.-foreign-media-with-arslan-khalid-kiwan-park",
     "href": "research.html#polarization-within-u.s.-foreign-media-with-arslan-khalid-kiwan-park",
     "title": "Research",
     "section": "Polarization within U.S. Foreign Media (With Arslan Khalid & Kiwan Park)",
-    "text": "Polarization within U.S. Foreign Media (With Arslan Khalid & Kiwan Park)\n\n\n\n\n\n\nAbstract\n\n\n\n\n\nIn today’s highly polarized media landscape, understanding the potential biases and relationships between news publications has become increasingly important. This study aims to investigate the existence of media bias by examining the content of online news articles. We leverage a dataset containing over 200,000 articles from various media outlets, spanning diverse political orientations and subject matter. Using unsupervised machine learning techniques, we first employ clustering algorithms, such as k-means and hierarchical clustering, to group similar articles based on their content. This analysis enables us to identify patterns and common themes within the clusters, shedding light on the potential ideological leanings of the publications. Our DID analysis shows that, on average, there is a slight negative shift in sentiment scores before and after the 2016 US presidential election for articles published by liberal-leaning publications compared to those published by conservative-leaning publications. The regression analysis indicates that the ideological leaning of the publication was significantly associated with the overall sentiment score of articles, with liberal-leaning publications having higher sentiment scores on average compared to conservative-leaning publications.\n\n\n\nRead the Paper",
+    "text": "Polarization within U.S. Foreign Media (With Arslan Khalid & Kiwan Park)\n\n\n\n\n\n\nAbstract\n\n\n\n\n\nIn today’s highly polarized media landscape, understanding the potential biases and relationships between news publications has become increasingly important. This study aims to investigate the existence of media bias by examining the content of online news articles. We leverage a dataset containing over 200,000 articles from various media outlets, spanning diverse political orientations and subject matter. Using unsupervised machine learning techniques, we first employ clustering algorithms, such as k-means and hierarchical clustering, to group similar articles based on their content. This analysis enables us to identify patterns and common themes within the clusters, shedding light on the potential ideological leanings of the publications. Our DID analysis shows that, on average, there is a slight negative shift in sentiment scores before and after the 2016 US presidential election for articles published by liberal-leaning publications compared to those published by conservative-leaning publications. The regression analysis indicates that the ideological leaning of the publication was significantly associated with the overall sentiment score of articles, with liberal-leaning publications having higher sentiment scores on average compared to conservative-leaning publications.",
     "crumbs": [
       "{{< fa microchip >}} Research"
     ]
@@ -546,7 +555,7 @@
     "href": "research.html#how-do-interest-groups-adapt-their-communication-strategy-to-big-shocks-an-analysis-of-the-medicare-for-all-debate-on-twitter-during-covid-19.-with-sushant-kumar-pengfei-zhang",
     "title": "Research",
     "section": "How do Interest Groups adapt their Communication Strategy to Big Shocks? An analysis of the Medicare-For-All Debate on Twitter during COVID-19. (With Sushant Kumar & Pengfei Zhang)",
-    "text": "How do Interest Groups adapt their Communication Strategy to Big Shocks? An analysis of the Medicare-For-All Debate on Twitter during COVID-19. (With Sushant Kumar & Pengfei Zhang)\n\n\n\n\n\n\nAbstract\n\n\n\n\n\nCOVID-19 has reinvigorated the policy debate for a universal healthcare system, attracting much attention on social media. In this paper, we study the online discourse of Medicare-For-All before and after COVID-19 by examining the Twitter feeds of two opposing health advocacy groups – Physicians for a National Health Program (PNHP) and Partnership for America’s Healthcare Future (P4AHCF). Our empirical results show a sharp contrast between the two interest groups’ communication strategies. PNHP’s tweets show more personalized stories, whereas P4AHCF’s tweets show more statistics and scientific reports. The difference in text styles is consequential. PNHP has higher engagement of Twitter users and is more adaptive to a pandemic narrative. By contrast, P4AHCF stopped tweeting entirely about Medicare-For-All after COVID-19 was declared a pandemic. We argue that the distinctive social media strategies can be explained by the groups’ different audiences and objectives. The findings add to our understanding of American’s activism on social media and the implication of the pandemic for health policy reform.\n\n\n\nRead the Paper",
+    "text": "How do Interest Groups adapt their Communication Strategy to Big Shocks? An analysis of the Medicare-For-All Debate on Twitter during COVID-19. (With Sushant Kumar & Pengfei Zhang)\n\n\n\n\n\n\nAbstract\n\n\n\n\n\nCOVID-19 has reinvigorated the policy debate for a universal healthcare system, attracting much attention on social media. In this paper, we study the online discourse of Medicare-For-All before and after COVID-19 by examining the Twitter feeds of two opposing health advocacy groups – Physicians for a National Health Program (PNHP) and Partnership for America’s Healthcare Future (P4AHCF). Our empirical results show a sharp contrast between the two interest groups’ communication strategies. PNHP’s tweets show more personalized stories, whereas P4AHCF’s tweets show more statistics and scientific reports. The difference in text styles is consequential. PNHP has higher engagement of Twitter users and is more adaptive to a pandemic narrative. By contrast, P4AHCF stopped tweeting entirely about Medicare-For-All after COVID-19 was declared a pandemic. We argue that the distinctive social media strategies can be explained by the groups’ different audiences and objectives. The findings add to our understanding of American’s activism on social media and the implication of the pandemic for health policy reform.",
     "crumbs": [
       "{{< fa microchip >}} Research"
     ]
@@ -556,9 +565,39 @@
     "href": "research.html#introducing-the-conflibert-family-of-language-models-for-political-science-with-patrick-brandt-vito-dorazio-javier-osorio",
     "title": "Research",
     "section": "Introducing the ConfliBERT Family of Language Models for Political Science (with Patrick Brandt, Vito D’Orazio & Javier Osorio)",
-    "text": "Introducing the ConfliBERT Family of Language Models for Political Science (with Patrick Brandt, Vito D’Orazio & Javier Osorio)\n\n\n\n\n\n\nAbstract\n\n\n\n\n\nFor decades, conflict scholars used rule-based approaches to extract information about political violence from newspapers around the world with limited results. Recent technological development in Natural Language Processing allowed us to overcome the rigidity of rule-based approaches. We review our recent ConfliBERT language model (Hu et al. 2022) and its applications in political science. ConfliBERT is a Large Language Model (LLM) specifically developed to process text related to politics and violence. It was trained on a large domain-specific corpus in English with text related to conflict, political violence, and international politics with global coverage. When fine-tuned, results show that ConfliBERT has superior performance over other LLMs within its relevant domains. We then discuss multi-lingual extensions of ConfliBERT for Spanish and Arabic source texts and show that ConfliBERT also outperforms alternative models in their native languages. Finally, we discuss limitations of the models and propose further extensions.",
+    "text": "Introducing the ConfliBERT Family of Language Models for Political Science (with Patrick Brandt, Vito D’Orazio & Javier Osorio)\n\n\n\n\n\n\nAbstract\n\n\n\n\n\nFor decades, conflict scholars used rule-based approaches to extract information about political violence from newspapers around the world. Recent technological development in Natural Language Processing allowed us to overcome the rigidity of rule-based approaches. We review our recent ConfliBERT language model (Hu et al. 2022) and its applications in political science. ConfliBERT is a Large Language Model (LLM) specifically developed to process text related to politics and violence. It was trained on a large domain-specific corpus in English with text related to conflict, political violence, and international politics with global coverage. When fine-tuned, results show that ConfliBERT has superior performance over other LLMs like Gemma 2 (9B) and Llama 3.1 (7B) within its relevant domains. We then discuss multi-lingual extensions of ConfliBERT for Spanish and Arabic source texts and show that ConfliBERT also outperforms alternative models in their native languages. Finally, we discuss limitations of the models and propose further extensions.",
     "crumbs": [
       "{{< fa microchip >}} Research"
+    ]
+  },
+  {
+    "objectID": "research.html#two-types-of-censorship-an-assessment-of-the-informational-autocracy-thesis-in-the-online-space",
+    "href": "research.html#two-types-of-censorship-an-assessment-of-the-informational-autocracy-thesis-in-the-online-space",
+    "title": "Research",
+    "section": "Two Types of Censorship? An Assessment of the Informational Autocracy Thesis in the Online Space",
+    "text": "Two Types of Censorship? An Assessment of the Informational Autocracy Thesis in the Online Space\n\n\n\n\n\n\nAbstract\n\n\n\n\n\nThis study tests how Guriev & Treisman’s Informational Autocracy (IA) theory applies to internet filtering practices in autocratic nations. It examines the different strategies of online censorship employed by autocratic regimes, analyzing how these practices align with or deviate from the predictions of the IA theory.",
+    "crumbs": [
+      "{{< fa microchip >}} Research"
+    ]
+  },
+  {
+    "objectID": "research.html#populism-and-the-price-of-abandonment-analyzing-the-exit-dynamics-from-bilateral-investment-treaties-with-clint-peinhardt",
+    "href": "research.html#populism-and-the-price-of-abandonment-analyzing-the-exit-dynamics-from-bilateral-investment-treaties-with-clint-peinhardt",
+    "title": "Research",
+    "section": "Populism and the Price of Abandonment: Analyzing the Exit Dynamics from Bilateral Investment Treaties (with Clint Peinhardt)",
+    "text": "Populism and the Price of Abandonment: Analyzing the Exit Dynamics from Bilateral Investment Treaties (with Clint Peinhardt)\n\n\n\n\n\n\nOverview\n\n\n\n\n\nThis study explores how rising nationalist sentiment influences countries’ decisions to exit international investment agreements, combining economic data with text analysis of political rhetoric.",
+    "crumbs": [
+      "{{< fa microchip >}} Research"
+    ]
+  },
+  {
+    "objectID": "teaching.html#epps-math-coding-camp",
+    "href": "teaching.html#epps-math-coding-camp",
+    "title": "Teaching",
+    "section": "",
+    "text": "In August 2024, I served as the lead instructor for the coding section of the EPPS Math & Coding Camp, a comprehensive 5-day intensive program designed for incoming PhD students. Beyond traditional classroom instruction, I spearheaded the development of the camp’s digital infrastructure, creating and maintaining an extensive online resource hub at https://eppsmathcodingcamp.github.io/.\nThe online platform features: - Interactive R tutorials covering foundational programming concepts - Comprehensive guides for data manipulation using dplyr and tidyverse - Step-by-step visualization tutorials using ggplot2 - Hands-on exercises in linear regression and statistical analysis - Version-controlled course materials using GitHub - Integrated RStudio projects for seamless learning experience\nMy responsibilities included: - Developing and delivering hands-on sessions in RStudio - Creating structured learning modules for R programming fundamentals - Designing practical exercises in data manipulation and visualization - Implementing an accessible online learning environment - Maintaining and updating course materials through GitHub - Providing individualized support through interactive coding sessions",
+    "crumbs": [
+      "{{< fa pencil >}} Teaching"
     ]
   }
 ]

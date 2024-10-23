@@ -13,15 +13,12 @@ Welcome to my research page. Here, you'll find a selection of my work on various
 Internet control has long been considered a feature of authoritarian regimes alone. Drawing data from Google and Twitter transparency reports, we observe that democratic countries remove an equal amount of content as their authoritarian counterparts. The distinction between the two regimes lies not in the quantity but in the method of content removal. Democracy refrains from government takedown and instead delegates the removal right to the users. This paper conjectures that politicians' reputation concern is the key to understanding this phenomenon. To that end, we develop a political agency model that explains the stylized facts and derives testable hypotheses. Using the timing of elections as a natural experiment, we provide supporting evidence that the takedown requests from democratic governments decreased significantly as the election approached. This reputation effect is not observed in authoritarian regimes or other types of requests.  
 :::
 
-[Read the Paper](research/democracy-and-internet-control.pdf)
-
-## Two Types of Censorship (with Pengfei Zhang)
+## Two Types of Censorship? An Assessment of the Informational Autocracy Thesis in the Online Space 
 ::: {.callout-caution collapse="true"}
 ### Abstract
-This study delves into the varied internet censorship strategies of autocratic regimes, emphasizing the pivotal role of national IT capacity. Utilizing panel data from the Freedom House, V-Dem Digital Society Project, OONI, and Google Transparency Report, we employ cluster analysis to identify two primary censorship models: a pervasive control regime exemplified by China, and an influence operation regime typified by Russia. Our analysis reveals that a country's IT capacity is a key determinant in its choice of censorship strategy, with higher IT capacity linked to fewer content removal requests and a greater likelihood of complete internet shutdowns. This research provides novel insights into the relationship between technological capabilities and censorship methods in autocracies, offering a predictive framework for understanding and anticipating their digital governance strategies.
+This study tests how Guriev & Treisman’s Informational Autocracy
+(IA) theory applies to internet filtering practices in autocratic nations. It examines the different strategies of online censorship employed by autocratic regimes, analyzing how these practices align with or deviate from the predictions of the IA theory.
 :::
-
-
 
 ## How do Interest Groups adapt their Communication Strategy to Big Shocks? An analysis of the Medicare-For-All Debate on Twitter during COVID-19. (With Sushant Kumar & Pengfei Zhang)
 
@@ -31,7 +28,6 @@ This study delves into the varied internet censorship strategies of autocratic r
 COVID-19 has reinvigorated the policy debate for a universal healthcare system, attracting much attention on social media. In this paper, we study the online discourse of Medicare-For-All before and after COVID-19 by examining the Twitter feeds of two opposing health advocacy groups -- Physicians for a National Health Program (PNHP) and Partnership for America’s Healthcare Future (P4AHCF). Our empirical results show a sharp contrast between the two interest groups’ communication strategies. PNHP’s tweets show more personalized stories, whereas P4AHCF’s tweets show more statistics and scientific reports. The difference in text styles is consequential. PNHP has higher engagement of Twitter users and is more adaptive to a pandemic narrative. By contrast, P4AHCF stopped tweeting entirely about Medicare-For-All after COVID-19 was declared a pandemic. We argue that the distinctive social media strategies can be explained by the groups’ different audiences and objectives. The findings add to our understanding of American’s activism on social media and the implication of the pandemic for health policy reform.
 :::
 
-[Read the Paper](research/covid-perceptions.pdf)
 
 
 ## Polarization within U.S. Foreign Media (With Arslan Khalid & Kiwan Park)
@@ -54,26 +50,28 @@ leaning of the publication was significantly associated with the overall sentime
 articles, with liberal-leaning publications having higher sentiment scores on average
 compared to conservative-leaning publications.
 :::
-[Read the Paper](research/media-polarization.pdf)
 
 ## Introducing the ConfliBERT Family of Language Models for Political Science (with Patrick Brandt, Vito D'Orazio & Javier Osorio)
 
 ::: {.callout-caution collapse="true"}
 
 ### Abstract
-For decades, conflict scholars used rule-based approaches to extract information about political violence from newspapers around the world with limited results. Recent technological development in Natural Language Processing allowed us to overcome the rigidity of rule-based approaches. We review our recent ConfliBERT language model (Hu et al. 2022) and its applications in political science.  ConfliBERT is a Large Language Model (LLM) specifically developed to process text related to politics and violence. It was trained on a large domain-specific corpus in English with text related to conflict, political violence, and international politics with global coverage. When fine-tuned, results show that ConfliBERT has superior performance over other LLMs within its relevant domains. We then discuss multi-lingual extensions of ConfliBERT for Spanish and Arabic source texts and show that ConfliBERT also outperforms alternative models in their native languages. Finally, we discuss limitations of the models and propose further extensions.
-
+For decades, conflict scholars used rule-based approaches to extract information about political violence from newspapers around the world. Recent technological development in Natural Language Processing allowed us to overcome the rigidity of rule-based approaches. We review our recent ConfliBERT language model (Hu et al. 2022) and its applications in political science.  ConfliBERT is a Large Language Model (LLM) specifically developed to process text related to politics and violence. It was trained on a large domain-specific corpus in English with text related to conflict, political violence, and international politics with global coverage. When fine-tuned, results show that ConfliBERT has superior performance over other LLMs like Gemma 2 (9B) and Llama 3.1 (7B) within its relevant domains. We then discuss multi-lingual extensions of ConfliBERT for Spanish and Arabic source texts and show that ConfliBERT also outperforms alternative models in their native languages. Finally, we discuss limitations of the models and propose further extensions. 
 :::
 
+## Populism and the Price of Abandonment: Analyzing the Exit Dynamics from Bilateral Investment Treaties (with Clint Peinhardt)
 
+::: {.callout-caution collapse="true"}
+### Overview
+This study explores how rising nationalist sentiment influences countries’ decisions to exit international investment agreements, combining economic data with text analysis of political rhetoric.
+:::
 
 ## Expanding the Horizons: Extension of Borzyskowski & Vabulas (2019)
 
 ::: {.callout-caution collapse="true"}
 ### Overview
-Intrigued by the concept of contagion in IGO withdrawals, this extension explores the network structures and social dynamics within international organizations.
+Perplexed by the concept of contagion in IGO withdrawals, this extension explores the network structures and social dynamics within international organizations.
 :::
-[Read the Paper](research/expanding-horizons-extension.pdf)
 
 # Dissertation
 

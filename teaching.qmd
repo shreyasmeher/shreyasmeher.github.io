@@ -1,12 +1,25 @@
 ---
 title: "Teaching"
 ---
-## EPPS 6313 - Introduction to Quantitative Methods
-*Lectured by Dr. Pengfei Zhang*
 
-In my capacity as a Teaching Assistant for EPPS 6313 - Introduction to Quantitative Methods, lectured by Dr. Pengfei Zhang, I led lab sessions focused on utilizing STATA for regression analysis and other essential statistical methods. My primary goal in these labs was to bridge the gap between theory and practice, ensuring students gain a thorough understanding of quantitative methods and their application. The sessions are designed to provide hands-on experience in STATA, equipping students with the necessary skills to conduct robust policy analysis and research.
+### EPPS Math & Coding Camp
+*Lead Instructor for R Programming, August 2024*
 
-## EPPS 6316 - Applied Regression
-*Lectured by Dr. Vito D'Orazio*
+- Created and maintained course website [eppsmathcodingcamp.github.io](https://eppsmathcodingcamp.github.io/)
+- Taught R programming fundamentals, data manipulation (dplyr), and visualization (ggplot2)
+- Developed interactive tutorials and exercises for 5-day intensive program
+- Built GitHub-based infrastructure for version control and content delivery
 
-As a Teaching Assistant for EPPS 6316 - Applied Regression, under Dr. Vito D'Orazio's tutelage, my responsibilities included conducting advanced lab sessions that predominantly use R. These labs explore more complex aspects of regression analysis, expanding upon the foundational knowledge imparted in earlier courses. My focus in these sessions was to challenge and enhance students' understanding of applied regression, especially in the context of econometric analysis. Through practical exercises in R, students develop a deeper proficiency in handling sophisticated data analyses and are well-prepared for demanding research tasks in their academic and professional pursuits.
+### EPPS 6313 - Introduction to Quantitative Methods
+*Teaching Assistant for Dr. Pengfei Zhang*
+
+- Led weekly STATA lab sessions focusing on regression analysis
+- Guided students through practical applications of statistical methods
+- Provided individualized support for data analysis projects
+
+### EPPS 6316 - Applied Regression
+*Teaching Assistant for Dr. Vito D'Orazio*
+
+- Conducted advanced R programming labs
+- Focused on complex regression techniques and econometric analysis
+- Developed practical exercises for applied data analysis
