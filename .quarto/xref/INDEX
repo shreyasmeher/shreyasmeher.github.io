@@ -13,5 +13,11 @@
   },
   "teaching.qmd": {
     "teaching.html": "56a50d2c"
+  },
+  "research/ConfliBERT.md": {
+    "ConfliBERT.html": "e78bca35"
+  },
+  "projects/BLScraper/bls.ipynb": {
+    "bls.html": "983446c5"
   }
 }
