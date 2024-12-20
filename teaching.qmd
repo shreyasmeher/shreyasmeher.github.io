@@ -2,24 +2,45 @@
 title: "Teaching"
 ---
 
-### EPPS Math & Coding Camp
-*Lead Instructor for R Programming, August 2024*
+## Teaching Experience
+
+### Lead Instructor
+**EPPS Math & Coding Camp** (August 2024)  
+*R Programming and Data Analysis*
 
 - Created and maintained course website [eppsmathcodingcamp.github.io](https://eppsmathcodingcamp.github.io/)
 - Taught R programming fundamentals, data manipulation (dplyr), and visualization (ggplot2)
 - Developed interactive tutorials and exercises for 5-day intensive program
 - Built GitHub-based infrastructure for version control and content delivery
 
-### EPPS 6313 - Introduction to Quantitative Methods
+### Teaching Assistant
+
+**EPPS 6313 - Introduction to Quantitative Methods**  
 *Teaching Assistant for Dr. Pengfei Zhang*
 
 - Led weekly STATA lab sessions focusing on regression analysis
 - Guided students through practical applications of statistical methods
 - Provided individualized support for data analysis projects
 
-### EPPS 6316 - Applied Regression
+**EPPS 6316 - Applied Regression**  
 *Teaching Assistant for Dr. Vito D'Orazio*
 
 - Conducted advanced R programming labs
 - Focused on complex regression techniques and econometric analysis
 - Developed practical exercises for applied data analysis
+
+<style>
+.content {
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+h2 {
+  font-size: 1.5em;
+  margin-top: 2em;
+}
+h3 {
+  font-size: 1.2em;
+  margin-top: 1.5em;
+  margin-bottom: 0.3em;
+}
+</style>

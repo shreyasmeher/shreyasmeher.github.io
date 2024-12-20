@@ -2,12 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Shreyas Meher - Researcher and PhD Candidate",
+    "title": "Shreyas Meher",
     "section": "",
-    "text": "Welcome! I’m Shreyas Meher. This site showcases my work in computational linguistics and political analysis. Feel free to explore and connect with me!\n\n\nResearch Interests\n\nLarge Language Models (LLMs), Internet Censorship, Developmental Economics, Political Conflict, and Violence\n\n\n\nCurrently at\n\nThe University of Texas at Dallas  Research Assistant  ConfliBERT Project with Dr. Patrick Brandt (2022-present)  Dr. Pengfei Zhang (2022-present)  Dr. Lauren Pinson (2021)  Dr. Jonas Bunte (2020)\n\n\nTeaching Assistant  Dr. Vito D’Orazio (2020-2021)  Dr. Richard Scotch\n\n\n\nKey Projects\n\nConfliBERT Research Lab  A groundbreaking project exploring political conflict and violence using pre-trained language models. Learn More\n\n\nDissertation on Censorship in Democracies and Autocracies  An in-depth analysis focusing on electoral accountability with case studies in India and China.",
-    "crumbs": [
-      "{{< fa house-user >}} Home"
-    ]
+    "text": "School of Economic, Political and Policy Sciences\nThe University of Texas at Dallas\n Twitter  GitHub  LinkedIn\n\n\n\n\n\nI am a PhD Candidate in Public Policy & Political Economy at the University of Texas at Dallas, working on an NSF-funded research project to develop frameworks for political and social event data using machine learning. My research combines computational methods with political science, particularly focusing on political control in digital spaces, international political economy, and conflict analysis. I specialize in developing and optimizing large language models for political science applications, including ConfliBERT and ConflLlama.\n\n\n\n\nComparative Politics: Internet Control, Digital Governance, Autocratic Regimes\nInternational Political Economy: Investment Treaties, Economic Development\nComputational Social Science: Large Language Models, Political Text Analysis\nPolitical Conflict: Violence Analysis, Event Data Collection\n\n\n\n\n\n\nResearch Assistant with Dr. Patrick Brandt (2022-present)\nDeveloping state-of-the-art language models for analyzing political conflict and violence.\n\n\n\n\n“Democracy and Internet Control: Theory and Evidence from Transparency Reports”\nAn analysis of content moderation and electoral accountability across regime types."
   },
   {
     "objectID": "about.html",
@@ -448,20 +445,14 @@
     "href": "research.html",
     "title": "Research",
     "section": "",
-    "text": "Welcome to my research page. Here, you’ll find a selection of my work on various topics within political science and computational linguistics.",
-    "crumbs": [
-      "{{< fa microchip >}} Research"
-    ]
+    "text": "My research focuses on computational social science approaches to studying internet censorship, political communication, and conflict. I use natural language processing and machine learning methods to analyze political phenomena."
   },
   {
     "objectID": "research.html#democracy-and-internet-control-theory-and-evidence-from-transparency-reports-with-pengfei-zhang",
     "href": "research.html#democracy-and-internet-control-theory-and-evidence-from-transparency-reports-with-pengfei-zhang",
     "title": "Research",
     "section": "Democracy and Internet Control: Theory and Evidence from Transparency Reports (with Pengfei Zhang)",
-    "text": "Democracy and Internet Control: Theory and Evidence from Transparency Reports (with Pengfei Zhang)\n\n\n\n\n\n\nAbstract\n\n\n\n\n\nInternet control has long been considered a feature of authoritarian regimes alone. Drawing data from Google and Twitter transparency reports, we observe that democratic countries remove an equal amount of content as their authoritarian counterparts. The distinction between the two regimes lies not in the quantity but in the method of content removal. Democracy refrains from government takedown and instead delegates the removal right to the users. This paper conjectures that politicians’ reputation concern is the key to understanding this phenomenon. To that end, we develop a political agency model that explains the stylized facts and derives testable hypotheses. Using the timing of elections as a natural experiment, we provide supporting evidence that the takedown requests from democratic governments decreased significantly as the election approached. This reputation effect is not observed in authoritarian regimes or other types of requests.",
-    "crumbs": [
-      "{{< fa microchip >}} Research"
-    ]
+    "text": "Democracy and Internet Control: Theory and Evidence from Transparency Reports (with Pengfei Zhang)\n\n\n\n\n\n\nAbstract\n\n\n\n\n\nInternet control has long been considered a feature of authoritarian regimes alone. Drawing data from Google and Twitter transparency reports, we observe that democratic countries remove an equal amount of content as their authoritarian counterparts. The distinction between the two regimes lies not in the quantity but in the method of content removal. Democracy refrains from government takedown and instead delegates the removal right to the users. This paper conjectures that politicians’ reputation concern is the key to understanding this phenomenon. To that end, we develop a political agency model that explains the stylized facts and derives testable hypotheses. Using the timing of elections as a natural experiment, we provide supporting evidence that the takedown requests from democratic governments decreased significantly as the election approached. This reputation effect is not observed in authoritarian regimes or other types of requests."
   },
   {
     "objectID": "research.html#two-types-of-censorship-with-pengfei-zhang",
@@ -478,20 +469,14 @@
     "href": "research.html#dissertation-proposal",
     "title": "Research",
     "section": "Dissertation Proposal",
-    "text": "Dissertation Proposal\nMy dissertation examines internet censorship across various regimes, focusing on the intricacies of content moderation and the political implications thereof.\nView Presentation Read Proposal",
-    "crumbs": [
-      "{{< fa microchip >}} Research"
-    ]
+    "text": "Dissertation Proposal\nMy dissertation examines internet censorship across various regimes, focusing on the intricacies of content moderation and the political implications thereof.\nView Presentation Read Proposal"
   },
   {
     "objectID": "research.html#expanding-the-horizons-extension-of-borzyskowski-vabulas-2019",
     "href": "research.html#expanding-the-horizons-extension-of-borzyskowski-vabulas-2019",
     "title": "Research",
     "section": "Expanding the Horizons: Extension of Borzyskowski & Vabulas (2019)",
-    "text": "Expanding the Horizons: Extension of Borzyskowski & Vabulas (2019)\n\n\n\n\n\n\nOverview\n\n\n\n\n\nPerplexed by the concept of contagion in IGO withdrawals, this extension explores the network structures and social dynamics within international organizations.",
-    "crumbs": [
-      "{{< fa microchip >}} Research"
-    ]
+    "text": "Expanding the Horizons: Extension of Borzyskowski & Vabulas (2019)\n\n\n\n\n\n\nOverview\n\n\n\n\n\nPerplexed by the concept of contagion in IGO withdrawals, this extension explores the network structures and social dynamics within international organizations."
   },
   {
     "objectID": "research.html#conflibert-usage-manual-finetuning-guide",
@@ -505,20 +490,14 @@
     "href": "research.html#conflibert-usage-manual-finetuning-guide-with-conflibert-lab",
     "title": "Research",
     "section": "ConfliBERT Usage Manual & Finetuning guide (With ConfliBERT Lab)",
-    "text": "ConfliBERT Usage Manual & Finetuning guide (With ConfliBERT Lab)\nThis document (continually updated!) walks political scientists through the usage of a Large Language Model (LLM) on various tasks such as classification, masking, named entity recognition & question answering. Furthermore, the document outlines the process of finetuning the LLM on the users datasets with the help of a Google Colab script.\nView Manual",
-    "crumbs": [
-      "{{< fa microchip >}} Research"
-    ]
+    "text": "ConfliBERT Usage Manual & Finetuning guide (With ConfliBERT Lab)\nThis document (continually updated!) walks political scientists through the usage of a Large Language Model (LLM) on various tasks such as classification, masking, named entity recognition & question answering. Furthermore, the document outlines the process of finetuning the LLM on the users datasets with the help of a Google Colab script.\nView Manual"
   },
   {
     "objectID": "teaching.html",
     "href": "teaching.html",
     "title": "Teaching",
     "section": "",
-    "text": "EPPS Math & Coding Camp\nLead Instructor for R Programming, August 2024\n\nCreated and maintained course website eppsmathcodingcamp.github.io\nTaught R programming fundamentals, data manipulation (dplyr), and visualization (ggplot2)\nDeveloped interactive tutorials and exercises for 5-day intensive program\nBuilt GitHub-based infrastructure for version control and content delivery\n\n\n\nEPPS 6313 - Introduction to Quantitative Methods\nTeaching Assistant for Dr. Pengfei Zhang\n\nLed weekly STATA lab sessions focusing on regression analysis\nGuided students through practical applications of statistical methods\nProvided individualized support for data analysis projects\n\n\n\nEPPS 6316 - Applied Regression\nTeaching Assistant for Dr. Vito D’Orazio\n\nConducted advanced R programming labs\nFocused on complex regression techniques and econometric analysis\nDeveloped practical exercises for applied data analysis",
-    "crumbs": [
-      "{{< fa pencil >}} Teaching"
-    ]
+    "text": "EPPS Math & Coding Camp (August 2024)\nR Programming and Data Analysis\n\nCreated and maintained course website eppsmathcodingcamp.github.io\nTaught R programming fundamentals, data manipulation (dplyr), and visualization (ggplot2)\nDeveloped interactive tutorials and exercises for 5-day intensive program\nBuilt GitHub-based infrastructure for version control and content delivery\n\n\n\n\nEPPS 6313 - Introduction to Quantitative Methods\nTeaching Assistant for Dr. Pengfei Zhang\n\nLed weekly STATA lab sessions focusing on regression analysis\nGuided students through practical applications of statistical methods\nProvided individualized support for data analysis projects\n\nEPPS 6316 - Applied Regression\nTeaching Assistant for Dr. Vito D’Orazio\n\nConducted advanced R programming labs\nFocused on complex regression techniques and econometric analysis\nDeveloped practical exercises for applied data analysis"
   },
   {
     "objectID": "teaching.html#epps-6313---introduction-to-quantitative-methods",
@@ -545,50 +524,35 @@
     "href": "research.html#polarization-within-u.s.-foreign-media-with-arslan-khalid-kiwan-park",
     "title": "Research",
     "section": "Polarization within U.S. Foreign Media (With Arslan Khalid & Kiwan Park)",
-    "text": "Polarization within U.S. Foreign Media (With Arslan Khalid & Kiwan Park)\n\n\n\n\n\n\nAbstract\n\n\n\n\n\nIn today’s highly polarized media landscape, understanding the potential biases and relationships between news publications has become increasingly important. This study aims to investigate the existence of media bias by examining the content of online news articles. We leverage a dataset containing over 200,000 articles from various media outlets, spanning diverse political orientations and subject matter. Using unsupervised machine learning techniques, we first employ clustering algorithms, such as k-means and hierarchical clustering, to group similar articles based on their content. This analysis enables us to identify patterns and common themes within the clusters, shedding light on the potential ideological leanings of the publications. Our DID analysis shows that, on average, there is a slight negative shift in sentiment scores before and after the 2016 US presidential election for articles published by liberal-leaning publications compared to those published by conservative-leaning publications. The regression analysis indicates that the ideological leaning of the publication was significantly associated with the overall sentiment score of articles, with liberal-leaning publications having higher sentiment scores on average compared to conservative-leaning publications.",
-    "crumbs": [
-      "{{< fa microchip >}} Research"
-    ]
+    "text": "Polarization within U.S. Foreign Media (With Arslan Khalid & Kiwan Park)\n\n\n\n\n\n\nAbstract\n\n\n\n\n\nIn today’s highly polarized media landscape, understanding the potential biases and relationships between news publications has become increasingly important. This study aims to investigate the existence of media bias by examining the content of online news articles. We leverage a dataset containing over 200,000 articles from various media outlets, spanning diverse political orientations and subject matter. Using unsupervised machine learning techniques, we first employ clustering algorithms, such as k-means and hierarchical clustering, to group similar articles based on their content. This analysis enables us to identify patterns and common themes within the clusters, shedding light on the potential ideological leanings of the publications. Our DID analysis shows that, on average, there is a slight negative shift in sentiment scores before and after the 2016 US presidential election for articles published by liberal-leaning publications compared to those published by conservative-leaning publications. The regression analysis indicates that the ideological leaning of the publication was significantly associated with the overall sentiment score of articles, with liberal-leaning publications having higher sentiment scores on average compared to conservative-leaning publications."
   },
   {
     "objectID": "research.html#how-do-interest-groups-adapt-their-communication-strategy-to-big-shocks-an-analysis-of-the-medicare-for-all-debate-on-twitter-during-covid-19.-with-sushant-kumar-pengfei-zhang",
     "href": "research.html#how-do-interest-groups-adapt-their-communication-strategy-to-big-shocks-an-analysis-of-the-medicare-for-all-debate-on-twitter-during-covid-19.-with-sushant-kumar-pengfei-zhang",
     "title": "Research",
     "section": "How do Interest Groups adapt their Communication Strategy to Big Shocks? An analysis of the Medicare-For-All Debate on Twitter during COVID-19. (With Sushant Kumar & Pengfei Zhang)",
-    "text": "How do Interest Groups adapt their Communication Strategy to Big Shocks? An analysis of the Medicare-For-All Debate on Twitter during COVID-19. (With Sushant Kumar & Pengfei Zhang)\n\n\n\n\n\n\nAbstract\n\n\n\n\n\nCOVID-19 has reinvigorated the policy debate for a universal healthcare system, attracting much attention on social media. In this paper, we study the online discourse of Medicare-For-All before and after COVID-19 by examining the Twitter feeds of two opposing health advocacy groups – Physicians for a National Health Program (PNHP) and Partnership for America’s Healthcare Future (P4AHCF). Our empirical results show a sharp contrast between the two interest groups’ communication strategies. PNHP’s tweets show more personalized stories, whereas P4AHCF’s tweets show more statistics and scientific reports. The difference in text styles is consequential. PNHP has higher engagement of Twitter users and is more adaptive to a pandemic narrative. By contrast, P4AHCF stopped tweeting entirely about Medicare-For-All after COVID-19 was declared a pandemic. We argue that the distinctive social media strategies can be explained by the groups’ different audiences and objectives. The findings add to our understanding of American’s activism on social media and the implication of the pandemic for health policy reform.",
-    "crumbs": [
-      "{{< fa microchip >}} Research"
-    ]
+    "text": "How do Interest Groups adapt their Communication Strategy to Big Shocks? An analysis of the Medicare-For-All Debate on Twitter during COVID-19. (With Sushant Kumar & Pengfei Zhang)\n\n\n\n\n\n\nAbstract\n\n\n\n\n\nCOVID-19 has reinvigorated the policy debate for a universal healthcare system, attracting much attention on social media. In this paper, we study the online discourse of Medicare-For-All before and after COVID-19 by examining the Twitter feeds of two opposing health advocacy groups – Physicians for a National Health Program (PNHP) and Partnership for America’s Healthcare Future (P4AHCF). Our empirical results show a sharp contrast between the two interest groups’ communication strategies. PNHP’s tweets show more personalized stories, whereas P4AHCF’s tweets show more statistics and scientific reports. The difference in text styles is consequential. PNHP has higher engagement of Twitter users and is more adaptive to a pandemic narrative. By contrast, P4AHCF stopped tweeting entirely about Medicare-For-All after COVID-19 was declared a pandemic. We argue that the distinctive social media strategies can be explained by the groups’ different audiences and objectives. The findings add to our understanding of American’s activism on social media and the implication of the pandemic for health policy reform."
   },
   {
     "objectID": "research.html#introducing-the-conflibert-family-of-language-models-for-political-science-with-patrick-brandt-vito-dorazio-javier-osorio",
     "href": "research.html#introducing-the-conflibert-family-of-language-models-for-political-science-with-patrick-brandt-vito-dorazio-javier-osorio",
     "title": "Research",
     "section": "Introducing the ConfliBERT Family of Language Models for Political Science (with Patrick Brandt, Vito D’Orazio & Javier Osorio)",
-    "text": "Introducing the ConfliBERT Family of Language Models for Political Science (with Patrick Brandt, Vito D’Orazio & Javier Osorio)\n\n\n\n\n\n\nAbstract\n\n\n\n\n\nFor decades, conflict scholars used rule-based approaches to extract information about political violence from newspapers around the world. Recent technological development in Natural Language Processing allowed us to overcome the rigidity of rule-based approaches. We review our recent ConfliBERT language model (Hu et al. 2022) and its applications in political science. ConfliBERT is a Large Language Model (LLM) specifically developed to process text related to politics and violence. It was trained on a large domain-specific corpus in English with text related to conflict, political violence, and international politics with global coverage. When fine-tuned, results show that ConfliBERT has superior performance over other LLMs like Gemma 2 (9B) and Llama 3.1 (7B) within its relevant domains. We then discuss multi-lingual extensions of ConfliBERT for Spanish and Arabic source texts and show that ConfliBERT also outperforms alternative models in their native languages. Finally, we discuss limitations of the models and propose further extensions.",
-    "crumbs": [
-      "{{< fa microchip >}} Research"
-    ]
+    "text": "Introducing the ConfliBERT Family of Language Models for Political Science (with Patrick Brandt, Vito D’Orazio & Javier Osorio)\n\n\n\n\n\n\nAbstract\n\n\n\n\n\nFor decades, conflict scholars used rule-based approaches to extract information about political violence from newspapers around the world. Recent technological development in Natural Language Processing allowed us to overcome the rigidity of rule-based approaches. We review our recent ConfliBERT language model (Hu et al. 2022) and its applications in political science. ConfliBERT is a Large Language Model (LLM) specifically developed to process text related to politics and violence. It was trained on a large domain-specific corpus in English with text related to conflict, political violence, and international politics with global coverage. When fine-tuned, results show that ConfliBERT has superior performance over other LLMs like Gemma 2 (9B) and Llama 3.1 (7B) within its relevant domains. We then discuss multi-lingual extensions of ConfliBERT for Spanish and Arabic source texts and show that ConfliBERT also outperforms alternative models in their native languages. Finally, we discuss limitations of the models and propose further extensions."
   },
   {
     "objectID": "research.html#two-types-of-censorship-an-assessment-of-the-informational-autocracy-thesis-in-the-online-space",
     "href": "research.html#two-types-of-censorship-an-assessment-of-the-informational-autocracy-thesis-in-the-online-space",
     "title": "Research",
     "section": "Two Types of Censorship? An Assessment of the Informational Autocracy Thesis in the Online Space",
-    "text": "Two Types of Censorship? An Assessment of the Informational Autocracy Thesis in the Online Space\n\n\n\n\n\n\nAbstract\n\n\n\n\n\nThis study tests how Guriev & Treisman’s Informational Autocracy (IA) theory applies to internet filtering practices in autocratic nations. It examines the different strategies of online censorship employed by autocratic regimes, analyzing how these practices align with or deviate from the predictions of the IA theory.",
-    "crumbs": [
-      "{{< fa microchip >}} Research"
-    ]
+    "text": "Two Types of Censorship? An Assessment of the Informational Autocracy Thesis in the Online Space\n\n\n\n\n\n\nAbstract\n\n\n\n\n\nThis study tests how Guriev & Treisman’s Informational Autocracy (IA) theory applies to internet filtering practices in autocratic nations. It examines the different strategies of online censorship employed by autocratic regimes, analyzing how these practices align with or deviate from the predictions of the IA theory."
   },
   {
     "objectID": "research.html#populism-and-the-price-of-abandonment-analyzing-the-exit-dynamics-from-bilateral-investment-treaties-with-clint-peinhardt",
     "href": "research.html#populism-and-the-price-of-abandonment-analyzing-the-exit-dynamics-from-bilateral-investment-treaties-with-clint-peinhardt",
     "title": "Research",
     "section": "Populism and the Price of Abandonment: Analyzing the Exit Dynamics from Bilateral Investment Treaties (with Clint Peinhardt)",
-    "text": "Populism and the Price of Abandonment: Analyzing the Exit Dynamics from Bilateral Investment Treaties (with Clint Peinhardt)\n\n\n\n\n\n\nOverview\n\n\n\n\n\nThis study explores how rising nationalist sentiment influences countries’ decisions to exit international investment agreements, combining economic data with text analysis of political rhetoric.",
-    "crumbs": [
-      "{{< fa microchip >}} Research"
-    ]
+    "text": "Populism and the Price of Abandonment: Analyzing the Exit Dynamics from Bilateral Investment Treaties (with Clint Peinhardt)\n\n\n\n\n\n\nOverview\n\n\n\n\n\nThis study explores how rising nationalist sentiment influences countries’ decisions to exit international investment agreements, combining economic data with text analysis of political rhetoric."
   },
   {
     "objectID": "teaching.html#epps-math-coding-camp",
@@ -599,5 +563,278 @@
     "crumbs": [
       "{{< fa pencil >}} Teaching"
     ]
+  },
+  {
+    "objectID": "index.html#about",
+    "href": "index.html#about",
+    "title": "Shreyas Meher",
+    "section": "",
+    "text": "I am a PhD Candidate in Public Policy & Political Economy at the University of Texas at Dallas, working on an NSF-funded research project to develop frameworks for political and social event data using machine learning. My research combines computational methods with political science, particularly focusing on political control in digital spaces, international political economy, and conflict analysis. I specialize in developing and optimizing large language models for political science applications, including ConfliBERT and ConflLlama."
+  },
+  {
+    "objectID": "index.html#research-interests",
+    "href": "index.html#research-interests",
+    "title": "Shreyas Meher",
+    "section": "",
+    "text": "Comparative Politics: Internet Control, Digital Governance, Autocratic Regimes\nInternational Political Economy: Investment Treaties, Economic Development\nComputational Social Science: Large Language Models, Political Text Analysis\nPolitical Conflict: Violence Analysis, Event Data Collection"
+  },
+  {
+    "objectID": "index.html#current-research",
+    "href": "index.html#current-research",
+    "title": "Shreyas Meher",
+    "section": "",
+    "text": "Research Assistant with Dr. Patrick Brandt (2022-present)\nDeveloping state-of-the-art language models for analyzing political conflict and violence."
+  },
+  {
+    "objectID": "index.html#dissertation",
+    "href": "index.html#dissertation",
+    "title": "Shreyas Meher",
+    "section": "",
+    "text": "“Democracy and Internet Control: Theory and Evidence from Transparency Reports”\nAn analysis of content moderation and electoral accountability across regime types."
+  },
+  {
+    "objectID": "index.html#recent-projects",
+    "href": "index.html#recent-projects",
+    "title": "Shreyas Meher",
+    "section": "Recent Projects",
+    "text": "Recent Projects\n\n\nConfliBERT Research Lab\nA computational framework for analyzing political conflict and violence using pre-trained language models.\nLearn More →\n\n\nCensorship in Democracies and Autocracies\nA comparative analysis of internet control mechanisms and their implications for electoral accountability.\nProject Details →"
+  },
+  {
+    "objectID": "index.html#teaching",
+    "href": "index.html#teaching",
+    "title": "Shreyas Meher",
+    "section": "Teaching",
+    "text": "Teaching\n\nLead Instructor: EPPS Math & Coding Camp (R Programming), 2024\nTeaching Assistant: Introduction to Quantitative Methods, Applied Regression\nGuest Lecturer: Research Methods in Political Science"
+  },
+  {
+    "objectID": "research/ConfliBERT.html",
+    "href": "research/ConfliBERT.html",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "",
+    "text": "Whether you are a seasoned data scientist or new to machine learning, this guide is structured to help you navigate through the varied functionalities of ConfliBERT with ease. For a hands-on introduction and demonstration, jump straight to our Demo usage. If you’re interested in applying ConfliBERT for Named Entity Recognition, see the section on NER (Named Entity Recognition) with ConfliBERT. To dive into text classification, visit the section on Classification with ConfliBERT. For masking and coding tasks, refer to the section on Masking and Coding Tasks with ConfliBERT. The section on Computational Considerations and Benchmarks for ConfliBERT covers vital aspects of performance optimization.To explore the various adaptations of ConfliBERT, see the section on [ConfliBERT Variants]. At any point, you can refer to the References / Citations for further reading and information sources that have informed the development and use of ConfliBERT."
+  },
+  {
+    "objectID": "research/ConfliBERT.html#what-does-conflibert-do-and-why",
+    "href": "research/ConfliBERT.html#what-does-conflibert-do-and-why",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "What does ConfliBERT do and why?:",
+    "text": "What does ConfliBERT do and why?:\n\nDomain-Specific Pre-training: While many language models are trained on general corpora, ConfliBERT’s training is rooted in domain-specific corpora. This focus allows for enhanced performance in performing classification tasks related to political violence, conflict, cooperation, and diplomacy.\nUtility for Various Stakeholders: ConfliBERT is beneficial for academics, policymakers, and security analysts. It provides an efficient tool for monitoring and understanding the multifaceted dynamics of social unrest, political upheavals, and other conflict-related events on a global scale.\nAutomation and Efficiency: Traditional conflict analysis methods have their limitations in terms of scale and speed. ConfliBERT, with its automation capabilities, can parse vast datasets, significantly alleviating the challenges of manual annotations.\nBroad Application Potential: Beyond mere data categorization, ConfliBERT can be employed for a diverse range of tasks related to conflict research, including event classification, entity recognition, relationship extraction, and data augmentation."
+  },
+  {
+    "objectID": "research/ConfliBERT.html#running-examples",
+    "href": "research/ConfliBERT.html#running-examples",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "Running Examples",
+    "text": "Running Examples\nIn the following sections, we will walk through illustrative examples of ConfliBERT’s capabilities in action. These examples are designed to help researchers and analysts better understand how ConfliBERT automates the coding of textual data into structured conflict and event data. Grasping these capabilities is essential for a myriad of applications such as real-time monitoring of political events, in-depth conflict analysis, and the accumulation of data for international relations and peace studies.\nMake a Statement President Biden said that the U.S. alliance with Japan is stronger than ever.\nVerbal Cooperation Saudi Arabia expressed intent to restore diplomatic relations with Iran.\nMaterial Cooperation China provided humanitarian aid to Turkey.\nVerbal Conflict President Zelenskyy accused Russia of war crimes.\nMaterial Conflict Israeli forces attacked Hamas in Gaza City."
+  },
+  {
+    "objectID": "research/ConfliBERT.html#key-features-and-components",
+    "href": "research/ConfliBERT.html#key-features-and-components",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "Key Features and Components:",
+    "text": "Key Features and Components:\n\nPlatform and Requirements:\n\nConfliBERT’s code requires a Python installation on your computer.\nNecessary packages include torch, transformers, numpy, scikit-learn, pandas, and simpletransformers.\nCUDA 10.2 support is included for GPU acceleration.\n\nModel Versions:\n\nFour distinct versions of ConfliBERT are available:\n\nConfliBERT-scr-uncased: Pre-trained from scratch using an uncased vocabulary.\nConfliBERT-scr-cased: Pre-trained from scratch using a cased vocabulary.\nConfliBERT-cont-uncased: Continual pre-training using the original BERT’s uncased vocabulary.\nConfliBERT-cont-cased: Continual pre-training using BERT’s cased vocabulary.\n\n\nThese models are available on Huggingface and can be imported directly using its API.\nEvaluation and Usage:\n\nUsing ConfliBERT is analogous to other BERT models within the Huggingface ecosystem.\nExamples are provided for fine-tuning using the Simple Transformers library.\nA Google Colab demo is available for hands-on evaluation and experimentation.\n\nEvaluation Datasets:\n\nSeveral datasets related to news, global events, and political conflicts are mentioned for evaluation. These datasets include:\n\n20Newsgroups, BBCnews, EventStatusCorpus, GlobalContention, GlobalTerrorismDatabase, Gun Violence Database, IndiaPoliceEvents, InsightCrime, MUC-4, re3d, SATP, and CAMEO.\n\nCustom datasets can be integrated after preprocessing into the required formats.\n\nPre-Training Corpus:\n\nConfliBERT was pre-trained on an extensive corpus from the politics and conflict domain (33 GB in size).\nDue to copyright constraints, only sample scripts and a few samples from the pre-training corpus are provided. The details of the pre-training corpus are documented in Section 2 and the Appendix of the paper.\n\nPre-Training Process:\n\nConfliBERT utilizes the same pre-training scripts (run_mlm.py) from Huggingface. An example is provided for pre-training on 8 GPUs, though parameters should be adapted based on the user’s available resources.\n\nCitation:\n\nIf used for research purposes, it is recommended to cite the original paper. The citation details are provided in the repository."
+  },
+  {
+    "objectID": "research/ConfliBERT.html#main-tasks",
+    "href": "research/ConfliBERT.html#main-tasks",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "Main Tasks",
+    "text": "Main Tasks\n\nNER\nClassification of events\nMasking and coding tasks"
+  },
+  {
+    "objectID": "research/ConfliBERT.html#inputs-for-ner",
+    "href": "research/ConfliBERT.html#inputs-for-ner",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "Inputs for NER",
+    "text": "Inputs for NER\nBasic NER terminology:\n\nB (Beginning) denotes the beginning of an entity.\nI (Inside) marks the subsequent words of a multi-word entity.\nO (Outside) is used for non-entity words.\n\n\nInputs for NER using the ConfliBERT model:\n\n1. Text Pre-processing:\nBefore feeding the data to ConfliBERT (or any BERT-like model), one needs to ensure the text data is pre-processed:\n\nTokenization: Convert sentences into tokens. Depending on the language and context, tokenization might split words into subwords or characters.\nLowercasing: This step is optional and based on the pre-trained ConfliBERT model. Some BERT models are case-sensitive.\nSpecial Tokens: BERT models usually expect [CLS] and [SEP] tokens to mark the beginning and end of a sentence, respectively.\nFor example: [CLS] U.S. military chief General Colin Powell said ... [SEP]\nPadding and Truncating: Make sure each input sequence has the same length by either padding short sequences or truncating long ones.\n\n\n\n2. Setting Options for Classification:\n\nEntity Tags: Define a fixed set of entity tags, such as B-S, I-S, B-T, I-T, and O. This is crucial for the classification layer’s output size.\nLoss Function: Since NER is a multi-class classification problem, use a categorical cross-entropy loss.\nModel Architecture: Depending on the version and customization of ConfliBERT, ensure the last layer is a dense layer with an output size equal to the number of unique entity tags.\n\n\n\n3. Input Files:\nThe files provided seem to be in a CoNLL-like format, which is standard for NER tasks. A breakdown of the structure:\n\nEach word is on a new line with its respective IOB-tag.\nSentences or sequences are separated by blank lines.\n\nExample:\nU.S. B-S\nmilitary I-S\n...\n. O\n\nNATO B-S\n...\n. O\nNote: The input file’s structure needs to be consistent for effective model training and evaluation.\n\n\n4. Additional Metadata (Optional):\nDepending on the specificities of the ConfliBERT model or the task requirements:\n\nAttention Masks: Used to tell the model to pay attention to specific tokens and ignore others (like padding tokens).\nSegment IDs: If handling multiple sentences in a sequence, segment IDs can distinguish them.\n\n\n\n5. Training and Evaluation Data:\n\nTraining Data: Pre-processed sentences along with their entity tags for training the model.\nEvaluation Data: A separate set of pre-processed sentences and their tags to validate the model’s performance.\n\n\n\n\nConclusion:\nUsers should prepare their data in a CoNLL-like format, ensure text pre-processing aligns with ConfliBERT’s requirements, and define a set of entity tags for classification. The more consistent and clean the input data, the better the model’s performance.\nBased on the given example outputs, the sections for “Outputs from NER,” “Metrics for NER,” and “Evaluation of NER” are provided next."
+  },
+  {
+    "objectID": "research/ConfliBERT.html#outputs-from-ner",
+    "href": "research/ConfliBERT.html#outputs-from-ner",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "Outputs from NER",
+    "text": "Outputs from NER\nSentence: “For the first time in decades, there is at least the potential of an armed clash with America’s largest adversaries, Russia and China.”\nPredictions: The named entity recognition model has identified three entities in the given sentence: - decades: Temporal Entity - America’s: Government - Russia: Government - China: Government\nRaw Outputs: There also is likely the raw logits or scores associated with each token for different potential named entity classes given with the outputs. For brevity, they are not all listed here, but they can be useful for diving deeper into model decisions or for model calibration."
+  },
+  {
+    "objectID": "research/ConfliBERT.html#metrics-for-ner",
+    "href": "research/ConfliBERT.html#metrics-for-ner",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "Metrics for NER",
+    "text": "Metrics for NER\nHere is a general format you might encounter:\n\nPrecision: This is a measure of the accuracy provided that a specific class (or label) has been predicted. It is the number of true positives divided by the sum of true positives and false positives.\nRecall: This is a measure of the ability of the model to find all the relevant cases within a dataset. It is the number of true positives divided by the sum of true positives and false negatives.\nF1-Score: The F1 score is the harmonic mean of precision and recall. It provides a balance between the two. When it is closer to 1, it indicates better performance, and 0 indicates poorer performance.\nAccuracy: This metric calculates the ratio of correctly predicted observation to the total observations.\n\n(Note: For a complete evaluation, one would typically calculate these metrics for each entity type, as well as overall.)"
+  },
+  {
+    "objectID": "research/ConfliBERT.html#evaluation-of-ner",
+    "href": "research/ConfliBERT.html#evaluation-of-ner",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "Evaluation of NER",
+    "text": "Evaluation of NER\nThe model seems to correctly identify the governmental entities America’s, Russia, and China. Additionally, the model successfully picked up on the temporal entity decades.\nHowever, the evaluation of the model’s performance would ideally require a much larger test dataset, encompassing a diverse range of sentences and contexts. Furthermore, an in-depth evaluation would involve comparing the model’s predictions against a ground truth or a labeled dataset to compute metrics like precision, recall, and F1-score.\nOne key aspect to consider in such models is their confidence scores (or probabilities) associated with predictions. From the raw outputs, we can extract these values to potentially set thresholds or make informed decisions.\n\nRemember, while metrics provide a quantitative measure of performance, qualitative analysis (like manually examining where the model goes right or wrong) is invaluable, especially when deploying in critical applications."
+  },
+  {
+    "objectID": "research/ConfliBERT.html#satp_12.20-pipeline",
+    "href": "research/ConfliBERT.html#satp_12.20-pipeline",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "SATP_12.20 Pipeline",
+    "text": "SATP_12.20 Pipeline\nHere is a detailed breakdown of the preprocessing and training steps for Named Entity Recognition (NER):\n\n1. Annotation Pipeline\n\nFile: 1_annotation_pipeline-12.21.ipynb\nDescription: This notebook likely contains the process for manually annotating or labelling the data. The annotations refer to the entities within the text that the model will later be trained to recognize.\n\n\n\n2. Preparing the Training and Testing Data\n\nFile: 2_Preprocess-Data-12.27.ipynb\nDescription: After annotation, the data needs to be prepared for model training. This might include splitting the data into training, validation, and test sets; tokenizing the data; and converting it into a format suitable for deep learning frameworks.\n\n\n\n3. BiLSTM Baseline Deep Learning Model\n\nFile: 3_BiLSTM.ipynb\nDescription: This notebook contains the implementation and training process of a BiLSTM (Bidirectional Long Short-Term Memory) model. BiLSTMs are a type of recurrent neural network that can capture context from both past and future input sequences.\n\n\n\n4. BERT Model\n\nFile: 4_transformer_reduced_bert.ipynb\nDescription: Here, the BERT (Bidirectional Encoder Representations from Transformers) model is implemented and trained. BERT is a popular transformer-based model known for its effectiveness in various NLP tasks, including NER.\n\n\n\n5. Traditional Machine Learning Model Baselines\n\nFile: 5_Baselines_reduced-2-step.ipynb\nDescription: This notebook provides baseline results using traditional machine learning models like Support Vector Machines (SVM) and Logistic Regression (LR). A two-step pipeline might refer to a two-phase process: feature extraction and then modeling.\n\n\n\n6. Hierarchical Attention Networks (HAN)\n\nSteps:\n\nCreating Word Vectors and DataLoader from train.csv:\n\nCommand: python create_input_files.py\nDescription: This script prepares the data and creates word embeddings, possibly using pre-trained models. The embeddings will be used to represent words or tokens in the data. It also sets up data loaders which are essential for training deep learning models in batches.\n\nTraining and Evaluating the HAN Model:\n\nCommand: python HAN_end2end.py\nDescription: Hierarchical Attention Networks are neural models that can pay differentiated attention to various parts of the input data, making them suitable for tasks where the importance of different parts of the input varies.\n\n\n\n\n\nResults:\nThe results section showcases the performance of various models on the task:\n\nMetrics used include:\n\nAccuracy: The ratio of correctly predicted entities to the total entities.\nPrecision: The ratio of correctly predicted positive entities to the total predicted positives.\nRecall: The ratio of correctly predicted positive entities to the total actual positives.\nF1 Score: The harmonic mean of precision and recall.\nExact Matching Ratio: This might refer to the ratio of data points where the predicted entities exactly match the true entities.\n\nThe models and their respective performance metrics are tabulated for comparison.\n\n\n\n\n\n\n\n\n\n\n\n\nModel\nAccuracy (%)\nPrecision (%)\nRecall (%)\nF1 (%)\nExact Matching Ratio (%)\n\n\n\n\nOne vs Rest\n26.07\n87.19\n27.40\n28.04\n82.20\n\n\nBinary Relevance\n26.65\n86.08\n28.29\n28.40\n82.47\n\n\nClass Chain\n27.93\n83.47\n29.78\n29.32\n82.87\n\n\nLabel Powerset\n28.86\n85.53\n30.51\n30.05\n83.14\n\n\nBiLSTM\n37.11\n53.81\n58.51\n42.12\n76.23\n\n\nHAN\n52.98\n65.64\n74.82\n55.78\n83.07\n\n\nBERT\n62.52\n74.73\n80.01\n64.59\n87.23\n\n\n\nThis comprehensive pipeline takes the data from raw, annotated form and processes it into a format that various machine learning and deep learning models can be trained on. The models’ performances are then evaluated and compared using the mentioned metrics."
+  },
+  {
+    "objectID": "research/ConfliBERT.html#other-llm-comparisons-on-this-task",
+    "href": "research/ConfliBERT.html#other-llm-comparisons-on-this-task",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "Other LLM comparisons on this task",
+    "text": "Other LLM comparisons on this task"
+  },
+  {
+    "objectID": "research/ConfliBERT.html#related-literature-in-ner",
+    "href": "research/ConfliBERT.html#related-literature-in-ner",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "Related Literature in NER",
+    "text": "Related Literature in NER"
+  },
+  {
+    "objectID": "research/ConfliBERT.html#understanding-classification-metrics-in-conflibert",
+    "href": "research/ConfliBERT.html#understanding-classification-metrics-in-conflibert",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "Understanding Classification Metrics in ConfliBERT",
+    "text": "Understanding Classification Metrics in ConfliBERT\nThis document provides an overview of classification metrics in the context of political event categorization using ConfliBERT, drawing upon foundational concepts in machine learning classification such as True Positives (TP), False Positives (FP), False Negatives (FN), and True Negatives (TN) as explained in the Google Machine Learning Crash Course (see “Machine Learning Crash Course: Classification: True/False Positive/Negative” (2021)). We will use a hypothetical example to illustrate these concepts clearly:\nMetrics Explained:\n\nTrue Positives (TP): Sentences where the Predicted Category matches the actual category (highest logit score).\n\n\nFalse Positives (FP): Cases where the Predicted Category was chosen, but it is not the actual category.\n\n\nFalse Negatives (FN): Cases where the actual category was correct, but the Predicted Category was different.\n\n\nTrue Negatives (TN): All other cases where neither the predicted nor the actual category was chosen.\n\nHypothetical Example for Classification:\nConsider an event: Israeli forces attacked Hamas in Gaza City. Let’s place this event in a 2x2 confusion matrix to understand potential outcomes from ConfliBERT’s classification:\n\n\n\n\n\n\n\nTrue Positive (TP)\nFalse Negative (FN)\n\n\n\n\nConfliBERT accurately classifies the event as “Material Conflict” due to the active engagement and physical altercation reported.\nConfliBERT incorrectly classifies the event as a non-conflict category, such as “Verbal Cooperation,” missing the material nature of the conflict.\n\n\n\n\n\n\n\n\n\n\nFalse Positive (FP)\nTrue Negative (TN)\n\n\n\n\nConfliBERT incorrectly classifies a peaceful negotiation as “Material Conflict,” suggesting a physical altercation where there was none.\nConfliBERT correctly identifies that no material conflict occurred when Israeli forces did not engage with Hamas.\n\n\n\nDetailed Breakdown:\n\nTrue Positive (TP): - Reality: Israeli forces engage in a physical altercation with Hamas in Gaza City. - ConfliBERT Says: “Material Conflict.” - Outcome: ConfliBERT’s classification aligns with the real-world event, providing accurate data for analysis.\n\n\nFalse Positive (FP): - Reality: A diplomatic meeting between Israeli and Hamas representatives occurs without physical confrontation. - ConfliBERT Says: “Material Conflict.” - Outcome: ConfliBERT erroneously signals a conflict, potentially leading to misinformed analysis.\n\n\nFalse Negative (FN): - Reality: Israeli forces attack Hamas in Gaza City. - ConfliBERT Says: “Verbal Cooperation” or another non-conflict category. - Outcome: Misclassification downplays the severity, potentially affecting response strategies.\n\n\nTrue Negative (TN): - Reality: Israeli and Hamas representatives engage in peaceful talks. - ConfliBERT Says: “Verbal Cooperation” or an appropriate non-conflict category. - Outcome: ConfliBERT accurately reflects the peaceful nature of the event, aiding correct analysis and policy decisions.\n\nApplying Metrics for Evaluation:\nThe subsequent sections will explore how to use these metrics—sensitivity, specificity, precision, and accuracy—to evaluate ConfliBERT’s performance in classifying complex political events. These metrics are essential for assessing ConfliBERT’s accuracy and fine-tuning its predictions to align with real-world observations.\nHere is a deep dive into how ConfliBERT enhances classification in the context of conflict research:\n\nGranular Event Categorization: While it is essential to identify an incident as a protest or a riot, the true value lies in discerning the nature of these events. ConfliBERT’s classification capability can distinguish between a peaceful protest, a violent uprising, or even a state-sanctioned crackdown. This granularity ensures a comprehensive understanding of the event’s nature.\nAdaptive Learning with Domain-Specific Data: Given ConfliBERT’s training on conflict-related texts, it possesses a heightened sensitivity to the subtle nuances within conflict narratives. This domain-specific expertise translates to a more accurate and contextual classification, be it categorizing a skirmish as sectarian, ethnic, or political.\nTemporal Classification: Conflicts evolve, and so do their narratives. ConfliBERT can classify events based on their temporal context, distinguishing between a long-standing civil war’s initial skirmishes and its climax battles or identifying the phases of diplomatic negotiations.\nAutomating Large-Scale Data Processing: Conflict research often grapples with voluminous data from diverse sources like news articles, social media, and firsthand accounts. Manual classification of such vast data is not only labor-intensive but also prone to inconsistencies. ConfliBERT automates this, ensuring uniformity and efficiency.\nReal-time Classification for Dynamic Responses: In the rapidly changing landscape of political conflicts, timely responses are crucial. With its swift classification capabilities, ConfliBERT can process real-time data, ensuring that researchers and policymakers are equipped with classified insights as events transpire.\nSupporting Cross-Referencing and Validation: By classifying data, ConfliBERT also aids in cross-referencing. For instance, if two sources provide conflicting narratives of an event, having them classified can help researchers quickly juxtapose and validate the information.\nAssisting Predictive Analysis: Once events are classified systematically, it becomes feasible to perform predictive analysis. Recognizing patterns from past events can provide insights into potential future scenarios, aiding preemptive measures and strategies.\n\nIn summary, ConfliBERT’s classification capabilities not only structure the unorganized maze of conflict data but also elevate the depth and breadth of analysis. By providing categorized, context-aware insights, it becomes an invaluable asset for researchers, analysts, and policymakers navigating the intricate domain of conflict research.\nFor a different example, let’s create a hypothetical news report about a political demonstration that turned violent. This example will have more variance in the types of police actions and outcomes, and it will include different categorizations.\nOriginal Text (Pre-Processing): “During a large political demonstration in the capital, clashes erupted between protesters and police. Police reportedly used water cannons and rubber bullets to control the situation. Several protesters were detained, and there were reports of injuries among both police and demonstrators. A local shop was vandalized during the chaos. The protest was eventually dispersed, and order was restored by the authorities.”\nProcessed Text (Post-Processing): The text is segmented into individual sentences and processed for analysis, with each sentence receiving specific categorizations based on the content.\n\n\n\n\n\n\n\n\n\n\n\nProcessed Sentence\nUSE_OF_FORCE\nDETENTION\nINJURIES\nVANDALISM\nORDER_RESTORED\n\n\n\n\nDuring a large political demonstration in the capital, clashes erupted between protesters and police\n0\n0\n0\n0\n0\n\n\nPolice reportedly used water cannons and rubber bullets to control the situation\n1\n0\n0\n0\n0\n\n\nSeveral protesters were detained\n0\n1\n0\n0\n0\n\n\nThere were reports of injuries among both police and demonstrators\n0\n0\n1\n0\n0\n\n\nA local shop was vandalized during the chaos\n0\n0\n0\n1\n0\n\n\nThe protest was eventually dispersed, and order was restored by the authorities\n0\n0\n0\n0\n1\n\n\n\nIn this table: - “USE_OF_FORCE” indicates if the sentence suggests the use of force by police. - “DETENTION” denotes if the sentence implies that protesters were detained. - “INJURIES” signifies if there were injuries reported among the police or demonstrators. - “VANDALISM” marks if there was property damage or vandalism mentioned. - “ORDER_RESTORED” is affirmative if the sentence indicates that order was restored by the authorities.\nThis structured approach to analyzing news text provides a clear understanding of the various aspects of the event, which is essential for conflict analysis and research."
+  },
+  {
+    "objectID": "research/ConfliBERT.html#inputs-for-classification",
+    "href": "research/ConfliBERT.html#inputs-for-classification",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "Inputs for Classification",
+    "text": "Inputs for Classification\nTo harness the capabilities of ConfliBERT for classification, one needs to be well-acquainted with the expected input format, necessary pre-processing steps, and customization options:\nText Pre-processing:\n\nTokenization:\n\nTokenizing is the process of breaking down the text into smaller chunks, often words or sub-words.\nExample: The sentence “UNRWA said it had suspended aid” will be tokenized as [“UNRWA”, “said”, “it”, “had”, “suspended”, “aid”].\n\nFormatting:\n\nBased on the dataset structure provided, the text should be divided into specific segments namely ‘sentence’, ‘source’, and ‘target’.\nExample: For the text “UNRWA said it had suspended aid deliveries to Gaza”, “UNRWA” will be the source, “Gaza” will be the target, and the whole string is the sentence.\n\nSpecial Character Removal:\n\nIt is crucial to ensure that any non-textual or special characters that do not contribute to the semantic meaning of the sentence are removed.\nExample: If the sentence is “UNRWA said it had suspended aid!!!”, the exclamatory marks can be removed for a cleaner input as “UNRWA said it had suspended aid”.\n\nLowercasing/Uppercasing:\n\nDepending on the model variant being used (cased or uncased), ensure that the text is transformed accordingly.\nExample: For the uncased variant, “UNRWA said it had suspended aid” becomes “unrwa said it had suspended aid”.\n\nSentence Segmentation:\n\nIf the input is a long paragraph or document, break it down into individual sentences.\nExample: For a paragraph “UNRWA said it had suspended aid. It was a major decision.”, the segmented sentences will be [“UNRWA said it had suspended aid.”, “It was a major decision.”].\n\n\nCustomizing Classification with ConfliBERT:\n\nFine-tuning:\n\nAlthough ConfliBERT is pre-trained, its versatility shines when fine-tuned on a specific dataset. This way, the model becomes more attuned to the nuances of the data.\nExample: If the focus is on classifying statements made in a legal context, fine-tune ConfliBERT on legal documents or court verdicts.\n\nUsing Different Model Variants:\n\nChoose a ConfliBERT version that aligns with the nature of the text data. If the distinction between uppercase and lowercase letters is significant, opt for a cased model.\n\nAdjusting Model Parameters:\n\nDuring fine-tuning or prediction, tweak model parameters like learning rate, batch size, or epoch count to optimize performance.\n\nFeedback Loop:\n\nConsider setting up a feedback loop where misclassifications can be corrected and fed back into the model for continuous learning.\n\n\n\nDefine and discuss update methods\nThere are four versions of ConfliBERT, each serving a specific purpose:\n\n\n\n\n\n\n\nVersion\nDefinition\n\n\n\n\nConfliBERT-scr-uncased:\nThis version is pre-trained from scratch using a custom uncased vocabulary. This is the preferred version as it has been built from the ground up with a specific vocabulary set.\n\n\nConfliBERT-scr-cased:\nThis version is also pre-trained from scratch but uses a custom cased vocabulary. This means it differentiates between uppercase and lowercase letters.\n\n\nConfliBERT-cont-uncased:\nThis version is built by continually pre-training on top of the original BERT’s uncased vocabulary.\n\n\nConfliBERT-cont-cased:\nThis version is similar to the above but uses the original BERT’s cased vocabulary.\n\n\n\nScratch versus Continuous Defined: 1. Scratch: This refers to building the model from scratch, meaning the model is trained without any prior knowledge. The vocabulary is also built from the base without any prior context. 2. Continuous: Continuous pre-training means the model is built on top of an existing model (in this case, BERT). This leverages the knowledge already present in BERT and fine-tunes it for a specific task."
+  },
+  {
+    "objectID": "research/ConfliBERT.html#outputs-from-classification",
+    "href": "research/ConfliBERT.html#outputs-from-classification",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "Outputs from Classification",
+    "text": "Outputs from Classification\nWhen ConfliBERT provides a classification output, it organizes the results hierarchically and presents detailed information for clarity and to aid interpretation. Here is a deep dive into what each segment of the output signifies:\n\nIndex and Basic Information:\n\nIndex: Each entry or instance in the dataset being classified is assigned a unique identifier or index.\nGold Penta: This is a reference label, indicating the correct classification as provided in the dataset.\nSentence: The original textual input that was classified.\nSource: The entity or group mentioned as the originator or subject of the action in the sentence.\nTarget: The entity or group mentioned as the recipient or object of the action in the sentence.\n\nLevel 1 Classification:\n\nTense: The temporal context in which the event occurred, like ‘past’ or ‘future’.\nPrompt Text: A standardized, simplified representation of the sentence. For instance, if the sentence is “UNRWA said it had suspended aid deliveries to Gaza”, the prompt text might be “‘Source’ reduced aid to ‘Target’”, where ‘Source’ represents the source (UNRWA) and ‘Target’ represents the target (Gaza).\nRoot Code: This signifies the primary, overarching classification category. For example, “SANCTION”.\nScore: This provides a confidence measure. The higher the score, the more confident the model is about its classification.\n\nLevel 1 Evaluation:\n\nGold Root vs. Prediction: Here, the model’s prediction for the root code is compared to the correct answer or “gold” standard. For instance, if the gold standard is “SANCTION” and the model also predicts “SANCTION”, then this comparison would indicate a match.\nGold Penta vs. Prediction: Similarly, the model’s prediction for the gold penta is compared to the correct answer. If both match, the model’s prediction is considered correct for that instance.\n\nLevel 2 Classification:\n\nRoot Code: The primary classification category is reiterated here for clarity.\nPrompt Text: Similar to level 1, this provides a standardized representation of the sentence, but might be slightly more detailed or provide alternate interpretations.\nFuture and Past Scores: For each classification prompt, there might be separate scores indicating the model’s confidence for both future and past contexts. This helps understand how the model perceives the temporal aspect of the event.\nL2 Root: This provides a more detailed or nuanced classification based on the primary root code from level 1.\n\nLevel 2 Evaluation:\n\nThis section is similar to the level 1 evaluation but pertains to the more detailed classifications from level 2.\nGold Root vs. Prediction: The model’s level 2 root code prediction is compared to the correct or “gold” root code. If both are the same, the prediction is accurate.\nGold Penta vs. Prediction: The predicted gold penta value at level 2 is compared against the correct value. If they match, the model’s prediction is deemed correct for that instance.\n\n\nIn essence, the output from ConfliBERT provides both a high-level and a detailed classification of the input sentence, complete with confidence scores, standardized representations, and a direct comparison to known correct answers for evaluation purposes. This hierarchical structure ensures a comprehensive understanding of the sentence’s context, entities involved, and the nature of their interaction."
+  },
+  {
+    "objectID": "research/ConfliBERT.html#extant-evaluation-datasets",
+    "href": "research/ConfliBERT.html#extant-evaluation-datasets",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "Extant Evaluation datasets:",
+    "text": "Extant Evaluation datasets:\nThe datasets"
+  },
+  {
+    "objectID": "research/ConfliBERT.html#huggingface-usage-here",
+    "href": "research/ConfliBERT.html#huggingface-usage-here",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "Huggingface usage here",
+    "text": "Huggingface usage here\n(To be filled with information on how to use ConfliBERT with the Huggingface library, if applicable.)"
+  },
+  {
+    "objectID": "research/ConfliBERT.html#metrics-for-classification",
+    "href": "research/ConfliBERT.html#metrics-for-classification",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "Metrics for Classification",
+    "text": "Metrics for Classification\n(To be filled with relevant metrics used to evaluate the performance of ConfliBERT for classification, e.g., accuracy, F1 score, etc.)"
+  },
+  {
+    "objectID": "research/ConfliBERT.html#evaluation-of-classification",
+    "href": "research/ConfliBERT.html#evaluation-of-classification",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "Evaluation of Classification",
+    "text": "Evaluation of Classification\n(To be filled with details on how ConfliBERT’s classification performance was evaluated, including methodologies, datasets used, and results.)"
+  },
+  {
+    "objectID": "research/ConfliBERT.html#other",
+    "href": "research/ConfliBERT.html#other",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "Other",
+    "text": "Other"
+  },
+  {
+    "objectID": "research/ConfliBERT.html#inputs-for-masking-and-coding",
+    "href": "research/ConfliBERT.html#inputs-for-masking-and-coding",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "Inputs for Masking and Coding",
+    "text": "Inputs for Masking and Coding\nTo utilize ConfliBERT for masking and coding tasks, the input data must be structured and pre-processed according to specific guidelines.\n\nTokenization: The text should be tokenized into sub-words or words. The tokenization method will depend on the pre-trained model and tokenizer available for ConfliBERT.\nFormatting: For the [MASK] task, specific tokens or words in the sentence should be replaced with the [MASK] token. The model will then predict the missing token based on the context provided by the rest of the sentence.\nSegmentation: If the input consists of multiple sentences, they should be divided into distinct segments. Each segment will be input separately into the model.\nPadding: All inputs should be padded to have the same length for batching during model training or inference."
+  },
+  {
+    "objectID": "research/ConfliBERT.html#outputs-from-masking-and-coding",
+    "href": "research/ConfliBERT.html#outputs-from-masking-and-coding",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "Outputs from Masking and Coding",
+    "text": "Outputs from Masking and Coding\n\nPredicted Tokens: The primary output from the masking task is the token predicted by ConfliBERT to replace the [MASK] token. The model will provide a probability distribution over the vocabulary, and the token with the highest probability is usually taken as the prediction.\nEmbeddings: ConfliBERT will also produce embeddings for each token in the input sequence. These embeddings can be used for downstream tasks or further analysis.\nCoding Outputs: Depending on the coding task, ConfliBERT might classify a given input into predefined categories or produce other forms of structured output."
+  },
+  {
+    "objectID": "research/ConfliBERT.html#metrics-for-masking-and-coding",
+    "href": "research/ConfliBERT.html#metrics-for-masking-and-coding",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "Metrics for Masking and Coding",
+    "text": "Metrics for Masking and Coding\n\nAccuracy: Measures the percentage of [MASK] tokens that the model predicted correctly.\nPerplexity: Provides insight into how well the probability distribution predicted by the model aligns with the actual distribution of the [MASK] token.\nF1-Score: Used mainly for coding tasks, it considers both precision and recall to provide a more holistic view of model performance.\nLoss: The model’s objective function value, which it tries to minimize during training."
+  },
+  {
+    "objectID": "research/ConfliBERT.html#evaluation-of-masking-and-coding",
+    "href": "research/ConfliBERT.html#evaluation-of-masking-and-coding",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "Evaluation of Masking and Coding",
+    "text": "Evaluation of Masking and Coding\n\nIn-domain vs. Out-of-domain Evaluation: It is essential to evaluate the model’s performance both on data similar to its training data and on entirely different datasets.\nHuman Evaluation: Sometimes, multiple tokens can correctly fill a [MASK] token, so human evaluators can provide more nuanced feedback on the model’s predictions.\nAblation Studies: Evaluating the model’s performance by removing or modifying certain parts can help understand the importance of various components."
+  },
+  {
+    "objectID": "research/ConfliBERT.html#other-llm-comparisons-on-this-task-1",
+    "href": "research/ConfliBERT.html#other-llm-comparisons-on-this-task-1",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "Other LLM comparisons on this task",
+    "text": "Other LLM comparisons on this task\n\nBERT: BERT is the pioneering model that introduced the [MASK] task. It is insightful to compare newer models like ConfliBERT with BERT to see the advancements.\nRoBERTa: A variant of BERT, RoBERTa changes some key hyperparameters and training strategies, which can have different performances on the masking task."
+  },
+  {
+    "objectID": "research/ConfliBERT.html#cpu-usage-1-core",
+    "href": "research/ConfliBERT.html#cpu-usage-1-core",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "CPU Usage (1 Core)",
+    "text": "CPU Usage (1 Core)\nBERT, and by extension models like ConfliBERT, are heavily parallelized models, which means they benefit significantly from multiple cores or GPUs. Using just a single core would be significantly slower and is not recommended for any sizable inference or training task. However, for very light tasks or experimentation, a single core could suffice, albeit with extended processing times."
+  },
+  {
+    "objectID": "research/ConfliBERT.html#cpu-multicore",
+    "href": "research/ConfliBERT.html#cpu-multicore",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "CPU (Multicore)",
+    "text": "CPU (Multicore)\nBased on BERT benchmarks [https://vincentteyssier.medium.com/bert-inference-cost-performance-analysis-cpu-vs-gpu-b58a2420b2c8]:\n\n8 vCPUs (e2-highcpu-8):\n\nProcessing Time per File: 69.4s - 70.5s for 1500 samples.\nOverall vCPU Usage: Approximately 75%.\nCost: $0.197872/hour or $144.45 monthly.\n\n\n\n16 vCPUs (e2-highcpu-16):\n\nProcessing Time per File: 40.80s - 43.34s for 1500 samples.\nOverall vCPU Usage: Approximately 60%.\nCost: $0.395744/hour or $288.89 monthly.\n\n\n\n32 vCPUs (e2-highcpu-32):\n\nProcessing Time per File: 35.73s - 40.21s for 1500 samples.\nOverall vCPU Usage: Approximately 40%.\nCost: $0.791488/hour.\n\nThe overarching pattern reveals that as the number of CPU cores increases, the processing time decreases. However, there is a point of diminishing returns: scaling from 16 to 32 vCPUs does not halve the processing time. Additionally, the vCPU usage decreases, indicating underutilization of resources with higher cores."
+  },
+  {
+    "objectID": "research/ConfliBERT.html#with-gpus-and-other-architectures-non-intelamd",
+    "href": "research/ConfliBERT.html#with-gpus-and-other-architectures-non-intelamd",
+    "title": "ConfliBERT Documentation and Usage",
+    "section": "With GPUs and other Architectures (non-Intel/AMD)",
+    "text": "With GPUs and other Architectures (non-Intel/AMD)\nGPUs, especially those designed for deep learning tasks, like the NVIDIA Tesla series, provide significant speed-ups for BERT-like models due to their parallel processing capabilities.\n\n1 GPU (n1-standard-8 + NVIDIA Tesla V100):\n\nProcessing Time per File: 2.16s - 3.28s for 1500 samples. This speed is around 25 times faster than the 8 vCPU instance and approximately 15 times faster than the 32 vCPU instance.\nCost: $2.004/hour or $1,462.99 monthly.\n\nFor specialized architectures beyond Intel/AMD, the benchmarks would vary based on the specific architecture. For example, FPGAs or TPUs might offer different performance and cost metrics. However, TPUs, in particular, have been known to provide excellent performance for TensorFlow-based models, including BERT derivatives.\nIn conclusion, while BERT benchmarks give an idea of the computational requirements, users should perform their own benchmarks to ascertain the exact requirements for ConfliBERT. Always consider the scale of the task, available budget, and desired processing time when choosing the computational infrastructure."
+  },
+  {
+    "objectID": "research.html#working-papers",
+    "href": "research.html#working-papers",
+    "title": "Research",
+    "section": "Working Papers",
+    "text": "Working Papers\n\nDemocracy and Internet Control: Theory and Evidence from Transparency Reports\nwith Pengfei Zhang\nExamining how democratic and authoritarian regimes differ in their approach to internet content moderation, using data from transparency reports. We find that while both regime types remove similar amounts of content, their methods and motivations differ significantly. PDF\n\n\nConfliBERT: Foundation Models for Political Violence Analysis\nwith Patrick T. Brandt, Sultan Alsarra, Vito D’Orazio, Dagmar Heintze, Latifur Khan, Javier Osorio, and Marcus Sianan\nDeveloping specialized language models for political conflict analysis that outperform general-purpose LLMs like Gemma 2, Llama 3.1, and Qwen 2.5 in accuracy, precision, and recall while being hundreds of times faster. Link\n\n\nTwo Types of Censorship? An Assessment of the Informational Autocracy Thesis\nTesting how Guriev & Treisman’s Informational Autocracy theory applies to internet filtering practices in autocratic nations, with a focus on regime strategies and implementation methods. PDF\n\n\nConflLlama-Q: Efficient Adaptation of LLMs for Conflict Event Classification\nwith Patrick T. Brandt\nDemonstrating how efficient adaptation of large language models can dramatically improve conflict event classification. Through quantization-aware fine-tuning of LLaMA-3.1, we achieve a 37.6% improvement over the base model, with specific attack type classifications improving by up to 1463%. Link\n\n\nInterest Group Communication Strategies During COVID-19\nwith Sushant Kumar & Pengfei Zhang\nAnalyzing how health advocacy groups adapted their Medicare-For-All messaging on Twitter during the COVID-19 pandemic, revealing distinct approaches to public engagement and narrative adaptation. PDF\n\n\nMedia Polarization in International News Coverage\nwith Arslan Khalid & Kiwan Park\nUsing machine learning to analyze ideological patterns in international news coverage across 200,000+ articles, examining shifts in sentiment and framing before and after the 2016 US election."
+  },
+  {
+    "objectID": "research.html#ongoing-projects",
+    "href": "research.html#ongoing-projects",
+    "title": "Research",
+    "section": "Ongoing Projects",
+    "text": "Ongoing Projects\n\nPopulism and Investment Treaties\nwith Clint Peinhardt\nInvestigating how nationalist rhetoric influences countries’ decisions to exit international investment agreements.\n\n\nIGO Withdrawal Networks\nExtending Borzyskowski & Vabulas (2019) to examine network effects in international organization withdrawals."
+  },
+  {
+    "objectID": "research.html#dissertation",
+    "href": "research.html#dissertation",
+    "title": "Research",
+    "section": "Dissertation",
+    "text": "Dissertation\n“Democracy and Internet Control: Electoral Accountability and Content Moderation”\nView Proposal | Presentation"
+  },
+  {
+    "objectID": "research.html#resources",
+    "href": "research.html#resources",
+    "title": "Research",
+    "section": "Resources",
+    "text": "Resources\n\nConfliBERT Documentation\nA comprehensive guide for political scientists on using and fine-tuning ConfliBERT for various NLP tasks.\nView Manual"
+  },
+  {
+    "objectID": "teaching.html#teaching-experience",
+    "href": "teaching.html#teaching-experience",
+    "title": "Teaching",
+    "section": "",
+    "text": "EPPS Math & Coding Camp (August 2024)\nR Programming and Data Analysis\n\nCreated and maintained course website eppsmathcodingcamp.github.io\nTaught R programming fundamentals, data manipulation (dplyr), and visualization (ggplot2)\nDeveloped interactive tutorials and exercises for 5-day intensive program\nBuilt GitHub-based infrastructure for version control and content delivery\n\n\n\n\nEPPS 6313 - Introduction to Quantitative Methods\nTeaching Assistant for Dr. Pengfei Zhang\n\nLed weekly STATA lab sessions focusing on regression analysis\nGuided students through practical applications of statistical methods\nProvided individualized support for data analysis projects\n\nEPPS 6316 - Applied Regression\nTeaching Assistant for Dr. Vito D’Orazio\n\nConducted advanced R programming labs\nFocused on complex regression techniques and econometric analysis\nDeveloped practical exercises for applied data analysis"
   }
 ]

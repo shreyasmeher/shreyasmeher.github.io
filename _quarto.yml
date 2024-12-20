@@ -1,39 +1,83 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "!drafts/"
 
 website:
   title: "Shreyas Meher"
-  description: "Up, up and away!"
+  description: "Political Science Researcher & PhD Candidate"
+  site-url: "https://shreyasmeher.github.io"
+  repo-url: "https://github.com/shreyasmeher/shreyasmeher.github.io"
+  google-analytics: ""  # Add your GA tracking ID if needed
+  
+  page-navigation: true
+  back-to-top-navigation: true
   
   twitter-card:
-    creator: "@onlinecape"
+    creator: "@shreyasmhr"
+    card-style: summary_large_image
+    title: "Shreyas Meher - Political Science Researcher"
+    description: "Research in Computational Politics & Internet Censorship"
+  
+  open-graph:
+    title: "Shreyas Meher - Political Science Researcher"
+    description: "Research in Computational Politics & Internet Censorship"
+    image: "images/social-preview.png"
+  
+  navbar:
+    background: light
+    search: true
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Research"
+        href: research.qmd
+      - text: "Teaching"
+        href: teaching.qmd
+      - text: "CV"
+        href: CV_2024.pdf
     
-  sidebar:
-    style: "docked"
-    contents:
-      - href: index.qmd
-        text: "{{< fa house-user >}} Home"
-      - href: research.qmd
-        text: "{{< fa microchip >}} Research"
-      - href: teaching.qmd
-        text: "{{< fa pencil >}} Teaching"
-      - href: CV_2024.pdf
-        text: "{{< fa paperclip >}} Vitae"
-      - href: mailto:shreyas.meher@utdallas.edu
-        text: "{{< fa paper-plane >}} Contact"
-      - icon: linkedin
-        href: https://www.linkedin.com/in/shreyasmeher/
+    right:
+      - icon: envelope
+        href: mailto:shreyas.meher@utdallas.edu
+        aria-label: Email
       - icon: twitter
-        href: https://twitter.com/Onlinecape
+        href: https://twitter.com/shreyasmhr
+        aria-label: Twitter
       - icon: github
         href: https://github.com/shreyasmeher
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://www.linkedin.com/in/shreyasmeher/
+        aria-label: LinkedIn
 
   page-footer: 
-    left: "© 2023 Shreyas Meher"
-    
+    left: |
+      © 2024 Shreyas Meher  
+      School of Economic, Political and Policy Sciences  
+      The University of Texas at Dallas
+    right: |
+      Built with [Quarto](https://quarto.org) 
+
 format:
   html:
     theme:
-      light: [flatly, mystyles.scss]
+      light: [litera, mystyles.scss]  # Changed from flatly to litera for better academic look
       dark: [darkly, custom-dark.scss]
+    css: styles.css
+    toc: true
+    toc-location: right
+    toc-title: "On this page"
+    code-copy: true
+    code-overflow: wrap
+    mainfont: "Source Sans Pro"
+    monofont: "Source Code Pro"
+    fontsize: 1em
+    linestretch: 1.7
+    html-math-method: katex
+    citations: bibliography.bib
+    footnotes-hover: true
+    smooth-scroll: true
+    link-external-newwindow: true

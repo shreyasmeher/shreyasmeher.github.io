@@ -1,27 +1,73 @@
 ---
-title: "Shreyas Meher - Researcher and PhD Candidate"
+title: ""
+subtitle: ""
+page-layout: full
+toc: false
 ---
 
-::: {#img-me .center}
-![](headshot.jpg)
+::: {.grid}
+::: {.g-col-12 .g-col-md-4 .text-center}
+![](headshot.jpg){.rounded-circle .img-fluid .mb-3 width="250px"}
+
+School of Economic, Political and Policy Sciences  
+The University of Texas at Dallas  
+
+[{{< fa brands twitter >}} Twitter](https://twitter.com/onlinecape){.btn .btn-outline-dark .btn-sm .mb-1}
+[{{< fa brands github >}} GitHub](https://github.com/shreyasmeher){.btn .btn-outline-dark .btn-sm .mb-1}
+[{{< fa brands linkedin >}} LinkedIn](https://linkedin.com/in/shreyasmeher){.btn .btn-outline-dark .btn-sm .mb-1}
 :::
 
-::: center-text
-### Welcome! I'm Shreyas Meher. This site showcases my work in computational linguistics and political analysis. Feel free to explore and connect with me!
+::: {.g-col-12 .g-col-md-8}
+# Shreyas Meher
+## About
+
+I am a PhD Candidate in Public Policy & Political Economy at the University of Texas at Dallas, working on an NSF-funded research project to develop frameworks for political and social event data using machine learning. My research combines computational methods with political science, particularly focusing on political control in digital spaces, international political economy, and conflict analysis. I specialize in developing and optimizing large language models for political science applications, including ConfliBERT and ConflLlama.
+
+## Research Interests
+
+- **Comparative Politics**: Internet Control, Digital Governance, Autocratic Regimes
+- **International Political Economy**: Investment Treaties, Economic Development
+- **Computational Social Science**: Large Language Models, Political Text Analysis
+- **Political Conflict**: Violence Analysis, Event Data Collection
+
+## Current Research
+
+### ConfliBERT Project
+Research Assistant with [Dr. Patrick Brandt](https://personal.utdallas.edu/~pxb054000/) (2022-present)  
+Developing state-of-the-art language models for analyzing political conflict and violence.
+
+## Dissertation
+"Democracy and Internet Control: Theory and Evidence from Transparency Reports"  
+*An analysis of content moderation and electoral accountability across regime types.*
+
 :::
 
-### Research Interests
+:::
 
-> Large Language Models (LLMs), Internet Censorship, Developmental Economics, Political Conflict, and Violence
+::: {.page-columns .page-full}
 
-### Currently at
+## Recent Projects
 
-> **The University of Texas at Dallas** <br> **Research Assistant** <br> *ConfliBERT Project with [Dr. Patrick Brandt](https://personal.utdallas.edu/~pxb054000/) (2022-present)* <br> [Dr. Pengfei Zhang](https://pengfei-zhang.com/) (2022-present) <br> [Dr. Lauren Pinson](https://www.lpinson.com/) (2021) <br> [Dr. Jonas Bunte](https://jonasbunte.com/) (2020)
+::: {.grid}
 
-> **Teaching Assistant** <br> *[Dr. Vito D'Orazio](https://vitodorazio.org/) (2020-2021)* <br> [Dr. Richard Scotch](https://profiles.utdallas.edu/richard.scotch)
+::: {.g-col-12 .g-col-md-6}
+### ConfliBERT Research Lab
+A computational framework for analyzing political conflict and violence using pre-trained language models.  
+[Learn More →](https://github.com/eventdata/ConfliBERT)
+:::
 
-### Key Projects
+::: {.g-col-12 .g-col-md-6}
+### Censorship in Democracies and Autocracies
+A comparative analysis of internet control mechanisms and their implications for electoral accountability.  
+[Project Details →](research/dissertation-proposal-paper.pdf)
+:::
 
-> **ConfliBERT Research Lab** <br> A groundbreaking project exploring political conflict and violence using pre-trained language models. [Learn More](https://github.com/eventdata/ConfliBERT)
+:::
 
-> **Dissertation on Censorship in Democracies and Autocracies** <br> An in-depth analysis focusing on electoral accountability with case studies in India and China. 
+## Teaching
+
+- Lead Instructor: EPPS Math & Coding Camp (R Programming), 2024
+- Teaching Assistant: Introduction to Quantitative Methods, Applied Regression
+- Guest Lecturer: Research Methods in Political Science
+
+:::

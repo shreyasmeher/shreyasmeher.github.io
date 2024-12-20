@@ -1,93 +1,69 @@
 ---
 title: "Research"
 ---
-Welcome to my research page. Here, you'll find a selection of my work on various topics within political science and computational linguistics.
 
-# Working Papers
+My research focuses on computational social science approaches to studying internet censorship, political communication, and conflict. I use natural language processing and machine learning methods to analyze political phenomena.
 
-## Democracy and Internet Control: Theory and Evidence from Transparency Reports (with Pengfei Zhang)
+## Working Papers
 
-::: {.callout-caution collapse="true"}
+### Democracy and Internet Control: Theory and Evidence from Transparency Reports
+*with Pengfei Zhang*
 
-### Abstract
-Internet control has long been considered a feature of authoritarian regimes alone. Drawing data from Google and Twitter transparency reports, we observe that democratic countries remove an equal amount of content as their authoritarian counterparts. The distinction between the two regimes lies not in the quantity but in the method of content removal. Democracy refrains from government takedown and instead delegates the removal right to the users. This paper conjectures that politicians' reputation concern is the key to understanding this phenomenon. To that end, we develop a political agency model that explains the stylized facts and derives testable hypotheses. Using the timing of elections as a natural experiment, we provide supporting evidence that the takedown requests from democratic governments decreased significantly as the election approached. This reputation effect is not observed in authoritarian regimes or other types of requests.  
-:::
+Examining how democratic and authoritarian regimes differ in their approach to internet content moderation, using data from transparency reports. We find that while both regime types remove similar amounts of content, their methods and motivations differ significantly. [PDF](research/democracy-internet-control.pdf)
 
-## Two Types of Censorship? An Assessment of the Informational Autocracy Thesis in the Online Space 
-::: {.callout-caution collapse="true"}
-### Abstract
-This study tests how Guriev & Treisman’s Informational Autocracy
-(IA) theory applies to internet filtering practices in autocratic nations. It examines the different strategies of online censorship employed by autocratic regimes, analyzing how these practices align with or deviate from the predictions of the IA theory.
-:::
+### ConfliBERT: Foundation Models for Political Violence Analysis
+*with Patrick T. Brandt, Sultan Alsarra, Vito D'Orazio, Dagmar Heintze, Latifur Khan, Javier Osorio, and Marcus Sianan*
 
-## How do Interest Groups adapt their Communication Strategy to Big Shocks? An analysis of the Medicare-For-All Debate on Twitter during COVID-19. (With Sushant Kumar & Pengfei Zhang)
+Developing specialized language models for political conflict analysis that outperform general-purpose LLMs like Gemma 2, Llama 3.1, and Qwen 2.5 in accuracy, precision, and recall while being hundreds of times faster. [Link](https://arxiv.org/abs/2412.15060)
 
-::: {.callout-caution collapse="true"}
-### Abstract 
+### Two Types of Censorship? An Assessment of the Informational Autocracy Thesis
+Testing how Guriev & Treisman's Informational Autocracy theory applies to internet filtering practices in autocratic nations, with a focus on regime strategies and implementation methods. [PDF](research/two-types-censorship.pdf)
 
-COVID-19 has reinvigorated the policy debate for a universal healthcare system, attracting much attention on social media. In this paper, we study the online discourse of Medicare-For-All before and after COVID-19 by examining the Twitter feeds of two opposing health advocacy groups -- Physicians for a National Health Program (PNHP) and Partnership for America’s Healthcare Future (P4AHCF). Our empirical results show a sharp contrast between the two interest groups’ communication strategies. PNHP’s tweets show more personalized stories, whereas P4AHCF’s tweets show more statistics and scientific reports. The difference in text styles is consequential. PNHP has higher engagement of Twitter users and is more adaptive to a pandemic narrative. By contrast, P4AHCF stopped tweeting entirely about Medicare-For-All after COVID-19 was declared a pandemic. We argue that the distinctive social media strategies can be explained by the groups’ different audiences and objectives. The findings add to our understanding of American’s activism on social media and the implication of the pandemic for health policy reform.
-:::
+### ConflLlama-Q: Efficient Adaptation of LLMs for Conflict Event Classification
+*with Patrick T. Brandt*
+
+Demonstrating how efficient adaptation of large language models can dramatically improve conflict event classification. Through quantization-aware fine-tuning of LLaMA-3.1, we achieve a 37.6% improvement over the base model, with specific attack type classifications improving by up to 1463%. [Link](https://huggingface.co/shreyasmeher/ConflLlama) 
 
 
+### Interest Group Communication Strategies During COVID-19
+*with Sushant Kumar & Pengfei Zhang*
 
-## Polarization within U.S. Foreign Media (With Arslan Khalid & Kiwan Park)
-::: {.callout-caution collapse="true"}
-### Abstract
+Analyzing how health advocacy groups adapted their Medicare-For-All messaging on Twitter during the COVID-19 pandemic, revealing distinct approaches to public engagement and narrative adaptation. [PDF](research/medicare-paper-pdf)
 
-In today's highly polarized media landscape, understanding the potential biases
-and relationships between news publications has become increasingly important. This study
-aims to investigate the existence of media bias by examining the content of online news
-articles. We leverage a dataset containing over 200,000 articles from various media outlets,
-spanning diverse political orientations and subject matter. Using unsupervised machine
-learning techniques, we first employ clustering algorithms, such as k-means and hierarchical
-clustering, to group similar articles based on their content. This analysis enables us to
-identify patterns and common themes within the clusters, shedding light on the potential
-ideological leanings of the publications. Our DID analysis shows that, on average, there is a
-slight negative shift in sentiment scores before and after the 2016 US presidential election for
-articles published by liberal-leaning publications compared to those published by
-conservative-leaning publications. The regression analysis indicates that the ideological
-leaning of the publication was significantly associated with the overall sentiment score of
-articles, with liberal-leaning publications having higher sentiment scores on average
-compared to conservative-leaning publications.
-:::
+### Media Polarization in International News Coverage
+*with Arslan Khalid & Kiwan Park*
 
-## Introducing the ConfliBERT Family of Language Models for Political Science (with Patrick Brandt, Vito D'Orazio & Javier Osorio)
+Using machine learning to analyze ideological patterns in international news coverage across 200,000+ articles, examining shifts in sentiment and framing before and after the 2016 US election. 
 
-::: {.callout-caution collapse="true"}
+## Ongoing Projects
 
-### Abstract
-For decades, conflict scholars used rule-based approaches to extract information about political violence from newspapers around the world. Recent technological development in Natural Language Processing allowed us to overcome the rigidity of rule-based approaches. We review our recent ConfliBERT language model (Hu et al. 2022) and its applications in political science.  ConfliBERT is a Large Language Model (LLM) specifically developed to process text related to politics and violence. It was trained on a large domain-specific corpus in English with text related to conflict, political violence, and international politics with global coverage. When fine-tuned, results show that ConfliBERT has superior performance over other LLMs like Gemma 2 (9B) and Llama 3.1 (7B) within its relevant domains. We then discuss multi-lingual extensions of ConfliBERT for Spanish and Arabic source texts and show that ConfliBERT also outperforms alternative models in their native languages. Finally, we discuss limitations of the models and propose further extensions. 
-:::
+### Populism and Investment Treaties
+*with Clint Peinhardt*
 
-## Populism and the Price of Abandonment: Analyzing the Exit Dynamics from Bilateral Investment Treaties (with Clint Peinhardt)
+Investigating how nationalist rhetoric influences countries' decisions to exit international investment agreements.
 
-::: {.callout-caution collapse="true"}
-### Overview
-This study explores how rising nationalist sentiment influences countries’ decisions to exit international investment agreements, combining economic data with text analysis of political rhetoric.
-:::
+### IGO Withdrawal Networks
+Extending Borzyskowski & Vabulas (2019) to examine network effects in international organization withdrawals.
 
-## Expanding the Horizons: Extension of Borzyskowski & Vabulas (2019)
+## Dissertation
 
-::: {.callout-caution collapse="true"}
-### Overview
-Perplexed by the concept of contagion in IGO withdrawals, this extension explores the network structures and social dynamics within international organizations.
-:::
+"Democracy and Internet Control: Electoral Accountability and Content Moderation"  
+[View Proposal](research/dissertation-proposal-paper.pdf) | [Presentation](research/dissertation-proposal-presentation.pdf)
 
-# Dissertation
+## Resources
 
-## Dissertation Proposal
-
-My dissertation examines internet censorship across various regimes, focusing on the intricacies of content moderation and the political implications thereof.
-
-[View Presentation](research/dissertation-proposal-presentation.pdf)
-[Read Proposal](research/dissertation-proposal-paper.pdf)
-
-# Large Language Models
-
-## ConfliBERT Usage Manual & Finetuning guide (With ConfliBERT Lab)
-
-This document (continually updated!) walks political scientists through the usage of a Large Language Model (LLM) on various tasks such as classification, masking, named entity recognition & question answering. Furthermore, the document outlines the process of finetuning the LLM on the users datasets with the help of a Google Colab script.
-
+### ConfliBERT Documentation
+A comprehensive guide for political scientists on using and fine-tuning ConfliBERT for various NLP tasks.  
 [View Manual](https://github.com/eventdata/ConfliBERT-Manual)
 
-
+<style>
+.content {
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+h3 {
+  font-size: 1.2em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+</style>
