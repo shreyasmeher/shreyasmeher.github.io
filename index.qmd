@@ -44,30 +44,3 @@ Developing state-of-the-art language models for analyzing political conflict and
 
 :::
 
-::: {.page-columns .page-full}
-
-## Recent Projects
-
-::: {.grid}
-
-::: {.g-col-12 .g-col-md-6}
-### ConfliBERT Research Lab
-A computational framework for analyzing political conflict and violence using pre-trained language models.  
-[Learn More →](https://github.com/eventdata/ConfliBERT)
-:::
-
-::: {.g-col-12 .g-col-md-6}
-### Censorship in Democracies and Autocracies
-A comparative analysis of internet control mechanisms and their implications for electoral accountability.  
-[Project Details →](research/dissertation-proposal-paper.pdf)
-:::
-
-:::
-
-## Teaching
-
-- Lead Instructor: EPPS Math & Coding Camp (R Programming), 2024
-- Teaching Assistant: Introduction to Quantitative Methods, Applied Regression
-- Guest Lecturer: Research Methods in Political Science
-
-:::
