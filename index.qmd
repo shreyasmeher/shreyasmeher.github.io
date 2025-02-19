@@ -12,6 +12,8 @@ toc: false
 School of Economic, Political and Policy Sciences  
 The University of Texas at Dallas  
 
+**Incoming Postdoctoral Researcher, Erasmus University Rotterdam (June 2025)**  
+
 [{{< fa brands twitter >}} Twitter](https://twitter.com/onlinecape){.btn .btn-outline-dark .btn-sm .mb-1}
 [{{< fa brands github >}} GitHub](https://github.com/shreyasmeher){.btn .btn-outline-dark .btn-sm .mb-1}
 [{{< fa brands linkedin >}} LinkedIn](https://linkedin.com/in/shreyasmeher){.btn .btn-outline-dark .btn-sm .mb-1}
@@ -19,16 +21,17 @@ The University of Texas at Dallas
 
 ::: {.g-col-12 .g-col-md-8}
 # Shreyas Meher
-## About
+## About  
 
-I am a PhD Candidate in Public Policy & Political Economy at the University of Texas at Dallas, working on an NSF-funded research project to develop frameworks for political and social event data using machine learning. My research combines computational methods with political science, particularly focusing on political control in digital spaces, international political economy, and conflict analysis. I specialize in developing and optimizing large language models for political science applications, including ConfliBERT and ConflLlama.
+I am a PhD Candidate in Public Policy & Political Economy at the University of Texas at Dallas and an incoming Postdoctoral Researcher at Erasmus University Rotterdam (starting June 2025). My research examines how governments control political speech in digital spaces, the role of economic and political institutions in shaping international cooperation, and how large language models can enhance event data collection.  
 
-## Research Interests
+Broadly, my work explores:  
+- **Censorship & Digital Governance:** How regimes use internet control, legal frameworks, and platform policies to shape online discourse.  
+- **International Political Economy:** The politics of investment treaties, populist-driven economic exits, and network effects in international organizations.  
+- **Political Conflict & Event Data:** Using machine learning and reinforcement learning to improve structured conflict event classification.  
 
-- **Comparative Politics**: Internet Control, Digital Governance, Autocratic Regimes
-- **International Political Economy**: Investment Treaties, Economic Development
-- **Computational Social Science**: Large Language Models, Political Text Analysis
-- **Political Conflict**: Violence Analysis, Event Data Collection
+Methodologically, I specialize in computational approaches to political text analysis, reinforcement learning for structured output generation, and the application of large language models (LLMs) to political science. I developed **ConfliBERT** and **ConflLlama**, fine-tuned models for political event classification, and am currently building an RL-based annotation framework using Deepseek’s GRPO.  
+
 
 ## Current Research
 
