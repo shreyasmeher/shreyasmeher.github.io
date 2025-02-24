@@ -6,11 +6,20 @@ My research focuses on computational social science approaches to studying inter
 
 ## Publications
 
+### ConfliBERT: Foundation Models for Political Violence Analysis
+*with Patrick T. Brandt, Sultan Alsarra, Vito D'Orazio, Dagmar Heintze, Latifur Khan, Javier Osorio, and Marcus Sianan*  
+**Political Analysis** (R&R)
+
+Developing specialized language models for political conflict analysis that outperform general-purpose LLMs like Gemma 2, Llama 3.1, and Qwen 2.5 in accuracy, precision, and recall while being hundreds of times faster. [Link](https://arxiv.org/abs/2412.15060)
+
 ### Public Health Advocacy in Times of Pandemic: An Analysis of the Medicare-For-All Debate on Twitter During COVID-19
 *with Sushant Kumar & Pengfei Zhang*  
 **Behavioral Sciences**
 
 Analyzing how health advocacy groups adapted their Medicare-For-All messaging on Twitter during the COVID-19 pandemic, revealing distinct approaches to public engagement and narrative adaptation. [Link](https://doi.org/10.3390/bs15020223)
+
+
+
 
 
 ## Under Review
@@ -19,11 +28,6 @@ Analyzing how health advocacy groups adapted their Medicare-For-All messaging on
 *with Pengfei Zhang*
 
 Examining how democratic and authoritarian regimes differ in their approach to internet content moderation, using data from transparency reports. We find that while both regime types remove similar amounts of content, their methods and motivations differ significantly. [PDF](research/democracy-and-internet-control.pdf)
-
-### ConfliBERT: Foundation Models for Political Violence Analysis
-*with Patrick T. Brandt, Sultan Alsarra, Vito D'Orazio, Dagmar Heintze, Latifur Khan, Javier Osorio, and Marcus Sianan*
-
-Developing specialized language models for political conflict analysis that outperform general-purpose LLMs like Gemma 2, Llama 3.1, and Qwen 2.5 in accuracy, precision, and recall while being hundreds of times faster. [Link](https://arxiv.org/abs/2412.15060)
 
 ### Two Types of Censorship? An Assessment of the Informational Autocracy Thesis
 Testing how Guriev & Treisman's Informational Autocracy theory applies to internet filtering practices in autocratic nations, with a focus on regime strategies and implementation methods. [PDF](research/two-types-censorship.pdf)
