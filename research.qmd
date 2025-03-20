@@ -12,15 +12,17 @@ My research focuses on computational social science approaches to studying inter
 
 Developing specialized language models for political conflict analysis that outperform general-purpose LLMs like Gemma 2, Llama 3.1, and Qwen 2.5 in accuracy, precision, and recall while being hundreds of times faster. [Link](https://arxiv.org/abs/2412.15060)
 
+### ConflLlama: Domain-Specific Adaptation of Large Language Models for Political Violence Classification
+*with Patrick T. Brandt*  
+**Research & Politics** (R&R)
+
+Introducing ConflLlama, a specialized variant of Llama 3.1 fine-tuned for political conflict classification, demonstrating superior performance in event coding and conflict analysis tasks compared to traditional approaches. [View Model on Hugging Face](https://huggingface.co/shreyasmeher/ConflLlama)
+
 ### Public Health Advocacy in Times of Pandemic: An Analysis of the Medicare-For-All Debate on Twitter During COVID-19
 *with Sushant Kumar & Pengfei Zhang*  
 **Behavioral Sciences**
 
 Analyzing how health advocacy groups adapted their Medicare-For-All messaging on Twitter during the COVID-19 pandemic, revealing distinct approaches to public engagement and narrative adaptation. [Link](https://doi.org/10.3390/bs15020223)
-
-
-
-
 
 ## Under Review
 
@@ -31,12 +33,6 @@ Examining how democratic and authoritarian regimes differ in their approach to i
 
 ### Two Types of Censorship? An Assessment of the Informational Autocracy Thesis
 Testing how Guriev & Treisman's Informational Autocracy theory applies to internet filtering practices in autocratic nations, with a focus on regime strategies and implementation methods. [PDF](research/two-types-censorship.pdf)
-
-### ConflLlama: Domain-Specific Adaptation of Large Language Models for Political Violence Classification
-*with Patrick T. Brandt*
-
-Introducing ConflLlama, a specialized variant of Llama 3.1 fine-tuned for political conflict classification, demonstrating superior performance in event coding and conflict analysis tasks compared to traditional approaches. [View Model on Hugging Face](https://huggingface.co/shreyasmeher/ConflLlama) 
-
 
 ## Working Papers
 
@@ -51,12 +47,11 @@ Extending Borzyskowski & Vabulas (2019) to examine network effects in internatio
 ### Media Polarization in International News Coverage
 *with Arslan Khalid & Kiwan Park*
 
-Using machine learning to analyze ideological patterns in international news coverage across 200,000+ articles, examining shifts in sentiment and framing before and after the 2016 US election. 
+Using machine learning to analyze ideological patterns in international news coverage across 200,000+ articles, examining shifts in sentiment and framing before and after the 2016 US election.
 
 ### Event Horizon: Revolutionizing Data Annotation with Reinforcement Learning  
 Introducing a novel reinforcement learning framework built on deepseek's GPRO, merging political science with advanced AI to create structured, transparent annotations for complex events.  
 [View Model on Hugging Face](https://huggingface.co/shreyasmeher/Qwen-GLOCON-Reasoning)
-
 
 ## Dissertation
 
