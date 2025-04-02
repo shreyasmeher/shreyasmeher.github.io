@@ -5,7 +5,7 @@ about:
   links:
     - icon: twitter
       text: Twitter
-      href: https://twitter.com/onlinecape
+      href: https://twitter.com/shreyasmhr
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/shreyasmeher/
@@ -30,4 +30,4 @@ I'm an avid football fan, rooting for Inter Milan, and a culinary enthusiast who
 **Ma Public Policy,** 2018
 
 ###### The University of Texas at Dallas
-**Phd Public Policy & Political Economy,** Expected 2024
+**Phd Public Policy & Political Economy,** 2025

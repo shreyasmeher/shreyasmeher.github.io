@@ -29,10 +29,10 @@ Analyzing how health advocacy groups adapted their Medicare-For-All messaging on
 ### Democracy and Internet Control: Theory and Evidence from Transparency Reports
 *with Pengfei Zhang*
 
-Examining how democratic and authoritarian regimes differ in their approach to internet content moderation, using data from transparency reports. We find that while both regime types remove similar amounts of content, their methods and motivations differ significantly. [PDF](research/democracy-and-internet-control.pdf)
+Examining how democratic and authoritarian regimes differ in their approach to internet content moderation, using data from transparency reports. We find that while both regime types remove similar amounts of content, their methods and motivations differ significantly. 
 
 ### Two Types of Censorship? An Assessment of the Informational Autocracy Thesis
-Testing how Guriev & Treisman's Informational Autocracy theory applies to internet filtering practices in autocratic nations, with a focus on regime strategies and implementation methods. [PDF](research/two-types-censorship.pdf)
+Testing how Guriev & Treisman's Informational Autocracy theory applies to internet filtering practices in autocratic nations, with a focus on regime strategies and implementation methods. 
 
 ## Working Papers
 
@@ -50,18 +50,18 @@ Extending Borzyskowski & Vabulas (2019) to examine network effects in internatio
 Using machine learning to analyze ideological patterns in international news coverage across 200,000+ articles, examining shifts in sentiment and framing before and after the 2016 US election.
 
 ### Event Horizon: Revolutionizing Data Annotation with Reinforcement Learning  
-Introducing a novel reinforcement learning framework built on deepseek's GPRO, merging political science with advanced AI to create structured, transparent annotations for complex events.  
+Introducing a novel reinforcement learning framework built on deepseek's GRPO, merging political science with advanced AI to create structured, transparent annotations for complex events.  
 [View Model on Hugging Face](https://huggingface.co/shreyasmeher/Qwen-GLOCON-Reasoning)
 
 ## Dissertation
 
-"Democracy and Internet Control: Electoral Accountability and Content Moderation"  
-[View Proposal](research/dissertation-proposal-paper.pdf) | [Presentation](research/dissertation-proposal-presentation.pdf)
+"Digital Sovereignty: The Political Economy of Internet Governance"   
+[Slides](research/Dissertation_March-31.pdf)
 
 ## Resources
 
 ### ConfliBERT Documentation
-A comprehensive guide for political scientists on using and fine-tuning ConfliBERT for various NLP tasks.  
+A comprehensive guide for political scientists on using and fine-tuning ConfliBERT for various NLP tasks. 
 [View Manual](https://github.com/eventdata/ConfliBERT-Manual)
 
 <style>
