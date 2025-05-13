@@ -12,9 +12,9 @@ My research focuses on computational social science approaches to studying inter
 
 Developing specialized language models for political conflict analysis that outperform general-purpose LLMs like Gemma 2, Llama 3.1, and Qwen 2.5 in accuracy, precision, and recall while being hundreds of times faster. [Link](https://arxiv.org/abs/2412.15060)
 
-### ConflLlama: Domain-Specific Adaptation of Large Language Models for Political Violence Classification
+### ConflLlama: Domain-Specific Adaptation of Large Language Models for Conflict Event Classification
 *with Patrick T. Brandt*  
-**Research & Politics** (R&R)
+**Research & Politics**, Forthcoming
 
 Introducing ConflLlama, a specialized variant of Llama 3.1 fine-tuned for political conflict classification, demonstrating superior performance in event coding and conflict analysis tasks compared to traditional approaches. [View Model on Hugging Face](https://huggingface.co/shreyasmeher/ConflLlama)
 
