@@ -7,7 +7,7 @@ project:
 
 website:
   title: "Shreyas Meher"
-  description: "Political Science Researcher & PhD Candidate"
+  description: "Postdoctoral Researcher in Computational Social Science" # <-- CHANGED
   site-url: "https://shreyasmeher.github.io"
   repo-url: "https://github.com/shreyasmeher/shreyasmeher.github.io"
   google-analytics: ""  # Add your GA tracking ID if needed
@@ -18,12 +18,12 @@ website:
   twitter-card:
     creator: "@shreyasmhr"
     card-style: summary_large_image
-    title: "Shreyas Meher - Political Science Researcher"
-    description: "Research in Computational Politics & Internet Censorship"
+    title: "Shreyas Meher | Postdoctoral Researcher" 
+    description: "Research in Digital Governance, Democratic Backsliding, and Computational Politics." # <-- CHANGED
   
   open-graph:
-    title: "Shreyas Meher - Political Science Researcher"
-    description: "Research in Computational Politics & Internet Censorship"
+    title: "Shreyas Meher | Postdoctoral Researcher"
+    description: "Research in Digital Governance, Democratic Backsliding, and Computational Politics."
     image: "images/social-preview.png"
   
   navbar:
@@ -37,11 +37,11 @@ website:
       - text: "Teaching"
         href: teaching.qmd
       - text: "CV"
-        href: CV_2025.pdf
+        href: CV_EUR_June_2025.pdf
     
     right:
       - icon: envelope
-        href: mailto:shreyas.meher@utdallas.edu
+        href: mailto:meher@essb.eur.nl 
         aria-label: Email
       - icon: twitter
         href: https://twitter.com/shreyasmhr
@@ -55,9 +55,9 @@ website:
 
   page-footer: 
     left: |
-      © 2024 Shreyas Meher  
-      School of Economic, Political and Policy Sciences  
-      The University of Texas at Dallas
+      © 2025 Shreyas Meher  
+      Erasmus School of Social and Behavioural Sciences  
+      Erasmus University Rotterdam
     right: |
       Built with [Quarto](https://quarto.org) 
 

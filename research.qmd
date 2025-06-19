@@ -2,7 +2,8 @@
 title: "Research"
 ---
 
-My research focuses on computational social science approaches to studying internet censorship, political communication, and conflict. I use natural language processing and machine learning methods to analyze political phenomena.
+My research uses computational methods to address core questions in three areas: **digital governance and censorship**, the dynamics of **political conflict**, and the causes and consequences of **democratic backsliding**. I specialize in applying natural language processing and machine learning to analyze political behavior and institutions.
+
 
 ## Publications
 

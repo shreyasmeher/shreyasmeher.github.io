@@ -9,10 +9,9 @@ toc: false
 ::: {.g-col-12 .g-col-md-4 .text-center}
 ![](headshot.jpg){.rounded-circle .img-fluid .mb-3 width="250px"}
 
-School of Economic, Political and Policy Sciences  
-The University of Texas at Dallas  
-
-**Incoming Postdoctoral Researcher, Erasmus University Rotterdam (June 2025)**  
+**Postdoctoral Researcher**
+Erasmus School of Social and Behavioural Sciences   
+Erasmus University Rotterdam
 
 [{{< fa brands twitter >}} Twitter](https://twitter.com/onlinecape){.btn .btn-outline-dark .btn-sm .mb-1}
 [{{< fa brands github >}} GitHub](https://github.com/shreyasmeher){.btn .btn-outline-dark .btn-sm .mb-1}
@@ -21,35 +20,37 @@ The University of Texas at Dallas
 
 ::: {.g-col-12 .g-col-md-8}
 # Shreyas Meher
-## About  
+## About 
 
-I am a PhD in Public Policy & Political Economy from the University of Texas at Dallas and an incoming Postdoctoral Researcher at Erasmus University Rotterdam (starting June 2025). My research examines how governments control political speech in digital spaces, the role of economic and political institutions in shaping international cooperation, and how large language models can enhance event data collection.
+I am a Postdoctoral Researcher in the Policy, Politics, and Society group at the Erasmus School of Social and Behavioural Sciences, Erasmus University Rotterdam. My research leverages computational methods to address core questions in comparative politics, digital governance, and international relations.
 
-Broadly, my work explores:  
-- **Censorship & Digital Governance:** How regimes use internet control, legal frameworks, and platform policies to shape online discourse.  
-- **International Political Economy:** The politics of investment treaties, populist-driven economic exits, and network effects in international organizations.  
-- **Political Conflict & Event Data:** Using machine learning and reinforcement learning to improve structured conflict event classification.  
+Currently, as part of the Horizon Europe **TWIN4DEM** project, I develop machine learning frameworks to model and detect democratic backsliding. My substantive focus is on **executive aggrandizement**—the process by which elected leaders systematically weaken democratic institutions to consolidate power. My work involves creating the algorithmic core for 'digital twins' of political systems, which allows for the simulation and analysis of threats to democratic resilience.
 
-Methodologically, I specialize in computational approaches to political text analysis, reinforcement learning for structured output generation, and the application of large language models (LLMs) to political science. I developed **ConfliBERT** and **ConflLlama**, fine-tuned models for political event classification, and am currently building an RL-based annotation framework using Deepseek’s GRPO.  
+My broader research agenda explores:
 
+-   **Censorship & Digital Sovereignty:** Analyzing how different regime types implement internet control, from subtle content moderation in democracies to overt filtering and blackouts in autocracies.
+
+-   **Computational Methods & Political Conflict:** Building specialized language models for structured political event classification. Previously, as a researcher on a major NSF-funded project, I developed models like **ConfliBERT** and **ConflLlama** and applied reinforcement learning to enhance event data annotation, and I remain an active contributor to this line of research.
+
+-   **International Political Economy:** The politics of investment treaties and the network effects within international organizations.
+
+Methodologically, I specialize in computational text analysis, reinforcement learning, and the application of LLMs to political science research in HPC environments.
 
 ## Current Research
 
-### ConfliBERT Project
-Research Assistant with [Dr. Patrick Brandt](https://personal.utdallas.edu/~pxb054000/) (2022-present)  
-Developing state-of-the-art language models for analyzing political conflict and violence.
+### Postdoctoral Researcher, TWIN4DEM Project
+**Erasmus University Rotterdam (June 2024-Present)** As a researcher on the [TWIN4DEM (Strengthening Democratic Resilience Through Digital Twins)](https://twin4dem.eu/) project, my work focuses on developing the machine learning frameworks that power the project's 'digital twins' of European democracies. I am responsible for pre-training and fine-tuning large language models to identify signals of executive aggrandizement from political text and designing the simulation algorithms that form the core of the project's models.
 
 ## Dissertation
-"Digital Sovereignty: The Political Economy of Internet Governance"  
+
+"Digital Sovereignty: The Political Economy of Internet Governance"   
 *An analysis of internet content filtering across regime types.*
 
-**Committee:**  
-[Dr. Clint Peinhardt](https://profiles.utdallas.edu/clint.peinhardt), Co-Chair  
-[Dr. Pengfei Zhang](https://pengfei-zhang.com), Co-Chair  
-[Dr. Patrick T. Brandt](https://personal.utdallas.edu/~pxb054000/)  
+**Awarded by:** The University of Texas at Dallas   
+**Committee:** [Dr. Clint Peinhardt](https://profiles.utdallas.edu/clint.peinhardt), Co-Chair   
+[Dr. Pengfei Zhang](https://pengfei-zhang.com), Co-Chair   
+[Dr. Patrick T. Brandt](https://personal.utdallas.edu/~pxb054000/)   
 [Dr. Karl Ho](https://karlho.com)
 
 :::
-
 :::
-
