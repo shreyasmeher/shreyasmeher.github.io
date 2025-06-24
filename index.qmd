@@ -9,8 +9,7 @@ toc: false
 ::: {.g-col-12 .g-col-md-4 .text-center}
 ![](headshot.jpg){.rounded-circle .img-fluid .mb-3 width="250px"}
 
-**E-MAIL**
-meher AT essb.eur.nl
+[meher@essb.eur.nl](mailto:meher@essb.eur.nl)
 
 [{{< fa brands twitter >}} Twitter](https://twitter.com/onlinecape){.btn .btn-outline-dark .btn-sm .mb-1}
 [{{< fa brands github >}} GitHub](https://github.com/shreyasmeher){.btn .btn-outline-dark .btn-sm .mb-1}
