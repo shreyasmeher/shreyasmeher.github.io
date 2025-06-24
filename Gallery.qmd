@@ -1,0 +1,85 @@
+---
+title: "Gallery"
+page-layout: full
+lightbox: auto
+---
+
+A visual timeline of my academic and personal journey, from starting my PhD in Texas to my current research in the Netherlands.
+
+---
+
+::: {style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));grid-gap: 1em;"}
+
+![Beginning the PhD journey. I was told there would be no math. I was lied to.](gallery/img1.jpg){group="gallery"}
+
+![Social distancing on campus. My research on network effects suddenly felt very relevant.](gallery/img2.jpg){group="gallery"}
+
+![Houston, we have takeoff. A quick trip to the city of improbable parking.](gallery/img4.jpg){group="gallery"}
+
+![My two-wheeled, dissertation-escape vehicle. Faster than debugging code. Usually.](gallery/img6.jpg){group="gallery"}
+
+![Proof that I did, occasionally, leave the library. A Texas sunset.](gallery/img7.jpg){group="gallery"}
+
+![More sunsets, for econometric modeling purposes, of course.](gallery/img8.jpg){group="gallery"}
+
+![A sign of my future move to the Netherlands? Or just a pretty flower? You decide.](gallery/img9.jpg){group="gallery"}
+
+![Another sign? The p-value on this hypothesis is getting suspiciously low.](gallery/img10.jpg){group="gallery"}
+
+![MPSA Conference in Chicago. I came for the political science, I stayed for the deep-dish pizza.](gallery/img11.jpg){group="gallery"}
+
+![MPSA dress code: academic with a hint of resisting the dark side at the Palmer House Hotel.](gallery/img12.jpg){group="gallery"}
+
+![The Great North American Eclipse. My models did not predict this.](gallery/img13.jpg){group="gallery"}
+
+![Verifying the eclipse data with a secondary source. It was, in fact, dark.](gallery/img14.jpg){group="gallery"}
+
+![My official submission for the next Texas tourism campaign. Howdy, y'all.](gallery/img15.jpg){group="gallery"}
+
+![SIOE Conference at the University of Chicago. Trying to absorb knowledge via osmosis.](gallery/img16.jpg){group="gallery"}
+
+![SIOE, with my co-author [Pengfei Zhang](https://pengfei-zhang.com/) and Satoshi Fukuda of Bocconi University. I'm the one not famous... yet.](gallery/img17.jpg){group="gallery"}
+
+![SIOE's dinner cruise. A statistical analysis of keeping 200 academics from falling into the Chicago River.](gallery/img18.jpg){group="gallery"}
+
+![The Chicago skyline. The only thing with more sharp lines than my regression plots.](gallery/img19.jpg){group="gallery"}
+
+![Teaching R and Python at the EPPS Math & Coding Camp with the legendary Dr. Karl Ho.](gallery/img20.jpg){group="gallery"}
+
+![APSA Annual Meeting in Philadelphia. City of brotherly love and questionable parking spots.](gallery/img21.jpg){group="gallery"}
+
+![I'll leave the interpretation of this one to you.](gallery/img22.jpg){group="gallery"}
+
+![You can't leave Philly without getting a cheesesteak. It's in the city charter. I checked.](gallery/img23.jpg){group="gallery"}
+
+![Explaining the finer points of PC building to my colleague, Crystal Conway. Step 1: More RGB.](gallery/img24.jpg){group="gallery"}
+
+![APPAM Conference at National Harbor. The weather was a strong incentive to stay inside and discuss policy.](gallery/img25.jpg){group="gallery"}
+
+![The obligatory conference headshot. Now you know what I look like in front of a blue background.](gallery/img26.png){group="gallery"}
+
+![The Gaylord National's Christmas tree during APPAM. My data visualizations are rarely this festive.](gallery/img27.jpg){group="gallery"}
+
+![An unexpected upgrade. I felt like a tenured professor for three hours. Thanks, American Airlines!](gallery/img28.jpg){group="gallery"}
+
+![Celebrating a birthday with friends and colleagues at UT Dallas.](gallery/img29.jpg){group="gallery"}
+
+![Visiting the Crow Museum of Asian Art at UT Dallas.](gallery/img30.jpg){group="gallery"}
+
+![The "Life is a Cosmos" installation at the Crow Museum.](gallery/img31.jpg){group="gallery"}
+
+![Successfully defended! So grateful for my dissertation committee: (L-R) Dr. [Elizabeth Searing](https://profiles.utdallas.edu/elizabeth.searing), Dr. [Pengfei Zhang](https://pengfei-zhang.com/), Dr. [Clint Peinhardt](https://profiles.utdallas.edu/clint.peinhardt), & Dr. [Patrick Brandt](http://www.utdallas.edu/~pbrandt/).](gallery/img32.jpg){group="gallery"}
+
+![San Francisco's iconic trams. Pretty sure this was also a sign.](gallery/img33.jpg){group="gallery"}
+
+![Doctoral Hooding Ceremony with Pengfei and our colleague Robert Geibler.](gallery/img34.jpg){group="gallery"}
+
+![All smiles at the hooding ceremony. The hat is more aerodynamic than it looks.](gallery/img35.jpg){group="gallery"}
+
+![We did it! Celebrating with fellow graduates Dohyo and Ricardo.](gallery/img36.jpg){group="gallery"}
+
+![Found a serene lake just outside Rotterdam. My new favorite thinking spot.](gallery/img37.jpg){group="gallery"}
+
+![It's not truly the Netherlands until you find a traditional windmill. Check.](gallery/img38.jpg){group="gallery"}
+
+:::

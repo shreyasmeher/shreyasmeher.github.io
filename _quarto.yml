@@ -38,6 +38,8 @@ website:
         href: teaching.qmd
       - text: "CV"
         href: CV_EUR_June_2025.pdf
+      - text: "Gallery" 
+        href: Gallery.qmd 
     
     right:
       - icon: envelope

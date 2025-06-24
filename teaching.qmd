@@ -2,6 +2,9 @@
 title: "Teaching"
 ---
 
+![A graphic illustrating teaching.](teach.png){fig-align="center" width="75%"}
+
+
 ## Teaching Experience
 
 ### Lead Instructor
