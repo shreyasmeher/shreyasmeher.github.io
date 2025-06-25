@@ -7,7 +7,8 @@ project:
 
 website:
   title: "Shreyas Meher"
-  description: "Postdoctoral Researcher in Computational Social Science" # <-- CHANGED
+  description: "Postdoctoral Researcher in Computational Social Science" 
+  favicon: favicon.ico  
   site-url: "https://shreyasmeher.github.io"
   repo-url: "https://github.com/shreyasmeher/shreyasmeher.github.io"
   google-analytics: ""  # Add your GA tracking ID if needed
