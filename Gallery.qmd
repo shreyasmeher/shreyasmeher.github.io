@@ -14,7 +14,7 @@ A visual timeline of my academic and personal journey, from starting my PhD in T
 
 ![Social distancing on campus. My research on network effects suddenly felt very relevant.](gallery/img2.jpg){group="gallery"}
 
-![Houston, we have takeoff. A quick trip to the city of improbable parking.](gallery/img4.jpg){group="gallery"}
+![Made it through Houston traffic. NASA launches are less stressful.](gallery/img4.jpg){group="gallery"}
 
 ![My two-wheeled, dissertation-escape vehicle. Faster than debugging code. Usually.](gallery/img6.jpg){group="gallery"}
 
@@ -42,15 +42,15 @@ A visual timeline of my academic and personal journey, from starting my PhD in T
 
 ![SIOE's dinner cruise. A statistical analysis of keeping 200 academics from falling into the Chicago River.](gallery/img18.jpg){group="gallery"}
 
-![The Chicago skyline. The only thing with more sharp lines than my regression plots.](gallery/img19.jpg){group="gallery"}
+![Chicago at night: stunning enough to make you forgive the wind’s personal vendetta.](gallery/img19.jpg){group="gallery"}
 
 ![Teaching R and Python at the EPPS Math & Coding Camp with the legendary Dr. Karl Ho.](gallery/img20.jpg){group="gallery"}
 
-![APSA Annual Meeting in Philadelphia. City of brotherly love and questionable parking spots.](gallery/img21.jpg){group="gallery"}
+![APSA Annual Meeting in Philadelphia. City of brotherly love… until the Q&A session starts.](gallery/img21.jpg){group="gallery"}
 
-![I'll leave the interpretation of this one to you.](gallery/img22.jpg){group="gallery"}
+![APSA attendees trying to support each other through the job market cycle.](gallery/img22.jpg){group="gallery"}
 
-![You can't leave Philly without getting a cheesesteak. It's in the city charter. I checked.](gallery/img23.jpg){group="gallery"}
+![A founding father once said, "Life, liberty, and the pursuit of melted cheese."](gallery/img23.jpg){group="gallery"}
 
 ![Explaining the finer points of PC building to my colleague, Crystal Conway. Step 1: More RGB.](gallery/img24.jpg){group="gallery"}
 
@@ -60,7 +60,7 @@ A visual timeline of my academic and personal journey, from starting my PhD in T
 
 ![The Gaylord National's Christmas tree during APPAM. My data visualizations are rarely this festive.](gallery/img27.jpg){group="gallery"}
 
-![An unexpected upgrade. I felt like a tenured professor for three hours. Thanks, American Airlines!](gallery/img28.jpg){group="gallery"}
+![Views from the terminal: powered by caffeine, conference talks, and endless boarding announcements.](gallery/img28.jpg){group="gallery"}
 
 ![Celebrating a birthday with friends and colleagues at UT Dallas.](gallery/img29.jpg){group="gallery"}
 
