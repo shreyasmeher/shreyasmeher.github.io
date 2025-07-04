@@ -24,7 +24,7 @@ I am a Postdoctoral Researcher in the Policy, Politics, and Society group at Era
 
 I earned my Ph.D. in Public Policy & Political Economy from the University of Texas at Dallas in 2025. My foundational work on computational methods for political science was developed in close collaboration with Dr. [Patrick T. Brandt](https://www.utdallas.edu/~pbrandt/) through the NSF-funded ConfliBERT project. My research applies methods from Computational Social Science to address substantive questions in Digital Governance, particularly online censorship, and the dynamics of Democratic Backsliding.
 
-As a researcher on the **[TWIN4DEM project](https://twin4dem.eu/)**, I work with **[Clara Egger](https://claramarieegger.wordpress.com/)** and **[Asya Zhelyazkova](https://asyazhelyazkovasite.wordpress.com/)** to develop machine learning frameworks for modeling democratic processes. My role involves building the technical core for 'digital twins'—advanced simulations used to analyze the causes of democratic erosion, such as executive aggrandizement, and to assess institutional resilience.
+As a researcher on the **[TWIN4DEM project](https://twin4dem.eu/)**, I work with **[Clara Egger](https://claramarieegger.wordpress.com/)** and **[Asya Zhelyazkova](https://asyazhelyazkovasite.wordpress.com/)** along with a large **[ multidisciplinary team](https://twin4dem.eu/about/meet-the-team/)** to develop machine learning frameworks for modeling democratic processes. My role involves building the technical core for 'digital twins'—advanced simulations used to analyze the causes of democratic erosion, such as executive aggrandizement, and to assess institutional resilience.
 
 ::: {.callout-note icon="fa-lightbulb"}
 ## Research Interests
