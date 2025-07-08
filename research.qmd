@@ -29,11 +29,9 @@ Developing specialized language models for political conflict analysis that outp
 :::
 ::: {.g-col-12 .g-col-md-4 .text-end}
 *Research & Politics*
-<br>
-Forthcoming
 :::
 :::
-Introducing ConflLlama, a specialized variant of Llama 3.1 fine-tuned for political conflict classification, demonstrating superior performance in event coding and conflict analysis tasks compared to traditional approaches. [View Model on Hugging Face](https://huggingface.co/shreyasmeher/ConflLlama)
+Introducing ConflLlama, a specialized variant of Llama 3.1 fine-tuned for political conflict classification, demonstrating superior performance in event coding and conflict analysis tasks compared to traditional approaches. [Link](https://doi.org/10.1177/20531680251356282)
 
 ---
 
