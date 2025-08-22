@@ -12,6 +12,7 @@ website:
   site-url: "https://shreyasmeher.github.io"
   repo-url: "https://github.com/shreyasmeher/shreyasmeher.github.io"
   google-analytics: ""  # Add your GA tracking ID if needed
+  search: false  # Disable search for entire website
   
   page-navigation: true
   back-to-top-navigation: true
@@ -29,7 +30,6 @@ website:
   
   navbar:
     background: light
-    search: true
     left:
       - text: "Home"
         href: index.qmd

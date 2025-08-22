@@ -1,45 +1,46 @@
 /*-- scss:defaults --*/
 
-// Import fonts (same as light theme for consistency)
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+// Import fonts - Modern professional typography (consistent with light theme)
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
-// Dark theme colors
-$gray-100: #1a1a1a;
-$gray-200: #2d2d2d;
-$gray-300: #404040;
-$gray-400: #4d4d4d;
-$gray-500: #666666;
-$gray-600: #808080;
-$gray-700: #999999;
-$gray-800: #cccccc;
-$gray-900: #e6e6e6;
+// Dark theme colors - Contemporary professional dark mode
+$gray-100: #0f172a;   // Very dark blue-gray
+$gray-200: #1e293b;   // Dark blue-gray
+$gray-300: #334155;   // Medium blue-gray
+$gray-400: #475569;   // Blue-gray
+$gray-500: #64748b;   // Light blue-gray
+$gray-600: #94a3b8;   // Lighter blue-gray
+$gray-700: #cbd5e1;   // Very light blue-gray
+$gray-800: #e2e8f0;   // Near white blue-gray
+$gray-900: #f8fafc;   // Almost white
 $white: #ffffff;
 $black: #000000;
 
-// Primary colors (more muted for dark theme)
-$primary: #90caf9;      // Light blue
-$secondary: #b39ddb;    // Light purple
-$accent: #64b5f6;       // Bright blue for highlights
-$success: #81c784;      // Muted green
-$warning: #fff176;      // Soft yellow
-$danger: #e57373;       // Soft red
-$info: #4fc3f7;         // Light blue
+// Primary colors - Bright teal for dark mode
+$primary: #5eead4;      // Light teal
+$secondary: #94a3b8;    // Light blue-gray
+$accent: #2dd4bf;       // Bright teal for highlights
+$success: #34d399;      // Bright emerald
+$warning: #fbbf24;      // Bright amber
+$danger: #f87171;       // Bright red
+$info: #38bdf8;         // Bright sky blue
 
-// Theme configuration
+// Theme configuration - Fixed text colors for dark mode
 $body-bg: $gray-100;
-$body-color: $gray-800;
+$body-color: $gray-800;  // Light text on dark background
+$text-color: $gray-800;  // Ensure text is light
 $link-color: $accent;
 $link-decoration: none;
 $link-hover-color: lighten($accent, 15%);
 $link-hover-decoration: underline;
 
-// Typography
-$font-family-sans-serif: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-$font-family-serif: "Source Serif Pro", Georgia, "Times New Roman", serif;
-$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+// Typography - Modern sans-serif throughout (consistent with light theme)
+$font-family-sans-serif: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-serif: "Space Grotesk", "Inter", system-ui, sans-serif;
+$font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 $font-family-base: $font-family-sans-serif;
-$font-size-root: 16px;
-$line-height-base: 1.6;
+$font-size-root: 18px;
+$line-height-base: 1.75;
 
 // Navbar
 $navbar-bg: $gray-200;
@@ -52,11 +53,66 @@ $footer-fg: $gray-600;
 
 /*-- scss:rules --*/
 
-// Base styles
+// Base dark mode text styling
 body {
-  letter-spacing: -0.01em;
-  background-color: $body-bg;
-  color: $body-color;
+  color: $gray-800 !important;
+  background-color: $gray-100 !important;
+}
+
+// Typography for dark mode
+h1, h2, h3, h4, h5, h6 {
+  color: $gray-900 !important;
+}
+
+p, li, span {
+  color: $gray-800 !important;
+}
+
+// Navbar dark mode
+.navbar {
+  background: rgba($gray-200, 0.95) !important;
+  border-bottom-color: $gray-300;
+  
+  .navbar-brand {
+    color: $gray-900 !important;
+    
+    &:hover {
+      color: $gray-800 !important;
+    }
+  }
+  
+  .nav-link {
+    color: $gray-700 !important;
+    
+    &:hover {
+      color: $gray-900 !important;
+      background-color: $gray-300 !important;
+    }
+    
+    &.active {
+      color: $gray-900 !important;
+      background-color: $gray-300 !important;
+    }
+  }
+}
+
+// Cards and content in dark mode
+.card {
+  background-color: $gray-200 !important;
+  border-color: $gray-300 !important;
+  color: $gray-800 !important;
+}
+
+// Code blocks in dark mode
+pre {
+  background-color: $gray-200 !important;
+  border-color: $gray-300 !important;
+  color: $gray-900 !important;
+}
+
+code {
+  background-color: $gray-300 !important;
+  color: $gray-900 !important;
 }
 
 // Typography refinements

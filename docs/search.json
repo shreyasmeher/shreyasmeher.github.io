@@ -1,38 +1,10 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Shreyas Meher",
-    "section": "",
-    "text": "meher@essb.eur.nl\n Twitter  GitHub  LinkedIn\n\n\n\nI am a Postdoctoral Researcher in the Policy, Politics, and Society group at Erasmus University Rotterdam.\nI earned my Ph.D. in Public Policy & Political Economy from the University of Texas at Dallas in 2025. My foundational work on computational methods for political science was developed in close collaboration with Dr. Patrick T. Brandt through the NSF-funded ConfliBERT project. My research, which has appeared in outlets such as Research & Politics, Behavioral Sciences, and is forthcoming in Political Analysis, applies methods from Computational Social Science to address substantive questions in Digital Governance, Political Conflict, and International Political Economy.\nAs a researcher on the TWIN4DEM project, I work with Clara Egger and Asya Zhelyazkova along with a large multidisciplinary team to develop machine learning frameworks for modeling democratic processes. My role involves building the technical core for ‘digital twins’—advanced simulations used to analyze the causes of democratic erosion, such as executive aggrandizement, and to assess institutional resilience.\n\n\n\n\n\n\nResearch Interests\n\n\n\n\n Digital Governance Computational Social Science International Political Economy\n\n\nMy research in this area focuses on how different regimes implement internet control. I analyze everything from subtle content moderation in democracies to overt filtering and internet blackouts in autocracies, with a core focus on the concept of Digital Sovereignty.\n\n\nI build and apply specialized language models to study political phenomena. This work, stemming from my contributions to the NSF-funded ConfliBERT and ConflLlama projects, leverages NLP and reinforcement learning to create structured data from unstructured text, primarily in the domain of political conflict.\n\n\nMy work in IPE examines the politics of international cooperation and withdrawal. I use network analysis and quantitative methods to study why countries exit bilateral investment treaties and the cascading effects of withdrawals from international organizations.\n\n\n\n\n\nMethodologically, I specialize in computational text analysis, reinforcement learning, and the application of LLMs to political science research in HPC environments."
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
     "text": "Professionally\nI am a Postdoctoral Researcher at Erasmus University Rotterdam, where I specialize in applying artificial intelligence to critical challenges in politics and governance. My current research, as part of the Horizon Europe-funded TWIN4DEM project, focuses on developing ‘digital twins’ to model and preempt threats of democratic backsliding.\nThis work builds on my Ph.D. in Public Policy and Political Economy from the University of Texas at Dallas. My doctoral research centered on digital censorship and political conflict, leading to contributions to computational social science through projects like the NSF-funded ConfliBERT initiative.\n\n\nPersonally\nI’m an avid football fan, rooting for Inter Milan, and a culinary enthusiast who loves exploring and creating new Dim Sum recipes.\n\n\nEducation\nThe University of Texas at Dallas Ph.D. in Public Policy & Political Economy, 2025\nThe University of Texas at Dallas M.S. in Management, 2020\nSt. Xavier’s College, Mumbai M.A. in Public Policy, 2018\nNarsee Monjee Institute of Management Studies B.S. in Economics, 2016\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Shreyas Meher",
-    "section": "Education",
-    "text": "Education\nUniversity of Texas at Dallas | Richardson, TX  PhD in Public Policy & Political Economy | Aug 2020 - May 2024\nUniversity of Texas at Dallas | Richardson, TX  Masters of Science in Management | Aug 2018 - May 2020"
-  },
-  {
-    "objectID": "index.html#experience",
-    "href": "index.html#experience",
-    "title": "Shreyas Meher",
-    "section": "Experience",
-    "text": "Experience\nThe University of Texas at Dallas | Research & Teaching Assistant | August 2020 - present"
-  },
-  {
-    "objectID": "index.html#fa-hand-peace-hello-there-this-is-a-website-i-dont-always-have-a-chance-to-update-but-it-has-a-few-posts-and-some-ways-to-get-in-touch-with-me-if-you-need-to-cheers-fa-champagne-glasses",
-    "href": "index.html#fa-hand-peace-hello-there-this-is-a-website-i-dont-always-have-a-chance-to-update-but-it-has-a-few-posts-and-some-ways-to-get-in-touch-with-me-if-you-need-to-cheers-fa-champagne-glasses",
-    "title": "Shreyas Meher",
-    "section": " hello there! this is a website I don’t always have a chance to update but it has a few posts and some ways to get in touch with me if you need to; cheers ",
-    "text": "hello there! this is a website I don’t always have a chance to update but it has a few posts and some ways to get in touch with me if you need to; cheers"
   },
   {
     "objectID": "assignments/labs/Lab01.html",
@@ -441,58 +413,6 @@
     "text": "Creation of plots\n\n# Generate a word cloud\nwordcloud(words = df$word, freq = df$freq, scale=c(5,0.5), min.freq = 1, max.words=Inf, random.order=FALSE, rot.per=0.35, colors=brewer.pal(8, \"Dark2\"))\n\n# Load required libraries\nlibrary(tm)\nlibrary(ggplot2)\n\n\n\n# Create a corpus from the text\ncorpus <- Corpus(VectorSource(text))\n\n# Convert to lowercase, remove punctuation, and remove numbers\ncorpus <- tm_map(corpus, content_transformer(tolower))\ncorpus <- tm_map(corpus, removePunctuation)\ncorpus <- tm_map(corpus, removeNumbers)\n\n# Convert the corpus to a term-document matrix\ntdm <- TermDocumentMatrix(corpus)\n\n# Convert the tdm to a matrix and calculate the frequency of each term\nm <- as.matrix(tdm)\nv <- sort(rowSums(m), decreasing=TRUE)\n\n# Create a dataframe of the most frequent terms and their frequencies\ndf <- data.frame(word = names(v), freq = v)\n\n# Create a bar chart of the top 20 most frequent terms\nggplot(head(df, 20), aes(x=word, y=freq)) + geom_bar(stat=\"identity\", fill=\"dodgerblue\") + xlab(\"Words\") + ylab(\"Frequency\") + ggtitle(\"Most Frequent Words in Cunningham Talk\") + theme(plot.title = element_text(hjust = 0.5))"
   },
   {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
-    "section": "",
-    "text": "My research uses computational methods to address core questions in three areas: digital governance and censorship, the dynamics of political conflict, and the causes and consequences of democratic backsliding. I specialize in applying natural language processing and machine learning to analyze political behavior and institutions."
-  },
-  {
-    "objectID": "research.html#democracy-and-internet-control-theory-and-evidence-from-transparency-reports-with-pengfei-zhang",
-    "href": "research.html#democracy-and-internet-control-theory-and-evidence-from-transparency-reports-with-pengfei-zhang",
-    "title": "Research",
-    "section": "Democracy and Internet Control: Theory and Evidence from Transparency Reports (with Pengfei Zhang)",
-    "text": "Democracy and Internet Control: Theory and Evidence from Transparency Reports (with Pengfei Zhang)\n\n\n\n\n\n\nAbstract\n\n\n\n\n\nInternet control has long been considered a feature of authoritarian regimes alone. Drawing data from Google and Twitter transparency reports, we observe that democratic countries remove an equal amount of content as their authoritarian counterparts. The distinction between the two regimes lies not in the quantity but in the method of content removal. Democracy refrains from government takedown and instead delegates the removal right to the users. This paper conjectures that politicians’ reputation concern is the key to understanding this phenomenon. To that end, we develop a political agency model that explains the stylized facts and derives testable hypotheses. Using the timing of elections as a natural experiment, we provide supporting evidence that the takedown requests from democratic governments decreased significantly as the election approached. This reputation effect is not observed in authoritarian regimes or other types of requests."
-  },
-  {
-    "objectID": "research.html#two-types-of-censorship-with-pengfei-zhang",
-    "href": "research.html#two-types-of-censorship-with-pengfei-zhang",
-    "title": "Research",
-    "section": "Two Types of Censorship (with Pengfei Zhang)",
-    "text": "Two Types of Censorship (with Pengfei Zhang)\n\n\n\n\n\n\nAbstract\n\n\n\n\n\nThis study delves into the varied internet censorship strategies of autocratic regimes, emphasizing the pivotal role of national IT capacity. Utilizing panel data from the Freedom House, V-Dem Digital Society Project, OONI, and Google Transparency Report, we employ cluster analysis to identify two primary censorship models: a pervasive control regime exemplified by China, and an influence operation regime typified by Russia. Our analysis reveals that a country’s IT capacity is a key determinant in its choice of censorship strategy, with higher IT capacity linked to fewer content removal requests and a greater likelihood of complete internet shutdowns. This research provides novel insights into the relationship between technological capabilities and censorship methods in autocracies, offering a predictive framework for understanding and anticipating their digital governance strategies.",
-    "crumbs": [
-      "{{< fa microchip >}} Research"
-    ]
-  },
-  {
-    "objectID": "research.html#dissertation-proposal",
-    "href": "research.html#dissertation-proposal",
-    "title": "Research",
-    "section": "Dissertation Proposal",
-    "text": "Dissertation Proposal\nMy dissertation examines internet censorship across various regimes, focusing on the intricacies of content moderation and the political implications thereof.\nView Presentation Read Proposal"
-  },
-  {
-    "objectID": "research.html#expanding-the-horizons-extension-of-borzyskowski-vabulas-2019",
-    "href": "research.html#expanding-the-horizons-extension-of-borzyskowski-vabulas-2019",
-    "title": "Research",
-    "section": "Expanding the Horizons: Extension of Borzyskowski & Vabulas (2019)",
-    "text": "Expanding the Horizons: Extension of Borzyskowski & Vabulas (2019)\n\n\n\n\n\n\nOverview\n\n\n\n\n\nPerplexed by the concept of contagion in IGO withdrawals, this extension explores the network structures and social dynamics within international organizations."
-  },
-  {
-    "objectID": "research.html#conflibert-usage-manual-finetuning-guide",
-    "href": "research.html#conflibert-usage-manual-finetuning-guide",
-    "title": "Research",
-    "section": "",
-    "text": "This document (continually updated!) walks political scientists through the usage of a Large Language Model (LLM) on various tasks such as classification, masking, named entity recognition & question answering. Furthermore, the document outlines the process of finetuning the LLM on the users datasets with the help of a Google Colab script.\nView Manual"
-  },
-  {
-    "objectID": "research.html#conflibert-usage-manual-finetuning-guide-with-conflibert-lab",
-    "href": "research.html#conflibert-usage-manual-finetuning-guide-with-conflibert-lab",
-    "title": "Research",
-    "section": "ConfliBERT Usage Manual & Finetuning guide (With ConfliBERT Lab)",
-    "text": "ConfliBERT Usage Manual & Finetuning guide (With ConfliBERT Lab)\nThis document (continually updated!) walks political scientists through the usage of a Large Language Model (LLM) on various tasks such as classification, masking, named entity recognition & question answering. Furthermore, the document outlines the process of finetuning the LLM on the users datasets with the help of a Google Colab script.\nView Manual"
-  },
-  {
     "objectID": "teaching.html",
     "href": "teaching.html",
     "title": "Teaching",
@@ -520,41 +440,6 @@
     ]
   },
   {
-    "objectID": "research.html#polarization-within-u.s.-foreign-media-with-arslan-khalid-kiwan-park",
-    "href": "research.html#polarization-within-u.s.-foreign-media-with-arslan-khalid-kiwan-park",
-    "title": "Research",
-    "section": "Polarization within U.S. Foreign Media (With Arslan Khalid & Kiwan Park)",
-    "text": "Polarization within U.S. Foreign Media (With Arslan Khalid & Kiwan Park)\n\n\n\n\n\n\nAbstract\n\n\n\n\n\nIn today’s highly polarized media landscape, understanding the potential biases and relationships between news publications has become increasingly important. This study aims to investigate the existence of media bias by examining the content of online news articles. We leverage a dataset containing over 200,000 articles from various media outlets, spanning diverse political orientations and subject matter. Using unsupervised machine learning techniques, we first employ clustering algorithms, such as k-means and hierarchical clustering, to group similar articles based on their content. This analysis enables us to identify patterns and common themes within the clusters, shedding light on the potential ideological leanings of the publications. Our DID analysis shows that, on average, there is a slight negative shift in sentiment scores before and after the 2016 US presidential election for articles published by liberal-leaning publications compared to those published by conservative-leaning publications. The regression analysis indicates that the ideological leaning of the publication was significantly associated with the overall sentiment score of articles, with liberal-leaning publications having higher sentiment scores on average compared to conservative-leaning publications."
-  },
-  {
-    "objectID": "research.html#how-do-interest-groups-adapt-their-communication-strategy-to-big-shocks-an-analysis-of-the-medicare-for-all-debate-on-twitter-during-covid-19.-with-sushant-kumar-pengfei-zhang",
-    "href": "research.html#how-do-interest-groups-adapt-their-communication-strategy-to-big-shocks-an-analysis-of-the-medicare-for-all-debate-on-twitter-during-covid-19.-with-sushant-kumar-pengfei-zhang",
-    "title": "Research",
-    "section": "How do Interest Groups adapt their Communication Strategy to Big Shocks? An analysis of the Medicare-For-All Debate on Twitter during COVID-19. (With Sushant Kumar & Pengfei Zhang)",
-    "text": "How do Interest Groups adapt their Communication Strategy to Big Shocks? An analysis of the Medicare-For-All Debate on Twitter during COVID-19. (With Sushant Kumar & Pengfei Zhang)\n\n\n\n\n\n\nAbstract\n\n\n\n\n\nCOVID-19 has reinvigorated the policy debate for a universal healthcare system, attracting much attention on social media. In this paper, we study the online discourse of Medicare-For-All before and after COVID-19 by examining the Twitter feeds of two opposing health advocacy groups – Physicians for a National Health Program (PNHP) and Partnership for America’s Healthcare Future (P4AHCF). Our empirical results show a sharp contrast between the two interest groups’ communication strategies. PNHP’s tweets show more personalized stories, whereas P4AHCF’s tweets show more statistics and scientific reports. The difference in text styles is consequential. PNHP has higher engagement of Twitter users and is more adaptive to a pandemic narrative. By contrast, P4AHCF stopped tweeting entirely about Medicare-For-All after COVID-19 was declared a pandemic. We argue that the distinctive social media strategies can be explained by the groups’ different audiences and objectives. The findings add to our understanding of American’s activism on social media and the implication of the pandemic for health policy reform."
-  },
-  {
-    "objectID": "research.html#introducing-the-conflibert-family-of-language-models-for-political-science-with-patrick-brandt-vito-dorazio-javier-osorio",
-    "href": "research.html#introducing-the-conflibert-family-of-language-models-for-political-science-with-patrick-brandt-vito-dorazio-javier-osorio",
-    "title": "Research",
-    "section": "Introducing the ConfliBERT Family of Language Models for Political Science (with Patrick Brandt, Vito D’Orazio & Javier Osorio)",
-    "text": "Introducing the ConfliBERT Family of Language Models for Political Science (with Patrick Brandt, Vito D’Orazio & Javier Osorio)\n\n\n\n\n\n\nAbstract\n\n\n\n\n\nFor decades, conflict scholars used rule-based approaches to extract information about political violence from newspapers around the world. Recent technological development in Natural Language Processing allowed us to overcome the rigidity of rule-based approaches. We review our recent ConfliBERT language model (Hu et al. 2022) and its applications in political science. ConfliBERT is a Large Language Model (LLM) specifically developed to process text related to politics and violence. It was trained on a large domain-specific corpus in English with text related to conflict, political violence, and international politics with global coverage. When fine-tuned, results show that ConfliBERT has superior performance over other LLMs like Gemma 2 (9B) and Llama 3.1 (7B) within its relevant domains. We then discuss multi-lingual extensions of ConfliBERT for Spanish and Arabic source texts and show that ConfliBERT also outperforms alternative models in their native languages. Finally, we discuss limitations of the models and propose further extensions."
-  },
-  {
-    "objectID": "research.html#two-types-of-censorship-an-assessment-of-the-informational-autocracy-thesis-in-the-online-space",
-    "href": "research.html#two-types-of-censorship-an-assessment-of-the-informational-autocracy-thesis-in-the-online-space",
-    "title": "Research",
-    "section": "Two Types of Censorship? An Assessment of the Informational Autocracy Thesis in the Online Space",
-    "text": "Two Types of Censorship? An Assessment of the Informational Autocracy Thesis in the Online Space\n\n\n\n\n\n\nAbstract\n\n\n\n\n\nThis study tests how Guriev & Treisman’s Informational Autocracy (IA) theory applies to internet filtering practices in autocratic nations. It examines the different strategies of online censorship employed by autocratic regimes, analyzing how these practices align with or deviate from the predictions of the IA theory."
-  },
-  {
-    "objectID": "research.html#populism-and-the-price-of-abandonment-analyzing-the-exit-dynamics-from-bilateral-investment-treaties-with-clint-peinhardt",
-    "href": "research.html#populism-and-the-price-of-abandonment-analyzing-the-exit-dynamics-from-bilateral-investment-treaties-with-clint-peinhardt",
-    "title": "Research",
-    "section": "Populism and the Price of Abandonment: Analyzing the Exit Dynamics from Bilateral Investment Treaties (with Clint Peinhardt)",
-    "text": "Populism and the Price of Abandonment: Analyzing the Exit Dynamics from Bilateral Investment Treaties (with Clint Peinhardt)\n\n\n\n\n\n\nOverview\n\n\n\n\n\nThis study explores how rising nationalist sentiment influences countries’ decisions to exit international investment agreements, combining economic data with text analysis of political rhetoric."
-  },
-  {
     "objectID": "teaching.html#epps-math-coding-camp",
     "href": "teaching.html#epps-math-coding-camp",
     "title": "Teaching",
@@ -563,48 +448,6 @@
     "crumbs": [
       "{{< fa pencil >}} Teaching"
     ]
-  },
-  {
-    "objectID": "index.html#about",
-    "href": "index.html#about",
-    "title": "Shreyas Meher",
-    "section": "",
-    "text": "I am a Postdoctoral Researcher in the Policy, Politics, and Society group at Erasmus University Rotterdam.\nI earned my Ph.D. in Public Policy & Political Economy from the University of Texas at Dallas in 2025. My foundational work on computational methods for political science was developed in close collaboration with Dr. Patrick T. Brandt through the NSF-funded ConfliBERT project. My research, which has appeared in outlets such as Research & Politics, Behavioral Sciences, and is forthcoming in Political Analysis, applies methods from Computational Social Science to address substantive questions in Digital Governance, Political Conflict, and International Political Economy.\nAs a researcher on the TWIN4DEM project, I work with Clara Egger and Asya Zhelyazkova along with a large multidisciplinary team to develop machine learning frameworks for modeling democratic processes. My role involves building the technical core for ‘digital twins’—advanced simulations used to analyze the causes of democratic erosion, such as executive aggrandizement, and to assess institutional resilience.\n\n\n\n\n\n\nResearch Interests\n\n\n\n\n Digital Governance Computational Social Science International Political Economy\n\n\nMy research in this area focuses on how different regimes implement internet control. I analyze everything from subtle content moderation in democracies to overt filtering and internet blackouts in autocracies, with a core focus on the concept of Digital Sovereignty.\n\n\nI build and apply specialized language models to study political phenomena. This work, stemming from my contributions to the NSF-funded ConfliBERT and ConflLlama projects, leverages NLP and reinforcement learning to create structured data from unstructured text, primarily in the domain of political conflict.\n\n\nMy work in IPE examines the politics of international cooperation and withdrawal. I use network analysis and quantitative methods to study why countries exit bilateral investment treaties and the cascading effects of withdrawals from international organizations.\n\n\n\n\n\nMethodologically, I specialize in computational text analysis, reinforcement learning, and the application of LLMs to political science research in HPC environments."
-  },
-  {
-    "objectID": "index.html#research-interests",
-    "href": "index.html#research-interests",
-    "title": "Shreyas Meher",
-    "section": "",
-    "text": "Comparative Politics: Internet Control, Digital Governance, Autocratic Regimes\nInternational Political Economy: Investment Treaties, Economic Development\nComputational Social Science: Large Language Models, Political Text Analysis\nPolitical Conflict: Violence Analysis, Event Data Collection"
-  },
-  {
-    "objectID": "index.html#current-research",
-    "href": "index.html#current-research",
-    "title": "Shreyas Meher",
-    "section": "",
-    "text": "Erasmus University Rotterdam (June 2024-Present) As a researcher on the TWIN4DEM (Strengthening Democratic Resilience Through Digital Twins) project, my work focuses on developing the machine learning frameworks that power the project’s ‘digital twins’ of European democracies. I am responsible for pre-training and fine-tuning large language models to identify signals of executive aggrandizement from political text and designing the simulation algorithms that form the core of the project’s models."
-  },
-  {
-    "objectID": "index.html#dissertation",
-    "href": "index.html#dissertation",
-    "title": "Shreyas Meher",
-    "section": "",
-    "text": "“Digital Sovereignty: The Political Economy of Internet Governance”\nAn analysis of internet content filtering across regime types.\nAwarded by: The University of Texas at Dallas\nCommittee: Dr. Clint Peinhardt, Co-Chair\nDr. Pengfei Zhang, Co-Chair\nDr. Patrick T. Brandt\nDr. Karl Ho"
-  },
-  {
-    "objectID": "index.html#recent-projects",
-    "href": "index.html#recent-projects",
-    "title": "Shreyas Meher",
-    "section": "Recent Projects",
-    "text": "Recent Projects\n\n\nConfliBERT Research Lab\nA computational framework for analyzing political conflict and violence using pre-trained language models.\nLearn More →\n\n\nCensorship in Democracies and Autocracies\nA comparative analysis of internet control mechanisms and their implications for electoral accountability.\nProject Details →"
-  },
-  {
-    "objectID": "index.html#teaching",
-    "href": "index.html#teaching",
-    "title": "Shreyas Meher",
-    "section": "Teaching",
-    "text": "Teaching\n\nLead Instructor: EPPS Math & Coding Camp (R Programming), 2024\nTeaching Assistant: Introduction to Quantitative Methods, Applied Regression\nGuest Lecturer: Research Methods in Political Science"
   },
   {
     "objectID": "research/ConfliBERT.html",
@@ -803,18 +646,60 @@
     "text": "With GPUs and other Architectures (non-Intel/AMD)\nGPUs, especially those designed for deep learning tasks, like the NVIDIA Tesla series, provide significant speed-ups for BERT-like models due to their parallel processing capabilities.\n\n1 GPU (n1-standard-8 + NVIDIA Tesla V100):\n\nProcessing Time per File: 2.16s - 3.28s for 1500 samples. This speed is around 25 times faster than the 8 vCPU instance and approximately 15 times faster than the 32 vCPU instance.\nCost: $2.004/hour or $1,462.99 monthly.\n\nFor specialized architectures beyond Intel/AMD, the benchmarks would vary based on the specific architecture. For example, FPGAs or TPUs might offer different performance and cost metrics. However, TPUs, in particular, have been known to provide excellent performance for TensorFlow-based models, including BERT derivatives.\nIn conclusion, while BERT benchmarks give an idea of the computational requirements, users should perform their own benchmarks to ascertain the exact requirements for ConfliBERT. Always consider the scale of the task, available budget, and desired processing time when choosing the computational infrastructure."
   },
   {
+    "objectID": "teaching.html#teaching-experience",
+    "href": "teaching.html#teaching-experience",
+    "title": "Teaching",
+    "section": "Teaching Experience",
+    "text": "Teaching Experience\n\nLead Instructor\nEPPS Math & Coding Camp (August 2024)\nR Programming and Data Analysis\n\nCreated and maintained course website eppsmathcodingcamp.github.io\nTaught R programming fundamentals, data manipulation (dplyr), and visualization (ggplot2)\nDeveloped interactive tutorials and exercises for 5-day intensive program\nBuilt GitHub-based infrastructure for version control and content delivery\n\n\n\nTeaching Assistant\nEPPS 6313 - Introduction to Quantitative Methods\nTeaching Assistant for Dr. Pengfei Zhang\n\nLed weekly STATA lab sessions focusing on regression analysis\nGuided students through practical applications of statistical methods\nProvided individualized support for data analysis projects\n\nEPPS 6316 - Applied Regression\nTeaching Assistant for Dr. Vito D’Orazio\n\nConducted advanced R programming labs\nFocused on complex regression techniques and econometric analysis\nDeveloped practical exercises for applied data analysis"
+  },
+  {
+    "objectID": "Gallery.html",
+    "href": "Gallery.html",
+    "title": "Gallery",
+    "section": "",
+    "text": "A visual timeline of my academic and personal journey, from starting my PhD in Texas to my current research in the Netherlands.\n\n\n\n\n\nBeginning the PhD journey. I was told there would be no math. I was lied to.\n\n\n\n\n\nSocial distancing on campus. My research on network effects suddenly felt very relevant.\n\n\n\n\n\nMade it through Houston traffic. NASA launches are less stressful.\n\n\n\n\n\nMy two-wheeled, dissertation-escape vehicle. Faster than debugging code. Usually.\n\n\n\n\n\nProof that I did, occasionally, leave the library. A Texas sunset.\n\n\n\n\n\nMore sunsets, for econometric modeling purposes, of course.\n\n\n\n\n\nA sign of my future move to the Netherlands? Or just a pretty flower? You decide.\n\n\n\n\n\nAnother sign? The p-value on this hypothesis is getting suspiciously low.\n\n\n\n\n\nMPSA Conference in Chicago. I came for the political science, I stayed for the deep-dish pizza.\n\n\n\n\n\nMPSA dress code: academic with a hint of resisting the dark side at the Palmer House Hotel.\n\n\n\n\n\nThe Great North American Eclipse. My models did not predict this.\n\n\n\n\n\nVerifying the eclipse data with a secondary source. It was, in fact, dark.\n\n\n\n\n\nMy official submission for the next Texas tourism campaign. Howdy, y’all.\n\n\n\n\n\nSIOE Conference at the University of Chicago. Trying to absorb knowledge via osmosis.\n\n\n\n\n\nSIOE, with my co-author Pengfei Zhang and Satoshi Fukuda of Bocconi University. I’m the one not famous… yet.\n\n\n\n\n\nSIOE’s dinner cruise. A statistical analysis of keeping 200 academics from falling into the Chicago River.\n\n\n\n\n\nChicago at night: stunning enough to make you forgive the wind’s personal vendetta.\n\n\n\n\n\nTeaching R and Python at the EPPS Math & Coding Camp with the legendary Dr. Karl Ho.\n\n\n\n\n\nAPSA Annual Meeting in Philadelphia. City of brotherly love… until the Q&A session starts.\n\n\n\n\n\nAPSA attendees trying to support each other through the job market cycle.\n\n\n\n\n\nA founding father once said, “Life, liberty, and the pursuit of melted cheese.”\n\n\n\n\n\nExplaining the finer points of PC building to my colleague, Crystal Conway. Step 1: More RGB.\n\n\n\n\n\nAPPAM Conference at National Harbor. The weather was a strong incentive to stay inside and discuss policy.\n\n\n\n\n\nThe obligatory conference headshot. Now you know what I look like in front of a blue background.\n\n\n\n\n\nThe Gaylord National’s Christmas tree during APPAM. My data visualizations are rarely this festive.\n\n\n\n\n\nViews from the terminal: powered by caffeine, conference talks, and endless boarding announcements.\n\n\n\n\n\nCelebrating a birthday with friends and colleagues at UT Dallas.\n\n\n\n\n\nVisiting the Crow Museum of Asian Art at UT Dallas.\n\n\n\n\n\nThe “Life is a Cosmos” installation at the Crow Museum.\n\n\n\n\n\nSuccessfully defended! So grateful for my dissertation committee: (L-R) Dr. Elizabeth Searing, Dr. Pengfei Zhang, Dr. Clint Peinhardt, & Dr. Patrick Brandt.\n\n\n\n\n\nSan Francisco’s iconic trams. Pretty sure this was also a sign.\n\n\n\n\n\nDoctoral Hooding Ceremony with Pengfei and our colleague Robert Geibler.\n\n\n\n\n\nAll smiles at the hooding ceremony. The hat is more aerodynamic than it looks.\n\n\n\n\n\nWe did it! Celebrating with fellow graduates Dohyo and Ricardo.\n\n\n\n\n\nFound a serene lake just outside Rotterdam. My new favorite thinking spot.\n\n\n\n\n\nIt’s not truly the Netherlands until you find a traditional windmill. Check.\n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Shreyas Meher",
+    "section": "",
+    "text": "meher@essb.eur.nl\n Twitter  GitHub  LinkedIn\n\n\n\nI am a Postdoctoral Researcher in the Policy, Politics, and Society group at Erasmus University Rotterdam.\nI earned my Ph.D. in Public Policy & Political Economy from the University of Texas at Dallas in 2025. My foundational work on computational methods for political science was developed in close collaboration with Dr. Patrick T. Brandt through the NSF-funded ConfliBERT project. My research, which has appeared in outlets such as Research & Politics, Behavioral Sciences, and is forthcoming in Political Analysis, applies methods from Computational Social Science to address substantive questions in Digital Governance, Political Conflict, and International Political Economy.\nAs a researcher on the TWIN4DEM project, I work with Clara Egger and Asya Zhelyazkova along with a large multidisciplinary team to develop machine learning frameworks for modeling democratic processes. My role involves building the technical core for ‘digital twins’—advanced simulations used to analyze the causes of democratic erosion, such as executive aggrandizement, and to assess institutional resilience.\n\n\n\n\n\n\nResearch Interests\n\n\n\n\n Digital Governance Computational Social Science International Political Economy\n\n\nMy research in this area focuses on how different regimes implement internet control. I analyze everything from subtle content moderation in democracies to overt filtering and internet blackouts in autocracies, with a core focus on the concept of Digital Sovereignty.\n\n\nI build and apply specialized language models to study political phenomena. This work, stemming from my contributions to the NSF-funded ConfliBERT and ConflLlama projects, leverages NLP and reinforcement learning to create structured data from unstructured text, primarily in the domain of political conflict.\n\n\nMy work in IPE examines the politics of international cooperation and withdrawal. I use network analysis and quantitative methods to study why countries exit bilateral investment treaties and the cascading effects of withdrawals from international organizations.\n\n\n\n\n\nMethodologically, I specialize in computational text analysis, reinforcement learning, and the application of LLMs to political science research in HPC environments."
+  },
+  {
+    "objectID": "index.html#about",
+    "href": "index.html#about",
+    "title": "Shreyas Meher",
+    "section": "",
+    "text": "I am a Postdoctoral Researcher in the Policy, Politics, and Society group at Erasmus University Rotterdam.\nI earned my Ph.D. in Public Policy & Political Economy from the University of Texas at Dallas in 2025. My foundational work on computational methods for political science was developed in close collaboration with Dr. Patrick T. Brandt through the NSF-funded ConfliBERT project. My research, which has appeared in outlets such as Research & Politics, Behavioral Sciences, and is forthcoming in Political Analysis, applies methods from Computational Social Science to address substantive questions in Digital Governance, Political Conflict, and International Political Economy.\nAs a researcher on the TWIN4DEM project, I work with Clara Egger and Asya Zhelyazkova along with a large multidisciplinary team to develop machine learning frameworks for modeling democratic processes. My role involves building the technical core for ‘digital twins’—advanced simulations used to analyze the causes of democratic erosion, such as executive aggrandizement, and to assess institutional resilience.\n\n\n\n\n\n\nResearch Interests\n\n\n\n\n Digital Governance Computational Social Science International Political Economy\n\n\nMy research in this area focuses on how different regimes implement internet control. I analyze everything from subtle content moderation in democracies to overt filtering and internet blackouts in autocracies, with a core focus on the concept of Digital Sovereignty.\n\n\nI build and apply specialized language models to study political phenomena. This work, stemming from my contributions to the NSF-funded ConfliBERT and ConflLlama projects, leverages NLP and reinforcement learning to create structured data from unstructured text, primarily in the domain of political conflict.\n\n\nMy work in IPE examines the politics of international cooperation and withdrawal. I use network analysis and quantitative methods to study why countries exit bilateral investment treaties and the cascading effects of withdrawals from international organizations.\n\n\n\n\n\nMethodologically, I specialize in computational text analysis, reinforcement learning, and the application of LLMs to political science research in HPC environments."
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "My research uses computational methods to address core questions in three areas: digital governance and censorship, the dynamics of political conflict, and the causes and consequences of democratic backsliding. I specialize in applying natural language processing and machine learning to analyze political behavior and institutions."
+  },
+  {
+    "objectID": "research.html#publications",
+    "href": "research.html#publications",
+    "title": "Research",
+    "section": "Publications",
+    "text": "Publications\n\n\nConfliBERT: Foundation Models for Political Violence Analysis with Patrick T. Brandt, Sultan Alsarra, Vito D’Orazio, Dagmar Heintze, Latifur Khan, Javier Osorio, and Marcus Sianan\n\n\nPolitical Analysis  Forthcoming\n\n\nDeveloping specialized language models for political conflict analysis that outperform general-purpose LLMs like Gemma 2, Llama 3.1, and Qwen 2.5 in accuracy, precision, and recall while being hundreds of times faster. Link\n\n\n\nConflLlama: Domain-Specific Adaptation of Large Language Models for Conflict Event Classification with Patrick T. Brandt\n\n\nResearch & Politics\n\n\nIntroducing ConflLlama, a specialized variant of Llama 3.1 fine-tuned for political conflict classification, demonstrating superior performance in event coding and conflict analysis tasks compared to traditional approaches. Link\n\n\n\nPublic Health Advocacy in Times of Pandemic: An Analysis of the Medicare-For-All Debate on Twitter During COVID-19 with Sushant Kumar & Pengfei Zhang\n\n\nBehavioral Sciences\n\n\nAnalyzing how health advocacy groups adapted their Medicare-For-All messaging on Twitter during the COVID-19 pandemic, revealing distinct approaches to public engagement and narrative adaptation. Link"
+  },
+  {
+    "objectID": "research.html#under-review",
+    "href": "research.html#under-review",
+    "title": "Research",
+    "section": "Under Review",
+    "text": "Under Review\n\nDemocracy and Internet Control: Theory and Evidence from Transparency Reports\nwith Pengfei Zhang\nExamining how democratic and authoritarian regimes differ in their approach to internet content moderation, using data from transparency reports. We find that while both regime types remove similar amounts of content, their methods and motivations differ significantly.\n\n\nTwo Types of Censorship? An Assessment of the Informational Autocracy Thesis\nwith Pengfei Zhang\nTesting how Guriev & Treisman’s Informational Autocracy theory applies to internet filtering practices in autocratic nations, with a focus on regime strategies and implementation methods."
+  },
+  {
     "objectID": "research.html#working-papers",
     "href": "research.html#working-papers",
     "title": "Research",
     "section": "Working Papers",
     "text": "Working Papers\n\nPopulism and Investment Treaties\nwith Clint Peinhardt\nInvestigating how nationalist rhetoric influences countries’ decisions to exit international investment agreements.\n\n\nIGO Withdrawal Networks\nExtending Borzyskowski & Vabulas (2019) to examine network effects in international organization withdrawals.\n\n\nMedia Polarization in International News Coverage\nwith Arslan Khalid & Kiwan Park\nUsing machine learning to analyze ideological patterns in international news coverage across 200,000+ articles, examining shifts in sentiment and framing before and after the 2016 US election.\n\n\nEvent Horizon: Revolutionizing Data Annotation with Reinforcement Learning\nIntroducing a novel reinforcement learning framework built on deepseek’s GRPO, merging political science with advanced AI to create structured, transparent annotations for complex events.\nView Model on Hugging Face"
-  },
-  {
-    "objectID": "research.html#ongoing-projects",
-    "href": "research.html#ongoing-projects",
-    "title": "Research",
-    "section": "Ongoing Projects",
-    "text": "Ongoing Projects\n\nPopulism and Investment Treaties\nwith Clint Peinhardt\nInvestigating how nationalist rhetoric influences countries’ decisions to exit international investment agreements.\n\n\nIGO Withdrawal Networks\nExtending Borzyskowski & Vabulas (2019) to examine network effects in international organization withdrawals."
   },
   {
     "objectID": "research.html#dissertation",
@@ -829,89 +714,5 @@
     "title": "Research",
     "section": "Resources",
     "text": "Resources\n\nConfliBERT Documentation\nA comprehensive guide for political scientists on using and fine-tuning ConfliBERT for various NLP tasks.\nView Manual"
-  },
-  {
-    "objectID": "teaching.html#teaching-experience",
-    "href": "teaching.html#teaching-experience",
-    "title": "Teaching",
-    "section": "Teaching Experience",
-    "text": "Teaching Experience\n\nLead Instructor\nEPPS Math & Coding Camp (August 2024)\nR Programming and Data Analysis\n\nCreated and maintained course website eppsmathcodingcamp.github.io\nTaught R programming fundamentals, data manipulation (dplyr), and visualization (ggplot2)\nDeveloped interactive tutorials and exercises for 5-day intensive program\nBuilt GitHub-based infrastructure for version control and content delivery\n\n\n\nTeaching Assistant\nEPPS 6313 - Introduction to Quantitative Methods\nTeaching Assistant for Dr. Pengfei Zhang\n\nLed weekly STATA lab sessions focusing on regression analysis\nGuided students through practical applications of statistical methods\nProvided individualized support for data analysis projects\n\nEPPS 6316 - Applied Regression\nTeaching Assistant for Dr. Vito D’Orazio\n\nConducted advanced R programming labs\nFocused on complex regression techniques and econometric analysis\nDeveloped practical exercises for applied data analysis"
-  },
-  {
-    "objectID": "research.html#publications",
-    "href": "research.html#publications",
-    "title": "Research",
-    "section": "Publications",
-    "text": "Publications\n\n\nConfliBERT: Foundation Models for Political Violence Analysis with Patrick T. Brandt, Sultan Alsarra, Vito D’Orazio, Dagmar Heintze, Latifur Khan, Javier Osorio, and Marcus Sianan\n\n\nPolitical Analysis  Forthcoming\n\n\nDeveloping specialized language models for political conflict analysis that outperform general-purpose LLMs like Gemma 2, Llama 3.1, and Qwen 2.5 in accuracy, precision, and recall while being hundreds of times faster. Link\n\n\n\nConflLlama: Domain-Specific Adaptation of Large Language Models for Conflict Event Classification with Patrick T. Brandt\n\n\nResearch & Politics\n\n\nIntroducing ConflLlama, a specialized variant of Llama 3.1 fine-tuned for political conflict classification, demonstrating superior performance in event coding and conflict analysis tasks compared to traditional approaches. Link\n\n\n\nPublic Health Advocacy in Times of Pandemic: An Analysis of the Medicare-For-All Debate on Twitter During COVID-19 with Sushant Kumar & Pengfei Zhang\n\n\nBehavioral Sciences\n\n\nAnalyzing how health advocacy groups adapted their Medicare-For-All messaging on Twitter during the COVID-19 pandemic, revealing distinct approaches to public engagement and narrative adaptation. Link"
-  },
-  {
-    "objectID": "index.html#recent-updates",
-    "href": "index.html#recent-updates",
-    "title": "Shreyas Meher",
-    "section": "",
-    "text": "February 2025: Paper on Interest Group Communication accepted for R&R at Behavioral Sciences\nJanuary 2025: Released ConfliBERT v2.0 with improved event classification\nDecember 2024: Presented at APSA Political Communication Conference\nNovember 2024: New working paper on IGO withdrawal networks\nOctober 2024: Published ConflLlama-Q documentation"
-  },
-  {
-    "objectID": "research.html#under-review",
-    "href": "research.html#under-review",
-    "title": "Research",
-    "section": "Under Review",
-    "text": "Under Review\n\nDemocracy and Internet Control: Theory and Evidence from Transparency Reports\nwith Pengfei Zhang\nExamining how democratic and authoritarian regimes differ in their approach to internet content moderation, using data from transparency reports. We find that while both regime types remove similar amounts of content, their methods and motivations differ significantly.\n\n\nTwo Types of Censorship? An Assessment of the Informational Autocracy Thesis\nwith Pengfei Zhang\nTesting how Guriev & Treisman’s Informational Autocracy theory applies to internet filtering practices in autocratic nations, with a focus on regime strategies and implementation methods."
-  },
-  {
-    "objectID": "index.html#title-subtitle-page-layout-full-toc-false",
-    "href": "index.html#title-subtitle-page-layout-full-toc-false",
-    "title": "Shreyas Meher",
-    "section": "",
-    "text": "{.rounded-circle .img-fluid .mb-3 width=“250px”}\nPostdoctoral Researcher Erasmus School of Social and Behavioural Sciences\nErasmus University Rotterdam\n{{&lt; fa brands twitter &gt;}} Twitter {{&lt; fa brands github &gt;}} GitHub {{&lt; fa brands linkedin &gt;}} LinkedIn\n\n\n\n\n\nI am a Postdoctoral Researcher in the Policy, Politics, and Society group at the Erasmus School of Social and Behavioural Sciences, Erasmus University Rotterdam. My research leverages computational methods to address core questions in comparative politics and international relations.\nCurrently, as part of the Horizon Europe TWIN4DEM project, I develop machine learning frameworks to model and detect democratic backsliding. My substantive focus is on executive aggrandizement—the process by which elected leaders systematically weaken democratic institutions to consolidate power. My work involves creating the algorithmic core for ‘digital twins’ of political systems, which allows for the simulation and analysis of threats to democratic resilience.\nMy broader research agenda explores:\n\nComputational Politics & Governance: Using large language models (LLMs) and reinforcement learning to detect and analyze political phenomena, from online censorship to the erosion of democratic norms.\nInternational Political Economy: The politics of investment treaties and the network effects within international organizations.\nPolitical Conflict & Event Data: Building and fine-tuning specialized language models (ConfliBERT, ConflLlama) for structured political event classification.\n\nMethodologically, I specialize in computational text analysis, reinforcement learning, and the application of LLMs to political science research.\n\n\n\n\n\nErasmus University Rotterdam (2024-present) As a researcher on the TWIN4DEM (Strengthening Democratic Resilience Through Digital Twins) project, my work focuses on Work Packages related to machine learning and algorithm design. I am responsible for developing advanced computational tools to process and analyze political data in real-time. This includes pre-training and fine-tuning large language models to identify signals of executive aggrandizement and designing simulation algorithms that form the foundation of the project’s ‘digital twin’ models of European democracies.\n\n\n\n\n“Digital Sovereignty: The Political Economy of Internet Governance”\nAn analysis of internet content filtering across regime types.\nAwarded by: The University of Texas at Dallas\nCommittee: Dr. Clint Peinhardt, Co-Chair\nDr. Pengfei Zhang, Co-Chair\nDr. Patrick T. Brandt\nDr. Karl Ho"
-  },
-  {
-    "objectID": "research.html#work-in-progress",
-    "href": "research.html#work-in-progress",
-    "title": "Research",
-    "section": "Work in Progress",
-    "text": "Work in Progress\n\nThe TWIN4DEM Project: Modeling Democratic Backsliding\nAs a Postdoctoral Researcher on the Horizon Europe-funded TWIN4DEM project, my work involves developing the machine learning core for ‘digital twins’ of political systems. We aim to model and simulate threats to democratic resilience, with a specific focus on detecting and understanding executive aggrandizement in European democracies."
-  },
-  {
-    "objectID": "index.html#shreyas-meher",
-    "href": "index.html#shreyas-meher",
-    "title": "Shreyas Meher",
-    "section": "",
-    "text": "I am a Postdoctoral Researcher at Erasmus University Rotterdam, specializing in the application of artificial intelligence to critical challenges in politics and governance. My research uses computational methods to analyze democratic backsliding, digital censorship, and political conflict."
-  },
-  {
-    "objectID": "index.html#about-me",
-    "href": "index.html#about-me",
-    "title": "Shreyas Meher",
-    "section": "",
-    "text": "Hi there! I’m a computational social scientist passionate about understanding the forces that shape our digital and political worlds. My goal is to use the power of artificial intelligence not just to study society, but to help safeguard its democratic foundations. This mission guided my doctoral research in Public Policy & Political Economy at the University of Texas at Dallas and continues in my work today.\nRight now, my work is centered on this mission as a Postdoctoral Researcher on the TWIN4DEM project here at Erasmus University Rotterdam. I build the machine learning engines for ‘digital twins’—advanced simulations of European democracies. By teaching machines to recognize the subtle signals of democratic erosion, like executive aggrandizement, we hope to create tools that can test our institutions’ resilience and help us protect them before they break.\n\n\n\n\n\n\nResearch Interests\n\n\n\n\n Digital Governance Computational Social Science International Political Economy\n\n\nMy research in this area focuses on how different regimes implement internet control. I analyze everything from subtle content moderation in democracies to overt filtering and internet blackouts in autocracies, with a core focus on the concept of Digital Sovereignty.\n\n\nI build and apply specialized language models to study political phenomena. This work, stemming from my contributions to the NSF-funded ConfliBERT and ConflLlama projects, leverages NLP and reinforcement learning to create structured data from unstructured text, primarily in the domain of political conflict.\n\n\nMy work in IPE examines the politics of international cooperation and withdrawal. I use network analysis and quantitative methods to study why countries exit bilateral investment treaties and the cascading effects of withdrawals from international organizations."
-  },
-  {
-    "objectID": "Gallery.html",
-    "href": "Gallery.html",
-    "title": "Gallery",
-    "section": "",
-    "text": "A visual timeline of my academic and personal journey, from starting my PhD in Texas to my current research in the Netherlands.\n\n\n\n\n\nBeginning the PhD journey. I was told there would be no math. I was lied to.\n\n\n\n\n\nSocial distancing on campus. My research on network effects suddenly felt very relevant.\n\n\n\n\n\nMade it through Houston traffic. NASA launches are less stressful.\n\n\n\n\n\nMy two-wheeled, dissertation-escape vehicle. Faster than debugging code. Usually.\n\n\n\n\n\nProof that I did, occasionally, leave the library. A Texas sunset.\n\n\n\n\n\nMore sunsets, for econometric modeling purposes, of course.\n\n\n\n\n\nA sign of my future move to the Netherlands? Or just a pretty flower? You decide.\n\n\n\n\n\nAnother sign? The p-value on this hypothesis is getting suspiciously low.\n\n\n\n\n\nMPSA Conference in Chicago. I came for the political science, I stayed for the deep-dish pizza.\n\n\n\n\n\nMPSA dress code: academic with a hint of resisting the dark side at the Palmer House Hotel.\n\n\n\n\n\nThe Great North American Eclipse. My models did not predict this.\n\n\n\n\n\nVerifying the eclipse data with a secondary source. It was, in fact, dark.\n\n\n\n\n\nMy official submission for the next Texas tourism campaign. Howdy, y’all.\n\n\n\n\n\nSIOE Conference at the University of Chicago. Trying to absorb knowledge via osmosis.\n\n\n\n\n\nSIOE, with my co-author Pengfei Zhang and Satoshi Fukuda of Bocconi University. I’m the one not famous… yet.\n\n\n\n\n\nSIOE’s dinner cruise. A statistical analysis of keeping 200 academics from falling into the Chicago River.\n\n\n\n\n\nChicago at night: stunning enough to make you forgive the wind’s personal vendetta.\n\n\n\n\n\nTeaching R and Python at the EPPS Math & Coding Camp with the legendary Dr. Karl Ho.\n\n\n\n\n\nAPSA Annual Meeting in Philadelphia. City of brotherly love… until the Q&A session starts.\n\n\n\n\n\nAPSA attendees trying to support each other through the job market cycle.\n\n\n\n\n\nA founding father once said, “Life, liberty, and the pursuit of melted cheese.”\n\n\n\n\n\nExplaining the finer points of PC building to my colleague, Crystal Conway. Step 1: More RGB.\n\n\n\n\n\nAPPAM Conference at National Harbor. The weather was a strong incentive to stay inside and discuss policy.\n\n\n\n\n\nThe obligatory conference headshot. Now you know what I look like in front of a blue background.\n\n\n\n\n\nThe Gaylord National’s Christmas tree during APPAM. My data visualizations are rarely this festive.\n\n\n\n\n\nViews from the terminal: powered by caffeine, conference talks, and endless boarding announcements.\n\n\n\n\n\nCelebrating a birthday with friends and colleagues at UT Dallas.\n\n\n\n\n\nVisiting the Crow Museum of Asian Art at UT Dallas.\n\n\n\n\n\nThe “Life is a Cosmos” installation at the Crow Museum.\n\n\n\n\n\nSuccessfully defended! So grateful for my dissertation committee: (L-R) Dr. Elizabeth Searing, Dr. Pengfei Zhang, Dr. Clint Peinhardt, & Dr. Patrick Brandt.\n\n\n\n\n\nSan Francisco’s iconic trams. Pretty sure this was also a sign.\n\n\n\n\n\nDoctoral Hooding Ceremony with Pengfei and our colleague Robert Geibler.\n\n\n\n\n\nAll smiles at the hooding ceremony. The hat is more aerodynamic than it looks.\n\n\n\n\n\nWe did it! Celebrating with fellow graduates Dohyo and Ricardo.\n\n\n\n\n\nFound a serene lake just outside Rotterdam. My new favorite thinking spot.\n\n\n\n\n\nIt’s not truly the Netherlands until you find a traditional windmill. Check.\n\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "Gallery.html#phd-at-ut-dallas",
-    "href": "Gallery.html#phd-at-ut-dallas",
-    "title": "Gallery",
-    "section": "PhD at UT Dallas",
-    "text": "PhD at UT Dallas\n\n\n\n\nBeginning the PhD journey at the University of Texas at Dallas.\n\n\n\n\n\nSocial distancing success?\n\n\n\n\n\nWhoosh!\n\n\n\n\n\nNBD.\n\n\n\n\n\nUT Dallas, sunset.\n\n\n\n\n\nA few more sunsets for you.\n\n\n\n\n\nMaybe this was a sign to come… (hint - the Tulip)\n\n\n\n\n\nAnother sign?\n\n\n\n\n\nMPSA, Chi-town! Can you spot the L?\n\n\n\n\n\nMPSA, The Empire Strikes Back (at the Palmer)"
-  },
-  {
-    "objectID": "Gallery.html#life-in-rotterdam",
-    "href": "Gallery.html#life-in-rotterdam",
-    "title": "Gallery",
-    "section": "Life in Rotterdam",
-    "text": "Life in Rotterdam\n\n\n\n\nThe next chapter begins! Arriving at Erasmus University.\n\n\n\n\n\nFirst meeting with the TWIN4DEM project team.\n\n\n\n\n\nExploring the architecture of the city.\n\n\n\n\n\nFinding a great spot for coffee and research."
-  },
-  {
-    "objectID": "Gallery.html#personal-interests",
-    "href": "Gallery.html#personal-interests",
-    "title": "Gallery",
-    "section": "Personal Interests",
-    "text": "Personal Interests\n\n\n\n\nSeashells on a beach in Goa, India\n\n\n\n\n\nFinally seeing my team, Inter Milan, play live.\n\n\n\n\n\nAn attempt at perfecting Dim Sum in my kitchen."
   }
 ]

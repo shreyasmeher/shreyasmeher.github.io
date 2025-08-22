@@ -1,29 +1,29 @@
 /*-- scss:defaults --*/
 
-// Import fonts
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+// Import fonts - Modern professional typography with elegant brand font
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
-// Main colors - clean, academic palette
+// Main colors - Contemporary professional palette
 $white: #ffffff;
-$black: #000000;
-$gray-100: #f8f9fa;
-$gray-200: #e9ecef;
-$gray-300: #dee2e6;
-$gray-400: #ced4da;
-$gray-500: #adb5bd;
-$gray-600: #6c757d;
-$gray-700: #495057;
-$gray-800: #343a40;
-$gray-900: #212529;
+$black: #1a1a1a;
+$gray-100: #f8fafc;
+$gray-200: #e2e8f0;
+$gray-300: #cbd5e1;
+$gray-400: #94a3b8;
+$gray-500: #64748b;
+$gray-600: #475569;
+$gray-700: #334155;
+$gray-800: #1e293b;
+$gray-900: #0f172a;
 
-// Primary colors
-$primary: #2c3e50;      // Deep blue-gray
-$secondary: #34495e;    // Darker blue-gray
-$accent: #3498db;       // Bright blue for links and highlights
-$success: #2ecc71;      // Green for success states
-$warning: #f1c40f;      // Yellow for warnings
-$danger: #e74c3c;       // Red for errors
-$info: #5bc0de;         // Light blue for info
+// Primary colors - Modern teal and charcoal
+$primary: #0f766e;      // Dark teal
+$secondary: #374151;    // Charcoal gray
+$accent: #14b8a6;       // Bright teal for links and highlights
+$success: #059669;      // Emerald green for success states
+$warning: #d97706;      // Amber for warnings
+$danger: #dc2626;       // Red for errors
+$info: #0ea5e9;         // Sky blue for info
 
 // Theme configuration
 $body-bg: $white;
@@ -33,17 +33,17 @@ $link-decoration: none;
 $link-hover-color: darken($accent, 15%);
 $link-hover-decoration: underline;
 
-// Typography
-$font-family-sans-serif: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-$font-family-serif: "Source Serif Pro", Georgia, "Times New Roman", serif;
-$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+// Typography - Modern sans-serif throughout
+$font-family-sans-serif: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-serif: "Space Grotesk", "Inter", system-ui, sans-serif;  // Using modern sans-serif instead of traditional serif
+$font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 $font-family-base: $font-family-sans-serif;
-$font-size-root: 16px;
-$line-height-base: 1.6;
+$font-size-root: 18px;        // Larger for contemporary feel
+$line-height-base: 1.75;      // More generous spacing
 
-// Navbar
+// Navbar - Clean modern look
 $navbar-bg: $white;
-$navbar-fg: $gray-800;
+$navbar-fg: $gray-700;
 $navbar-hl: $accent;
 $navbar-border: $gray-200;
 
@@ -58,29 +58,34 @@ body {
   letter-spacing: -0.01em;
 }
 
-// Typography refinements
+// Typography refinements - Modern hierarchy
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-family-serif;
-  margin-bottom: 1rem;
+  font-family: $font-family-serif;  // Using Space Grotesk for modern headings
+  margin-bottom: 1.25rem;
   color: $gray-900;
+  font-weight: 600;
+  letter-spacing: -0.025em;
 }
 
 h1 {
   font-weight: 700;
-  font-size: 2.5rem;
-  letter-spacing: -0.02em;
+  font-size: 3rem;
+  letter-spacing: -0.05em;
+  line-height: 1.1;
 }
 
 h2 {
   font-weight: 600;
-  font-size: 2rem;
-  margin-top: 3rem;
+  font-size: 2.25rem;
+  margin-top: 4rem;
+  line-height: 1.2;
 }
 
 h3 {
   font-weight: 600;
-  font-size: 1.5rem;
-  margin-top: 2rem;
+  font-size: 1.75rem;
+  margin-top: 3rem;
+  line-height: 1.3;
 }
 
 // Links and Navigation
@@ -93,25 +98,81 @@ a {
 }
 
 .navbar {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
-  padding: 1rem 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  padding: 1.5rem 0;
+  border-bottom: 1px solid $gray-200;
+  background: rgba($white, 0.95);
+  backdrop-filter: blur(10px);
   
   .navbar-brand {
+    font-family: "Playfair Display", serif;
     font-weight: 600;
     color: $gray-900;
+    font-size: 1.45rem;
+    letter-spacing: -0.02em;
+    transition: color 0.2s ease;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    height: 40px;  // Match the height of nav links
+    
+    &:hover {
+      color: $gray-700;
+      text-decoration: none;
+    }
+  }
+  
+  .navbar-nav {
+    gap: 0.5rem;
+    align-items: center;
   }
   
   .nav-link {
-    font-weight: 400;
-    color: $gray-700;
+    font-weight: 500;
+    color: $gray-600;
+    padding: 0.75rem 1.25rem;
+    border-radius: 6px;
+    transition: all 0.15s ease;
+    position: relative;
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    height: 40px;  // Match the height of brand
     
     &:hover {
-      color: $accent;
+      color: $gray-900;
+      background-color: $gray-100;
+      transform: translateY(-1px);
     }
     
     &.active {
-      color: $accent;
+      color: $gray-900;
       font-weight: 600;
+      background-color: $gray-100;
+    }
+    
+    &:focus {
+      outline: 2px solid rgba($accent, 0.2);
+      outline-offset: 2px;
+    }
+  }
+  
+  // Social icons in navbar - better spacing
+  .navbar-nav .nav-link[aria-label] {
+    padding: 0.65rem;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.25rem;
+    
+    &:hover {
+      background-color: $gray-100;
+      transform: translateY(-2px);
     }
   }
 }
@@ -123,71 +184,90 @@ a {
   padding: 2rem 1rem;
 }
 
-// Cards and Features
+// Cards and Features - Clean minimalistic styling
 .card {
   border: 1px solid $gray-200;
   border-radius: 8px;
-  transition: box-shadow 0.2s ease-in-out;
+  transition: all 0.2s ease;
+  background: $white;
   
   &:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border-color: $gray-300;
   }
 }
 
-// Profile Image
+// Profile Image - Clean styling
 #img-me {
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   object-fit: cover;
-  margin: 2rem auto;
+  margin: 2.5rem auto;
   display: block;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  border: 2px solid $gray-100;
 }
 
-// Lists and Text
+// Lists and Text - Clean minimalistic styling (no hover effects)
 ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  margin-bottom: 1.5rem;
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 2rem;
+  
+  li {
+    padding-left: 0;
+    margin-bottom: 0.75rem;
+    padding-left: 1rem;
+  }
 }
 
 p {
-  margin-bottom: 1.5rem;
-  line-height: 1.7;
-}
-
-blockquote {
-  border-left: 4px solid $accent;
-  padding-left: 1rem;
-  margin-left: 0;
-  font-style: italic;
+  margin-bottom: 1.75rem;
+  line-height: 1.75;
   color: $gray-700;
 }
 
-// Code blocks
+blockquote {
+  border-left: 3px solid $gray-300;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  background: rgba($gray-100, 0.5);
+  border-radius: 0 6px 6px 0;
+  font-style: italic;
+  color: $gray-600;
+}
+
+// Code blocks - Clean minimalistic styling
 pre {
-  background-color: $gray-100;
-  border-radius: 4px;
-  padding: 1rem;
-  margin-bottom: 1.5rem;
+  background: $gray-100;
+  border: 1px solid $gray-200;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  font-size: 0.95em;
 }
 
 code {
-  color: $gray-900;
+  color: $gray-800;
   background-color: $gray-100;
-  padding: 0.2em 0.4em;
+  padding: 0.25em 0.5em;
   border-radius: 3px;
-  font-size: 85%;
+  font-size: 0.9em;
+  font-weight: 500;
 }
 
-// Responsive adjustments
+// Responsive adjustments - Modern breakpoints
 @media (min-width: 768px) {
   .content-block {
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
   }
   
   h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
   }
 }
