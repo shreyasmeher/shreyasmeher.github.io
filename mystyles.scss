@@ -208,6 +208,43 @@ a {
   display: block;
   box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
   border: 2px solid $gray-100;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+  }
+}
+
+// Social links styling
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: $white;
+  color: $gray-600;
+  border: 1px solid $gray-200;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  &:hover {
+    color: $accent;
+    border-color: $accent;
+  }
 }
 
 // Lists and Text - Clean minimalistic styling (no hover effects)
@@ -419,6 +456,102 @@ code {
       height: 6px;
     }
     
+    // Panel tabset styling to match rest of website
+    .panel-tabset {
+      .nav-tabs {
+        border-bottom: 1px solid $gray-200;
+        
+        .nav-link {
+          color: $gray-700;
+          font-family: $font-family-sans-serif;
+          font-weight: 500;
+          border: none;
+          border-bottom: 2px solid transparent;
+          border-radius: 0;
+          padding: 0.5rem 1rem;
+          margin-right: 0.5rem;
+          transition: all 0.2s ease;
+          
+          &:hover {
+            color: $gray-900;
+            border-bottom-color: $gray-300;
+            background: none;
+          }
+          
+          &.active {
+            color: $primary;
+            border-bottom-color: $primary;
+            background: none;
+            font-weight: 600;
+          }
+        }
+      }
+      
+      .tab-content {
+        .tab-pane {
+          h3 {
+            color: $gray-900;
+            font-family: $font-family-serif;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+          }
+          
+          p {
+            color: $gray-700;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+          }
+          
+          strong {
+            color: $gray-900;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+    
+    // Callout note styling to match rest of website
+    .callout-note {
+      background-color: rgba($gray-100, 0.5);
+      border-left: 4px solid $primary;
+      border-radius: 0 8px 8px 0;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      
+      .callout-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        
+        .callout-icon {
+          color: $primary;
+          margin-right: 0.75rem;
+          font-size: 1.25rem;
+        }
+        
+        .callout-title-container {
+          .callout-title {
+            color: $gray-900;
+            font-family: $font-family-serif;
+            font-weight: 600;
+            font-size: 1.5rem;
+            margin: 0;
+          }
+        }
+      }
+      
+      .callout-body {
+        color: $gray-700;
+        line-height: 1.7;
+        
+        p {
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+    
     &::-webkit-scrollbar-track {
       background: $gray-200;
       border-radius: 3px;
@@ -450,5 +583,507 @@ code {
   
   .gallery-item figure img {
     height: 250px;
+  }
+}
+
+// Hero Section Styles
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(15, 118, 110, 0.05) 0%, rgba(20, 184, 166, 0.1) 100%);
+}
+
+.hero-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(20, 184, 166, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(15, 118, 110, 0.1) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+// Profile Section
+.profile-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.profile-img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid $white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-container:hover .profile-img {
+  transform: scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.profile-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0.2) 0%, rgba(15, 118, 110, 0.2) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.profile-container:hover .profile-overlay {
+  opacity: 1;
+}
+
+.profile-info {
+  text-align: center;
+}
+
+.profile-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: $gray-900;
+  margin-bottom: 0.5rem;
+  font-family: $font-family-serif;
+}
+
+.profile-title {
+  font-size: 1.1rem;
+  color: $primary;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.profile-institution {
+  font-size: 0.95rem;
+  color: $gray-600;
+  margin-bottom: 1.5rem;
+}
+
+.profile-contact {
+  margin-bottom: 1.5rem;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: $gray-700;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  
+  i {
+    color: $primary;
+  }
+  
+  &:hover {
+    color: $primary;
+  }
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: $white;
+  color: $gray-600;
+  border: 1px solid $gray-200;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  &.twitter:hover {
+    background: #1DA1F2;
+    color: $white;
+    border-color: #1DA1F2;
+  }
+  
+  &.github:hover {
+    background: $gray-900;
+    color: $white;
+    border-color: $gray-900;
+  }
+  
+  &.linkedin:hover {
+    background: #0077B5;
+    color: $white;
+    border-color: #0077B5;
+  }
+}
+
+// About Section
+.about-section {
+  padding-left: 3rem;
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  background: rgba($primary, 0.1);
+  color: $primary;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.main-heading {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  color: $gray-900;
+  
+  .highlight {
+    color: $primary;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: rgba($primary, 0.15);
+      border-radius: 4px;
+      z-index: -1;
+    }
+  }
+}
+
+.lead-paragraph {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: $gray-700;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.about-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.highlight-link {
+  color: $primary;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: $primary;
+    transition: width 0.3s ease;
+  }
+  
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+.project-highlight {
+  margin-top: 2.5rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba($gray-100, 0.5) 0%, rgba($gray-200, 0.3) 100%);
+  border-radius: 12px;
+  border: 1px solid $gray-200;
+}
+
+.project-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: $accent;
+  color: $white;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+// Research Section
+.research-section {
+  padding: 5rem 0;
+  background: $gray-100;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $gray-900;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: $gray-600;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.research-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.research-card {
+  background: $white;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid $gray-200;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, $primary 0%, $accent 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+  
+  .card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    
+    i {
+      color: $white;
+    }
+  }
+  
+  &.digital-governance .card-icon {
+    background: linear-gradient(135deg, $primary 0%, $accent 100%);
+  }
+  
+  &.computational .card-icon {
+    background: linear-gradient(135deg, $info 0%, #0284c7 100%);
+  }
+  
+  &.ipe .card-icon {
+    background: linear-gradient(135deg, $warning 0%, #b45309 100%);
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $gray-900;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    color: $gray-700;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    
+    strong {
+      color: $gray-900;
+    }
+  }
+  
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .tag {
+    padding: 0.35rem 0.75rem;
+    background: $gray-100;
+    color: $gray-700;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+}
+
+// Methodology Section
+.methodology-section {
+  background: $white;
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid $gray-200;
+}
+
+.methodology-content {
+  text-align: center;
+  
+  h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: $gray-900;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    color: $gray-700;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.methodology-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.method-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  
+  i {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, $primary 0%, $accent 100%);
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+  
+  span {
+    font-weight: 600;
+    color: $gray-700;
+  }
+}
+
+// Responsive Adjustments
+@media (max-width: 992px) {
+  .about-section {
+    padding-left: 0;
+    padding-top: 3rem;
+    text-align: center;
+  }
+  
+  .main-heading {
+    font-size: 2.5rem;
+  }
+  
+  .research-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: auto;
+    padding: 3rem 0;
+  }
+  
+  .profile-img {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .profile-name {
+    font-size: 1.5rem;
+  }
+  
+  .main-heading {
+    font-size: 2rem;
+  }
+  
+  .lead-paragraph {
+    font-size: 1.1rem;
+  }
+  
+  .research-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .research-card {
+    padding: 1.5rem;
+  }
+  
+  .methodology-icons {
+    gap: 1.5rem;
+  }
+  
+  .method-icon {
+    i {
+      width: 50px;
+      height: 50px;
+      font-size: 1.25rem;
+    }
+    
+    span {
+      font-size: 0.9rem;
+    }
   }
 }

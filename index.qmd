@@ -7,17 +7,23 @@ toc: false
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-4 .text-center}
-![](headshot.jpg){.rounded-circle .img-fluid .mb-3 width="250px"}
+![](headshot.jpg){#img-me .rounded-circle .img-fluid .mb-3 width="250px"}
 
-[meher@essb.eur.nl](mailto:meher@essb.eur.nl)
+## Shreyas Meher
 
-[{{< fa brands twitter >}} Twitter](https://twitter.com/onlinecape){.btn .btn-outline-dark .btn-sm .mb-1}
-[{{< fa brands github >}} GitHub](https://github.com/shreyasmeher){.btn .btn-outline-dark .btn-sm .mb-1}
-[{{< fa brands linkedin >}} LinkedIn](https://linkedin.com/in/shreyasmeher){.btn .btn-outline-dark .btn-sm .mb-1}
+**Postdoctoral Researcher**  
+Erasmus University Rotterdam
+
+[meher@essb.eur.nl](mailto:meher@essb.eur.nl){.mb-3}
+
+<div class="social-links">
+[{{< fa brands twitter >}}](https://twitter.com/onlinecape){.social-link}
+[{{< fa brands github >}}](https://github.com/shreyasmeher){.social-link}
+[{{< fa brands linkedin >}}](https://linkedin.com/in/shreyasmeher){.social-link}
+</div>
 :::
 
 ::: {.g-col-12 .g-col-md-8}
-
 ## About
 
 I am a Postdoctoral Researcher in the Policy, Politics, and Society group at Erasmus University Rotterdam.
@@ -26,7 +32,7 @@ I earned my Ph.D. in Public Policy & Political Economy from the University of Te
 
 As a researcher on the **[TWIN4DEM project](https://twin4dem.eu/)**, I work with **[Clara Egger](https://claramarieegger.wordpress.com/)** and **[Asya Zhelyazkova](https://asyazhelyazkovasite.wordpress.com/)** along with a large **[ multidisciplinary team](https://twin4dem.eu/about/meet-the-team/)** to develop machine learning frameworks for modeling democratic processes. My role involves building the technical core for 'digital twins'—advanced simulations used to analyze the causes of democratic erosion, such as executive aggrandizement, and to assess institutional resilience.
 
-::: {.callout-note icon="fa-lightbulb"}
+::: {.callout-note icon="fa-lightbulb" appearance="minimal"}
 ## Research Interests
 
 ::: {.panel-tabset}
@@ -47,6 +53,5 @@ My work in IPE examines the politics of international cooperation and withdrawal
 :::
 
 Methodologically, I specialize in computational text analysis, reinforcement learning, and the application of LLMs to political science research in HPC environments.
-
 :::
 :::

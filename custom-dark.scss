@@ -224,6 +224,43 @@ table {
 #img-me {
   border: 2px solid $gray-300;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.4), 0 4px 6px -2px rgba(0,0,0,0.3);
+  }
+}
+
+// Social links styling for dark mode
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: $gray-200;
+  color: $gray-700;
+  border: 1px solid $gray-300;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+  
+  &:hover {
+    color: $accent;
+    border-color: $accent;
+  }
 }
 
 // Button styles
@@ -306,6 +343,102 @@ ul {
         &:hover {
           color: lighten($accent, 15%) !important;
         }
+        
+        // Panel tabset styling for dark mode to match rest of website
+        .panel-tabset {
+          .nav-tabs {
+            border-bottom: 1px solid $gray-300;
+            
+            .nav-link {
+              color: $gray-700;
+              font-family: $font-family-sans-serif;
+              font-weight: 500;
+              border: none;
+              border-bottom: 2px solid transparent;
+              border-radius: 0;
+              padding: 0.5rem 1rem;
+              margin-right: 0.5rem;
+              transition: all 0.2s ease;
+              
+              &:hover {
+                color: $gray-900;
+                border-bottom-color: $gray-400;
+                background: none;
+              }
+              
+              &.active {
+                color: $accent;
+                border-bottom-color: $accent;
+                background: none;
+                font-weight: 600;
+              }
+            }
+          }
+          
+          .tab-content {
+            .tab-pane {
+              h3 {
+                color: $gray-900;
+                font-family: $font-family-serif;
+                font-weight: 600;
+                margin-top: 1.5rem;
+                margin-bottom: 1rem;
+                font-size: 1.5rem;
+              }
+              
+              p {
+                color: $gray-700;
+                line-height: 1.7;
+                margin-bottom: 1.5rem;
+              }
+              
+              strong {
+                color: $gray-900;
+                font-weight: 600;
+              }
+            }
+          }
+        }
+        
+        // Callout note styling for dark mode to match rest of website
+        .callout-note {
+          background-color: rgba($gray-300, 0.3);
+          border-left: 4px solid $primary;
+          border-radius: 0 8px 8px 0;
+          padding: 1.5rem;
+          margin: 2rem 0;
+          
+          .callout-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            
+            .callout-icon {
+              color: $primary;
+              margin-right: 0.75rem;
+              font-size: 1.25rem;
+            }
+            
+            .callout-title-container {
+              .callout-title {
+                color: $gray-900;
+                font-family: $font-family-serif;
+                font-weight: 600;
+                font-size: 1.5rem;
+                margin: 0;
+              }
+            }
+          }
+          
+          .callout-body {
+            color: $gray-700;
+            line-height: 1.7;
+            
+            p {
+              margin-bottom: 1.5rem;
+            }
+          }
+        }
       }
     }
   }
@@ -337,5 +470,198 @@ ul {
     &::-webkit-scrollbar-thumb {
       background: $gray-600 !important;
     }
+  }
+}
+
+// Hero Section Styles for Dark Mode
+.hero-section {
+  background: linear-gradient(135deg, rgba(94, 234, 212, 0.05) 0%, rgba(45, 212, 191, 0.1) 100%);
+}
+
+.hero-gradient {
+  background: radial-gradient(circle at 20% 50%, rgba(45, 212, 191, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(94, 234, 212, 0.1) 0%, transparent 50%);
+}
+
+// Profile Section for Dark Mode
+.profile-img {
+  border-color: $gray-200;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.profile-container:hover .profile-img {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.profile-overlay {
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.3) 0%, rgba(94, 234, 212, 0.3) 100%);
+}
+
+.profile-name {
+  color: $gray-900;
+}
+
+.profile-title {
+  color: $accent;
+}
+
+.profile-institution {
+  color: $gray-700;
+}
+
+.contact-link {
+  color: $gray-700;
+  
+  i {
+    color: $accent;
+  }
+  
+  &:hover {
+    color: $accent;
+  }
+}
+
+.social-link {
+  background: $gray-200;
+  color: $gray-700;
+  border-color: $gray-300;
+  
+  &:hover {
+    background: $gray-300;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  &.twitter:hover {
+    background: #1DA1F2;
+    color: $gray-100;
+    border-color: #1DA1F2;
+  }
+  
+  &.github:hover {
+    background: $gray-800;
+    color: $gray-100;
+    border-color: $gray-800;
+  }
+  
+  &.linkedin:hover {
+    background: #0077B5;
+    color: $gray-100;
+    border-color: #0077B5;
+  }
+}
+
+// About Section for Dark Mode
+.section-badge {
+  background: rgba($accent, 0.15);
+  color: $accent;
+}
+
+.main-heading {
+  color: $gray-900;
+  
+  .highlight {
+    color: $accent;
+    
+    &::after {
+      background: rgba($accent, 0.2);
+    }
+  }
+}
+
+.lead-paragraph {
+  color: $gray-700;
+}
+
+.about-content p {
+  color: $gray-700;
+}
+
+.highlight-link {
+  color: $accent;
+  
+  &::after {
+    background: $accent;
+  }
+}
+
+.project-highlight {
+  background: linear-gradient(135deg, rgba($gray-300, 0.3) 0%, rgba($gray-400, 0.2) 100%);
+  border-color: $gray-300;
+}
+
+.project-badge {
+  background: $accent;
+  color: $gray-100;
+}
+
+// Research Section for Dark Mode
+.research-section {
+  background: $gray-200;
+}
+
+.section-title {
+  color: $gray-900;
+}
+
+.section-subtitle {
+  color: $gray-700;
+}
+
+.research-card {
+  background: $gray-200;
+  border-color: $gray-300;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  
+  &::before {
+    background: linear-gradient(90deg, $primary 0%, $accent 100%);
+  }
+  
+  &:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  h3 {
+    color: $gray-900;
+  }
+  
+  p {
+    color: $gray-700;
+    
+    strong {
+      color: $gray-900;
+    }
+  }
+  
+  .tag {
+    background: $gray-300;
+    color: $gray-800;
+  }
+}
+
+// Methodology Section for Dark Mode
+.methodology-section {
+  background: $gray-200;
+  border-color: $gray-300;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.methodology-content {
+  h3 {
+    color: $gray-900;
+  }
+  
+  p {
+    color: $gray-700;
+  }
+}
+
+.method-icon {
+  i {
+    background: linear-gradient(135deg, $primary 0%, $accent 100%);
+    color: $gray-100;
+  }
+  
+  span {
+    color: $gray-700;
   }
 }
