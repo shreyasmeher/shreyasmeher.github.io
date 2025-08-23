@@ -74,6 +74,7 @@ p, li, span {
   border-bottom-color: $gray-300;
   
   .navbar-brand {
+    font-family: $font-family-serif !important; // Added to match content font
     color: $gray-900 !important;
     
     &:hover {
@@ -82,6 +83,7 @@ p, li, span {
   }
   
   .nav-link {
+    font-family: $font-family-sans-serif !important; // Added to match content font
     color: $gray-700 !important;
     
     &:hover {
@@ -249,4 +251,15 @@ ul {
   padding: 2rem;
   margin-bottom: 2rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+// Table of Contents (sidebar) navigation
+#quarto-margin-sidebar {
+  .nav-link {
+    font-family: $font-family-sans-serif !important; // Match content font
+  }
+  
+  .toc-title {
+    font-family: $font-family-serif !important; // Match heading font
+  }
 }
