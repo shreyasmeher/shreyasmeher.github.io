@@ -6,80 +6,207 @@ lightbox: auto
 
 A visual timeline of my academic and personal journey, from starting my PhD in Texas to my current research in the Netherlands.
 
----
+<div class="gallery-filters">
+  <button class="filter-btn active" data-filter="all">All Photos</button>
+  <button class="filter-btn" data-filter="texas">Texas Life</button>
+  <button class="filter-btn" data-filter="conferences">Conferences</button>
+  <button class="filter-btn" data-filter="graduation">Graduation</button>
+  <button class="filter-btn" data-filter="netherlands">Netherlands</button>
+</div>
 
-::: {style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));grid-gap: 1em;"}
+::: {#gallery-container style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); grid-gap: 1.5rem;"}
 
+::: {.gallery-item data-category="texas"}
 ![Beginning the PhD journey. I was told there would be no math. I was lied to.](gallery/img1.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="texas"}
 ![Social distancing on campus. My research on network effects suddenly felt very relevant.](gallery/img2.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="texas"}
 ![Made it through Houston traffic. NASA launches are less stressful.](gallery/img4.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="texas"}
 ![My two-wheeled, dissertation-escape vehicle. Faster than debugging code. Usually.](gallery/img6.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="texas"}
 ![Proof that I did, occasionally, leave the library. A Texas sunset.](gallery/img7.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="texas"}
 ![More sunsets, for econometric modeling purposes, of course.](gallery/img8.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="texas"}
 ![A sign of my future move to the Netherlands? Or just a pretty flower? You decide.](gallery/img9.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="texas"}
 ![Another sign? The p-value on this hypothesis is getting suspiciously low.](gallery/img10.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="conferences"}
 ![MPSA Conference in Chicago. I came for the political science, I stayed for the deep-dish pizza.](gallery/img11.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="conferences"}
 ![MPSA dress code: academic with a hint of resisting the dark side at the Palmer House Hotel.](gallery/img12.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="texas"}
 ![The Great North American Eclipse. My models did not predict this.](gallery/img13.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="texas"}
 ![Verifying the eclipse data with a secondary source. It was, in fact, dark.](gallery/img14.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="texas"}
 ![My official submission for the next Texas tourism campaign. Howdy, y'all.](gallery/img15.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="conferences"}
 ![SIOE Conference at the University of Chicago. Trying to absorb knowledge via osmosis.](gallery/img16.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="conferences"}
 ![SIOE, with my co-author [Pengfei Zhang](https://pengfei-zhang.com/) and Satoshi Fukuda of Bocconi University. I'm the one not famous... yet.](gallery/img17.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="conferences"}
 ![SIOE's dinner cruise. A statistical analysis of keeping 200 academics from falling into the Chicago River.](gallery/img18.jpg){group="gallery"}
+:::
 
-![Chicago at night: stunning enough to make you forgive the wind’s personal vendetta.](gallery/img19.jpg){group="gallery"}
+::: {.gallery-item data-category="conferences"}
+![Chicago at night: stunning enough to make you forgive the wind's personal vendetta.](gallery/img19.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="texas"}
 ![Teaching R and Python at the EPPS Math & Coding Camp with the legendary Dr. Karl Ho.](gallery/img20.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="conferences"}
 ![APSA Annual Meeting in Philadelphia. City of brotherly love… until the Q&A session starts.](gallery/img21.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="conferences"}
 ![APSA attendees trying to support each other through the job market cycle.](gallery/img22.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="conferences"}
 ![A founding father once said, "Life, liberty, and the pursuit of melted cheese."](gallery/img23.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="texas"}
 ![Explaining the finer points of PC building to my colleague, Crystal Conway. Step 1: More RGB.](gallery/img24.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="conferences"}
 ![APPAM Conference at National Harbor. The weather was a strong incentive to stay inside and discuss policy.](gallery/img25.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="conferences"}
 ![The obligatory conference headshot. Now you know what I look like in front of a blue background.](gallery/img26.png){group="gallery"}
+:::
 
+::: {.gallery-item data-category="conferences"}
 ![The Gaylord National's Christmas tree during APPAM. My data visualizations are rarely this festive.](gallery/img27.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="conferences"}
 ![Views from the terminal: powered by caffeine, conference talks, and endless boarding announcements.](gallery/img28.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="texas"}
 ![Celebrating a birthday with friends and colleagues at UT Dallas.](gallery/img29.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="texas"}
 ![Visiting the Crow Museum of Asian Art at UT Dallas.](gallery/img30.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="texas"}
 ![The "Life is a Cosmos" installation at the Crow Museum.](gallery/img31.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="graduation"}
 ![Successfully defended! So grateful for my dissertation committee: (L-R) Dr. [Elizabeth Searing](https://profiles.utdallas.edu/elizabeth.searing), Dr. [Pengfei Zhang](https://pengfei-zhang.com/), Dr. [Clint Peinhardt](https://profiles.utdallas.edu/clint.peinhardt), & Dr. [Patrick Brandt](http://www.utdallas.edu/~pbrandt/).](gallery/img32.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="conferences"}
 ![San Francisco's iconic trams. Pretty sure this was also a sign.](gallery/img33.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="graduation"}
 ![Doctoral Hooding Ceremony with Pengfei and our colleague Robert Geibler.](gallery/img34.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="graduation"}
 ![All smiles at the hooding ceremony. The hat is more aerodynamic than it looks.](gallery/img35.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="graduation"}
 ![We did it! Celebrating with fellow graduates Dohyo and Ricardo.](gallery/img36.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="netherlands"}
 ![Found a serene lake just outside Rotterdam. My new favorite thinking spot.](gallery/img37.jpg){group="gallery"}
+:::
 
+::: {.gallery-item data-category="netherlands"}
 ![It's not truly the Netherlands until you find a traditional windmill. Check.](gallery/img38.jpg){group="gallery"}
+:::
 
 :::
+
+```{=html}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Gallery filtering functionality
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Update active button
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      
+      const filter = button.getAttribute('data-filter');
+      
+      // Show/hide gallery items based on filter
+      galleryItems.forEach(item => {
+        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+          item.style.display = 'block';
+          // Add animation effect
+          setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'scale(1)';
+          }, 10);
+        } else {
+          item.style.opacity = '0';
+          item.style.transform = 'scale(0.8)';
+          setTimeout(() => {
+            item.style.display = 'none';
+          }, 300);
+        }
+      });
+    });
+  });
+  
+  // Add hover effect to gallery items
+  galleryItems.forEach(item => {
+    item.addEventListener('mouseenter', function() {
+      this.querySelector('img').style.transform = 'scale(1.05)';
+    });
+    
+    item.addEventListener('mouseleave', function() {
+      this.querySelector('img').style.transform = 'scale(1)';
+    });
+  });
+});
+</script>
+```

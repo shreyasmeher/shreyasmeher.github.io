@@ -263,3 +263,79 @@ ul {
     font-family: $font-family-serif !important; // Match heading font
   }
 }
+
+// Gallery Styles for Dark Mode
+.gallery-filters {
+  background: rgba($gray-300, 0.3) !important;
+  border-color: $gray-400 !important;
+}
+
+.filter-btn {
+  background: $gray-200 !important;
+  border-color: $gray-400 !important;
+  color: $gray-800 !important;
+  
+  &:hover {
+    background: $gray-300 !important;
+    border-color: $gray-500 !important;
+    color: $gray-900 !important;
+  }
+  
+  &.active {
+    background: $primary !important;
+    border-color: $primary !important;
+    color: $gray-100 !important;
+  }
+}
+
+.gallery-item {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2) !important;
+  
+  &:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  figure {
+    figcaption {
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)) !important;
+      color: $gray-900 !important;
+      
+      a {
+        color: $accent !important;
+        
+        &:hover {
+          color: lighten($accent, 15%) !important;
+        }
+      }
+    }
+  }
+}
+
+// Lightbox enhancements for dark mode
+.glightbox {
+  .gslide-description {
+    background: rgba($gray-200, 0.95) !important;
+    color: $gray-900 !important;
+    
+    a {
+      color: $accent !important;
+      
+      &:hover {
+        color: lighten($accent, 15%) !important;
+      }
+    }
+  }
+}
+
+// Responsive adjustments for gallery in dark mode
+@media (max-width: 768px) {
+  .gallery-filters {
+    &::-webkit-scrollbar-track {
+      background: $gray-400 !important;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: $gray-600 !important;
+    }
+  }
+}
