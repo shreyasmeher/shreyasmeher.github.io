@@ -15,12 +15,6 @@ toc: false
 Erasmus University Rotterdam
 
 [meher@essb.eur.nl](mailto:meher@essb.eur.nl){.mb-3}
-
-<div class="social-links">
-[{{< fa brands twitter >}}](https://twitter.com/onlinecape){.social-link}
-[{{< fa brands github >}}](https://github.com/shreyasmeher){.social-link}
-[{{< fa brands linkedin >}}](https://linkedin.com/in/shreyasmeher){.social-link}
-</div>
 :::
 
 ::: {.g-col-12 .g-col-md-8}
