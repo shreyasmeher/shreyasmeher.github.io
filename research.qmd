@@ -19,7 +19,7 @@ My research uses computational methods to address core questions in three areas:
 Forthcoming
 :::
 :::
-Developing specialized language models for political conflict analysis that outperform general-purpose LLMs like Gemma 2, Llama 3.1, and Qwen 2.5 in accuracy, precision, and recall while being hundreds of times faster. [Link](https://arxiv.org/abs/2412.15060)
+Developing specialized language models for political conflict analysis that outperform general-purpose LLMs like Gemma 2, Llama 3.1, and Qwen 2.5 in accuracy, precision, and recall while being hundreds of times faster. [Link](https://arxiv.org/abs/2412.15060) · [Slides](research/ConfliBERT_Presentation.pdf)
 
 ---
 
@@ -31,7 +31,7 @@ Developing specialized language models for political conflict analysis that outp
 *Research & Politics*
 :::
 :::
-Introducing ConflLlama, a specialized variant of Llama 3.1 fine-tuned for political conflict classification, demonstrating superior performance in event coding and conflict analysis tasks compared to traditional approaches. [Link](https://doi.org/10.1177/20531680251356282)
+Introducing ConflLlama, a specialized variant of Llama 3.1 fine-tuned for political conflict classification, demonstrating superior performance in event coding and conflict analysis tasks compared to traditional approaches. [Link](https://doi.org/10.1177/20531680251356282){target=_blank} · [Slides](research/APSA___ConflLlama.pdf)
 
 ---
 
