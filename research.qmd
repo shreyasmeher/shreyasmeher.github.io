@@ -55,7 +55,18 @@ Examining how democratic and authoritarian regimes differ in their approach to i
 
 Testing how Guriev & Treisman's Informational Autocracy theory applies to internet filtering practices in autocratic nations, with a focus on regime strategies and implementation methods. 
 
+### Build, Borrow, or Just Fine-Tune? A Political Scientist's Guide to Choosing NLP Models
+
+Presenting a practical decision framework for political scientists choosing among domain-pretrained, fine-tuned, and commercial LLM approaches for text classification. A systematic evaluation of nine models on conflict event data shows that simple fine-tuning of general-purpose encoders matches domain-pretrained alternatives and substantially outperforms commercial APIs at a fraction of the cost, with full reproducibility.  
+[Link](https://www.dropbox.com/scl/fi/sfylpz2bzzhimpkg42zy4/Confli_mBERT.pdf?rlkey=dotkhx1g5eh81uenxrb8eqf6x&st=wz772hjh&dl=0) · [Code](https://huggingface.co/shreyasmeher/Confli-mBERT)
+
+
 ## Working Papers
+
+### Executive Predominance in the Netherlands
+*with [Clara Egger](https://claramarieegger.wordpress.com/about/) & [Asya Zhelyazkova](https://www.eur.nl/en/people/asya-zhelyazkova)*
+
+Examining the dynamics of executive prominence vis-à-vis the legislative branch in the Dutch parliamentary system, analyzing how coalition governance, delegated rulemaking, and the trend toward presidentialization shape the balance of power between cabinet and parliament.
 
 ### Populism and Investment Treaties
 *with [Clint Peinhardt](https://profiles.utdallas.edu/clint.peinhardt)*
