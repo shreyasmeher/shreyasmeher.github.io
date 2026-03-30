@@ -4,6 +4,7 @@ project:
   render:
     - "*.qmd"
     - "!drafts/"
+    - "!assignments/"
 
 website:
   title: "Shreyas Meher"
@@ -46,9 +47,9 @@ website:
       - icon: envelope
         href: mailto:meher@essb.eur.nl 
         aria-label: Email
-      - icon: twitter
-        href: https://twitter.com/shreyasmhr
-        aria-label: Twitter
+      - icon: twitter-x
+        href: https://x.com/shreyasmhr
+        aria-label: X
       - icon: github
         href: https://github.com/shreyasmeher
         aria-label: GitHub
@@ -58,7 +59,7 @@ website:
 
   page-footer: 
     left: |
-      © 2025 Shreyas Meher  
+      © 2026 Shreyas Meher  
       Erasmus School of Social and Behavioural Sciences  
       Erasmus University Rotterdam
     right: |
@@ -69,14 +70,13 @@ format:
     theme:
       light: [litera, mystyles.scss]  # Changed from flatly to litera for better academic look
       dark: [darkly, custom-dark.scss]
-    css: styles.css
     toc: true
     toc-location: right
     toc-title: "On this page"
     code-copy: true
     code-overflow: wrap
-    mainfont: "Source Sans Pro"
-    monofont: "Source Code Pro"
+    mainfont: "Inter"
+    monofont: "ui-monospace, SFMono-Regular, SF Mono, Monaco, Consolas, Liberation Mono, Courier New, monospace"
     fontsize: 1em
     linestretch: 1.7
     html-math-method: katex

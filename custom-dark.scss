@@ -1,40 +1,39 @@
 /*-- scss:defaults --*/
 
-// Import fonts - Modern professional typography (consistent with light theme)
+// Import fonts (consistent with light theme)
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
-// Dark theme colors - Contemporary professional dark mode
-$gray-100: #0f172a;   // Very dark blue-gray
-$gray-200: #1e293b;   // Dark blue-gray
-$gray-300: #334155;   // Medium blue-gray
-$gray-400: #475569;   // Blue-gray
-$gray-500: #64748b;   // Light blue-gray
-$gray-600: #94a3b8;   // Lighter blue-gray
-$gray-700: #cbd5e1;   // Very light blue-gray
-$gray-800: #e2e8f0;   // Near white blue-gray
-$gray-900: #f8fafc;   // Almost white
+// Dark theme colors
+$gray-100: #0f172a;
+$gray-200: #1e293b;
+$gray-300: #334155;
+$gray-400: #475569;
+$gray-500: #64748b;
+$gray-600: #94a3b8;
+$gray-700: #cbd5e1;
+$gray-800: #e2e8f0;
+$gray-900: #f8fafc;
 $white: #ffffff;
 $black: #000000;
 
 // Primary colors - Bright teal for dark mode
-$primary: #5eead4;      // Light teal
-$secondary: #94a3b8;    // Light blue-gray
-$accent: #2dd4bf;       // Bright teal for highlights
-$success: #34d399;      // Bright emerald
-$warning: #fbbf24;      // Bright amber
-$danger: #f87171;       // Bright red
-$info: #38bdf8;         // Bright sky blue
+$primary: #5eead4;
+$secondary: #94a3b8;
+$accent: #2dd4bf;
+$success: #34d399;
+$warning: #fbbf24;
+$danger: #f87171;
+$info: #38bdf8;
 
-// Theme configuration - Fixed text colors for dark mode
+// Theme configuration
 $body-bg: $gray-100;
-$body-color: $gray-800;  // Light text on dark background
-$text-color: $gray-800;  // Ensure text is light
+$body-color: $gray-800;
 $link-color: $accent;
 $link-decoration: none;
 $link-hover-color: lighten($accent, 15%);
 $link-hover-decoration: underline;
 
-// Typography - Modern sans-serif throughout (consistent with light theme)
+// Typography (consistent with light theme)
 $font-family-sans-serif: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 $font-family-serif: "Space Grotesk", "Inter", system-ui, sans-serif;
 $font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -53,75 +52,16 @@ $footer-fg: $gray-600;
 
 /*-- scss:rules --*/
 
-// Base dark mode text styling
+// Base dark mode text
 body {
   color: $gray-800 !important;
   background-color: $gray-100 !important;
 }
 
-// Typography for dark mode
 h1, h2, h3, h4, h5, h6 {
   color: $gray-900 !important;
-}
-
-p, li, span {
-  color: $gray-800 !important;
-}
-
-// Navbar dark mode
-.navbar {
-  background: rgba($gray-200, 0.95) !important;
-  border-bottom-color: $gray-300;
-  
-  .navbar-brand {
-    font-family: $font-family-serif !important; // Added to match content font
-    color: $gray-900 !important;
-    
-    &:hover {
-      color: $gray-800 !important;
-    }
-  }
-  
-  .nav-link {
-    font-family: $font-family-sans-serif !important; // Added to match content font
-    color: $gray-700 !important;
-    
-    &:hover {
-      color: $gray-900 !important;
-      background-color: $gray-300 !important;
-    }
-    
-    &.active {
-      color: $gray-900 !important;
-      background-color: $gray-300 !important;
-    }
-  }
-}
-
-// Cards and content in dark mode
-.card {
-  background-color: $gray-200 !important;
-  border-color: $gray-300 !important;
-  color: $gray-800 !important;
-}
-
-// Code blocks in dark mode
-pre {
-  background-color: $gray-200 !important;
-  border-color: $gray-300 !important;
-  color: $gray-900 !important;
-}
-
-code {
-  background-color: $gray-300 !important;
-  color: $gray-900 !important;
-}
-
-// Typography refinements
-h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-serif;
   margin-bottom: 1rem;
-  color: $gray-900;
 }
 
 h1 {
@@ -142,46 +82,59 @@ h3 {
   margin-top: 2rem;
 }
 
-// Links and Navigation
+p, li, span {
+  color: $gray-800 !important;
+}
+
+// Links
 a {
   color: $link-color;
   transition: color 0.2s ease-in-out;
-  
+
   &:hover {
     color: $link-hover-color;
     text-decoration: underline;
   }
 }
 
+// Navbar dark mode
 .navbar {
-  background-color: $navbar-bg;
+  background: rgba($gray-200, 0.95) !important;
+  border-bottom-color: $gray-300;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  
+
   .navbar-brand {
+    font-family: $font-family-serif !important;
+    color: $gray-900 !important;
     font-weight: 600;
-    color: $gray-900;
-  }
-  
-  .nav-link {
-    color: $gray-800;
-    
+
     &:hover {
-      color: $accent;
+      color: $gray-800 !important;
     }
-    
+  }
+
+  .nav-link {
+    font-family: $font-family-sans-serif !important;
+    color: $gray-700 !important;
+
+    &:hover {
+      color: $gray-900 !important;
+      background-color: $gray-300 !important;
+    }
+
     &.active {
-      color: $accent;
-      font-weight: 600;
+      color: $gray-900 !important;
+      background-color: $gray-300 !important;
     }
   }
 }
 
-// Cards and content
+// Cards
 .card {
-  background-color: $gray-200;
-  border: 1px solid $gray-300;
-  border-radius: 8px;
-  
+  background-color: $gray-200 !important;
+  border-color: $gray-300 !important;
+  color: $gray-800 !important;
+
   &:hover {
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   }
@@ -189,13 +142,14 @@ a {
 
 // Code blocks
 pre {
-  background-color: $gray-200;
-  border: 1px solid $gray-300;
+  background-color: $gray-200 !important;
+  border-color: $gray-300 !important;
+  color: $gray-900 !important;
 }
 
 code {
-  color: $accent;
-  background-color: rgba($accent, 0.1);
+  background-color: $gray-300 !important;
+  color: $gray-900 !important;
 }
 
 // Blockquotes
@@ -210,11 +164,11 @@ blockquote {
 // Tables
 table {
   border-color: $gray-300;
-  
+
   th {
     background-color: $gray-200;
   }
-  
+
   tr:nth-child(even) {
     background-color: rgba($gray-200, 0.5);
   }
@@ -225,41 +179,10 @@ table {
   border: 2px solid $gray-300;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
+
   &:hover {
     transform: scale(1.02);
     box-shadow: 0 10px 15px -3px rgba(0,0,0,0.4), 0 4px 6px -2px rgba(0,0,0,0.3);
-  }
-}
-
-// Social links styling for dark mode
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.social-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: $gray-200;
-  color: $gray-700;
-  border: 1px solid $gray-300;
-  transition: all 0.2s ease;
-  
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  }
-  
-  &:hover {
-    color: $accent;
-    border-color: $accent;
   }
 }
 
@@ -268,7 +191,7 @@ table {
   background-color: $primary;
   border-color: $primary;
   color: $gray-100;
-  
+
   &:hover {
     background-color: darken($primary, 10%);
     border-color: darken($primary, 10%);
@@ -281,27 +204,114 @@ ul {
   color: $body-color;
 }
 
-// Content sections
-.content-block {
-  background-color: $gray-200;
-  border-radius: 8px;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-// Table of Contents (sidebar) navigation
+// Table of Contents sidebar
 #quarto-margin-sidebar {
   .nav-link {
-    font-family: $font-family-sans-serif !important; // Match content font
+    font-family: $font-family-sans-serif !important;
   }
-  
+
   .toc-title {
-    font-family: $font-family-serif !important; // Match heading font
+    font-family: $font-family-serif !important;
   }
 }
 
-// Gallery Styles for Dark Mode
+// Panel tabset dark mode
+.panel-tabset {
+  .nav-tabs {
+    border-bottom: 1px solid $gray-300;
+
+    .nav-link {
+      color: $gray-700;
+      font-family: $font-family-sans-serif;
+      font-weight: 500;
+      border: none;
+      border-bottom: 2px solid transparent;
+      border-radius: 0;
+      padding: 0.5rem 1rem;
+      margin-right: 0.5rem;
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: $gray-900;
+        border-bottom-color: $gray-400;
+        background: none;
+      }
+
+      &.active {
+        color: $accent;
+        border-bottom-color: $accent;
+        background: none;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .tab-content {
+    .tab-pane {
+      h3 {
+        color: $gray-900;
+        font-family: $font-family-serif;
+        font-weight: 600;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+
+      p {
+        color: $gray-700;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+      }
+
+      strong {
+        color: $gray-900;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+// Callout note dark mode
+.callout-note {
+  background-color: rgba($gray-300, 0.3);
+  border-left: 4px solid $primary;
+  border-radius: 0 8px 8px 0;
+  padding: 1.5rem;
+  margin: 2rem 0;
+
+  .callout-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    .callout-icon {
+      color: $primary;
+      margin-right: 0.75rem;
+      font-size: 1.25rem;
+    }
+
+    .callout-title-container {
+      .callout-title {
+        color: $gray-900;
+        font-family: $font-family-serif;
+        font-weight: 600;
+        font-size: 1.5rem;
+        margin: 0;
+      }
+    }
+  }
+
+  .callout-body {
+    color: $gray-700;
+    line-height: 1.7;
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+// Gallery dark mode
 .gallery-filters {
   background: rgba($gray-300, 0.3) !important;
   border-color: $gray-400 !important;
@@ -311,13 +321,13 @@ ul {
   background: $gray-200 !important;
   border-color: $gray-400 !important;
   color: $gray-800 !important;
-  
+
   &:hover {
     background: $gray-300 !important;
     border-color: $gray-500 !important;
     color: $gray-900 !important;
   }
-  
+
   &.active {
     background: $primary !important;
     border-color: $primary !important;
@@ -327,132 +337,36 @@ ul {
 
 .gallery-item {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2) !important;
-  
+
   &:hover {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3) !important;
   }
-  
+
   figure {
     figcaption {
       background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)) !important;
       color: $gray-900 !important;
-      
+
       a {
         color: $accent !important;
-        
+
         &:hover {
           color: lighten($accent, 15%) !important;
-        }
-        
-        // Panel tabset styling for dark mode to match rest of website
-        .panel-tabset {
-          .nav-tabs {
-            border-bottom: 1px solid $gray-300;
-            
-            .nav-link {
-              color: $gray-700;
-              font-family: $font-family-sans-serif;
-              font-weight: 500;
-              border: none;
-              border-bottom: 2px solid transparent;
-              border-radius: 0;
-              padding: 0.5rem 1rem;
-              margin-right: 0.5rem;
-              transition: all 0.2s ease;
-              
-              &:hover {
-                color: $gray-900;
-                border-bottom-color: $gray-400;
-                background: none;
-              }
-              
-              &.active {
-                color: $accent;
-                border-bottom-color: $accent;
-                background: none;
-                font-weight: 600;
-              }
-            }
-          }
-          
-          .tab-content {
-            .tab-pane {
-              h3 {
-                color: $gray-900;
-                font-family: $font-family-serif;
-                font-weight: 600;
-                margin-top: 1.5rem;
-                margin-bottom: 1rem;
-                font-size: 1.5rem;
-              }
-              
-              p {
-                color: $gray-700;
-                line-height: 1.7;
-                margin-bottom: 1.5rem;
-              }
-              
-              strong {
-                color: $gray-900;
-                font-weight: 600;
-              }
-            }
-          }
-        }
-        
-        // Callout note styling for dark mode to match rest of website
-        .callout-note {
-          background-color: rgba($gray-300, 0.3);
-          border-left: 4px solid $primary;
-          border-radius: 0 8px 8px 0;
-          padding: 1.5rem;
-          margin: 2rem 0;
-          
-          .callout-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-            
-            .callout-icon {
-              color: $primary;
-              margin-right: 0.75rem;
-              font-size: 1.25rem;
-            }
-            
-            .callout-title-container {
-              .callout-title {
-                color: $gray-900;
-                font-family: $font-family-serif;
-                font-weight: 600;
-                font-size: 1.5rem;
-                margin: 0;
-              }
-            }
-          }
-          
-          .callout-body {
-            color: $gray-700;
-            line-height: 1.7;
-            
-            p {
-              margin-bottom: 1.5rem;
-            }
-          }
         }
       }
     }
   }
 }
 
-// Lightbox enhancements for dark mode
+// Lightbox dark mode
 .glightbox {
   .gslide-description {
     background: rgba($gray-200, 0.95) !important;
     color: $gray-900 !important;
-    
+
     a {
       color: $accent !important;
-      
+
       &:hover {
         color: lighten($accent, 15%) !important;
       }
@@ -460,208 +374,15 @@ ul {
   }
 }
 
-// Responsive adjustments for gallery in dark mode
+// Responsive gallery dark mode
 @media (max-width: 768px) {
   .gallery-filters {
     &::-webkit-scrollbar-track {
       background: $gray-400 !important;
     }
-    
+
     &::-webkit-scrollbar-thumb {
       background: $gray-600 !important;
     }
-  }
-}
-
-// Hero Section Styles for Dark Mode
-.hero-section {
-  background: linear-gradient(135deg, rgba(94, 234, 212, 0.05) 0%, rgba(45, 212, 191, 0.1) 100%);
-}
-
-.hero-gradient {
-  background: radial-gradient(circle at 20% 50%, rgba(45, 212, 191, 0.15) 0%, transparent 50%),
-              radial-gradient(circle at 80% 80%, rgba(94, 234, 212, 0.1) 0%, transparent 50%);
-}
-
-// Profile Section for Dark Mode
-.profile-img {
-  border-color: $gray-200;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.profile-container:hover .profile-img {
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-}
-
-.profile-overlay {
-  background: linear-gradient(135deg, rgba(45, 212, 191, 0.3) 0%, rgba(94, 234, 212, 0.3) 100%);
-}
-
-.profile-name {
-  color: $gray-900;
-}
-
-.profile-title {
-  color: $accent;
-}
-
-.profile-institution {
-  color: $gray-700;
-}
-
-.contact-link {
-  color: $gray-700;
-  
-  i {
-    color: $accent;
-  }
-  
-  &:hover {
-    color: $accent;
-  }
-}
-
-.social-link {
-  background: $gray-200;
-  color: $gray-700;
-  border-color: $gray-300;
-  
-  &:hover {
-    background: $gray-300;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  }
-  
-  &.twitter:hover {
-    background: #1DA1F2;
-    color: $gray-100;
-    border-color: #1DA1F2;
-  }
-  
-  &.github:hover {
-    background: $gray-800;
-    color: $gray-100;
-    border-color: $gray-800;
-  }
-  
-  &.linkedin:hover {
-    background: #0077B5;
-    color: $gray-100;
-    border-color: #0077B5;
-  }
-}
-
-// About Section for Dark Mode
-.section-badge {
-  background: rgba($accent, 0.15);
-  color: $accent;
-}
-
-.main-heading {
-  color: $gray-900;
-  
-  .highlight {
-    color: $accent;
-    
-    &::after {
-      background: rgba($accent, 0.2);
-    }
-  }
-}
-
-.lead-paragraph {
-  color: $gray-700;
-}
-
-.about-content p {
-  color: $gray-700;
-}
-
-.highlight-link {
-  color: $accent;
-  
-  &::after {
-    background: $accent;
-  }
-}
-
-.project-highlight {
-  background: linear-gradient(135deg, rgba($gray-300, 0.3) 0%, rgba($gray-400, 0.2) 100%);
-  border-color: $gray-300;
-}
-
-.project-badge {
-  background: $accent;
-  color: $gray-100;
-}
-
-// Research Section for Dark Mode
-.research-section {
-  background: $gray-200;
-}
-
-.section-title {
-  color: $gray-900;
-}
-
-.section-subtitle {
-  color: $gray-700;
-}
-
-.research-card {
-  background: $gray-200;
-  border-color: $gray-300;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  
-  &::before {
-    background: linear-gradient(90deg, $primary 0%, $accent 100%);
-  }
-  
-  &:hover {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  }
-  
-  h3 {
-    color: $gray-900;
-  }
-  
-  p {
-    color: $gray-700;
-    
-    strong {
-      color: $gray-900;
-    }
-  }
-  
-  .tag {
-    background: $gray-300;
-    color: $gray-800;
-  }
-}
-
-// Methodology Section for Dark Mode
-.methodology-section {
-  background: $gray-200;
-  border-color: $gray-300;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-.methodology-content {
-  h3 {
-    color: $gray-900;
-  }
-  
-  p {
-    color: $gray-700;
-  }
-}
-
-.method-icon {
-  i {
-    background: linear-gradient(135deg, $primary 0%, $accent 100%);
-    color: $gray-100;
-  }
-  
-  span {
-    color: $gray-700;
   }
 }
