@@ -735,5 +735,47 @@
     "title": "Teaching",
     "section": "Teaching Assistant",
     "text": "Teaching Assistant\n\n\n\n\n\n\nNoteEPPS 6313 - Introduction to Quantitative Methods\n\n\n\nTeaching Assistant for Dr. Pengfei Zhang\n\nLed weekly STATA lab sessions focusing on regression analysis\nGuided students through practical applications of statistical methods\nProvided individualized support for data analysis projects\n\n\n\n\n\n\n\n\n\nNoteEPPS 6316 - Applied Regression\n\n\n\nTeaching Assistant for Dr. Vito D’Orazio\n\nConducted advanced R programming labs\nFocused on complex regression techniques and econometric analysis\nDeveloped practical exercises for applied data analysis"
+  },
+  {
+    "objectID": "software.html",
+    "href": "software.html",
+    "title": "Software",
+    "section": "",
+    "text": "Open-source tools for conflict and political violence text analysis."
+  },
+  {
+    "objectID": "software.html#conflibert-gui",
+    "href": "software.html#conflibert-gui",
+    "title": "Software",
+    "section": "ConfliBERT GUI",
+    "text": "ConfliBERT GUI\nBrowser-based interface for running inference and fine-tuning classifiers with ConfliBERT. Supports named entity recognition, binary and multilabel classification, question answering, and training custom models on user data with seven base architectures. Includes model comparison with ROC-AUC curves.\nGitHub"
+  },
+  {
+    "objectID": "software.html#conflibert-r",
+    "href": "software.html#conflibert-r",
+    "title": "Software",
+    "section": "conflibertR",
+    "text": "conflibertR\n\n\nR package providing ConfliBERT inference, fine-tuning, and model comparison. All functions accept character vectors and return tibbles.\nGitHub\n\ndevtools::install_github(\n  \"shreyasmeher/conflibertR\"\n)\n\n\n\nFunctions\n\nInferenceFine-tuningModel ComparisonAll Functions\n\n\nlibrary(conflibertR)\n\n# Named Entity Recognition\nconflibert_ner(\"NATO forces were deployed near Kabul.\")\n#&gt;   entity label\n#&gt; 1 NATO   Organisation\n#&gt; 2 Kabul  Location\n\n# Binary Classification\nconflibert_classify(\"A bomb exploded in the market.\")\n#&gt;   label    confidence\n#&gt; 1 Positive 0.98\n\n# Multilabel Classification\nconflibert_multilabel(\"Insurgents kidnapped two aid workers.\")\n\n# Question Answering\nconflibert_qa(\n  context  = \"The ceasefire was signed in Geneva.\",\n  question = \"Where was the ceasefire signed?\"\n)\n#&gt; [1] \"Geneva\"\n\n\n# Load bundled example data\ndata &lt;- conflibert_example(\"binary\")\n\n# Fine-tune ConfliBERT on your data\nresult &lt;- conflibert_finetune(\n  train = data$train,\n  dev   = data$dev,\n  test  = data$test,\n  model = \"ConfliBERT\",\n  task  = \"binary\",\n  epochs = 3\n)\n\nresult$metrics\n#&gt;   accuracy precision recall   f1\n#&gt; 1    0.92      0.91   0.93 0.92\n\n\n# Compare architectures on the same data\ndata &lt;- conflibert_example(\"binary\")\n\ncomparison &lt;- conflibert_compare(\n  train  = data$train,\n  dev    = data$dev,\n  test   = data$test,\n  models = c(\"ConfliBERT\", \"BERT Base Uncased\",\n             \"RoBERTa Base\", \"ModernBERT Base\"),\n  task   = \"binary\",\n  epochs = 3\n)\n\ncomparison\n#&gt;   model             accuracy    f1 runtime\n#&gt; 1 ConfliBERT           0.92  0.92    45.2\n#&gt; 2 BERT Base Uncased    0.88  0.87    42.1\n#&gt; 3 RoBERTa Base         0.90  0.90    48.3\n#&gt; 4 ModernBERT Base      0.93  0.93    38.7\n\n\n\n\n\n\n\n\n\nFunction\nDescription\n\n\n\n\nconflibert_ner()\nNamed Entity Recognition\n\n\nconflibert_classify()\nBinary classification\n\n\nconflibert_multilabel()\nMultilabel event type classification\n\n\nconflibert_qa()\nExtractive question answering\n\n\nconflibert_finetune()\nFine-tune a classifier on custom data\n\n\nconflibert_compare()\nCompare multiple base models\n\n\nconflibert_benchmark()\nEvaluate pretrained model against labeled data\n\n\nconflibert_example()\nLoad bundled example datasets\n\n\nconflibert_models()\nList available base model architectures\n\n\nconflibert_install()\nOne-time Python dependency setup"
+  },
+  {
+    "objectID": "software.html#supported-base-models",
+    "href": "software.html#supported-base-models",
+    "title": "Software",
+    "section": "Supported base models",
+    "text": "Supported base models\nBoth tools support the same architectures for fine-tuning:\n\n\n\n\n\n\n\n\nModel\nHuggingFace ID\nNotes\n\n\n\n\nConfliBERT\nsnowood1/ConfliBERT-scr-uncased\nPretrained on conflict/political text\n\n\nBERT Base Uncased\nbert-base-uncased\nGeneral-purpose baseline\n\n\nBERT Base Cased\nbert-base-cased\nCase-sensitive variant\n\n\nRoBERTa Base\nroberta-base\nImproved BERT training procedure\n\n\nModernBERT Base\nanswerdotai/ModernBERT-base\nUp to 8K token context\n\n\nDeBERTa v3 Base\nmicrosoft/deberta-v3-base\nStrong benchmark performance\n\n\nDistilBERT Base\ndistilbert-base-uncased\nFaster, smaller footprint"
+  },
+  {
+    "objectID": "software.html#citation",
+    "href": "software.html#citation",
+    "title": "Software",
+    "section": "Citation",
+    "text": "Citation\nIf you use these tools in your research, please cite:\n\n\n\n\n\n\nBrandt, P.T., Alsarra, S., D’Orazio, V., Heintze, D., Khan, L., Meher, S., Osorio, J. and Sianan, M., 2025. Extractive versus Generative Language Models for Political Conflict Text Classification. Political Analysis, pp.1-29."
+  },
+  {
+    "objectID": "software.html#conflibertr",
+    "href": "software.html#conflibertr",
+    "title": "Software",
+    "section": "conflibertR",
+    "text": "conflibertR\nR package wrapping ConfliBERT for inference, fine-tuning, and model comparison. Install with devtools::install_github(\"shreyasmeher/conflibertR\").\nGitHub\n\n\n\n\n\n\n\nCitation: Brandt, P.T., Alsarra, S., D’Orazio, V., Heintze, D., Khan, L., Meher, S., Osorio, J. and Sianan, M., 2025. Extractive versus Generative Language Models for Political Conflict Text Classification. Political Analysis, pp.1-29."
   }
 ]

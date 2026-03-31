@@ -1,0 +1,24 @@
+---
+title: "Software"
+toc: false
+---
+
+Open-source tools for conflict and political violence text analysis.
+
+## ConfliBERT GUI
+
+Browser-based interface for running inference and fine-tuning classifiers with [ConfliBERT](https://eventdata.utdallas.edu/conflibert/). Supports named entity recognition, binary and multilabel classification, question answering, and training custom models on user data with seven base architectures. Includes model comparison with ROC-AUC curves.
+
+[GitHub](https://github.com/shreyasmeher/ConfliBERT-gui){target="_blank"}
+
+## conflibertR
+
+R package wrapping ConfliBERT for inference, fine-tuning, and model comparison. Install with `devtools::install_github("shreyasmeher/conflibertR")`.
+
+[GitHub](https://github.com/shreyasmeher/conflibertR){target="_blank"}
+
+---
+
+::: {.callout-tip appearance="minimal" icon=false}
+**Citation:** Brandt, P.T., Alsarra, S., D'Orazio, V., Heintze, D., Khan, L., Meher, S., Osorio, J. and Sianan, M., 2025. Extractive versus Generative Language Models for Political Conflict Text Classification. *Political Analysis*, pp.1-29.
+:::

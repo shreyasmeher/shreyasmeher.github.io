@@ -38,6 +38,8 @@ website:
         href: research.qmd
       - text: "Teaching"
         href: teaching.qmd
+      - text: "Software"
+        href: software.qmd
       - text: "CV"
         href: CV_EUR_June_2025.pdf
       - text: "Gallery" 
