@@ -180,6 +180,7 @@ table {
 .pub-entry {
   border-bottom-color: $gray-300;
 
+  p { margin-bottom: 0.1rem; }
   .pub-title { color: $gray-900 !important; }
   .pub-authors { color: $gray-600 !important; }
   .pub-venue { color: $gray-500 !important; }
