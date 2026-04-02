@@ -319,7 +319,7 @@ code {
 
   // Kill paragraph margins inside entries
   p {
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.15rem;
     line-height: 1.5;
   }
 
@@ -339,10 +339,11 @@ code {
     font-size: 0.85rem;
     font-style: italic;
     color: $gray-500;
+    margin-bottom: 0.4rem !important;
   }
 
   .pub-links {
-    margin-top: 0.25rem;
+    margin-top: 0.35rem;
 
     a {
       font-family: $font-family-sans-serif;
@@ -486,27 +487,37 @@ code {
   &:hover {
     border-color: $gray-400;
 
-    figure figcaption {
-      opacity: 1;
+    figcaption {
+      opacity: 1 !important;
     }
   }
 
-  figure {
+  .quarto-figure {
     margin: 0 !important;
-    padding: 0;
-    position: relative;
-    line-height: 0;
+    padding: 0 !important;
+  }
 
-    img {
+  figure, figure.figure {
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative;
+
+    > p {
+      margin: 0 !important;
+      padding: 0 !important;
+      line-height: 0;
+    }
+
+    img, img.figure-img {
       width: 100%;
       height: 260px;
       object-fit: cover;
       display: block;
-      transition: transform 0.4s ease;
+      margin: 0 !important;
     }
 
     figcaption {
-      position: absolute;
+      position: absolute !important;
       bottom: 0;
       left: 0;
       right: 0;
@@ -518,17 +529,11 @@ code {
       line-height: 1.4;
       opacity: 0;
       transition: opacity 0.25s ease;
-      margin: 0;
+      margin: 0 !important;
 
       a {
         color: lighten($primary, 30%);
         text-decoration: underline;
-      }
-
-      p {
-        margin: 0;
-        color: $white;
-        line-height: 1.4;
       }
     }
   }
