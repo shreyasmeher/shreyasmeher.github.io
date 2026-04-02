@@ -8,7 +8,7 @@ toc-title: "Sections"
 
 ::: {.pub-entry}
 [Extractive versus Generative Language Models for Political Conflict Text Classification]{.pub-title}
-[with P.T. Brandt, S. Alsarra, V. D'Orazio, D. Heintze, L. Khan, J. Osorio & M. Sianan]{.pub-authors}
+[with [P.T. Brandt](https://www.utdallas.edu/~pbrandt/){target="_blank"}, [S. Alsarra](https://www.linkedin.com/in/sultan-alsarra-phd-56977a63/){target="_blank"}, [V. D'Orazio](https://mathanddata.wvu.edu/directory/faculty/vito-d-orazio){target="_blank"}, D. Heintze, [L. Khan](https://www.utdallas.edu/~lkhan/){target="_blank"}, [J. Osorio](https://www.javierosorio.net/){target="_blank"} & M. Sianan]{.pub-authors}
 [*Political Analysis*, 2025]{.pub-venue}
 [<button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button> [Link](https://doi.org/10.1017/pan.2025.10027){target="_blank"} | [Slides](research/ConfliBERT_Presentation.pdf){target="_blank"} | [Code](https://doi.org/10.7910/DVN/KDO5AM){target="_blank"}]{.pub-links}
 [We develop specialized language models for political conflict analysis that outperform general-purpose LLMs like Gemma 2, Llama 3.1, and Qwen 2.5 in accuracy, precision, and recall while being hundreds of times faster.]{.abstract-content}
@@ -16,7 +16,7 @@ toc-title: "Sections"
 
 ::: {.pub-entry}
 [ConflLlama: Domain-Specific Adaptation of Large Language Models for Conflict Event Classification]{.pub-title}
-[with P.T. Brandt]{.pub-authors}
+[with [P.T. Brandt](https://www.utdallas.edu/~pbrandt/){target="_blank"}]{.pub-authors}
 [*Research & Politics*, 2025]{.pub-venue}
 [<button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button> [Link](https://doi.org/10.1177/20531680251356282){target="_blank"} | [Slides](research/APSA___ConflLlama.pdf){target="_blank"} | [Code](https://doi.org/10.7910/DVN/0MUGE6){target="_blank"}]{.pub-links}
 [We introduce ConflLlama, a specialized variant of Llama 3.1 fine-tuned for political conflict classification, demonstrating superior performance in event coding and conflict analysis tasks compared to traditional approaches.]{.abstract-content}
@@ -24,7 +24,7 @@ toc-title: "Sections"
 
 ::: {.pub-entry}
 [Public Health Advocacy in Times of Pandemic: An Analysis of the Medicare-For-All Debate on Twitter During COVID-19]{.pub-title}
-[with S. Kumar & P. Zhang]{.pub-authors}
+[with [S. Kumar](https://jgu.edu.in/jsgp/dr-sushant-kumar/){target="_blank"} & [P. Zhang](https://pengfei-zhang.com/){target="_blank"}]{.pub-authors}
 [*Behavioral Sciences*, 2025]{.pub-venue}
 [<button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button> [Link](https://doi.org/10.3390/bs15020223){target="_blank"} | [Code](https://doi.org/10.7910/DVN/OWVD70){target="_blank"}]{.pub-links}
 [We analyze how health advocacy groups adapted their Medicare-For-All messaging on Twitter during the COVID-19 pandemic, revealing distinct approaches to public engagement and narrative adaptation.]{.abstract-content}
@@ -34,28 +34,28 @@ toc-title: "Sections"
 
 ::: {.pub-entry}
 [Strategic Anticipation and Expert Review: The Determinants of Critical Advisory Opinions from the Dutch Council of State]{.pub-title}
-[with C. Egger & A. Zhelyazkova]{.pub-authors}
+[with [C. Egger](https://claramarieegger.wordpress.com/about/){target="_blank"} & [A. Zhelyazkova](https://www.eur.nl/en/people/asya-zhelyazkova){target="_blank"}]{.pub-authors}
 [<button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>]{.pub-links}
 [What determines whether an expert advisory body issues a critical opinion on a legislative proposal? Using a novel dataset of 2,129 advisory opinions (2004--2025), we find that ideological distance is the most robust predictor of opinion severity, while anticipatory compliance by vulnerable actors reverses expected patterns.]{.abstract-content}
 :::
 
 ::: {.pub-entry}
 [Framework Laws and Fading Oversight: How the Dutch Executive Expanded Its Lawmaking Authority]{.pub-title}
-[with C. Egger & A. Zhelyazkova]{.pub-authors}
+[with [C. Egger](https://claramarieegger.wordpress.com/about/){target="_blank"} & [A. Zhelyazkova](https://www.eur.nl/en/people/asya-zhelyazkova){target="_blank"}]{.pub-authors}
 [<button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>]{.pub-links}
 [Examining executive predominance in the Netherlands using a legislative dataset spanning 2000--2025. Roughly 75% of legislation now takes the form of secondary executive acts, while MPs retreat toward weaker oversight tools such as motions and parliamentary questions.]{.abstract-content}
 :::
 
 ::: {.pub-entry}
 [Democracy and Internet Control: Theory and Evidence from Transparency Reports]{.pub-title}
-[with P. Zhang]{.pub-authors}
+[with [P. Zhang](https://pengfei-zhang.com/){target="_blank"}]{.pub-authors}
 [<button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>]{.pub-links}
 [Examining how democratic and authoritarian regimes differ in their approach to internet content moderation, using data from transparency reports.]{.abstract-content}
 :::
 
 ::: {.pub-entry}
 [Two Types of Censorship? An Assessment of the Informational Autocracy Thesis]{.pub-title}
-[with P. Zhang]{.pub-authors}
+[with [P. Zhang](https://pengfei-zhang.com/){target="_blank"}]{.pub-authors}
 [<button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>]{.pub-links}
 [Testing how Guriev & Treisman's Informational Autocracy theory applies to internet filtering practices in autocratic nations.]{.abstract-content}
 :::
@@ -70,7 +70,7 @@ toc-title: "Sections"
 
 ::: {.pub-entry}
 [Populism and Investment Treaties]{.pub-title}
-[with C. Peinhardt]{.pub-authors}
+[with [C. Peinhardt](https://profiles.utdallas.edu/clint.peinhardt){target="_blank"}]{.pub-authors}
 [<button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>]{.pub-links}
 [Investigating how nationalist rhetoric influences countries' decisions to exit international investment agreements.]{.abstract-content}
 :::
