@@ -5,6 +5,8 @@ project:
     - "*.qmd"
     - "!drafts/"
     - "!assignments/"
+  resources:
+    - CNAME
 
 website:
   title: "Shreyas Meher"
