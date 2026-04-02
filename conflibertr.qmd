@@ -1,0 +1,168 @@
+---
+title: "conflibertR"
+toc: true
+toc-title: "Guide"
+---
+
+An R package that brings [ConfliBERT](https://huggingface.co/eventdata-utd) --- a transformer model purpose-built for conflict and political violence text --- into R. Run pretrained inference, benchmark models, fine-tune custom classifiers, and compare architectures, all from your R console.
+
+[GitHub](https://github.com/shreyasmeher/conflibertR){target="_blank"}
+
+## Installation
+
+```r
+# Install from GitHub
+devtools::install_github("shreyasmeher/conflibertR")
+
+# Set up the Python backend (run once, then restart R)
+library(conflibertR)
+conflibert_install()
+```
+
+## Named Entity Recognition
+
+Extract persons, organizations, locations, weapons, and temporal expressions from conflict text.
+
+```r
+ner_results <- conflibert_ner(
+  "The United Nations deployed peacekeepers to eastern Congo
+   after rebel forces attacked Goma on Tuesday."
+)
+ner_results
+
+# Vectorized: pass multiple texts at once
+ner_batch <- conflibert_ner(c(
+  "NATO forces launched airstrikes near Tripoli in March 2024.",
+  "President Zelenskyy met with General Syrskyi in Kyiv."
+))
+```
+
+## Binary Classification
+
+Determine whether text describes a conflict event. Returns a label, confidence score, and per-class probabilities.
+
+```r
+classify_results <- conflibert_classify(c(
+  "Armed militants stormed a military outpost killing twelve soldiers.",
+  "The European Central Bank held interest rates steady at 4.5 percent.",
+  "Protesters clashed with riot police outside the parliament building.",
+  "A new trade agreement was signed between Japan and Australia."
+))
+classify_results
+```
+
+## Multilabel Event Classification
+
+Score text against four event categories --- Armed Assault, Bombing or Explosion, Kidnapping, and Other --- each evaluated independently.
+
+```r
+event_results <- conflibert_multilabel(c(
+  "A car bomb exploded near the government ministry in Baghdad.",
+  "Gunmen kidnapped three aid workers travelling through the Sahel region."
+))
+event_results
+```
+
+## Question Answering
+
+Extract answers directly from conflict-related passages.
+
+```r
+context <- "On 15 September 2023, ethnic clashes erupted in Manipur, India.
+  The Indian Army deployed two battalions to restore order.
+  At least 60 people were killed and over 200 injured in the violence."
+
+conflibert_qa(context, "How many people were killed?")
+conflibert_qa(context, "Who was deployed to restore order?")
+conflibert_qa(context, "Where did the clashes occur?")
+```
+
+## Benchmarking
+
+Evaluate the pretrained binary classifier against your own labeled data.
+
+```r
+data <- conflibert_example("binary")
+bench <- conflibert_benchmark(data$test$text, data$test$label)
+bench
+```
+
+## Fine-Tuning
+
+Train a custom binary classifier on labeled data. The package ships with example datasets.
+
+```r
+data <- conflibert_example("binary")
+
+result <- conflibert_finetune(
+  train  = data$train,
+  dev    = data$dev,
+  test   = data$test,
+  model  = "ConfliBERT",
+  task   = "binary",
+  epochs = 3
+)
+
+cat("Accuracy:", result$metrics$accuracy, "\n")
+cat("F1 Score:", result$metrics$f1, "\n")
+```
+
+Multiclass classification is also supported:
+
+```r
+mc_data <- conflibert_example("multiclass")
+
+mc_result <- conflibert_finetune(
+  train  = mc_data$train,
+  dev    = mc_data$dev,
+  test   = mc_data$test,
+  model  = "ConfliBERT",
+  task   = "multiclass",
+  epochs = 3
+)
+```
+
+## Model Comparison
+
+Compare ConfliBERT against general-purpose transformers on the same task.
+
+```r
+comparison <- conflibert_compare(
+  train  = data$train,
+  dev    = data$dev,
+  test   = data$test,
+  models = c("ConfliBERT", "BERT Base Uncased", "DistilBERT Base"),
+  task   = "binary",
+  epochs = 3
+)
+comparison
+```
+
+See all available base models: `conflibert_models()`
+
+## Function Reference
+
+| Function | Task |
+|----------|------|
+| `conflibert_ner()` | Named entity recognition |
+| `conflibert_classify()` | Binary conflict classification |
+| `conflibert_multilabel()` | Multilabel event type scoring |
+| `conflibert_qa()` | Extractive question answering |
+| `conflibert_benchmark()` | Evaluate pretrained classifier |
+| `conflibert_finetune()` | Train a custom classifier |
+| `conflibert_compare()` | Compare multiple architectures |
+| `conflibert_example()` | Load bundled example datasets |
+| `conflibert_models()` | List available base models |
+
+## Citation
+
+```bibtex
+@inproceedings{hu2022conflibert,
+  title={ConfliBERT: A Pre-trained Language Model for Political Conflict and Violence},
+  author={Hu, Yibo and Hosseini, MohammadSaleh and Parolin, Erick Skorupa
+          and Osorio, Javier and Khan, Latifur and Brandt, Patrick and D'Orazio, Vito},
+  booktitle={Proceedings of NAACL-HLT 2022},
+  pages={5469--5482},
+  year={2022}
+}
+```

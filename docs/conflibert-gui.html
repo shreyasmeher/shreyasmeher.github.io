@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Gallery – Shreyas Meher</title>
+<title>ConfliBERT GUI – Shreyas Meher</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -42,9 +77,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-c9ebe68114e0d70f07eaf664c7651e0b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-9acdf42aa02c19076b14227363729204.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-c9ebe68114e0d70f07eaf664c7651e0b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -65,15 +97,19 @@ ul.task-list li input[type="checkbox"] {
 
 <meta property="og:title" content="Shreyas Meher | Postdoctoral Researcher">
 <meta property="og:description" content="Research in Digital Governance, Democratic Backsliding, and Computational Politics.">
-<meta property="og:image" content="https://shreyasmeher.github.io/gallery/img1.jpg">
+<meta property="og:image" content="https://shreyasmeher.github.io/images/conflibert-gui/home.png">
 <meta property="og:site_name" content="Shreyas Meher">
-<meta property="og:image:alt" content="Beginning the PhD journey. I was told there would be no math. I was lied to.">
+<meta property="og:image:alt" content="ConfliBERT GUI home screen">
+<meta property="og:image:height" content="2404">
+<meta property="og:image:width" content="2704">
 <meta name="twitter:title" content="Shreyas Meher | Postdoctoral Researcher">
 <meta name="twitter:description" content="Research in Digital Governance, Democratic Backsliding, and Computational Politics.">
-<meta name="twitter:image" content="https://shreyasmeher.github.io/gallery/img1.jpg">
+<meta name="twitter:image" content="https://shreyasmeher.github.io/images/conflibert-gui/home.png">
 <meta name="twitter:creator" content="@shreyasmhr">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image:alt" content="Beginning the PhD journey. I was told there would be no math. I was lied to.">
+<meta name="twitter:image:alt" content="ConfliBERT GUI home screen">
+<meta name="twitter:image-height" content="2404">
+<meta name="twitter:image-width" content="2704">
 </head>
 
 <body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -281,7 +317,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./Gallery.html" aria-current="page"> 
+    <a class="nav-link" href="./Gallery.html"> 
 <span class="menu-text">Gallery</span></a>
   </li>  
 </ul>
@@ -315,22 +351,42 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Guide</h2>
+   
+  <ul>
+  <li><a href="#features" id="toc-features" class="nav-link active" data-scroll-target="#features">Features</a></li>
+  <li><a href="#walkthrough" id="toc-walkthrough" class="nav-link" data-scroll-target="#walkthrough">Walkthrough</a>
+  <ul class="collapse">
+  <li><a href="#home" id="toc-home" class="nav-link" data-scroll-target="#home">Home</a></li>
+  <li><a href="#named-entity-recognition" id="toc-named-entity-recognition" class="nav-link" data-scroll-target="#named-entity-recognition">Named Entity Recognition</a></li>
+  <li><a href="#text-classification" id="toc-text-classification" class="nav-link" data-scroll-target="#text-classification">Text Classification</a></li>
+  <li><a href="#multilabel-classification" id="toc-multilabel-classification" class="nav-link" data-scroll-target="#multilabel-classification">Multilabel Classification</a></li>
+  <li><a href="#question-answering" id="toc-question-answering" class="nav-link" data-scroll-target="#question-answering">Question Answering</a></li>
+  <li><a href="#fine-tuning" id="toc-fine-tuning" class="nav-link" data-scroll-target="#fine-tuning">Fine-Tuning</a></li>
+  </ul></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
+  <li><a href="#models" id="toc-models" class="nav-link" data-scroll-target="#models">Models</a></li>
+  <li><a href="#citation" id="toc-citation" class="nav-link" data-scroll-target="#citation">Citation</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Gallery</h1>
+<h1 class="title">ConfliBERT GUI</h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta">
 
     
   
@@ -342,325 +398,117 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>A visual timeline of my academic and personal journey, from starting my PhD in Texas to my current research in the Netherlands.</p>
-<div class="gallery-filters">
-<p><button class="filter-btn active" data-filter="all">All</button> <button class="filter-btn" data-filter="texas">Texas Life</button> <button class="filter-btn" data-filter="conferences">Conferences</button> <button class="filter-btn" data-filter="graduation">Graduation</button> <button class="filter-btn" data-filter="netherlands">Netherlands</button></p>
-</div>
-<div id="gallery-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); grid-gap: 0.75rem;">
-<div class="gallery-item" data-category="texas">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img1.jpg" class="lightbox" data-gallery="gallery" title="Beginning the PhD journey. I was told there would be no math. I was lied to."><img src="gallery/img1.jpg" class="img-fluid figure-img" alt="Beginning the PhD journey. I was told there would be no math. I was lied to."></a></p>
-<figcaption>Beginning the PhD journey. I was told there would be no math. I was lied to.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="texas">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img2.jpg" class="lightbox" data-gallery="gallery" title="Social distancing on campus. My research on network effects suddenly felt very relevant."><img src="gallery/img2.jpg" class="img-fluid figure-img" alt="Social distancing on campus. My research on network effects suddenly felt very relevant."></a></p>
-<figcaption>Social distancing on campus. My research on network effects suddenly felt very relevant.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="texas">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img4.jpg" class="lightbox" data-gallery="gallery" title="Made it through Houston traffic. NASA launches are less stressful."><img src="gallery/img4.jpg" class="img-fluid figure-img" alt="Made it through Houston traffic. NASA launches are less stressful."></a></p>
-<figcaption>Made it through Houston traffic. NASA launches are less stressful.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="texas">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img6.jpg" class="lightbox" data-gallery="gallery" title="My two-wheeled, dissertation-escape vehicle. Faster than debugging code. Usually."><img src="gallery/img6.jpg" class="img-fluid figure-img" alt="My two-wheeled, dissertation-escape vehicle. Faster than debugging code. Usually."></a></p>
-<figcaption>My two-wheeled, dissertation-escape vehicle. Faster than debugging code. Usually.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="texas">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img7.jpg" class="lightbox" data-gallery="gallery" title="Proof that I did, occasionally, leave the library. A Texas sunset."><img src="gallery/img7.jpg" class="img-fluid figure-img" alt="Proof that I did, occasionally, leave the library. A Texas sunset."></a></p>
-<figcaption>Proof that I did, occasionally, leave the library. A Texas sunset.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="texas">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img8.jpg" class="lightbox" data-gallery="gallery" title="More sunsets, for econometric modeling purposes, of course."><img src="gallery/img8.jpg" class="img-fluid figure-img" alt="More sunsets, for econometric modeling purposes, of course."></a></p>
-<figcaption>More sunsets, for econometric modeling purposes, of course.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="texas">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img9.jpg" class="lightbox" data-gallery="gallery" title="A sign of my future move to the Netherlands? Or just a pretty flower? You decide."><img src="gallery/img9.jpg" class="img-fluid figure-img" alt="A sign of my future move to the Netherlands? Or just a pretty flower? You decide."></a></p>
-<figcaption>A sign of my future move to the Netherlands? Or just a pretty flower? You decide.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="texas">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img10.jpg" class="lightbox" data-gallery="gallery" title="Another sign? The p-value on this hypothesis is getting suspiciously low."><img src="gallery/img10.jpg" class="img-fluid figure-img" alt="Another sign? The p-value on this hypothesis is getting suspiciously low."></a></p>
-<figcaption>Another sign? The p-value on this hypothesis is getting suspiciously low.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="conferences">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img11.jpg" class="lightbox" data-gallery="gallery" title="MPSA Conference in Chicago. I came for the political science, I stayed for the deep-dish pizza."><img src="gallery/img11.jpg" class="img-fluid figure-img" alt="MPSA Conference in Chicago. I came for the political science, I stayed for the deep-dish pizza."></a></p>
-<figcaption>MPSA Conference in Chicago. I came for the political science, I stayed for the deep-dish pizza.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="conferences">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img12.jpg" class="lightbox" data-gallery="gallery" title="MPSA dress code: academic with a hint of resisting the dark side at the Palmer House Hotel."><img src="gallery/img12.jpg" class="img-fluid figure-img" alt="MPSA dress code: academic with a hint of resisting the dark side at the Palmer House Hotel."></a></p>
-<figcaption>MPSA dress code: academic with a hint of resisting the dark side at the Palmer House Hotel.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="texas">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img13.jpg" class="lightbox" data-gallery="gallery" title="The Great North American Eclipse. My models did not predict this."><img src="gallery/img13.jpg" class="img-fluid figure-img" alt="The Great North American Eclipse. My models did not predict this."></a></p>
-<figcaption>The Great North American Eclipse. My models did not predict this.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="texas">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img14.jpg" class="lightbox" data-gallery="gallery" title="Verifying the eclipse data with a secondary source. It was, in fact, dark."><img src="gallery/img14.jpg" class="img-fluid figure-img" alt="Verifying the eclipse data with a secondary source. It was, in fact, dark."></a></p>
-<figcaption>Verifying the eclipse data with a secondary source. It was, in fact, dark.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="texas">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img15.jpg" class="lightbox" data-gallery="gallery" title="My official submission for the next Texas tourism campaign. Howdy, y’all."><img src="gallery/img15.jpg" class="img-fluid figure-img" alt="My official submission for the next Texas tourism campaign. Howdy, y’all."></a></p>
-<figcaption>My official submission for the next Texas tourism campaign. Howdy, y’all.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="conferences">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img16.jpg" class="lightbox" data-gallery="gallery" title="SIOE Conference at the University of Chicago. Trying to absorb knowledge via osmosis."><img src="gallery/img16.jpg" class="img-fluid figure-img" alt="SIOE Conference at the University of Chicago. Trying to absorb knowledge via osmosis."></a></p>
-<figcaption>SIOE Conference at the University of Chicago. Trying to absorb knowledge via osmosis.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="conferences">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img17.jpg" class="lightbox" data-gallery="gallery" title="SIOE, with my co-author Pengfei Zhang and Satoshi Fukuda of Bocconi University."><img src="gallery/img17.jpg" class="img-fluid figure-img" alt="SIOE, with my co-author Pengfei Zhang and Satoshi Fukuda of Bocconi University."></a></p>
-<figcaption>SIOE, with my co-author <a href="https://pengfei-zhang.com/">Pengfei Zhang</a> and Satoshi Fukuda of Bocconi University.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="conferences">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img18.jpg" class="lightbox" data-gallery="gallery" title="SIOE’s dinner cruise. A statistical analysis of keeping 200 academics from falling into the Chicago River."><img src="gallery/img18.jpg" class="img-fluid figure-img" alt="SIOE’s dinner cruise. A statistical analysis of keeping 200 academics from falling into the Chicago River."></a></p>
-<figcaption>SIOE’s dinner cruise. A statistical analysis of keeping 200 academics from falling into the Chicago River.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="conferences">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img19.jpg" class="lightbox" data-gallery="gallery" title="Chicago at night: stunning enough to make you forgive the wind’s personal vendetta."><img src="gallery/img19.jpg" class="img-fluid figure-img" alt="Chicago at night: stunning enough to make you forgive the wind’s personal vendetta."></a></p>
-<figcaption>Chicago at night: stunning enough to make you forgive the wind’s personal vendetta.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="texas">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img20.jpg" class="lightbox" data-gallery="gallery" title="Teaching R and Python at the EPPS Math &amp; Coding Camp with the legendary Dr.&nbsp;Karl Ho."><img src="gallery/img20.jpg" class="img-fluid figure-img" alt="Teaching R and Python at the EPPS Math &amp; Coding Camp with the legendary Dr.&nbsp;Karl Ho."></a></p>
-<figcaption>Teaching R and Python at the EPPS Math &amp; Coding Camp with the legendary Dr.&nbsp;Karl Ho.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="conferences">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img21.jpg" class="lightbox" data-gallery="gallery" title="APSA Annual Meeting in Philadelphia. City of brotherly love… until the Q&amp;A session starts."><img src="gallery/img21.jpg" class="img-fluid figure-img" alt="APSA Annual Meeting in Philadelphia. City of brotherly love… until the Q&amp;A session starts."></a></p>
-<figcaption>APSA Annual Meeting in Philadelphia. City of brotherly love… until the Q&amp;A session starts.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="conferences">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img22.jpg" class="lightbox" data-gallery="gallery" title="APSA attendees trying to support each other through the job market cycle."><img src="gallery/img22.jpg" class="img-fluid figure-img" alt="APSA attendees trying to support each other through the job market cycle."></a></p>
-<figcaption>APSA attendees trying to support each other through the job market cycle.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="conferences">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img23.jpg" class="lightbox" data-gallery="gallery" title="A founding father once said, “Life, liberty, and the pursuit of melted cheese.”"><img src="gallery/img23.jpg" class="img-fluid figure-img" alt="A founding father once said, “Life, liberty, and the pursuit of melted cheese.”"></a></p>
-<figcaption>A founding father once said, “Life, liberty, and the pursuit of melted cheese.”</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="texas">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img24.jpg" class="lightbox" data-gallery="gallery" title="Explaining the finer points of PC building to my colleague, Crystal Conway. Step 1: More RGB."><img src="gallery/img24.jpg" class="img-fluid figure-img" alt="Explaining the finer points of PC building to my colleague, Crystal Conway. Step 1: More RGB."></a></p>
-<figcaption>Explaining the finer points of PC building to my colleague, Crystal Conway. Step 1: More RGB.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="conferences">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img25.jpg" class="lightbox" data-gallery="gallery" title="APPAM Conference at National Harbor. The weather was a strong incentive to stay inside and discuss policy."><img src="gallery/img25.jpg" class="img-fluid figure-img" alt="APPAM Conference at National Harbor. The weather was a strong incentive to stay inside and discuss policy."></a></p>
-<figcaption>APPAM Conference at National Harbor. The weather was a strong incentive to stay inside and discuss policy.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="conferences">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img26.png" class="lightbox" data-gallery="gallery" title="The obligatory conference headshot. Now you know what I look like in front of a blue background."><img src="gallery/img26.png" class="img-fluid figure-img" alt="The obligatory conference headshot. Now you know what I look like in front of a blue background."></a></p>
-<figcaption>The obligatory conference headshot. Now you know what I look like in front of a blue background.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="conferences">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img27.jpg" class="lightbox" data-gallery="gallery" title="The Gaylord National’s Christmas tree during APPAM. My data visualizations are rarely this festive."><img src="gallery/img27.jpg" class="img-fluid figure-img" alt="The Gaylord National’s Christmas tree during APPAM. My data visualizations are rarely this festive."></a></p>
-<figcaption>The Gaylord National’s Christmas tree during APPAM. My data visualizations are rarely this festive.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="conferences">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img28.jpg" class="lightbox" data-gallery="gallery" title="Views from the terminal: powered by caffeine, conference talks, and endless boarding announcements."><img src="gallery/img28.jpg" class="img-fluid figure-img" alt="Views from the terminal: powered by caffeine, conference talks, and endless boarding announcements."></a></p>
-<figcaption>Views from the terminal: powered by caffeine, conference talks, and endless boarding announcements.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="texas">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img29.jpg" class="lightbox" data-gallery="gallery" title="Celebrating a birthday with friends and colleagues at UT Dallas."><img src="gallery/img29.jpg" class="img-fluid figure-img" alt="Celebrating a birthday with friends and colleagues at UT Dallas."></a></p>
-<figcaption>Celebrating a birthday with friends and colleagues at UT Dallas.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="texas">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img30.jpg" class="lightbox" data-gallery="gallery" title="Visiting the Crow Museum of Asian Art at UT Dallas."><img src="gallery/img30.jpg" class="img-fluid figure-img" alt="Visiting the Crow Museum of Asian Art at UT Dallas."></a></p>
-<figcaption>Visiting the Crow Museum of Asian Art at UT Dallas.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="texas">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img31.jpg" class="lightbox" data-gallery="gallery" title="The “Life is a Cosmos” installation at the Crow Museum."><img src="gallery/img31.jpg" class="img-fluid figure-img" alt="The “Life is a Cosmos” installation at the Crow Museum."></a></p>
-<figcaption>The “Life is a Cosmos” installation at the Crow Museum.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="graduation">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img32.jpg" class="lightbox" data-gallery="gallery" title="Successfully defended! So grateful for my dissertation committee: (L-R) Dr.&nbsp;Elizabeth Searing, Dr.&nbsp;Pengfei Zhang, Dr.&nbsp;Clint Peinhardt, &amp; Dr.&nbsp;Patrick Brandt."><img src="gallery/img32.jpg" class="img-fluid figure-img" alt="Successfully defended! So grateful for my dissertation committee: (L-R) Dr.&nbsp;Elizabeth Searing, Dr.&nbsp;Pengfei Zhang, Dr.&nbsp;Clint Peinhardt, &amp; Dr.&nbsp;Patrick Brandt."></a></p>
-<figcaption>Successfully defended! So grateful for my dissertation committee: (L-R) Dr.&nbsp;Elizabeth Searing, Dr.&nbsp;Pengfei Zhang, Dr.&nbsp;Clint Peinhardt, &amp; Dr.&nbsp;Patrick Brandt.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="conferences">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img33.jpg" class="lightbox" data-gallery="gallery" title="San Francisco’s iconic trams. Pretty sure this was also a sign."><img src="gallery/img33.jpg" class="img-fluid figure-img" alt="San Francisco’s iconic trams. Pretty sure this was also a sign."></a></p>
-<figcaption>San Francisco’s iconic trams. Pretty sure this was also a sign.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="graduation">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img34.jpg" class="lightbox" data-gallery="gallery" title="Doctoral Hooding Ceremony with Pengfei and our colleague Robert Geibler."><img src="gallery/img34.jpg" class="img-fluid figure-img" alt="Doctoral Hooding Ceremony with Pengfei and our colleague Robert Geibler."></a></p>
-<figcaption>Doctoral Hooding Ceremony with Pengfei and our colleague Robert Geibler.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="graduation">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img35.jpg" class="lightbox" data-gallery="gallery" title="All smiles at the hooding ceremony. The hat is more aerodynamic than it looks."><img src="gallery/img35.jpg" class="img-fluid figure-img" alt="All smiles at the hooding ceremony. The hat is more aerodynamic than it looks."></a></p>
-<figcaption>All smiles at the hooding ceremony. The hat is more aerodynamic than it looks.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="graduation">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img36.jpg" class="lightbox" data-gallery="gallery" title="We did it! Celebrating with fellow graduates Dohyo and Ricardo."><img src="gallery/img36.jpg" class="img-fluid figure-img" alt="We did it! Celebrating with fellow graduates Dohyo and Ricardo."></a></p>
-<figcaption>We did it! Celebrating with fellow graduates Dohyo and Ricardo.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="netherlands">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img37.jpg" class="lightbox" data-gallery="gallery" title="Found a serene lake just outside Rotterdam. My new favorite thinking spot."><img src="gallery/img37.jpg" class="img-fluid figure-img" alt="Found a serene lake just outside Rotterdam. My new favorite thinking spot."></a></p>
-<figcaption>Found a serene lake just outside Rotterdam. My new favorite thinking spot.</figcaption>
-</figure>
-</div>
-</div>
-<div class="gallery-item" data-category="netherlands">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="gallery/img38.jpg" class="lightbox" data-gallery="gallery" title="It’s not truly the Netherlands until you find a traditional windmill. Check."><img src="gallery/img38.jpg" class="img-fluid figure-img" alt="It’s not truly the Netherlands until you find a traditional windmill. Check."></a></p>
-<figcaption>It’s not truly the Netherlands until you find a traditional windmill. Check.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const galleryItems = document.querySelectorAll('.gallery-item');
-
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-
-      const filter = button.getAttribute('data-filter');
-
-      galleryItems.forEach(item => {
-        if (filter === 'all' || item.getAttribute('data-category') === filter) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    });
-  });
-});
-</script>
+<p>A browser-based NLP toolkit for conflict and political violence text analysis. Built on <a href="https://eventdata.utdallas.edu/conflibert/">ConfliBERT</a>, the GUI provides an accessible interface for named entity recognition, text classification, question answering, and model fine-tuning — no coding required.</p>
+<p><a href="https://github.com/shreyasmeher/ConfliBERT-gui" target="_blank">GitHub</a> | Developed with <a href="https://www.linkedin.com/in/sultan-alsarra-phd-56977a63/">Sultan Alsarra</a></p>
+<section id="features" class="level2">
+<h2 class="anchored" data-anchor-id="features">Features</h2>
+<ul>
+<li><strong>Named Entity Recognition</strong> — Identify organizations, persons, locations, weapons, and temporal expressions in conflict text</li>
+<li><strong>Binary Classification</strong> — Determine if text describes a conflict event, with confidence scores</li>
+<li><strong>Multilabel Classification</strong> — Categorize text into event types: Armed Assault, Bombing/Explosion, Kidnapping, Other</li>
+<li><strong>Question Answering</strong> — Extract answers from conflict-related passages</li>
+<li><strong>Fine-Tuning</strong> — Train custom classifiers with LoRA/QLoRA on your own data, with seven base architectures</li>
+<li><strong>Batch Processing</strong> — Upload CSVs for bulk analysis</li>
+</ul>
+</section>
+<section id="walkthrough" class="level2">
+<h2 class="anchored" data-anchor-id="walkthrough">Walkthrough</h2>
+<section id="home" class="level3">
+<h3 class="anchored" data-anchor-id="home">Home</h3>
+<p>The landing page lets you select your task and input text directly or upload a CSV for batch processing.</p>
+<p><img src="images/conflibert-gui/home.png" class="walkthrough-img img-fluid" alt="ConfliBERT GUI home screen"></p>
+</section>
+<section id="named-entity-recognition" class="level3">
+<h3 class="anchored" data-anchor-id="named-entity-recognition">Named Entity Recognition</h3>
+<p>Paste any conflict-related text and the model identifies and color-codes named entities — persons, organizations, locations, weapons, and more.</p>
+<p><img src="images/conflibert-gui/ner.png" class="walkthrough-img img-fluid" alt="NER results with color-coded entities"></p>
+</section>
+<section id="text-classification" class="level3">
+<h3 class="anchored" data-anchor-id="text-classification">Text Classification</h3>
+<p>Binary classification determines whether text describes a conflict event. Results include confidence scores for each class.</p>
+<p><img src="images/conflibert-gui/classification.png" class="walkthrough-img img-fluid" alt="Binary classification results with confidence scores"></p>
+</section>
+<section id="multilabel-classification" class="level3">
+<h3 class="anchored" data-anchor-id="multilabel-classification">Multilabel Classification</h3>
+<p>Each text is scored against four event categories independently, useful for texts describing multiple event types.</p>
+<p><img src="images/conflibert-gui/multilabel.png" class="walkthrough-img img-fluid" alt="Multilabel classification showing multiple event type scores"></p>
+</section>
+<section id="question-answering" class="level3">
+<h3 class="anchored" data-anchor-id="question-answering">Question Answering</h3>
+<p>Enter a passage and a question. The model extracts the relevant answer span directly from the text.</p>
+<p><img src="images/conflibert-gui/qa.png" class="walkthrough-img img-fluid" alt="Question answering extracting answers from context"></p>
+</section>
+<section id="fine-tuning" class="level3">
+<h3 class="anchored" data-anchor-id="fine-tuning">Fine-Tuning</h3>
+<p>Train custom classifiers on your labeled data. Select a base model, upload training/validation sets, configure hyperparameters, and monitor training progress.</p>
+<p><img src="images/conflibert-gui/finetune.png" class="walkthrough-img img-fluid" alt="Fine-tuning interface with model selection and training parameters"></p>
+</section>
+</section>
+<section id="installation" class="level2">
+<h2 class="anchored" data-anchor-id="installation">Installation</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clone the repository</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/shreyasmeher/conflibert-gui.git</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> conflibert-gui</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create virtual environment</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv env</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> env/bin/activate  <span class="co"># Mac/Linux</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># env\Scripts\activate   # Windows</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Install dependencies</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-r</span> requirements.txt</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Run</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> app.py</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Open http://localhost:7860</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Requirements:</strong> Python 3.8+, PyTorch, Transformers, Gradio</p>
+</section>
+<section id="models" class="level2">
+<h2 class="anchored" data-anchor-id="models">Models</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 46%">
+<col style="width: 53%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Model</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>NER</td>
+<td><code>eventdata-utd/conflibert-named-entity-recognition</code></td>
+</tr>
+<tr class="even">
+<td>Binary Classification</td>
+<td><code>eventdata-utd/conflibert-binary-classification</code></td>
+</tr>
+<tr class="odd">
+<td>Multilabel</td>
+<td><code>eventdata-utd/conflibert-satp-relevant-multilabel</code></td>
+</tr>
+<tr class="even">
+<td>Question Answering</td>
+<td><code>salsarra/ConfliBERT-QA</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="citation" class="level2">
+<h2 class="anchored" data-anchor-id="citation">Citation</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">@inproceedings</span>{<span class="ot">hu2022conflibert</span>,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>={ConfliBERT: A Pre-trained Language Model for Political Conflict and Violence},</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>={Hu, Yibo and Hosseini, MohammadSaleh and Parolin, Erick Skorupa</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>          and Osorio, Javier and Khan, Latifur and Brandt, Patrick and D'Orazio, Vito},</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">booktitle</span>={Proceedings of NAACL-HLT 2022},</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">pages</span>={5469--5482},</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>={2022}</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1095,38 +943,6 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 

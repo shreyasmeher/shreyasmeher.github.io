@@ -39,9 +39,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-f7c2d8b4d32e2e535528e2f984ec639b.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8b07963cf8441c7d42e1ba1c39c4aa6b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-99a8a450972fb22e1d7cdfcdbade234b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-8b07963cf8441c7d42e1ba1c39c4aa6b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-c9ebe68114e0d70f07eaf664c7651e0b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-9acdf42aa02c19076b14227363729204.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-c9ebe68114e0d70f07eaf664c7651e0b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -62,7 +62,6 @@ ul.task-list li input[type="checkbox"] {
 
 <meta property="og:title" content="Shreyas Meher | Postdoctoral Researcher">
 <meta property="og:description" content="Research in Digital Governance, Democratic Backsliding, and Computational Politics.">
-<meta property="og:image" content="https://shreyasmeher.github.io/images/social-preview.png">
 <meta property="og:site_name" content="Shreyas Meher">
 <meta name="twitter:title" content="Shreyas Meher | Postdoctoral Researcher">
 <meta name="twitter:description" content="Research in Digital Governance, Democratic Backsliding, and Computational Politics.">
@@ -259,15 +258,19 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./teaching.html"> 
-<span class="menu-text">Teaching</span></a>
+    <a class="nav-link" href="./publications.html"> 
+<span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./software.html" aria-current="page"> 
 <span class="menu-text">Software</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./CV_EUR_June_2025.pdf"> 
+    <a class="nav-link" href="./teaching.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./CV.pdf"> 
 <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
@@ -332,30 +335,19 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Open-source tools for conflict and political violence text analysis.</p>
-<section id="conflibert-gui" class="level2">
-<h2 class="anchored" data-anchor-id="conflibert-gui">ConfliBERT GUI</h2>
-<p>Browser-based interface for running inference and fine-tuning classifiers with <a href="https://eventdata.utdallas.edu/conflibert/">ConfliBERT</a>. Supports named entity recognition, binary and multilabel classification, question answering, and training custom models on user data with seven base architectures. Includes model comparison with ROC-AUC curves.</p>
-<p><a href="https://github.com/shreyasmeher/ConfliBERT-gui" target="_blank">GitHub</a></p>
-</section>
-<section id="conflibertr" class="level2">
-<h2 class="anchored" data-anchor-id="conflibertr">conflibertR</h2>
-<p>R package wrapping ConfliBERT for inference, fine-tuning, and model comparison. Install with <code>devtools::install_github("shreyasmeher/conflibertR")</code>.</p>
-<p><a href="https://github.com/shreyasmeher/conflibertR" target="_blank">GitHub</a></p>
-<hr>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p><strong>Citation:</strong> Brandt, P.T., Alsarra, S., D’Orazio, V., Heintze, D., Khan, L., Meher, S., Osorio, J. and Sianan, M., 2025. Extractive versus Generative Language Models for Political Conflict Text Classification. <em>Political Analysis</em>, pp.1-29.</p>
-</div>
-</div>
+<p>Open-source tools for conflict and political violence text analysis, built as part of the NSF-funded <a href="https://eventdata.utdallas.edu/">ConfliBERT project</a>.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+  <a href="conflibert-gui.html" class="tool-card">
+    <h3 class="anchored">ConfliBERT GUI</h3>
+    <p>Browser-based interface for running NER, classification, question answering, and fine-tuning custom models on conflict text. No coding required.</p>
+  </a>
+  <a href="conflibertr.html" class="tool-card">
+    <h3 class="anchored">conflibertR</h3>
+    <p>R package wrapping ConfliBERT for inference, fine-tuning, benchmarking, and model comparison — all from your R console.</p>
+  </a>
 </div>
 
 
-</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -780,9 +772,7 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© 2026 Shreyas Meher<br>
-Erasmus School of Social and Behavioural Sciences<br>
-Erasmus University Rotterdam</p>
+<p>© 2026 Shreyas Meher Erasmus School of Social and Behavioural Sciences Erasmus University Rotterdam</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;

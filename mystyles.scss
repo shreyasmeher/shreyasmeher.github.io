@@ -1,51 +1,50 @@
 /*-- scss:defaults --*/
 
-// Import fonts - Modern professional typography
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+// Import fonts - Classy serif + clean sans-serif
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&family=Inter:wght@300;400;500;600;700&display=swap');
 
-// Main colors - Contemporary professional palette
+// Color palette
 $white: #ffffff;
 $black: #1a1a1a;
-$gray-100: #f8fafc;
-$gray-200: #e2e8f0;
-$gray-300: #cbd5e1;
-$gray-400: #94a3b8;
-$gray-500: #64748b;
-$gray-600: #475569;
-$gray-700: #334155;
-$gray-800: #1e293b;
-$gray-900: #0f172a;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #ced4da;
+$gray-400: #adb5bd;
+$gray-500: #6c757d;
+$gray-600: #495057;
+$gray-700: #343a40;
+$gray-800: #212529;
+$gray-900: #0d1117;
 
-// Primary colors - Modern teal and charcoal
-$primary: #0f766e;
-$secondary: #374151;
-$accent: #14b8a6;
-$success: #059669;
-$warning: #d97706;
-$danger: #dc2626;
+// Primary - muted navy/slate
+$primary: #3d5a80;
+$secondary: #495057;
+$accent: #3d5a80;
+$success: #42b983;
+$warning: #e7c000;
+$danger: #c00;
 $info: #0ea5e9;
 
-// Theme configuration
+// Theme config
 $body-bg: $white;
-$body-color: $gray-800;
-$link-color: $accent;
+$body-color: $gray-700;
+$link-color: $primary;
 $link-decoration: none;
-$link-hover-color: darken($accent, 15%);
+$link-hover-color: darken($primary, 12%);
 $link-hover-decoration: underline;
 
 // Typography
-$font-family-sans-serif: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-$font-family-serif: "Space Grotesk", "Inter", system-ui, sans-serif;
+$font-family-sans-serif: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+$font-family-serif: "Source Serif 4", "Georgia", "Times New Roman", serif;
 $font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-$font-family-base: $font-family-sans-serif;
-$font-size-root: 18px;
-$line-height-base: 1.75;
+$font-family-base: $font-family-serif;
+$font-size-root: 16px;
+$line-height-base: 1.8;
 
 // Navbar
 $navbar-bg: $white;
 $navbar-fg: $gray-700;
-$navbar-hl: $accent;
-$navbar-border: $gray-200;
+$navbar-hl: $primary;
 
 // Footer
 $footer-bg: $gray-100;
@@ -53,44 +52,54 @@ $footer-fg: $gray-600;
 
 /*-- scss:rules --*/
 
-// Base styles
 body {
-  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-// Typography refinements
+// Headings - clean sans-serif
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-family-serif;
-  margin-bottom: 1.25rem;
-  color: $gray-900;
+  font-family: $font-family-sans-serif;
+  color: $gray-800;
   font-weight: 600;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
 }
 
 h1 {
-  font-weight: 700;
-  font-size: 3rem;
-  letter-spacing: -0.05em;
-  line-height: 1.1;
-}
-
-h2 {
-  font-weight: 600;
   font-size: 2.25rem;
-  margin-top: 4rem;
+  font-weight: 700;
   line-height: 1.2;
 }
 
-h3 {
-  font-weight: 600;
-  font-size: 1.75rem;
-  margin-top: 3rem;
-  line-height: 1.3;
+h2 {
+  font-size: 1.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid $gray-200;
 }
 
-// Links
+h3 {
+  font-size: 1.2rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+h4 {
+  font-size: 1.05rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+  color: $gray-700;
+}
+
 a {
-  transition: color 0.2s ease-in-out;
+  transition: color 0.15s ease;
+  text-underline-offset: 3px;
 
   &:hover {
     text-decoration: underline;
@@ -99,23 +108,16 @@ a {
 
 // Navbar
 .navbar {
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-  padding: 1.5rem 0;
   border-bottom: 1px solid $gray-200;
-  background: rgba($white, 0.95);
-  backdrop-filter: blur(10px);
+  padding: 0.75rem 0;
+  background: $white;
 
   .navbar-brand {
-    font-family: $font-family-serif;
-    font-weight: 600;
-    color: $gray-900;
-    font-size: 1.45rem;
+    font-family: $font-family-sans-serif;
+    font-weight: 700;
+    color: $gray-800;
+    font-size: 1.15rem;
     letter-spacing: -0.02em;
-    transition: color 0.2s ease;
-    line-height: 1;
-    display: flex;
-    align-items: center;
-    height: 40px;
 
     &:hover {
       color: $gray-700;
@@ -124,180 +126,439 @@ a {
   }
 
   .navbar-nav {
-    gap: 0.5rem;
+    gap: 0.15rem;
     align-items: center;
   }
 
   .nav-link {
     font-family: $font-family-sans-serif;
-    font-weight: 500;
+    font-weight: 450;
     color: $gray-600;
-    padding: 0.75rem 1.25rem;
-    border-radius: 6px;
+    padding: 0.4rem 0.85rem;
+    border-radius: 4px;
     transition: all 0.15s ease;
-    position: relative;
-    font-size: 0.95rem;
-    letter-spacing: -0.01em;
-    line-height: 1;
-    display: flex;
-    align-items: center;
-    height: 40px;
+    font-size: 0.88rem;
+    letter-spacing: 0;
 
     &:hover {
-      color: $gray-900;
+      color: $gray-800;
       background-color: $gray-100;
-      transform: translateY(-1px);
     }
 
     &.active {
-      color: $gray-900;
+      color: $gray-800;
       font-weight: 600;
-      background-color: $gray-100;
-    }
-
-    &:focus {
-      outline: 2px solid rgba($accent, 0.2);
-      outline-offset: 2px;
     }
   }
 
-  // Social icons in navbar
+  // Social icons - proper spacing
   .navbar-nav .nav-link[aria-label] {
-    padding: 0.65rem;
-    border-radius: 50%;
-    width: 44px;
-    height: 44px;
+    padding: 0.4rem;
+    border-radius: 4px;
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 0.25rem;
+    margin-left: 0.15rem;
 
     &:hover {
       background-color: $gray-100;
-      transform: translateY(-2px);
     }
-  }
-}
-
-// Cards
-.card {
-  border: 1px solid $gray-200;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-  background: $white;
-
-  &:hover {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-    border-color: $gray-300;
   }
 }
 
 // Profile Image
 #img-me {
-  width: 220px;
-  height: 220px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  margin: 2.5rem auto;
+  margin: 0 auto 1rem;
   display: block;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
-  border: 2px solid $gray-100;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 3px solid $gray-200;
+  transition: transform 0.3s ease;
 
   &:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+    transform: scale(1.03);
   }
 }
 
-// Lists and Text
+// Lists
 ul {
-  list-style-type: none;
-  padding-left: 0;
-  margin-bottom: 2rem;
+  padding-left: 1.25rem;
+  margin-bottom: 1.25rem;
 
   li {
-    padding-left: 0;
-    margin-bottom: 0.75rem;
-    padding-left: 1rem;
+    margin-bottom: 0.4rem;
+    line-height: 1.7;
   }
 }
 
-p {
-  margin-bottom: 1.75rem;
-  line-height: 1.75;
-  color: $gray-700;
-}
-
+// Blockquote
 blockquote {
   border-left: 3px solid $gray-300;
-  padding: 1.5rem;
-  margin: 2rem 0;
-  background: rgba($gray-100, 0.5);
-  border-radius: 0 6px 6px 0;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  background: $gray-100;
+  border-radius: 0 4px 4px 0;
   font-style: italic;
   color: $gray-600;
 }
 
-// Code blocks
+// Code
 pre {
   background: $gray-100;
   border: 1px solid $gray-200;
   border-radius: 6px;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  font-size: 0.95em;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.88em;
 }
 
 code {
-  color: $gray-800;
+  color: $gray-700;
   background-color: $gray-100;
-  padding: 0.25em 0.5em;
+  padding: 0.15em 0.4em;
   border-radius: 3px;
-  font-size: 0.9em;
-  font-weight: 500;
+  font-size: 0.88em;
 }
 
-// Responsive adjustments
-@media (min-width: 768px) {
-  h1 {
-    font-size: 3.5rem;
-  }
+// Cards
+.card {
+  border: 1px solid $gray-200;
+  border-radius: 6px;
+  background: $white;
+  transition: border-color 0.2s ease;
 
-  h2 {
-    font-size: 2.5rem;
+  &:hover {
+    border-color: $gray-300;
   }
 }
 
-// Table of Contents sidebar
-#quarto-margin-sidebar {
-  .nav-link {
+// Callout styling
+.callout {
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+.callout-tip {
+  border-left: 3px solid $primary;
+}
+
+.callout-note {
+  border-left: 3px solid $gray-400;
+}
+
+// Footer
+.nav-footer {
+  font-family: $font-family-sans-serif;
+  font-size: 0.82rem;
+}
+
+// Research area cards
+.research-card {
+  border: 1px solid $gray-200;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  background: $white;
+
+  &:hover {
+    border-color: $gray-400;
+  }
+
+  &.active {
+    border-width: 2px;
+  }
+
+  h4 {
     font-family: $font-family-sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    border: none;
+    padding: 0;
   }
 
-  .toc-title {
-    font-family: $font-family-serif;
+  p {
+    font-size: 0.88rem;
+    color: $gray-600;
+    margin: 0;
+    line-height: 1.6;
   }
 }
 
-// Panel tabset styling
+.research-card-dg {
+  border-left: 4px solid #3d5a80;
+
+  &.active { border-color: #3d5a80; }
+}
+
+.research-card-css {
+  border-left: 4px solid #9b6a3c;
+
+  &.active { border-color: #9b6a3c; }
+}
+
+.research-card-ipe {
+  border-left: 4px solid #4a7a5a;
+
+  &.active { border-color: #4a7a5a; }
+}
+
+// Publication entry
+.pub-entry {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid $gray-200;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .pub-title {
+    font-family: $font-family-sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: $gray-800;
+    margin-bottom: 0.25rem;
+  }
+
+  .pub-authors {
+    font-size: 0.88rem;
+    color: $gray-600;
+    margin-bottom: 0.25rem;
+  }
+
+  .pub-venue {
+    font-size: 0.88rem;
+    font-style: italic;
+    color: $gray-500;
+    margin-bottom: 0.5rem;
+  }
+
+  .pub-links a {
+    font-family: $font-family-sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: $primary;
+    margin-right: 0.75rem;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Abstract toggle
+.abstract-toggle {
+  font-family: $font-family-sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: $primary;
+  background: none;
+  border: 1px solid $primary;
+  border-radius: 3px;
+  padding: 0.15rem 0.5rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  margin-right: 0.75rem;
+
+  &:hover {
+    background: $primary;
+    color: $white;
+  }
+}
+
+.abstract-content {
+  display: none;
+  margin-top: 0.75rem;
+  padding: 1rem;
+  background: $gray-100;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: $gray-600;
+  border-left: 3px solid $primary;
+}
+
+// Software tool card
+.tool-card {
+  border: 1px solid $gray-200;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.2s ease;
+  display: block;
+  color: inherit;
+
+  &:hover {
+    border-color: $gray-400;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  h3 {
+    font-family: $font-family-sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+    border: none;
+    padding: 0;
+    color: $gray-800;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: $gray-600;
+    margin: 0;
+  }
+}
+
+// Walkthrough screenshots
+.walkthrough-img {
+  border: 1px solid $gray-200;
+  border-radius: 6px;
+  margin: 1.25rem 0;
+  max-width: 100%;
+
+  &:hover {
+    border-color: $gray-300;
+  }
+}
+
+// Gallery Styles - clean, no heavy shadows
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  padding: 0.75rem;
+}
+
+.filter-btn {
+  background: $white;
+  border: 1px solid $gray-300;
+  border-radius: 20px;
+  padding: 0.35rem 1rem;
+  font-family: $font-family-sans-serif;
+  font-weight: 500;
+  font-size: 0.82rem;
+  color: $gray-600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+
+  &:hover {
+    background: $gray-100;
+    color: $gray-800;
+  }
+
+  &.active {
+    background: $gray-800;
+    border-color: $gray-800;
+    color: $white;
+  }
+}
+
+#gallery-container {
+  margin-top: 0.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  border: 1px solid $gray-200;
+  transition: border-color 0.2s ease;
+  opacity: 1;
+  transform: scale(1);
+
+  &:hover {
+    border-color: $gray-400;
+
+    figure figcaption {
+      opacity: 1;
+    }
+  }
+
+  figure {
+    margin: 0;
+    padding: 0;
+
+    img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    figcaption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
+      color: $white;
+      padding: 2.5rem 0.85rem 0.85rem;
+      font-family: $font-family-sans-serif;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+
+      a {
+        color: lighten($primary, 30%);
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Responsive gallery
+@media (max-width: 768px) {
+  .gallery-filters {
+    overflow-x: auto;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+  }
+
+  .filter-btn {
+    flex-shrink: 0;
+  }
+
+  #gallery-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #gallery-container {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+// Panel tabset
 .panel-tabset {
   .nav-tabs {
     border-bottom: 1px solid $gray-200;
 
     .nav-link {
-      color: $gray-700;
       font-family: $font-family-sans-serif;
       font-weight: 500;
+      font-size: 0.88rem;
+      color: $gray-600;
       border: none;
       border-bottom: 2px solid transparent;
       border-radius: 0;
       padding: 0.5rem 1rem;
-      margin-right: 0.5rem;
-      transition: all 0.2s ease;
+      transition: all 0.15s ease;
 
       &:hover {
-        color: $gray-900;
+        color: $gray-800;
         border-bottom-color: $gray-300;
         background: none;
       }
@@ -310,237 +571,62 @@ code {
       }
     }
   }
-
-  .tab-content {
-    .tab-pane {
-      h3 {
-        color: $gray-900;
-        font-family: $font-family-serif;
-        font-weight: 600;
-        margin-top: 1.5rem;
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-      }
-
-      p {
-        color: $gray-700;
-        line-height: 1.7;
-        margin-bottom: 1.5rem;
-      }
-
-      strong {
-        color: $gray-900;
-        font-weight: 600;
-      }
-    }
-  }
 }
 
-// Callout note styling
-.callout-note {
-  background-color: rgba($gray-100, 0.5);
-  border-left: 4px solid $primary;
-  border-radius: 0 8px 8px 0;
-  padding: 1.5rem;
-  margin: 2rem 0;
+// Teaching card
+.teaching-entry {
+  border-left: 3px solid $primary;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  background: $gray-100;
+  border-radius: 0 6px 6px 0;
 
-  .callout-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-
-    .callout-icon {
-      color: $primary;
-      margin-right: 0.75rem;
-      font-size: 1.25rem;
-    }
-
-    .callout-title-container {
-      .callout-title {
-        color: $gray-900;
-        font-family: $font-family-serif;
-        font-weight: 600;
-        font-size: 1.5rem;
-        margin: 0;
-      }
-    }
-  }
-
-  .callout-body {
-    color: $gray-700;
-    line-height: 1.7;
-
-    p {
-      margin-bottom: 1.5rem;
-    }
-  }
-}
-
-// Gallery Styles
-.gallery-filters {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-bottom: 2rem;
-  padding: 1rem;
-  background: rgba($gray-100, 0.5);
-  border-radius: 8px;
-  border: 1px solid $gray-200;
-}
-
-.filter-btn {
-  background: $white;
-  border: 1px solid $gray-300;
-  border-radius: 6px;
-  padding: 0.5rem 1.25rem;
-  font-family: $font-family-sans-serif;
-  font-weight: 500;
-  font-size: 0.95rem;
-  color: $gray-700;
-  cursor: pointer;
-  transition: all 0.2s ease;
-
-  &:hover {
-    background: $gray-100;
-    border-color: $gray-400;
-    color: $gray-900;
-    transform: translateY(-2px);
-  }
-
-  &.active {
-    background: $primary;
-    border-color: $primary;
-    color: $white;
-    font-weight: 600;
-  }
-}
-
-#gallery-container {
-  margin-top: 1rem;
-}
-
-.gallery-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
-  opacity: 1;
-  transform: scale(1);
-
-  &:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    transform: translateY(-5px);
-  }
-
-  figure {
-    margin: 0;
+  h4 {
+    font-size: 1rem;
+    margin: 0 0 0.25rem;
+    border: none;
     padding: 0;
+  }
 
-    img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-      display: block;
-    }
+  p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
 
-    figcaption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-      color: $white;
-      padding: 1.5rem 1rem 1rem;
-      font-size: 0.9rem;
-      line-height: 1.4;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.3s ease;
+  ul {
+    margin-bottom: 0;
 
-      a {
-        color: $accent;
-        text-decoration: underline;
-
-        &:hover {
-          color: lighten($accent, 15%);
-        }
-      }
-    }
-
-    &:hover figcaption {
-      opacity: 1;
-      transform: translateY(0);
+    li {
+      font-size: 0.88rem;
     }
   }
 }
 
-// Lightbox enhancements
-.glightbox {
-  .gslide {
-    border-radius: 8px;
-    overflow: hidden;
-  }
+// Home page pills
+.interest-pill {
+  display: inline-block;
+  font-family: $font-family-sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+  margin: 0.15rem 0.1rem;
+  border: 1px solid $gray-300;
+  color: $gray-600;
+  background: $gray-100;
+}
 
-  .gslide-description {
-    background: rgba($gray-900, 0.9);
-    color: $white;
-    padding: 1.5rem;
-    border-radius: 0 0 8px 8px;
-
-    a {
-      color: $accent;
-
-      &:hover {
-        color: lighten($accent, 15%);
-      }
-    }
+// Table of Contents
+#quarto-margin-sidebar {
+  .nav-link {
+    font-family: $font-family-sans-serif;
+    font-size: 0.82rem;
   }
 }
 
-// Responsive gallery
-@media (max-width: 768px) {
-  .gallery-filters {
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 0.5rem;
-
-    &::-webkit-scrollbar {
-      height: 6px;
-    }
-
-    &::-webkit-scrollbar-track {
-      background: $gray-200;
-      border-radius: 3px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: $gray-400;
-      border-radius: 3px;
-    }
-  }
-
-  .filter-btn {
-    flex-shrink: 0;
-  }
-
-  #gallery-container {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
-  }
-
-  .gallery-item figure img {
-    height: 200px;
-  }
-}
-
-@media (max-width: 480px) {
-  #gallery-container {
-    grid-template-columns: 1fr !important;
-  }
-
-  .gallery-item figure img {
-    height: 250px;
-  }
+// Responsive
+@media (max-width: 767px) {
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.3rem; }
+  h3 { font-size: 1.1rem; }
 }

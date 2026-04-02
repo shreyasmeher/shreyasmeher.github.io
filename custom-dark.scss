@@ -1,112 +1,84 @@
 /*-- scss:defaults --*/
 
-// Import fonts (consistent with light theme)
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&family=Inter:wght@300;400;500;600;700&display=swap');
 
-// Dark theme colors
-$gray-100: #0f172a;
-$gray-200: #1e293b;
-$gray-300: #334155;
-$gray-400: #475569;
-$gray-500: #64748b;
-$gray-600: #94a3b8;
-$gray-700: #cbd5e1;
-$gray-800: #e2e8f0;
-$gray-900: #f8fafc;
+// Dark palette
+$gray-100: #0d1117;
+$gray-200: #161b22;
+$gray-300: #21262d;
+$gray-400: #30363d;
+$gray-500: #6e7681;
+$gray-600: #8b949e;
+$gray-700: #c9d1d9;
+$gray-800: #e6edf3;
+$gray-900: #f0f6fc;
 $white: #ffffff;
-$black: #000000;
+$black: #010409;
 
-// Primary colors - Bright teal for dark mode
-$primary: #5eead4;
-$secondary: #94a3b8;
-$accent: #2dd4bf;
-$success: #34d399;
-$warning: #fbbf24;
-$danger: #f87171;
-$info: #38bdf8;
+$primary: #79a3c1;
+$secondary: #8b949e;
+$accent: #79a3c1;
+$success: #56d364;
+$warning: #e3b341;
+$danger: #f85149;
+$info: #58a6ff;
 
-// Theme configuration
 $body-bg: $gray-100;
-$body-color: $gray-800;
-$link-color: $accent;
+$body-color: $gray-700;
+$link-color: $primary;
 $link-decoration: none;
-$link-hover-color: lighten($accent, 15%);
+$link-hover-color: lighten($primary, 12%);
 $link-hover-decoration: underline;
 
-// Typography (consistent with light theme)
-$font-family-sans-serif: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-$font-family-serif: "Space Grotesk", "Inter", system-ui, sans-serif;
+$font-family-sans-serif: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+$font-family-serif: "Source Serif 4", "Georgia", "Times New Roman", serif;
 $font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-$font-family-base: $font-family-sans-serif;
-$font-size-root: 18px;
-$line-height-base: 1.75;
+$font-family-base: $font-family-serif;
+$font-size-root: 16px;
+$line-height-base: 1.8;
 
-// Navbar
 $navbar-bg: $gray-200;
-$navbar-fg: $gray-800;
-$navbar-hl: $accent;
+$navbar-fg: $gray-700;
+$navbar-hl: $primary;
 
-// Footer
 $footer-bg: $gray-100;
 $footer-fg: $gray-600;
 
 /*-- scss:rules --*/
 
-// Base dark mode text
 body {
-  color: $gray-800 !important;
+  color: $gray-700 !important;
   background-color: $gray-100 !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: $gray-900 !important;
-  font-family: $font-family-serif;
-  margin-bottom: 1rem;
-}
-
-h1 {
-  font-weight: 700;
-  font-size: 2.5rem;
-  letter-spacing: -0.02em;
+  font-family: $font-family-sans-serif;
 }
 
 h2 {
-  font-weight: 600;
-  font-size: 2rem;
-  margin-top: 3rem;
+  border-bottom-color: $gray-300 !important;
 }
 
-h3 {
-  font-weight: 600;
-  font-size: 1.5rem;
-  margin-top: 2rem;
+p, li {
+  color: $gray-700 !important;
 }
 
-p, li, span {
-  color: $gray-800 !important;
-}
-
-// Links
 a {
-  color: $link-color;
-  transition: color 0.2s ease-in-out;
+  color: $primary;
 
   &:hover {
     color: $link-hover-color;
-    text-decoration: underline;
   }
 }
 
-// Navbar dark mode
+// Navbar
 .navbar {
-  background: rgba($gray-200, 0.95) !important;
-  border-bottom-color: $gray-300;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  background: $gray-200 !important;
+  border-bottom-color: $gray-300 !important;
 
   .navbar-brand {
-    font-family: $font-family-serif !important;
     color: $gray-900 !important;
-    font-weight: 600;
 
     &:hover {
       color: $gray-800 !important;
@@ -114,275 +86,204 @@ a {
   }
 
   .nav-link {
-    font-family: $font-family-sans-serif !important;
-    color: $gray-700 !important;
+    color: $gray-600 !important;
 
     &:hover {
-      color: $gray-900 !important;
+      color: $gray-800 !important;
       background-color: $gray-300 !important;
     }
 
     &.active {
       color: $gray-900 !important;
-      background-color: $gray-300 !important;
     }
   }
+}
+
+// Profile
+#img-me {
+  border-color: $gray-400;
 }
 
 // Cards
 .card {
   background-color: $gray-200 !important;
   border-color: $gray-300 !important;
-  color: $gray-800 !important;
-
-  &:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  }
 }
 
-// Code blocks
+// Code
 pre {
   background-color: $gray-200 !important;
   border-color: $gray-300 !important;
-  color: $gray-900 !important;
+  color: $gray-800 !important;
 }
 
 code {
   background-color: $gray-300 !important;
-  color: $gray-900 !important;
+  color: $gray-800 !important;
 }
 
-// Blockquotes
+// Blockquote
 blockquote {
-  border-left: 4px solid $accent;
+  border-left-color: $gray-400;
   background-color: $gray-200;
-  padding: 1rem;
-  margin: 1rem 0;
-  color: $gray-800;
+  color: $gray-700;
 }
 
 // Tables
 table {
   border-color: $gray-300;
 
-  th {
-    background-color: $gray-200;
-  }
+  th { background-color: $gray-200; }
+  tr:nth-child(even) { background-color: rgba($gray-200, 0.5); }
+}
 
-  tr:nth-child(even) {
-    background-color: rgba($gray-200, 0.5);
+// Callouts
+.callout-tip {
+  border-left-color: $primary !important;
+}
+
+.callout-note {
+  border-left-color: $gray-500 !important;
+}
+
+// Tabs
+.panel-tabset .nav-tabs {
+  border-bottom-color: $gray-300;
+
+  .nav-link {
+    color: $gray-600 !important;
+
+    &:hover {
+      color: $gray-800 !important;
+      border-bottom-color: $gray-500;
+    }
+
+    &.active {
+      color: $primary !important;
+      border-bottom-color: $primary !important;
+    }
   }
 }
 
-// Profile image
-#img-me {
-  border: 2px solid $gray-300;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+// Research cards
+.research-card {
+  background: $gray-200 !important;
+  border-color: $gray-300 !important;
+
+  &:hover { border-color: $gray-500 !important; }
+
+  h4 { color: $gray-900 !important; }
+  p { color: $gray-600 !important; }
+}
+
+// Publication entries
+.pub-entry {
+  border-bottom-color: $gray-300;
+
+  .pub-title { color: $gray-900 !important; }
+  .pub-authors { color: $gray-600 !important; }
+  .pub-venue { color: $gray-500 !important; }
+  .pub-links a { color: $primary !important; }
+}
+
+.abstract-toggle {
+  color: $primary !important;
+  border-color: $primary !important;
+  background: none !important;
 
   &:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.4), 0 4px 6px -2px rgba(0,0,0,0.3);
+    background: $primary !important;
+    color: $gray-100 !important;
   }
 }
 
-// Button styles
+.abstract-content {
+  background: $gray-200 !important;
+  color: $gray-700 !important;
+  border-left-color: $primary !important;
+}
+
+// Tool cards
+.tool-card {
+  background: $gray-200 !important;
+  border-color: $gray-300 !important;
+
+  &:hover {
+    border-color: $gray-500 !important;
+    color: inherit !important;
+  }
+
+  h3 { color: $gray-900 !important; }
+  p { color: $gray-600 !important; }
+}
+
+// Walkthrough images
+.walkthrough-img {
+  border-color: $gray-300 !important;
+}
+
+// Gallery
+.gallery-filters {
+  background: none !important;
+}
+
+.filter-btn {
+  background: $gray-200 !important;
+  border-color: $gray-400 !important;
+  color: $gray-700 !important;
+
+  &:hover {
+    background: $gray-300 !important;
+    color: $gray-800 !important;
+  }
+
+  &.active {
+    background: $gray-800 !important;
+    border-color: $gray-800 !important;
+    color: $gray-100 !important;
+  }
+}
+
+.gallery-item {
+  border-color: $gray-300 !important;
+
+  &:hover {
+    border-color: $gray-500 !important;
+  }
+}
+
+// Teaching
+.teaching-entry {
+  background: $gray-200 !important;
+  border-left-color: $primary !important;
+}
+
+// Interest pills
+.interest-pill {
+  background: $gray-300 !important;
+  border-color: $gray-400 !important;
+  color: $gray-700 !important;
+}
+
+// TOC
+#quarto-margin-sidebar .nav-link {
+  font-family: $font-family-sans-serif !important;
+}
+
+// Footer
+.nav-footer {
+  font-family: $font-family-sans-serif;
+  font-size: 0.82rem;
+}
+
+// Button
 .btn-primary {
   background-color: $primary;
   border-color: $primary;
   color: $gray-100;
 
   &:hover {
-    background-color: darken($primary, 10%);
-    border-color: darken($primary, 10%);
-  }
-}
-
-// List styles
-ul {
-  list-style-type: disc;
-  color: $body-color;
-}
-
-// Table of Contents sidebar
-#quarto-margin-sidebar {
-  .nav-link {
-    font-family: $font-family-sans-serif !important;
-  }
-
-  .toc-title {
-    font-family: $font-family-serif !important;
-  }
-}
-
-// Panel tabset dark mode
-.panel-tabset {
-  .nav-tabs {
-    border-bottom: 1px solid $gray-300;
-
-    .nav-link {
-      color: $gray-700;
-      font-family: $font-family-sans-serif;
-      font-weight: 500;
-      border: none;
-      border-bottom: 2px solid transparent;
-      border-radius: 0;
-      padding: 0.5rem 1rem;
-      margin-right: 0.5rem;
-      transition: all 0.2s ease;
-
-      &:hover {
-        color: $gray-900;
-        border-bottom-color: $gray-400;
-        background: none;
-      }
-
-      &.active {
-        color: $accent;
-        border-bottom-color: $accent;
-        background: none;
-        font-weight: 600;
-      }
-    }
-  }
-
-  .tab-content {
-    .tab-pane {
-      h3 {
-        color: $gray-900;
-        font-family: $font-family-serif;
-        font-weight: 600;
-        margin-top: 1.5rem;
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-      }
-
-      p {
-        color: $gray-700;
-        line-height: 1.7;
-        margin-bottom: 1.5rem;
-      }
-
-      strong {
-        color: $gray-900;
-        font-weight: 600;
-      }
-    }
-  }
-}
-
-// Callout note dark mode
-.callout-note {
-  background-color: rgba($gray-300, 0.3);
-  border-left: 4px solid $primary;
-  border-radius: 0 8px 8px 0;
-  padding: 1.5rem;
-  margin: 2rem 0;
-
-  .callout-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-
-    .callout-icon {
-      color: $primary;
-      margin-right: 0.75rem;
-      font-size: 1.25rem;
-    }
-
-    .callout-title-container {
-      .callout-title {
-        color: $gray-900;
-        font-family: $font-family-serif;
-        font-weight: 600;
-        font-size: 1.5rem;
-        margin: 0;
-      }
-    }
-  }
-
-  .callout-body {
-    color: $gray-700;
-    line-height: 1.7;
-
-    p {
-      margin-bottom: 1.5rem;
-    }
-  }
-}
-
-// Gallery dark mode
-.gallery-filters {
-  background: rgba($gray-300, 0.3) !important;
-  border-color: $gray-400 !important;
-}
-
-.filter-btn {
-  background: $gray-200 !important;
-  border-color: $gray-400 !important;
-  color: $gray-800 !important;
-
-  &:hover {
-    background: $gray-300 !important;
-    border-color: $gray-500 !important;
-    color: $gray-900 !important;
-  }
-
-  &.active {
-    background: $primary !important;
-    border-color: $primary !important;
-    color: $gray-100 !important;
-  }
-}
-
-.gallery-item {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2) !important;
-
-  &:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3) !important;
-  }
-
-  figure {
-    figcaption {
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)) !important;
-      color: $gray-900 !important;
-
-      a {
-        color: $accent !important;
-
-        &:hover {
-          color: lighten($accent, 15%) !important;
-        }
-      }
-    }
-  }
-}
-
-// Lightbox dark mode
-.glightbox {
-  .gslide-description {
-    background: rgba($gray-200, 0.95) !important;
-    color: $gray-900 !important;
-
-    a {
-      color: $accent !important;
-
-      &:hover {
-        color: lighten($accent, 15%) !important;
-      }
-    }
-  }
-}
-
-// Responsive gallery dark mode
-@media (max-width: 768px) {
-  .gallery-filters {
-    &::-webkit-scrollbar-track {
-      background: $gray-400 !important;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: $gray-600 !important;
-    }
+    background-color: lighten($primary, 10%);
+    border-color: lighten($primary, 10%);
   }
 }

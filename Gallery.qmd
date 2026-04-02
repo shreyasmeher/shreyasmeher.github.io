@@ -1,20 +1,21 @@
 ---
 title: "Gallery"
 page-layout: full
+toc: false
 lightbox: auto
 ---
 
 A visual timeline of my academic and personal journey, from starting my PhD in Texas to my current research in the Netherlands.
 
 <div class="gallery-filters">
-  <button class="filter-btn active" data-filter="all">All Photos</button>
+  <button class="filter-btn active" data-filter="all">All</button>
   <button class="filter-btn" data-filter="texas">Texas Life</button>
   <button class="filter-btn" data-filter="conferences">Conferences</button>
   <button class="filter-btn" data-filter="graduation">Graduation</button>
   <button class="filter-btn" data-filter="netherlands">Netherlands</button>
 </div>
 
-::: {#gallery-container style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); grid-gap: 1.5rem;"}
+::: {#gallery-container style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); grid-gap: 0.75rem;"}
 
 ::: {.gallery-item data-category="texas"}
 ![Beginning the PhD journey. I was told there would be no math. I was lied to.](gallery/img1.jpg){group="gallery"}
@@ -73,7 +74,7 @@ A visual timeline of my academic and personal journey, from starting my PhD in T
 :::
 
 ::: {.gallery-item data-category="conferences"}
-![SIOE, with my co-author [Pengfei Zhang](https://pengfei-zhang.com/) and Satoshi Fukuda of Bocconi University. I'm the one not famous... yet.](gallery/img17.jpg){group="gallery"}
+![SIOE, with my co-author [Pengfei Zhang](https://pengfei-zhang.com/) and Satoshi Fukuda of Bocconi University.](gallery/img17.jpg){group="gallery"}
 :::
 
 ::: {.gallery-item data-category="conferences"}
@@ -89,7 +90,7 @@ A visual timeline of my academic and personal journey, from starting my PhD in T
 :::
 
 ::: {.gallery-item data-category="conferences"}
-![APSA Annual Meeting in Philadelphia. City of brotherly love… until the Q&A session starts.](gallery/img21.jpg){group="gallery"}
+![APSA Annual Meeting in Philadelphia. City of brotherly love... until the Q&A session starts.](gallery/img21.jpg){group="gallery"}
 :::
 
 ::: {.gallery-item data-category="conferences"}
@@ -133,7 +134,7 @@ A visual timeline of my academic and personal journey, from starting my PhD in T
 :::
 
 ::: {.gallery-item data-category="graduation"}
-![Successfully defended! So grateful for my dissertation committee: (L-R) Dr. [Elizabeth Searing](https://profiles.utdallas.edu/elizabeth.searing), Dr. [Pengfei Zhang](https://pengfei-zhang.com/), Dr. [Clint Peinhardt](https://profiles.utdallas.edu/clint.peinhardt), & Dr. [Patrick Brandt](http://www.utdallas.edu/~pbrandt/).](gallery/img32.jpg){group="gallery"}
+![Successfully defended! So grateful for my dissertation committee: (L-R) Dr. Elizabeth Searing, Dr. Pengfei Zhang, Dr. Clint Peinhardt, & Dr. Patrick Brandt.](gallery/img32.jpg){group="gallery"}
 :::
 
 ::: {.gallery-item data-category="conferences"}
@@ -165,46 +166,23 @@ A visual timeline of my academic and personal journey, from starting my PhD in T
 ```{=html}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Gallery filtering functionality
   const filterButtons = document.querySelectorAll('.filter-btn');
   const galleryItems = document.querySelectorAll('.gallery-item');
-  
+
   filterButtons.forEach(button => {
     button.addEventListener('click', () => {
-      // Update active button
       filterButtons.forEach(btn => btn.classList.remove('active'));
       button.classList.add('active');
-      
+
       const filter = button.getAttribute('data-filter');
-      
-      // Show/hide gallery items based on filter
+
       galleryItems.forEach(item => {
         if (filter === 'all' || item.getAttribute('data-category') === filter) {
           item.style.display = 'block';
-          // Add animation effect
-          setTimeout(() => {
-            item.style.opacity = '1';
-            item.style.transform = 'scale(1)';
-          }, 10);
         } else {
-          item.style.opacity = '0';
-          item.style.transform = 'scale(0.8)';
-          setTimeout(() => {
-            item.style.display = 'none';
-          }, 300);
+          item.style.display = 'none';
         }
       });
-    });
-  });
-  
-  // Add hover effect to gallery items
-  galleryItems.forEach(item => {
-    item.addEventListener('mouseenter', function() {
-      this.querySelector('img').style.transform = 'scale(1.05)';
-    });
-    
-    item.addEventListener('mouseleave', function() {
-      this.querySelector('img').style.transform = 'scale(1)';
     });
   });
 });

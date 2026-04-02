@@ -25,5 +25,14 @@
   },
   "software.qmd": {
     "software.html": "5def5f65"
+  },
+  "conflibert-gui.qmd": {
+    "conflibert-gui.html": "4988da5c"
+  },
+  "conflibertr.qmd": {
+    "conflibertr.html": "c6f617a1"
+  },
+  "publications.qmd": {
+    "publications.html": "ed65e65f"
   }
 }

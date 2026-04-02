@@ -7,45 +7,31 @@ toc: false
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-4 .text-center}
-![](headshot.jpg){#img-me .rounded-circle .img-fluid .mb-3 width="250px"}
+![](headshot.jpg){#img-me .rounded-circle .img-fluid width="180px"}
 
-## Shreyas Meher
+### Shreyas Meher
 
-**Postdoctoral Researcher**  
+**Postdoctoral Researcher**
 Erasmus University Rotterdam
 
-[meher@essb.eur.nl](mailto:meher@essb.eur.nl){.mb-3}
+[meher@essb.eur.nl](mailto:meher@essb.eur.nl)
 :::
 
 ::: {.g-col-12 .g-col-md-8}
-## About
+### About
 
-I am a Postdoctoral Researcher in the Policy, Politics, and Society group at Erasmus University Rotterdam.
+I am a Postdoctoral Researcher in the [Policy, Politics, and Society](https://www.eur.nl/en/essb/research/research-groups/policy-politics-and-society) group at Erasmus University Rotterdam. I earned my Ph.D. in Public Policy & Political Economy from the University of Texas at Dallas in 2025.
 
-I earned my Ph.D. in Public Policy & Political Economy from the University of Texas at Dallas in 2025. My foundational work on computational methods for political science was developed in close collaboration with Dr. [Patrick T. Brandt](https://www.utdallas.edu/~pbrandt/) through the NSF-funded [ConfliBERT project](https://eventdata.utdallas.edu/). My research, which has appeared in outlets such as *Research & Politics*, *Behavioral Sciences*, and is forthcoming in *Political Analysis*, applies methods from Computational Social Science to address substantive questions in Digital Governance, Political Conflict, and International Political Economy. 
+My research applies computational methods to substantive questions in digital governance, political conflict, and international political economy. It has appeared in *Political Analysis*, *Research & Politics*, and *Behavioral Sciences*. My foundational work on NLP for political science was developed through the NSF-funded [ConfliBERT project](https://eventdata.utdallas.edu/) with [Patrick T. Brandt](https://www.utdallas.edu/~pbrandt/).
 
-As a researcher on the **[TWIN4DEM project](https://twin4dem.eu/)**, I work with **[Clara Egger](https://claramarieegger.wordpress.com/)** and **[Asya Zhelyazkova](https://asyazhelyazkovasite.wordpress.com/)** along with a large **[ multidisciplinary team](https://twin4dem.eu/about/meet-the-team/)** to develop machine learning frameworks for modeling democratic processes. My role involves building the technical core for 'digital twins'—advanced simulations used to analyze the causes of democratic erosion, such as executive aggrandizement, and to assess institutional resilience.
+At Erasmus, I work on the [TWIN4DEM project](https://twin4dem.eu/) with [Clara Egger](https://claramarieegger.wordpress.com/) and [Asya Zhelyazkova](https://asyazhelyazkovasite.wordpress.com/), building machine learning frameworks for modeling democratic processes and assessing institutional resilience.
 
-::: {.callout-note icon="fa-lightbulb" appearance="minimal"}
-## Research Interests
+[Digital Governance]{.interest-pill}
+[Computational Social Science]{.interest-pill}
+[NLP & LLMs]{.interest-pill}
+[Democratic Backsliding]{.interest-pill}
+[International Political Economy]{.interest-pill}
+[Reinforcement Learning]{.interest-pill}
 
-::: {.panel-tabset}
-
-### {{< fa solid eye-slash >}} Digital Governance
-
-My research in this area focuses on how different regimes implement internet control. I analyze everything from subtle content moderation in democracies to overt filtering and internet blackouts in autocracies, with a core focus on the concept of **Digital Sovereignty**.
-
-### {{< fa solid laptop-code >}} Computational Social Science
-
-I build and apply specialized language models to study political phenomena. This work, stemming from my contributions to the NSF-funded **ConfliBERT** and **ConflLlama** projects, leverages NLP and reinforcement learning to create structured data from unstructured text, primarily in the domain of political conflict.
-
-### {{< fa solid landmark-dome >}} International Political Economy
-
-My work in IPE examines the politics of international cooperation and withdrawal. I use network analysis and quantitative methods to study why countries exit bilateral investment treaties and the cascading effects of withdrawals from international organizations.
-
-:::
-:::
-
-Methodologically, I specialize in computational text analysis, reinforcement learning, and the application of LLMs to political science research in HPC environments.
 :::
 :::

@@ -1,27 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://shreyasmeher.github.io/index.html</loc>
-    <lastmod>2026-03-31T08:12:49.963Z</lastmod>
+    <loc>https://shreyasmeher.github.io/teaching.html</loc>
+    <lastmod>2026-04-02T20:25:48.604Z</lastmod>
   </url>
   <url>
     <loc>https://shreyasmeher.github.io/research.html</loc>
-    <lastmod>2026-03-31T08:07:48.726Z</lastmod>
+    <lastmod>2026-04-02T20:19:39.126Z</lastmod>
   </url>
   <url>
-    <loc>https://shreyasmeher.github.io/teaching.html</loc>
-    <lastmod>2026-03-30T23:02:11.038Z</lastmod>
+    <loc>https://shreyasmeher.github.io/index.html</loc>
+    <lastmod>2026-04-02T20:06:01.794Z</lastmod>
   </url>
   <url>
-    <loc>https://shreyasmeher.github.io/about.html</loc>
-    <lastmod>2025-06-25T15:02:02.989Z</lastmod>
+    <loc>https://shreyasmeher.github.io/conflibert-gui.html</loc>
+    <lastmod>2026-04-02T20:07:44.445Z</lastmod>
   </url>
   <url>
     <loc>https://shreyasmeher.github.io/Gallery.html</loc>
-    <lastmod>2025-08-28T08:53:03.466Z</lastmod>
+    <lastmod>2026-04-02T20:08:54.768Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shreyasmeher.github.io/conflibertr.html</loc>
+    <lastmod>2026-04-02T20:26:00.577Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shreyasmeher.github.io/publications.html</loc>
+    <lastmod>2026-04-02T20:20:02.097Z</lastmod>
   </url>
   <url>
     <loc>https://shreyasmeher.github.io/software.html</loc>
-    <lastmod>2026-03-31T08:08:55.938Z</lastmod>
+    <lastmod>2026-04-02T20:19:00.625Z</lastmod>
   </url>
 </urlset>
