@@ -30,7 +30,7 @@ At Erasmus, I work on the [TWIN4DEM project](https://twin4dem.eu/) with [Clara E
 [Computational Social Science]{.interest-pill}
 [NLP & LLMs]{.interest-pill}
 [Democratic Backsliding]{.interest-pill}
-[International Political Economy]{.interest-pill}
+[Democratic Backsliding]{.interest-pill}
 [Reinforcement Learning]{.interest-pill}
 
 :::

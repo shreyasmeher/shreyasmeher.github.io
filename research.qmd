@@ -24,9 +24,9 @@ I build specialized language models --- ConfliBERT, ConflLlama --- to create str
 
 ::: {.g-col-12 .g-col-md-4}
 ::: {.research-card .research-card-ipe onclick="showArea('ipe')" id="card-ipe"}
-#### {{< fa solid landmark-dome >}} International Political Economy
+#### {{< fa solid landmark-dome >}} Democratic Institutions & Backsliding
 
-Why do countries exit bilateral investment treaties? I use network analysis to study cascading effects of withdrawals from international organizations.
+How do executives expand power within democratic frameworks? I study legislative oversight, executive aggrandizement, and institutional resilience in parliamentary democracies.
 :::
 :::
 :::
@@ -70,7 +70,7 @@ Testing how Guriev & Treisman's Informational Autocracy theory applies to intern
 :::
 
 ::: {#area-ipe .research-area style="display:none;"}
-## International Political Economy
+## Democratic Institutions & Backsliding
 
 **Strategic Anticipation and Expert Review: The Determinants of Critical Advisory Opinions from the Dutch Council of State**
 *with [Clara Egger](https://claramarieegger.wordpress.com/about/) & [Asya Zhelyazkova](https://www.eur.nl/en/people/asya-zhelyazkova)* | Under Review
