@@ -72,6 +72,11 @@ Testing how Guriev & Treisman's Informational Autocracy theory applies to intern
 ::: {#area-ipe .research-area style="display:none;"}
 ## Democratic Institutions & Backsliding
 
+**Legislating Without Scrutiny: Executive Aggrandizement and Democratic Erosion in India** | Working Paper
+[Paper](research/Meher_2025_Legislating_Without_Scrutiny.pdf)
+
+Committee referral rates for legislation collapsed from 73% to 6% under India's NDA government, and median passage time fell from 268 to 11 days. Combining text analysis of 881 central acts, parliamentary data on 1,008 bills, and synthetic control methods, I document systematic executive aggrandizement operating through procedural bypass rather than constitutional change. All eight V-Dem democracy indicators declined significantly after 2014, corroborated by a synthetic control estimate showing judicial constraints fell relative to comparable democracies (ATT = −0.051, p = 0.024).
+
 **Strategic Anticipation and Expert Review: The Determinants of Critical Advisory Opinions from the Dutch Council of State**
 *with [Clara Egger](https://claramarieegger.wordpress.com/about/) & [Asya Zhelyazkova](https://www.eur.nl/en/people/asya-zhelyazkova)* | Under Review
 
