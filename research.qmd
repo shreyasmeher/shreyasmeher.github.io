@@ -60,7 +60,7 @@ Testing how Guriev & Treisman's Informational Autocracy theory applies to intern
 **Research & Politics** | [Link](https://doi.org/10.1177/20531680251356282){target=_blank} | [Slides](research/APSA___ConflLlama.pdf) | [Code](https://doi.org/10.7910/DVN/0MUGE6)
 
 **Build, Borrow, or Just Fine-Tune? A Political Scientist's Guide to Choosing NLP Models** | Under Review
-[Paper](https://www.dropbox.com/scl/fi/sfylpz2bzzhimpkg42zy4/Confli_mBERT.pdf?rlkey=dotkhx1g5eh81uenxrb8eqf6x&st=wz772hjh&dl=0) | [Code](https://huggingface.co/shreyasmeher/Confli-mBERT)
+[Draft [PDF]](https://www.dropbox.com/scl/fi/sfylpz2bzzhimpkg42zy4/Confli_mBERT.pdf?rlkey=dotkhx1g5eh81uenxrb8eqf6x&st=wz772hjh&dl=0) | [Code](https://huggingface.co/shreyasmeher/Confli-mBERT)
 
 **Event Horizon: Revolutionizing Data Annotation with Reinforcement Learning** | Working Paper
 [Model on Hugging Face](https://huggingface.co/shreyasmeher/Qwen-GLOCON-Reasoning)
@@ -73,7 +73,7 @@ Testing how Guriev & Treisman's Informational Autocracy theory applies to intern
 ## Democratic Institutions & Backsliding
 
 **Legislating Without Scrutiny: Executive Aggrandizement and Democratic Erosion in India** | Working Paper
-[Paper](research/Meher_2025_Legislating_Without_Scrutiny.pdf)
+[Draft [PDF]](research/Meher_2025_Legislating_Without_Scrutiny.pdf)
 
 Committee referral rates for legislation collapsed from 73% to 6% under India's NDA government, and median passage time fell from 268 to 11 days. Combining text analysis of 881 central acts, parliamentary data on 1,008 bills, and synthetic control methods, I document systematic executive aggrandizement operating through procedural bypass rather than constitutional change. All eight V-Dem democracy indicators declined significantly after 2014, corroborated by a synthetic control estimate showing judicial constraints fell relative to comparable democracies (ATT = −0.051, p = 0.024).
 
