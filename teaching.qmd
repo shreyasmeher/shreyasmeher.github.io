@@ -6,6 +6,14 @@ toc: false
 ## Lead Instructor
 
 ::: {.teaching-entry}
+#### Bachelor Project Supervisor: Digital Governance, Platform Labour, and Power in the Digital Economy
+**2025--2026, Period 4** | Erasmus School of Social and Behavioural Sciences
+
+- Supervising Group 16 in the MISOC Bachelor Project
+- [Course materials (password protected)](bachelor-project/)
+:::
+
+::: {.teaching-entry}
 #### Research Design for Public Policy (ESSB-C2045)
 **2025--2026, Block 3** | Erasmus School of Social and Behavioural Sciences, 7.5 EC
 

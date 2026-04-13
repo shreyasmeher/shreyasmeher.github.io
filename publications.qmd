@@ -69,6 +69,13 @@ toc-title: "Sections"
 ## Working Papers
 
 ::: {.pub-entry}
+[Using Messy Text in Future LLM Annotations]{.pub-title}
+[with [P.T. Brandt](https://www.utdallas.edu/~pbrandt/){target="_blank"}, P. Cuellar-Cuellar & X. Zhao]{.pub-authors}
+[<button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>]{.pub-links}
+[When working with real-world text, researchers often inherit corpora and annotations with costly human judgments but were not collected, organized, or annotated for modern text-as-data workflows. We propose codebook attention: a codebook-guided turn-by-turn extractive summarization pipeline that reuses valuable annotations without requiring full re-annotation. For each victim in a corpus of disappearance reports from Mexico, the model processes documents sequentially, extracts verbatim evidence spans for each codebook category, and updates a running structured summary. We evaluate the resulting summaries by classifying and comparing predicted labels with human annotations across multiple open-source models including Llama 3.1, Gemma 3, and Ministral 3. Results suggest that hours of computation can approximate weeks of human coding effort while producing evidence-traceable summaries suitable for downstream human rights and event data research.]{.abstract-content}
+:::
+
+::: {.pub-entry}
 [Legislating Without Scrutiny: Executive Aggrandizement and Democratic Erosion in India]{.pub-title}
 [<button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button> [Paper](research/Meher_2025_Legislating_Without_Scrutiny.pdf){target="_blank"}]{.pub-links}
 [Committee referral rates for legislation collapsed from 73% to 6% under India's NDA government, and median passage time fell from 268 to 11 days. Combining text analysis of 881 central acts with parliamentary data on 1,008 bills and synthetic control methods, I document systematic executive aggrandizement operating through procedural bypass rather than constitutional change. All eight V-Dem democracy indicators declined significantly after 2014, corroborated by a synthetic control showing judicial constraints fell relative to comparable democracies (ATT = -0.051, p = 0.024).]{.abstract-content}

@@ -1,0 +1,359 @@
+---
+title: "Bachelor Project 2025--2026"
+subtitle: "Group 16: Digital Governance, Platform Labour, and Power in the Digital Economy"
+toc: false
+page-layout: article
+---
+
+```{=html}
+<!-- ============================================================
+     PASSWORD: "BachProject2026"
+     To change it, replace the hash below with the SHA-256 of your new password.
+     Generate a new hash: echo -n "YourNewPassword" | shasum -a 256
+     ============================================================ -->
+
+<style>
+  /* Password overlay */
+  #password-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.97);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .password-box {
+    text-align: center;
+    max-width: 380px;
+    padding: 2.5rem;
+  }
+
+  .password-box h2 {
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 0.5rem;
+    border: none;
+    padding: 0;
+  }
+
+  .password-box p {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+  }
+
+  .password-input {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: "Source Serif 4", Georgia, serif;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  .password-input:focus {
+    border-color: #3d5a80;
+  }
+
+  .password-btn {
+    width: 100%;
+    margin-top: 0.75rem;
+    padding: 0.6rem;
+    background: #3d5a80;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-family: "Inter", system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .password-btn:hover {
+    background: #2e4a6b;
+  }
+
+  .password-error {
+    color: #c00;
+    font-size: 0.82rem;
+    margin-top: 0.5rem;
+    display: none;
+  }
+
+  /* Course content */
+  #course-content {
+    display: none;
+  }
+
+  /* Session grid */
+  .session-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .session-card {
+    border: 1px solid #e9ecef;
+    border-left: 3px solid #3d5a80;
+    border-radius: 0 6px 6px 0;
+    padding: 1.2rem 1.5rem;
+    background: #f8f9fa;
+    transition: border-color 0.2s;
+  }
+
+  .session-card:hover {
+    border-left-color: #2e4a6b;
+  }
+
+  .session-card.locked {
+    border-left-color: #ced4da;
+    opacity: 0.6;
+  }
+
+  .session-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .session-title {
+    font-family: "Inter", system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #212529;
+    margin: 0 0 0.25rem 0;
+  }
+
+  .session-date {
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 0.8rem;
+    color: #6c757d;
+    white-space: nowrap;
+  }
+
+  .session-description {
+    font-size: 0.88rem;
+    color: #495057;
+    margin: 0.5rem 0 0 0;
+    line-height: 1.6;
+  }
+
+  .session-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #3d5a80;
+    text-decoration: none;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid #3d5a80;
+    border-radius: 4px;
+    transition: all 0.15s;
+  }
+
+  .session-link:hover {
+    background: #3d5a80;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .session-locked-label {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #adb5bd;
+  }
+
+  .course-info {
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+    background: #f8f9fa;
+    margin-bottom: 0.5rem;
+  }
+
+  .course-info p {
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 600px) {
+    .session-header {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+  }
+</style>
+
+<!-- Password overlay -->
+<div id="password-overlay">
+  <div class="password-box">
+    <h2>Bachelor Project Materials</h2>
+    <p>Enter the password provided by your supervisor.</p>
+    <input type="password" id="pw-input" class="password-input"
+           placeholder="Password" autocomplete="off"
+           onkeydown="if(event.key==='Enter') checkPassword()">
+    <button class="password-btn" onclick="checkPassword()">Access Materials</button>
+    <p class="password-error" id="pw-error">Incorrect password. Please try again.</p>
+  </div>
+</div>
+
+<!-- Course content (hidden until password correct) -->
+<div id="course-content">
+
+  <div class="course-info">
+    <p><strong>Supervisor:</strong> Dr. Shreyas Meher &middot; <a href="mailto:meher@essb.eur.nl">meher@essb.eur.nl</a></p>
+    <p><strong>Meetings:</strong> Thursdays, Mandeville T5-114</p>
+    <p><strong>Final submission:</strong> June 25, 2026 via Canvas</p>
+  </div>
+
+  <p>Session slides are released each Tuesday afternoon before the Thursday meeting. Check back weekly for new materials.</p>
+
+  <div class="session-grid" id="session-grid"></div>
+
+</div>
+
+<script>
+  // ---- Configuration ----
+  const PASSWORD_HASH = "d05b45993d07044458306933a5861c50f9b74e18ba72378a3dbc1829c050aeba";
+  const STORAGE_KEY = "bp2026_auth";
+
+  const sessions = [
+    {
+      num: 1,
+      title: "Kickoff and Brainstorm",
+      date: "2026-04-21T14:00:00+02:00",
+      display: "April 21, 2026",
+      desc: "Welcome, logistics, crafting a research question, finding literature, and an overview of key debates in digital governance and platform labour.",
+      file: "slides/session1_kickoff.pdf"
+    },
+    {
+      num: 2,
+      title: "Research Design (C1) and Literature Review (C2)",
+      date: "2026-04-28T14:00:00+02:00",
+      display: "April 28, 2026",
+      desc: "Structuring your introduction, the golden thread from motivation to sub-questions, building a theoretical framework, and writing a critical literature review.",
+      file: "slides/session2_research_design.pdf"
+    },
+    {
+      num: 3,
+      title: "Revisions of C1 and C2",
+      date: "2026-05-05T14:00:00+02:00",
+      display: "May 5, 2026",
+      desc: "Operationalization, types of variables, validity and reliability, and stabilizing your research question before data collection.",
+      file: "slides/session3_revisions.pdf"
+    },
+    {
+      num: 4,
+      title: "Methodology and Data Collection (C3)",
+      date: "2026-05-12T14:00:00+02:00",
+      display: "May 12, 2026",
+      desc: "Choosing between qualitative and quantitative methods, sample size requirements, practical data collection tips, and justifying your choices.",
+      file: "slides/session4_methodology.pdf"
+    },
+    {
+      num: 5,
+      title: "General Progress and Data Analysis",
+      date: "2026-05-19T14:00:00+02:00",
+      display: "May 19, 2026",
+      desc: "Quantitative analysis (regression, t-tests, Cronbach's alpha), qualitative coding and thematic analysis, and reporting findings effectively.",
+      file: "slides/session5_progress.pdf"
+    },
+    {
+      num: 6,
+      title: "Findings and Analysis (C4)",
+      date: "2026-05-26T14:00:00+02:00",
+      display: "May 26, 2026",
+      desc: "Structuring Chapter 4, the distinction between description and analysis, connecting findings to theory, and looking ahead to conclusions.",
+      file: "slides/session6_findings.pdf"
+    },
+    {
+      num: 7,
+      title: "Revised Findings, Conclusions, and Presentation Prep",
+      date: "2026-06-02T14:00:00+02:00",
+      display: "June 2, 2026",
+      desc: "Writing conclusions and recommendations, preparing your 10-minute presentation, peer review assignments, and final report coherence.",
+      file: "slides/session7_conclusions.pdf"
+    }
+  ];
+
+  // ---- Password check ----
+  async function sha256(message) {
+    const msgBuffer = new TextEncoder().encode(message);
+    const hashBuffer = await crypto.subtle.digest("SHA-256", msgBuffer);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+  }
+
+  async function checkPassword() {
+    const input = document.getElementById("pw-input").value;
+    const hash = await sha256(input);
+    if (hash === PASSWORD_HASH) {
+      localStorage.setItem(STORAGE_KEY, hash);
+      showContent();
+    } else {
+      document.getElementById("pw-error").style.display = "block";
+      document.getElementById("pw-input").value = "";
+      document.getElementById("pw-input").focus();
+    }
+  }
+
+  function showContent() {
+    document.getElementById("password-overlay").style.display = "none";
+    document.getElementById("course-content").style.display = "block";
+    renderSessions();
+  }
+
+  // ---- Session rendering ----
+  function renderSessions() {
+    const grid = document.getElementById("session-grid");
+    const now = new Date();
+    grid.innerHTML = "";
+
+    sessions.forEach(s => {
+      const releaseDate = new Date(s.date);
+      const available = now >= releaseDate;
+      const card = document.createElement("div");
+      card.className = "session-card" + (available ? "" : " locked");
+
+      let actionHtml;
+      if (available) {
+        actionHtml = `<a href="${s.file}" target="_blank" class="session-link">Download slides (PDF)</a>`;
+      } else {
+        actionHtml = `<span class="session-locked-label">Available ${s.display}</span>`;
+      }
+
+      card.innerHTML = `
+        <div class="session-header">
+          <div class="session-title">Session ${s.num}: ${s.title}</div>
+          <div class="session-date">${s.display}</div>
+        </div>
+        <div class="session-description">${s.desc}</div>
+        ${actionHtml}
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  // ---- Init ----
+  (function() {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored === PASSWORD_HASH) {
+      showContent();
+    }
+  })();
+</script>
+```
