@@ -7,7 +7,7 @@ toc: false
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-4 .text-center}
-![](headshot.jpg){#img-me .rounded-circle .img-fluid width="180px"}
+![](headshot.jpg){#img-me .rounded .img-fluid width="300px"}
 
 ### Shreyas Meher
 
@@ -29,7 +29,6 @@ At Erasmus, I work on the [TWIN4DEM project](https://twin4dem.eu/) with [Clara E
 [Digital Governance]{.interest-pill}
 [Computational Social Science]{.interest-pill}
 [NLP & LLMs]{.interest-pill}
-[Democratic Backsliding]{.interest-pill}
 [Democratic Backsliding]{.interest-pill}
 [Reinforcement Learning]{.interest-pill}
 
