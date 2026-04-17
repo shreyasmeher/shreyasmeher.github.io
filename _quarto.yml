@@ -62,12 +62,8 @@ website:
         aria-label: LinkedIn
 
   page-footer:
-    left: |
-      &copy; 2026 Shreyas Meher
-      Erasmus School of Social and Behavioural Sciences
-      Erasmus University Rotterdam
-    right: |
-      Built with [Quarto](https://quarto.org)
+    left: "&copy; 2026 Shreyas Meher"
+    right: "Built with [Quarto](https://quarto.org)"
 
 format:
   html:

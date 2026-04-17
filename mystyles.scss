@@ -1,12 +1,12 @@
 /*-- scss:defaults --*/
 
-// Import fonts - Classy serif + clean sans-serif
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&family=Inter:wght@300;400;500;600;700&display=swap');
+// Fonts - Fraunces (editorial serif) + Inter (modern sans)
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 // Color palette
 $white: #ffffff;
 $black: #1a1a1a;
-$gray-100: #f8f9fa;
+$gray-100: #f6f5f0;
 $gray-200: #e9ecef;
 $gray-300: #ced4da;
 $gray-400: #adb5bd;
@@ -16,10 +16,13 @@ $gray-700: #343a40;
 $gray-800: #212529;
 $gray-900: #0d1117;
 
-// Primary - muted navy/slate
-$primary: #3d5a80;
+// Neutral accent palette
+$accent-color: #374151; // slate-700, near-black
+$accent-hover: #111827; // almost black
+
+$primary: $accent-color;
 $secondary: #495057;
-$accent: #3d5a80;
+$accent: $accent-color;
 $success: #42b983;
 $warning: #e7c000;
 $danger: #c00;
@@ -30,16 +33,16 @@ $body-bg: $white;
 $body-color: $gray-700;
 $link-color: $primary;
 $link-decoration: none;
-$link-hover-color: darken($primary, 12%);
+$link-hover-color: $accent-hover;
 $link-hover-decoration: underline;
 
-// Typography
+// Typography - Inter body, Fraunces headings
 $font-family-sans-serif: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-$font-family-serif: "Source Serif 4", "Georgia", "Times New Roman", serif;
+$font-family-serif: "Fraunces", "Georgia", "Times New Roman", serif;
 $font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-$font-family-base: $font-family-serif;
+$font-family-base: $font-family-sans-serif;
 $font-size-root: 16px;
-$line-height-base: 1.8;
+$line-height-base: 1.6;
 
 // Navbar
 $navbar-bg: $white;
@@ -57,43 +60,46 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-// Headings - clean sans-serif
+// Headings - editorial serif (Fraunces)
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-family-sans-serif;
+  font-family: $font-family-serif;
   color: $gray-800;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
+  font-variation-settings: "opsz" 36, "SOFT" 50;
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: 2rem;
   font-weight: 700;
   line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-variation-settings: "opsz" 72, "SOFT" 30;
 }
 
 h2 {
-  font-size: 1.5rem;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  padding-bottom: 0.4rem;
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.35rem;
   border-bottom: 1px solid $gray-200;
 }
 
 h3 {
-  font-size: 1.2rem;
-  margin-top: 1.75rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.15rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.65rem;
 }
 
 h4 {
-  font-size: 1.05rem;
-  margin-top: 1.5rem;
+  font-size: 1rem;
+  margin-top: 1.25rem;
   margin-bottom: 0.5rem;
 }
 
 p {
-  margin-bottom: 1.25rem;
-  line-height: 1.8;
+  margin-bottom: 1rem;
+  line-height: 1.65;
   color: $gray-700;
 }
 
@@ -113,14 +119,17 @@ a {
   background: $white;
 
   .navbar-brand {
-    font-family: $font-family-sans-serif;
+    font-family: $font-family-serif;
     font-weight: 700;
     color: $gray-800;
     font-size: 1.15rem;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
+    font-variation-settings: "opsz" 48, "SOFT" 30;
+    position: relative;
+    top: 3px;
 
     &:hover {
-      color: $gray-700;
+      color: $accent-hover;
       text-decoration: none;
     }
   }
@@ -132,7 +141,7 @@ a {
 
   .nav-link {
     font-family: $font-family-sans-serif;
-    font-weight: 450;
+    font-weight: 500;
     color: $gray-600;
     padding: 0.4rem 0.85rem;
     border-radius: 4px;
@@ -146,7 +155,7 @@ a {
     }
 
     &.active {
-      color: $gray-800;
+      color: $accent-hover;
       font-weight: 600;
     }
   }
@@ -324,10 +333,12 @@ code {
   }
 
   .pub-title {
-    font-family: $font-family-sans-serif;
+    font-family: $font-family-serif;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.98rem;
     color: $gray-800;
+    letter-spacing: -0.005em;
+    font-variation-settings: "opsz" 24, "SOFT" 50;
   }
 
   .pub-authors {
@@ -635,6 +646,12 @@ code {
   border: 1px solid $gray-300;
   color: $gray-600;
   background: $gray-100;
+  transition: all 0.15s ease;
+
+  &:hover {
+    border-color: $gray-400;
+    color: $gray-800;
+  }
 }
 
 // Table of Contents
@@ -642,6 +659,39 @@ code {
   .nav-link {
     font-family: $font-family-sans-serif;
     font-size: 0.82rem;
+  }
+}
+
+// Color scheme toggle - lightbulb icon (light mode: outline bulb)
+.quarto-color-scheme-toggle {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  color: $gray-600 !important;
+  width: 36px;
+  height: 36px;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background-color: $gray-100 !important;
+  }
+
+  .bi {
+    display: inline-block !important;
+    width: 18px;
+    height: 18px;
+    background-color: transparent !important;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23495057'><path d='M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6m6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1'/><path d='M5.5 15a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15.5a.5.5 0 0 1 0-1z'/></svg>") !important;
+    background-size: 18px 18px !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    mask: none !important;
+    -webkit-mask: none !important;
+
+    &::before, &::after {
+      content: none !important;
+      display: none !important;
+    }
   }
 }
 

@@ -1,6 +1,6 @@
 /*-- scss:defaults --*/
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 // Dark palette
 $gray-100: #0d1117;
@@ -15,9 +15,13 @@ $gray-900: #f0f6fc;
 $white: #ffffff;
 $black: #010409;
 
-$primary: #79a3c1;
+// Neutral accent (lighter for dark bg contrast)
+$accent-color: #adb5bd;
+$accent-hover: #e6edf3;
+
+$primary: $accent-color;
 $secondary: #8b949e;
-$accent: #79a3c1;
+$accent: $accent-color;
 $success: #56d364;
 $warning: #e3b341;
 $danger: #f85149;
@@ -27,19 +31,19 @@ $body-bg: $gray-100;
 $body-color: $gray-700;
 $link-color: $primary;
 $link-decoration: none;
-$link-hover-color: lighten($primary, 12%);
+$link-hover-color: $accent-hover;
 $link-hover-decoration: underline;
 
 $font-family-sans-serif: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-$font-family-serif: "Source Serif 4", "Georgia", "Times New Roman", serif;
+$font-family-serif: "Fraunces", "Georgia", "Times New Roman", serif;
 $font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-$font-family-base: $font-family-serif;
+$font-family-base: $font-family-sans-serif;
 $font-size-root: 16px;
-$line-height-base: 1.8;
+$line-height-base: 1.6;
 
 $navbar-bg: $gray-200;
 $navbar-fg: $gray-700;
-$navbar-hl: $primary;
+$navbar-hl: $accent-hover;
 
 $footer-bg: $gray-100;
 $footer-fg: $gray-600;
@@ -49,15 +53,51 @@ $footer-fg: $gray-600;
 body {
   color: $gray-700 !important;
   background-color: $gray-100 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+// Headings - editorial serif (matches light)
 h1, h2, h3, h4, h5, h6 {
   color: $gray-900 !important;
-  font-family: $font-family-sans-serif;
+  font-family: $font-family-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  font-variation-settings: "opsz" 36, "SOFT" 50;
+}
+
+h1 {
+  font-size: 2rem !important;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-variation-settings: "opsz" 72, "SOFT" 30;
 }
 
 h2 {
-  border-bottom-color: $gray-300 !important;
+  font-size: 1.4rem !important;
+  margin-top: 2rem !important;
+  margin-bottom: 0.85rem !important;
+  padding-bottom: 0.35rem !important;
+  border-bottom: 1px solid $gray-300 !important;
+}
+
+h3 {
+  font-size: 1.15rem !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.65rem !important;
+}
+
+h4 {
+  font-size: 1rem !important;
+  margin-top: 1.25rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.65;
+  color: $gray-700 !important;
 }
 
 p, li {
@@ -66,6 +106,7 @@ p, li {
 
 a {
   color: $primary;
+  transition: color 0.15s ease;
 
   &:hover {
     color: $link-hover-color;
@@ -76,9 +117,17 @@ a {
 .navbar {
   background: $gray-200 !important;
   border-bottom-color: $gray-300 !important;
+  padding: 0.75rem 0;
 
   .navbar-brand {
+    font-family: $font-family-serif;
+    font-weight: 700;
     color: $gray-900 !important;
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+    font-variation-settings: "opsz" 48, "SOFT" 30;
+    position: relative;
+    top: 3px;
 
     &:hover {
       color: $gray-800 !important;
@@ -86,7 +135,13 @@ a {
   }
 
   .nav-link {
+    font-family: $font-family-sans-serif;
+    font-weight: 500;
     color: $gray-600 !important;
+    padding: 0.4rem 0.85rem;
+    border-radius: 4px;
+    transition: all 0.15s ease;
+    font-size: 0.88rem;
 
     &:hover {
       color: $gray-800 !important;
@@ -95,13 +150,25 @@ a {
 
     &.active {
       color: $gray-900 !important;
+      font-weight: 600;
     }
   }
 }
 
 // Profile
 #img-me {
-  border-color: $gray-400;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+  display: block;
+  border: 3px solid $gray-400;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.03);
+  }
 }
 
 // Cards
@@ -115,17 +182,28 @@ pre {
   background-color: $gray-200 !important;
   border-color: $gray-300 !important;
   color: $gray-800 !important;
+  border-radius: 6px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.88em;
 }
 
 code {
   background-color: $gray-300 !important;
   color: $gray-800 !important;
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  font-size: 0.88em;
 }
 
 // Blockquote
 blockquote {
-  border-left-color: $gray-400;
-  background-color: $gray-200;
+  border-left: 3px solid $gray-400;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  background: $gray-200;
+  border-radius: 0 4px 4px 0;
+  font-style: italic;
   color: $gray-700;
 }
 
@@ -159,8 +237,9 @@ table {
     }
 
     &.active {
-      color: $primary !important;
-      border-bottom-color: $primary !important;
+      color: $gray-900 !important;
+      border-bottom-color: $gray-900 !important;
+      font-weight: 600;
     }
   }
 }
@@ -168,29 +247,79 @@ table {
 // Research cards
 .research-card {
   background: $gray-200 !important;
-  border-color: $gray-300 !important;
+  border: 1px solid $gray-300 !important;
+  border-radius: 8px;
+  padding: 1.5rem;
 
   &:hover { border-color: $gray-500 !important; }
 
-  h4 { color: $gray-900 !important; }
-  p { color: $gray-600 !important; }
+  &.active { border-width: 2px !important; }
+
+  h4 {
+    color: $gray-900 !important;
+    font-family: $font-family-sans-serif;
+    font-size: 1rem !important;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0 !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+  p {
+    color: $gray-600 !important;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin: 0;
+  }
 }
 
 // Publication entries
 .pub-entry {
-  border-bottom-color: $gray-300;
+  padding: 1rem 0;
+  border-bottom: 1px solid $gray-300;
 
-  p { margin-bottom: 0.1rem; }
-  .pub-title { color: $gray-900 !important; }
-  .pub-authors { color: $gray-600 !important; }
-  .pub-venue { color: $gray-500 !important; }
-  .pub-links a { color: $primary !important; }
+  &:last-child { border-bottom: none; }
+
+  p { margin-bottom: 0.15rem; line-height: 1.5; }
+
+  .pub-title {
+    color: $gray-900 !important;
+    font-family: $font-family-serif;
+    font-weight: 600;
+    font-size: 0.98rem;
+    letter-spacing: -0.005em;
+    font-variation-settings: "opsz" 24, "SOFT" 50;
+  }
+  .pub-authors { color: $gray-600 !important; font-size: 0.85rem; }
+  .pub-venue {
+    color: $gray-500 !important;
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-bottom: 0.4rem !important;
+  }
+  .pub-links {
+    margin-top: 0.35rem;
+
+    a {
+      color: $primary !important;
+      font-family: $font-family-sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-right: 0.5rem;
+    }
+  }
 }
 
 .abstract-toggle {
   color: $primary !important;
-  border-color: $primary !important;
+  border: 1px solid $primary !important;
   background: none !important;
+  font-family: $font-family-sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 3px;
+  padding: 0.15rem 0.5rem;
+  margin-right: 0.75rem;
+  cursor: pointer;
 
   &:hover {
     background: $primary !important;
@@ -199,39 +328,73 @@ table {
 }
 
 .abstract-content {
+  display: none;
+  margin-top: 0.75rem;
+  padding: 1rem;
   background: $gray-200 !important;
   color: $gray-700 !important;
-  border-left-color: $primary !important;
+  border-left: 3px solid $primary !important;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
 
 // Tool cards
 .tool-card {
   background: $gray-200 !important;
-  border-color: $gray-300 !important;
+  border: 1px solid $gray-300 !important;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  display: block;
+  color: inherit;
 
   &:hover {
     border-color: $gray-500 !important;
     color: inherit !important;
   }
 
-  h3 { color: $gray-900 !important; }
-  p { color: $gray-600 !important; }
+  h3 {
+    color: $gray-900 !important;
+    font-family: $font-family-sans-serif;
+    font-size: 1.15rem !important;
+    font-weight: 600;
+    margin: 0 0 0.5rem !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+  p { color: $gray-600 !important; font-size: 0.9rem; margin: 0; }
 }
 
 // Walkthrough images
 .walkthrough-img {
-  border-color: $gray-300 !important;
+  border: 1px solid $gray-300 !important;
+  border-radius: 6px;
+  margin: 1.25rem 0;
+  max-width: 100%;
 }
 
 // Gallery
 .gallery-filters {
   background: none !important;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  padding: 0.75rem;
 }
 
 .filter-btn {
   background: $gray-200 !important;
-  border-color: $gray-400 !important;
+  border: 1px solid $gray-400 !important;
+  border-radius: 20px;
+  padding: 0.35rem 1rem;
+  font-family: $font-family-sans-serif;
+  font-weight: 500;
+  font-size: 0.82rem;
   color: $gray-700 !important;
+  cursor: pointer;
 
   &:hover {
     background: $gray-300 !important;
@@ -246,7 +409,8 @@ table {
 }
 
 .gallery-item {
-  border-color: $gray-300 !important;
+  border: 1px solid $gray-300 !important;
+  border-radius: 6px;
 
   &:hover {
     border-color: $gray-500 !important;
@@ -256,19 +420,39 @@ table {
 // Teaching
 .teaching-entry {
   background: $gray-200 !important;
-  border-left-color: $primary !important;
+  border-left: 3px solid $primary !important;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  border-radius: 0 6px 6px 0;
+
+  h4 {
+    font-size: 1rem !important;
+    margin: 0 0 0.25rem !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+  p { margin-bottom: 0.5rem; font-size: 0.9rem; }
+  ul { margin-bottom: 0; li { font-size: 0.88rem; } }
 }
 
 // Interest pills
 .interest-pill {
+  display: inline-block;
+  font-family: $font-family-sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+  margin: 0.15rem 0.1rem;
   background: $gray-300 !important;
-  border-color: $gray-400 !important;
+  border: 1px solid $gray-400 !important;
   color: $gray-700 !important;
 }
 
 // TOC
 #quarto-margin-sidebar .nav-link {
   font-family: $font-family-sans-serif !important;
+  font-size: 0.82rem;
 }
 
 // Footer
@@ -286,5 +470,38 @@ table {
   &:hover {
     background-color: lighten($primary, 10%);
     border-color: lighten($primary, 10%);
+  }
+}
+
+// Color scheme toggle - lightbulb icon (dark mode: amber/on bulb)
+.quarto-color-scheme-toggle {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: $gray-700 !important;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background-color: $gray-300 !important;
+  }
+
+  .bi {
+    display: inline-block !important;
+    width: 18px;
+    height: 18px;
+    background-color: transparent !important;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e3b341'><path d='M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6M8 1a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1'/><path d='M5.5 15a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15.5a.5.5 0 0 1 0-1z'/></svg>") !important;
+    background-size: 18px 18px !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    mask: none !important;
+    -webkit-mask: none !important;
+
+    &::before, &::after {
+      content: none !important;
+      display: none !important;
+    }
   }
 }

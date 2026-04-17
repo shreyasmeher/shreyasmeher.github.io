@@ -9,9 +9,7 @@ toc: false
 ::: {.g-col-12 .g-col-md-4 .text-center}
 ![](headshot.jpg){#img-me .rounded .img-fluid width="300px"}
 
-### Shreyas Meher
-
-**Postdoctoral Researcher**
+**Postdoctoral Researcher**<br>
 Erasmus University Rotterdam
 
 [meher@essb.eur.nl](mailto:meher@essb.eur.nl)
