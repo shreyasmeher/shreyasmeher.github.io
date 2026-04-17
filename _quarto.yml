@@ -4,7 +4,6 @@ project:
   render:
     - "*.qmd"
     - "!drafts/"
-    - "!assignments/"
   resources:
     - CNAME
     - bachelor-project/slides/**

@@ -387,7 +387,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>An R package that brings <a href="https://huggingface.co/eventdata-utd">ConfliBERT</a> — a transformer model purpose-built for conflict and political violence text — into R. Run pretrained inference, benchmark models, fine-tune custom classifiers, and compare architectures, all from your R console.</p>
+<p>An R package that brings <a href="https://huggingface.co/eventdata-utd">ConfliBERT</a>, a transformer model purpose-built for conflict and political violence text, into R. Run pretrained inference, benchmark models, fine-tune custom classifiers, and compare architectures, all from your R console.</p>
 <p><a href="https://github.com/shreyasmeher/conflibertR" target="_blank">GitHub</a></p>
 <section id="installation" class="level2">
 <h2 class="anchored" data-anchor-id="installation">Installation</h2>
@@ -426,7 +426,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="multilabel-event-classification" class="level2">
 <h2 class="anchored" data-anchor-id="multilabel-event-classification">Multilabel Event Classification</h2>
-<p>Score text against four event categories — Armed Assault, Bombing or Explosion, Kidnapping, and Other — each evaluated independently.</p>
+<p>Score text against four event categories (Armed Assault, Bombing or Explosion, Kidnapping, and Other), each evaluated independently.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>event_results <span class="ot">&lt;-</span> <span class="fu">conflibert_multilabel</span>(<span class="fu">c</span>(</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"A car bomb exploded near the government ministry in Baghdad."</span>,</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Gunmen kidnapped three aid workers travelling through the Sahel region."</span></span>

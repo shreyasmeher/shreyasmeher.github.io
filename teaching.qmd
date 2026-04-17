@@ -34,7 +34,7 @@ toc: false
 ## Teaching Assistant
 
 ::: {.teaching-entry}
-#### EPPS 6313 --- Introduction to Quantitative Methods
+#### EPPS 6313: Introduction to Quantitative Methods
 *Teaching Assistant for Dr. Pengfei Zhang*
 
 - Led weekly STATA lab sessions focusing on regression analysis
@@ -42,7 +42,7 @@ toc: false
 :::
 
 ::: {.teaching-entry}
-#### EPPS 6316 --- Applied Regression
+#### EPPS 6316: Applied Regression
 *Teaching Assistant for Dr. Vito D'Orazio*
 
 - Conducted advanced R programming labs

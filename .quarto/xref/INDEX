@@ -34,5 +34,8 @@
   },
   "publications.qmd": {
     "publications.html": "ed65e65f"
+  },
+  "bachelor-project/index.qmd": {
+    "index.html": "21c06d42"
   }
 }

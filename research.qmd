@@ -18,7 +18,7 @@ How do different regimes implement internet control? I study content moderation 
 ::: {.research-card .research-card-css onclick="showArea('css')" id="card-css"}
 #### {{< fa solid laptop-code >}} Computational Social Science
 
-I build specialized language models --- ConfliBERT, ConflLlama --- to create structured data from unstructured text, focusing on political conflict and event coding.
+I build specialized language models, such as ConfliBERT and ConflLlama, to create structured data from unstructured text, focusing on political conflict and event coding.
 :::
 :::
 
@@ -34,10 +34,10 @@ How do executives expand power within democratic frameworks? I study legislative
 ::: {#area-dg .research-area}
 ## Digital Governance & Censorship
 
-**Democracy and Internet Control: Theory and Evidence from Transparency Reports**
+**Electoral Accountability and Government Content Removal: Theory and Evidence from Google Transparency Reports**
 *with [Pengfei Zhang](https://pengfei-zhang.com/)* | Under Review
 
-Examining how democratic and authoritarian regimes differ in their approach to internet content moderation, using data from transparency reports.
+How does regime type shape a state's intervention in its information environment? We develop a political agency model showing that democratic governments refrain from direct takedowns and delegate to courts because electoral accountability disciplines politicians through reputation-building incentives. Using Google transparency reports and quasi-experimental variation in election timing, we show that takedown requests from democratic governments decline significantly as elections approach, a reputational discipline effect absent in authoritarian regimes and other request types.
 
 **Two Types of Censorship? An Assessment of the Informational Autocracy Thesis**
 *with [Pengfei Zhang](https://pengfei-zhang.com/)* | Under Review
@@ -60,7 +60,7 @@ Testing how Guriev & Treisman's Informational Autocracy theory applies to intern
 **Research & Politics** | [Link](https://doi.org/10.1177/20531680251356282){target=_blank} | [Slides](research/APSA___ConflLlama.pdf) | [Code](https://doi.org/10.7910/DVN/0MUGE6)
 
 **Build, Borrow, or Just Fine-Tune? A Political Scientist's Guide to Choosing NLP Models** | Under Review
-[Draft [PDF]](https://www.dropbox.com/scl/fi/sfylpz2bzzhimpkg42zy4/Confli_mBERT.pdf?rlkey=dotkhx1g5eh81uenxrb8eqf6x&st=wz772hjh&dl=0) | [Code](https://huggingface.co/shreyasmeher/Confli-mBERT)
+[Draft [PDF]](research/Meher_Build_Borrow.pdf) | [Code](https://huggingface.co/shreyasmeher/Confli-mBERT)
 
 **Event Horizon: Revolutionizing Data Annotation with Reinforcement Learning** | Working Paper
 [Model on Hugging Face](https://huggingface.co/shreyasmeher/Qwen-GLOCON-Reasoning)
@@ -72,15 +72,20 @@ Testing how Guriev & Treisman's Informational Autocracy theory applies to intern
 ::: {#area-ipe .research-area style="display:none;"}
 ## Democratic Institutions & Backsliding
 
+**The Attention Trap: How International Celebrity Intervention Displaces Policy Discourse in Protest Movements** | Working Paper
+[Draft [PDF]](research/Meher_2025_Attention_Trap.pdf)
+
+Does international celebrity attention help or hinder social movements? Analysing 1.08 million tweets from the 2020--2021 Indian farmer protests, I measure the effect of celebrity attention shocks on protest discourse. When Rihanna tweeted about the protests on 2 February 2021, daily volume rose 22-fold, but the share of tweets discussing policy issues fell by 10 percentage points while celebrity and meta-commentary rose by 45 percentage points. I call this the *attention trap*: celebrity intervention maximises visibility while displacing the substantive discourse movements depend on. Local projection impulse responses show this displacement is specific to the celebrity channel: domestic events, including state violence at Lakhimpur Kheri, generate policy-focused responses without comparable displacement. The cost was strategically exploitable: the BJP launched a coordinated nationalist counter-campaign within hours, on discursive terrain made favourable by the displacement itself.
+
 **Legislating Without Scrutiny: Executive Aggrandizement and Democratic Erosion in India** | Working Paper
 [Draft [PDF]](research/Meher_2025_Legislating_Without_Scrutiny.pdf)
 
-Since 2014, India’s lawmaking has sped up and thinned out: committee referrals fell from 73% to 6%, and major laws, including the 2020 farm acts, passed after under two hours of debate without review. Drawing on 1,008 bills, text analysis of 881 laws, and cross-national data, I trace a steady shift of power toward the executive within the law itself, with synthetic control estimates showing a significant post-2014 drop in judicial constraints (ATT = -0.051, p = 0.024) and declines across all eight democracy indicators I track.
+In September 2020, India's Parliament passed three farm laws after under two hours of debate, with no committee referral: a procedural collapse, not an aberration. Under the BJP-led NDA, committee referral rates fell from 73% to 6%, and bills that once took nearly a year now clear Parliament in weeks. Drawing on 1,008 parliamentary bills, automated text analysis of 881 central acts, and cross-national democracy indicators, I document a systematic pattern of *executive aggrandizement*: the legal, incremental expansion of executive power at the expense of parliament, the judiciary, subnational governments, and citizens. A synthetic control analysis shows India's judicial constraints declined significantly after 2014 (ATT = -0.051, p = 0.024); all eight V-Dem democracy indicators I examine declined under the NDA even after controlling for pre-existing trends.
 
 **Strategic Anticipation and Expert Review: The Determinants of Critical Advisory Opinions from the Dutch Council of State**
 *with [Clara Egger](https://claramarieegger.wordpress.com/about/) & [Asya Zhelyazkova](https://www.eur.nl/en/people/asya-zhelyazkova)* | Under Review
 
-Investigating the conditions under which the Dutch Council of State issues critical advisory opinions, using a novel dataset of 2,129 opinions (2004--2025). Ideological distance emerges as the most robust predictor; anticipatory compliance by junior coalition partners and first-time private members reverses expected patterns.
+What determines whether an expert advisory body issues a critical opinion on a legislative proposal? Drawing on a novel dataset of 2,898 advisory opinions issued by the Dutch Council of State (*Raad van State*) between 2004 and 2025 (2,111 on laws and 785 on executive decrees), we test five competing mechanisms. Instrument type is the strongest predictor of opinion severity: executive decrees receive dramatically milder treatment, with 69% drawing no objections compared to just 13% for laws. Among laws, junior coalition partners attract significantly less critical opinions than leading parties, consistent with anticipatory compliance. Ideological distance from the cabinet median matters, though the effect is modest. The Council's most consequential effects operate through institutional deference to delegated legislation and the anticipatory self-discipline of politically exposed actors.
 
 **Framework Laws and Fading Oversight: How the Dutch Executive Expanded Its Lawmaking Authority**
 *with [Clara Egger](https://claramarieegger.wordpress.com/about/) & [Asya Zhelyazkova](https://www.eur.nl/en/people/asya-zhelyazkova)* | Under Review

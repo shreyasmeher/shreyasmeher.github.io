@@ -161,6 +161,10 @@ A visual timeline of my academic and personal journey, from starting my PhD in T
 ![It's not truly the Netherlands until you find a traditional windmill. Check.](gallery/img38.jpg){group="gallery"}
 :::
 
+::: {.gallery-item data-category="netherlands"}
+![Rotterdam in bloom. The cherry blossoms have a higher R² with my mood than any of my regressions.](gallery/img39.jpg){group="gallery"}
+:::
+
 :::
 
 ```{=html}

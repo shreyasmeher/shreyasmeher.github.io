@@ -4,18 +4,18 @@ toc: true
 toc-title: "Guide"
 ---
 
-A browser-based NLP toolkit for conflict and political violence text analysis. Built on [ConfliBERT](https://eventdata.utdallas.edu/conflibert/), the GUI provides an accessible interface for named entity recognition, text classification, question answering, and model fine-tuning --- no coding required.
+A browser-based NLP toolkit for conflict and political violence text analysis. Built on [ConfliBERT](https://eventdata.utdallas.edu/conflibert/), the GUI provides an accessible interface for named entity recognition, text classification, question answering, and model fine-tuning, with no coding required.
 
 [GitHub](https://github.com/shreyasmeher/ConfliBERT-gui){target="_blank"} | Developed with [Sultan Alsarra](https://www.linkedin.com/in/sultan-alsarra-phd-56977a63/)
 
 ## Features
 
-- **Named Entity Recognition** --- Identify organizations, persons, locations, weapons, and temporal expressions in conflict text
-- **Binary Classification** --- Determine if text describes a conflict event, with confidence scores
-- **Multilabel Classification** --- Categorize text into event types: Armed Assault, Bombing/Explosion, Kidnapping, Other
-- **Question Answering** --- Extract answers from conflict-related passages
-- **Fine-Tuning** --- Train custom classifiers with LoRA/QLoRA on your own data, with seven base architectures
-- **Batch Processing** --- Upload CSVs for bulk analysis
+- **Named Entity Recognition**: Identify organizations, persons, locations, weapons, and temporal expressions in conflict text
+- **Binary Classification**: Determine if text describes a conflict event, with confidence scores
+- **Multilabel Classification**: Categorize text into event types: Armed Assault, Bombing/Explosion, Kidnapping, Other
+- **Question Answering**: Extract answers from conflict-related passages
+- **Fine-Tuning**: Train custom classifiers with LoRA/QLoRA on your own data, with seven base architectures
+- **Batch Processing**: Upload CSVs for bulk analysis
 
 ## Walkthrough
 
@@ -27,7 +27,7 @@ The landing page lets you select your task and input text directly or upload a C
 
 ### Named Entity Recognition
 
-Paste any conflict-related text and the model identifies and color-codes named entities --- persons, organizations, locations, weapons, and more.
+Paste any conflict-related text and the model identifies and color-codes named entities: persons, organizations, locations, weapons, and more.
 
 ![](images/conflibert-gui/ner.png){.walkthrough-img fig-alt="NER results with color-coded entities"}
 

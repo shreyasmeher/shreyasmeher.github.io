@@ -4,7 +4,7 @@ toc: true
 toc-title: "Guide"
 ---
 
-An R package that brings [ConfliBERT](https://huggingface.co/eventdata-utd) --- a transformer model purpose-built for conflict and political violence text --- into R. Run pretrained inference, benchmark models, fine-tune custom classifiers, and compare architectures, all from your R console.
+An R package that brings [ConfliBERT](https://huggingface.co/eventdata-utd), a transformer model purpose-built for conflict and political violence text, into R. Run pretrained inference, benchmark models, fine-tune custom classifiers, and compare architectures, all from your R console.
 
 [GitHub](https://github.com/shreyasmeher/conflibertR){target="_blank"}
 
@@ -53,7 +53,7 @@ classify_results
 
 ## Multilabel Event Classification
 
-Score text against four event categories --- Armed Assault, Bombing or Explosion, Kidnapping, and Other --- each evaluated independently.
+Score text against four event categories (Armed Assault, Bombing or Explosion, Kidnapping, and Other), each evaluated independently.
 
 ```r
 event_results <- conflibert_multilabel(c(
