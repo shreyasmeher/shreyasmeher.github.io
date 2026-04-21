@@ -220,6 +220,16 @@ page-layout: article
     <p><strong>Final submission:</strong> June 25, 2026 via Canvas</p>
   </div>
 
+  <div class="course-info">
+    <p><strong>Groups and time slots</strong> (from Meeting 2 onwards)</p>
+    <p><strong>Group A</strong> &middot; 12:00&ndash;13:20 &middot; <em>text-as-data / cross-national</em><br>
+    Kate Domnikoff, Lea G&eacute;ciov&aacute;, Kseniya Sidorenko, Daniel Ugarte<br>
+    <em>Cross-feedback pairs:</em> Kate &harr; Lea &middot; Kseniya &harr; Daniel</p>
+    <p><strong>Group B</strong> &middot; 13:25&ndash;14:45 &middot; <em>case / applied / mixed</em><br>
+    Anand Dev Esponda, Vince Kromberg, Francis van Luyn, Louiza Reysen<br>
+    <em>Cross-feedback pairs:</em> Anand &harr; Vince &middot; Francis &harr; Louiza</p>
+  </div>
+
   <p>Session slides are released each Thursday afternoon, after the meeting has finished. Check back weekly for new materials.</p>
 
   <div class="session-grid" id="session-grid"></div>
