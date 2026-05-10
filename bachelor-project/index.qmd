@@ -234,6 +234,40 @@ page-layout: article
 
   <div class="session-grid" id="session-grid"></div>
 
+  <h3 style="font-family: 'Inter', system-ui, sans-serif; font-size: 1.05rem; font-weight: 700; color: #212529; margin-top: 2.5rem; margin-bottom: 0.5rem; border: none; padding: 0;">Methods walkthroughs</h3>
+  <p style="font-size: 0.9rem; color: #495057; margin-bottom: 0.5rem;">Self-contained, runnable guides for the methods you are most likely to use in your thesis. Each one walks from raw data through estimation to reporting, with code you can copy into your own analysis.</p>
+
+  <div class="session-grid">
+
+    <div class="session-card">
+      <div class="session-header">
+        <div class="session-title">OLS Regression (R)</div>
+        <div class="session-date">~25 min read</div>
+      </div>
+      <div class="session-description">Simulating a working dataset, fitting <code>lm()</code>, reading the output, diagnostics, robust standard errors, marginal effects, and reporting in a thesis. Common pitfalls included.</div>
+      <a href="walkthroughs/ols-regression.html" class="session-link">Open walkthrough</a>
+    </div>
+
+    <div class="session-card">
+      <div class="session-header">
+        <div class="session-title">Panel Data Regression (R)</div>
+        <div class="session-date">~25 min read</div>
+      </div>
+      <div class="session-description">Country-by-year simulated panel, pooled OLS versus fixed effects, two-way FE with <code>fixest</code>, random effects, the Hausman test, and clustered standard errors.</div>
+      <a href="walkthroughs/panel-data.html" class="session-link">Open walkthrough</a>
+    </div>
+
+    <div class="session-card">
+      <div class="session-header">
+        <div class="session-title">NLP Methods (Python)</div>
+        <div class="session-date">~30 min read</div>
+      </div>
+      <div class="session-description">A digital-governance discourse corpus (state control, digital rights, neutral framing), preprocessing, TF-IDF, classification with <code>scikit-learn</code>, LDA topic modeling, and sentiment scoring with VADER and transformers.</div>
+      <a href="walkthroughs/nlp-methods.html" class="session-link">Open walkthrough</a>
+    </div>
+
+  </div>
+
 </div>
 
 <script>

@@ -1,0 +1,278 @@
+---
+title: "OLS Regression: A Walkthrough"
+subtitle: "Bachelor Project 2025-2026, Group 16"
+author: "Shreyas Meher"
+date: 2026-05-10
+toc: true
+toc-depth: 3
+number-sections: true
+format:
+  html:
+    code-fold: false
+    code-tools: true
+    df-print: paged
+    fig-width: 7
+    fig-height: 4.5
+execute:
+  warning: false
+  message: false
+knitr:
+  opts_chunk:
+    comment: "#>"
+    collapse: true
+---
+
+## When to use OLS
+
+Ordinary Least Squares is the default tool when your outcome is continuous (a trust score, a media exposure index, a freedom rating) and you want to estimate the average change in that outcome associated with a one-unit change in some predictor, holding other variables fixed. It is the workhorse you should reach for first when your question is "does X predict Y, controlling for Z?". Logistic regression, panel methods, and instrumental variables are generalisations of the same logic.
+
+This walkthrough builds a simulated public-opinion survey from four democracies under varying degrees of digital stress and asks whether heavy reliance on social media for political news predicts lower trust in electoral integrity. The data are simulated so the walkthrough runs anywhere; the *sequence of steps* and *vocabulary* are the point. Reuse the skeleton on real ESS, Latinobarómetro, V-Dem expert survey, or your own scraped data.
+
+## Setting up
+
+```{r setup}
+set.seed(2026)
+
+library(dplyr)
+library(ggplot2)
+library(broom)
+library(modelsummary)
+library(sandwich)
+library(lmtest)
+library(car)
+```
+
+Install missing packages with `install.packages(c("dplyr","ggplot2","broom","modelsummary","sandwich","lmtest","car"))`.
+
+## Building a working dataset
+
+We simulate a 600-respondent survey across four countries (Hungary, Poland, India, Brazil) where independent media has come under pressure in the last decade. The outcome is `trust_elections`, a 0-10 scale on perceived integrity of national elections. The focal predictor is the number of hours per week the respondent gets political news from social media. Controls include encrypted messaging use for political content, news source diversity, age, education, ideology, and country.
+
+Simulating data is also a useful exercise on its own, because it forces you to be explicit about what you think the data-generating process looks like before you ever touch real data.
+
+```{r simulate-data}
+n <- 600
+
+dat <- tibble(
+  resp_id      = 1:n,
+  country      = sample(c("Hungary", "Poland", "India", "Brazil"),
+                        n, replace = TRUE, prob = c(0.20, 0.25, 0.30, 0.25)),
+  sm_news_hrs  = pmax(rnorm(n, mean = 7, sd = 4), 0),
+  encrypted    = rbinom(n, 1, 0.35),
+  source_div   = pmin(pmax(round(rnorm(n, 3, 1.4)), 1), 8),
+  age          = round(rnorm(n, 42, 14)),
+  education    = sample(c("primary", "secondary", "tertiary"),
+                        n, replace = TRUE, prob = c(0.25, 0.45, 0.30)),
+  ideology     = sample(c("left", "center", "right"),
+                        n, replace = TRUE, prob = c(0.30, 0.40, 0.30))
+)
+
+# True data-generating process (you would not know this with real data)
+country_lift <- c(Hungary = -0.6, Poland = -0.3, India = 0.0,  Brazil = -0.4)
+edu_lift     <- c(primary = -0.4, secondary = 0.0, tertiary = 0.3)
+ideo_lift    <- c(left = -0.1, center = 0.0, right = -0.2)
+
+dat <- dat |>
+  mutate(
+    trust_elections = 6.0 +
+      -0.12 * sm_news_hrs +
+      -0.35 * encrypted +
+       0.18 * source_div +
+       0.012 * (age - 40) +
+       country_lift[country] +
+       edu_lift[education] +
+       ideo_lift[ideology] +
+       rnorm(n, sd = 1.2)
+  ) |>
+  mutate(
+    trust_elections = pmin(pmax(trust_elections, 0), 10),
+    country   = factor(country,   levels = c("India", "Brazil", "Hungary", "Poland")),
+    education = factor(education, levels = c("primary", "secondary", "tertiary")),
+    ideology  = factor(ideology,  levels = c("center", "left", "right"))
+  )
+
+glimpse(dat)
+```
+
+A note on factors: `factor()` tells R that a variable is categorical, and the first level becomes the reference category. Coefficients on factor variables are interpreted as differences from that reference. Get the reference level right *before* fitting, not after. India is set as the reference country here because it is the largest sample; "center" is the reference ideology by convention.
+
+## Exploration before estimation
+
+Always look at the data before you model it. Two reasons: catch coding errors early, and form an expectation against which the regression output can be sanity-checked.
+
+```{r explore}
+dat |>
+  summarise(
+    mean_trust = mean(trust_elections),
+    sd_trust   = sd(trust_elections),
+    mean_sm    = mean(sm_news_hrs),
+    n          = n()
+  )
+
+dat |>
+  group_by(country) |>
+  summarise(
+    n          = n(),
+    mean_trust = mean(trust_elections),
+    sd_trust   = sd(trust_elections)
+  )
+```
+
+```{r explore-plot, fig.cap="Trust in elections by social-media news exposure, coloured by country."}
+ggplot(dat, aes(x = sm_news_hrs, y = trust_elections, colour = country)) +
+  geom_point(alpha = 0.45, size = 1.4) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Hours per week of political news from social media",
+       y = "Trust in elections (0-10)",
+       colour = NULL) +
+  theme_minimal(base_size = 12)
+```
+
+The slopes are negative and roughly parallel across countries. That is what we expect to see in the regression.
+
+## Fitting the model
+
+The model is
+
+$$
+\text{trust}_i = \beta_0 + \beta_1 \, \text{sm\_news}_i + \beta_2 \, \text{encrypted}_i + \beta_3 \, \text{source\_div}_i + \mathbf{X}_i' \boldsymbol{\gamma} + \varepsilon_i
+$$
+
+where $\mathbf{X}_i$ is the vector of categorical controls (country, education, ideology) plus age. Estimating it in R is one line:
+
+```{r fit-model}
+m1 <- lm(trust_elections ~ sm_news_hrs + encrypted + source_div +
+                           age + country + education + ideology,
+         data = dat)
+```
+
+That is the model. Everything below is interpretation and checking.
+
+## Reading the output
+
+```{r model-output}
+summary(m1)
+```
+
+A few things to walk through:
+
+- **Coefficients.** Continuous predictors give the change in `trust_elections` per one-unit change in the predictor. So `sm_news_hrs = -0.12` means each additional hour per week of social-media political news is associated with a 0.12-point drop on the 0-10 trust scale. For factor variables the coefficient is the difference from the reference level: `countryHungary = -0.6` says Hungarian respondents score, on average, 0.6 points lower than otherwise-comparable Indian respondents.
+- **Standard errors and t-values.** A coefficient is meaningful only relative to its noise. The t-value (estimate divided by standard error) and the associated p-value test the null that the true coefficient is zero. Small p-values mean the data are unlikely under that null; they do not mean the effect is large or important.
+- **R-squared.** The fraction of variance in `trust_elections` that the model explains. Use it to compare nested models on the same data, not as a quality grade.
+- **F-statistic.** Tests whether the model as a whole fits better than an intercept-only model. Almost always significant in real data; rarely interesting on its own.
+
+A cleaner table for inclusion in writing:
+
+```{r model-table}
+modelsummary(
+  list("Trust in elections (0-10)" = m1),
+  stars = TRUE,
+  gof_omit = "AIC|BIC|Log.Lik|RMSE|F"
+)
+```
+
+## Checking the assumptions
+
+OLS gives unbiased coefficients under fairly mild conditions (linearity, no perfect multicollinearity, exogeneity). The standard errors and tests, however, lean on extra assumptions: constant error variance (homoskedasticity), independent observations, and approximately normal residuals. Check these.
+
+### Linearity and residuals
+
+```{r diagnostics-1, fig.width=8, fig.height=6}
+par(mfrow = c(2, 2))
+plot(m1)
+par(mfrow = c(1, 1))
+```
+
+What you are looking for:
+
+- *Residuals vs Fitted* should look like a structureless cloud around zero. A funnel signals heteroskedasticity; a curve signals a missing nonlinear term.
+- *Q-Q plot* should hug the diagonal. Heavy tails are usually fine for inference in large samples; severe departures are a problem.
+- *Scale-Location* is another heteroskedasticity check.
+- *Residuals vs Leverage* flags points that pull the line on their own. Points outside Cook's distance contours deserve a second look.
+
+### Multicollinearity
+
+```{r vif}
+vif(m1)
+```
+
+`vif()` (variance inflation factor) above 5 is suspicious, above 10 is a real problem. For categorical variables `car::vif` reports the generalised VIF, which is the right diagnostic. Nothing alarming here.
+
+### Heteroskedasticity test and robust SEs
+
+The Breusch-Pagan test formalises the funnel-shape check:
+
+```{r bptest}
+bptest(m1)
+```
+
+If you reject homoskedasticity (or even if the diagnostic plot looks suspicious), reach for heteroskedasticity-consistent standard errors. These do not change the coefficient estimates; they correct the standard errors so hypothesis tests are valid.
+
+```{r robust-se}
+coeftest(m1, vcov = vcovHC(m1, type = "HC3"))
+```
+
+Quote the robust standard errors in your thesis if there is any sign of heteroskedasticity, and say so in the methods section. `HC3` is the modern default; `HC1` is what Stata reports.
+
+## Visualising effects
+
+A coefficient table tells you the slope. A plot tells you what the slope *means* across the range of your data.
+
+```{r marginal-effects, fig.cap="Predicted trust in elections by social-media news exposure, holding other variables at their reference or mean."}
+new_dat <- expand.grid(
+  sm_news_hrs = seq(0, 25, by = 1),
+  encrypted   = 0,
+  source_div  = round(mean(dat$source_div)),
+  age         = round(mean(dat$age)),
+  country     = "India",
+  education   = "secondary",
+  ideology    = "center"
+)
+
+new_dat$pred <- predict(m1, newdata = new_dat)
+
+ggplot(new_dat, aes(sm_news_hrs, pred)) +
+  geom_line(linewidth = 1) +
+  labs(x = "Hours per week of political news from social media",
+       y = "Predicted trust in elections (0-10)") +
+  theme_minimal(base_size = 12)
+```
+
+For a thesis, a coefficient plot of all predictors with confidence intervals is often more useful than a wall of numbers:
+
+```{r coef-plot, fig.cap="Coefficient estimates with 95% confidence intervals."}
+tidy(m1, conf.int = TRUE) |>
+  filter(term != "(Intercept)") |>
+  ggplot(aes(estimate, term)) +
+  geom_vline(xintercept = 0, linetype = "dashed", colour = "grey50") +
+  geom_pointrange(aes(xmin = conf.low, xmax = conf.high)) +
+  labs(x = "Coefficient (trust points, 0-10 scale)", y = NULL) +
+  theme_minimal(base_size = 12)
+```
+
+## Common pitfalls
+
+A short, opinionated list of things that show up in almost every first regression I read:
+
+1. **Prescriptive research questions.** "How can platforms restore trust in elections?" is not a regression question. "Is social-media news exposure associated with lower trust in elections, controlling for country and ideology?" is. OLS estimates associations; framing should match.
+2. **Bundled outcomes.** Do not regress on a five-item composite trust scale without first checking that it is one-dimensional (Cronbach's alpha, factor analysis). Otherwise you are estimating a slope on a moving target.
+3. **Reverse causality.** Distrustful respondents may *seek out* alternative media. The regression coefficient does not distinguish that direction. Acknowledge it explicitly; do not stop at "associated with".
+4. **Over-controlling.** Adding variables that lie on the causal path between X and Y absorbs the very effect you are trying to estimate. Think about the DAG before throwing in controls.
+5. **Treating dummies as continuous.** A categorical variable with five levels is *not* a 1-to-5 score unless the spacing is meaningful. Use `factor()` and live with the dummy coefficients.
+6. **Ignoring scale.** Predictors measured in tiny units give tiny coefficients; the same predictor rescaled gives readable ones. Rescale predictors so coefficients are interpretable in a written paragraph.
+7. **Reporting only stars.** Effect sizes matter more than asterisks. Tell the reader the magnitude in the units of the outcome, not just whether it crossed `p < 0.05`.
+8. **Cherry-picking the model.** Run the analysis you pre-specified. If you try ten specifications and report the prettiest one, your standard errors are lying. If you do explore, say so honestly and report the range.
+
+## Reporting in your thesis
+
+A regression result paragraph generally has four moves: state the model, state the headline coefficient in plain language, state the precision (standard error or confidence interval), and contextualise with one or two control coefficients. For example:
+
+> Holding country, ideology, education, age, encrypted-messaging use, and source diversity constant, each additional hour per week of political news from social media is associated with a 0.12-point drop on the 0-10 trust-in-elections scale (b = -0.12, robust SE = 0.014, p < 0.001). Across the observed range of 0 to 25 hours per week, that is a difference of roughly three points on a ten-point scale, comparable in size to moving from the most-trusting country in the sample (India) to the least-trusting (Hungary).
+
+A regression table belongs in the chapter; the data file and code go in an appendix or repository so the analysis is reproducible.
+
+## Where to read more
+
+- Wooldridge, *Introductory Econometrics* (chapters 2-7) is the standard text and the cleanest treatment of OLS interpretation.
+- Angrist and Pischke, *Mostly Harmless Econometrics*, is the right book once you start asking causal questions.
+- For diagnostics in R specifically, the documentation for the `performance` package and the `check_model()` function is excellent.

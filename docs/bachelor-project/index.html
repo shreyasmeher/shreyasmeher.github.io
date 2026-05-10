@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Bachelor Project 2025–2026 – Shreyas Meher</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -29,19 +32,18 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-f7c2d8b4d32e2e535528e2f984ec639b.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-29f53c2c126b8f8749e603bc94cfac76.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-f7c2d8b4d32e2e535528e2f984ec639b.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-f6b75529faf3266b129a46efde3cd801.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-704d72cdf54591c3e46a3a5f312374c7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-f6b75529faf3266b129a46efde3cd801.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c25b580c967b755748a286267bc5b04f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-4a97e48841878069172b8721d49c200f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-c25b580c967b755748a286267bc5b04f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-237a08b35a98752403beb3e61dfe2b22.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-4c9b4b4230855bb0f3b566636108729a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-237a08b35a98752403beb3e61dfe2b22.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -238,8 +240,6 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Shreyas Meher</span>
     </a>
@@ -561,6 +561,40 @@ ul.task-list li input[type="checkbox"] {
   <p>Session slides are released each Thursday afternoon, after the meeting has finished. Check back weekly for new materials.</p>
 
   <div class="session-grid" id="session-grid"></div>
+
+  <h3 style="font-family: 'Inter', system-ui, sans-serif; font-size: 1.05rem; font-weight: 700; color: #212529; margin-top: 2.5rem; margin-bottom: 0.5rem; border: none; padding: 0;" class="anchored">Methods walkthroughs</h3>
+  <p style="font-size: 0.9rem; color: #495057; margin-bottom: 0.5rem;">Self-contained, runnable guides for the methods you are most likely to use in your thesis. Each one walks from raw data through estimation to reporting, with code you can copy into your own analysis.</p>
+
+  <div class="session-grid">
+
+    <div class="session-card">
+      <div class="session-header">
+        <div class="session-title">OLS Regression (R)</div>
+        <div class="session-date">~25 min read</div>
+      </div>
+      <div class="session-description">Simulating a working dataset, fitting <code>lm()</code>, reading the output, diagnostics, robust standard errors, marginal effects, and reporting in a thesis. Common pitfalls included.</div>
+      <a href="walkthroughs/ols-regression.html" class="session-link">Open walkthrough</a>
+    </div>
+
+    <div class="session-card">
+      <div class="session-header">
+        <div class="session-title">Panel Data Regression (R)</div>
+        <div class="session-date">~25 min read</div>
+      </div>
+      <div class="session-description">Country-by-year simulated panel, pooled OLS versus fixed effects, two-way FE with <code>fixest</code>, random effects, the Hausman test, and clustered standard errors.</div>
+      <a href="walkthroughs/panel-data.html" class="session-link">Open walkthrough</a>
+    </div>
+
+    <div class="session-card">
+      <div class="session-header">
+        <div class="session-title">NLP Methods (Python)</div>
+        <div class="session-date">~30 min read</div>
+      </div>
+      <div class="session-description">A digital-governance discourse corpus (state control, digital rights, neutral framing), preprocessing, TF-IDF, classification with <code>scikit-learn</code>, LDA topic modeling, and sentiment scoring with VADER and transformers.</div>
+      <a href="walkthroughs/nlp-methods.html" class="session-link">Open walkthrough</a>
+    </div>
+
+  </div>
 
 </div>
 

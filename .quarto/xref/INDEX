@@ -37,5 +37,14 @@
   },
   "bachelor-project/index.qmd": {
     "index.html": "21c06d42"
+  },
+  "bachelor-project/walkthroughs/ols-regression.qmd": {
+    "ols-regression.html": "c921429b"
+  },
+  "bachelor-project/walkthroughs/panel-data.qmd": {
+    "panel-data.html": "8ac34d33"
+  },
+  "bachelor-project/walkthroughs/nlp-methods.qmd": {
+    "nlp-methods.html": "ccdcdf55"
   }
 }

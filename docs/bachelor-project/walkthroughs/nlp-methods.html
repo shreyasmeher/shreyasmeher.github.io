@@ -1,0 +1,1931 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Shreyas Meher">
+<meta name="dcterms.date" content="2026-05-10">
+
+<title>NLP Methods: A Walkthrough – Shreyas Meher</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<link href="../../favicon.ico" rel="icon">
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-f6b75529faf3266b129a46efde3cd801.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-704d72cdf54591c3e46a3a5f312374c7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-f6b75529faf3266b129a46efde3cd801.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-237a08b35a98752403beb3e61dfe2b22.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-4c9b4b4230855bb0f3b566636108729a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-237a08b35a98752403beb3e61dfe2b22.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<meta property="og:title" content="Shreyas Meher | Postdoctoral Researcher">
+<meta property="og:description" content="Research in Digital Governance, Democratic Backsliding, and Computational Politics.">
+<meta property="og:image" content="https://shreyasmeher.github.io/bachelor-project/walkthroughs/nlp-methods_files/figure-html/cell-8-output-1.png">
+<meta property="og:site_name" content="Shreyas Meher">
+<meta property="og:image:height" content="752">
+<meta property="og:image:width" content="884">
+<meta name="twitter:title" content="Shreyas Meher | Postdoctoral Researcher">
+<meta name="twitter:description" content="Research in Digital Governance, Democratic Backsliding, and Computational Politics.">
+<meta name="twitter:image" content="https://shreyasmeher.github.io/bachelor-project/walkthroughs/nlp-methods_files/figure-html/cell-8-output-1.png">
+<meta name="twitter:creator" content="@shreyasmhr">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="752">
+<meta name="twitter:image-width" content="884">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Shreyas Meher</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../software.html"> 
+<span class="menu-text">Software</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../teaching.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../CV.pdf"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../Gallery.html"> 
+<span class="menu-text">Gallery</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:meher@essb.eur.nl"> <i class="bi bi-envelope" role="img" aria-label="Email">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://x.com/shreyasmhr"> <i class="bi bi-twitter-x" role="img" aria-label="X">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/shreyasmeher"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/shreyasmeher/"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#when-to-use-nlp" id="toc-when-to-use-nlp" class="nav-link active" data-scroll-target="#when-to-use-nlp"><span class="header-section-number">1</span> When to use NLP</a></li>
+  <li><a href="#setting-up" id="toc-setting-up" class="nav-link" data-scroll-target="#setting-up"><span class="header-section-number">2</span> Setting up</a></li>
+  <li><a href="#building-a-working-corpus" id="toc-building-a-working-corpus" class="nav-link" data-scroll-target="#building-a-working-corpus"><span class="header-section-number">3</span> Building a working corpus</a></li>
+  <li><a href="#preprocessing" id="toc-preprocessing" class="nav-link" data-scroll-target="#preprocessing"><span class="header-section-number">4</span> Preprocessing</a></li>
+  <li><a href="#tf-idf-turning-text-into-numbers" id="toc-tf-idf-turning-text-into-numbers" class="nav-link" data-scroll-target="#tf-idf-turning-text-into-numbers"><span class="header-section-number">5</span> TF-IDF: turning text into numbers</a></li>
+  <li><a href="#classification-predicting-stance" id="toc-classification-predicting-stance" class="nav-link" data-scroll-target="#classification-predicting-stance"><span class="header-section-number">6</span> Classification: predicting stance</a></li>
+  <li><a href="#topic-modeling-with-lda" id="toc-topic-modeling-with-lda" class="nav-link" data-scroll-target="#topic-modeling-with-lda"><span class="header-section-number">7</span> Topic modeling with LDA</a></li>
+  <li><a href="#sentiment-analysis" id="toc-sentiment-analysis" class="nav-link" data-scroll-target="#sentiment-analysis"><span class="header-section-number">8</span> Sentiment analysis</a>
+  <ul class="collapse">
+  <li><a href="#transformer-based-sentiment-optional-more-accurate" id="toc-transformer-based-sentiment-optional-more-accurate" class="nav-link" data-scroll-target="#transformer-based-sentiment-optional-more-accurate"><span class="header-section-number">8.1</span> Transformer-based sentiment (optional, more accurate)</a></li>
+  </ul></li>
+  <li><a href="#word-clouds-optional-mostly-cosmetic" id="toc-word-clouds-optional-mostly-cosmetic" class="nav-link" data-scroll-target="#word-clouds-optional-mostly-cosmetic"><span class="header-section-number">9</span> Word clouds (optional, mostly cosmetic)</a></li>
+  <li><a href="#common-pitfalls" id="toc-common-pitfalls" class="nav-link" data-scroll-target="#common-pitfalls"><span class="header-section-number">10</span> Common pitfalls</a></li>
+  <li><a href="#reporting-in-your-thesis" id="toc-reporting-in-your-thesis" class="nav-link" data-scroll-target="#reporting-in-your-thesis"><span class="header-section-number">11</span> Reporting in your thesis</a></li>
+  <li><a href="#where-to-read-more" id="toc-where-to-read-more" class="nav-link" data-scroll-target="#where-to-read-more"><span class="header-section-number">12</span> Where to read more</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">NLP Methods: A Walkthrough</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<p class="subtitle lead">Bachelor Project 2025-2026, Group 16</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Shreyas Meher </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 10, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="when-to-use-nlp" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="when-to-use-nlp"><span class="header-section-number">1</span> When to use NLP</h2>
+<p>Natural language processing is the toolkit you need when your data are <em>text</em>: parliamentary debates, government press releases, civil-society reports, scraped social-media posts, court rulings, platform terms-of-service. The aim is not magic; it is structured measurement of unstructured text. You decide what construct you care about (topic, stance, framing, sentiment, named entity), and NLP gives you a defensible pipeline for measuring it on hundreds or thousands of documents at a scale that pure manual coding cannot reach.</p>
+<p>This walkthrough covers the standard pipeline most digital-governance bachelor theses will end up touching: preprocessing, TF-IDF representation, classification, topic modeling (LDA), and sentiment scoring. The corpus is a small, hand-built collection of statements about internet regulation, digital sovereignty, and content moderation, so you can run every cell on your laptop without scraping anything. The methods generalise directly to the corpus you actually collect (Reddit, Bluesky, Telegram dumps, Hansard transcripts, EU Commission press pages, court judgments).</p>
+</section>
+<section id="setting-up" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="setting-up"><span class="header-section-number">2</span> Setting up</h2>
+<p>The packages used below are all in the standard scientific Python stack. Install once with <code>pip install nltk scikit-learn pandas matplotlib seaborn wordcloud</code>, and <code>pip install transformers torch</code> if you want to try the transformer section.</p>
+<div id="1a1beeb6" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> string</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">"ignore"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> stopwords</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> word_tokenize</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.stem <span class="im">import</span> WordNetLemmatizer</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.sentiment <span class="im">import</span> SentimentIntensityAnalyzer</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Download NLTK resources if they are not already on disk.</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> r <span class="kw">in</span> [<span class="st">"punkt_tab"</span>, <span class="st">"stopwords"</span>, <span class="st">"wordnet"</span>, <span class="st">"vader_lexicon"</span>]:</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        nltk.data.find(r)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">LookupError</span>:</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        nltk.download(r, quiet<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> TfidfVectorizer, CountVectorizer</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split, cross_val_score</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> classification_report, confusion_matrix</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> LatentDirichletAllocation</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> wordcloud <span class="im">import</span> WordCloud</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>sns.set_theme(style<span class="op">=</span><span class="st">"whitegrid"</span>, context<span class="op">=</span><span class="st">"paper"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="building-a-working-corpus" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="building-a-working-corpus"><span class="header-section-number">3</span> Building a working corpus</h2>
+<p>Real research starts from a corpus you collected yourself: scraped Telegram channels, downloaded Commission press releases, OCR’d national policy briefs, transcribed parliamentary debates. For this walkthrough we embed a small corpus of digital-governance discourse with three stance labels: <code>pro_control</code> (state-security and sovereignty framing), <code>pro_rights</code> (civil-society and free-expression framing), and <code>neutral</code> (factual or analytical).</p>
+<div id="d724993b" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>docs <span class="op">=</span> [</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># pro_control</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"National security demands the right to disable communication networks during periods of unrest."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Sovereign control over the digital domain is essential to defending the constitutional order."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Platforms operating in our jurisdiction must comply with local content-removal orders without exception."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Encrypted messaging gives criminals a safe haven and must be regulated in the public interest."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Foreign-owned platforms cannot be allowed to set the rules of public debate inside our borders."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Temporary internet restrictions during examinations and elections protect public order and integrity."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Digital sovereignty is the natural extension of national sovereignty into the cyber domain."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Platforms have a duty to remove harmful content within hours of notification by the authorities."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Anonymity online enables fraud, harassment, and the spread of dangerous misinformation."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Lawful access to encrypted communications is not surveillance; it is law enforcement."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Cyber sovereignty doctrine recognises the legitimate authority of states over their information space."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"The state cannot be the only actor unable to investigate crimes committed on encrypted channels."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Foreign platforms must respect domestic legal frameworks or cease operating in our market."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Internet shutdowns are a proportionate response to coordinated incitement and disinformation campaigns."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Mandatory data localisation safeguards citizens from extraterritorial surveillance by foreign powers."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Real-name registration on social platforms reduces harassment and improves civic discourse."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Public order legislation must adapt to the speed at which inflammatory content now spreads online."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"End-to-end encryption without lawful-access provisions is incompatible with the rule of law."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Content-moderation rules drafted in California cannot govern the public sphere of a sovereign state."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"The duty to protect citizens online includes blocking platforms that refuse to cooperate."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Network-level filtering of foreign-funded disinformation is a defensive, not repressive, measure."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Strategic communications infrastructure should remain under national rather than corporate control."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Digital platforms are utilities that the state has every right to regulate as such."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Restrictions on certain VPNs are necessary to enforce existing content laws against circumvention."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># pro_rights</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Internet shutdowns are a blunt instrument that punishes citizens for the conduct of governments."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"End-to-end encryption protects journalists, activists, and ordinary users from arbitrary surveillance."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Mandatory back-doors weaken the security of every user and create new targets for attackers."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Vague content laws are routinely used to silence dissent rather than to address genuine harm."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Network shutdowns during protests violate the rights to assembly, expression, and information."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Independent oversight, not executive discretion, must govern any restriction on online expression."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Algorithmic content moderation at scale will inevitably suppress legitimate political speech."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Data localisation rules are too often vehicles for domestic surveillance, not user protection."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Rights organisations have documented thousands of internet shutdowns used to suppress reporting."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Real-name policies chill the speech of dissidents, whistleblowers, and members of vulnerable groups."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Court oversight should precede, not follow, any executive order to block a platform or service."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"The right to seek and receive information across borders is a foundational free-expression principle."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Encryption is not a loophole; it is the default protection for human rights defenders worldwide."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Internet shutdowns during elections undermine the very democratic legitimacy they claim to protect."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Civil society must be consulted before any expansion of state powers over the digital sphere."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Surveillance laws drafted under the banner of national security have historically targeted the press."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Disproportionate content takedowns silence marginalised voices long before they reach an audience."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Platform liability rules must not push companies toward over-removal of lawful expression."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Universal access to a free, open, and secure internet is a precondition for democratic participation."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Procedural transparency in content-moderation decisions is the bare minimum for democratic legitimacy."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Bulk surveillance programmes have repeatedly failed proportionality tests in independent courts."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Citizens have a right to know which speech is being removed, by whom, and on what grounds."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Access Now has documented over 280 internet shutdowns in 2023 alone, the highest figure on record."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Encryption underpins online banking, medical records, and confidential journalism: it cannot be selectively weakened."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>    <span class="co"># neutral</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"The Digital Services Act entered into force in the European Union in late 2022."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"The 2021 Indian IT Rules require significant social-media intermediaries to appoint compliance officers."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"V-Dem records a sustained global decline in indicators of liberal democracy since 2012."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Access Now operates the #KeepItOn coalition, which tracks internet shutdowns worldwide."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Freedom on the Net classifies countries on a 0-100 scale based on access, content, and user rights."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Several jurisdictions have introduced laws requiring intermediaries to remove unlawful content within fixed time windows."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"The European Court of Human Rights has issued multiple rulings on internet shutdowns and online expression."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Researchers distinguish between full network shutdowns, throttling, and platform-specific blocks."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"National implementation of regional regulations such as the GDPR varies significantly across member states."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Digital sovereignty has been invoked by both democratic and authoritarian governments for distinct policy aims."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Cross-national comparisons of internet freedom rely on measures including FOTN, RSF, and V-Dem indicators."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"The European Commission has commissioned several impact assessments on platform regulation since 2018."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Court rulings in Germany, India, and Brazil have addressed the legal status of encrypted messaging."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"The literature distinguishes content-based regulation from infrastructure-based regulation of online speech."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Government requests for content removal are reported in transparency disclosures from major platforms."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Estimates of the economic cost of internet shutdowns vary by methodology and time horizon."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Several member states are piloting age-verification frameworks under the EU's broader regulatory agenda."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Authoritarian and democratic regimes have both adopted data-localisation requirements in recent years."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"The Council of Europe's Convention 108+ governs cross-border data protection among its parties."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Comparative research has examined internet regulation in China, Russia, India, Turkey, and the EU."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Content-moderation policies are typically published in the platform's community guidelines and updated periodically."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"National statistical offices report different headline shares of the population using the internet."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Several countries have introduced bills requiring traceability of forwarded messages on encrypted platforms."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>corpus <span class="op">=</span> pd.DataFrame(docs, columns<span class="op">=</span>[<span class="st">"text"</span>, <span class="st">"label"</span>])</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(corpus.shape)</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>corpus[<span class="st">"label"</span>].value_counts()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(71, 2)</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>label
+pro_control    24
+pro_rights     24
+neutral        23
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<p>A real research corpus would be larger by an order of magnitude. The methods below scale linearly; nothing about the syntax changes when you swap in 5,000 scraped documents.</p>
+</section>
+<section id="preprocessing" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="preprocessing"><span class="header-section-number">4</span> Preprocessing</h2>
+<p>Text needs to be cleaned before any model can use it. The standard pipeline is: lowercase, remove punctuation and digits, tokenise, drop stopwords, and lemmatise. Each of these decisions affects your results and should be reported in your methods section.</p>
+<div id="f64f37d4" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>EN_STOP <span class="op">=</span> <span class="bu">set</span>(stopwords.words(<span class="st">"english"</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>LEM <span class="op">=</span> WordNetLemmatizer()</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> clean(text):</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    text <span class="op">=</span> text.lower()</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    text <span class="op">=</span> re.sub(<span class="vs">r"</span><span class="pp">[^a-z</span><span class="dv">\s</span><span class="pp">]</span><span class="vs">"</span>, <span class="st">" "</span>, text)         <span class="co"># drop digits and punctuation</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    tokens <span class="op">=</span> word_tokenize(text)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    tokens <span class="op">=</span> [t <span class="cf">for</span> t <span class="kw">in</span> tokens <span class="cf">if</span> t <span class="kw">not</span> <span class="kw">in</span> EN_STOP <span class="kw">and</span> <span class="bu">len</span>(t) <span class="op">&gt;</span> <span class="dv">2</span>]</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    tokens <span class="op">=</span> [LEM.lemmatize(t) <span class="cf">for</span> t <span class="kw">in</span> tokens]</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">" "</span>.join(tokens)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>corpus[<span class="st">"clean"</span>] <span class="op">=</span> corpus[<span class="st">"text"</span>].<span class="bu">apply</span>(clean)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>corpus[[<span class="st">"text"</span>, <span class="st">"clean"</span>]].head(<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">text</th>
+<th data-quarto-table-cell-role="th">clean</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>National security demands the right to disable...</td>
+<td>national security demand right disable communi...</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>Sovereign control over the digital domain is e...</td>
+<td>sovereign control digital domain essential def...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>Platforms operating in our jurisdiction must c...</td>
+<td>platform operating jurisdiction must comply lo...</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>A note on lemmatisation versus stemming: stemming chops words crudely (<code>shutdowns -&gt; shutdown</code>, <code>regulating -&gt; regul</code>); lemmatisation maps to a real dictionary form (<code>better -&gt; good</code>). For most thesis-scale corpora, lemmatisation gives cleaner topic and classification output and is worth the extra second of compute.</p>
+</section>
+<section id="tf-idf-turning-text-into-numbers" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="tf-idf-turning-text-into-numbers"><span class="header-section-number">5</span> TF-IDF: turning text into numbers</h2>
+<p>Term frequency-inverse document frequency reweights raw word counts so that words common across the entire corpus (like “internet” here) are downweighted and words distinctive to a few documents get more signal. It is the default vector representation for classical text models.</p>
+<div id="5706fe67" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>vec_tfidf <span class="op">=</span> TfidfVectorizer(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    max_features<span class="op">=</span><span class="dv">2000</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    ngram_range<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">2</span>),       <span class="co"># unigrams and bigrams</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    min_df<span class="op">=</span><span class="dv">2</span>                  <span class="co"># ignore terms that appear only once</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>X_tfidf <span class="op">=</span> vec_tfidf.fit_transform(corpus[<span class="st">"clean"</span>])</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Document-term matrix shape:"</span>, X_tfidf.shape)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Most distinctive features per stance label, by mean TF-IDF</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> top_terms_by_label(X, vec, labels, k<span class="op">=</span><span class="dv">8</span>):</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    feature_names <span class="op">=</span> np.array(vec.get_feature_names_out())</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> {}</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> label <span class="kw">in</span> <span class="bu">sorted</span>(<span class="bu">set</span>(labels)):</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>        mask <span class="op">=</span> (labels <span class="op">==</span> label).values</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>        means <span class="op">=</span> np.asarray(X[mask].mean(axis<span class="op">=</span><span class="dv">0</span>)).flatten()</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>        top_idx <span class="op">=</span> means.argsort()[::<span class="op">-</span><span class="dv">1</span>][:k]</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>        out[label] <span class="op">=</span> <span class="bu">list</span>(<span class="bu">zip</span>(feature_names[top_idx], means[top_idx].<span class="bu">round</span>(<span class="dv">3</span>)))</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> out</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>top_terms_by_label(X_tfidf, vec_tfidf, corpus[<span class="st">"label"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Document-term matrix shape: (71, 129)</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>{'neutral': [('internet', 0.1),
+  ('regulation', 0.087),
+  ('several', 0.068),
+  ('platform', 0.068),
+  ('national', 0.062),
+  ('shutdown', 0.062),
+  ('european', 0.06),
+  ('content', 0.055)],
+ 'pro_control': [('platform', 0.084),
+  ('public', 0.079),
+  ('state', 0.071),
+  ('foreign', 0.069),
+  ('encrypted', 0.062),
+  ('order', 0.06),
+  ('content', 0.056),
+  ('must', 0.056)],
+ 'pro_rights': [('right', 0.075),
+  ('shutdown', 0.069),
+  ('internet', 0.067),
+  ('expression', 0.062),
+  ('surveillance', 0.06),
+  ('internet shutdown', 0.059),
+  ('speech', 0.056),
+  ('content', 0.055)]}</code></pre>
+</div>
+</div>
+<p>Already, with only 70 documents, the top distinctive features for each stance look interpretable. This is a simple but effective sanity check before fitting any classifier.</p>
+</section>
+<section id="classification-predicting-stance" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="classification-predicting-stance"><span class="header-section-number">6</span> Classification: predicting stance</h2>
+<p>The classification problem: given a new document, which stance label should we assign? We split the corpus, fit a logistic regression on TF-IDF features, and evaluate on held-out documents.</p>
+<div id="6e47ad66" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    corpus[<span class="st">"clean"</span>], corpus[<span class="st">"label"</span>],</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    test_size<span class="op">=</span><span class="fl">0.30</span>, random_state<span class="op">=</span><span class="dv">2026</span>, stratify<span class="op">=</span>corpus[<span class="st">"label"</span>]</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>vec <span class="op">=</span> TfidfVectorizer(max_features<span class="op">=</span><span class="dv">2000</span>, ngram_range<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">2</span>), min_df<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>X_train_tf <span class="op">=</span> vec.fit_transform(X_train)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>X_test_tf  <span class="op">=</span> vec.transform(X_test)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>clf <span class="op">=</span> LogisticRegression(max_iter<span class="op">=</span><span class="dv">1000</span>, class_weight<span class="op">=</span><span class="st">"balanced"</span>)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>clf.fit(X_train_tf, y_train)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> clf.predict(X_test_tf)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification_report(y_test, y_pred, digits<span class="op">=</span><span class="dv">2</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>              precision    recall  f1-score   support
+
+     neutral       0.50      0.57      0.53         7
+ pro_control       0.80      0.57      0.67         7
+  pro_rights       0.56      0.62      0.59         8
+
+    accuracy                           0.59        22
+   macro avg       0.62      0.59      0.60        22
+weighted avg       0.62      0.59      0.60        22
+</code></pre>
+</div>
+</div>
+<p>Three things to read off this output:</p>
+<ul>
+<li><strong>Precision</strong> of label X is “of all documents the model called X, how many really were X”. High precision matters when a false positive is costly.</li>
+<li><strong>Recall</strong> of label X is “of all documents that really were X, how many did the model find”. High recall matters when missing one is costly.</li>
+<li><strong>F1</strong> is their harmonic mean, the most-cited single metric.</li>
+</ul>
+<p>A small corpus like this one will give noisy numbers. Cross-validation gives a more stable estimate. Note that we score on the document-term matrix <code>X_tfidf</code> (built earlier from the <em>full</em> corpus); for a strict evaluation you would wrap the vectoriser and classifier in a <code>Pipeline</code> so the vocabulary is rebuilt on each training fold.</p>
+<div id="f7470cca" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> cross_val_score(</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    LogisticRegression(max_iter<span class="op">=</span><span class="dv">1000</span>, class_weight<span class="op">=</span><span class="st">"balanced"</span>),</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    X_tfidf, corpus[<span class="st">"label"</span>],</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    cv<span class="op">=</span><span class="dv">5</span>, scoring<span class="op">=</span><span class="st">"f1_macro"</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"5-fold CV macro-F1: </span><span class="sc">{</span>scores<span class="sc">.</span>mean()<span class="sc">:.2f}</span><span class="ss"> (sd </span><span class="sc">{</span>scores<span class="sc">.</span>std()<span class="sc">:.2f}</span><span class="ss">)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>5-fold CV macro-F1: 0.53 (sd 0.15)</code></pre>
+</div>
+</div>
+<div id="e52b25ea" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>cm <span class="op">=</span> confusion_matrix(y_test, y_pred, labels<span class="op">=</span>clf.classes_)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">4</span>))</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>sns.heatmap(cm, annot<span class="op">=</span><span class="va">True</span>, fmt<span class="op">=</span><span class="st">"d"</span>, cmap<span class="op">=</span><span class="st">"Blues"</span>,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>            xticklabels<span class="op">=</span>clf.classes_, yticklabels<span class="op">=</span>clf.classes_, ax<span class="op">=</span>ax)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Predicted"</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"True"</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Confusion matrix"</span>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="nlp-methods_files/figure-html/cell-8-output-1.png" width="442" height="376" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>For a thesis, also report what the model got <em>wrong</em>. A confusion matrix and a few misclassified examples tell the reader far more than a single F1 number.</p>
+<div id="0cb884a8" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>test_df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"text"</span>: [corpus.loc[i, <span class="st">"text"</span>] <span class="cf">for</span> i <span class="kw">in</span> X_test.index],</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"true"</span>: y_test.values,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"pred"</span>: y_pred,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>test_df.query(<span class="st">"true != pred"</span>).head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">text</th>
+<th data-quarto-table-cell-role="th">true</th>
+<th data-quarto-table-cell-role="th">pred</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>Real-name policies chill the speech of disside...</td>
+<td>pro_rights</td>
+<td>neutral</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>Internet shutdowns during elections undermine ...</td>
+<td>pro_rights</td>
+<td>neutral</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">6</th>
+<td>Restrictions on certain VPNs are necessary to ...</td>
+<td>pro_control</td>
+<td>pro_rights</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">9</th>
+<td>Real-name registration on social platforms red...</td>
+<td>pro_control</td>
+<td>neutral</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">16</th>
+<td>The European Court of Human Rights has issued ...</td>
+<td>neutral</td>
+<td>pro_rights</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="topic-modeling-with-lda" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="topic-modeling-with-lda"><span class="header-section-number">7</span> Topic modeling with LDA</h2>
+<p>Topic models cluster documents into latent themes by exploiting which words tend to co-occur. Latent Dirichlet Allocation is the classical choice. Newer approaches (BERTopic, embedding-based clustering) often work better on short text, but LDA remains the most-cited and the most legible to thesis examiners.</p>
+<p>LDA works on raw counts, not TF-IDF.</p>
+<div id="a5f46752" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>vec_count <span class="op">=</span> CountVectorizer(max_features<span class="op">=</span><span class="dv">2000</span>, ngram_range<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">1</span>), min_df<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>X_count <span class="op">=</span> vec_count.fit_transform(corpus[<span class="st">"clean"</span>])</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>K <span class="op">=</span> <span class="dv">4</span>   <span class="co"># number of topics; choose by interpretability and coherence</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>lda <span class="op">=</span> LatentDirichletAllocation(</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    n_components<span class="op">=</span>K, learning_method<span class="op">=</span><span class="st">"online"</span>,</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    max_iter<span class="op">=</span><span class="dv">30</span>, random_state<span class="op">=</span><span class="dv">2026</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>lda.fit(X_count)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> show_topics(model, vec, k<span class="op">=</span><span class="dv">10</span>):</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    feat <span class="op">=</span> np.array(vec.get_feature_names_out())</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> {}</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> ti, comp <span class="kw">in</span> <span class="bu">enumerate</span>(model.components_):</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>        top <span class="op">=</span> comp.argsort()[::<span class="op">-</span><span class="dv">1</span>][:k]</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>        out[<span class="ss">f"Topic </span><span class="sc">{</span>ti<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">"</span>] <span class="op">=</span> <span class="st">", "</span>.join(feat[top])</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.Series(out)</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>show_topics(lda, vec_count, k<span class="op">=</span><span class="dv">8</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>Topic 1    internet, shutdown, digital, court, must, data...
+Topic 2    platform, right, state, network, expression, m...
+Topic 3    content, online, moderation, platform, speech,...
+Topic 4    internet, shutdown, rule, access, national, pu...
+dtype: object</code></pre>
+</div>
+</div>
+<p>Choose the number of topics K with a mix of statistical criteria (perplexity, topic coherence) and human reading. A model with topics that are not interpretable is useless even if its perplexity is low.</p>
+<div id="7167efe6" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>doc_topic <span class="op">=</span> lda.transform(X_count)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>topic_assign <span class="op">=</span> doc_topic.argmax(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>corpus_topics <span class="op">=</span> corpus.assign(topic<span class="op">=</span>topic_assign <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>corpus_topics.groupby([<span class="st">"label"</span>, <span class="st">"topic"</span>]).size().unstack(fill_value<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">topic</th>
+<th data-quarto-table-cell-role="th">1</th>
+<th data-quarto-table-cell-role="th">2</th>
+<th data-quarto-table-cell-role="th">3</th>
+<th data-quarto-table-cell-role="th">4</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">label</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">neutral</th>
+<td>10</td>
+<td>4</td>
+<td>7</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">pro_control</th>
+<td>3</td>
+<td>5</td>
+<td>7</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">pro_rights</th>
+<td>8</td>
+<td>5</td>
+<td>8</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>This crosstab tells you which stances cluster into which topics. In a thesis, you would use this kind of table to argue, for instance, that pro-control discourse maps disproportionately onto a single sovereignty-and-security theme while pro-rights discourse spreads more evenly across topics.</p>
+</section>
+<section id="sentiment-analysis" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="sentiment-analysis"><span class="header-section-number">8</span> Sentiment analysis</h2>
+<p>VADER is a lexicon-based sentiment scorer tuned for short social-media-like text. It is fast, transparent, and runs without a GPU. It does not understand sarcasm, domain-specific framing, or non-English text without translation.</p>
+<div id="9bbadaae" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sia <span class="op">=</span> SentimentIntensityAnalyzer()</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vader_compound(text):</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sia.polarity_scores(text)[<span class="st">"compound"</span>]</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>corpus[<span class="st">"sent"</span>] <span class="op">=</span> corpus[<span class="st">"text"</span>].<span class="bu">apply</span>(vader_compound)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>corpus.groupby(<span class="st">"label"</span>)[<span class="st">"sent"</span>].agg([<span class="st">"mean"</span>, <span class="st">"median"</span>, <span class="st">"std"</span>, <span class="st">"count"</span>]).<span class="bu">round</span>(<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">mean</th>
+<th data-quarto-table-cell-role="th">median</th>
+<th data-quarto-table-cell-role="th">std</th>
+<th data-quarto-table-cell-role="th">count</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">label</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">neutral</th>
+<td>0.090</td>
+<td>0.0</td>
+<td>0.211</td>
+<td>23</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">pro_control</th>
+<td>0.088</td>
+<td>0.0</td>
+<td>0.310</td>
+<td>24</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">pro_rights</th>
+<td>-0.092</td>
+<td>0.0</td>
+<td>0.322</td>
+<td>24</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="0290765c" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="fl">3.5</span>))</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>corpus, x<span class="op">=</span><span class="st">"label"</span>, y<span class="op">=</span><span class="st">"sent"</span>, ax<span class="op">=</span>ax,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>            order<span class="op">=</span>[<span class="st">"pro_control"</span>, <span class="st">"neutral"</span>, <span class="st">"pro_rights"</span>])</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="va">None</span>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"VADER compound score"</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">"grey"</span>, linewidth<span class="op">=</span><span class="fl">0.7</span>, linestyle<span class="op">=</span><span class="st">"--"</span>)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="nlp-methods_files/figure-html/cell-13-output-1.png" width="567" height="328" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Note something important about this plot: VADER is measuring lexical positivity/negativity, not stance. Pro-rights discourse uses words like “violate”, “suppress”, “arbitrary”, “weaken” and scores negative; pro-control discourse uses words like “protect”, “duty”, “lawful” and scores positive. Neither pattern <em>means</em> the stance is positive or negative in any politically meaningful sense. <em>VADER measures tone, not position.</em> Validate any sentiment lexicon or model against a hand-coded subset of your own data before quoting numbers.</p>
+<section id="transformer-based-sentiment-optional-more-accurate" class="level3" data-number="8.1">
+<h3 data-number="8.1" class="anchored" data-anchor-id="transformer-based-sentiment-optional-more-accurate"><span class="header-section-number">8.1</span> Transformer-based sentiment (optional, more accurate)</h3>
+<p>For more reliable tone detection on real text, a transformer model fine-tuned on a sentiment task outperforms VADER almost always. The cost is a much larger model file (several hundred MB) and a slower first run.</p>
+<div id="0077026e" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> pipeline</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># First run will download the model (~250 MB).</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>sent_pipe <span class="op">=</span> pipeline(<span class="st">"sentiment-analysis"</span>,</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>                     model<span class="op">=</span><span class="st">"distilbert-base-uncased-finetuned-sst-2-english"</span>)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>samples <span class="op">=</span> [</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Internet shutdowns are a blunt instrument that punishes citizens."</span>,</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Sovereign control over the digital domain is essential to defending the constitutional order."</span>,</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"The Digital Services Act entered into force in the European Union in late 2022."</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>sent_pipe(samples)</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="co"># [{'label': 'NEGATIVE', 'score': 0.998},</span></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a><span class="co">#  {'label': 'POSITIVE', 'score': 0.989},</span></span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a><span class="co">#  {'label': 'POSITIVE', 'score': 0.981}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The third example exposes the main weakness of sentiment-as-construct: a strictly factual sentence is read as positive simply because it contains “entered into force”. If your construct is <em>stance</em> or <em>frame</em> rather than tone, train a classifier on a labelled subset of your own corpus rather than borrowing a generic sentiment model.</p>
+</section>
+</section>
+<section id="word-clouds-optional-mostly-cosmetic" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="word-clouds-optional-mostly-cosmetic"><span class="header-section-number">9</span> Word clouds (optional, mostly cosmetic)</h2>
+<p>Word clouds are decorative; they should not stand in for a quantitative result. They are useful only to motivate a paragraph or open a section.</p>
+<div id="12bb8293" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>sub_text <span class="op">=</span> <span class="st">" "</span>.join(corpus.query(<span class="st">"label == 'pro_rights'"</span>)[<span class="st">"clean"</span>])</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>wc <span class="op">=</span> WordCloud(width<span class="op">=</span><span class="dv">900</span>, height<span class="op">=</span><span class="dv">400</span>, background_color<span class="op">=</span><span class="st">"white"</span>,</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>               colormap<span class="op">=</span><span class="st">"viridis"</span>, random_state<span class="op">=</span><span class="dv">2026</span>).generate(sub_text)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="fl">3.5</span>))</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>ax.imshow(wc, interpolation<span class="op">=</span><span class="st">"bilinear"</span>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>ax.axis(<span class="st">"off"</span>)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="nlp-methods_files/figure-html/cell-15-output-1.png" width="713" height="328" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="common-pitfalls" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="common-pitfalls"><span class="header-section-number">10</span> Common pitfalls</h2>
+<ol type="1">
+<li><strong>Preprocessing as a black box.</strong> Lowercasing, lemmatisation, stopword lists, n-gram ranges, and minimum document frequency are all <em>choices</em>. Report them. Run a basic robustness check (e.g., uni-only versus uni+bi-grams) and confirm your conclusions are not driven by a single preprocessing setting.</li>
+<li><strong>Tiny corpora and confident claims.</strong> With 70 documents, no F1 score is reliable. Collect more data, or be honest about the descriptive nature of the analysis.</li>
+<li><strong>Topic count chosen post-hoc.</strong> Trying many values of K and reporting the one with the prettiest topics is the topic-model equivalent of p-hacking. Pre-register the choice or report a range.</li>
+<li><strong>Sentiment as stance.</strong> A factual sentence about an unpopular policy is not a “negative” stance. Validate any sentiment lexicon or model against a hand-coded subset of your own data before quoting numbers.</li>
+<li><strong>English-only tools on non-English corpora.</strong> VADER, SST-2, and most generic NLP pipelines are tuned for English. For Hindi, Portuguese, Hungarian, or Russian text, use a language-specific model or translate carefully and report the translation step.</li>
+<li><strong>Data leakage in classification.</strong> Fit the vectoriser on the <em>training</em> split only, then transform the test split. Never on the full corpus.</li>
+<li><strong>Class imbalance.</strong> A 90/10 corpus where the model always predicts the majority class scores 90 percent accuracy and tells you nothing. Report macro-F1 and the confusion matrix, not raw accuracy.</li>
+<li><strong>Reading topic labels as ground truth.</strong> A topic is a distribution over words. The label <em>you</em> assign to it (“digital sovereignty,” “rights-based critique”) is your interpretation. State that explicitly.</li>
+</ol>
+</section>
+<section id="reporting-in-your-thesis" class="level2" data-number="11">
+<h2 data-number="11" class="anchored" data-anchor-id="reporting-in-your-thesis"><span class="header-section-number">11</span> Reporting in your thesis</h2>
+<p>A reasonable methods paragraph for an NLP-backed chapter:</p>
+<blockquote class="blockquote">
+<p>The corpus consists of 1,824 English-language documents collected from three sources between January and March 2026: the Access Now #KeepItOn statement archive, the European Commission press-release page, and selected national-government cyber-policy releases. Documents were lowercased, stripped of URLs and punctuation, tokenised with NLTK’s word tokeniser, filtered against the standard English stopword list, and lemmatised with WordNet. Documents were vectorised using TF-IDF on unigrams and bigrams with a minimum document frequency of three. Stance was operationalised as a three-way categorical (<code>pro_control</code>, <code>pro_rights</code>, <code>neutral</code>) and validated against a hand-coded gold-standard subset of 200 documents (Cohen’s kappa = 0.78 between two coders). A logistic regression classifier with class-balanced weights was trained on a 70/30 split, achieving a macro-F1 of 0.74 (sd 0.04 across five folds). Latent topics were inferred with online LDA at K = 6, with K chosen by inspecting topic coherence across K in [4, 12]. VADER scores are reported as a tone diagnostic only and are not used as a stance measure.</p>
+</blockquote>
+<p>Always report: corpus size, collection window, preprocessing choices, vectorisation, validation against a hand-coded subset, and the parameter ranges you searched.</p>
+</section>
+<section id="where-to-read-more" class="level2" data-number="12">
+<h2 data-number="12" class="anchored" data-anchor-id="where-to-read-more"><span class="header-section-number">12</span> Where to read more</h2>
+<ul>
+<li>Grimmer, Roberts, and Stewart, <em>Text as Data</em> (2022), is the cleanest political-science reference and covers everything in this walkthrough at the level a thesis examiner would expect.</li>
+<li>Jurafsky and Martin, <em>Speech and Language Processing</em> (online), is the canonical NLP textbook; chapters 6, 7, and 21 are the most relevant for this material.</li>
+<li>For modern transformer-based pipelines, the HuggingFace <code>transformers</code> documentation is the authoritative reference, and BERTopic is the most accessible upgrade from sklearn LDA.</li>
+</ul>
+
+
+<!-- -->
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/shreyasmeher\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "NLP Methods: A Walkthrough"</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Bachelor Project 2025-2026, Group 16"</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Shreyas Meher"</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2026-05-10</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="an">toc-depth:</span><span class="co"> 3</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: false</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="co">    df-print: paged</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-width: 7</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-height: 4.5</span></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a><span class="an">jupyter:</span><span class="co"> python3</span></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## When to use NLP</span></span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>Natural language processing is the toolkit you need when your data are *text*: parliamentary debates, government press releases, civil-society reports, scraped social-media posts, court rulings, platform terms-of-service. The aim is not magic; it is structured measurement of unstructured text. You decide what construct you care about (topic, stance, framing, sentiment, named entity), and NLP gives you a defensible pipeline for measuring it on hundreds or thousands of documents at a scale that pure manual coding cannot reach.</span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>This walkthrough covers the standard pipeline most digital-governance bachelor theses will end up touching: preprocessing, TF-IDF representation, classification, topic modeling (LDA), and sentiment scoring. The corpus is a small, hand-built collection of statements about internet regulation, digital sovereignty, and content moderation, so you can run every cell on your laptop without scraping anything. The methods generalise directly to the corpus you actually collect (Reddit, Bluesky, Telegram dumps, Hansard transcripts, EU Commission press pages, court judgments).</span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## Setting up</span></span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a>The packages used below are all in the standard scientific Python stack. Install once with <span class="in">`pip install nltk scikit-learn pandas matplotlib seaborn wordcloud`</span>, and <span class="in">`pip install transformers torch`</span> if you want to try the transformer section.</span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a><span class="in">```{python setup}</span></span>
+<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> string</span>
+<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">"ignore"</span>)</span>
+<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb22-41"><a href="#cb22-41" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb22-42"><a href="#cb22-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-43"><a href="#cb22-43" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
+<span id="cb22-44"><a href="#cb22-44" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> stopwords</span>
+<span id="cb22-45"><a href="#cb22-45" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> word_tokenize</span>
+<span id="cb22-46"><a href="#cb22-46" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.stem <span class="im">import</span> WordNetLemmatizer</span>
+<span id="cb22-47"><a href="#cb22-47" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.sentiment <span class="im">import</span> SentimentIntensityAnalyzer</span>
+<span id="cb22-48"><a href="#cb22-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-49"><a href="#cb22-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Download NLTK resources if they are not already on disk.</span></span>
+<span id="cb22-50"><a href="#cb22-50" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> r <span class="kw">in</span> [<span class="st">"punkt_tab"</span>, <span class="st">"stopwords"</span>, <span class="st">"wordnet"</span>, <span class="st">"vader_lexicon"</span>]:</span>
+<span id="cb22-51"><a href="#cb22-51" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb22-52"><a href="#cb22-52" aria-hidden="true" tabindex="-1"></a>        nltk.data.find(r)</span>
+<span id="cb22-53"><a href="#cb22-53" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">LookupError</span>:</span>
+<span id="cb22-54"><a href="#cb22-54" aria-hidden="true" tabindex="-1"></a>        nltk.download(r, quiet<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb22-55"><a href="#cb22-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-56"><a href="#cb22-56" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> TfidfVectorizer, CountVectorizer</span>
+<span id="cb22-57"><a href="#cb22-57" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
+<span id="cb22-58"><a href="#cb22-58" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split, cross_val_score</span>
+<span id="cb22-59"><a href="#cb22-59" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> classification_report, confusion_matrix</span>
+<span id="cb22-60"><a href="#cb22-60" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> LatentDirichletAllocation</span>
+<span id="cb22-61"><a href="#cb22-61" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> wordcloud <span class="im">import</span> WordCloud</span>
+<span id="cb22-62"><a href="#cb22-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-63"><a href="#cb22-63" aria-hidden="true" tabindex="-1"></a>sns.set_theme(style<span class="op">=</span><span class="st">"whitegrid"</span>, context<span class="op">=</span><span class="st">"paper"</span>)</span>
+<span id="cb22-64"><a href="#cb22-64" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb22-65"><a href="#cb22-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-66"><a href="#cb22-66" aria-hidden="true" tabindex="-1"></a><span class="fu">## Building a working corpus</span></span>
+<span id="cb22-67"><a href="#cb22-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-68"><a href="#cb22-68" aria-hidden="true" tabindex="-1"></a>Real research starts from a corpus you collected yourself: scraped Telegram channels, downloaded Commission press releases, OCR'd national policy briefs, transcribed parliamentary debates. For this walkthrough we embed a small corpus of digital-governance discourse with three stance labels: <span class="in">`pro_control`</span> (state-security and sovereignty framing), <span class="in">`pro_rights`</span> (civil-society and free-expression framing), and <span class="in">`neutral`</span> (factual or analytical).</span>
+<span id="cb22-69"><a href="#cb22-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-70"><a href="#cb22-70" aria-hidden="true" tabindex="-1"></a><span class="in">```{python build-corpus}</span></span>
+<span id="cb22-71"><a href="#cb22-71" aria-hidden="true" tabindex="-1"></a>docs <span class="op">=</span> [</span>
+<span id="cb22-72"><a href="#cb22-72" aria-hidden="true" tabindex="-1"></a>    <span class="co"># pro_control</span></span>
+<span id="cb22-73"><a href="#cb22-73" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"National security demands the right to disable communication networks during periods of unrest."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb22-74"><a href="#cb22-74" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Sovereign control over the digital domain is essential to defending the constitutional order."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb22-75"><a href="#cb22-75" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Platforms operating in our jurisdiction must comply with local content-removal orders without exception."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb22-76"><a href="#cb22-76" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Encrypted messaging gives criminals a safe haven and must be regulated in the public interest."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb22-77"><a href="#cb22-77" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Foreign-owned platforms cannot be allowed to set the rules of public debate inside our borders."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb22-78"><a href="#cb22-78" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Temporary internet restrictions during examinations and elections protect public order and integrity."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb22-79"><a href="#cb22-79" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Digital sovereignty is the natural extension of national sovereignty into the cyber domain."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb22-80"><a href="#cb22-80" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Platforms have a duty to remove harmful content within hours of notification by the authorities."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb22-81"><a href="#cb22-81" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Anonymity online enables fraud, harassment, and the spread of dangerous misinformation."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb22-82"><a href="#cb22-82" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Lawful access to encrypted communications is not surveillance; it is law enforcement."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb22-83"><a href="#cb22-83" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Cyber sovereignty doctrine recognises the legitimate authority of states over their information space."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb22-84"><a href="#cb22-84" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"The state cannot be the only actor unable to investigate crimes committed on encrypted channels."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb22-85"><a href="#cb22-85" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Foreign platforms must respect domestic legal frameworks or cease operating in our market."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb22-86"><a href="#cb22-86" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Internet shutdowns are a proportionate response to coordinated incitement and disinformation campaigns."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb22-87"><a href="#cb22-87" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Mandatory data localisation safeguards citizens from extraterritorial surveillance by foreign powers."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb22-88"><a href="#cb22-88" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Real-name registration on social platforms reduces harassment and improves civic discourse."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb22-89"><a href="#cb22-89" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Public order legislation must adapt to the speed at which inflammatory content now spreads online."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb22-90"><a href="#cb22-90" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"End-to-end encryption without lawful-access provisions is incompatible with the rule of law."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb22-91"><a href="#cb22-91" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Content-moderation rules drafted in California cannot govern the public sphere of a sovereign state."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb22-92"><a href="#cb22-92" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"The duty to protect citizens online includes blocking platforms that refuse to cooperate."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb22-93"><a href="#cb22-93" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Network-level filtering of foreign-funded disinformation is a defensive, not repressive, measure."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb22-94"><a href="#cb22-94" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Strategic communications infrastructure should remain under national rather than corporate control."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb22-95"><a href="#cb22-95" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Digital platforms are utilities that the state has every right to regulate as such."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb22-96"><a href="#cb22-96" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Restrictions on certain VPNs are necessary to enforce existing content laws against circumvention."</span>, <span class="st">"pro_control"</span>),</span>
+<span id="cb22-97"><a href="#cb22-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-98"><a href="#cb22-98" aria-hidden="true" tabindex="-1"></a>    <span class="co"># pro_rights</span></span>
+<span id="cb22-99"><a href="#cb22-99" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Internet shutdowns are a blunt instrument that punishes citizens for the conduct of governments."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb22-100"><a href="#cb22-100" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"End-to-end encryption protects journalists, activists, and ordinary users from arbitrary surveillance."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb22-101"><a href="#cb22-101" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Mandatory back-doors weaken the security of every user and create new targets for attackers."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb22-102"><a href="#cb22-102" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Vague content laws are routinely used to silence dissent rather than to address genuine harm."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb22-103"><a href="#cb22-103" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Network shutdowns during protests violate the rights to assembly, expression, and information."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb22-104"><a href="#cb22-104" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Independent oversight, not executive discretion, must govern any restriction on online expression."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb22-105"><a href="#cb22-105" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Algorithmic content moderation at scale will inevitably suppress legitimate political speech."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb22-106"><a href="#cb22-106" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Data localisation rules are too often vehicles for domestic surveillance, not user protection."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb22-107"><a href="#cb22-107" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Rights organisations have documented thousands of internet shutdowns used to suppress reporting."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb22-108"><a href="#cb22-108" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Real-name policies chill the speech of dissidents, whistleblowers, and members of vulnerable groups."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb22-109"><a href="#cb22-109" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Court oversight should precede, not follow, any executive order to block a platform or service."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb22-110"><a href="#cb22-110" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"The right to seek and receive information across borders is a foundational free-expression principle."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb22-111"><a href="#cb22-111" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Encryption is not a loophole; it is the default protection for human rights defenders worldwide."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb22-112"><a href="#cb22-112" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Internet shutdowns during elections undermine the very democratic legitimacy they claim to protect."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb22-113"><a href="#cb22-113" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Civil society must be consulted before any expansion of state powers over the digital sphere."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb22-114"><a href="#cb22-114" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Surveillance laws drafted under the banner of national security have historically targeted the press."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb22-115"><a href="#cb22-115" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Disproportionate content takedowns silence marginalised voices long before they reach an audience."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb22-116"><a href="#cb22-116" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Platform liability rules must not push companies toward over-removal of lawful expression."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb22-117"><a href="#cb22-117" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Universal access to a free, open, and secure internet is a precondition for democratic participation."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb22-118"><a href="#cb22-118" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Procedural transparency in content-moderation decisions is the bare minimum for democratic legitimacy."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb22-119"><a href="#cb22-119" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Bulk surveillance programmes have repeatedly failed proportionality tests in independent courts."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb22-120"><a href="#cb22-120" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Citizens have a right to know which speech is being removed, by whom, and on what grounds."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb22-121"><a href="#cb22-121" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Access Now has documented over 280 internet shutdowns in 2023 alone, the highest figure on record."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb22-122"><a href="#cb22-122" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Encryption underpins online banking, medical records, and confidential journalism: it cannot be selectively weakened."</span>, <span class="st">"pro_rights"</span>),</span>
+<span id="cb22-123"><a href="#cb22-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-124"><a href="#cb22-124" aria-hidden="true" tabindex="-1"></a>    <span class="co"># neutral</span></span>
+<span id="cb22-125"><a href="#cb22-125" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"The Digital Services Act entered into force in the European Union in late 2022."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb22-126"><a href="#cb22-126" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"The 2021 Indian IT Rules require significant social-media intermediaries to appoint compliance officers."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb22-127"><a href="#cb22-127" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"V-Dem records a sustained global decline in indicators of liberal democracy since 2012."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb22-128"><a href="#cb22-128" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Access Now operates the #KeepItOn coalition, which tracks internet shutdowns worldwide."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb22-129"><a href="#cb22-129" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Freedom on the Net classifies countries on a 0-100 scale based on access, content, and user rights."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb22-130"><a href="#cb22-130" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Several jurisdictions have introduced laws requiring intermediaries to remove unlawful content within fixed time windows."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb22-131"><a href="#cb22-131" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"The European Court of Human Rights has issued multiple rulings on internet shutdowns and online expression."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb22-132"><a href="#cb22-132" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Researchers distinguish between full network shutdowns, throttling, and platform-specific blocks."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb22-133"><a href="#cb22-133" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"National implementation of regional regulations such as the GDPR varies significantly across member states."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb22-134"><a href="#cb22-134" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Digital sovereignty has been invoked by both democratic and authoritarian governments for distinct policy aims."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb22-135"><a href="#cb22-135" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Cross-national comparisons of internet freedom rely on measures including FOTN, RSF, and V-Dem indicators."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb22-136"><a href="#cb22-136" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"The European Commission has commissioned several impact assessments on platform regulation since 2018."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb22-137"><a href="#cb22-137" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Court rulings in Germany, India, and Brazil have addressed the legal status of encrypted messaging."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb22-138"><a href="#cb22-138" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"The literature distinguishes content-based regulation from infrastructure-based regulation of online speech."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb22-139"><a href="#cb22-139" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Government requests for content removal are reported in transparency disclosures from major platforms."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb22-140"><a href="#cb22-140" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Estimates of the economic cost of internet shutdowns vary by methodology and time horizon."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb22-141"><a href="#cb22-141" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Several member states are piloting age-verification frameworks under the EU's broader regulatory agenda."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb22-142"><a href="#cb22-142" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Authoritarian and democratic regimes have both adopted data-localisation requirements in recent years."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb22-143"><a href="#cb22-143" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"The Council of Europe's Convention 108+ governs cross-border data protection among its parties."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb22-144"><a href="#cb22-144" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Comparative research has examined internet regulation in China, Russia, India, Turkey, and the EU."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb22-145"><a href="#cb22-145" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Content-moderation policies are typically published in the platform's community guidelines and updated periodically."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb22-146"><a href="#cb22-146" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"National statistical offices report different headline shares of the population using the internet."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb22-147"><a href="#cb22-147" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Several countries have introduced bills requiring traceability of forwarded messages on encrypted platforms."</span>, <span class="st">"neutral"</span>),</span>
+<span id="cb22-148"><a href="#cb22-148" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb22-149"><a href="#cb22-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-150"><a href="#cb22-150" aria-hidden="true" tabindex="-1"></a>corpus <span class="op">=</span> pd.DataFrame(docs, columns<span class="op">=</span>[<span class="st">"text"</span>, <span class="st">"label"</span>])</span>
+<span id="cb22-151"><a href="#cb22-151" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(corpus.shape)</span>
+<span id="cb22-152"><a href="#cb22-152" aria-hidden="true" tabindex="-1"></a>corpus[<span class="st">"label"</span>].value_counts()</span>
+<span id="cb22-153"><a href="#cb22-153" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb22-154"><a href="#cb22-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-155"><a href="#cb22-155" aria-hidden="true" tabindex="-1"></a>A real research corpus would be larger by an order of magnitude. The methods below scale linearly; nothing about the syntax changes when you swap in 5,000 scraped documents.</span>
+<span id="cb22-156"><a href="#cb22-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-157"><a href="#cb22-157" aria-hidden="true" tabindex="-1"></a><span class="fu">## Preprocessing</span></span>
+<span id="cb22-158"><a href="#cb22-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-159"><a href="#cb22-159" aria-hidden="true" tabindex="-1"></a>Text needs to be cleaned before any model can use it. The standard pipeline is: lowercase, remove punctuation and digits, tokenise, drop stopwords, and lemmatise. Each of these decisions affects your results and should be reported in your methods section.</span>
+<span id="cb22-160"><a href="#cb22-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-161"><a href="#cb22-161" aria-hidden="true" tabindex="-1"></a><span class="in">```{python preprocess}</span></span>
+<span id="cb22-162"><a href="#cb22-162" aria-hidden="true" tabindex="-1"></a>EN_STOP <span class="op">=</span> <span class="bu">set</span>(stopwords.words(<span class="st">"english"</span>))</span>
+<span id="cb22-163"><a href="#cb22-163" aria-hidden="true" tabindex="-1"></a>LEM <span class="op">=</span> WordNetLemmatizer()</span>
+<span id="cb22-164"><a href="#cb22-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-165"><a href="#cb22-165" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> clean(text):</span>
+<span id="cb22-166"><a href="#cb22-166" aria-hidden="true" tabindex="-1"></a>    text <span class="op">=</span> text.lower()</span>
+<span id="cb22-167"><a href="#cb22-167" aria-hidden="true" tabindex="-1"></a>    text <span class="op">=</span> re.sub(<span class="vs">r"</span><span class="pp">[^a-z</span><span class="dv">\s</span><span class="pp">]</span><span class="vs">"</span>, <span class="st">" "</span>, text)         <span class="co"># drop digits and punctuation</span></span>
+<span id="cb22-168"><a href="#cb22-168" aria-hidden="true" tabindex="-1"></a>    tokens <span class="op">=</span> word_tokenize(text)</span>
+<span id="cb22-169"><a href="#cb22-169" aria-hidden="true" tabindex="-1"></a>    tokens <span class="op">=</span> [t <span class="cf">for</span> t <span class="kw">in</span> tokens <span class="cf">if</span> t <span class="kw">not</span> <span class="kw">in</span> EN_STOP <span class="kw">and</span> <span class="bu">len</span>(t) <span class="op">&gt;</span> <span class="dv">2</span>]</span>
+<span id="cb22-170"><a href="#cb22-170" aria-hidden="true" tabindex="-1"></a>    tokens <span class="op">=</span> [LEM.lemmatize(t) <span class="cf">for</span> t <span class="kw">in</span> tokens]</span>
+<span id="cb22-171"><a href="#cb22-171" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">" "</span>.join(tokens)</span>
+<span id="cb22-172"><a href="#cb22-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-173"><a href="#cb22-173" aria-hidden="true" tabindex="-1"></a>corpus[<span class="st">"clean"</span>] <span class="op">=</span> corpus[<span class="st">"text"</span>].<span class="bu">apply</span>(clean)</span>
+<span id="cb22-174"><a href="#cb22-174" aria-hidden="true" tabindex="-1"></a>corpus[[<span class="st">"text"</span>, <span class="st">"clean"</span>]].head(<span class="dv">3</span>)</span>
+<span id="cb22-175"><a href="#cb22-175" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb22-176"><a href="#cb22-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-177"><a href="#cb22-177" aria-hidden="true" tabindex="-1"></a>A note on lemmatisation versus stemming: stemming chops words crudely (<span class="in">`shutdowns -&gt; shutdown`</span>, <span class="in">`regulating -&gt; regul`</span>); lemmatisation maps to a real dictionary form (<span class="in">`better -&gt; good`</span>). For most thesis-scale corpora, lemmatisation gives cleaner topic and classification output and is worth the extra second of compute.</span>
+<span id="cb22-178"><a href="#cb22-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-179"><a href="#cb22-179" aria-hidden="true" tabindex="-1"></a><span class="fu">## TF-IDF: turning text into numbers</span></span>
+<span id="cb22-180"><a href="#cb22-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-181"><a href="#cb22-181" aria-hidden="true" tabindex="-1"></a>Term frequency-inverse document frequency reweights raw word counts so that words common across the entire corpus (like "internet" here) are downweighted and words distinctive to a few documents get more signal. It is the default vector representation for classical text models.</span>
+<span id="cb22-182"><a href="#cb22-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-183"><a href="#cb22-183" aria-hidden="true" tabindex="-1"></a><span class="in">```{python tfidf}</span></span>
+<span id="cb22-184"><a href="#cb22-184" aria-hidden="true" tabindex="-1"></a>vec_tfidf <span class="op">=</span> TfidfVectorizer(</span>
+<span id="cb22-185"><a href="#cb22-185" aria-hidden="true" tabindex="-1"></a>    max_features<span class="op">=</span><span class="dv">2000</span>,</span>
+<span id="cb22-186"><a href="#cb22-186" aria-hidden="true" tabindex="-1"></a>    ngram_range<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">2</span>),       <span class="co"># unigrams and bigrams</span></span>
+<span id="cb22-187"><a href="#cb22-187" aria-hidden="true" tabindex="-1"></a>    min_df<span class="op">=</span><span class="dv">2</span>                  <span class="co"># ignore terms that appear only once</span></span>
+<span id="cb22-188"><a href="#cb22-188" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb22-189"><a href="#cb22-189" aria-hidden="true" tabindex="-1"></a>X_tfidf <span class="op">=</span> vec_tfidf.fit_transform(corpus[<span class="st">"clean"</span>])</span>
+<span id="cb22-190"><a href="#cb22-190" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Document-term matrix shape:"</span>, X_tfidf.shape)</span>
+<span id="cb22-191"><a href="#cb22-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-192"><a href="#cb22-192" aria-hidden="true" tabindex="-1"></a><span class="co"># Most distinctive features per stance label, by mean TF-IDF</span></span>
+<span id="cb22-193"><a href="#cb22-193" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> top_terms_by_label(X, vec, labels, k<span class="op">=</span><span class="dv">8</span>):</span>
+<span id="cb22-194"><a href="#cb22-194" aria-hidden="true" tabindex="-1"></a>    feature_names <span class="op">=</span> np.array(vec.get_feature_names_out())</span>
+<span id="cb22-195"><a href="#cb22-195" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> {}</span>
+<span id="cb22-196"><a href="#cb22-196" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> label <span class="kw">in</span> <span class="bu">sorted</span>(<span class="bu">set</span>(labels)):</span>
+<span id="cb22-197"><a href="#cb22-197" aria-hidden="true" tabindex="-1"></a>        mask <span class="op">=</span> (labels <span class="op">==</span> label).values</span>
+<span id="cb22-198"><a href="#cb22-198" aria-hidden="true" tabindex="-1"></a>        means <span class="op">=</span> np.asarray(X[mask].mean(axis<span class="op">=</span><span class="dv">0</span>)).flatten()</span>
+<span id="cb22-199"><a href="#cb22-199" aria-hidden="true" tabindex="-1"></a>        top_idx <span class="op">=</span> means.argsort()[::<span class="op">-</span><span class="dv">1</span>][:k]</span>
+<span id="cb22-200"><a href="#cb22-200" aria-hidden="true" tabindex="-1"></a>        out[label] <span class="op">=</span> <span class="bu">list</span>(<span class="bu">zip</span>(feature_names[top_idx], means[top_idx].<span class="bu">round</span>(<span class="dv">3</span>)))</span>
+<span id="cb22-201"><a href="#cb22-201" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> out</span>
+<span id="cb22-202"><a href="#cb22-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-203"><a href="#cb22-203" aria-hidden="true" tabindex="-1"></a>top_terms_by_label(X_tfidf, vec_tfidf, corpus[<span class="st">"label"</span>])</span>
+<span id="cb22-204"><a href="#cb22-204" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb22-205"><a href="#cb22-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-206"><a href="#cb22-206" aria-hidden="true" tabindex="-1"></a>Already, with only 70 documents, the top distinctive features for each stance look interpretable. This is a simple but effective sanity check before fitting any classifier.</span>
+<span id="cb22-207"><a href="#cb22-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-208"><a href="#cb22-208" aria-hidden="true" tabindex="-1"></a><span class="fu">## Classification: predicting stance</span></span>
+<span id="cb22-209"><a href="#cb22-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-210"><a href="#cb22-210" aria-hidden="true" tabindex="-1"></a>The classification problem: given a new document, which stance label should we assign? We split the corpus, fit a logistic regression on TF-IDF features, and evaluate on held-out documents.</span>
+<span id="cb22-211"><a href="#cb22-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-212"><a href="#cb22-212" aria-hidden="true" tabindex="-1"></a><span class="in">```{python classification}</span></span>
+<span id="cb22-213"><a href="#cb22-213" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
+<span id="cb22-214"><a href="#cb22-214" aria-hidden="true" tabindex="-1"></a>    corpus[<span class="st">"clean"</span>], corpus[<span class="st">"label"</span>],</span>
+<span id="cb22-215"><a href="#cb22-215" aria-hidden="true" tabindex="-1"></a>    test_size<span class="op">=</span><span class="fl">0.30</span>, random_state<span class="op">=</span><span class="dv">2026</span>, stratify<span class="op">=</span>corpus[<span class="st">"label"</span>]</span>
+<span id="cb22-216"><a href="#cb22-216" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb22-217"><a href="#cb22-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-218"><a href="#cb22-218" aria-hidden="true" tabindex="-1"></a>vec <span class="op">=</span> TfidfVectorizer(max_features<span class="op">=</span><span class="dv">2000</span>, ngram_range<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">2</span>), min_df<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb22-219"><a href="#cb22-219" aria-hidden="true" tabindex="-1"></a>X_train_tf <span class="op">=</span> vec.fit_transform(X_train)</span>
+<span id="cb22-220"><a href="#cb22-220" aria-hidden="true" tabindex="-1"></a>X_test_tf  <span class="op">=</span> vec.transform(X_test)</span>
+<span id="cb22-221"><a href="#cb22-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-222"><a href="#cb22-222" aria-hidden="true" tabindex="-1"></a>clf <span class="op">=</span> LogisticRegression(max_iter<span class="op">=</span><span class="dv">1000</span>, class_weight<span class="op">=</span><span class="st">"balanced"</span>)</span>
+<span id="cb22-223"><a href="#cb22-223" aria-hidden="true" tabindex="-1"></a>clf.fit(X_train_tf, y_train)</span>
+<span id="cb22-224"><a href="#cb22-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-225"><a href="#cb22-225" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> clf.predict(X_test_tf)</span>
+<span id="cb22-226"><a href="#cb22-226" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification_report(y_test, y_pred, digits<span class="op">=</span><span class="dv">2</span>))</span>
+<span id="cb22-227"><a href="#cb22-227" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb22-228"><a href="#cb22-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-229"><a href="#cb22-229" aria-hidden="true" tabindex="-1"></a>Three things to read off this output:</span>
+<span id="cb22-230"><a href="#cb22-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-231"><a href="#cb22-231" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Precision** of label X is "of all documents the model called X, how many really were X". High precision matters when a false positive is costly.</span>
+<span id="cb22-232"><a href="#cb22-232" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Recall** of label X is "of all documents that really were X, how many did the model find". High recall matters when missing one is costly.</span>
+<span id="cb22-233"><a href="#cb22-233" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**F1** is their harmonic mean, the most-cited single metric.</span>
+<span id="cb22-234"><a href="#cb22-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-235"><a href="#cb22-235" aria-hidden="true" tabindex="-1"></a>A small corpus like this one will give noisy numbers. Cross-validation gives a more stable estimate. Note that we score on the document-term matrix <span class="in">`X_tfidf`</span> (built earlier from the *full* corpus); for a strict evaluation you would wrap the vectoriser and classifier in a <span class="in">`Pipeline`</span> so the vocabulary is rebuilt on each training fold.</span>
+<span id="cb22-236"><a href="#cb22-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-237"><a href="#cb22-237" aria-hidden="true" tabindex="-1"></a><span class="in">```{python cv}</span></span>
+<span id="cb22-238"><a href="#cb22-238" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> cross_val_score(</span>
+<span id="cb22-239"><a href="#cb22-239" aria-hidden="true" tabindex="-1"></a>    LogisticRegression(max_iter<span class="op">=</span><span class="dv">1000</span>, class_weight<span class="op">=</span><span class="st">"balanced"</span>),</span>
+<span id="cb22-240"><a href="#cb22-240" aria-hidden="true" tabindex="-1"></a>    X_tfidf, corpus[<span class="st">"label"</span>],</span>
+<span id="cb22-241"><a href="#cb22-241" aria-hidden="true" tabindex="-1"></a>    cv<span class="op">=</span><span class="dv">5</span>, scoring<span class="op">=</span><span class="st">"f1_macro"</span></span>
+<span id="cb22-242"><a href="#cb22-242" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb22-243"><a href="#cb22-243" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"5-fold CV macro-F1: </span><span class="sc">{</span>scores<span class="sc">.</span>mean()<span class="sc">:.2f}</span><span class="ss"> (sd </span><span class="sc">{</span>scores<span class="sc">.</span>std()<span class="sc">:.2f}</span><span class="ss">)"</span>)</span>
+<span id="cb22-244"><a href="#cb22-244" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb22-245"><a href="#cb22-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-246"><a href="#cb22-246" aria-hidden="true" tabindex="-1"></a><span class="in">```{python confusion}</span></span>
+<span id="cb22-247"><a href="#cb22-247" aria-hidden="true" tabindex="-1"></a>cm <span class="op">=</span> confusion_matrix(y_test, y_pred, labels<span class="op">=</span>clf.classes_)</span>
+<span id="cb22-248"><a href="#cb22-248" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">4</span>))</span>
+<span id="cb22-249"><a href="#cb22-249" aria-hidden="true" tabindex="-1"></a>sns.heatmap(cm, annot<span class="op">=</span><span class="va">True</span>, fmt<span class="op">=</span><span class="st">"d"</span>, cmap<span class="op">=</span><span class="st">"Blues"</span>,</span>
+<span id="cb22-250"><a href="#cb22-250" aria-hidden="true" tabindex="-1"></a>            xticklabels<span class="op">=</span>clf.classes_, yticklabels<span class="op">=</span>clf.classes_, ax<span class="op">=</span>ax)</span>
+<span id="cb22-251"><a href="#cb22-251" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Predicted"</span>)</span>
+<span id="cb22-252"><a href="#cb22-252" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"True"</span>)</span>
+<span id="cb22-253"><a href="#cb22-253" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Confusion matrix"</span>)</span>
+<span id="cb22-254"><a href="#cb22-254" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb22-255"><a href="#cb22-255" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb22-256"><a href="#cb22-256" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb22-257"><a href="#cb22-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-258"><a href="#cb22-258" aria-hidden="true" tabindex="-1"></a>For a thesis, also report what the model got *wrong*. A confusion matrix and a few misclassified examples tell the reader far more than a single F1 number.</span>
+<span id="cb22-259"><a href="#cb22-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-260"><a href="#cb22-260" aria-hidden="true" tabindex="-1"></a><span class="in">```{python errors}</span></span>
+<span id="cb22-261"><a href="#cb22-261" aria-hidden="true" tabindex="-1"></a>test_df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb22-262"><a href="#cb22-262" aria-hidden="true" tabindex="-1"></a>    <span class="st">"text"</span>: [corpus.loc[i, <span class="st">"text"</span>] <span class="cf">for</span> i <span class="kw">in</span> X_test.index],</span>
+<span id="cb22-263"><a href="#cb22-263" aria-hidden="true" tabindex="-1"></a>    <span class="st">"true"</span>: y_test.values,</span>
+<span id="cb22-264"><a href="#cb22-264" aria-hidden="true" tabindex="-1"></a>    <span class="st">"pred"</span>: y_pred,</span>
+<span id="cb22-265"><a href="#cb22-265" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb22-266"><a href="#cb22-266" aria-hidden="true" tabindex="-1"></a>test_df.query(<span class="st">"true != pred"</span>).head()</span>
+<span id="cb22-267"><a href="#cb22-267" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb22-268"><a href="#cb22-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-269"><a href="#cb22-269" aria-hidden="true" tabindex="-1"></a><span class="fu">## Topic modeling with LDA</span></span>
+<span id="cb22-270"><a href="#cb22-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-271"><a href="#cb22-271" aria-hidden="true" tabindex="-1"></a>Topic models cluster documents into latent themes by exploiting which words tend to co-occur. Latent Dirichlet Allocation is the classical choice. Newer approaches (BERTopic, embedding-based clustering) often work better on short text, but LDA remains the most-cited and the most legible to thesis examiners.</span>
+<span id="cb22-272"><a href="#cb22-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-273"><a href="#cb22-273" aria-hidden="true" tabindex="-1"></a>LDA works on raw counts, not TF-IDF.</span>
+<span id="cb22-274"><a href="#cb22-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-275"><a href="#cb22-275" aria-hidden="true" tabindex="-1"></a><span class="in">```{python lda}</span></span>
+<span id="cb22-276"><a href="#cb22-276" aria-hidden="true" tabindex="-1"></a>vec_count <span class="op">=</span> CountVectorizer(max_features<span class="op">=</span><span class="dv">2000</span>, ngram_range<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">1</span>), min_df<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb22-277"><a href="#cb22-277" aria-hidden="true" tabindex="-1"></a>X_count <span class="op">=</span> vec_count.fit_transform(corpus[<span class="st">"clean"</span>])</span>
+<span id="cb22-278"><a href="#cb22-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-279"><a href="#cb22-279" aria-hidden="true" tabindex="-1"></a>K <span class="op">=</span> <span class="dv">4</span>   <span class="co"># number of topics; choose by interpretability and coherence</span></span>
+<span id="cb22-280"><a href="#cb22-280" aria-hidden="true" tabindex="-1"></a>lda <span class="op">=</span> LatentDirichletAllocation(</span>
+<span id="cb22-281"><a href="#cb22-281" aria-hidden="true" tabindex="-1"></a>    n_components<span class="op">=</span>K, learning_method<span class="op">=</span><span class="st">"online"</span>,</span>
+<span id="cb22-282"><a href="#cb22-282" aria-hidden="true" tabindex="-1"></a>    max_iter<span class="op">=</span><span class="dv">30</span>, random_state<span class="op">=</span><span class="dv">2026</span></span>
+<span id="cb22-283"><a href="#cb22-283" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb22-284"><a href="#cb22-284" aria-hidden="true" tabindex="-1"></a>lda.fit(X_count)</span>
+<span id="cb22-285"><a href="#cb22-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-286"><a href="#cb22-286" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> show_topics(model, vec, k<span class="op">=</span><span class="dv">10</span>):</span>
+<span id="cb22-287"><a href="#cb22-287" aria-hidden="true" tabindex="-1"></a>    feat <span class="op">=</span> np.array(vec.get_feature_names_out())</span>
+<span id="cb22-288"><a href="#cb22-288" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> {}</span>
+<span id="cb22-289"><a href="#cb22-289" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> ti, comp <span class="kw">in</span> <span class="bu">enumerate</span>(model.components_):</span>
+<span id="cb22-290"><a href="#cb22-290" aria-hidden="true" tabindex="-1"></a>        top <span class="op">=</span> comp.argsort()[::<span class="op">-</span><span class="dv">1</span>][:k]</span>
+<span id="cb22-291"><a href="#cb22-291" aria-hidden="true" tabindex="-1"></a>        out[<span class="ss">f"Topic </span><span class="sc">{</span>ti<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">"</span>] <span class="op">=</span> <span class="st">", "</span>.join(feat[top])</span>
+<span id="cb22-292"><a href="#cb22-292" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.Series(out)</span>
+<span id="cb22-293"><a href="#cb22-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-294"><a href="#cb22-294" aria-hidden="true" tabindex="-1"></a>show_topics(lda, vec_count, k<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb22-295"><a href="#cb22-295" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb22-296"><a href="#cb22-296" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-297"><a href="#cb22-297" aria-hidden="true" tabindex="-1"></a>Choose the number of topics K with a mix of statistical criteria (perplexity, topic coherence) and human reading. A model with topics that are not interpretable is useless even if its perplexity is low.</span>
+<span id="cb22-298"><a href="#cb22-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-299"><a href="#cb22-299" aria-hidden="true" tabindex="-1"></a><span class="in">```{python lda-doc-topic}</span></span>
+<span id="cb22-300"><a href="#cb22-300" aria-hidden="true" tabindex="-1"></a>doc_topic <span class="op">=</span> lda.transform(X_count)</span>
+<span id="cb22-301"><a href="#cb22-301" aria-hidden="true" tabindex="-1"></a>topic_assign <span class="op">=</span> doc_topic.argmax(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb22-302"><a href="#cb22-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-303"><a href="#cb22-303" aria-hidden="true" tabindex="-1"></a>corpus_topics <span class="op">=</span> corpus.assign(topic<span class="op">=</span>topic_assign <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb22-304"><a href="#cb22-304" aria-hidden="true" tabindex="-1"></a>corpus_topics.groupby([<span class="st">"label"</span>, <span class="st">"topic"</span>]).size().unstack(fill_value<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb22-305"><a href="#cb22-305" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb22-306"><a href="#cb22-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-307"><a href="#cb22-307" aria-hidden="true" tabindex="-1"></a>This crosstab tells you which stances cluster into which topics. In a thesis, you would use this kind of table to argue, for instance, that pro-control discourse maps disproportionately onto a single sovereignty-and-security theme while pro-rights discourse spreads more evenly across topics.</span>
+<span id="cb22-308"><a href="#cb22-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-309"><a href="#cb22-309" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sentiment analysis</span></span>
+<span id="cb22-310"><a href="#cb22-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-311"><a href="#cb22-311" aria-hidden="true" tabindex="-1"></a>VADER is a lexicon-based sentiment scorer tuned for short social-media-like text. It is fast, transparent, and runs without a GPU. It does not understand sarcasm, domain-specific framing, or non-English text without translation.</span>
+<span id="cb22-312"><a href="#cb22-312" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-313"><a href="#cb22-313" aria-hidden="true" tabindex="-1"></a><span class="in">```{python vader}</span></span>
+<span id="cb22-314"><a href="#cb22-314" aria-hidden="true" tabindex="-1"></a>sia <span class="op">=</span> SentimentIntensityAnalyzer()</span>
+<span id="cb22-315"><a href="#cb22-315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-316"><a href="#cb22-316" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vader_compound(text):</span>
+<span id="cb22-317"><a href="#cb22-317" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sia.polarity_scores(text)[<span class="st">"compound"</span>]</span>
+<span id="cb22-318"><a href="#cb22-318" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-319"><a href="#cb22-319" aria-hidden="true" tabindex="-1"></a>corpus[<span class="st">"sent"</span>] <span class="op">=</span> corpus[<span class="st">"text"</span>].<span class="bu">apply</span>(vader_compound)</span>
+<span id="cb22-320"><a href="#cb22-320" aria-hidden="true" tabindex="-1"></a>corpus.groupby(<span class="st">"label"</span>)[<span class="st">"sent"</span>].agg([<span class="st">"mean"</span>, <span class="st">"median"</span>, <span class="st">"std"</span>, <span class="st">"count"</span>]).<span class="bu">round</span>(<span class="dv">3</span>)</span>
+<span id="cb22-321"><a href="#cb22-321" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb22-322"><a href="#cb22-322" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-323"><a href="#cb22-323" aria-hidden="true" tabindex="-1"></a><span class="in">```{python vader-plot, fig.cap="VADER compound sentiment by stance label."}</span></span>
+<span id="cb22-324"><a href="#cb22-324" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="fl">3.5</span>))</span>
+<span id="cb22-325"><a href="#cb22-325" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>corpus, x<span class="op">=</span><span class="st">"label"</span>, y<span class="op">=</span><span class="st">"sent"</span>, ax<span class="op">=</span>ax,</span>
+<span id="cb22-326"><a href="#cb22-326" aria-hidden="true" tabindex="-1"></a>            order<span class="op">=</span>[<span class="st">"pro_control"</span>, <span class="st">"neutral"</span>, <span class="st">"pro_rights"</span>])</span>
+<span id="cb22-327"><a href="#cb22-327" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="va">None</span>)</span>
+<span id="cb22-328"><a href="#cb22-328" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"VADER compound score"</span>)</span>
+<span id="cb22-329"><a href="#cb22-329" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">"grey"</span>, linewidth<span class="op">=</span><span class="fl">0.7</span>, linestyle<span class="op">=</span><span class="st">"--"</span>)</span>
+<span id="cb22-330"><a href="#cb22-330" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb22-331"><a href="#cb22-331" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb22-332"><a href="#cb22-332" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb22-333"><a href="#cb22-333" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-334"><a href="#cb22-334" aria-hidden="true" tabindex="-1"></a>Note something important about this plot: VADER is measuring lexical positivity/negativity, not stance. Pro-rights discourse uses words like "violate", "suppress", "arbitrary", "weaken" and scores negative; pro-control discourse uses words like "protect", "duty", "lawful" and scores positive. Neither pattern *means* the stance is positive or negative in any politically meaningful sense. *VADER measures tone, not position.* Validate any sentiment lexicon or model against a hand-coded subset of your own data before quoting numbers.</span>
+<span id="cb22-335"><a href="#cb22-335" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-336"><a href="#cb22-336" aria-hidden="true" tabindex="-1"></a><span class="fu">### Transformer-based sentiment (optional, more accurate)</span></span>
+<span id="cb22-337"><a href="#cb22-337" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-338"><a href="#cb22-338" aria-hidden="true" tabindex="-1"></a>For more reliable tone detection on real text, a transformer model fine-tuned on a sentiment task outperforms VADER almost always. The cost is a much larger model file (several hundred MB) and a slower first run.</span>
+<span id="cb22-339"><a href="#cb22-339" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-340"><a href="#cb22-340" aria-hidden="true" tabindex="-1"></a><span class="in">```{python transformer-sentiment}</span></span>
+<span id="cb22-341"><a href="#cb22-341" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb22-342"><a href="#cb22-342" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-343"><a href="#cb22-343" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> pipeline</span>
+<span id="cb22-344"><a href="#cb22-344" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-345"><a href="#cb22-345" aria-hidden="true" tabindex="-1"></a><span class="co"># First run will download the model (~250 MB).</span></span>
+<span id="cb22-346"><a href="#cb22-346" aria-hidden="true" tabindex="-1"></a>sent_pipe <span class="op">=</span> pipeline(<span class="st">"sentiment-analysis"</span>,</span>
+<span id="cb22-347"><a href="#cb22-347" aria-hidden="true" tabindex="-1"></a>                     model<span class="op">=</span><span class="st">"distilbert-base-uncased-finetuned-sst-2-english"</span>)</span>
+<span id="cb22-348"><a href="#cb22-348" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-349"><a href="#cb22-349" aria-hidden="true" tabindex="-1"></a>samples <span class="op">=</span> [</span>
+<span id="cb22-350"><a href="#cb22-350" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Internet shutdowns are a blunt instrument that punishes citizens."</span>,</span>
+<span id="cb22-351"><a href="#cb22-351" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Sovereign control over the digital domain is essential to defending the constitutional order."</span>,</span>
+<span id="cb22-352"><a href="#cb22-352" aria-hidden="true" tabindex="-1"></a>    <span class="st">"The Digital Services Act entered into force in the European Union in late 2022."</span></span>
+<span id="cb22-353"><a href="#cb22-353" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb22-354"><a href="#cb22-354" aria-hidden="true" tabindex="-1"></a>sent_pipe(samples)</span>
+<span id="cb22-355"><a href="#cb22-355" aria-hidden="true" tabindex="-1"></a><span class="co"># [{'label': 'NEGATIVE', 'score': 0.998},</span></span>
+<span id="cb22-356"><a href="#cb22-356" aria-hidden="true" tabindex="-1"></a><span class="co">#  {'label': 'POSITIVE', 'score': 0.989},</span></span>
+<span id="cb22-357"><a href="#cb22-357" aria-hidden="true" tabindex="-1"></a><span class="co">#  {'label': 'POSITIVE', 'score': 0.981}]</span></span>
+<span id="cb22-358"><a href="#cb22-358" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb22-359"><a href="#cb22-359" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-360"><a href="#cb22-360" aria-hidden="true" tabindex="-1"></a>The third example exposes the main weakness of sentiment-as-construct: a strictly factual sentence is read as positive simply because it contains "entered into force". If your construct is *stance* or *frame* rather than tone, train a classifier on a labelled subset of your own corpus rather than borrowing a generic sentiment model.</span>
+<span id="cb22-361"><a href="#cb22-361" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-362"><a href="#cb22-362" aria-hidden="true" tabindex="-1"></a><span class="fu">## Word clouds (optional, mostly cosmetic)</span></span>
+<span id="cb22-363"><a href="#cb22-363" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-364"><a href="#cb22-364" aria-hidden="true" tabindex="-1"></a>Word clouds are decorative; they should not stand in for a quantitative result. They are useful only to motivate a paragraph or open a section.</span>
+<span id="cb22-365"><a href="#cb22-365" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-366"><a href="#cb22-366" aria-hidden="true" tabindex="-1"></a><span class="in">```{python wordcloud, fig.cap="Word cloud over the pro-rights subcorpus."}</span></span>
+<span id="cb22-367"><a href="#cb22-367" aria-hidden="true" tabindex="-1"></a>sub_text <span class="op">=</span> <span class="st">" "</span>.join(corpus.query(<span class="st">"label == 'pro_rights'"</span>)[<span class="st">"clean"</span>])</span>
+<span id="cb22-368"><a href="#cb22-368" aria-hidden="true" tabindex="-1"></a>wc <span class="op">=</span> WordCloud(width<span class="op">=</span><span class="dv">900</span>, height<span class="op">=</span><span class="dv">400</span>, background_color<span class="op">=</span><span class="st">"white"</span>,</span>
+<span id="cb22-369"><a href="#cb22-369" aria-hidden="true" tabindex="-1"></a>               colormap<span class="op">=</span><span class="st">"viridis"</span>, random_state<span class="op">=</span><span class="dv">2026</span>).generate(sub_text)</span>
+<span id="cb22-370"><a href="#cb22-370" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="fl">3.5</span>))</span>
+<span id="cb22-371"><a href="#cb22-371" aria-hidden="true" tabindex="-1"></a>ax.imshow(wc, interpolation<span class="op">=</span><span class="st">"bilinear"</span>)</span>
+<span id="cb22-372"><a href="#cb22-372" aria-hidden="true" tabindex="-1"></a>ax.axis(<span class="st">"off"</span>)</span>
+<span id="cb22-373"><a href="#cb22-373" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb22-374"><a href="#cb22-374" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb22-375"><a href="#cb22-375" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb22-376"><a href="#cb22-376" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-377"><a href="#cb22-377" aria-hidden="true" tabindex="-1"></a><span class="fu">## Common pitfalls</span></span>
+<span id="cb22-378"><a href="#cb22-378" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-379"><a href="#cb22-379" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Preprocessing as a black box.** Lowercasing, lemmatisation, stopword lists, n-gram ranges, and minimum document frequency are all *choices*. Report them. Run a basic robustness check (e.g., uni-only versus uni+bi-grams) and confirm your conclusions are not driven by a single preprocessing setting.</span>
+<span id="cb22-380"><a href="#cb22-380" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Tiny corpora and confident claims.** With 70 documents, no F1 score is reliable. Collect more data, or be honest about the descriptive nature of the analysis.</span>
+<span id="cb22-381"><a href="#cb22-381" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Topic count chosen post-hoc.** Trying many values of K and reporting the one with the prettiest topics is the topic-model equivalent of p-hacking. Pre-register the choice or report a range.</span>
+<span id="cb22-382"><a href="#cb22-382" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Sentiment as stance.** A factual sentence about an unpopular policy is not a "negative" stance. Validate any sentiment lexicon or model against a hand-coded subset of your own data before quoting numbers.</span>
+<span id="cb22-383"><a href="#cb22-383" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**English-only tools on non-English corpora.** VADER, SST-2, and most generic NLP pipelines are tuned for English. For Hindi, Portuguese, Hungarian, or Russian text, use a language-specific model or translate carefully and report the translation step.</span>
+<span id="cb22-384"><a href="#cb22-384" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>**Data leakage in classification.** Fit the vectoriser on the *training* split only, then transform the test split. Never on the full corpus.</span>
+<span id="cb22-385"><a href="#cb22-385" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>**Class imbalance.** A 90/10 corpus where the model always predicts the majority class scores 90 percent accuracy and tells you nothing. Report macro-F1 and the confusion matrix, not raw accuracy.</span>
+<span id="cb22-386"><a href="#cb22-386" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>**Reading topic labels as ground truth.** A topic is a distribution over words. The label *you* assign to it ("digital sovereignty," "rights-based critique") is your interpretation. State that explicitly.</span>
+<span id="cb22-387"><a href="#cb22-387" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-388"><a href="#cb22-388" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reporting in your thesis</span></span>
+<span id="cb22-389"><a href="#cb22-389" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-390"><a href="#cb22-390" aria-hidden="true" tabindex="-1"></a>A reasonable methods paragraph for an NLP-backed chapter:</span>
+<span id="cb22-391"><a href="#cb22-391" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-392"><a href="#cb22-392" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; The corpus consists of 1,824 English-language documents collected from three sources between January and March 2026: the Access Now #KeepItOn statement archive, the European Commission press-release page, and selected national-government cyber-policy releases. Documents were lowercased, stripped of URLs and punctuation, tokenised with NLTK's word tokeniser, filtered against the standard English stopword list, and lemmatised with WordNet. Documents were vectorised using TF-IDF on unigrams and bigrams with a minimum document frequency of three. Stance was operationalised as a three-way categorical (</span><span class="in">`pro_control`</span><span class="at">, </span><span class="in">`pro_rights`</span><span class="at">, </span><span class="in">`neutral`</span><span class="at">) and validated against a hand-coded gold-standard subset of 200 documents (Cohen's kappa = 0.78 between two coders). A logistic regression classifier with class-balanced weights was trained on a 70/30 split, achieving a macro-F1 of 0.74 (sd 0.04 across five folds). Latent topics were inferred with online LDA at K = 6, with K chosen by inspecting topic coherence across K in </span><span class="co">[</span><span class="ot">4, 12</span><span class="co">]</span><span class="at">. VADER scores are reported as a tone diagnostic only and are not used as a stance measure.</span></span>
+<span id="cb22-393"><a href="#cb22-393" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-394"><a href="#cb22-394" aria-hidden="true" tabindex="-1"></a>Always report: corpus size, collection window, preprocessing choices, vectorisation, validation against a hand-coded subset, and the parameter ranges you searched.</span>
+<span id="cb22-395"><a href="#cb22-395" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-396"><a href="#cb22-396" aria-hidden="true" tabindex="-1"></a><span class="fu">## Where to read more</span></span>
+<span id="cb22-397"><a href="#cb22-397" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-398"><a href="#cb22-398" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Grimmer, Roberts, and Stewart, *Text as Data* (2022), is the cleanest political-science reference and covers everything in this walkthrough at the level a thesis examiner would expect.</span>
+<span id="cb22-399"><a href="#cb22-399" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Jurafsky and Martin, *Speech and Language Processing* (online), is the canonical NLP textbook; chapters 6, 7, and 21 are the most relevant for this material.</span>
+<span id="cb22-400"><a href="#cb22-400" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>For modern transformer-based pipelines, the HuggingFace <span class="in">`transformers`</span> documentation is the authoritative reference, and BERTopic is the most accessible upgrade from sklearn LDA.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Shreyas Meher</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

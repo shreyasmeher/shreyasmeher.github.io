@@ -1,0 +1,244 @@
+---
+title: "Panel Data Regression: A Walkthrough"
+subtitle: "Bachelor Project 2025-2026, Group 16"
+author: "Shreyas Meher"
+date: 2026-05-10
+toc: true
+toc-depth: 3
+number-sections: true
+format:
+  html:
+    code-fold: false
+    code-tools: true
+    df-print: paged
+    fig-width: 7
+    fig-height: 4.5
+execute:
+  warning: false
+  message: false
+knitr:
+  opts_chunk:
+    comment: "#>"
+    collapse: true
+---
+
+## When panel data helps
+
+Panel data are observations on the same units (countries, regions, parties, individuals) over multiple time periods. The reason to bother with the extra structure is simple: panels let you control for everything that is constant within a unit, even things you cannot measure. If you suspect that some stable feature of, say, Hungary or of the Philippines biases your estimate, fixed effects sweep it out.
+
+This walkthrough simulates a country-by-year panel on internet shutdowns and electoral democracy and walks through the standard sequence: pooled OLS, one-way fixed effects (entity), two-way fixed effects (entity and time), random effects, the Hausman test, and clustered standard errors. We use both `plm` (the classic econometrics package) and `fixest` (faster, modern, the one most current researchers reach for). The simulated measures are designed to mirror real ones you would download from V-Dem (Varieties of Democracy), Access Now (the #KeepItOn shutdown tracker), Freedom House (Freedom on the Net), and the World Bank.
+
+## Setting up
+
+```{r setup}
+set.seed(2026)
+
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(plm)
+library(fixest)
+library(modelsummary)
+library(broom)
+```
+
+Install with `install.packages(c("plm","fixest","modelsummary","broom","dplyr","tidyr","ggplot2"))` if needed.
+
+## Building a working panel
+
+Twenty countries with varying democratic trajectories, twelve years of data (2012-2023), giving 240 country-year observations. The outcome is `vdem`, a stand-in for the V-Dem electoral democracy index (0-1). The focal predictor is `shutdowns`, the count of full or regional internet shutdowns recorded in that country-year. Controls include the Freedom on the Net score, log GDP per capita, and internet penetration.
+
+```{r simulate-panel}
+countries <- c("IN","BR","ZA","TR","HU","PL","PH","ID","MX","NG",
+               "KE","BD","PK","RU","TH","EG","VN","CN","UG","VE")
+years <- 2012:2023
+
+panel <- expand_grid(country = countries, year = years) |>
+  arrange(country, year)
+
+# Country-level fixed effects: stable democratic trajectory not in any covariate
+country_fe <- tibble(
+  country = countries,
+  alpha   = rnorm(length(countries), mean = 0, sd = 0.18)
+)
+
+# Year shocks: a global democratic recession trend plus noise
+year_fe <- tibble(
+  year   = years,
+  delta  = -0.005 * (years - 2012) + rnorm(length(years), 0, 0.015)
+)
+
+panel <- panel |>
+  left_join(country_fe, by = "country") |>
+  left_join(year_fe,    by = "year")
+
+# Predictors
+panel <- panel |>
+  group_by(country) |>
+  mutate(
+    # More authoritarian-leaning countries (negative alpha) shut down more often
+    shutdowns   = pmax(round(rpois(n(), lambda = pmax(2 - 8 * alpha, 0.2))), 0),
+    fotn_score  = pmin(pmax(
+      55 + cumsum(rnorm(n(), 0, 1.5)) - 35 * alpha + rnorm(n(), 0, 2),
+      0), 100),
+    gdp_pc_log  = log(8000) + 0.025 * (year - 2012) + 0.50 * alpha +
+                  rnorm(n(), 0, 0.06),
+    internet_pen = pmin(pmax(
+      30 + 4 * (year - 2012) + 18 * alpha + rnorm(n(), 0, 3),
+      5), 100)
+  ) |>
+  ungroup()
+
+# True relationship: each shutdown shaves a small amount off the V-Dem index;
+# Freedom on the Net adds a mild independent effect; country alpha is the
+# unobserved confounder that biases pooled OLS
+panel <- panel |>
+  mutate(
+    vdem = 0.55 +
+      -0.012 * shutdowns +
+      -0.003 * (fotn_score - 50) +
+       0.04  * (gdp_pc_log - mean(gdp_pc_log)) +
+       0.001 * internet_pen +
+       1.00  * alpha +
+       delta +
+       rnorm(n(), 0, 0.03)
+  ) |>
+  mutate(vdem = pmin(pmax(vdem, 0), 1)) |>
+  select(-alpha, -delta)
+
+head(panel)
+```
+
+A small but important detail: in the simulation, `alpha` (the country-level unobserved democratic trait) is *correlated with* `shutdowns`. That is the situation panel methods exist to handle. Countries that are baseline more authoritarian both shut the internet more *and* score lower on V-Dem, for reasons we cannot measure with the four covariates here. Pooled OLS will mistake the effect of `alpha` for the effect of shutdowns.
+
+## Visual inspection
+
+```{r panel-plot, fig.cap="V-Dem electoral democracy index by country and year. Each line is one country."}
+ggplot(panel, aes(year, vdem, group = country, colour = country)) +
+  geom_line(alpha = 0.55, linewidth = 0.6) +
+  guides(colour = "none") +
+  labs(x = NULL, y = "V-Dem electoral democracy index") +
+  theme_minimal(base_size = 12)
+```
+
+Two things to look for in this kind of plot: countries differ a lot in level (motivating entity fixed effects), and there is a shared downward drift over time (motivating year fixed effects).
+
+## Pooled OLS: the wrong starting point
+
+A pooled OLS ignores the panel structure entirely and treats all 240 observations as independent. It is the wrong model, and the point of running it is to *see* how wrong:
+
+```{r pooled-ols}
+m_pooled <- lm(vdem ~ shutdowns + fotn_score + gdp_pc_log + internet_pen,
+               data = panel)
+summary(m_pooled)
+```
+
+Notice the coefficient on `shutdowns`. Because countries that shut down more also tend to have lower `alpha` (unmeasured autocratic features that push `vdem` down), the pooled OLS coefficient soaks up some of that confounding. We need to net out the country.
+
+## One-way fixed effects (entity)
+
+Country fixed effects are the right tool when the worry is unobserved, time-invariant differences across units. Each country gets its own intercept; the slope is identified entirely from *within-country* variation over time.
+
+### With `plm`
+
+```{r plm-fe}
+panel_p <- pdata.frame(panel, index = c("country", "year"))
+
+m_fe <- plm(vdem ~ shutdowns + fotn_score + gdp_pc_log + internet_pen,
+            data = panel_p, model = "within")
+summary(m_fe)
+```
+
+### With `fixest` (faster syntax for many FEs)
+
+```{r fixest-fe}
+m_fe2 <- feols(vdem ~ shutdowns + fotn_score + gdp_pc_log + internet_pen |
+               country, data = panel)
+summary(m_fe2)
+```
+
+`feols(y ~ x | country)` reads as "regress y on x, absorbing country fixed effects". Both methods give the same point estimates; `fixest` is dramatically faster on large panels and has cleaner support for clustered standard errors.
+
+The coefficient on `shutdowns` should now be close to the simulated truth (-0.012). That swing from the pooled estimate is exactly what entity fixed effects are for: a one-shutdown increase within the same country is associated with about a one-percentage-point drop in V-Dem the same year.
+
+## Two-way fixed effects (entity and time)
+
+If there are also shared shocks across units in the same year (a global democratic recession, the 2016 wave of populist elections, the pandemic), include year fixed effects too. With both, you are identifying the slope from variation that is neither cross-country nor common-year.
+
+```{r twoway-fe}
+m_2fe <- feols(vdem ~ shutdowns + fotn_score + gdp_pc_log + internet_pen |
+               country + year, data = panel)
+summary(m_2fe)
+```
+
+This is the workhorse specification in modern applied political-science research. When in doubt, run two-way FE and discuss it as the main estimate.
+
+## Random effects and the Hausman test
+
+Random effects (RE) is an alternative that treats the country-specific intercept as a draw from a distribution rather than as a parameter to estimate. RE is more efficient *if* the unit effect is uncorrelated with the predictors. It is biased if it is correlated. Because that correlation is exactly what panel methods exist to handle, RE is rarely the right choice in practice; it is mostly useful as a comparison.
+
+```{r random-effects}
+m_re <- plm(vdem ~ shutdowns + fotn_score + gdp_pc_log + internet_pen,
+            data = panel_p, model = "random")
+summary(m_re)
+```
+
+The Hausman test compares the FE and RE coefficients. A small p-value means RE is biased and you should use FE.
+
+```{r hausman}
+phtest(m_fe, m_re)
+```
+
+For your thesis: report the test, then explain *which* model you ran and *why*. Do not bury the diagnostic in an appendix.
+
+## Clustered standard errors
+
+Observations within the same country are not independent (a shutdown wave in 2018 is correlated with the same country in 2019). Standard errors that ignore this are too small. Cluster at the entity level.
+
+```{r cluster-se}
+summary(m_2fe, cluster = ~country)
+```
+
+This is one line in `fixest` and several in `plm`. Use it. Rule of thumb: cluster at the level at which treatment is assigned, or at the level of the entity, whichever is broader. For country-year panels in democratic governance research, that almost always means clustering on country.
+
+## Comparing models side by side
+
+```{r models-table}
+modelsummary(
+  list(
+    "Pooled OLS"        = m_pooled,
+    "Country FE"        = m_fe2,
+    "Two-way FE"        = m_2fe,
+    "Random Effects"    = m_re
+  ),
+  stars = TRUE,
+  gof_omit = "AIC|BIC|Log.Lik|RMSE|F"
+)
+```
+
+This is the table the reader actually wants to see. The story is in the column-to-column movement, not in any one specification.
+
+## Common pitfalls
+
+1. **Treating short panels as if they were long.** With T = 3 or 4 years, fixed effects burn most of your variation. Be honest about how much within-unit variation you actually have. Run the demeaned regression by hand once to see.
+2. **Including time-invariant predictors with entity FE.** A predictor that does not change within a country (region, colonial history, founding constitution) is collinear with the fixed effects and gets dropped. That is correct behaviour, not a bug. If you want to estimate the effect of a time-invariant variable, FE is not the right tool.
+3. **Ignoring time fixed effects.** Common shocks (Covid, the 2016 populist wave, regional contagion of democratic backsliding) bias entity-only FE. Two-way FE is the safer default.
+4. **Reverse causality.** If `shutdowns` respond to declining democratic quality (a regime cuts internet *because* protests are intensifying), FE does not save you. Acknowledge it explicitly. Lagged predictors, instrumental variables, or a difference-in-differences design are the next step.
+5. **Wrong clustering level.** Clustering on year, on country-year, or not at all gives standard errors that are too small. Cluster at the country level for country-year panels.
+6. **Reporting only the star.** A two-way FE model with country-clustered SEs gives you the cleanest possible estimate; report the coefficient, the cluster-robust SE, and the substantive interpretation in original units.
+7. **Treating panel fixed effects as causal magic.** They control for time-invariant unobserved heterogeneity. They do not control for time-varying confounders, reverse causation, or selection into treatment. Be precise about what is and is not being identified.
+
+## Reporting in your thesis
+
+For a country-year panel, a good results paragraph might read:
+
+> Across all 240 country-year observations, an additional internet shutdown is associated with a 0.012-point decrease in the V-Dem electoral democracy index, after controlling for Freedom on the Net score, log GDP per capita, internet penetration, country fixed effects, and year fixed effects (b = -0.012, country-clustered SE = 0.003, p < 0.001). The Hausman test ($\chi^2$ = 25.4, p < 0.001) supports the fixed-effects specification over random effects. The point estimate is small but cumulative: a country that goes from zero shutdowns in a typical year to the 90th-percentile annual shutdown count (around eight events) is associated with roughly a 0.10-point drop on the V-Dem index, equivalent to moving from a flawed democracy to an electoral autocracy in the V-Dem regimes-of-the-world classification.
+
+State the specification, the cluster level, the Hausman result, and translate the coefficient into the original units before quoting it.
+
+## Where to read more
+
+- Wooldridge, *Econometric Analysis of Cross Section and Panel Data*, chapter 10, is the canonical reference for FE/RE.
+- Cameron and Miller (2015), "A Practitioner's Guide to Cluster-Robust Inference," *Journal of Human Resources*, is the source for clustering decisions.
+- The `fixest` documentation by Laurent Berge is excellent and includes worked examples for instrumental-variable and difference-in-differences extensions of the same syntax.
+- For data sources behind the simulated variables: V-Dem (`vdemdata` R package), Access Now's #KeepItOn dataset, Freedom House Freedom on the Net, ITU/World Bank ICT indicators.
