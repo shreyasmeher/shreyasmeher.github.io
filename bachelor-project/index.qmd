@@ -241,6 +241,15 @@ page-layout: article
 
     <div class="session-card">
       <div class="session-header">
+        <div class="session-title">Merging Datasets: V-Dem and World Bank (R)</div>
+        <div class="session-date">~20 min read</div>
+      </div>
+      <div class="session-description">Pulling V-Dem via <code>vdemdata</code> and World Bank indicators via <code>WDI</code>, joining on ISO3 codes, diagnosing merges, and producing both a country-year panel and a cross-sectional snapshot ready for the OLS and panel walkthroughs.</div>
+      <a href="walkthroughs/data-merging.html" class="session-link">Open walkthrough</a>
+    </div>
+
+    <div class="session-card">
+      <div class="session-header">
         <div class="session-title">OLS Regression (R)</div>
         <div class="session-date">~25 min read</div>
       </div>
