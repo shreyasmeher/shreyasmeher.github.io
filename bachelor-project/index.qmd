@@ -335,11 +335,12 @@ page-layout: article
     },
     {
       num: 7,
-      title: "Revised Findings, Conclusions, and Presentation Prep",
+      title: "Presenting Your Research",
       date: "2026-06-04T14:00:00+02:00",
       display: "June 4, 2026",
-      desc: "Writing conclusions and recommendations, preparing your 10-minute presentation, peer review assignments, and final report coherence.",
-      file: "slides/session7_conclusions.pdf"
+      desc: "Preparing the 10-minute conference presentation: a step-by-step structure and timing, slide design, delivery, the assessment criteria for the talk and the peer review, and the peer-feedback pairs for the conference on 11 June. A ready-to-use EUR presentation template is attached below.",
+      file: "slides/session7_conclusions.pdf",
+      template: "slides/Conference_Presentation_Template_EUR.pptx"
     }
   ];
 
@@ -385,6 +386,9 @@ page-layout: article
       let actionHtml;
       if (available) {
         actionHtml = `<a href="${s.file}" target="_blank" class="session-link">Download slides (PDF)</a>`;
+        if (s.template) {
+          actionHtml += ` <a href="${s.template}" class="session-link" download>Download presentation template (PPTX)</a>`;
+        }
       } else {
         actionHtml = `<span class="session-locked-label">Available ${s.display}</span>`;
       }
