@@ -336,7 +336,7 @@ page-layout: article
     {
       num: 7,
       title: "Presenting Your Research",
-      date: "2026-06-04T14:00:00+02:00",
+      date: "2026-06-04T00:00:00+02:00",
       display: "June 4, 2026",
       desc: "Preparing the 10-minute conference presentation: a step-by-step structure and timing, slide design, delivery, the assessment criteria for the talk and the peer review, and the peer-feedback pairs for the conference on 11 June. A ready-to-use EUR presentation template is attached below.",
       file: "slides/session7_conclusions.pdf",
