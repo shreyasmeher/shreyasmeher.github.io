@@ -73,14 +73,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-f6b75529faf3266b129a46efde3cd801.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-704d72cdf54591c3e46a3a5f312374c7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-f6b75529faf3266b129a46efde3cd801.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-fb827f39921779fb1a43e44c68402a9b.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-f141ec31a63a983589b822633434e516.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-fb827f39921779fb1a43e44c68402a9b.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-08ab4a2c50ebd3501c428e4bcf842b89.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-f696450150618407e6e74a11c2099975.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-08ab4a2c50ebd3501c428e4bcf842b89.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-095f9695dfbb980a23e574291e2fb02a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-0424905e99bbd3cd03ffe1d107e8b5bb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-095f9695dfbb980a23e574291e2fb02a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -100,6 +100,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 
 
 <meta property="og:title" content="Shreyas Meher | Postdoctoral Researcher">
@@ -424,7 +426,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="setting-up" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="setting-up"><span class="header-section-number">2</span> Setting up</h2>
 <p>The packages used below are all in the standard scientific Python stack. Install once with <code>pip install nltk scikit-learn pandas matplotlib seaborn wordcloud</code>, and <code>pip install transformers torch</code> if you want to try the transformer section.</p>
-<div id="31a112c0" class="cell" data-execution_count="1">
+<div id="5df03bf0" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> string</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
@@ -461,7 +463,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="building-a-working-corpus" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="building-a-working-corpus"><span class="header-section-number">3</span> Building a working corpus</h2>
 <p>Real research starts from a corpus you collected yourself: scraped Telegram channels, downloaded Commission press releases, OCR’d national policy briefs, transcribed parliamentary debates. For this walkthrough we embed a small corpus of digital-governance discourse with three stance labels: <code>pro_control</code> (state-security and sovereignty framing), <code>pro_rights</code> (civil-society and free-expression framing), and <code>neutral</code> (factual or analytical).</p>
-<div id="b4a25925" class="cell" data-execution_count="2">
+<div id="58d8cc94" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>docs <span class="op">=</span> [</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># pro_control</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"National security demands the right to disable communication networks during periods of unrest."</span>, <span class="st">"pro_control"</span>),</span>
@@ -560,7 +562,7 @@ Name: count, dtype: int64</code></pre>
 <section id="preprocessing" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="preprocessing"><span class="header-section-number">4</span> Preprocessing</h2>
 <p>Text needs to be cleaned before any model can use it. The standard pipeline is: lowercase, remove punctuation and digits, tokenise, drop stopwords, and lemmatise. Each of these decisions affects your results and should be reported in your methods section.</p>
-<div id="eb9c2034" class="cell" data-execution_count="3">
+<div id="ca9e98c8" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>EN_STOP <span class="op">=</span> <span class="bu">set</span>(stopwords.words(<span class="st">"english"</span>))</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>LEM <span class="op">=</span> WordNetLemmatizer()</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -613,7 +615,7 @@ Name: count, dtype: int64</code></pre>
 <section id="tf-idf-turning-text-into-numbers" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="tf-idf-turning-text-into-numbers"><span class="header-section-number">5</span> TF-IDF: turning text into numbers</h2>
 <p>Term frequency-inverse document frequency reweights raw word counts so that words common across the entire corpus (like “internet” here) are downweighted and words distinctive to a few documents get more signal. It is the default vector representation for classical text models.</p>
-<div id="9ba0d40d" class="cell" data-execution_count="4">
+<div id="986be32c" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>vec_tfidf <span class="op">=</span> TfidfVectorizer(</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    max_features<span class="op">=</span><span class="dv">2000</span>,</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    ngram_range<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">2</span>),       <span class="co"># unigrams and bigrams</span></span>
@@ -669,7 +671,7 @@ Name: count, dtype: int64</code></pre>
 <section id="classification-predicting-stance" class="level2" data-number="6">
 <h2 data-number="6" class="anchored" data-anchor-id="classification-predicting-stance"><span class="header-section-number">6</span> Classification: predicting stance</h2>
 <p>The classification problem: given a new document, which stance label should we assign? We split the corpus, fit a logistic regression on TF-IDF features, and evaluate on held-out documents.</p>
-<div id="2f3f65c1" class="cell" data-execution_count="5">
+<div id="b48938cb" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    corpus[<span class="st">"clean"</span>], corpus[<span class="st">"label"</span>],</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    test_size<span class="op">=</span><span class="fl">0.30</span>, random_state<span class="op">=</span><span class="dv">2026</span>, stratify<span class="op">=</span>corpus[<span class="st">"label"</span>]</span>
@@ -704,7 +706,7 @@ weighted avg       0.62      0.59      0.60        22
 <li><strong>F1</strong> is their harmonic mean, the most-cited single metric.</li>
 </ul>
 <p>A small corpus like this one will give noisy numbers. Cross-validation gives a more stable estimate. Note that we score on the document-term matrix <code>X_tfidf</code> (built earlier from the <em>full</em> corpus); for a strict evaluation you would wrap the vectoriser and classifier in a <code>Pipeline</code> so the vocabulary is rebuilt on each training fold.</p>
-<div id="a208108e" class="cell" data-execution_count="6">
+<div id="f02746de" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> cross_val_score(</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    LogisticRegression(max_iter<span class="op">=</span><span class="dv">1000</span>, class_weight<span class="op">=</span><span class="st">"balanced"</span>),</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    X_tfidf, corpus[<span class="st">"label"</span>],</span>
@@ -715,7 +717,7 @@ weighted avg       0.62      0.59      0.60        22
 <pre><code>5-fold CV macro-F1: 0.53 (sd 0.15)</code></pre>
 </div>
 </div>
-<div id="2a729c80" class="cell" data-execution_count="7">
+<div id="2ddbf19f" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>cm <span class="op">=</span> confusion_matrix(y_test, y_pred, labels<span class="op">=</span>clf.classes_)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">4</span>))</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>sns.heatmap(cm, annot<span class="op">=</span><span class="va">True</span>, fmt<span class="op">=</span><span class="st">"d"</span>, cmap<span class="op">=</span><span class="st">"Blues"</span>,</span>
@@ -734,7 +736,7 @@ weighted avg       0.62      0.59      0.60        22
 </div>
 </div>
 <p>For a thesis, also report what the model got <em>wrong</em>. A confusion matrix and a few misclassified examples tell the reader far more than a single F1 number.</p>
-<div id="4090dff4" class="cell" data-execution_count="8">
+<div id="14557c8e" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>test_df <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"text"</span>: [corpus.loc[i, <span class="st">"text"</span>] <span class="cf">for</span> i <span class="kw">in</span> X_test.index],</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"true"</span>: y_test.values,</span>
@@ -796,7 +798,7 @@ weighted avg       0.62      0.59      0.60        22
 <h2 data-number="7" class="anchored" data-anchor-id="topic-modeling-with-lda"><span class="header-section-number">7</span> Topic modeling with LDA</h2>
 <p>Topic models cluster documents into latent themes by exploiting which words tend to co-occur. Latent Dirichlet Allocation is the classical choice. Newer approaches (BERTopic, embedding-based clustering) often work better on short text, but LDA remains the most-cited and the most legible to thesis examiners.</p>
 <p>LDA works on raw counts, not TF-IDF.</p>
-<div id="209d3727" class="cell" data-execution_count="9">
+<div id="af2b3100" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>vec_count <span class="op">=</span> CountVectorizer(max_features<span class="op">=</span><span class="dv">2000</span>, ngram_range<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">1</span>), min_df<span class="op">=</span><span class="dv">2</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>X_count <span class="op">=</span> vec_count.fit_transform(corpus[<span class="st">"clean"</span>])</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -825,7 +827,7 @@ dtype: object</code></pre>
 </div>
 </div>
 <p>Choose the number of topics K with a mix of statistical criteria (perplexity, topic coherence) and human reading. A model with topics that are not interpretable is useless even if its perplexity is low.</p>
-<div id="6d0f4c60" class="cell" data-execution_count="10">
+<div id="d5a40571" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>doc_topic <span class="op">=</span> lda.transform(X_count)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>topic_assign <span class="op">=</span> doc_topic.argmax(axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -885,7 +887,7 @@ dtype: object</code></pre>
 <section id="sentiment-analysis" class="level2" data-number="8">
 <h2 data-number="8" class="anchored" data-anchor-id="sentiment-analysis"><span class="header-section-number">8</span> Sentiment analysis</h2>
 <p>VADER is a lexicon-based sentiment scorer tuned for short social-media-like text. It is fast, transparent, and runs without a GPU. It does not understand sarcasm, domain-specific framing, or non-English text without translation.</p>
-<div id="3176c011" class="cell" data-execution_count="11">
+<div id="9c8d289a" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sia <span class="op">=</span> SentimentIntensityAnalyzer()</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vader_compound(text):</span>
@@ -942,7 +944,7 @@ dtype: object</code></pre>
 </div>
 </div>
 </div>
-<div id="411aa1d0" class="cell" data-execution_count="12">
+<div id="f68efa34" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="fl">3.5</span>))</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>corpus, x<span class="op">=</span><span class="st">"label"</span>, y<span class="op">=</span><span class="st">"sent"</span>, ax<span class="op">=</span>ax,</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>            order<span class="op">=</span>[<span class="st">"pro_control"</span>, <span class="st">"neutral"</span>, <span class="st">"pro_rights"</span>])</span>
@@ -963,7 +965,7 @@ dtype: object</code></pre>
 <section id="transformer-based-sentiment-optional-more-accurate" class="level3" data-number="8.1">
 <h3 data-number="8.1" class="anchored" data-anchor-id="transformer-based-sentiment-optional-more-accurate"><span class="header-section-number">8.1</span> Transformer-based sentiment (optional, more accurate)</h3>
 <p>For more reliable tone detection on real text, a transformer model fine-tuned on a sentiment task outperforms VADER almost always. The cost is a much larger model file (several hundred MB) and a slower first run.</p>
-<div id="0327c4d1" class="cell" data-execution_count="13">
+<div id="74ca5c7a" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> pipeline</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># First run will download the model (~250 MB).</span></span>
@@ -986,7 +988,7 @@ dtype: object</code></pre>
 <section id="word-clouds-optional-mostly-cosmetic" class="level2" data-number="9">
 <h2 data-number="9" class="anchored" data-anchor-id="word-clouds-optional-mostly-cosmetic"><span class="header-section-number">9</span> Word clouds (optional, mostly cosmetic)</h2>
 <p>Word clouds are decorative; they should not stand in for a quantitative result. They are useful only to motivate a paragraph or open a section.</p>
-<div id="eb0ccb83" class="cell" data-execution_count="14">
+<div id="b6069a93" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>sub_text <span class="op">=</span> <span class="st">" "</span>.join(corpus.query(<span class="st">"label == 'pro_rights'"</span>)[<span class="st">"clean"</span>])</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>wc <span class="op">=</span> WordCloud(width<span class="op">=</span><span class="dv">900</span>, height<span class="op">=</span><span class="dv">400</span>, background_color<span class="op">=</span><span class="st">"white"</span>,</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>               colormap<span class="op">=</span><span class="st">"viridis"</span>, random_state<span class="op">=</span><span class="dv">2026</span>).generate(sub_text)</span>

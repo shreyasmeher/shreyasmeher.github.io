@@ -1,28 +1,22 @@
 ---
 title: ""
-subtitle: ""
+pagetitle: "Shreyas Meher | Postdoctoral Researcher"
 page-layout: full
 toc: false
 ---
 
+::: {.home-hero}
 ::: {.grid}
-::: {.g-col-12 .g-col-md-4 .text-center}
-![](headshot.jpg){#img-me .rounded .img-fluid width="300px"}
-
-**Postdoctoral Researcher**<br>
-Erasmus University Rotterdam
-
-[meher@essb.eur.nl](mailto:meher@essb.eur.nl)
-:::
-
 ::: {.g-col-12 .g-col-md-8}
-### About
+[Postdoctoral Researcher · Erasmus University Rotterdam]{.eyebrow}
 
-I am a Postdoctoral Researcher in the [Policy, Politics, and Society](https://www.eur.nl/en/essb/about-essb/academic-teams/policy-politics-and-society) group at Erasmus University Rotterdam. I earned my Ph.D. in Public Policy & Political Economy from the University of Texas at Dallas in 2025.
+# Shreyas Meher {.hero-name}
 
-My research applies computational methods to substantive questions in digital governance, political conflict, and international political economy. It has appeared in *Political Analysis*, *Research & Politics*, and *Behavioral Sciences*. My foundational work on NLP for political science was developed through the NSF-funded [ConfliBERT project](https://eventdata.utdallas.edu/) with [Patrick T. Brandt](https://www.utdallas.edu/~pbrandt/).
+[I study how governments control information online, and how democratic institutions erode.]{.hero-lede}
 
-At Erasmus, I work on the [TWIN4DEM project](https://twin4dem.eu/) with [Clara Egger](https://claramarieegger.wordpress.com/) and [Asya Zhelyazkova](https://asyazhelyazkovasite.wordpress.com/), building machine learning frameworks for modeling democratic processes and assessing institutional resilience.
+As a postdoctoral researcher at Erasmus University Rotterdam, I pursue these questions on the [TWIN4DEM project](https://twin4dem.eu/) with [Clara Egger](https://claramarieegger.wordpress.com/) and [Asya Zhelyazkova](https://asyazhelyazkovasite.wordpress.com/), where we build machine learning frameworks that model democratic processes and stress-test institutional resilience, including digital twins of executive aggrandizement in parliamentary democracies.
+
+My toolkit is computational: fine-tuned language models, text-as-data pipelines, and causal research designs. My work has appeared in *Political Analysis*, *Research & Politics*, and *Behavioral Sciences*, and my NLP models for political conflict were developed through the NSF-funded [ConfliBERT project](https://eventdata.utdallas.edu/) with [Patrick T. Brandt](https://www.utdallas.edu/~pbrandt/). I earned my Ph.D. in Public Policy & Political Economy from the University of Texas at Dallas in 2025.
 
 [Digital Governance]{.interest-pill}
 [Computational Social Science]{.interest-pill}
@@ -30,5 +24,64 @@ At Erasmus, I work on the [TWIN4DEM project](https://twin4dem.eu/) with [Clara E
 [Democratic Backsliding]{.interest-pill}
 [Reinforcement Learning]{.interest-pill}
 
+::: {.hero-actions}
+[Explore my research](research.qmd){.btn-accent}
+[Publications](publications.qmd){.btn-ghost}
+[CV (PDF)](CV.pdf){.btn-ghost}
 :::
 :::
+
+::: {.g-col-12 .g-col-md-4}
+![](headshot.jpg){#img-me fig-alt="Portrait of Shreyas Meher"}
+
+::: {.hero-contact}
+[meher@essb.eur.nl](mailto:meher@essb.eur.nl)<br>
+Rotterdam, the Netherlands
+:::
+:::
+:::
+:::
+
+## What I work on {.home-section}
+
+```{=html}
+<div class="grid">
+  <div class="g-col-12 g-col-md-4">
+    <a href="research.html" class="pillar-card pillar-dg">
+      <h3><span class="pillar-dot"></span>Digital Governance</h3>
+      <p>Who censors, and why? I study government content takedowns in democracies, internet filtering in autocracies, and the political economy of digital sovereignty.</p>
+    </a>
+  </div>
+  <div class="g-col-12 g-col-md-4">
+    <a href="research.html" class="pillar-card pillar-css">
+      <h3><span class="pillar-dot"></span>Computational Social Science</h3>
+      <p>I build specialized language models, such as ConfliBERT and ConflLlama, that turn unstructured political text into structured data for conflict research.</p>
+    </a>
+  </div>
+  <div class="g-col-12 g-col-md-4">
+    <a href="research.html" class="pillar-card pillar-ipe">
+      <h3><span class="pillar-dot"></span>Democratic Backsliding</h3>
+      <p>How do executives expand power inside democratic frameworks? I study legislative oversight, executive aggrandizement, and institutional resilience.</p>
+    </a>
+  </div>
+</div>
+```
+
+## Selected work {.home-section}
+
+::: {.pub-entry}
+[Extractive versus Generative Language Models for Political Conflict Text Classification]{.pub-title}<br>
+[*Political Analysis*, 2025 · with Brandt, Alsarra, D'Orazio, Heintze, Khan, Osorio & Sianan]{.pub-venue}
+:::
+
+::: {.pub-entry}
+[ConflLlama: Domain-Specific Adaptation of Large Language Models for Conflict Event Classification]{.pub-title}<br>
+[*Research & Politics*, 2025 · with Patrick T. Brandt]{.pub-venue}
+:::
+
+::: {.pub-entry}
+[Building Capacity or Building Checks? What EU Enlargement Reports Emphasise and Democratic Backsliding]{.pub-title}<br>
+[Working paper, EPSS 2026 (Belfast) · with Asya Zhelyazkova & Clara Egger]{.pub-venue}
+:::
+
+[All publications →](publications.qmd){.more-link}

@@ -1,515 +1,709 @@
 /*-- scss:defaults --*/
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500..700&family=Inter:ital,wght@0,400..600;1,400&display=swap');
 
-// Dark palette
-$gray-100: #0d1117;
-$gray-200: #161b22;
-$gray-300: #21262d;
-$gray-400: #30363d;
-$gray-500: #6e7681;
-$gray-600: #8b949e;
-$gray-700: #c9d1d9;
-$gray-800: #e6edf3;
-$gray-900: #f0f6fc;
+// ------------------------------------------------------------------
+// Palette — warm near-black, cream ink, ember accent
+// ------------------------------------------------------------------
+$paper:      #141210;
+$surface:    #1d1a16;
+$surface-2:  #26221d;
+$ink:        #ede8df;
+$body-text:  #cfc8bc;
+$muted:      #a39a8b;
+$hairline:   #2e2a24;
+$hairline-2: #403a31;
+$accent:     #e5743f;
+$accent-dark:#f08a58;
+$accent-soft:#3a2418;
+
+// Area colours (lightened for dark bg)
+$area-dg:  #7da3cc;
+$area-css: #c99a64;
+$area-ipe: #7fae8f;
+
 $white: #ffffff;
-$black: #010409;
+$gray-100: $surface;
+$gray-200: $hairline;
+$gray-300: $hairline-2;
+$gray-500: $muted;
+$gray-600: #b3aa9b;
+$gray-700: $body-text;
+$gray-800: $ink;
 
-// Neutral accent (lighter for dark bg contrast)
-$accent-color: #adb5bd;
-$accent-hover: #e6edf3;
+$primary:   $accent;
+$secondary: $muted;
 
-// Link palette: lighter slate-blue that pops on the dark grey background
-$link-color-base:  #79a3d4;
-$link-color-hover: #a8c3e3;
-
-$primary: $accent-color;
-$secondary: #8b949e;
-$accent: $accent-color;
-$success: #56d364;
-$warning: #e3b341;
-$danger: #f85149;
-$info: #58a6ff;
-
-$body-bg: $gray-100;
-$body-color: $gray-700;
-$link-color: $link-color-base;
+$body-bg: $paper;
+$body-color: $body-text;
+$link-color: $accent-dark;
 $link-decoration: none;
-$link-hover-color: $link-color-hover;
+$link-hover-color: $accent;
 $link-hover-decoration: underline;
 
-$font-family-sans-serif: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-$font-family-serif: "Fraunces", "Georgia", "Times New Roman", serif;
-$font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+$font-family-serif: "Space Grotesk", "Inter", system-ui, sans-serif;
+$font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 $font-family-base: $font-family-sans-serif;
 $font-size-root: 16px;
-$line-height-base: 1.6;
+$line-height-base: 1.65;
 
-$navbar-bg: $gray-200;
-$navbar-fg: $gray-700;
-$navbar-hl: $accent-hover;
-
-$footer-bg: $gray-100;
-$footer-fg: $gray-600;
+$navbar-bg: $paper;
+$navbar-fg: $body-text;
+$navbar-hl: $ink;
+$footer-bg: $paper;
+$footer-fg: $muted;
 
 /*-- scss:rules --*/
 
 body {
-  color: $gray-700 !important;
-  background-color: $gray-100 !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: $paper !important;
+  color: $body-text !important;
 }
 
-// Headings - editorial serif (matches light)
+::selection {
+  background: $accent;
+  color: $paper;
+}
+
 h1, h2, h3, h4, h5, h6 {
-  color: $gray-900 !important;
   font-family: $font-family-serif;
+  color: $ink !important;
   font-weight: 600;
-  letter-spacing: -0.01em;
-  font-variation-settings: "opsz" 36, "SOFT" 50;
+  letter-spacing: -0.015em;
 }
 
 h1 {
-  font-size: 2rem !important;
+  font-size: 2.1rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.15;
   letter-spacing: -0.02em;
-  font-variation-settings: "opsz" 72, "SOFT" 30;
 }
 
 h2 {
-  font-size: 1.4rem !important;
-  margin-top: 2rem !important;
-  margin-bottom: 0.85rem !important;
-  padding-bottom: 0.35rem !important;
-  border-bottom: 1px solid $gray-300 !important;
-}
-
-h3 {
-  font-size: 1.15rem !important;
-  margin-top: 1.5rem !important;
-  margin-bottom: 0.65rem !important;
-}
-
-h4 {
-  font-size: 1rem !important;
-  margin-top: 1.25rem !important;
-  margin-bottom: 0.5rem !important;
-}
-
-p {
+  font-size: 1.45rem;
+  margin-top: 2.5rem;
   margin-bottom: 1rem;
-  line-height: 1.65;
-  color: $gray-700 !important;
-}
+  padding-top: 0.85rem;
+  border: none !important;
+  position: relative;
 
-p, li {
-  color: $gray-700 !important;
-}
-
-a {
-  color: $link-color-base;
-  transition: color 0.15s ease;
-
-  &:hover {
-    color: $link-color-hover;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2.25rem;
+    height: 3px;
+    background: $accent;
   }
 }
 
+h3 { font-size: 1.15rem; margin-top: 1.6rem; margin-bottom: 0.6rem; }
+h4 { font-size: 1rem; margin-top: 1.25rem; margin-bottom: 0.5rem; }
+
+p, li { color: $body-text; }
+p { margin-bottom: 1rem; line-height: 1.7; }
+
+a {
+  color: $accent-dark;
+  transition: color 0.15s ease;
+  text-underline-offset: 3px;
+
+  &:hover { color: $accent; }
+}
+
+.eyebrow {
+  display: block;
+  font-family: $font-family-sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $accent-dark;
+  margin-bottom: 0.75rem;
+}
+
+// ------------------------------------------------------------------
 // Navbar
+// ------------------------------------------------------------------
 .navbar {
-  background: $gray-200 !important;
-  border-bottom-color: $gray-300 !important;
-  padding: 0.75rem 0;
+  background: rgba(20, 18, 16, 0.92) !important;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid $hairline !important;
+  padding: 0.7rem 0;
 
   .navbar-brand {
     font-family: $font-family-serif;
     font-weight: 700;
-    color: $gray-900 !important;
-    font-size: 1.15rem;
-    letter-spacing: -0.01em;
-    font-variation-settings: "opsz" 48, "SOFT" 30;
+    font-size: 1.2rem;
+    color: $ink !important;
+    letter-spacing: -0.015em;
     position: relative;
-    top: 3px;
+    top: 2px;
 
-    &:hover {
-      color: $gray-800 !important;
-    }
+    &:hover { color: $accent-dark !important; }
   }
+
+  .navbar-nav { gap: 0.1rem; align-items: center; }
 
   .nav-link {
     font-family: $font-family-sans-serif;
     font-weight: 500;
-    color: $gray-600 !important;
-    padding: 0.4rem 0.85rem;
+    font-size: 0.87rem;
+    color: $muted !important;
+    padding: 0.4rem 0.8rem;
     border-radius: 4px;
     transition: all 0.15s ease;
-    font-size: 0.88rem;
 
-    &:hover {
-      color: $gray-800 !important;
-      background-color: $gray-300 !important;
-    }
+    &:hover { color: $ink !important; background-color: $surface !important; }
 
     &.active {
-      color: $gray-900 !important;
+      color: $ink !important;
       font-weight: 600;
+      box-shadow: inset 0 -2px 0 $accent;
+      border-radius: 4px 4px 0 0;
     }
+  }
+
+  .navbar-nav .nav-link[aria-label] {
+    width: 36px;
+    height: 36px;
+    padding: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+
+    &:hover { background-color: $surface !important; }
   }
 }
 
-// Profile
+// ------------------------------------------------------------------
+// Home page
+// ------------------------------------------------------------------
+.home-hero {
+  padding: 2.5rem 0 1.5rem;
+
+  h1.hero-name {
+    font-size: clamp(2.4rem, 6vw, 3.4rem);
+    margin: 0 0 1rem;
+  }
+
+  .hero-lede {
+    display: block;
+    font-family: $font-family-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.45;
+    color: $ink !important;
+    margin-bottom: 1rem;
+  }
+
+  p { max-width: 58ch; }
+}
+
 #img-me {
-  width: 180px;
-  height: 180px;
+  width: min(270px, 80vw);
+  height: auto;
+  aspect-ratio: 1;
   border-radius: 50%;
   object-fit: cover;
-  margin: 0 auto 1rem;
   display: block;
-  border: 3px solid $gray-400;
-  transition: transform 0.3s ease;
+  margin: 0 auto 1rem;
+  border: 1px solid $hairline-2;
+  outline: 3px solid $paper;
+  outline-offset: -6px;
+  box-shadow: 0 0 0 1px $hairline-2, 6px 6px 0 0 $accent-soft;
+}
+
+.hero-contact {
+  text-align: center;
+  font-size: 0.88rem;
+  color: $muted !important;
+
+  a { font-weight: 500; }
+}
+
+.hero-actions {
+  margin: 1.4rem 0 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.btn-accent, .btn-ghost {
+  display: inline-block;
+  font-family: $font-family-sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  transition: all 0.15s ease;
+  text-decoration: none !important;
+}
+
+.btn-accent {
+  background: $accent;
+  color: $paper !important;
+  border: 1px solid $accent;
+
+  &:hover { background: $accent-dark; border-color: $accent-dark; }
+}
+
+.btn-ghost {
+  background: transparent;
+  color: $ink !important;
+  border: 1px solid $hairline-2;
+
+  &:hover { border-color: $ink; }
+}
+
+.interest-pill {
+  display: inline-block;
+  font-family: $font-family-sans-serif;
+  font-size: 0.76rem;
+  font-weight: 500;
+  padding: 0.22rem 0.7rem;
+  border-radius: 999px;
+  margin: 0.15rem 0.1rem;
+  border: 1px solid $hairline-2 !important;
+  color: $gray-600 !important;
+  background: $surface !important;
+  transition: all 0.15s ease;
+
+  &:hover { border-color: $accent !important; color: $accent-dark !important; }
+}
+
+.pillar-card {
+  display: block;
+  height: 100%;
+  background: $surface !important;
+  border: 1px solid $hairline !important;
+  border-radius: 10px;
+  padding: 1.4rem 1.5rem;
+  color: inherit !important;
+  text-decoration: none !important;
+  transition: all 0.18s ease;
 
   &:hover {
-    transform: scale(1.03);
+    border-color: $hairline-2 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px -12px rgba(0, 0, 0, 0.6);
   }
-}
 
-// Cards
-.card {
-  background-color: $gray-200 !important;
-  border-color: $gray-300 !important;
-}
-
-// Code
-pre {
-  background-color: $gray-200 !important;
-  border-color: $gray-300 !important;
-  color: $gray-800 !important;
-  border-radius: 6px;
-  padding: 1.25rem;
-  margin-bottom: 1.5rem;
-  font-size: 0.88em;
-}
-
-code {
-  background-color: $gray-300 !important;
-  color: $gray-800 !important;
-  padding: 0.15em 0.4em;
-  border-radius: 3px;
-  font-size: 0.88em;
-}
-
-// Blockquote
-blockquote {
-  border-left: 3px solid $gray-400;
-  padding: 1rem 1.25rem;
-  margin: 1.5rem 0;
-  background: $gray-200;
-  border-radius: 0 4px 4px 0;
-  font-style: italic;
-  color: $gray-700;
-}
-
-// Tables
-table {
-  border-color: $gray-300;
-
-  th { background-color: $gray-200; }
-  tr:nth-child(even) { background-color: rgba($gray-200, 0.5); }
-}
-
-// Callouts
-.callout-tip {
-  border-left-color: $primary !important;
-}
-
-.callout-note {
-  border-left-color: $gray-500 !important;
-}
-
-// Tabs
-.panel-tabset .nav-tabs {
-  border-bottom-color: $gray-300;
-
-  .nav-link {
-    color: $gray-600 !important;
-
-    &:hover {
-      color: $gray-800 !important;
-      border-bottom-color: $gray-500;
-    }
-
-    &.active {
-      color: $gray-900 !important;
-      border-bottom-color: $gray-900 !important;
-      font-weight: 600;
-    }
-  }
-}
-
-// Research cards
-.research-card {
-  background: $gray-200 !important;
-  border: 1px solid $gray-300 !important;
-  border-radius: 8px;
-  padding: 1.5rem;
-
-  &:hover { border-color: $gray-500 !important; }
-
-  &.active { border-width: 2px !important; }
-
-  h4 {
-    color: $gray-900 !important;
+  h3 {
     font-family: $font-family-sans-serif;
-    font-size: 1rem !important;
+    font-size: 0.98rem;
     font-weight: 600;
-    margin: 0 0 0.5rem 0 !important;
-    border: none !important;
-    padding: 0 !important;
+    margin: 0 0 0.5rem;
+    color: $ink !important;
   }
+
   p {
-    color: $gray-600 !important;
-    font-size: 0.88rem;
+    font-size: 0.87rem;
+    color: $muted !important;
     line-height: 1.6;
     margin: 0;
   }
+
+  .pillar-dot {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    position: relative;
+    top: -1px;
+  }
+
+  &.pillar-dg .pillar-dot { background: $area-dg; }
+  &.pillar-css .pillar-dot { background: $area-css; }
+  &.pillar-ipe .pillar-dot { background: $area-ipe; }
 }
 
-// Publication entries
+.home-section { margin-top: 2.75rem; }
+
+.more-link {
+  font-family: $font-family-sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: $accent-dark !important;
+}
+
+// ------------------------------------------------------------------
+// Research cards
+// ------------------------------------------------------------------
+.research-card {
+  height: 100%;
+  background: $surface !important;
+  border: 1px solid $hairline !important;
+  border-radius: 10px;
+  padding: 1.4rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.18s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px -12px rgba(0, 0, 0, 0.6);
+  }
+
+  &.active { border-width: 2px !important; padding: calc(1.4rem - 1px) calc(1.5rem - 1px); }
+
+  h4 {
+    font-family: $font-family-sans-serif;
+    font-size: 0.98rem !important;
+    font-weight: 600;
+    margin: 0 0 0.5rem !important;
+    border: none !important;
+    padding: 0 !important;
+    color: $ink !important;
+  }
+
+  p {
+    font-size: 0.87rem;
+    color: $muted !important;
+    margin: 0;
+    line-height: 1.6;
+  }
+}
+
+.research-card-dg  { border-top: 3px solid $area-dg !important;  &.active { border-color: $area-dg !important; } }
+.research-card-css { border-top: 3px solid $area-css !important; &.active { border-color: $area-css !important; } }
+.research-card-ipe { border-top: 3px solid $area-ipe !important; &.active { border-color: $area-ipe !important; } }
+
+// ------------------------------------------------------------------
+// Publications
+// ------------------------------------------------------------------
 .pub-entry {
-  padding: 1rem 0;
-  border-bottom: 1px solid $gray-300;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid $hairline;
 
   &:last-child { border-bottom: none; }
 
   p { margin-bottom: 0.15rem; line-height: 1.5; }
 
   .pub-title {
-    color: $gray-900 !important;
     font-family: $font-family-serif;
     font-weight: 600;
-    font-size: 0.98rem;
-    letter-spacing: -0.005em;
-    font-variation-settings: "opsz" 24, "SOFT" 50;
+    font-size: 1rem;
+    color: $ink !important;
   }
-  .pub-authors { color: $gray-600 !important; font-size: 0.85rem; }
+
+  .pub-authors { font-size: 0.85rem; color: $gray-600 !important; }
+
   .pub-venue {
-    color: $gray-500 !important;
     font-size: 0.85rem;
     font-style: italic;
+    color: $muted !important;
     margin-bottom: 0.4rem !important;
   }
+
   .pub-links {
-    margin-top: 0.35rem;
+    margin-top: 0.4rem;
 
     a {
-      color: $link-color-base !important;
       font-family: $font-family-sans-serif;
       font-size: 0.8rem;
-      font-weight: 500;
-      margin-right: 0.5rem;
+      font-weight: 600;
+      color: $accent-dark !important;
+      margin-right: 0.6rem;
 
-      &:hover {
-        color: $link-color-hover !important;
-      }
+      &:hover { color: $accent !important; }
     }
   }
 }
 
 .abstract-toggle {
-  color: $link-color-base !important;
-  border: 1px solid $link-color-base !important;
-  background: none !important;
   font-family: $font-family-sans-serif;
-  font-size: 0.8rem;
-  font-weight: 500;
-  border-radius: 3px;
-  padding: 0.15rem 0.5rem;
-  margin-right: 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: $accent-dark !important;
+  background: none !important;
+  border: 1px solid rgba($accent-dark, 0.5) !important;
+  border-radius: 999px;
+  padding: 0.14rem 0.6rem;
   cursor: pointer;
+  transition: all 0.15s ease;
+  margin-right: 0.6rem;
 
   &:hover {
-    background: $link-color-base !important;
-    color: $gray-100 !important;
+    background: $accent-dark !important;
+    color: $paper !important;
   }
 }
 
 .abstract-content {
   display: none;
   margin-top: 0.75rem;
-  padding: 1rem;
-  background: $gray-200 !important;
-  color: $gray-700 !important;
-  border-left: 3px solid $primary !important;
-  border-radius: 4px;
-  font-size: 0.9rem;
+  padding: 1rem 1.15rem;
+  background: $surface !important;
+  border-left: 3px solid $accent !important;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.89rem;
   line-height: 1.7;
+  color: $body-text !important;
 }
 
-// Tool cards
+// ------------------------------------------------------------------
+// Software / tool cards
+// ------------------------------------------------------------------
 .tool-card {
-  background: $gray-200 !important;
-  border: 1px solid $gray-300 !important;
-  border-radius: 8px;
-  padding: 2rem;
+  background: $surface !important;
+  border: 1px solid $hairline !important;
+  border-radius: 10px;
+  padding: 1.75rem;
   margin-bottom: 1.5rem;
   display: block;
   color: inherit;
+  transition: all 0.18s ease;
 
   &:hover {
-    border-color: $gray-500 !important;
+    border-color: $hairline-2 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px -12px rgba(0, 0, 0, 0.6);
     color: inherit !important;
   }
 
   h3 {
-    color: $gray-900 !important;
     font-family: $font-family-sans-serif;
-    font-size: 1.15rem !important;
+    font-size: 1.1rem !important;
     font-weight: 600;
     margin: 0 0 0.5rem !important;
     border: none !important;
     padding: 0 !important;
+    color: $ink !important;
   }
-  p { color: $gray-600 !important; font-size: 0.9rem; margin: 0; }
+
+  p { font-size: 0.89rem; color: $muted !important; margin: 0; }
 }
 
-// Walkthrough images
-.walkthrough-img {
-  border: 1px solid $gray-300 !important;
-  border-radius: 6px;
-  margin: 1.25rem 0;
-  max-width: 100%;
+// ------------------------------------------------------------------
+// Teaching
+// ------------------------------------------------------------------
+.teaching-entry {
+  border: 1px solid $hairline !important;
+  border-left: 3px solid $accent !important;
+  padding: 1.1rem 1.3rem;
+  margin: 1rem 0;
+  background: $surface !important;
+  border-radius: 0 8px 8px 0;
+
+  h4 { font-size: 1rem !important; margin: 0 0 0.25rem !important; border: none !important; padding: 0 !important; }
+  p { margin-bottom: 0.5rem; font-size: 0.9rem; }
+  ul { margin-bottom: 0; li { font-size: 0.88rem; } }
 }
 
+// ------------------------------------------------------------------
 // Gallery
+// ------------------------------------------------------------------
 .gallery-filters {
-  background: none !important;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 2rem;
-  padding: 0.75rem;
+  padding: 0.5rem 0;
+  background: none !important;
 }
 
 .filter-btn {
-  background: $gray-200 !important;
-  border: 1px solid $gray-400 !important;
-  border-radius: 20px;
+  background: $surface !important;
+  border: 1px solid $hairline-2 !important;
+  border-radius: 999px;
   padding: 0.35rem 1rem;
   font-family: $font-family-sans-serif;
   font-weight: 500;
   font-size: 0.82rem;
-  color: $gray-700 !important;
+  color: $gray-600 !important;
   cursor: pointer;
+  transition: all 0.15s ease;
 
-  &:hover {
-    background: $gray-300 !important;
-    color: $gray-800 !important;
-  }
+  &:hover { border-color: $accent !important; color: $accent-dark !important; }
 
   &.active {
-    background: $gray-800 !important;
-    border-color: $gray-800 !important;
-    color: $gray-100 !important;
+    background: $ink !important;
+    border-color: $ink !important;
+    color: $paper !important;
   }
 }
 
 .gallery-item {
-  border: 1px solid $gray-300 !important;
-  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid $hairline !important;
+  transition: border-color 0.2s ease;
 
   &:hover {
-    border-color: $gray-500 !important;
+    border-color: $hairline-2 !important;
+    figcaption { opacity: 1 !important; }
   }
-}
 
-// Teaching
-.teaching-entry {
-  background: $gray-200 !important;
-  border-left: 3px solid $primary !important;
-  padding: 1rem 1.25rem;
-  margin: 1rem 0;
-  border-radius: 0 6px 6px 0;
+  .quarto-figure { margin: 0 !important; padding: 0 !important; }
 
-  h4 {
-    font-size: 1rem !important;
-    margin: 0 0 0.25rem !important;
-    border: none !important;
+  figure, figure.figure {
+    margin: 0 !important;
     padding: 0 !important;
+    position: relative;
+
+    > p { margin: 0 !important; padding: 0 !important; line-height: 0; }
+
+    img, img.figure-img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      margin: 0 !important;
+    }
+
+    figcaption {
+      position: absolute !important;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0) 100%);
+      color: $white;
+      padding: 2.5rem 0.85rem 0.85rem;
+      font-family: $font-family-sans-serif;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      margin: 0 !important;
+
+      a { color: #f4b393; text-decoration: underline; }
+    }
   }
-  p { margin-bottom: 0.5rem; font-size: 0.9rem; }
-  ul { margin-bottom: 0; li { font-size: 0.88rem; } }
 }
 
-// Interest pills
-.interest-pill {
-  display: inline-block;
-  font-family: $font-family-sans-serif;
-  font-size: 0.78rem;
-  font-weight: 500;
-  padding: 0.2rem 0.65rem;
-  border-radius: 20px;
-  margin: 0.15rem 0.1rem;
-  background: $gray-300 !important;
-  border: 1px solid $gray-400 !important;
-  color: $gray-700 !important;
+@media (max-width: 768px) {
+  .gallery-filters { overflow-x: auto; justify-content: flex-start; flex-wrap: nowrap; }
+  .filter-btn { flex-shrink: 0; }
+  #gallery-container { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important; }
 }
 
-// TOC
+@media (max-width: 480px) {
+  #gallery-container { grid-template-columns: 1fr !important; }
+}
+
+// ------------------------------------------------------------------
+// Misc components
+// ------------------------------------------------------------------
+blockquote {
+  border-left: 3px solid $accent;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  background: $surface;
+  border-radius: 0 6px 6px 0;
+  font-style: italic;
+  color: $muted;
+}
+
+pre {
+  background: $surface !important;
+  border: 1px solid $hairline !important;
+  color: $ink !important;
+  border-radius: 8px;
+  padding: 1.15rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.87em;
+}
+
+code {
+  background-color: $surface-2 !important;
+  color: $accent-dark !important;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.88em;
+}
+
+table {
+  border-color: $hairline;
+
+  th { background-color: $surface; }
+  tr:nth-child(even) { background-color: rgba(29, 26, 22, 0.5); }
+}
+
+.walkthrough-img {
+  border: 1px solid $hairline !important;
+  border-radius: 8px;
+  margin: 1.25rem 0;
+  max-width: 100%;
+}
+
+.panel-tabset {
+  .nav-tabs {
+    border-bottom: 1px solid $hairline;
+
+    .nav-link {
+      font-family: $font-family-sans-serif;
+      font-weight: 500;
+      font-size: 0.88rem;
+      color: $muted !important;
+      border: none;
+      border-bottom: 2px solid transparent;
+      border-radius: 0;
+      padding: 0.5rem 1rem;
+      transition: all 0.15s ease;
+
+      &:hover { color: $ink !important; border-bottom-color: $hairline-2; background: none; }
+
+      &.active {
+        color: $accent-dark !important;
+        border-bottom-color: $accent !important;
+        background: none;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
 #quarto-margin-sidebar .nav-link {
   font-family: $font-family-sans-serif !important;
   font-size: 0.82rem;
 }
 
-// Footer
 .nav-footer {
   font-family: $font-family-sans-serif;
   font-size: 0.82rem;
+  border-top: 1px solid $hairline;
 }
 
-// Button
-.btn-primary {
-  background-color: $primary;
-  border-color: $primary;
-  color: $gray-100;
-
-  &:hover {
-    background-color: lighten($primary, 10%);
-    border-color: lighten($primary, 10%);
-  }
-}
-
-// Color scheme toggle - lightbulb icon (dark mode: amber/on bulb)
+// Color scheme toggle — lightbulb icon (dark mode: amber/on bulb)
 .quarto-color-scheme-toggle {
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
   width: 36px;
   height: 36px;
-  color: $gray-700 !important;
+  color: $body-text !important;
   transition: background-color 0.15s ease;
 
-  &:hover {
-    background-color: $gray-300 !important;
-  }
+  &:hover { background-color: $surface !important; }
 
   .bi {
     display: inline-block !important;
     width: 18px;
     height: 18px;
     background-color: transparent !important;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e3b341'><path d='M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6M8 1a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1'/><path d='M5.5 15a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15.5a.5.5 0 0 1 0-1z'/></svg>") !important;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e5743f'><path d='M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6M8 1a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1'/><path d='M5.5 15a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15.5a.5.5 0 0 1 0-1z'/></svg>") !important;
     background-size: 18px 18px !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
     mask: none !important;
     -webkit-mask: none !important;
 
-    &::before, &::after {
-      content: none !important;
-      display: none !important;
-    }
+    &::before, &::after { content: none !important; display: none !important; }
   }
+}
+
+@media (max-width: 767px) {
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.3rem; }
+  h3 { font-size: 1.1rem; }
+
+  .home-hero { padding-top: 1rem; }
 }

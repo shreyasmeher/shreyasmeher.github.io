@@ -46,5 +46,8 @@
   },
   "bachelor-project/walkthroughs/nlp-methods.qmd": {
     "nlp-methods.html": "ccdcdf55"
+  },
+  "bachelor-project/walkthroughs/data-merging.qmd": {
+    "data-merging.html": "b1edabcd"
   }
 }

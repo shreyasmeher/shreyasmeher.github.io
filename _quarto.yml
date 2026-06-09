@@ -68,18 +68,18 @@ website:
 format:
   html:
     theme:
-      light: [litera, mystyles.scss]
-      dark: [darkly, custom-dark.scss]
+      light: [default, mystyles.scss]
+      dark: [default, custom-dark.scss]
     toc: true
     toc-location: right
     toc-title: "On this page"
     code-copy: true
     code-overflow: wrap
-    mainfont: "Source Serif 4"
-    monofont: "ui-monospace, SFMono-Regular, SF Mono, Monaco, Consolas, Liberation Mono, Courier New, monospace"
-    fontsize: 0.95em
-    linestretch: 1.7
     html-math-method: katex
     footnotes-hover: true
     smooth-scroll: true
     link-external-newwindow: true
+    include-in-header:
+      text: |
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

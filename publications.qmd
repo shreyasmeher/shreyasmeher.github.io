@@ -69,6 +69,14 @@ toc-title: "Sections"
 ## Working Papers
 
 ::: {.pub-entry}
+[Building Capacity or Building Checks? What EU Enlargement Reports Emphasise and Democratic Backsliding]{.pub-title}
+[with [A. Zhelyazkova](https://asyazhelyazkovasite.wordpress.com/){target="_blank"} & [C. Egger](https://claramarieegger.wordpress.com/about/){target="_blank"}]{.pub-authors}
+[To be presented at EPSS 2026, Belfast]{.pub-venue}
+[<button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>]{.pub-links}
+[Does the European Commission's enlargement reporting emphasise executive strength over institutional checks on executive power, and does that emphasis track later democratic backsliding? Building on Meyerrose's argument that international democracy support can strengthen executives at the expense of the institutions meant to constrain them, we use large language models to content-analyse the Commission's progress reports for 23 candidate countries (105,971 sentences across 207 country-years, 1998--2023), separating what each report *emphasises* (compliance and state capacity versus judicial, legislative, civic, and media checks) from how it *assesses* each domain. Relating both measures to the V-Dem Liberal Democracy Index, we find that the Commission's assessments track subsequent democratic outcomes while its relative emphasis does not, a contrast that survives bootstrap inference and a coder-based correction for measurement error. Emphasis is nonetheless associated with later decline where judicial constraints are weak.]{.abstract-content}
+:::
+
+::: {.pub-entry}
 [Using Messy Text in Future LLM Annotations]{.pub-title}
 [with [P.T. Brandt](https://www.utdallas.edu/~pbrandt/){target="_blank"}, P. Cuellar-Cuellar & X. Zhao]{.pub-authors}
 [<button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>]{.pub-links}

@@ -72,6 +72,11 @@ Testing how Guriev & Treisman's Informational Autocracy theory applies to intern
 ::: {#area-ipe .research-area style="display:none;"}
 ## Democratic Institutions & Backsliding
 
+**Building Capacity or Building Checks? What EU Enlargement Reports Emphasise and Democratic Backsliding**
+*with [Asya Zhelyazkova](https://asyazhelyazkovasite.wordpress.com/) & [Clara Egger](https://claramarieegger.wordpress.com/about/)* | Working Paper (EPSS 2026, Belfast)
+
+Does the European Commission's enlargement reporting emphasise executive strength over institutional checks on executive power, and does that emphasis track later democratic backsliding? We use large language models to content-analyse the Commission's progress reports for 23 candidate countries (105,971 sentences across 207 country-years, 1998--2023), separating what each report *emphasises* (compliance and state capacity versus judicial, legislative, civic, and media checks) from how it *assesses* each domain. Relating both measures to the V-Dem Liberal Democracy Index, we find that the Commission's assessments track subsequent democratic outcomes while its relative emphasis does not. Emphasis is nonetheless associated with later decline where judicial constraints are weak.
+
 **The Attention Trap: How International Celebrity Intervention Displaces Policy Discourse in Protest Movements** | Working Paper
 [Draft [PDF]](research/Meher_2025_Attention_Trap.pdf)
 

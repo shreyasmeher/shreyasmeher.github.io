@@ -13,7 +13,7 @@ Open-source tools for conflict and political violence text analysis, built as pa
   </a>
   <a href="conflibertr.html" class="tool-card">
     <h3>conflibertR</h3>
-    <p>R package wrapping ConfliBERT for inference, fine-tuning, benchmarking, and model comparison &mdash; all from your R console.</p>
+    <p>R package wrapping ConfliBERT for inference, fine-tuning, benchmarking, and model comparison, all from your R console.</p>
   </a>
 </div>
 ```
