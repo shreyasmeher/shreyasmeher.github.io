@@ -3,48 +3,29 @@ title: "Teaching"
 toc: false
 ---
 
-## Lead Instructor
-
-::: {.teaching-entry}
-#### Bachelor Project Supervisor: Digital Governance, Platform Labour, and Power in the Digital Economy
-**2025--2026, Period 4** | Erasmus School of Social and Behavioural Sciences
-
-- Supervising Group 16 in the MISOC Bachelor Project
-- [Course materials (password protected)](bachelor-project/)
-:::
+## Instructor
 
 ::: {.teaching-entry}
 #### Research Design for Public Policy (ESSB-C2045)
-**2025--2026, Block 3** | Erasmus School of Social and Behavioural Sciences, 7.5 EC
+[Erasmus University Rotterdam · 2025--2026]{.teaching-meta}
+Quantitative research design for policy evaluation, including causal inference and panel data estimation, with hands-on R programming labs using real policy datasets.
+:::
 
-- Taught quantitative research design for policy evaluation, including causal inference and panel data estimation
-- Led R programming labs with hands-on analysis using real policy datasets
-- Guided students through policy proposal development using quantitative evidence
+::: {.teaching-entry}
+#### Bachelor Project: Digital Governance, Platform Labour, and Power in the Digital Economy
+[Erasmus University Rotterdam · 2025--2026]{.teaching-meta}
+Supervising the MISOC Bachelor Project (Group 16). [Course materials](bachelor-project/) (password protected).
 :::
 
 ::: {.teaching-entry}
 #### EPPS Math & Coding Camp
-**August 2024** | University of Texas at Dallas, R Programming and Data Analysis
-
-- Created and maintained course website [eppsmathcodingcamp.github.io](https://eppsmathcodingcamp.github.io/)
-- Taught R programming fundamentals, data manipulation (dplyr), and visualization (ggplot2)
-- Developed interactive tutorials and exercises for 5-day intensive program
+[The University of Texas at Dallas · August 2024]{.teaching-meta}
+Five-day intensive for incoming Ph.D. students: R programming, data manipulation, and visualization. Course website: [eppsmathcodingcamp.github.io](https://eppsmathcodingcamp.github.io/).
 :::
 
 ## Teaching Assistant
 
 ::: {.teaching-entry}
-#### EPPS 6313: Introduction to Quantitative Methods
-*Teaching Assistant for Dr. Pengfei Zhang*
-
-- Led weekly STATA lab sessions focusing on regression analysis
-- Guided students through practical applications of statistical methods
-:::
-
-::: {.teaching-entry}
-#### EPPS 6316: Applied Regression
-*Teaching Assistant for Dr. Vito D'Orazio*
-
-- Conducted advanced R programming labs
-- Focused on complex regression techniques and econometric analysis
+[The University of Texas at Dallas · 2020--2023]{.teaching-meta}
+Research Design (EPPS 2301) · Class, Status, and Power (SOC 4302) · Political Economy of Industrialized Countries (IPEC 4301) · Government and Politics of Afghanistan (PSCI 4396) · Applied Regression (EPPS 6316) · Political Violence and Conflict in Cyberspace (PPPE/PSCI 6302) · Introduction to Quantitative Methods (EPPS 6313) · Foreign Aid and Development (IPEC/PSCI 4318)
 :::

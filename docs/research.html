@@ -36,16 +36,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-fb827f39921779fb1a43e44c68402a9b.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f141ec31a63a983589b822633434e516.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-fb827f39921779fb1a43e44c68402a9b.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-095f9695dfbb980a23e574291e2fb02a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-0424905e99bbd3cd03ffe1d107e8b5bb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-095f9695dfbb980a23e574291e2fb02a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-77b6f5a95308b686716b7443607ce548.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -66,178 +60,16 @@ ul.task-list li input[type="checkbox"] {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 
 
-<meta property="og:title" content="Shreyas Meher | Postdoctoral Researcher">
-<meta property="og:description" content="Research in Digital Governance, Democratic Backsliding, and Computational Politics.">
+<meta property="og:title" content="Shreyas Meher">
+<meta property="og:description" content="Postdoctoral Researcher in Computational Social Science, Erasmus University Rotterdam.">
 <meta property="og:site_name" content="Shreyas Meher">
-<meta name="twitter:title" content="Shreyas Meher | Postdoctoral Researcher">
-<meta name="twitter:description" content="Research in Digital Governance, Democratic Backsliding, and Computational Politics.">
+<meta name="twitter:title" content="Shreyas Meher">
+<meta name="twitter:description" content="Postdoctoral Researcher in Computational Social Science, Erasmus University Rotterdam.">
 <meta name="twitter:creator" content="@shreyasmhr">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -262,51 +94,20 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./publications.html"> 
-<span class="menu-text">Publications</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./software.html"> 
-<span class="menu-text">Software</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./teaching.html"> 
 <span class="menu-text">Teaching</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./CV.pdf"> 
-<span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./Gallery.html"> 
 <span class="menu-text">Gallery</span></a>
   </li>  
-</ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="mailto:meher@essb.eur.nl"> <i class="bi bi-envelope" role="img" aria-label="Email">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://x.com/shreyasmhr"> <i class="bi bi-twitter-x" role="img" aria-label="X">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/shreyasmeher"> <i class="bi bi-github" role="img" aria-label="GitHub">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/shreyasmeher/"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
-</i> 
-<span class="menu-text"></span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./CV.pdf"> 
+<span class="menu-text">CV</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -318,7 +119,6 @@ ul.task-list li input[type="checkbox"] {
     
 <!-- main -->
 <main class="content" id="quarto-document-content">
-
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -339,108 +139,84 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>My research uses computational methods to address questions in three areas. Click a card to learn more.</p>
-<div class="grid">
-<div class="g-col-12 g-col-md-4">
-<div id="card-dg" class="research-card research-card-dg active" onclick="showArea('dg')">
-<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c6964206579652d736c617368203e7d7d-digital-governance" class="level4">
-<h4 class="anchored" data-anchor-id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c6964206579652d736c617368203e7d7d-digital-governance"><i class="fa-solid fa-eye-slash" aria-label="eye-slash"></i> Digital Governance</h4>
-<p>How do different regimes implement internet control? I study content moderation in democracies, filtering and blackouts in autocracies, and the concept of digital sovereignty.</p>
+<section id="publications" class="level2">
+<h2 class="anchored" data-anchor-id="publications">Publications</h2>
+<div class="pub-entry">
+<p><span class="pub-title">Extractive versus Generative Language Models for Political Conflict Text Classification</span> <span class="pub-meta">with P.T. Brandt, S. Alsarra, V. D’Orazio, D. Heintze, L. Khan, J. Osorio &amp; M. Sianan · <em>Political Analysis</em>, 2025</span> <span class="pub-links"><a href="https://doi.org/10.1017/pan.2025.10027">Article</a> <a href="https://doi.org/10.7910/DVN/KDO5AM">Code</a> <a href="research/ConfliBERT_Presentation.pdf">Slides</a></span></p>
+</div>
+<div class="pub-entry">
+<p><span class="pub-title">ConflLlama: Domain-Specific Adaptation of Large Language Models for Conflict Event Classification</span> <span class="pub-meta">with P.T. Brandt · <em>Research &amp; Politics</em>, 2025</span> <span class="pub-links"><a href="https://doi.org/10.1177/20531680251356282">Article</a> <a href="https://doi.org/10.7910/DVN/0MUGE6">Code</a> <a href="research/APSA___ConflLlama.pdf">Slides</a></span></p>
+</div>
+<div class="pub-entry">
+<p><span class="pub-title">Public Health Advocacy in Times of Pandemic: An Analysis of the Medicare-For-All Debate on Twitter During COVID-19</span> <span class="pub-meta">with S. Kumar &amp; P. Zhang · <em>Behavioral Sciences</em>, 2025</span> <span class="pub-links"><a href="https://doi.org/10.3390/bs15020223">Article</a> <a href="https://doi.org/10.7910/DVN/OWVD70">Code</a></span></p>
+</div>
 </section>
+<section id="under-review" class="level2">
+<h2 class="anchored" data-anchor-id="under-review">Under Review</h2>
+<div class="pub-entry">
+<p><span class="pub-title">Electoral Accountability and the Channeling of Content Removal: Theory and Evidence from Google Transparency Reports</span> <span class="pub-meta">with P. Zhang</span></p>
 </div>
+<div class="pub-entry">
+<p><span class="pub-title">Framework Laws and Fading Oversight: How the Dutch Executive Expanded Its Lawmaking Authority</span> <span class="pub-meta">with C. Egger &amp; A. Zhelyazkova · Revise &amp; resubmit</span></p>
 </div>
-<div class="g-col-12 g-col-md-4">
-<div id="card-css" class="research-card research-card-css" onclick="showArea('css')">
-<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c6964206c6170746f702d636f6465203e7d7d-computational-social-science" class="level4">
-<h4 class="anchored" data-anchor-id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c6964206c6170746f702d636f6465203e7d7d-computational-social-science"><i class="fa-solid fa-laptop-code" aria-label="laptop-code"></i> Computational Social Science</h4>
-<p>I build specialized language models, such as ConfliBERT and ConflLlama, to create structured data from unstructured text, focusing on political conflict and event coding.</p>
+<div class="pub-entry">
+<p><span class="pub-title">Selective Scrutiny: Single-Party Majority and the Strategic Withdrawal of Parliamentary Oversight in India</span> <span class="pub-links"><a href="research/Meher_2025_Legislating_Without_Scrutiny.pdf">Draft</a></span></p>
+</div>
+<div class="pub-entry">
+<p><span class="pub-title">Build, Borrow, or Just Fine-Tune? Empirical Guidelines for NLP Model Selection in Computational Social Science</span> <span class="pub-links"><a href="research/Meher_Build_Borrow.pdf">Draft</a> <a href="https://huggingface.co/shreyasmeher/Confli-mBERT">Model</a></span></p>
+</div>
+<div class="pub-entry">
+<p><span class="pub-title">“Why Aren’t We Talking About This?” The Attention Trap in Networked Protest</span> <span class="pub-links"><a href="research/Meher_2025_Attention_Trap.pdf">Draft</a></span></p>
+</div>
+<div class="pub-entry">
+<p><span class="pub-title">Silencing the Silencing: Media Amplification of Internet Shutdowns in India</span></p>
+</div>
+<div class="pub-entry">
+<p><span class="pub-title">Two Types of Censorship? An Assessment of the Informational Autocracy Thesis</span> <span class="pub-meta">with P. Zhang</span></p>
+</div>
 </section>
+<section id="working-papers" class="level2">
+<h2 class="anchored" data-anchor-id="working-papers">Working Papers</h2>
+<div class="pub-entry">
+<p><span class="pub-title">Building Capacity or Building Checks? What EU Enlargement Reports Emphasise and Democratic Backsliding</span> <span class="pub-meta">with A. Zhelyazkova &amp; C. Egger · EPSS 2026, Belfast</span></p>
 </div>
+<div class="pub-entry">
+<p><span class="pub-title">Strategic Anticipation and Expert Review: The Determinants of Critical Advisory Opinions from the Dutch Council of State</span> <span class="pub-meta">with C. Egger &amp; A. Zhelyazkova</span></p>
 </div>
-<div class="g-col-12 g-col-md-4">
-<div id="card-ipe" class="research-card research-card-ipe" onclick="showArea('ipe')">
-<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c6964206c616e646d61726b2d646f6d65203e7d7d-democratic-institutions-backsliding" class="level4">
-<h4 class="anchored" data-anchor-id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c6964206c616e646d61726b2d646f6d65203e7d7d-democratic-institutions-backsliding"><i class="fa-solid fa-landmark-dome" aria-label="landmark-dome"></i> Democratic Institutions &amp; Backsliding</h4>
-<p>How do executives expand power within democratic frameworks? I study legislative oversight, executive aggrandizement, and institutional resilience in parliamentary democracies.</p>
+<div class="pub-entry">
+<p><span class="pub-title">On Time, but Empty: How Dutch Ministers Answer Their Critics</span></p>
+</div>
+<div class="pub-entry">
+<p><span class="pub-title">Between the Documents: Unit Choice in Corpus-Scale Political Text Analysis</span></p>
+</div>
+<div class="pub-entry">
+<p><span class="pub-title">Using Messy Text in Future LLM Annotations</span> <span class="pub-meta">with P.T. Brandt, P. Cuellar-Cuellar &amp; X. Zhao</span></p>
+</div>
+<div class="pub-entry">
+<p><span class="pub-title">Event Horizon: Revolutionizing Data Annotation with Reinforcement Learning</span> <span class="pub-links"><a href="https://huggingface.co/shreyasmeher/Qwen-GLOCON-Reasoning">Model</a></span></p>
+</div>
 </section>
+<section id="software" class="level2">
+<h2 class="anchored" data-anchor-id="software">Software</h2>
+<div class="pub-entry">
+<p><span class="pub-title">ConfliBERT GUI</span> <span class="pub-meta">Browser-based NLP toolkit for conflict and political violence text analysis: NER, classification, question answering, and LoRA/QLoRA fine-tuning.</span> <span class="pub-links"><a href="https://github.com/shreyasmeher/ConfliBERT-gui">GitHub</a></span></p>
 </div>
+<div class="pub-entry">
+<p><span class="pub-title">conflibertR</span> <span class="pub-meta">R package wrapping ConfliBERT for inference, fine-tuning, benchmarking, and model comparison.</span> <span class="pub-links"><a href="https://github.com/shreyasmeher/conflibertR">GitHub</a></span></p>
 </div>
-</div>
-<div id="area-dg" class="research-area">
-<section id="digital-governance-censorship" class="level2">
-<h2 class="anchored" data-anchor-id="digital-governance-censorship">Digital Governance &amp; Censorship</h2>
-<p><strong>Electoral Accountability and Government Content Removal: Theory and Evidence from Google Transparency Reports</strong> <em>with <a href="https://pengfei-zhang.com/">Pengfei Zhang</a></em> | Under Review</p>
-<p>How does regime type shape a state’s intervention in its information environment? We develop a political agency model showing that democratic governments refrain from direct takedowns and delegate to courts because electoral accountability disciplines politicians through reputation-building incentives. Using Google transparency reports and quasi-experimental variation in election timing, we show that takedown requests from democratic governments decline significantly as elections approach, a reputational discipline effect absent in authoritarian regimes and other request types.</p>
-<p><strong>Two Types of Censorship? An Assessment of the Informational Autocracy Thesis</strong> <em>with <a href="https://pengfei-zhang.com/">Pengfei Zhang</a></em> | Under Review</p>
-<p>Testing how Guriev &amp; Treisman’s Informational Autocracy theory applies to internet filtering practices in autocratic nations.</p>
-<p><strong>Dissertation: Digital Sovereignty: The Political Economy of Internet Governance</strong> <a href="research/Dissertation_March-31.pdf">Slides</a></p>
 </section>
+<section id="dissertation" class="level2">
+<h2 class="anchored" data-anchor-id="dissertation">Dissertation</h2>
+<div class="pub-entry">
+<p><span class="pub-title">Digital Sovereignty: The Political Economy of Internet Governance</span> <span class="pub-meta">The University of Texas at Dallas, 2025</span> <span class="pub-links"><a href="research/Dissertation_March-31.pdf">Slides</a></span></p>
 </div>
-<div id="area-css" class="research-area" style="display:none;">
-<section id="computational-social-science-nlp" class="level2">
-<h2 class="anchored" data-anchor-id="computational-social-science-nlp">Computational Social Science &amp; NLP</h2>
-<p><strong>Extractive versus Generative Language Models for Political Conflict Text Classification</strong> <em>with Patrick T. Brandt, Sultan Alsarra, Vito D’Orazio, Dagmar Heintze, Latifur Khan, Javier Osorio, and Marcus Sianan</em> <strong>Political Analysis</strong> | <a href="https://doi.org/10.1017/pan.2025.10027">Link</a> | <a href="research/ConfliBERT_Presentation.pdf">Slides</a> | <a href="https://doi.org/10.7910/DVN/KDO5AM">Code</a></p>
-<p><strong>ConflLlama: Domain-Specific Adaptation of Large Language Models for Conflict Event Classification</strong> <em>with <a href="https://www.utdallas.edu/~pbrandt/">Patrick T. Brandt</a></em> <strong>Research &amp; Politics</strong> | <a href="https://doi.org/10.1177/20531680251356282" target="_blank">Link</a> | <a href="research/APSA___ConflLlama.pdf">Slides</a> | <a href="https://doi.org/10.7910/DVN/0MUGE6">Code</a></p>
-<p><strong>Build, Borrow, or Just Fine-Tune? A Political Scientist’s Guide to Choosing NLP Models</strong> | Under Review <a href="research/Meher_Build_Borrow.pdf">Draft [PDF]</a> | <a href="https://huggingface.co/shreyasmeher/Confli-mBERT">Code</a></p>
-<p><strong>Event Horizon: Revolutionizing Data Annotation with Reinforcement Learning</strong> | Working Paper <a href="https://huggingface.co/shreyasmeher/Qwen-GLOCON-Reasoning">Model on Hugging Face</a></p>
-<p><strong>ConfliBERT Documentation</strong> <a href="https://github.com/eventdata/ConfliBERT-Manual">View Manual</a></p>
-</section>
-</div>
-<div id="area-ipe" class="research-area" style="display:none;">
-<section id="democratic-institutions-backsliding" class="level2">
-<h2 class="anchored" data-anchor-id="democratic-institutions-backsliding">Democratic Institutions &amp; Backsliding</h2>
-<p><strong>Building Capacity or Building Checks? What EU Enlargement Reports Emphasise and Democratic Backsliding</strong> <em>with <a href="https://asyazhelyazkovasite.wordpress.com/">Asya Zhelyazkova</a> &amp; <a href="https://claramarieegger.wordpress.com/about/">Clara Egger</a></em> | Working Paper (EPSS 2026, Belfast)</p>
-<p>Does the European Commission’s enlargement reporting emphasise executive strength over institutional checks on executive power, and does that emphasis track later democratic backsliding? We use large language models to content-analyse the Commission’s progress reports for 23 candidate countries (105,971 sentences across 207 country-years, 1998–2023), separating what each report <em>emphasises</em> (compliance and state capacity versus judicial, legislative, civic, and media checks) from how it <em>assesses</em> each domain. Relating both measures to the V-Dem Liberal Democracy Index, we find that the Commission’s assessments track subsequent democratic outcomes while its relative emphasis does not. Emphasis is nonetheless associated with later decline where judicial constraints are weak.</p>
-<p><strong>The Attention Trap: How International Celebrity Intervention Displaces Policy Discourse in Protest Movements</strong> | Working Paper <a href="research/Meher_2025_Attention_Trap.pdf">Draft [PDF]</a></p>
-<p>Does international celebrity attention help or hinder social movements? Analysing 1.08 million tweets from the 2020–2021 Indian farmer protests, I measure the effect of celebrity attention shocks on protest discourse. When Rihanna tweeted about the protests on 2 February 2021, daily volume rose 22-fold, but the share of tweets discussing policy issues fell by 10 percentage points while celebrity and meta-commentary rose by 45 percentage points. I call this the <em>attention trap</em>: celebrity intervention maximises visibility while displacing the substantive discourse movements depend on. Local projection impulse responses show this displacement is specific to the celebrity channel: domestic events, including state violence at Lakhimpur Kheri, generate policy-focused responses without comparable displacement. The cost was strategically exploitable: the BJP launched a coordinated nationalist counter-campaign within hours, on discursive terrain made favourable by the displacement itself.</p>
-<p><strong>Legislating Without Scrutiny: Executive Aggrandizement and Democratic Erosion in India</strong> | Working Paper <a href="research/Meher_2025_Legislating_Without_Scrutiny.pdf">Draft [PDF]</a></p>
-<p>In September 2020, India’s Parliament passed three farm laws after under two hours of debate, with no committee referral: a procedural collapse, not an aberration. Under the BJP-led NDA, committee referral rates fell from 73% to 6%, and bills that once took nearly a year now clear Parliament in weeks. Drawing on 1,008 parliamentary bills, automated text analysis of 881 central acts, and cross-national democracy indicators, I document a systematic pattern of <em>executive aggrandizement</em>: the legal, incremental expansion of executive power at the expense of parliament, the judiciary, subnational governments, and citizens. A synthetic control analysis shows India’s judicial constraints declined significantly after 2014 (ATT = -0.051, p = 0.024); all eight V-Dem democracy indicators I examine declined under the NDA even after controlling for pre-existing trends.</p>
-<p><strong>Strategic Anticipation and Expert Review: The Determinants of Critical Advisory Opinions from the Dutch Council of State</strong> <em>with <a href="https://claramarieegger.wordpress.com/about/">Clara Egger</a> &amp; <a href="https://www.eur.nl/en/people/asya-zhelyazkova">Asya Zhelyazkova</a></em> | Under Review</p>
-<p>What determines whether an expert advisory body issues a critical opinion on a legislative proposal? Drawing on a novel dataset of 2,898 advisory opinions issued by the Dutch Council of State (<em>Raad van State</em>) between 2004 and 2025 (2,111 on laws and 785 on executive decrees), we test five competing mechanisms. Instrument type is the strongest predictor of opinion severity: executive decrees receive dramatically milder treatment, with 69% drawing no objections compared to just 13% for laws. Among laws, junior coalition partners attract significantly less critical opinions than leading parties, consistent with anticipatory compliance. Ideological distance from the cabinet median matters, though the effect is modest. The Council’s most consequential effects operate through institutional deference to delegated legislation and the anticipatory self-discipline of politically exposed actors.</p>
-<p><strong>Framework Laws and Fading Oversight: How the Dutch Executive Expanded Its Lawmaking Authority</strong> <em>with <a href="https://claramarieegger.wordpress.com/about/">Clara Egger</a> &amp; <a href="https://www.eur.nl/en/people/asya-zhelyazkova">Asya Zhelyazkova</a></em> | Under Review</p>
-<p>Examining executive predominance in the Netherlands using a legislative dataset spanning 2000–2025. Roughly 75% of legislation now takes the form of secondary executive acts, while MPs retreat toward weaker oversight tools.</p>
-<p><strong>Populism and Investment Treaties</strong> <em>with <a href="https://profiles.utdallas.edu/clint.peinhardt">Clint Peinhardt</a></em> | Working Paper</p>
-<p>Investigating how nationalist rhetoric influences countries’ decisions to exit international investment agreements.</p>
-<p><strong>IGO Withdrawal Networks</strong> | Working Paper</p>
-<p>Extending Borzyskowski &amp; Vabulas (2019) to examine network effects in international organization withdrawals.</p>
-<p><strong>Media Polarization in International News Coverage</strong> <em>with Arslan Khalid &amp; Kiwan Park</em> | Working Paper</p>
-<p>Using machine learning to analyze ideological patterns in international news coverage across 200,000+ articles.</p>
-<p><strong>Public Health Advocacy in Times of Pandemic: An Analysis of the Medicare-For-All Debate on Twitter During COVID-19</strong> <em>with <a href="https://jgu.edu.in/jsgp/dr-sushant-kumar/">Sushant Kumar</a> &amp; <a href="https://pengfei-zhang.com/">Pengfei Zhang</a></em> <strong>Behavioral Sciences</strong> | <a href="https://doi.org/10.3390/bs15020223">Link</a> | <a href="https://doi.org/10.7910/DVN/OWVD70">Code</a></p>
-</section>
-</div>
-<script>
-function showArea(area) {
-  document.querySelectorAll('.research-area').forEach(el => {
-    el.style.display = 'none';
-  });
-  document.querySelectorAll('.research-card').forEach(el => {
-    el.classList.remove('active');
-  });
-  var target = document.getElementById('area-' + area);
-  var card = document.getElementById('card-' + area);
-  target.style.display = 'block';
-  card.classList.add('active');
-}
-</script>
 
 
+</section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -854,7 +630,7 @@ function showArea(area) {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Built with <a href="https://quarto.org">Quarto</a></p>
+<p><a href="mailto:meher@essb.eur.nl">Email</a> · <a href="https://github.com/shreyasmeher">GitHub</a> · <a href="https://x.com/shreyasmhr">X</a> · <a href="https://www.linkedin.com/in/shreyasmeher/">LinkedIn</a></p>
 </div>
   </div>
 </footer>

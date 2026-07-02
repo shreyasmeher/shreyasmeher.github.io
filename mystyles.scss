@@ -1,711 +1,297 @@
 /*-- scss:defaults --*/
 
-// Fonts: Space Grotesk (modern display) + Inter (UI sans).
-// Trimmed to the weights actually used to keep the payload light.
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500..700&family=Inter:ital,wght@0,400..600;1,400&display=swap');
+// ---------------------------------------------------------------------------
+// Minimal black & white theme
+// ---------------------------------------------------------------------------
 
-// ------------------------------------------------------------------
-// Palette — warm paper, near-black ink, vermillion accent
-// ------------------------------------------------------------------
-$paper:      #fbfaf7;
-$surface:    #ffffff;
-$ink:        #1c1a17;
-$body-text:  #3b3733;
-$muted:      #6f675c;
-$hairline:   #e8e3d9;
-$hairline-2: #d8d1c4;
-$accent:     #c14b1b;
-$accent-dark:#9c3b13;
-$accent-soft:#f7e9e1;
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap');
 
-// Area colours (research programmes)
-$area-dg:  #3d5a80;
-$area-css: #9b6a3c;
-$area-ipe: #4a7a5a;
+$font-family-sans-serif: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+$font-family-serif: "Newsreader", Georgia, serif;
 
-$white: #ffffff;
-$gray-100: #f4f2ec;
-$gray-200: $hairline;
-$gray-300: $hairline-2;
-$gray-500: $muted;
-$gray-600: #575046;
-$gray-700: $body-text;
-$gray-800: $ink;
+$body-bg: #ffffff;
+$body-color: #1a1a1a;
+$link-color: #1a1a1a;
+$link-decoration: underline;
 
-$primary:   $accent;
-$secondary: $muted;
-
-// Theme config
-$body-bg: $paper;
-$body-color: $body-text;
-$link-color: $accent-dark;
-$link-decoration: none;
-$link-hover-color: $accent;
-$link-hover-decoration: underline;
-
-// Typography
-$font-family-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-$font-family-serif: "Space Grotesk", "Inter", system-ui, sans-serif;
-$font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-$font-family-base: $font-family-sans-serif;
-$font-size-root: 16px;
+$font-size-root: 17px;
 $line-height-base: 1.65;
 
-// Navbar / footer
-$navbar-bg: $paper;
-$navbar-fg: $body-text;
-$navbar-hl: $ink;
-$footer-bg: $paper;
-$footer-fg: $muted;
+$navbar-bg: #ffffff;
+$navbar-fg: #1a1a1a;
+$footer-bg: #ffffff;
+$footer-fg: #6b6b6b;
+
 
 /*-- scss:rules --*/
 
-// ------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 // Base
-// ------------------------------------------------------------------
+// ---------------------------------------------------------------------------
+
+$muted: #6b6b6b;
+$hairline: #e6e6e6;
+
 body {
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-::selection {
-  background: $accent;
-  color: $white;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4 {
   font-family: $font-family-serif;
-  color: $ink;
-  font-weight: 600;
-  letter-spacing: -0.015em;
+  font-weight: 500;
+  color: #111;
+  letter-spacing: -0.01em;
 }
 
-h1 {
-  font-size: 2.1rem;
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-}
+h1 { font-size: 2rem; }
 
-// Signature heading: short accent overline instead of a full-width rule
 h2 {
-  font-size: 1.45rem;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  padding-top: 0.85rem;
-  border: none;
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 2.25rem;
-    height: 3px;
-    background: $accent;
-  }
-}
-
-h3 { font-size: 1.15rem; margin-top: 1.6rem; margin-bottom: 0.6rem; }
-h4 { font-size: 1rem; margin-top: 1.25rem; margin-bottom: 0.5rem; }
-
-p {
-  margin-bottom: 1rem;
-  line-height: 1.7;
+  font-size: 1.35rem;
+  margin-top: 2.75rem;
+  margin-bottom: 1.1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid $hairline;
 }
 
 a {
-  transition: color 0.15s ease;
-  text-underline-offset: 3px;
   text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: #b3b3b3;
+  transition: text-decoration-color 0.15s ease;
 
-  &:hover { text-decoration: underline; }
-}
-
-// Small-caps section label
-.eyebrow {
-  display: block;
-  font-family: $font-family-sans-serif;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: $accent-dark;
-  margin-bottom: 0.75rem;
-}
-
-// ------------------------------------------------------------------
-// Navbar
-// ------------------------------------------------------------------
-.navbar {
-  background: rgba(251, 250, 247, 0.92) !important;
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid $hairline;
-  padding: 0.7rem 0;
-
-  .navbar-brand {
-    font-family: $font-family-serif;
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: $ink;
-    letter-spacing: -0.015em;
-    position: relative;
-    top: 2px;
-
-    &:hover { color: $accent-dark; text-decoration: none; }
+  &:hover {
+    color: #000;
+    text-decoration-color: #000;
   }
+}
 
-  .navbar-nav { gap: 0.1rem; align-items: center; }
+// ---------------------------------------------------------------------------
+// Navbar — quiet, hairline rule, no site title
+// ---------------------------------------------------------------------------
+
+.navbar {
+  border-bottom: 1px solid $hairline;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+  box-shadow: none;
+
+  .navbar-brand { display: none; }
 
   .nav-link {
     font-family: $font-family-sans-serif;
+    font-size: 0.78rem;
     font-weight: 500;
-    font-size: 0.87rem;
-    color: $gray-600;
-    padding: 0.4rem 0.8rem;
-    border-radius: 4px;
-    transition: all 0.15s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #444 !important;
 
-    &:hover { color: $ink; background-color: $gray-100; }
-
-    &.active {
-      color: $ink;
-      font-weight: 600;
-      box-shadow: inset 0 -2px 0 $accent;
-      border-radius: 4px 4px 0 0;
-    }
-  }
-
-  .navbar-nav .nav-link[aria-label] {
-    width: 36px;
-    height: 36px;
-    padding: 0.4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: none;
-
-    &:hover { background-color: $gray-100; }
+    &:hover, &.active { color: #000 !important; }
   }
 }
 
-// ------------------------------------------------------------------
-// Home page
-// ------------------------------------------------------------------
-.home-hero {
-  padding: 2.5rem 0 1.5rem;
+// ---------------------------------------------------------------------------
+// Footer
+// ---------------------------------------------------------------------------
 
-  h1.hero-name {
-    font-size: clamp(2.4rem, 6vw, 3.4rem);
-    margin: 0 0 1rem;
-  }
+.nav-footer {
+  border-top: 1px solid $hairline;
+  font-size: 0.8rem;
+  color: $muted;
+
+  a { color: $muted; }
+}
+
+// ---------------------------------------------------------------------------
+// Home
+// ---------------------------------------------------------------------------
+
+h1.hero-name {
+  font-family: $font-family-serif;
+  font-size: clamp(2.6rem, 6vw, 3.8rem) !important;
+  font-weight: 500;
+  line-height: 1.05;
+  margin: 1.5rem 0 1rem 0;
+  border: none;
+  padding: 0;
+}
+
+.home-hero {
+  padding: 0.5rem 0 1rem 0;
 
   .hero-lede {
     display: block;
     font-family: $font-family-serif;
-    font-size: 1.3rem;
-    font-weight: 500;
+    font-size: 1.35rem;
+    font-style: italic;
     line-height: 1.45;
-    color: $ink;
-    margin-bottom: 1rem;
+    color: #333;
+    margin-bottom: 1.6rem;
   }
 
-  p { max-width: 58ch; }
+  p {
+    font-size: 0.98rem;
+    color: #2a2a2a;
+  }
 }
 
-#img-me {
-  width: min(270px, 80vw);
-  height: auto;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto 1rem;
-  border: 1px solid $hairline-2;
-  outline: 3px solid $paper;
-  outline-offset: -6px;
-  box-shadow: 0 0 0 1px $hairline-2, 6px 6px 0 0 $accent-soft;
+#img-me img, img#img-me {
+  width: 100%;
+  border-radius: 2px;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+
+  &:hover { filter: grayscale(0%); }
 }
 
 .hero-contact {
-  text-align: center;
-  font-size: 0.88rem;
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
   color: $muted;
+  line-height: 1.7;
 
-  a { font-weight: 500; }
+  a { color: $muted; }
 }
 
-.hero-actions {
-  margin: 1.4rem 0 0.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-
-.btn-accent, .btn-ghost {
-  display: inline-block;
-  font-family: $font-family-sans-serif;
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.5rem 1.1rem;
-  border-radius: 999px;
-  transition: all 0.15s ease;
-  text-decoration: none !important;
-}
-
-.btn-accent {
-  background: $accent;
-  color: $white !important;
-  border: 1px solid $accent;
-
-  &:hover { background: $accent-dark; border-color: $accent-dark; }
-}
-
-.btn-ghost {
-  background: transparent;
-  color: $ink !important;
-  border: 1px solid $hairline-2;
-
-  &:hover { border-color: $ink; }
-}
-
-// Interest pills
-.interest-pill {
-  display: inline-block;
-  font-family: $font-family-sans-serif;
-  font-size: 0.76rem;
+.hero-links {
+  margin-top: 1.8rem;
+  font-size: 0.82rem;
   font-weight: 500;
-  padding: 0.22rem 0.7rem;
-  border-radius: 999px;
-  margin: 0.15rem 0.1rem;
-  border: 1px solid $hairline-2;
-  color: $gray-600;
-  background: $surface;
-  transition: all 0.15s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 
-  &:hover { border-color: $accent; color: $accent-dark; }
-}
+  a {
+    margin-right: 1.6rem;
+    text-decoration: none;
+    border-bottom: 1px solid #1a1a1a;
+    padding-bottom: 2px;
 
-// Home pillar cards (what I work on)
-.pillar-card {
-  display: block;
-  height: 100%;
-  background: $surface;
-  border: 1px solid $hairline;
-  border-radius: 10px;
-  padding: 1.4rem 1.5rem;
-  color: inherit !important;
-  text-decoration: none !important;
-  transition: all 0.18s ease;
-
-  &:hover {
-    border-color: $hairline-2;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px -12px rgba(28, 26, 23, 0.25);
-  }
-
-  h3 {
-    font-family: $font-family-sans-serif;
-    font-size: 0.98rem;
-    font-weight: 600;
-    margin: 0 0 0.5rem;
-    color: $ink;
-  }
-
-  p {
-    font-size: 0.87rem;
-    color: $muted;
-    line-height: 1.6;
-    margin: 0;
-  }
-
-  .pillar-dot {
-    display: inline-block;
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    margin-right: 0.5rem;
-    position: relative;
-    top: -1px;
-  }
-
-  &.pillar-dg .pillar-dot { background: $area-dg; }
-  &.pillar-css .pillar-dot { background: $area-css; }
-  &.pillar-ipe .pillar-dot { background: $area-ipe; }
-}
-
-.home-section { margin-top: 2.75rem; }
-
-.more-link {
-  font-family: $font-family-sans-serif;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: $accent-dark;
-}
-
-// ------------------------------------------------------------------
-// Research cards
-// ------------------------------------------------------------------
-.research-card {
-  height: 100%;
-  background: $surface;
-  border: 1px solid $hairline;
-  border-radius: 10px;
-  padding: 1.4rem 1.5rem;
-  cursor: pointer;
-  transition: all 0.18s ease;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px -12px rgba(28, 26, 23, 0.25);
-  }
-
-  &.active { border-width: 2px; padding: calc(1.4rem - 1px) calc(1.5rem - 1px); }
-
-  h4 {
-    font-family: $font-family-sans-serif;
-    font-size: 0.98rem;
-    font-weight: 600;
-    margin: 0 0 0.5rem;
-    border: none;
-    padding: 0;
-  }
-
-  p {
-    font-size: 0.87rem;
-    color: $muted;
-    margin: 0;
-    line-height: 1.6;
+    &:hover { border-bottom-width: 2px; }
   }
 }
 
-.research-card-dg  { border-top: 3px solid $area-dg;  &.active { border-color: $area-dg; } }
-.research-card-css { border-top: 3px solid $area-css; &.active { border-color: $area-css; } }
-.research-card-ipe { border-top: 3px solid $area-ipe; &.active { border-color: $area-ipe; } }
+// ---------------------------------------------------------------------------
+// Publication / research entries
+// ---------------------------------------------------------------------------
 
-// ------------------------------------------------------------------
-// Publications
-// ------------------------------------------------------------------
 .pub-entry {
-  padding: 1.1rem 0;
+  padding: 1.15rem 0;
   border-bottom: 1px solid $hairline;
 
   &:last-child { border-bottom: none; }
 
-  p { margin-bottom: 0.15rem; line-height: 1.5; }
-
   .pub-title {
+    display: block;
     font-family: $font-family-serif;
-    font-weight: 600;
-    font-size: 1rem;
-    color: $ink;
+    font-size: 1.12rem;
+    font-weight: 500;
+    line-height: 1.35;
+    color: #111;
+    margin-bottom: 0.15rem;
   }
 
-  .pub-authors { font-size: 0.85rem; color: $gray-600; }
-
-  .pub-venue {
+  .pub-meta {
+    display: block;
     font-size: 0.85rem;
-    font-style: italic;
     color: $muted;
-    margin-bottom: 0.4rem !important;
+
+    em, i { color: $muted; }
+
+    a { color: $muted; }
   }
 
   .pub-links {
-    margin-top: 0.4rem;
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
 
     a {
-      font-family: $font-family-sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: $accent-dark;
-      margin-right: 0.6rem;
-
-      &:hover { color: $accent; }
+      color: #1a1a1a;
+      margin-right: 0.9rem;
     }
   }
 }
 
-.abstract-toggle {
-  font-family: $font-family-sans-serif;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: $accent-dark;
-  background: none;
-  border: 1px solid rgba($accent-dark, 0.45);
-  border-radius: 999px;
-  padding: 0.14rem 0.6rem;
-  cursor: pointer;
-  transition: all 0.15s ease;
-  margin-right: 0.6rem;
-
-  &:hover { background: $accent-dark; color: $white; }
-}
-
-.abstract-content {
-  display: none;
-  margin-top: 0.75rem;
-  padding: 1rem 1.15rem;
-  background: $gray-100;
-  border-left: 3px solid $accent;
-  border-radius: 0 6px 6px 0;
-  font-size: 0.89rem;
-  line-height: 1.7;
-  color: $gray-600;
-}
-
-// ------------------------------------------------------------------
-// Software / tool cards
-// ------------------------------------------------------------------
-.tool-card {
-  background: $surface;
-  border: 1px solid $hairline;
-  border-radius: 10px;
-  padding: 1.75rem;
-  margin-bottom: 1.5rem;
-  display: block;
-  color: inherit;
-  transition: all 0.18s ease;
-
-  &:hover {
-    border-color: $hairline-2;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px -12px rgba(28, 26, 23, 0.25);
-    text-decoration: none;
-    color: inherit;
-  }
-
-  h3 {
-    font-family: $font-family-sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 0 0 0.5rem;
-    border: none;
-    padding: 0;
-    color: $ink;
-  }
-
-  p { font-size: 0.89rem; color: $muted; margin: 0; }
-}
-
-// ------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 // Teaching
-// ------------------------------------------------------------------
+// ---------------------------------------------------------------------------
+
 .teaching-entry {
-  border: 1px solid $hairline;
-  border-left: 3px solid $accent;
-  padding: 1.1rem 1.3rem;
-  margin: 1rem 0;
-  background: $surface;
-  border-radius: 0 8px 8px 0;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid $hairline;
 
-  h4 { font-size: 1rem; margin: 0 0 0.25rem; border: none; padding: 0; }
-  p { margin-bottom: 0.5rem; font-size: 0.9rem; }
-  ul { margin-bottom: 0; li { font-size: 0.88rem; } }
+  &:last-child { border-bottom: none; }
+
+  h4 {
+    font-size: 1.12rem;
+    margin: 0 0 0.15rem 0;
+  }
+
+  p, ul {
+    font-size: 0.92rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .teaching-meta {
+    display: block;
+    font-size: 0.85rem;
+    color: $muted;
+    margin-bottom: 0.4rem;
+  }
 }
 
-// ------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 // Gallery
-// ------------------------------------------------------------------
+// ---------------------------------------------------------------------------
+
 .gallery-filters {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-  padding: 0.5rem 0;
-}
+  margin: 1.2rem 0 1.6rem 0;
 
-.filter-btn {
-  background: $surface;
-  border: 1px solid $hairline-2;
-  border-radius: 999px;
-  padding: 0.35rem 1rem;
-  font-family: $font-family-sans-serif;
-  font-weight: 500;
-  font-size: 0.82rem;
-  color: $gray-600;
-  cursor: pointer;
-  transition: all 0.15s ease;
+  .filter-btn {
+    background: none;
+    border: none;
+    border-bottom: 1px solid transparent;
+    padding: 0.2rem 0;
+    margin-right: 1.4rem;
+    font-family: $font-family-sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $muted;
+    cursor: pointer;
 
-  &:hover { border-color: $accent; color: $accent-dark; }
+    &:hover { color: #000; }
 
-  &.active {
-    background: $ink;
-    border-color: $ink;
-    color: $paper;
+    &.active {
+      color: #000;
+      border-bottom-color: #000;
+    }
   }
 }
 
 .gallery-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  border: 1px solid $hairline;
-  transition: border-color 0.2s ease;
+  img { border-radius: 2px; }
 
-  &:hover {
-    border-color: $hairline-2;
-    figcaption { opacity: 1 !important; }
-  }
-
-  .quarto-figure { margin: 0 !important; padding: 0 !important; }
-
-  figure, figure.figure {
-    margin: 0 !important;
-    padding: 0 !important;
-    position: relative;
-
-    > p { margin: 0 !important; padding: 0 !important; line-height: 0; }
-
-    img, img.figure-img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      display: block;
-      margin: 0 !important;
-    }
-
-    figcaption {
-      position: absolute !important;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0) 100%);
-      color: $white;
-      padding: 2.5rem 0.85rem 0.85rem;
-      font-family: $font-family-sans-serif;
-      font-size: 0.78rem;
-      line-height: 1.4;
-      opacity: 0;
-      transition: opacity 0.25s ease;
-      margin: 0 !important;
-
-      a { color: #f4b393; text-decoration: underline; }
-    }
+  figcaption {
+    font-size: 0.78rem;
+    color: $muted;
+    line-height: 1.4;
   }
 }
 
-@media (max-width: 768px) {
-  .gallery-filters { overflow-x: auto; justify-content: flex-start; flex-wrap: nowrap; }
-  .filter-btn { flex-shrink: 0; }
-  #gallery-container { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important; }
+// ---------------------------------------------------------------------------
+// Misc cleanup
+// ---------------------------------------------------------------------------
+
+.quarto-title-block .quarto-title h1.title:not(.hero-name) {
+  font-size: 1.9rem;
+  margin-bottom: 2rem;
 }
 
-@media (max-width: 480px) {
-  #gallery-container { grid-template-columns: 1fr !important; }
-}
-
-// ------------------------------------------------------------------
-// Misc components
-// ------------------------------------------------------------------
-blockquote {
-  border-left: 3px solid $accent;
-  padding: 1rem 1.25rem;
-  margin: 1.5rem 0;
-  background: $gray-100;
-  border-radius: 0 6px 6px 0;
-  font-style: italic;
-  color: $gray-600;
-}
-
-pre {
-  background: $gray-100;
-  border: 1px solid $hairline;
-  border-radius: 8px;
-  padding: 1.15rem;
-  margin-bottom: 1.5rem;
-  font-size: 0.87em;
-}
-
-code {
-  color: $accent-dark;
-  background-color: $gray-100;
-  padding: 0.15em 0.4em;
-  border-radius: 4px;
-  font-size: 0.88em;
-}
-
-.walkthrough-img {
-  border: 1px solid $hairline;
-  border-radius: 8px;
-  margin: 1.25rem 0;
-  max-width: 100%;
-
-  &:hover { border-color: $hairline-2; }
-}
-
-.panel-tabset {
-  .nav-tabs {
-    border-bottom: 1px solid $hairline;
-
-    .nav-link {
-      font-family: $font-family-sans-serif;
-      font-weight: 500;
-      font-size: 0.88rem;
-      color: $gray-600;
-      border: none;
-      border-bottom: 2px solid transparent;
-      border-radius: 0;
-      padding: 0.5rem 1rem;
-      transition: all 0.15s ease;
-
-      &:hover { color: $ink; border-bottom-color: $hairline-2; background: none; }
-
-      &.active {
-        color: $accent-dark;
-        border-bottom-color: $accent;
-        background: none;
-        font-weight: 600;
-      }
-    }
-  }
-}
-
-#quarto-margin-sidebar .nav-link {
-  font-family: $font-family-sans-serif;
-  font-size: 0.82rem;
-}
-
-.nav-footer {
-  font-family: $font-family-sans-serif;
-  font-size: 0.82rem;
-  border-top: 1px solid $hairline;
-}
-
-// Color scheme toggle — lightbulb icon (light mode: outline bulb)
-.quarto-color-scheme-toggle {
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  color: $gray-600 !important;
-  width: 36px;
-  height: 36px;
-  transition: background-color 0.15s ease;
-
-  &:hover { background-color: $gray-100 !important; }
-
-  .bi {
-    display: inline-block !important;
-    width: 18px;
-    height: 18px;
-    background-color: transparent !important;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23575046'><path d='M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6m6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1'/><path d='M5.5 15a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15.5a.5.5 0 0 1 0-1z'/></svg>") !important;
-    background-size: 18px 18px !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-    mask: none !important;
-    -webkit-mask: none !important;
-
-    &::before, &::after { content: none !important; display: none !important; }
-  }
-}
-
-// Responsive
-@media (max-width: 767px) {
-  h1 { font-size: 1.8rem; }
-  h2 { font-size: 1.3rem; }
-  h3 { font-size: 1.1rem; }
-
-  .home-hero { padding-top: 1rem; }
-}
+#quarto-back-to-top { display: none; }

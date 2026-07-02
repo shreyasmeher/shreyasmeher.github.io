@@ -4,119 +4,28 @@
     "href": "teaching.html",
     "title": "Teaching",
     "section": "",
-    "text": "2025–2026, Period 4 | Erasmus School of Social and Behavioural Sciences\n\nSupervising Group 16 in the MISOC Bachelor Project\nCourse materials (password protected)\n\n\n\n\n2025–2026, Block 3 | Erasmus School of Social and Behavioural Sciences, 7.5 EC\n\nTaught quantitative research design for policy evaluation, including causal inference and panel data estimation\nLed R programming labs with hands-on analysis using real policy datasets\nGuided students through policy proposal development using quantitative evidence\n\n\n\n\nAugust 2024 | University of Texas at Dallas, R Programming and Data Analysis\n\nCreated and maintained course website eppsmathcodingcamp.github.io\nTaught R programming fundamentals, data manipulation (dplyr), and visualization (ggplot2)\nDeveloped interactive tutorials and exercises for 5-day intensive program"
+    "text": "Erasmus University Rotterdam · 2025–2026 Quantitative research design for policy evaluation, including causal inference and panel data estimation, with hands-on R programming labs using real policy datasets.\n\n\n\nErasmus University Rotterdam · 2025–2026 Supervising the MISOC Bachelor Project (Group 16). Course materials (password protected).\n\n\n\nThe University of Texas at Dallas · August 2024 Five-day intensive for incoming Ph.D. students: R programming, data manipulation, and visualization. Course website: eppsmathcodingcamp.github.io."
   },
   {
-    "objectID": "teaching.html#lead-instructor",
-    "href": "teaching.html#lead-instructor",
+    "objectID": "teaching.html#instructor",
+    "href": "teaching.html#instructor",
     "title": "Teaching",
     "section": "",
-    "text": "2025–2026, Period 4 | Erasmus School of Social and Behavioural Sciences\n\nSupervising Group 16 in the MISOC Bachelor Project\nCourse materials (password protected)\n\n\n\n\n2025–2026, Block 3 | Erasmus School of Social and Behavioural Sciences, 7.5 EC\n\nTaught quantitative research design for policy evaluation, including causal inference and panel data estimation\nLed R programming labs with hands-on analysis using real policy datasets\nGuided students through policy proposal development using quantitative evidence\n\n\n\n\nAugust 2024 | University of Texas at Dallas, R Programming and Data Analysis\n\nCreated and maintained course website eppsmathcodingcamp.github.io\nTaught R programming fundamentals, data manipulation (dplyr), and visualization (ggplot2)\nDeveloped interactive tutorials and exercises for 5-day intensive program"
+    "text": "Erasmus University Rotterdam · 2025–2026 Quantitative research design for policy evaluation, including causal inference and panel data estimation, with hands-on R programming labs using real policy datasets.\n\n\n\nErasmus University Rotterdam · 2025–2026 Supervising the MISOC Bachelor Project (Group 16). Course materials (password protected).\n\n\n\nThe University of Texas at Dallas · August 2024 Five-day intensive for incoming Ph.D. students: R programming, data manipulation, and visualization. Course website: eppsmathcodingcamp.github.io."
   },
   {
     "objectID": "teaching.html#teaching-assistant",
     "href": "teaching.html#teaching-assistant",
     "title": "Teaching",
     "section": "Teaching Assistant",
-    "text": "Teaching Assistant\n\nEPPS 6313: Introduction to Quantitative Methods\nTeaching Assistant for Dr. Pengfei Zhang\n\nLed weekly STATA lab sessions focusing on regression analysis\nGuided students through practical applications of statistical methods\n\n\n\nEPPS 6316: Applied Regression\nTeaching Assistant for Dr. Vito D’Orazio\n\nConducted advanced R programming labs\nFocused on complex regression techniques and econometric analysis"
-  },
-  {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
-    "section": "",
-    "text": "My research uses computational methods to address questions in three areas. Click a card to learn more."
-  },
-  {
-    "objectID": "research.html#digital-governance-censorship",
-    "href": "research.html#digital-governance-censorship",
-    "title": "Research",
-    "section": "Digital Governance & Censorship",
-    "text": "Digital Governance & Censorship\nElectoral Accountability and Government Content Removal: Theory and Evidence from Google Transparency Reports with Pengfei Zhang | Under Review\nHow does regime type shape a state’s intervention in its information environment? We develop a political agency model showing that democratic governments refrain from direct takedowns and delegate to courts because electoral accountability disciplines politicians through reputation-building incentives. Using Google transparency reports and quasi-experimental variation in election timing, we show that takedown requests from democratic governments decline significantly as elections approach, a reputational discipline effect absent in authoritarian regimes and other request types.\nTwo Types of Censorship? An Assessment of the Informational Autocracy Thesis with Pengfei Zhang | Under Review\nTesting how Guriev & Treisman’s Informational Autocracy theory applies to internet filtering practices in autocratic nations.\nDissertation: Digital Sovereignty: The Political Economy of Internet Governance Slides"
-  },
-  {
-    "objectID": "research.html#computational-social-science-nlp",
-    "href": "research.html#computational-social-science-nlp",
-    "title": "Research",
-    "section": "Computational Social Science & NLP",
-    "text": "Computational Social Science & NLP\nExtractive versus Generative Language Models for Political Conflict Text Classification with Patrick T. Brandt, Sultan Alsarra, Vito D’Orazio, Dagmar Heintze, Latifur Khan, Javier Osorio, and Marcus Sianan Political Analysis | Link | Slides | Code\nConflLlama: Domain-Specific Adaptation of Large Language Models for Conflict Event Classification with Patrick T. Brandt Research & Politics | Link | Slides | Code\nBuild, Borrow, or Just Fine-Tune? A Political Scientist’s Guide to Choosing NLP Models | Under Review Draft [PDF] | Code\nEvent Horizon: Revolutionizing Data Annotation with Reinforcement Learning | Working Paper Model on Hugging Face\nConfliBERT Documentation View Manual"
-  },
-  {
-    "objectID": "research.html#democratic-institutions-backsliding",
-    "href": "research.html#democratic-institutions-backsliding",
-    "title": "Research",
-    "section": "Democratic Institutions & Backsliding",
-    "text": "Democratic Institutions & Backsliding\nBuilding Capacity or Building Checks? What EU Enlargement Reports Emphasise and Democratic Backsliding with Asya Zhelyazkova & Clara Egger | Working Paper (EPSS 2026, Belfast)\nDoes the European Commission’s enlargement reporting emphasise executive strength over institutional checks on executive power, and does that emphasis track later democratic backsliding? We use large language models to content-analyse the Commission’s progress reports for 23 candidate countries (105,971 sentences across 207 country-years, 1998–2023), separating what each report emphasises (compliance and state capacity versus judicial, legislative, civic, and media checks) from how it assesses each domain. Relating both measures to the V-Dem Liberal Democracy Index, we find that the Commission’s assessments track subsequent democratic outcomes while its relative emphasis does not. Emphasis is nonetheless associated with later decline where judicial constraints are weak.\nThe Attention Trap: How International Celebrity Intervention Displaces Policy Discourse in Protest Movements | Working Paper Draft [PDF]\nDoes international celebrity attention help or hinder social movements? Analysing 1.08 million tweets from the 2020–2021 Indian farmer protests, I measure the effect of celebrity attention shocks on protest discourse. When Rihanna tweeted about the protests on 2 February 2021, daily volume rose 22-fold, but the share of tweets discussing policy issues fell by 10 percentage points while celebrity and meta-commentary rose by 45 percentage points. I call this the attention trap: celebrity intervention maximises visibility while displacing the substantive discourse movements depend on. Local projection impulse responses show this displacement is specific to the celebrity channel: domestic events, including state violence at Lakhimpur Kheri, generate policy-focused responses without comparable displacement. The cost was strategically exploitable: the BJP launched a coordinated nationalist counter-campaign within hours, on discursive terrain made favourable by the displacement itself.\nLegislating Without Scrutiny: Executive Aggrandizement and Democratic Erosion in India | Working Paper Draft [PDF]\nIn September 2020, India’s Parliament passed three farm laws after under two hours of debate, with no committee referral: a procedural collapse, not an aberration. Under the BJP-led NDA, committee referral rates fell from 73% to 6%, and bills that once took nearly a year now clear Parliament in weeks. Drawing on 1,008 parliamentary bills, automated text analysis of 881 central acts, and cross-national democracy indicators, I document a systematic pattern of executive aggrandizement: the legal, incremental expansion of executive power at the expense of parliament, the judiciary, subnational governments, and citizens. A synthetic control analysis shows India’s judicial constraints declined significantly after 2014 (ATT = -0.051, p = 0.024); all eight V-Dem democracy indicators I examine declined under the NDA even after controlling for pre-existing trends.\nStrategic Anticipation and Expert Review: The Determinants of Critical Advisory Opinions from the Dutch Council of State with Clara Egger & Asya Zhelyazkova | Under Review\nWhat determines whether an expert advisory body issues a critical opinion on a legislative proposal? Drawing on a novel dataset of 2,898 advisory opinions issued by the Dutch Council of State (Raad van State) between 2004 and 2025 (2,111 on laws and 785 on executive decrees), we test five competing mechanisms. Instrument type is the strongest predictor of opinion severity: executive decrees receive dramatically milder treatment, with 69% drawing no objections compared to just 13% for laws. Among laws, junior coalition partners attract significantly less critical opinions than leading parties, consistent with anticipatory compliance. Ideological distance from the cabinet median matters, though the effect is modest. The Council’s most consequential effects operate through institutional deference to delegated legislation and the anticipatory self-discipline of politically exposed actors.\nFramework Laws and Fading Oversight: How the Dutch Executive Expanded Its Lawmaking Authority with Clara Egger & Asya Zhelyazkova | Under Review\nExamining executive predominance in the Netherlands using a legislative dataset spanning 2000–2025. Roughly 75% of legislation now takes the form of secondary executive acts, while MPs retreat toward weaker oversight tools.\nPopulism and Investment Treaties with Clint Peinhardt | Working Paper\nInvestigating how nationalist rhetoric influences countries’ decisions to exit international investment agreements.\nIGO Withdrawal Networks | Working Paper\nExtending Borzyskowski & Vabulas (2019) to examine network effects in international organization withdrawals.\nMedia Polarization in International News Coverage with Arslan Khalid & Kiwan Park | Working Paper\nUsing machine learning to analyze ideological patterns in international news coverage across 200,000+ articles.\nPublic Health Advocacy in Times of Pandemic: An Analysis of the Medicare-For-All Debate on Twitter During COVID-19 with Sushant Kumar & Pengfei Zhang Behavioral Sciences | Link | Code"
+    "text": "Teaching Assistant\n\nThe University of Texas at Dallas · 2020–2023 Research Design (EPPS 2301) · Class, Status, and Power (SOC 4302) · Political Economy of Industrialized Countries (IPEC 4301) · Government and Politics of Afghanistan (PSCI 4396) · Applied Regression (EPPS 6316) · Political Violence and Conflict in Cyberspace (PPPE/PSCI 6302) · Introduction to Quantitative Methods (EPPS 6313) · Foreign Aid and Development (IPEC/PSCI 4318)"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Shreyas Meher",
     "section": "",
-    "text": "Postdoctoral Researcher · Erasmus University Rotterdam\n\n\nI study how governments control information online, and how democratic institutions erode.\nAs a postdoctoral researcher at Erasmus University Rotterdam, I pursue these questions on the TWIN4DEM project with Clara Egger and Asya Zhelyazkova, where we build machine learning frameworks that model democratic processes and stress-test institutional resilience, including digital twins of executive aggrandizement in parliamentary democracies.\nMy toolkit is computational: fine-tuned language models, text-as-data pipelines, and causal research designs. My work has appeared in Political Analysis, Research & Politics, and Behavioral Sciences, and my NLP models for political conflict were developed through the NSF-funded ConfliBERT project with Patrick T. Brandt. I earned my Ph.D. in Public Policy & Political Economy from the University of Texas at Dallas in 2025.\nDigital Governance Computational Social Science NLP & LLMs Democratic Backsliding Reinforcement Learning\n\nExplore my research Publications CV (PDF)\n\n\n\n\n\n\nmeher@essb.eur.nl Rotterdam, the Netherlands"
-  },
-  {
-    "objectID": "index.html#what-i-work-on",
-    "href": "index.html#what-i-work-on",
-    "title": "Shreyas Meher",
-    "section": "What I work on",
-    "text": "What I work on\n\n  \n    \n      Digital Governance\n      Who censors, and why? I study government content takedowns in democracies, internet filtering in autocracies, and the political economy of digital sovereignty.\n    \n  \n  \n    \n      Computational Social Science\n      I build specialized language models, such as ConfliBERT and ConflLlama, that turn unstructured political text into structured data for conflict research.\n    \n  \n  \n    \n      Democratic Backsliding\n      How do executives expand power inside democratic frameworks? I study legislative oversight, executive aggrandizement, and institutional resilience."
-  },
-  {
-    "objectID": "index.html#selected-work",
-    "href": "index.html#selected-work",
-    "title": "Shreyas Meher",
-    "section": "Selected work",
-    "text": "Selected work\n\nExtractive versus Generative Language Models for Political Conflict Text Classification Political Analysis, 2025 · with Brandt, Alsarra, D’Orazio, Heintze, Khan, Osorio & Sianan\n\n\nConflLlama: Domain-Specific Adaptation of Large Language Models for Conflict Event Classification Research & Politics, 2025 · with Patrick T. Brandt\n\n\nBuilding Capacity or Building Checks? What EU Enlargement Reports Emphasise and Democratic Backsliding Working paper, EPSS 2026 (Belfast) · with Asya Zhelyazkova & Clara Egger\n\nAll publications →"
-  },
-  {
-    "objectID": "index.html#currently",
-    "href": "index.html#currently",
-    "title": "Shreyas Meher",
-    "section": "Currently",
-    "text": "Currently\nAt Erasmus, I work on the TWIN4DEM project with Clara Egger and Asya Zhelyazkova, building machine learning frameworks for modeling democratic processes and assessing institutional resilience, including digital twins of executive aggrandizement in parliamentary democracies.\nDigital Governance Computational Social Science NLP & LLMs Democratic Backsliding Reinforcement Learning"
-  },
-  {
-    "objectID": "conflibert-gui.html",
-    "href": "conflibert-gui.html",
-    "title": "ConfliBERT GUI",
-    "section": "",
-    "text": "A browser-based NLP toolkit for conflict and political violence text analysis. Built on ConfliBERT, the GUI provides an accessible interface for named entity recognition, text classification, question answering, and model fine-tuning, with no coding required.\nGitHub | Developed with Sultan Alsarra"
-  },
-  {
-    "objectID": "conflibert-gui.html#features",
-    "href": "conflibert-gui.html#features",
-    "title": "ConfliBERT GUI",
-    "section": "Features",
-    "text": "Features\n\nNamed Entity Recognition: Identify organizations, persons, locations, weapons, and temporal expressions in conflict text\nBinary Classification: Determine if text describes a conflict event, with confidence scores\nMultilabel Classification: Categorize text into event types: Armed Assault, Bombing/Explosion, Kidnapping, Other\nQuestion Answering: Extract answers from conflict-related passages\nFine-Tuning: Train custom classifiers with LoRA/QLoRA on your own data, with seven base architectures\nBatch Processing: Upload CSVs for bulk analysis"
-  },
-  {
-    "objectID": "conflibert-gui.html#walkthrough",
-    "href": "conflibert-gui.html#walkthrough",
-    "title": "ConfliBERT GUI",
-    "section": "Walkthrough",
-    "text": "Walkthrough\n\nHome\nThe landing page lets you select your task and input text directly or upload a CSV for batch processing.\n\n\n\nNamed Entity Recognition\nPaste any conflict-related text and the model identifies and color-codes named entities: persons, organizations, locations, weapons, and more.\n\n\n\nText Classification\nBinary classification determines whether text describes a conflict event. Results include confidence scores for each class.\n\n\n\nMultilabel Classification\nEach text is scored against four event categories independently, useful for texts describing multiple event types.\n\n\n\nQuestion Answering\nEnter a passage and a question. The model extracts the relevant answer span directly from the text.\n\n\n\nFine-Tuning\nTrain custom classifiers on your labeled data. Select a base model, upload training/validation sets, configure hyperparameters, and monitor training progress."
-  },
-  {
-    "objectID": "conflibert-gui.html#installation",
-    "href": "conflibert-gui.html#installation",
-    "title": "ConfliBERT GUI",
-    "section": "Installation",
-    "text": "Installation\n# Clone the repository\ngit clone https://github.com/shreyasmeher/conflibert-gui.git\ncd conflibert-gui\n\n# Create virtual environment\npython -m venv env\nsource env/bin/activate  # Mac/Linux\n# env\\Scripts\\activate   # Windows\n\n# Install dependencies\npip install -r requirements.txt\n\n# Run\npython app.py\n# Open http://localhost:7860\nRequirements: Python 3.8+, PyTorch, Transformers, Gradio"
-  },
-  {
-    "objectID": "conflibert-gui.html#models",
-    "href": "conflibert-gui.html#models",
-    "title": "ConfliBERT GUI",
-    "section": "Models",
-    "text": "Models\n\n\n\n\n\n\n\nTask\nModel\n\n\n\n\nNER\neventdata-utd/conflibert-named-entity-recognition\n\n\nBinary Classification\neventdata-utd/conflibert-binary-classification\n\n\nMultilabel\neventdata-utd/conflibert-satp-relevant-multilabel\n\n\nQuestion Answering\nsalsarra/ConfliBERT-QA"
-  },
-  {
-    "objectID": "conflibert-gui.html#citation",
-    "href": "conflibert-gui.html#citation",
-    "title": "ConfliBERT GUI",
-    "section": "Citation",
-    "text": "Citation\n@inproceedings{hu2022conflibert,\n  title={ConfliBERT: A Pre-trained Language Model for Political Conflict and Violence},\n  author={Hu, Yibo and Hosseini, MohammadSaleh and Parolin, Erick Skorupa\n          and Osorio, Javier and Khan, Latifur and Brandt, Patrick and D'Orazio, Vito},\n  booktitle={Proceedings of NAACL-HLT 2022},\n  pages={5469--5482},\n  year={2022}\n}"
+    "text": "Postdoctoral researcher at Erasmus University Rotterdam. I study how governments control information online, and how democratic institutions erode.\nOn the TWIN4DEM project (Horizon Europe), I build machine learning models of democratic resilience and executive aggrandizement in parliamentary democracies. My broader work uses fine-tuned language models and causal research designs to study censorship, digital governance, and political conflict, including the NSF-funded ConfliBERT family of models.\nMy research has appeared in Political Analysis, Research & Politics, and Behavioral Sciences. I received my Ph.D. in Public Policy & Political Economy from the University of Texas at Dallas in 2025.\n\nResearch Teaching CV\n\n\n\n\n\nmeher@essb.eur.nl Rotterdam, the Netherlands"
   },
   {
     "objectID": "bachelor-project/walkthroughs/ols-regression.html",
@@ -158,7 +67,7 @@
     "href": "bachelor-project/walkthroughs/ols-regression.html#fitting-the-model",
     "title": "OLS Regression: A Walkthrough",
     "section": "5 Fitting the model",
-    "text": "5 Fitting the model\nThe model is\n\n\\text{trust}_i = \\beta_0 + \\beta_1 \\, \\text{sm\\_news}_i + \\beta_2 \\, \\text{encrypted}_i + \\beta_3 \\, \\text{source\\_div}_i + \\mathbf{X}_i' \\boldsymbol{\\gamma} + \\varepsilon_i\n\nwhere \\mathbf{X}_i is the vector of categorical controls (country, education, ideology) plus age. Estimating it in R is one line:\n\nm1 &lt;- lm(trust_elections ~ sm_news_hrs + encrypted + source_div +\n                           age + country + education + ideology,\n         data = dat)\n\nThat is the model. Everything below is interpretation and checking."
+    "text": "5 Fitting the model\nThe model is\n\\[\n\\text{trust}_i = \\beta_0 + \\beta_1 \\, \\text{sm\\_news}_i + \\beta_2 \\, \\text{encrypted}_i + \\beta_3 \\, \\text{source\\_div}_i + \\mathbf{X}_i' \\boldsymbol{\\gamma} + \\varepsilon_i\n\\]\nwhere \\(\\mathbf{X}_i\\) is the vector of categorical controls (country, education, ideology) plus age. Estimating it in R is one line:\n\nm1 &lt;- lm(trust_elections ~ sm_news_hrs + encrypted + source_div +\n                           age + country + education + ideology,\n         data = dat)\n\nThat is the model. Everything below is interpretation and checking."
   },
   {
     "objectID": "bachelor-project/walkthroughs/ols-regression.html#reading-the-output",
@@ -298,14 +207,14 @@
     "href": "Gallery.html",
     "title": "Gallery",
     "section": "",
-    "text": "A visual timeline of my academic and personal journey, from starting my PhD in Texas to my current research in the Netherlands.\n\nAll Texas Life Conferences Graduation Netherlands\n\n\n\n\n\n\nBeginning the PhD journey. I was told there would be no math. I was lied to.\n\n\n\n\n\n\n\nSocial distancing on campus. My research on network effects suddenly felt very relevant.\n\n\n\n\n\n\n\nMade it through Houston traffic. NASA launches are less stressful.\n\n\n\n\n\n\n\nMy two-wheeled, dissertation-escape vehicle. Faster than debugging code. Usually.\n\n\n\n\n\n\n\nProof that I did, occasionally, leave the library. A Texas sunset.\n\n\n\n\n\n\n\nMore sunsets, for econometric modeling purposes, of course.\n\n\n\n\n\n\n\nA sign of my future move to the Netherlands? Or just a pretty flower? You decide.\n\n\n\n\n\n\n\nAnother sign? The p-value on this hypothesis is getting suspiciously low.\n\n\n\n\n\n\n\nMPSA Conference in Chicago. I came for the political science, I stayed for the deep-dish pizza.\n\n\n\n\n\n\n\nMPSA dress code: academic with a hint of resisting the dark side at the Palmer House Hotel.\n\n\n\n\n\n\n\nThe Great North American Eclipse. My models did not predict this.\n\n\n\n\n\n\n\nVerifying the eclipse data with a secondary source. It was, in fact, dark.\n\n\n\n\n\n\n\nMy official submission for the next Texas tourism campaign. Howdy, y’all.\n\n\n\n\n\n\n\nSIOE Conference at the University of Chicago. Trying to absorb knowledge via osmosis.\n\n\n\n\n\n\n\nSIOE, with my co-author Pengfei Zhang and Satoshi Fukuda of Bocconi University.\n\n\n\n\n\n\n\nSIOE’s dinner cruise. A statistical analysis of keeping 200 academics from falling into the Chicago River.\n\n\n\n\n\n\n\nChicago at night: stunning enough to make you forgive the wind’s personal vendetta.\n\n\n\n\n\n\n\nTeaching R and Python at the EPPS Math & Coding Camp with the legendary Dr. Karl Ho.\n\n\n\n\n\n\n\nAPSA Annual Meeting in Philadelphia. City of brotherly love… until the Q&A session starts.\n\n\n\n\n\n\n\nAPSA attendees trying to support each other through the job market cycle.\n\n\n\n\n\n\n\nA founding father once said, “Life, liberty, and the pursuit of melted cheese.”\n\n\n\n\n\n\n\nExplaining the finer points of PC building to my colleague, Crystal Conway. Step 1: More RGB.\n\n\n\n\n\n\n\nAPPAM Conference at National Harbor. The weather was a strong incentive to stay inside and discuss policy.\n\n\n\n\n\n\n\nThe obligatory conference headshot. Now you know what I look like in front of a blue background.\n\n\n\n\n\n\n\nThe Gaylord National’s Christmas tree during APPAM. My data visualizations are rarely this festive.\n\n\n\n\n\n\n\nViews from the terminal: powered by caffeine, conference talks, and endless boarding announcements.\n\n\n\n\n\n\n\nCelebrating a birthday with friends and colleagues at UT Dallas.\n\n\n\n\n\n\n\nVisiting the Crow Museum of Asian Art at UT Dallas.\n\n\n\n\n\n\n\nThe “Life is a Cosmos” installation at the Crow Museum.\n\n\n\n\n\n\n\nSuccessfully defended! So grateful for my dissertation committee: (L-R) Dr. Elizabeth Searing, Dr. Pengfei Zhang, Dr. Clint Peinhardt, & Dr. Patrick Brandt.\n\n\n\n\n\n\n\nSan Francisco’s iconic trams. Pretty sure this was also a sign.\n\n\n\n\n\n\n\nDoctoral Hooding Ceremony with Pengfei and our colleague Robert Geibler.\n\n\n\n\n\n\n\nAll smiles at the hooding ceremony. The hat is more aerodynamic than it looks.\n\n\n\n\n\n\n\nWe did it! Celebrating with fellow graduates Dohyo and Ricardo.\n\n\n\n\n\n\n\nFound a serene lake just outside Rotterdam. My new favorite thinking spot.\n\n\n\n\n\n\n\nIt’s not truly the Netherlands until you find a traditional windmill. Check.\n\n\n\n\n\n\n\nRotterdam in bloom. The cherry blossoms have a higher R² with my mood than any of my regressions.\n\n\n\n\n\n\n\n\n Back to top"
+    "text": "A visual timeline of my academic and personal journey, from starting my PhD in Texas to my current research in the Netherlands.\n\nAll Texas Life Conferences Graduation Netherlands\n\n\n\n\n\n\nBeginning the PhD journey. I was told there would be no math. I was lied to.\n\n\n\n\n\n\n\nSocial distancing on campus. My research on network effects suddenly felt very relevant.\n\n\n\n\n\n\n\nMade it through Houston traffic. NASA launches are less stressful.\n\n\n\n\n\n\n\nMy two-wheeled, dissertation-escape vehicle. Faster than debugging code. Usually.\n\n\n\n\n\n\n\nProof that I did, occasionally, leave the library. A Texas sunset.\n\n\n\n\n\n\n\nMore sunsets, for econometric modeling purposes, of course.\n\n\n\n\n\n\n\nA sign of my future move to the Netherlands? Or just a pretty flower? You decide.\n\n\n\n\n\n\n\nAnother sign? The p-value on this hypothesis is getting suspiciously low.\n\n\n\n\n\n\n\nMPSA Conference in Chicago. I came for the political science, I stayed for the deep-dish pizza.\n\n\n\n\n\n\n\nMPSA dress code: academic with a hint of resisting the dark side at the Palmer House Hotel.\n\n\n\n\n\n\n\nThe Great North American Eclipse. My models did not predict this.\n\n\n\n\n\n\n\nVerifying the eclipse data with a secondary source. It was, in fact, dark.\n\n\n\n\n\n\n\nMy official submission for the next Texas tourism campaign. Howdy, y’all.\n\n\n\n\n\n\n\nSIOE Conference at the University of Chicago. Trying to absorb knowledge via osmosis.\n\n\n\n\n\n\n\nSIOE, with my co-author Pengfei Zhang and Satoshi Fukuda of Bocconi University.\n\n\n\n\n\n\n\nSIOE’s dinner cruise. A statistical analysis of keeping 200 academics from falling into the Chicago River.\n\n\n\n\n\n\n\nChicago at night: stunning enough to make you forgive the wind’s personal vendetta.\n\n\n\n\n\n\n\nTeaching R and Python at the EPPS Math & Coding Camp with the legendary Dr. Karl Ho.\n\n\n\n\n\n\n\nAPSA Annual Meeting in Philadelphia. City of brotherly love… until the Q&A session starts.\n\n\n\n\n\n\n\nAPSA attendees trying to support each other through the job market cycle.\n\n\n\n\n\n\n\nA founding father once said, “Life, liberty, and the pursuit of melted cheese.”\n\n\n\n\n\n\n\nExplaining the finer points of PC building to my colleague, Crystal Conway. Step 1: More RGB.\n\n\n\n\n\n\n\nAPPAM Conference at National Harbor. The weather was a strong incentive to stay inside and discuss policy.\n\n\n\n\n\n\n\nThe obligatory conference headshot. Now you know what I look like in front of a blue background.\n\n\n\n\n\n\n\nThe Gaylord National’s Christmas tree during APPAM. My data visualizations are rarely this festive.\n\n\n\n\n\n\n\nViews from the terminal: powered by caffeine, conference talks, and endless boarding announcements.\n\n\n\n\n\n\n\nCelebrating a birthday with friends and colleagues at UT Dallas.\n\n\n\n\n\n\n\nVisiting the Crow Museum of Asian Art at UT Dallas.\n\n\n\n\n\n\n\nThe “Life is a Cosmos” installation at the Crow Museum.\n\n\n\n\n\n\n\nSuccessfully defended! So grateful for my dissertation committee: (L-R) Dr. Elizabeth Searing, Dr. Pengfei Zhang, Dr. Clint Peinhardt, & Dr. Patrick Brandt.\n\n\n\n\n\n\n\nSan Francisco’s iconic trams. Pretty sure this was also a sign.\n\n\n\n\n\n\n\nDoctoral Hooding Ceremony with Pengfei and our colleague Robert Geibler.\n\n\n\n\n\n\n\nAll smiles at the hooding ceremony. The hat is more aerodynamic than it looks.\n\n\n\n\n\n\n\nWe did it! Celebrating with fellow graduates Dohyo and Ricardo.\n\n\n\n\n\n\n\nFound a serene lake just outside Rotterdam. My new favorite thinking spot.\n\n\n\n\n\n\n\nIt’s not truly the Netherlands until you find a traditional windmill. Check.\n\n\n\n\n\n\n\nRotterdam in bloom. The cherry blossoms have a higher R² with my mood than any of my regressions."
   },
   {
     "objectID": "bachelor-project/index.html",
     "href": "bachelor-project/index.html",
     "title": "Bachelor Project 2025–2026",
     "section": "",
-    "text": "Bachelor Project Materials\n    Enter the password provided by your supervisor.\n    \n    Access Materials\n    Incorrect password. Please try again.\n  \n\n\n\n\n\n  \n    Supervisor: Dr. Shreyas Meher · meher@essb.eur.nl\n    Meetings: Thursdays, Mandeville T5-114\n    Final submission: June 25, 2026 via Canvas\n  \n\n  \n    Groups and time slots (from Meeting 2 onwards)\n    Group A · 12:00–13:20 · text-as-data / cross-national\n    Kate Domnikoff, Lea Géciová, Kseniya Sidorenko, Daniel Ugarte\n    Cross-feedback pairs: Kate ↔ Lea · Kseniya ↔ Daniel\n    Group B · 13:25–14:45 · case / applied / mixed\n    Anand Dev Esponda, Vince Kromberg, Francis van Luyn, Louiza Reysen\n    Cross-feedback pairs: Anand ↔ Vince · Francis ↔ Louiza\n  \n\n  Session slides are released each Thursday afternoon, after the meeting has finished. Check back weekly for new materials.\n\n  \n\n  Methods walkthroughs\n  Self-contained, runnable guides for the methods you are most likely to use in your thesis. Each one walks from raw data through estimation to reporting, with code you can copy into your own analysis.\n\n  \n\n    \n      \n        Merging Datasets: V-Dem and World Bank (R)\n        ~20 min read\n      \n      Pulling V-Dem via vdemdata and World Bank indicators via WDI, joining on ISO3 codes, diagnosing merges, and producing both a country-year panel and a cross-sectional snapshot ready for the OLS and panel walkthroughs.\n      Open walkthrough\n    \n\n    \n      \n        OLS Regression (R)\n        ~25 min read\n      \n      Simulating a working dataset, fitting lm(), reading the output, diagnostics, robust standard errors, marginal effects, and reporting in a thesis. Common pitfalls included.\n      Open walkthrough\n    \n\n    \n      \n        Panel Data Regression (R)\n        ~25 min read\n      \n      Country-by-year simulated panel, pooled OLS versus fixed effects, two-way FE with fixest, random effects, the Hausman test, and clustered standard errors.\n      Open walkthrough\n    \n\n    \n      \n        NLP Methods (Python)\n        ~30 min read\n      \n      A digital-governance discourse corpus (state control, digital rights, neutral framing), preprocessing, TF-IDF, classification with scikit-learn, LDA topic modeling, and sentiment scoring with VADER and transformers.\n      Open walkthrough\n    \n\n  \n\n\n\n\n\n\n\n Back to top"
+    "text": "Bachelor Project Materials\n    Enter the password provided by your supervisor.\n    \n    Access Materials\n    Incorrect password. Please try again.\n  \n\n\n\n\n\n  \n    Supervisor: Dr. Shreyas Meher · meher@essb.eur.nl\n    Meetings: Thursdays, Mandeville T5-114\n    Final submission: June 25, 2026 via Canvas\n  \n\n  \n    Groups and time slots (from Meeting 2 onwards)\n    Group A · 12:00–13:20 · text-as-data / cross-national\n    Kate Domnikoff, Lea Géciová, Kseniya Sidorenko, Daniel Ugarte\n    Cross-feedback pairs: Kate ↔ Lea · Kseniya ↔ Daniel\n    Group B · 13:25–14:45 · case / applied / mixed\n    Anand Dev Esponda, Vince Kromberg, Francis van Luyn, Louiza Reysen\n    Cross-feedback pairs: Anand ↔ Vince · Francis ↔ Louiza\n  \n\n  Session slides are released each Thursday afternoon, after the meeting has finished. Check back weekly for new materials.\n\n  \n\n  Methods walkthroughs\n  Self-contained, runnable guides for the methods you are most likely to use in your thesis. Each one walks from raw data through estimation to reporting, with code you can copy into your own analysis.\n\n  \n\n    \n      \n        Merging Datasets: V-Dem and World Bank (R)\n        ~20 min read\n      \n      Pulling V-Dem via vdemdata and World Bank indicators via WDI, joining on ISO3 codes, diagnosing merges, and producing both a country-year panel and a cross-sectional snapshot ready for the OLS and panel walkthroughs.\n      Open walkthrough\n    \n\n    \n      \n        OLS Regression (R)\n        ~25 min read\n      \n      Simulating a working dataset, fitting lm(), reading the output, diagnostics, robust standard errors, marginal effects, and reporting in a thesis. Common pitfalls included.\n      Open walkthrough\n    \n\n    \n      \n        Panel Data Regression (R)\n        ~25 min read\n      \n      Country-by-year simulated panel, pooled OLS versus fixed effects, two-way FE with fixest, random effects, the Hausman test, and clustered standard errors.\n      Open walkthrough\n    \n\n    \n      \n        NLP Methods (Python)\n        ~30 min read\n      \n      A digital-governance discourse corpus (state control, digital rights, neutral framing), preprocessing, TF-IDF, classification with scikit-learn, LDA topic modeling, and sentiment scoring with VADER and transformers.\n      Open walkthrough"
   },
   {
     "objectID": "bachelor-project/walkthroughs/nlp-methods.html",
@@ -487,7 +396,7 @@
     "href": "bachelor-project/walkthroughs/panel-data.html#reporting-in-your-thesis",
     "title": "Panel Data Regression: A Walkthrough",
     "section": "12 Reporting in your thesis",
-    "text": "12 Reporting in your thesis\nFor a country-year panel, a good results paragraph might read:\n\nAcross all 240 country-year observations, an additional internet shutdown is associated with a 0.012-point decrease in the V-Dem electoral democracy index, after controlling for Freedom on the Net score, log GDP per capita, internet penetration, country fixed effects, and year fixed effects (b = -0.012, country-clustered SE = 0.003, p &lt; 0.001). The Hausman test (\\chi^2 = 25.4, p &lt; 0.001) supports the fixed-effects specification over random effects. The point estimate is small but cumulative: a country that goes from zero shutdowns in a typical year to the 90th-percentile annual shutdown count (around eight events) is associated with roughly a 0.10-point drop on the V-Dem index, equivalent to moving from a flawed democracy to an electoral autocracy in the V-Dem regimes-of-the-world classification.\n\nState the specification, the cluster level, the Hausman result, and translate the coefficient into the original units before quoting it."
+    "text": "12 Reporting in your thesis\nFor a country-year panel, a good results paragraph might read:\n\nAcross all 240 country-year observations, an additional internet shutdown is associated with a 0.012-point decrease in the V-Dem electoral democracy index, after controlling for Freedom on the Net score, log GDP per capita, internet penetration, country fixed effects, and year fixed effects (b = -0.012, country-clustered SE = 0.003, p &lt; 0.001). The Hausman test (\\(\\chi^2\\) = 25.4, p &lt; 0.001) supports the fixed-effects specification over random effects. The point estimate is small but cumulative: a country that goes from zero shutdowns in a typical year to the 90th-percentile annual shutdown count (around eight events) is associated with roughly a 0.10-point drop on the V-Dem index, equivalent to moving from a flawed democracy to an electoral autocracy in the V-Dem regimes-of-the-world classification.\n\nState the specification, the cluster level, the Hausman result, and translate the coefficient into the original units before quoting it."
   },
   {
     "objectID": "bachelor-project/walkthroughs/panel-data.html#where-to-read-more",
@@ -497,122 +406,45 @@
     "text": "13 Where to read more\n\nWooldridge, Econometric Analysis of Cross Section and Panel Data, chapter 10, is the canonical reference for FE/RE.\nCameron and Miller (2015), “A Practitioner’s Guide to Cluster-Robust Inference,” Journal of Human Resources, is the source for clustering decisions.\nThe fixest documentation by Laurent Berge is excellent and includes worked examples for instrumental-variable and difference-in-differences extensions of the same syntax.\nFor data sources behind the simulated variables: V-Dem (vdemdata R package), Access Now’s #KeepItOn dataset, Freedom House Freedom on the Net, ITU/World Bank ICT indicators."
   },
   {
-    "objectID": "conflibertr.html",
-    "href": "conflibertr.html",
-    "title": "conflibertR",
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
     "section": "",
-    "text": "An R package that brings ConfliBERT, a transformer model purpose-built for conflict and political violence text, into R. Run pretrained inference, benchmark models, fine-tune custom classifiers, and compare architectures, all from your R console.\nGitHub"
+    "text": "Extractive versus Generative Language Models for Political Conflict Text Classification with P.T. Brandt, S. Alsarra, V. D’Orazio, D. Heintze, L. Khan, J. Osorio & M. Sianan · Political Analysis, 2025 Article Code Slides\n\n\nConflLlama: Domain-Specific Adaptation of Large Language Models for Conflict Event Classification with P.T. Brandt · Research & Politics, 2025 Article Code Slides\n\n\nPublic Health Advocacy in Times of Pandemic: An Analysis of the Medicare-For-All Debate on Twitter During COVID-19 with S. Kumar & P. Zhang · Behavioral Sciences, 2025 Article Code"
   },
   {
-    "objectID": "conflibertr.html#installation",
-    "href": "conflibertr.html#installation",
-    "title": "conflibertR",
-    "section": "Installation",
-    "text": "Installation\n# Install from GitHub\ndevtools::install_github(\"shreyasmeher/conflibertR\")\n\n# Set up the Python backend (run once, then restart R)\nlibrary(conflibertR)\nconflibert_install()"
-  },
-  {
-    "objectID": "conflibertr.html#named-entity-recognition",
-    "href": "conflibertr.html#named-entity-recognition",
-    "title": "conflibertR",
-    "section": "Named Entity Recognition",
-    "text": "Named Entity Recognition\nExtract persons, organizations, locations, weapons, and temporal expressions from conflict text.\nner_results &lt;- conflibert_ner(\n  \"The United Nations deployed peacekeepers to eastern Congo\n   after rebel forces attacked Goma on Tuesday.\"\n)\nner_results\n\n# Vectorized: pass multiple texts at once\nner_batch &lt;- conflibert_ner(c(\n  \"NATO forces launched airstrikes near Tripoli in March 2024.\",\n  \"President Zelenskyy met with General Syrskyi in Kyiv.\"\n))"
-  },
-  {
-    "objectID": "conflibertr.html#binary-classification",
-    "href": "conflibertr.html#binary-classification",
-    "title": "conflibertR",
-    "section": "Binary Classification",
-    "text": "Binary Classification\nDetermine whether text describes a conflict event. Returns a label, confidence score, and per-class probabilities.\nclassify_results &lt;- conflibert_classify(c(\n  \"Armed militants stormed a military outpost killing twelve soldiers.\",\n  \"The European Central Bank held interest rates steady at 4.5 percent.\",\n  \"Protesters clashed with riot police outside the parliament building.\",\n  \"A new trade agreement was signed between Japan and Australia.\"\n))\nclassify_results"
-  },
-  {
-    "objectID": "conflibertr.html#multilabel-event-classification",
-    "href": "conflibertr.html#multilabel-event-classification",
-    "title": "conflibertR",
-    "section": "Multilabel Event Classification",
-    "text": "Multilabel Event Classification\nScore text against four event categories (Armed Assault, Bombing or Explosion, Kidnapping, and Other), each evaluated independently.\nevent_results &lt;- conflibert_multilabel(c(\n  \"A car bomb exploded near the government ministry in Baghdad.\",\n  \"Gunmen kidnapped three aid workers travelling through the Sahel region.\"\n))\nevent_results"
-  },
-  {
-    "objectID": "conflibertr.html#question-answering",
-    "href": "conflibertr.html#question-answering",
-    "title": "conflibertR",
-    "section": "Question Answering",
-    "text": "Question Answering\nExtract answers directly from conflict-related passages.\ncontext &lt;- \"On 15 September 2023, ethnic clashes erupted in Manipur, India.\n  The Indian Army deployed two battalions to restore order.\n  At least 60 people were killed and over 200 injured in the violence.\"\n\nconflibert_qa(context, \"How many people were killed?\")\nconflibert_qa(context, \"Who was deployed to restore order?\")\nconflibert_qa(context, \"Where did the clashes occur?\")"
-  },
-  {
-    "objectID": "conflibertr.html#benchmarking",
-    "href": "conflibertr.html#benchmarking",
-    "title": "conflibertR",
-    "section": "Benchmarking",
-    "text": "Benchmarking\nEvaluate the pretrained binary classifier against your own labeled data.\ndata &lt;- conflibert_example(\"binary\")\nbench &lt;- conflibert_benchmark(data$test$text, data$test$label)\nbench"
-  },
-  {
-    "objectID": "conflibertr.html#fine-tuning",
-    "href": "conflibertr.html#fine-tuning",
-    "title": "conflibertR",
-    "section": "Fine-Tuning",
-    "text": "Fine-Tuning\nTrain a custom binary classifier on labeled data. The package ships with example datasets.\ndata &lt;- conflibert_example(\"binary\")\n\nresult &lt;- conflibert_finetune(\n  train  = data$train,\n  dev    = data$dev,\n  test   = data$test,\n  model  = \"ConfliBERT\",\n  task   = \"binary\",\n  epochs = 3\n)\n\ncat(\"Accuracy:\", result$metrics$accuracy, \"\\n\")\ncat(\"F1 Score:\", result$metrics$f1, \"\\n\")\nMulticlass classification is also supported:\nmc_data &lt;- conflibert_example(\"multiclass\")\n\nmc_result &lt;- conflibert_finetune(\n  train  = mc_data$train,\n  dev    = mc_data$dev,\n  test   = mc_data$test,\n  model  = \"ConfliBERT\",\n  task   = \"multiclass\",\n  epochs = 3\n)"
-  },
-  {
-    "objectID": "conflibertr.html#model-comparison",
-    "href": "conflibertr.html#model-comparison",
-    "title": "conflibertR",
-    "section": "Model Comparison",
-    "text": "Model Comparison\nCompare ConfliBERT against general-purpose transformers on the same task.\ncomparison &lt;- conflibert_compare(\n  train  = data$train,\n  dev    = data$dev,\n  test   = data$test,\n  models = c(\"ConfliBERT\", \"BERT Base Uncased\", \"DistilBERT Base\"),\n  task   = \"binary\",\n  epochs = 3\n)\ncomparison\nSee all available base models: conflibert_models()"
-  },
-  {
-    "objectID": "conflibertr.html#function-reference",
-    "href": "conflibertr.html#function-reference",
-    "title": "conflibertR",
-    "section": "Function Reference",
-    "text": "Function Reference\n\n\n\nFunction\nTask\n\n\n\n\nconflibert_ner()\nNamed entity recognition\n\n\nconflibert_classify()\nBinary conflict classification\n\n\nconflibert_multilabel()\nMultilabel event type scoring\n\n\nconflibert_qa()\nExtractive question answering\n\n\nconflibert_benchmark()\nEvaluate pretrained classifier\n\n\nconflibert_finetune()\nTrain a custom classifier\n\n\nconflibert_compare()\nCompare multiple architectures\n\n\nconflibert_example()\nLoad bundled example datasets\n\n\nconflibert_models()\nList available base models"
-  },
-  {
-    "objectID": "conflibertr.html#citation",
-    "href": "conflibertr.html#citation",
-    "title": "conflibertR",
-    "section": "Citation",
-    "text": "Citation\n@inproceedings{hu2022conflibert,\n  title={ConfliBERT: A Pre-trained Language Model for Political Conflict and Violence},\n  author={Hu, Yibo and Hosseini, MohammadSaleh and Parolin, Erick Skorupa\n          and Osorio, Javier and Khan, Latifur and Brandt, Patrick and D'Orazio, Vito},\n  booktitle={Proceedings of NAACL-HLT 2022},\n  pages={5469--5482},\n  year={2022}\n}"
-  },
-  {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Publications",
+    "objectID": "research.html#publications",
+    "href": "research.html#publications",
+    "title": "Research",
     "section": "",
-    "text": "Extractive versus Generative Language Models for Political Conflict Text Classification with P.T. Brandt, S. Alsarra, V. D’Orazio, D. Heintze, L. Khan, J. Osorio & M. Sianan Political Analysis, 2025 Abstract Link | Slides | Code We develop specialized language models for political conflict analysis that outperform general-purpose LLMs like Gemma 2, Llama 3.1, and Qwen 2.5 in accuracy, precision, and recall while being hundreds of times faster.\n\n\nConflLlama: Domain-Specific Adaptation of Large Language Models for Conflict Event Classification with P.T. Brandt Research & Politics, 2025 Abstract Link | Slides | Code We introduce ConflLlama, a specialized variant of Llama 3.1 fine-tuned for political conflict classification, demonstrating superior performance in event coding and conflict analysis tasks compared to traditional approaches.\n\n\nPublic Health Advocacy in Times of Pandemic: An Analysis of the Medicare-For-All Debate on Twitter During COVID-19 with S. Kumar & P. Zhang Behavioral Sciences, 2025 Abstract Link | Code We analyze how health advocacy groups adapted their Medicare-For-All messaging on Twitter during the COVID-19 pandemic, revealing distinct approaches to public engagement and narrative adaptation."
+    "text": "Extractive versus Generative Language Models for Political Conflict Text Classification with P.T. Brandt, S. Alsarra, V. D’Orazio, D. Heintze, L. Khan, J. Osorio & M. Sianan · Political Analysis, 2025 Article Code Slides\n\n\nConflLlama: Domain-Specific Adaptation of Large Language Models for Conflict Event Classification with P.T. Brandt · Research & Politics, 2025 Article Code Slides\n\n\nPublic Health Advocacy in Times of Pandemic: An Analysis of the Medicare-For-All Debate on Twitter During COVID-19 with S. Kumar & P. Zhang · Behavioral Sciences, 2025 Article Code"
   },
   {
-    "objectID": "publications.html#published",
-    "href": "publications.html#published",
-    "title": "Publications",
-    "section": "",
-    "text": "Extractive versus Generative Language Models for Political Conflict Text Classification with P.T. Brandt, S. Alsarra, V. D’Orazio, D. Heintze, L. Khan, J. Osorio & M. Sianan Political Analysis, 2025 Abstract Link | Slides | Code We develop specialized language models for political conflict analysis that outperform general-purpose LLMs like Gemma 2, Llama 3.1, and Qwen 2.5 in accuracy, precision, and recall while being hundreds of times faster.\n\n\nConflLlama: Domain-Specific Adaptation of Large Language Models for Conflict Event Classification with P.T. Brandt Research & Politics, 2025 Abstract Link | Slides | Code We introduce ConflLlama, a specialized variant of Llama 3.1 fine-tuned for political conflict classification, demonstrating superior performance in event coding and conflict analysis tasks compared to traditional approaches.\n\n\nPublic Health Advocacy in Times of Pandemic: An Analysis of the Medicare-For-All Debate on Twitter During COVID-19 with S. Kumar & P. Zhang Behavioral Sciences, 2025 Abstract Link | Code We analyze how health advocacy groups adapted their Medicare-For-All messaging on Twitter during the COVID-19 pandemic, revealing distinct approaches to public engagement and narrative adaptation."
-  },
-  {
-    "objectID": "publications.html#under-review",
-    "href": "publications.html#under-review",
-    "title": "Publications",
+    "objectID": "research.html#under-review",
+    "href": "research.html#under-review",
+    "title": "Research",
     "section": "Under Review",
-    "text": "Under Review\n\nStrategic Anticipation and Expert Review: The Determinants of Critical Advisory Opinions from the Dutch Council of State with C. Egger & A. Zhelyazkova Abstract Drawing on 2,898 advisory opinions issued by the Dutch Council of State (2004–2025), comprising 2,111 opinions on laws and 785 on executive decrees, we test five competing mechanisms. Instrument type is the strongest predictor of severity: executive decrees receive dramatically milder treatment (69% drawing no objections versus 13% for laws). Among laws, junior coalition partners attract significantly less critical opinions than leading parties, consistent with anticipatory compliance. Ideological distance from the cabinet median is positively associated with severity, though the effect is modest.\n\n\nFramework Laws and Fading Oversight: How the Dutch Executive Expanded Its Lawmaking Authority with C. Egger & A. Zhelyazkova Abstract Examining executive predominance in the Netherlands using a legislative dataset spanning 2000–2025. Roughly 75% of legislation now takes the form of secondary executive acts, while MPs retreat toward weaker oversight tools such as motions and parliamentary questions.\n\n\nElectoral Accountability and Government Content Removal: Theory and Evidence from Google Transparency Reports with P. Zhang Abstract How does regime type shape a state’s intervention in its information environment? We develop a political agency model showing that democratic governments refrain from direct takedowns and delegate to courts because electoral accountability disciplines politicians through reputation-building incentives. Using Google transparency reports and quasi-experimental variation in election timing, we show that takedown requests from democratic governments decline significantly as elections approach, a reputational discipline effect absent in authoritarian regimes and other request types.\n\n\nTwo Types of Censorship? An Assessment of the Informational Autocracy Thesis with P. Zhang Abstract Testing how Guriev & Treisman’s Informational Autocracy theory applies to internet filtering practices in autocratic nations.\n\n\nBuild, Borrow, or Just Fine-Tune? A Political Scientist’s Guide to Choosing NLP Models Abstract Draft [PDF] | Code A practical decision framework for political scientists choosing among domain-pretrained, fine-tuned, and commercial LLM approaches for text classification. Fine-tuning general-purpose encoders matches domain-pretrained alternatives and outperforms commercial APIs at a fraction of the cost."
+    "text": "Under Review\n\nElectoral Accountability and the Channeling of Content Removal: Theory and Evidence from Google Transparency Reports with P. Zhang\n\n\nFramework Laws and Fading Oversight: How the Dutch Executive Expanded Its Lawmaking Authority with C. Egger & A. Zhelyazkova · Revise & resubmit\n\n\nSelective Scrutiny: Single-Party Majority and the Strategic Withdrawal of Parliamentary Oversight in India Draft\n\n\nBuild, Borrow, or Just Fine-Tune? Empirical Guidelines for NLP Model Selection in Computational Social Science Draft Model\n\n\n“Why Aren’t We Talking About This?” The Attention Trap in Networked Protest Draft\n\n\nSilencing the Silencing: Media Amplification of Internet Shutdowns in India\n\n\nTwo Types of Censorship? An Assessment of the Informational Autocracy Thesis with P. Zhang"
   },
   {
-    "objectID": "publications.html#working-papers",
-    "href": "publications.html#working-papers",
-    "title": "Publications",
+    "objectID": "research.html#working-papers",
+    "href": "research.html#working-papers",
+    "title": "Research",
     "section": "Working Papers",
-    "text": "Working Papers\n\nBuilding Capacity or Building Checks? What EU Enlargement Reports Emphasise and Democratic Backsliding with A. Zhelyazkova & C. Egger To be presented at EPSS 2026, Belfast Abstract Does the European Commission’s enlargement reporting emphasise executive strength over institutional checks on executive power, and does that emphasis track later democratic backsliding? Building on Meyerrose’s argument that international democracy support can strengthen executives at the expense of the institutions meant to constrain them, we use large language models to content-analyse the Commission’s progress reports for 23 candidate countries (105,971 sentences across 207 country-years, 1998–2023), separating what each report emphasises (compliance and state capacity versus judicial, legislative, civic, and media checks) from how it assesses each domain. Relating both measures to the V-Dem Liberal Democracy Index, we find that the Commission’s assessments track subsequent democratic outcomes while its relative emphasis does not, a contrast that survives bootstrap inference and a coder-based correction for measurement error. Emphasis is nonetheless associated with later decline where judicial constraints are weak.\n\n\nUsing Messy Text in Future LLM Annotations with P.T. Brandt, P. Cuellar-Cuellar & X. Zhao Abstract When working with real-world text, researchers often inherit corpora and annotations with costly human judgments but were not collected, organized, or annotated for modern text-as-data workflows. We propose codebook attention: a codebook-guided turn-by-turn extractive summarization pipeline that reuses valuable annotations without requiring full re-annotation. For each victim in a corpus of disappearance reports from Mexico, the model processes documents sequentially, extracts verbatim evidence spans for each codebook category, and updates a running structured summary. We evaluate the resulting summaries by classifying and comparing predicted labels with human annotations across multiple open-source models including Llama 3.1, Gemma 3, and Ministral 3. Results suggest that hours of computation can approximate weeks of human coding effort while producing evidence-traceable summaries suitable for downstream human rights and event data research.\n\n\nThe Attention Trap: How International Celebrity Intervention Displaces Policy Discourse in Protest Movements Abstract Draft [PDF] Does international celebrity attention help or hinder social movements? Analysing 1.08 million tweets from the 2020–2021 Indian farmer protests, I measure the effect of celebrity attention shocks on protest discourse. When Rihanna tweeted about the protests on 2 February 2021, daily volume rose 22-fold, but the share of tweets discussing policy issues fell by 10 percentage points while celebrity and meta-commentary rose by 45 percentage points. I call this the attention trap: celebrity intervention maximises visibility while displacing substantive discourse. Local projection impulse responses show this displacement is specific to the celebrity channel; domestic events, including state violence at Lakhimpur Kheri, generate policy-focused responses without comparable displacement. The cost was strategically exploitable: the BJP launched a coordinated nationalist counter-campaign within hours, on discursive terrain made favourable by the displacement itself.\n\n\nLegislating Without Scrutiny: Executive Aggrandizement and Democratic Erosion in India Abstract Draft [PDF] Committee referral rates for legislation collapsed from 73% to 6% under India’s NDA government, and median passage time fell from 268 to 11 days. Combining text analysis of 881 central acts with parliamentary data on 1,008 bills and synthetic control methods, I document systematic executive aggrandizement operating through procedural bypass rather than constitutional change. All eight V-Dem democracy indicators declined significantly after 2014, corroborated by a synthetic control showing judicial constraints fell relative to comparable democracies (ATT = -0.051, p = 0.024).\n\n\nPopulism and Investment Treaties with C. Peinhardt Abstract Investigating how nationalist rhetoric influences countries’ decisions to exit international investment agreements.\n\n\nIGO Withdrawal Networks Abstract Extending Borzyskowski & Vabulas (2019) to examine network effects in international organization withdrawals.\n\n\nMedia Polarization in International News Coverage with A. Khalid & K. Park Abstract Using machine learning to analyze ideological patterns in international news coverage across 200,000+ articles.\n\n\nEvent Horizon: Revolutionizing Data Annotation with Reinforcement Learning Abstract Model A novel reinforcement learning framework built on DeepSeek’s GRPO, merging political science with advanced AI to create structured, transparent annotations for complex events."
+    "text": "Working Papers\n\nBuilding Capacity or Building Checks? What EU Enlargement Reports Emphasise and Democratic Backsliding with A. Zhelyazkova & C. Egger · EPSS 2026, Belfast\n\n\nStrategic Anticipation and Expert Review: The Determinants of Critical Advisory Opinions from the Dutch Council of State with C. Egger & A. Zhelyazkova\n\n\nOn Time, but Empty: How Dutch Ministers Answer Their Critics\n\n\nBetween the Documents: Unit Choice in Corpus-Scale Political Text Analysis\n\n\nUsing Messy Text in Future LLM Annotations with P.T. Brandt, P. Cuellar-Cuellar & X. Zhao\n\n\nEvent Horizon: Revolutionizing Data Annotation with Reinforcement Learning Model"
   },
   {
-    "objectID": "publications.html#dissertation",
-    "href": "publications.html#dissertation",
-    "title": "Publications",
+    "objectID": "research.html#software",
+    "href": "research.html#software",
+    "title": "Research",
+    "section": "Software",
+    "text": "Software\n\nConfliBERT GUI Browser-based NLP toolkit for conflict and political violence text analysis: NER, classification, question answering, and LoRA/QLoRA fine-tuning. GitHub\n\n\nconflibertR R package wrapping ConfliBERT for inference, fine-tuning, benchmarking, and model comparison. GitHub"
+  },
+  {
+    "objectID": "research.html#dissertation",
+    "href": "research.html#dissertation",
+    "title": "Research",
     "section": "Dissertation",
-    "text": "Dissertation\n\nDigital Sovereignty: The Political Economy of Internet Governance University of Texas at Dallas, 2025 Slides"
-  },
-  {
-    "objectID": "software.html",
-    "href": "software.html",
-    "title": "Software",
-    "section": "",
-    "text": "Open-source tools for conflict and political violence text analysis, built as part of the NSF-funded ConfliBERT project.\n\n  \n    ConfliBERT GUI\n    Browser-based interface for running NER, classification, question answering, and fine-tuning custom models on conflict text. No coding required.\n  \n  \n    conflibertR\n    R package wrapping ConfliBERT for inference, fine-tuning, benchmarking, and model comparison, all from your R console.\n  \n\n\n\n\n Back to top"
+    "text": "Dissertation\n\nDigital Sovereignty: The Political Economy of Internet Governance The University of Texas at Dallas, 2025 Slides"
   }
 ]

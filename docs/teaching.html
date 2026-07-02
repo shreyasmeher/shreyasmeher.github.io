@@ -36,14 +36,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-fb827f39921779fb1a43e44c68402a9b.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f141ec31a63a983589b822633434e516.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-fb827f39921779fb1a43e44c68402a9b.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-095f9695dfbb980a23e574291e2fb02a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-0424905e99bbd3cd03ffe1d107e8b5bb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-095f9695dfbb980a23e574291e2fb02a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-77b6f5a95308b686716b7443607ce548.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -64,178 +60,16 @@ ul.task-list li input[type="checkbox"] {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 
 
-<meta property="og:title" content="Shreyas Meher | Postdoctoral Researcher">
-<meta property="og:description" content="Research in Digital Governance, Democratic Backsliding, and Computational Politics.">
+<meta property="og:title" content="Shreyas Meher">
+<meta property="og:description" content="Postdoctoral Researcher in Computational Social Science, Erasmus University Rotterdam.">
 <meta property="og:site_name" content="Shreyas Meher">
-<meta name="twitter:title" content="Shreyas Meher | Postdoctoral Researcher">
-<meta name="twitter:description" content="Research in Digital Governance, Democratic Backsliding, and Computational Politics.">
+<meta name="twitter:title" content="Shreyas Meher">
+<meta name="twitter:description" content="Postdoctoral Researcher in Computational Social Science, Erasmus University Rotterdam.">
 <meta name="twitter:creator" content="@shreyasmhr">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -260,51 +94,20 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./publications.html"> 
-<span class="menu-text">Publications</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./software.html"> 
-<span class="menu-text">Software</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link active" href="./teaching.html" aria-current="page"> 
 <span class="menu-text">Teaching</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./CV.pdf"> 
-<span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./Gallery.html"> 
 <span class="menu-text">Gallery</span></a>
   </li>  
-</ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="mailto:meher@essb.eur.nl"> <i class="bi bi-envelope" role="img" aria-label="Email">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://x.com/shreyasmhr"> <i class="bi bi-twitter-x" role="img" aria-label="X">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/shreyasmeher"> <i class="bi bi-github" role="img" aria-label="GitHub">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/shreyasmeher/"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
-</i> 
-<span class="menu-text"></span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./CV.pdf"> 
+<span class="menu-text">CV</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -316,7 +119,6 @@ ul.task-list li input[type="checkbox"] {
     
 <!-- main -->
 <main class="content" id="quarto-document-content">
-
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -337,73 +139,33 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="lead-instructor" class="level2">
-<h2 class="anchored" data-anchor-id="lead-instructor">Lead Instructor</h2>
-<section id="bachelor-project-supervisor-digital-governance-platform-labour-and-power-in-the-digital-economy" class="level4 teaching-entry">
-<h4 class="anchored" data-anchor-id="bachelor-project-supervisor-digital-governance-platform-labour-and-power-in-the-digital-economy">Bachelor Project Supervisor: Digital Governance, Platform Labour, and Power in the Digital Economy</h4>
-<p><strong>2025–2026, Period 4</strong> | Erasmus School of Social and Behavioural Sciences</p>
-<ul>
-<li>Supervising Group 16 in the MISOC Bachelor Project</li>
-<li><a href="bachelor-project/">Course materials (password protected)</a></li>
-</ul>
-</section>
+<section id="instructor" class="level2">
+<h2 class="anchored" data-anchor-id="instructor">Instructor</h2>
 <section id="research-design-for-public-policy-essb-c2045" class="level4 teaching-entry">
 <h4 class="anchored" data-anchor-id="research-design-for-public-policy-essb-c2045">Research Design for Public Policy (ESSB-C2045)</h4>
-<p><strong>2025–2026, Block 3</strong> | Erasmus School of Social and Behavioural Sciences, 7.5 EC</p>
-<ul>
-<li>Taught quantitative research design for policy evaluation, including causal inference and panel data estimation</li>
-<li>Led R programming labs with hands-on analysis using real policy datasets</li>
-<li>Guided students through policy proposal development using quantitative evidence</li>
-</ul>
+<p><span class="teaching-meta">Erasmus University Rotterdam · 2025–2026</span> Quantitative research design for policy evaluation, including causal inference and panel data estimation, with hands-on R programming labs using real policy datasets.</p>
+</section>
+<section id="bachelor-project-digital-governance-platform-labour-and-power-in-the-digital-economy" class="level4 teaching-entry">
+<h4 class="anchored" data-anchor-id="bachelor-project-digital-governance-platform-labour-and-power-in-the-digital-economy">Bachelor Project: Digital Governance, Platform Labour, and Power in the Digital Economy</h4>
+<p><span class="teaching-meta">Erasmus University Rotterdam · 2025–2026</span> Supervising the MISOC Bachelor Project (Group 16). <a href="bachelor-project/">Course materials</a> (password protected).</p>
 </section>
 <section id="epps-math-coding-camp" class="level4 teaching-entry">
 <h4 class="anchored" data-anchor-id="epps-math-coding-camp">EPPS Math &amp; Coding Camp</h4>
-<p><strong>August 2024</strong> | University of Texas at Dallas, R Programming and Data Analysis</p>
-<ul>
-<li>Created and maintained course website <a href="https://eppsmathcodingcamp.github.io/">eppsmathcodingcamp.github.io</a></li>
-<li>Taught R programming fundamentals, data manipulation (dplyr), and visualization (ggplot2)</li>
-<li>Developed interactive tutorials and exercises for 5-day intensive program</li>
-</ul>
+<p><span class="teaching-meta">The University of Texas at Dallas · August 2024</span> Five-day intensive for incoming Ph.D.&nbsp;students: R programming, data manipulation, and visualization. Course website: <a href="https://eppsmathcodingcamp.github.io/">eppsmathcodingcamp.github.io</a>.</p>
 </section>
 </section>
 <section id="teaching-assistant" class="level2">
 <h2 class="anchored" data-anchor-id="teaching-assistant">Teaching Assistant</h2>
-<section id="epps-6313-introduction-to-quantitative-methods" class="level4 teaching-entry">
-<h4 class="anchored" data-anchor-id="epps-6313-introduction-to-quantitative-methods">EPPS 6313: Introduction to Quantitative Methods</h4>
-<p><em>Teaching Assistant for Dr.&nbsp;Pengfei Zhang</em></p>
-<ul>
-<li>Led weekly STATA lab sessions focusing on regression analysis</li>
-<li>Guided students through practical applications of statistical methods</li>
-</ul>
-</section>
-<section id="epps-6316-applied-regression" class="level4 teaching-entry">
-<h4 class="anchored" data-anchor-id="epps-6316-applied-regression">EPPS 6316: Applied Regression</h4>
-<p><em>Teaching Assistant for Dr.&nbsp;Vito D’Orazio</em></p>
-<ul>
-<li>Conducted advanced R programming labs</li>
-<li>Focused on complex regression techniques and econometric analysis</li>
-</ul>
-</section>
+<div class="teaching-entry">
+<p><span class="teaching-meta">The University of Texas at Dallas · 2020–2023</span> Research Design (EPPS 2301) · Class, Status, and Power (SOC 4302) · Political Economy of Industrialized Countries (IPEC 4301) · Government and Politics of Afghanistan (PSCI 4396) · Applied Regression (EPPS 6316) · Political Violence and Conflict in Cyberspace (PPPE/PSCI 6302) · Introduction to Quantitative Methods (EPPS 6313) · Foreign Aid and Development (IPEC/PSCI 4318)</p>
+</div>
 
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -817,7 +579,7 @@ ul.task-list li input[type="checkbox"] {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Built with <a href="https://quarto.org">Quarto</a></p>
+<p><a href="mailto:meher@essb.eur.nl">Email</a> · <a href="https://github.com/shreyasmeher">GitHub</a> · <a href="https://x.com/shreyasmhr">X</a> · <a href="https://www.linkedin.com/in/shreyasmeher/">LinkedIn</a></p>
 </div>
   </div>
 </footer>
