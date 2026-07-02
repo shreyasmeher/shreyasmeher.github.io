@@ -6,7 +6,7 @@ toc: false
 ## Instructor
 
 ::: {.teaching-entry}
-#### Research Design for Public Policy (ESSB-C2045)
+#### Global Development Issues
 [Erasmus University Rotterdam · 2025--2026]{.teaching-meta}
 Quantitative research design for policy evaluation, including causal inference and panel data estimation, with hands-on R programming labs using real policy datasets.
 :::
@@ -20,7 +20,7 @@ Supervising the MISOC Bachelor Project (Group 16). [Course materials](bachelor-p
 ::: {.teaching-entry}
 #### EPPS Math & Coding Camp
 [The University of Texas at Dallas · August 2024]{.teaching-meta}
-Five-day intensive for incoming Ph.D. students: R programming, data manipulation, and visualization. Course website: [eppsmathcodingcamp.github.io](https://eppsmathcodingcamp.github.io/).
+Five-day intensive for incoming Ph.D. students: R programming, data manipulation, and visualization. Course website: [eppsmathandcodingcamp.com](https://eppsmathandcodingcamp.com/).
 :::
 
 ## Teaching Assistant

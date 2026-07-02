@@ -26,6 +26,11 @@ aliases:
 [[Article](https://doi.org/10.3390/bs15020223) [Code](https://doi.org/10.7910/DVN/OWVD70)]{.pub-links}
 :::
 
+::: {.pub-entry}
+[Framework Laws and Fading Oversight: How the Dutch Executive Expanded Its Lawmaking Authority]{.pub-title}
+[with C. Egger & A. Zhelyazkova · Revise & resubmit, *International Political Science Review*]{.pub-meta}
+:::
+
 ## Under Review
 
 ::: {.pub-entry}
@@ -34,39 +39,32 @@ aliases:
 :::
 
 ::: {.pub-entry}
-[Framework Laws and Fading Oversight: How the Dutch Executive Expanded Its Lawmaking Authority]{.pub-title}
-[with C. Egger & A. Zhelyazkova · Revise & resubmit]{.pub-meta}
+[Two Types of Censorship? An Assessment of the Informational Autocracy Thesis]{.pub-title}
+[with P. Zhang]{.pub-meta}
 :::
 
 ::: {.pub-entry}
 [Selective Scrutiny: Single-Party Majority and the Strategic Withdrawal of Parliamentary Oversight in India]{.pub-title}
-[[Draft](research/Meher_2025_Legislating_Without_Scrutiny.pdf)]{.pub-links}
 :::
 
 ::: {.pub-entry}
 [Build, Borrow, or Just Fine-Tune? Empirical Guidelines for NLP Model Selection in Computational Social Science]{.pub-title}
-[[Draft](research/Meher_Build_Borrow.pdf) [Model](https://huggingface.co/shreyasmeher/Confli-mBERT)]{.pub-links}
+[[Model](https://huggingface.co/shreyasmeher/Confli-mBERT)]{.pub-links}
 :::
 
 ::: {.pub-entry}
 ["Why Aren't We Talking About This?" The Attention Trap in Networked Protest]{.pub-title}
-[[Draft](research/Meher_2025_Attention_Trap.pdf)]{.pub-links}
 :::
 
 ::: {.pub-entry}
 [Silencing the Silencing: Media Amplification of Internet Shutdowns in India]{.pub-title}
 :::
 
-::: {.pub-entry}
-[Two Types of Censorship? An Assessment of the Informational Autocracy Thesis]{.pub-title}
-[with P. Zhang]{.pub-meta}
-:::
-
 ## Working Papers
 
 ::: {.pub-entry}
 [Building Capacity or Building Checks? What EU Enlargement Reports Emphasise and Democratic Backsliding]{.pub-title}
-[with A. Zhelyazkova & C. Egger · EPSS 2026, Belfast]{.pub-meta}
+[with A. Zhelyazkova & C. Egger]{.pub-meta}
 :::
 
 ::: {.pub-entry}
