@@ -165,6 +165,22 @@ A visual timeline of my academic and personal journey, from starting my PhD in T
 ![Rotterdam in bloom. The cherry blossoms have a higher R² with my mood than any of my regressions.](gallery/img39.jpg){group="gallery" loading="lazy"}
 :::
 
+::: {.gallery-item data-category="netherlands"}
+![Full moon rising over the Stadhuis clock tower. Rotterdam schedules its own celestial events.](gallery/img40.jpg){group="gallery" loading="lazy"}
+:::
+
+::: {.gallery-item data-category="netherlands"}
+![The dissertation-escape vehicle has a Dutch successor. Flatter terrain, stronger headwinds, same job.](gallery/img41.jpg){group="gallery" loading="lazy"}
+:::
+
+::: {.gallery-item data-category="conferences"}
+![Prague, for our TWIN4DEM consortium meeting. St. Henry's Tower: six centuries old and still meeting its deadlines.](gallery/img42.jpg){group="gallery" loading="lazy"}
+:::
+
+::: {.gallery-item data-category="conferences"}
+![Belfast City Hall, between sessions at EPSS 2026. Copper domes age better than conference slides.](gallery/img43.jpg){group="gallery" loading="lazy"}
+:::
+
 :::
 
 ```{=html}
