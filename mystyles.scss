@@ -215,6 +215,33 @@ h1.hero-name {
       margin-right: 0.9rem;
     }
   }
+
+  details.abstract {
+    margin-top: 0.35rem;
+
+    summary {
+      display: inline-block;
+      cursor: pointer;
+      font-size: 0.8rem;
+      color: $muted;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      text-decoration-color: #b3b3b3;
+
+      &:hover { color: #000; }
+    }
+
+    &[open] summary { color: #000; }
+
+    p {
+      font-size: 0.88rem;
+      color: #333;
+      line-height: 1.6;
+      margin: 0.5rem 0 0.2rem 0;
+      max-width: 640px;
+    }
+  }
 }
 
 // ---------------------------------------------------------------------------
