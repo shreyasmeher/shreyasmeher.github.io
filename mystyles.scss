@@ -11,7 +11,7 @@ $font-family-serif: "Newsreader", Georgia, serif;
 
 $body-bg: #ffffff;
 $body-color: #1a1a1a;
-$link-color: #1a1a1a;
+$link-color: #284678; // matches CV link color (RGB 40,70,120)
 $link-decoration: underline;
 
 $font-size-root: 17px;
@@ -62,12 +62,12 @@ h2 {
 a {
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
-  text-decoration-color: #b3b3b3;
+  text-decoration-color: #aebdd5;
   transition: text-decoration-color 0.15s ease;
 
   &:hover {
-    color: #000;
-    text-decoration-color: #000;
+    color: #1a3055;
+    text-decoration-color: #1a3055;
   }
 }
 
@@ -143,10 +143,6 @@ h1.hero-name {
 #img-me img, img#img-me {
   width: 100%;
   border-radius: 2px;
-  filter: grayscale(100%);
-  transition: filter 0.4s ease;
-
-  &:hover { filter: grayscale(0%); }
 }
 
 .hero-contact {
@@ -168,7 +164,7 @@ h1.hero-name {
   a {
     margin-right: 1.6rem;
     text-decoration: none;
-    border-bottom: 1px solid #1a1a1a;
+    border-bottom: 1px solid #284678;
     padding-bottom: 2px;
 
     &:hover { border-bottom-width: 2px; }
@@ -211,7 +207,7 @@ h1.hero-name {
     font-size: 0.8rem;
 
     a {
-      color: #1a1a1a;
+      color: #284678;
       margin-right: 0.9rem;
     }
   }
