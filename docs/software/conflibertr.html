@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An R interface to ConfliBERT, the pretrained language model for political conflict and violence.">
 
-<title>Shreyas Meher</title>
+<title>conflibertR — ConfliBERT for R – Shreyas Meher</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,23 +24,58 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<link href="./favicon.ico" rel="icon">
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-810b7ed339e6ded6ffee3e082be682c2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<link href="../favicon.ico" rel="icon">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-810b7ed339e6ded6ffee3e082be682c2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -58,22 +94,26 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-<link rel="manifest" href="./site.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
 
 
 <meta property="og:title" content="Shreyas Meher">
 <meta property="og:description" content="Postdoctoral Researcher in Computational Social Science, Erasmus University Rotterdam.">
-<meta property="og:image" content="https://shreyasmeher.github.io/headshot.jpg">
+<meta property="og:image" content="https://shreyasmeher.github.io/images/conflibertr-cheatsheet-preview.png">
 <meta property="og:site_name" content="Shreyas Meher">
-<meta property="og:image:alt" content="Portrait of Shreyas Meher">
+<meta property="og:image:alt" content="Preview of the conflibertR cheatsheet">
+<meta property="og:image:height" content="778">
+<meta property="og:image:width" content="1100">
 <meta name="twitter:title" content="Shreyas Meher">
 <meta name="twitter:description" content="Postdoctoral Researcher in Computational Social Science, Erasmus University Rotterdam.">
-<meta name="twitter:image" content="https://shreyasmeher.github.io/headshot.jpg">
+<meta name="twitter:image" content="https://shreyasmeher.github.io/images/conflibertr-cheatsheet-preview.png">
 <meta name="twitter:creator" content="@shreyasmhr">
-<meta name="twitter:image:alt" content="Portrait of Shreyas Meher">
+<meta name="twitter:image:alt" content="Preview of the conflibertR cheatsheet">
+<meta name="twitter:image-height" content="778">
+<meta name="twitter:image-width" content="1100">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -84,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Shreyas Meher</span>
     </a>
   </div>
@@ -94,27 +134,27 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./research.html"> 
+    <a class="nav-link" href="../research.html"> 
 <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./software.html"> 
+    <a class="nav-link" href="../software.html"> 
 <span class="menu-text">Software</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./teaching.html"> 
+    <a class="nav-link" href="../teaching.html"> 
 <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Gallery.html"> 
+    <a class="nav-link" href="../Gallery.html"> 
 <span class="menu-text">Gallery</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./CV.pdf"> 
+    <a class="nav-link" href="../CV.pdf"> 
 <span class="menu-text">CV</span></a>
   </li>  
 </ul>
@@ -130,32 +170,127 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="hero-name title display-7">Shreyas Meher</h1></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">conflibertR</h1></header>
 
 
 
 
-<div class="home-hero">
-<div class="grid">
-<section id="shreyas-meher" class="level1 hero-name g-col-12 g-col-md-7">
+<div class="pkg-hero">
+<section id="conflibertr" class="level1 pkg-hero-text">
 
-<p><span class="hero-lede">Postdoctoral researcher at Erasmus University Rotterdam. I study how governments control information online, and how democratic institutions erode.</span></p>
-<p>On the <a href="https://twin4dem.eu/">TWIN4DEM</a> project (Horizon Europe), I build machine learning models of democratic resilience and executive aggrandizement in parliamentary democracies. My broader work uses fine-tuned language models and causal research designs to study censorship, digital governance, and political conflict, including the NSF-funded <a href="https://eventdata.utdallas.edu/">ConfliBERT</a> family of models.</p>
-<p>My research has appeared in <em>Political Analysis</em>, <em>Research &amp; Politics</em>, and <em>Behavioral Sciences</em>. I received my Ph.D.&nbsp;in Public Policy &amp; Political Economy from the University of Texas at Dallas in 2025.</p>
-<div class="hero-links">
-<p><a href="./research.html">Research</a> <a href="./teaching.html">Teaching</a> <a href="CV.pdf">CV</a></p>
+<p><span class="pkg-lede">Political conflict text analysis in R, powered by ConfliBERT.</span></p>
+<div class="pkg-badges">
+<p><img src="https://www.r-pkg.org/badges/version/conflibertR.png" class="img-fluid" alt="CRAN status badge"> <img src="https://github.com/shreyasmeher/conflibertR/actions/workflows/R-CMD-check.yaml/badge.svg" class="img-fluid" alt="R-CMD-check status badge"></p>
+</div>
+<div class="pkg-links">
+<p><a href="https://CRAN.R-project.org/package=conflibertR">CRAN</a> <a href="https://github.com/shreyasmeher/conflibertR">GitHub</a> <a href="conflibertR-cheatsheet.pdf">Cheatsheet</a> <a href="https://github.com/shreyasmeher/conflibertR/issues">Report a bug</a></p>
 </div>
 </section>
-<div class="g-col-12 g-col-md-5">
-<p><img src="headshot.jpg" id="img-me" class="img-fluid" alt="Portrait of Shreyas Meher"></p>
-<div class="hero-contact">
-<p><a href="mailto:meher@essb.eur.nl">meher@essb.eur.nl</a><br> Rotterdam, the Netherlands</p>
+<div class="pkg-hex">
+<p><img src="../images/conflibertr-hex.png" class="img-fluid" alt="conflibertR hex logo"></p>
+</div>
+</div>
+<p><a href="https://eventdata.utdallas.edu/">ConfliBERT</a> is an NSF-funded language model pretrained on a large corpus of politics, conflict, and violence text, and it consistently beats general-purpose LLMs on conflict-event tasks while running hundreds of times faster (<a href="https://doi.org/10.18653/v1/2022.naacl-main.400">Hu et al.&nbsp;2022</a>; <a href="https://doi.org/10.1017/pan.2025.10027">Brandt et al.&nbsp;2025</a>). conflibertR wraps the full ConfliBERT workflow in idiomatic R: every function takes and returns plain data frames, so results drop straight into a dplyr or ggplot2 pipeline, with no Python visible at any point.</p>
+<section id="what-it-does" class="level2">
+<h2 class="anchored" data-anchor-id="what-it-does">What it does</h2>
+<div class="pkg-grid">
+<section id="inference-out-of-the-box" class="level4 pkg-cell">
+<h4 class="anchored" data-anchor-id="inference-out-of-the-box">Inference out of the box</h4>
+<p>Named entity recognition, binary and multilabel event classification, and question answering with the published ConfliBERT checkpoints. Vectorized, deterministic, and tibble-in, tibble-out.</p>
+</section>
+<section id="fine-tuning" class="level4 pkg-cell">
+<h4 class="anchored" data-anchor-id="fine-tuning">Fine-tuning</h4>
+<p>Train a classifier on your own labeled data with <code>conflibert_finetune()</code>, choosing among 7 base models. LoRA support cuts GPU memory roughly 5x, and seeded training makes runs exactly reproducible.</p>
+</section>
+<section id="model-comparison" class="level4 pkg-cell">
+<h4 class="anchored" data-anchor-id="model-comparison">Model comparison</h4>
+<p><code>conflibert_compare()</code> fine-tunes several base models on the same split and reports test metrics side by side, so the “which encoder should I use?” question is one function call.</p>
+</section>
+<section id="active-learning" class="level4 pkg-cell">
+<h4 class="anchored" data-anchor-id="active-learning">Active learning</h4>
+<p>Label only the documents the model is least certain about. <code>conflibert_active_start()</code> manages the loop, with a point-and-click Shiny gadget for labeling and diversity-aware batch selection.</p>
+</section>
+</div>
+</section>
+<section id="installation" class="level2">
+<h2 class="anchored" data-anchor-id="installation">Installation</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"conflibertR"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(conflibertR)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">conflibert_install</span>()   <span class="co"># one-time Python backend setup, then restart R</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The package is a <a href="https://rstudio.github.io/reticulate/">reticulate</a> wrapper: <code>conflibert_install()</code> provisions a conda or virtualenv environment with PyTorch and transformers once, and everything after that is plain R.</p>
+</section>
+<section id="a-quick-look" class="level2">
+<h2 class="anchored" data-anchor-id="a-quick-look">A quick look</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Inference</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Fine-tuning</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Active learning</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">conflibert_ner</span>(<span class="st">"NATO forces were deployed near Kabul in September."</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ── ConfliBERT entities ────────── 3 entities in 1 text ──</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   1. NATO forces were deployed near Kabul in September.</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      Organisation   NATO       0.99</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      Location       Kabul      0.99</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      Temporal       September  0.98</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">conflibert_classify</span>(<span class="st">"A bomb exploded in the crowded market."</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 × 6</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   text                    label    class confidence ...</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 A bomb exploded in the… Positive     1      0.98</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">conflibert_example</span>(<span class="st">"binary"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">conflibert_finetune</span>(</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>train, data<span class="sc">$</span>dev, data<span class="sc">$</span>test,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="st">"ConfliBERT"</span>, <span class="at">epochs =</span> <span class="dv">3</span>, <span class="at">seed =</span> <span class="dv">42</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>fit<span class="sc">$</span>metrics    <span class="co"># accuracy, precision, recall, F1</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit)      <span class="co"># test-set confusion matrix</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">conflibert_example</span>(<span class="st">"active"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">conflibert_active_start</span>(</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> data<span class="sc">$</span>seed, <span class="at">pool =</span> data<span class="sc">$</span>pool,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">dev =</span> data<span class="sc">$</span>dev, <span class="at">query_size =</span> <span class="dv">10</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>labels <span class="ot">&lt;-</span> <span class="fu">conflibert_active_label</span>(s)  <span class="co"># Shiny labeling gadget</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">conflibert_active_next</span>(s, labels)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(s)                               <span class="co"># learning curve by round</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
+</section>
+<section id="cheatsheet" class="level2">
+<h2 class="anchored" data-anchor-id="cheatsheet">Cheatsheet</h2>
+<div class="pkg-cheatsheet">
+<div class="pkg-cheatsheet-thumb">
+<p><a href="conflibertR-cheatsheet.pdf"><img src="../images/conflibertr-cheatsheet-preview.png" class="img-fluid" alt="Preview of the conflibertR cheatsheet"></a></p>
 </div>
+<div class="pkg-cheatsheet-text">
+<p>The whole package on one page: setup, the four inference functions, fine-tuning and LoRA, model comparison, and the active-learning loop.</p>
+<p><a href="conflibertR-cheatsheet.pdf">Download the cheatsheet (PDF)</a></p>
+</div>
+</div>
+</section>
+<section id="citing" class="level2">
+<h2 class="anchored" data-anchor-id="citing">Citing</h2>
+<p>If you use conflibertR in published work, please cite the ConfliBERT model paper; <code>citation("conflibertR")</code> has the full details.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">@inproceedings</span>{<span class="ot">hu2022conflibert</span>,</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>     = {{ConfliBERT}: A Pre-trained Language Model for</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>               Political Conflict and Violence},</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>    = {Hu, Yibo and Hosseini, MohammadSaleh and</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>               Skorupa Parolin, Erick and Osorio, Javier and</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>               Khan, Latifur and Brandt, Patrick and D'Orazio, Vito},</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">booktitle</span> = {Proceedings of NAACL-HLT 2022},</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">pages</span>     = {5469--5482},</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>      = {2022},</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">doi</span>       = {10.18653/v1/2022.naacl-main.400}</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -581,5 +716,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

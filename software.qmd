@@ -1,0 +1,36 @@
+---
+title: "Software"
+toc: false
+---
+
+Research software for computational conflict analysis. Everything is open
+source; bug reports and contributions are welcome on GitHub.
+
+::: {.software-feature}
+::: {.software-hex}
+[![](images/conflibertr-hex.png){fig-alt="conflibertR hex logo"}](software/conflibertr.qmd)
+:::
+::: {.software-body}
+[conflibertR]{.software-name}
+
+An R package bringing [ConfliBERT](https://eventdata.utdallas.edu/), the
+NSF-funded language model for political conflict and violence, to the R
+ecosystem: entity recognition, event classification, question answering,
+fine-tuning, model comparison, and active learning, all from R. On CRAN
+as of July 2026.
+
+[[Package page](software/conflibertr.qmd) [CRAN](https://CRAN.R-project.org/package=conflibertR) [GitHub](https://github.com/shreyasmeher/conflibertR) [Cheatsheet (PDF)](software/conflibertR-cheatsheet.pdf)]{.pub-links}
+:::
+:::
+
+::: {.pub-entry}
+[ConfliBERT GUI]{.pub-title}
+[Browser-based NLP toolkit for conflict and political violence text analysis: NER, classification, question answering, and LoRA/QLoRA fine-tuning.]{.pub-meta}
+[[GitHub](https://github.com/shreyasmeher/ConfliBERT-gui)]{.pub-links}
+:::
+
+::: {.pub-entry}
+[Confli-mBERT]{.pub-title}
+[ModernBERT fine-tuned on the Global Terrorism Database for conflict event classification; companion model to the paper on NLP model selection in computational social science.]{.pub-meta}
+[[Hugging Face](https://huggingface.co/shreyasmeher/Confli-mBERT)]{.pub-links}
+:::

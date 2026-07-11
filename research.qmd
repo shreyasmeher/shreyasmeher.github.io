@@ -3,7 +3,6 @@ title: "Research"
 toc: false
 aliases:
   - publications.html
-  - software.html
 ---
 
 ## Publications
@@ -130,20 +129,6 @@ aliases:
 ::: {.pub-entry}
 [Event Horizon: Revolutionizing Data Annotation with Reinforcement Learning]{.pub-title}
 [[Model](https://huggingface.co/shreyasmeher/Qwen-GLOCON-Reasoning)]{.pub-links}
-:::
-
-## Software
-
-::: {.pub-entry}
-[ConfliBERT GUI]{.pub-title}
-[Browser-based NLP toolkit for conflict and political violence text analysis: NER, classification, question answering, and LoRA/QLoRA fine-tuning.]{.pub-meta}
-[[GitHub](https://github.com/shreyasmeher/ConfliBERT-gui)]{.pub-links}
-:::
-
-::: {.pub-entry}
-[conflibertR]{.pub-title}
-[R package wrapping ConfliBERT for inference, fine-tuning, benchmarking, and model comparison.]{.pub-meta}
-[[GitHub](https://github.com/shreyasmeher/conflibertR)]{.pub-links}
 :::
 
 ## Dissertation

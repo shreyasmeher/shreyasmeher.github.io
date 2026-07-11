@@ -21,6 +21,13 @@
     "text": "Teaching Assistant\n\nThe University of Texas at Dallas · 2020–2023 Research Design (EPPS 2301) · Class, Status, and Power (SOC 4302) · Political Economy of Industrialized Countries (IPEC 4301) · Government and Politics of Afghanistan (PSCI 4396) · Applied Regression (EPPS 6316) · Political Violence and Conflict in Cyberspace (PPPE/PSCI 6302) · Introduction to Quantitative Methods (EPPS 6313) · Foreign Aid and Development (IPEC/PSCI 4318)"
   },
   {
+    "objectID": "software.html",
+    "href": "software.html",
+    "title": "Software",
+    "section": "",
+    "text": "Research software for computational conflict analysis. Everything is open source; bug reports and contributions are welcome on GitHub.\nConfliBERT is an NSF-funded language model pretrained on a large corpus of politics, conflict, and violence text, and it consistently beats general-purpose LLMs on conflict-event tasks while running hundreds of times faster (Hu et al. 2022; Brandt et al. 2025). conflibertR wraps the full ConfliBERT workflow in idiomatic R: every function takes and returns plain data frames, so results drop straight into a dplyr or ggplot2 pipeline, with no Python visible at any point."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Shreyas Meher",
@@ -434,17 +441,87 @@
     "text": "Working Papers\n\nBuilding Capacity or Building Checks? What EU Enlargement Reports Emphasise and Democratic Backsliding with A. Zhelyazkova & C. Egger\n\n\nAbstract\n\n\nDoes the European Commission’s enlargement reporting emphasise executive strength over institutional checks on executive power, and does that emphasis track later democratic backsliding? Building on Meyerrose’s argument that international democracy support can strengthen executives at the expense of the institutions meant to constrain them, we use large language models to content-analyse the Commission’s progress reports for 23 candidate countries (105,971 sentences across 207 country-years, 1998 to 2023), separating what each report emphasises (compliance and state capacity versus judicial, legislative, civic, and media checks) from how it assesses each domain. Relating both measures to the V-Dem Liberal Democracy Index, we find that the Commission’s assessments track subsequent democratic outcomes while its relative emphasis does not, a contrast that survives bootstrap inference and a coder-based correction for measurement error. Emphasis is nonetheless associated with later decline where judicial constraints are weak.\n\n\n\n\nStrategic Anticipation and Expert Review: The Determinants of Critical Advisory Opinions from the Dutch Council of State with C. Egger & A. Zhelyazkova\n\n\nAbstract\n\n\nWhat determines whether an expert advisory body issues a critical opinion on a legislative proposal? This paper investigates the conditions under which the Dutch Council of State (Raad van State) issues critical advisory opinions, testing five competing theoretical mechanisms: institutional learning within coalition governments, legislative experience of the proposing actor, the coalition position of the sponsoring party, ideological distance from the governing majority, and the type of legislative instrument under review. Drawing on 2,898 advisory opinions issued between 2004 and 2025, comprising 2,111 opinions on laws and 785 on executive decrees, we find that instrument type is the strongest predictor of opinion severity: executive decrees receive dramatically milder treatment than laws, with 69% receiving no objections compared to just 13% for laws. Among laws, junior coalition partners attract significantly less critical opinions than leading parties, consistent with anticipatory compliance. Ideological distance from the cabinet median is positively associated with opinion severity, though the effect is modest. These findings suggest that the Council’s most consequential effects operate through two channels: institutional deference to delegated legislation, and the anticipatory self-discipline of politically exposed actors.\n\n\n\n\nOn Time, but Empty: How Dutch Ministers Answer Their Critics\n\n\nAbstract\n\n\nThree decades of research on parliamentary questions have mapped who asks them, and almost never what askers get back. I turn to the answers, and to a puzzle: the Dutch government replies to its fiercest critics fastest. Opposition and populist members are answered as quickly as the coalition’s own backbenchers, or quicker, and three answers in four miss the 21-day deadline for everyone alike. Timing the answers makes the government look even-handed. Reading them does not. Scoring more than 130,000 question–answer pairs (2010–2025) with a validated large-language-model measure of evasion, I find that critics are answered no more slowly, yet 0.20 to 0.47 standard deviations more evasively, net of cabinet, topic, and ministry. The emptiness is aimed: within a single reply, the substantive sub-questions that demand an account are evaded most, and more so when the asker is a critic. Two probes trace the pattern to its incentives. When a question arrives with a news story attached, critics are answered faster still, yet no more fully; and evasive answers draw no more follow-up questions than responsive ones, so evasion costs a minister nothing. One logic runs through all of it, and it is visibility. Delay is public and punished; evasion is buried, unread, and unpriced. A government that treats some askers worse than others does so through the channel where the discrimination will not be seen. Ministers answer on time, and empty the answer instead.\n\n\n\n\nBetween the Documents: Unit Choice in Corpus-Scale Political Text Analysis\n\n\nAbstract\n\n\nMany constructs in political analysis are realised at corpus scale across thousands of legal artefacts, and the substantive phenomenon often spans the relationship between documents rather than residing within any single one. Computational text analysis nonetheless inherits document- and sentence-level units from earlier hand-coding traditions, leaving the unit choice as an unexamined default. I work through the consequences for executive aggrandizement, the incremental and legally formal expansion of executive power. Applied to Dutch legislation between 2007 and 2026 (3,443 bills, 12,884 parent-implementing edges, 488 chains with consensus labels), I compare four methods spanning the design space: a keyword density, a directional grid, a twelve-flag composite combining textual and procedural signal, and a multi-model LLM committee that scores delegation chains on a five-dimension schema. Document-level and chain-level scores are weakly negatively correlated, and the divergence is asymmetric: 28% of chains with a top-decile parent law receive a low chain rating, while only 2.3% show the reverse pattern. Document-level methods narrow the universe of candidate concerns; chain-level methods calibrate within it. The two answer different questions, and conflating them produces conclusions the data do not support.\n\n\n\n\nUsing Messy Text in Future LLM Annotations with P.T. Brandt, P. Cuellar-Cuellar & X. Zhao\n\n\nAbstract\n\n\nWhen working with real-world text, researchers often inherit corpora and annotations with costly human judgments but were not collected, organized, or annotated for modern text-as-data workflows. This is especially common in social science domains where web-scraped documents are noisy, incomplete, or misaligned with the unit of analysis. We propose codebook attention: a codebook-guided turn-by-turn extractive summarization pipeline that reuses valuable annotations without requiring full re-annotation. For each victim in a corpus of disappearance reports from Mexico, the model processes documents sequentially, extracts verbatim evidence spans for each codebook category, and updates a running structured summary to produce a clean and evidence-traceable document-level representation. Using the codebook as the task schema focuses model attention on the fields that matter for downstream classification and reconnects prior human annotations to contemporary language model workflows. We evaluate the resulting summaries by classifying and comparing the predicted labels with human annotations across multiple open-source models including Llama 3.1, Gemma 3 and Ministral 3. Results suggest that hours of computation can approximate weeks of human coding effort while producing evidence-traceable summaries suitable for downstream human rights and event data research.\n\n\n\n\nEvent Horizon: Revolutionizing Data Annotation with Reinforcement Learning Model"
   },
   {
-    "objectID": "research.html#software",
-    "href": "research.html#software",
-    "title": "Research",
-    "section": "Software",
-    "text": "Software\n\nConfliBERT GUI Browser-based NLP toolkit for conflict and political violence text analysis: NER, classification, question answering, and LoRA/QLoRA fine-tuning. GitHub\n\n\nconflibertR R package wrapping ConfliBERT for inference, fine-tuning, benchmarking, and model comparison. GitHub"
-  },
-  {
     "objectID": "research.html#dissertation",
     "href": "research.html#dissertation",
     "title": "Research",
     "section": "Dissertation",
     "text": "Dissertation\n\nDigital Sovereignty: The Political Economy of Internet Governance The University of Texas at Dallas, 2025 Slides"
+  },
+  {
+    "objectID": "software/conflibertr.html",
+    "href": "software/conflibertr.html",
+    "title": "conflibertR",
+    "section": "",
+    "text": "Political conflict text analysis in R, powered by ConfliBERT.\n\n \n\n\nCRAN GitHub Cheatsheet Report a bug\nConfliBERT is an NSF-funded language model pretrained on a large corpus of politics, conflict, and violence text, and it consistently beats general-purpose LLMs on conflict-event tasks while running hundreds of times faster (Hu et al. 2022; Brandt et al. 2025). conflibertR wraps the full ConfliBERT workflow in idiomatic R: every function takes and returns plain data frames, so results drop straight into a dplyr or ggplot2 pipeline, with no Python visible at any point."
+  },
+  {
+    "objectID": "software/conflibertr.html#what-it-does",
+    "href": "software/conflibertr.html#what-it-does",
+    "title": "conflibertR",
+    "section": "What it does",
+    "text": "What it does\n\n\nInference out of the box\nNamed entity recognition, binary and multilabel event classification, and question answering with the published ConfliBERT checkpoints. Vectorized, deterministic, and tibble-in, tibble-out.\n\n\nFine-tuning\nTrain a classifier on your own labeled data with conflibert_finetune(), choosing among 7 base models. LoRA support cuts GPU memory roughly 5x, and seeded training makes runs exactly reproducible.\n\n\nModel comparison\nconflibert_compare() fine-tunes several base models on the same split and reports test metrics side by side, so the “which encoder should I use?” question is one function call.\n\n\nActive learning\nLabel only the documents the model is least certain about. conflibert_active_start() manages the loop, with a point-and-click Shiny gadget for labeling and diversity-aware batch selection."
+  },
+  {
+    "objectID": "software/conflibertr.html#installation",
+    "href": "software/conflibertr.html#installation",
+    "title": "conflibertR",
+    "section": "Installation",
+    "text": "Installation\ninstall.packages(\"conflibertR\")\n\nlibrary(conflibertR)\nconflibert_install()   # one-time Python backend setup, then restart R\nThe package is a reticulate wrapper: conflibert_install() provisions a conda or virtualenv environment with PyTorch and transformers once, and everything after that is plain R."
+  },
+  {
+    "objectID": "software/conflibertr.html#a-quick-look",
+    "href": "software/conflibertr.html#a-quick-look",
+    "title": "conflibertR",
+    "section": "A quick look",
+    "text": "A quick look\n\nInferenceFine-tuningActive learning\n\n\nconflibert_ner(\"NATO forces were deployed near Kabul in September.\")\n#&gt; ── ConfliBERT entities ────────── 3 entities in 1 text ──\n#&gt;   1. NATO forces were deployed near Kabul in September.\n#&gt;      Organisation   NATO       0.99\n#&gt;      Location       Kabul      0.99\n#&gt;      Temporal       September  0.98\n\nconflibert_classify(\"A bomb exploded in the crowded market.\")\n#&gt; # A tibble: 1 × 6\n#&gt;   text                    label    class confidence ...\n#&gt; 1 A bomb exploded in the… Positive     1      0.98\n\n\ndata &lt;- conflibert_example(\"binary\")\n\nfit &lt;- conflibert_finetune(\n  data$train, data$dev, data$test,\n  model = \"ConfliBERT\", epochs = 3, seed = 42\n)\nfit$metrics    # accuracy, precision, recall, F1\nplot(fit)      # test-set confusion matrix\n\n\ndata &lt;- conflibert_example(\"active\")\n\ns &lt;- conflibert_active_start(\n  seed = data$seed, pool = data$pool,\n  dev = data$dev, query_size = 10\n)\nlabels &lt;- conflibert_active_label(s)  # Shiny labeling gadget\ns &lt;- conflibert_active_next(s, labels)\nplot(s)                               # learning curve by round"
+  },
+  {
+    "objectID": "software/conflibertr.html#cheatsheet",
+    "href": "software/conflibertr.html#cheatsheet",
+    "title": "conflibertR",
+    "section": "Cheatsheet",
+    "text": "Cheatsheet\n\n\n\n\n\nThe whole package on one page: setup, the four inference functions, fine-tuning and LoRA, model comparison, and the active-learning loop.\nDownload the cheatsheet (PDF)"
+  },
+  {
+    "objectID": "software/conflibertr.html#citing",
+    "href": "software/conflibertr.html#citing",
+    "title": "conflibertR",
+    "section": "Citing",
+    "text": "Citing\nIf you use conflibertR in published work, please cite the ConfliBERT model paper; citation(\"conflibertR\") has the full details.\n@inproceedings{hu2022conflibert,\n  title     = {{ConfliBERT}: A Pre-trained Language Model for\n               Political Conflict and Violence},\n  author    = {Hu, Yibo and Hosseini, MohammadSaleh and\n               Skorupa Parolin, Erick and Osorio, Javier and\n               Khan, Latifur and Brandt, Patrick and D'Orazio, Vito},\n  booktitle = {Proceedings of NAACL-HLT 2022},\n  pages     = {5469--5482},\n  year      = {2022},\n  doi       = {10.18653/v1/2022.naacl-main.400}\n}"
+  },
+  {
+    "objectID": "software.html#what-it-does",
+    "href": "software.html#what-it-does",
+    "title": "Software",
+    "section": "What it does",
+    "text": "What it does\n\n\nInference out of the box\nNamed entity recognition, binary and multilabel event classification, and question answering with the published ConfliBERT checkpoints. Vectorized, deterministic, and tibble-in, tibble-out.\n\n\nFine-tuning\nTrain a classifier on your own labeled data with conflibert_finetune(), choosing among 7 base models. LoRA support cuts GPU memory roughly 5x, and seeded training makes runs exactly reproducible.\n\n\nModel comparison\nconflibert_compare() fine-tunes several base models on the same split and reports test metrics side by side, so the “which encoder should I use?” question is one function call.\n\n\nActive learning\nLabel only the documents the model is least certain about. conflibert_active_start() manages the loop, with a point-and-click Shiny gadget for labeling and diversity-aware batch selection."
+  },
+  {
+    "objectID": "software.html#installation",
+    "href": "software.html#installation",
+    "title": "Software",
+    "section": "Installation",
+    "text": "Installation\ninstall.packages(\"conflibertR\")\n\nlibrary(conflibertR)\nconflibert_install()   # one-time Python backend setup, then restart R\nThe package is a reticulate wrapper: conflibert_install() provisions a conda or virtualenv environment with PyTorch and transformers once, and everything after that is plain R."
+  },
+  {
+    "objectID": "software.html#a-quick-look",
+    "href": "software.html#a-quick-look",
+    "title": "Software",
+    "section": "A quick look",
+    "text": "A quick look\n\nInferenceFine-tuningActive learning\n\n\nconflibert_ner(\"NATO forces were deployed near Kabul in September.\")\n#&gt; ── ConfliBERT entities ────────── 3 entities in 1 text ──\n#&gt;   1. NATO forces were deployed near Kabul in September.\n#&gt;      Organisation   NATO       0.99\n#&gt;      Location       Kabul      0.99\n#&gt;      Temporal       September  0.98\n\nconflibert_classify(\"A bomb exploded in the crowded market.\")\n#&gt; # A tibble: 1 × 6\n#&gt;   text                    label    class confidence ...\n#&gt; 1 A bomb exploded in the… Positive     1      0.98\n\n\ndata &lt;- conflibert_example(\"binary\")\n\nfit &lt;- conflibert_finetune(\n  data$train, data$dev, data$test,\n  model = \"ConfliBERT\", epochs = 3, seed = 42\n)\nfit$metrics    # accuracy, precision, recall, F1\nplot(fit)      # test-set confusion matrix\n\n\ndata &lt;- conflibert_example(\"active\")\n\ns &lt;- conflibert_active_start(\n  seed = data$seed, pool = data$pool,\n  dev = data$dev, query_size = 10\n)\nlabels &lt;- conflibert_active_label(s)  # Shiny labeling gadget\ns &lt;- conflibert_active_next(s, labels)\nplot(s)                               # learning curve by round"
+  },
+  {
+    "objectID": "software.html#cheatsheet",
+    "href": "software.html#cheatsheet",
+    "title": "Software",
+    "section": "Cheatsheet",
+    "text": "Cheatsheet\n\n\n\n\n\nThe whole package on one page: setup, the four inference functions, fine-tuning and LoRA, model comparison, and the active-learning loop.\nDownload the cheatsheet (PDF)"
+  },
+  {
+    "objectID": "software.html#citing",
+    "href": "software.html#citing",
+    "title": "Software",
+    "section": "Citing",
+    "text": "Citing\nIf you use conflibertR in published work, please cite the ConfliBERT model paper; citation(\"conflibertR\") has the full details.\n@inproceedings{hu2022conflibert,\n  title     = {{ConfliBERT}: A Pre-trained Language Model for\n               Political Conflict and Violence},\n  author    = {Hu, Yibo and Hosseini, MohammadSaleh and\n               Skorupa Parolin, Erick and Osorio, Javier and\n               Khan, Latifur and Brandt, Patrick and D'Orazio, Vito},\n  booktitle = {Proceedings of NAACL-HLT 2022},\n  pages     = {5469--5482},\n  year      = {2022},\n  doi       = {10.18653/v1/2022.naacl-main.400}\n}"
   }
 ]

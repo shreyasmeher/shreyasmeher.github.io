@@ -38,6 +38,8 @@ website:
         href: index.qmd
       - text: "Research"
         href: research.qmd
+      - text: "Software"
+        href: software.qmd
       - text: "Teaching"
         href: teaching.qmd
       - text: "Gallery"
