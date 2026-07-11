@@ -25,7 +25,7 @@
     "href": "software.html",
     "title": "Software",
     "section": "",
-    "text": "Research software for computational conflict analysis. Everything is open source; bug reports and contributions are welcome on GitHub.\nConfliBERT is an NSF-funded language model pretrained on a large corpus of politics, conflict, and violence text, and it consistently beats general-purpose LLMs on conflict-event tasks while running hundreds of times faster (Hu et al. 2022; Brandt et al. 2025). conflibertR wraps the full ConfliBERT workflow in idiomatic R: every function takes and returns plain data frames, so results drop straight into a dplyr or ggplot2 pipeline, with no Python visible at any point."
+    "text": "Research software for computational conflict analysis. Everything is open source; bug reports and contributions are welcome on GitHub.\n\n\n\n\n\nconflibertR\nAn R package bringing ConfliBERT, the NSF-funded language model for political conflict and violence, to the R ecosystem: entity recognition, event classification, question answering, fine-tuning, model comparison, and active learning, all from R. On CRAN as of July 2026.\nPackage page CRAN GitHub Cheatsheet (PDF)\n\n\n\nConfliBERT GUI Browser-based NLP toolkit for conflict and political violence text analysis: NER, classification, question answering, and LoRA/QLoRA fine-tuning. GitHub\n\n\nConfli-mBERT ModernBERT fine-tuned on the Global Terrorism Database for conflict event classification; companion model to the paper on NLP model selection in computational social science. Hugging Face"
   },
   {
     "objectID": "index.html",
