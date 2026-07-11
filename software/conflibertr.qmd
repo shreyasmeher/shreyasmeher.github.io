@@ -13,8 +13,8 @@ resources:
 [Political conflict text analysis in R, powered by ConfliBERT.]{.pkg-lede}
 
 ::: {.pkg-badges}
-![](https://www.r-pkg.org/badges/version/conflibertR){fig-alt="CRAN status badge"}
-![](https://github.com/shreyasmeher/conflibertR/actions/workflows/R-CMD-check.yaml/badge.svg){fig-alt="R-CMD-check status badge"}
+<img src="https://www.r-pkg.org/badges/version/conflibertR" alt="CRAN status badge"/>
+<img src="https://github.com/shreyasmeher/conflibertR/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check status badge"/>
 :::
 
 ::: {.pkg-links}
@@ -146,9 +146,23 @@ fine-tuning and LoRA, model comparison, and the active-learning loop.
 ## Citing
 
 If you use conflibertR in published work, please cite the ConfliBERT model
-paper; `citation("conflibertR")` has the full details.
+paper (Hu et al. 2022) and our *Political Analysis* paper validating these
+models against generative LLMs for conflict text classification
+(Brandt et al. 2025). `citation("conflibertR")` has the full details.
 
 ```bibtex
+@article{brandt2025extractive,
+  title   = {Extractive versus Generative Language Models for
+             Political Conflict Text Classification},
+  author  = {Brandt, Patrick T. and Alsarra, Sultan and
+             D'Orazio, Vito and Heintze, Dagmar and Khan, Latifur and
+             Meher, Shreyas and Osorio, Javier and Sianan, Marcus},
+  journal = {Political Analysis},
+  year    = {2025},
+  pages   = {1--29},
+  doi     = {10.1017/pan.2025.10027}
+}
+
 @inproceedings{hu2022conflibert,
   title     = {{ConfliBERT}: A Pre-trained Language Model for
                Political Conflict and Violence},

@@ -180,7 +180,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p><span class="pkg-lede">Political conflict text analysis in R, powered by ConfliBERT.</span></p>
 <div class="pkg-badges">
-<p><img src="https://www.r-pkg.org/badges/version/conflibertR.png" class="img-fluid" alt="CRAN status badge"> <img src="https://github.com/shreyasmeher/conflibertR/actions/workflows/R-CMD-check.yaml/badge.svg" class="img-fluid" alt="R-CMD-check status badge"></p>
+<p><img src="https://www.r-pkg.org/badges/version/conflibertR" alt="CRAN status badge"> <img src="https://github.com/shreyasmeher/conflibertR/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check status badge"></p>
 </div>
 <div class="pkg-links">
 <p><a href="https://CRAN.R-project.org/package=conflibertR">CRAN</a> <a href="https://github.com/shreyasmeher/conflibertR">GitHub</a> <a href="conflibertR-cheatsheet.pdf">Cheatsheet</a> <a href="https://github.com/shreyasmeher/conflibertR/issues">Report a bug</a></p>
@@ -276,18 +276,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="citing" class="level2">
 <h2 class="anchored" data-anchor-id="citing">Citing</h2>
-<p>If you use conflibertR in published work, please cite the ConfliBERT model paper; <code>citation("conflibertR")</code> has the full details.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">@inproceedings</span>{<span class="ot">hu2022conflibert</span>,</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>     = {{ConfliBERT}: A Pre-trained Language Model for</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>               Political Conflict and Violence},</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>    = {Hu, Yibo and Hosseini, MohammadSaleh and</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>               Skorupa Parolin, Erick and Osorio, Javier and</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>               Khan, Latifur and Brandt, Patrick and D'Orazio, Vito},</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">booktitle</span> = {Proceedings of NAACL-HLT 2022},</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">pages</span>     = {5469--5482},</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>      = {2022},</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">doi</span>       = {10.18653/v1/2022.naacl-main.400}</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If you use conflibertR in published work, please cite the ConfliBERT model paper (Hu et al.&nbsp;2022) and our <em>Political Analysis</em> paper validating these models against generative LLMs for conflict text classification (Brandt et al.&nbsp;2025). <code>citation("conflibertR")</code> has the full details.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">brandt2025extractive</span>,</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>   = {Extractive versus Generative Language Models for</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>             Political Conflict Text Classification},</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>  = {Brandt, Patrick T. and Alsarra, Sultan and</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>             D'Orazio, Vito and Heintze, Dagmar and Khan, Latifur and</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>             Meher, Shreyas and Osorio, Javier and Sianan, Marcus},</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">journal</span> = {Political Analysis},</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>    = {2025},</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">pages</span>   = {1--29},</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">doi</span>     = {10.1017/pan.2025.10027}</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="va">@inproceedings</span>{<span class="ot">hu2022conflibert</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>     = {{ConfliBERT}: A Pre-trained Language Model for</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>               Political Conflict and Violence},</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>    = {Hu, Yibo and Hosseini, MohammadSaleh and</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>               Skorupa Parolin, Erick and Osorio, Javier and</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>               Khan, Latifur and Brandt, Patrick and D'Orazio, Vito},</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="dt">booktitle</span> = {Proceedings of NAACL-HLT 2022},</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="dt">pages</span>     = {5469--5482},</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>      = {2022},</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="dt">doi</span>       = {10.18653/v1/2022.naacl-main.400}</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>

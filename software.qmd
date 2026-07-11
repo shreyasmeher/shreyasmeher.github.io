@@ -19,7 +19,7 @@ ecosystem: entity recognition, event classification, question answering,
 fine-tuning, model comparison, and active learning, all from R. On CRAN
 as of July 2026.
 
-[[Package page](software/conflibertr.qmd) [CRAN](https://CRAN.R-project.org/package=conflibertR) [GitHub](https://github.com/shreyasmeher/conflibertR) [Cheatsheet (PDF)](software/conflibertR-cheatsheet.pdf)]{.pub-links}
+[[Package page](software/conflibertr.qmd) [CRAN](https://CRAN.R-project.org/package=conflibertR) [GitHub](https://github.com/shreyasmeher/conflibertR) [Cheatsheet (PDF)](software/conflibertR-cheatsheet.pdf) [Paper](https://doi.org/10.1017/pan.2025.10027)]{.pub-links}
 :::
 :::
 
