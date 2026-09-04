@@ -24,6 +24,12 @@ as of July 2026.
 :::
 
 ::: {.pub-entry}
+[NL Agent Explorer]{.pub-title}
+[Interactive explorer of agent-level data on Dutch national politics, 2008 to 2025: every Tweede Kamer member and cabinet minister with offices held, party and parliamentary group, background, committee seats, bills sponsored with their Tweede Kamer topics and Raad van State advice, and a yearly stance on executive power estimated from plenary speech. Built for the TWIN4DEM project.]{.pub-meta}
+[[Open the explorer](https://shreyasmeher.com/nl-agent-explorer/)]{.pub-links}
+:::
+
+::: {.pub-entry}
 [ConfliBERT GUI]{.pub-title}
 [Browser-based NLP toolkit for conflict and political violence text analysis: NER, classification, question answering, and LoRA/QLoRA fine-tuning.]{.pub-meta}
 [[GitHub](https://github.com/shreyasmeher/ConfliBERT-gui)]{.pub-links}
