@@ -7,7 +7,7 @@
   --bg:#f3f5f8; --surface:#ffffff; --surface-2:#f8f9fb; --ink:#121a26; --ink-2:#465060; --muted:#7a8594;
   --line:#dfe4ea; --line-2:#eef1f5; --accent:#1b5fae; --accent-ink:#ffffff; --accent-soft:#e6eef9;
   --warn:#b45309; --warn-soft:#fdf1e3; --good:#15803d; --good-soft:#e6f4ea; --bad:#b91c1c; --bad-soft:#fbe9e9;
-  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --neg:#2a78d6; --pos:#e34948; --grid:#e6e9ee; --axis:#c5ccd5;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --neg:#2a78d6; --pos:#e34948; --grid:#e6e9ee; --axis:#c5ccd5;
   --o1:#86b6ef; --o2:#3987e5; --o3:#1c5cab; --o4:#0d366b;
   --shadow:0 1px 2px rgba(18,26,38,.06), 0 8px 24px -12px rgba(18,26,38,.18);
   --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
@@ -18,7 +18,7 @@
     --bg:#0e1218; --surface:#161b23; --surface-2:#1b212b; --ink:#eef2f6; --ink-2:#b3bcc8; --muted:#8792a0;
     --line:#28303b; --line-2:#212833; --accent:#5b9df0; --accent-ink:#0e1218; --accent-soft:#1a2a40;
     --warn:#f2a54a; --warn-soft:#3a2a14; --good:#4ade80; --good-soft:#153524; --bad:#f87171; --bad-soft:#3b1d1d;
-    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --neg:#3987e5; --pos:#e66767; --grid:#242c37; --axis:#3a4452;
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --neg:#3987e5; --pos:#e66767; --grid:#242c37; --axis:#3a4452;
     --o1:#86b6ef; --o2:#5598e7; --o3:#2a78d6; --o4:#184f95;
     --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
   }
@@ -28,7 +28,7 @@
   --bg:#0e1218; --surface:#161b23; --surface-2:#1b212b; --ink:#eef2f6; --ink-2:#b3bcc8; --muted:#8792a0;
   --line:#28303b; --line-2:#212833; --accent:#5b9df0; --accent-ink:#0e1218; --accent-soft:#1a2a40;
   --warn:#f2a54a; --warn-soft:#3a2a14; --good:#4ade80; --good-soft:#153524; --bad:#f87171; --bad-soft:#3b1d1d;
-  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --neg:#3987e5; --pos:#e66767; --grid:#242c37; --axis:#3a4452;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --neg:#3987e5; --pos:#e66767; --grid:#242c37; --axis:#3a4452;
   --o1:#86b6ef; --o2:#5598e7; --o3:#2a78d6; --o4:#184f95;
   --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
 }
@@ -172,11 +172,27 @@ ul.plain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;g
 .try .btn{padding:3px 9px}
 
 /* ---------- connections ---------- */
-.netwrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;align-items:start}
-.netcanvas{width:100%;height:560px;display:block;border:1px solid var(--line-2);border-radius:6px;background:var(--surface-2)}
-.netlist{max-height:560px;overflow:auto}
-.netlist .item{grid-template-columns:minmax(0,1fr) auto}
-.range{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--ink-2)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;flex-wrap:wrap}
+.seg button{border:0;background:var(--surface);padding:6px 11px;font-size:12.5px;color:var(--ink-2);cursor:pointer;border-right:1px solid var(--line)}
+.seg button:last-child{border-right:0}
+.seg button:hover{color:var(--accent)}
+.seg button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink)}
+.nethead{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin:4px 0 10px}
+.nethead h2{margin:0;font-size:20px;font-weight:600}
+.nethead p{margin:0;color:var(--ink-2);flex-basis:100%;max-width:90ch}
+.namechip{display:inline-flex;align-items:center;gap:6px;padding:3px 9px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:12.5px;color:var(--ink);cursor:pointer;margin:2px 4px 2px 0;font-family:inherit}
+.namechip i{width:7px;height:7px;border-radius:2px;flex:none}
+.namechip b{color:var(--muted);font-weight:500;font-size:11px}
+.namechip:hover{border-color:var(--accent);color:var(--accent)}
+.relcard h3{display:flex;align-items:center;gap:8px}
+.relcard h3 i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.netsvg{display:block;min-width:640px}
+.netsvg text{font-size:12px}
+.netsvg .lnk{fill:none;stroke:var(--axis);stroke-opacity:.55;transition:stroke-opacity .12s}
+.netsvg .lnk.hi{stroke:var(--accent);stroke-opacity:.95}
+.netsvg .lnk.dim{stroke-opacity:.08}
+.netsvg .pnode{cursor:pointer}
+.netsvg .pnode:hover text{fill:var(--accent)}
 .edu .bar{grid-template-columns:230px 1fr 50px;cursor:pointer}
 .edu .bar:hover span:first-child{color:var(--accent)}
 
@@ -233,9 +249,8 @@ ul.plain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;g
   .workspace{grid-template-columns:1fr}
   .roster{position:static;max-height:60vh}
   .joins{grid-template-columns:1fr}
-  .two,.charts2,.method-grid,.netwrap,.intro{grid-template-columns:1fr}
+  .two,.charts2,.method-grid,.intro{grid-template-columns:1fr}
   .toc{position:static}
-  .netcanvas,.netlist{height:420px;max-height:420px}
   .edu .bar{grid-template-columns:150px 1fr 44px}
   .cov .bar{grid-template-columns:150px 1fr 80px}
   .topics .bar{grid-template-columns:130px 1fr 50px}
@@ -326,29 +341,30 @@ ul.plain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;g
   </section>
 
   <section id="tab-network" hidden>
-    <p class="lede" style="margin:0 0 14px">Who is connected to whom, and through what: the same university, the same committee at the same time, bills signed together, the same cabinet, or a supporter tie. Pick a person to see their connections; click a node to move the focus, double-click to open the profile.</p>
+    <p class="lede" style="margin:0 0 14px">Who is connected to whom, and through what. Type a name, choose what kind of connection you want to see, and read the picture from left to right: the person, what they share, and who they share it with.</p>
     <div class="card">
       <div class="filterrow">
-        <input class="search" id="net-focus" list="agent-names" placeholder="Focus person" autocomplete="off">
+        <label class="small muted" for="net-focus">Who?</label>
+        <input class="search" id="net-focus" list="agent-names" placeholder="Type a name" autocomplete="off">
         <datalist id="agent-names"></datalist>
-        <button class="btn" type="button" id="net-use-sel">Use the selected person</button>
-        <label class="small" style="display:inline-flex;gap:4px;align-items:center"><input type="checkbox" id="rel-education" checked> studied at the same place</label>
-        <label class="small" style="display:inline-flex;gap:4px;align-items:center"><input type="checkbox" id="rel-committees" checked> same committee, same time</label>
-        <label class="small" style="display:inline-flex;gap:4px;align-items:center"><input type="checkbox" id="rel-bills" checked> co-signed bills</label>
-        <label class="small" style="display:inline-flex;gap:4px;align-items:center"><input type="checkbox" id="rel-cabinet" checked> same cabinet</label>
-        <label class="small" style="display:inline-flex;gap:4px;align-items:center"><input type="checkbox" id="rel-supporters" checked> supporter ties</label>
-        <span class="range">min. shared items <input type="range" id="net-min" min="1" max="8" value="1" style="width:90px"> <b id="net-min-v">1</b></span>
+        <div class="seg" id="net-lens">
+          <button type="button" data-lens="all" aria-selected="true">Everything</button>
+          <button type="button" data-lens="education">Studied together</button>
+          <button type="button" data-lens="committees">Committees</button>
+          <button type="button" data-lens="bills">Co-signed bills</button>
+          <button type="button" data-lens="cabinet">Cabinet colleagues</button>
+          <button type="button" data-lens="supporters">Supporters</button>
+        </div>
       </div>
-      <p class="sub" id="net-summary"></p>
-      <div class="netwrap">
-        <div><canvas class="netcanvas" id="netcanvas"></canvas><div class="legend" id="net-legend"></div></div>
-        <div class="netlist" id="netlist"></div>
-      </div>
+      <div id="net-head"></div>
+      <div id="net-diagram" class="scroll"></div>
+      <div id="net-cards" class="grid2" style="margin-top:14px"></div>
     </div>
     <div class="card edu" style="margin-top:16px">
       <h3>Where they studied</h3>
-      <p class="sub">Institutions recorded on Wikidata for the people on this site. Click an institution to list its alumni.</p>
+      <p class="sub">Institutions recorded on Wikidata for the people on this site. Click one to see its alumni.</p>
       <div class="bars" id="edu-bars"></div>
+      <div id="edu-list" style="margin-top:10px"></div>
     </div>
   </section>
 
@@ -1066,7 +1082,7 @@ function renderMethod() {
     <li><b>Same cabinet</b>: both held a post in the same cabinet.</li>
     <li><b>Supporter ties</b>: one is the other's party leader, appointing prime minister or coalition partner leader.</li>
   </ul>
-  <p>The strength of a connection is the number of shared items across the selected relations. The graph shows the strongest 120 connections of the focus person; people who share the same item with the focus are also linked to each other, which is what forms the clusters.</p>
+  <p>The picture reads from left to right: the person, the things they share (each with the number of people who share it), and the people with the most in common. It shows at most twelve shared things and 28 people; the cards underneath list everyone, with the number of shared things next to a name where there is more than one. The "Everything" view mixes all five relations; the other views show one relation at a time.</p>
 
   <h2 id="m-limits" style="margin-top:22px">Outside the scope</h2>
   <ul>
@@ -1139,7 +1155,7 @@ $('#help-btn').addEventListener('click', () => { showTab('agents', false); showI
 document.addEventListener('click', e => { const x = e.target.closest && e.target.closest('[data-go-name]'); if (x) { const a = AG.find(p => p.name === x.dataset.goName); if (a) select(a.id); } });
 
 // ---------------------------------------------------------------- connections
-const netstate = {focus: null, rel: {education:true, committees:true, bills:true, cabinet:true, supporters:true}, min: 1, nodes: [], edges: [], hover: null};
+const netstate = {focus: null, lens: 'all'};
 const CIDX = {}, CABM = {}, EDU = {}, SUPBY = {};
 for (const a of AG) {
   for (const c of a.committees) (CIDX[c[0]] = CIDX[c[0]] || []).push([a.id, c[3] || '1900-01-01', c[4] || '2099-12-31']);
@@ -1148,71 +1164,79 @@ for (const a of AG) {
   for (const s of a.supporters) (SUPBY[s[0]] = SUPBY[s[0]] || new Set()).add(a.id);
 }
 const RELK = ['education', 'committees', 'bills', 'cabinet', 'supporters'];
-const RELL = {education:'studied at', committees:'committee', bills:'bill', cabinet:'cabinet', supporters:'supporter tie'};
+const RELT = {education:'Studied together', committees:'Sat on committees together', bills:'Co-signed bills', cabinet:'Cabinet colleagues', supporters:'Supporter ties'};
+const RELN = {education:'university', committees:'committee', bills:'bill', cabinet:'cabinet', supporters:'tie'};
+const RELCOL = {education:'var(--s1)', committees:'var(--s2)', bills:'var(--s3)', cabinet:'var(--s4)', supporters:'var(--s5)'};
+const plural = (n, w) => n + ' ' + (n === 1 ? w : (w === 'university' ? 'universities' : w + 's'));
+// every connection of f: items (what is shared) and people (who shares it)
 function connections(f) {
-  const m = new Map();
-  const add = (id, k, item) => { if (id === f.id || !byId.has(id)) return; let e = m.get(id); if (!e) { e = {education:[], committees:[], bills:[], cabinet:[], supporters:[]}; m.set(id, e); } e[k].push(item); };
-  if (netstate.rel.education && f.wd && f.wd.education) for (const inst of f.wd.education) for (const id of (EDU[inst] || [])) add(id, 'education', inst);
-  if (netstate.rel.committees) { const seen = new Set(); for (const c of f.committees) { const my0 = c[3] || '1900-01-01', my1 = c[4] || '2099-12-31'; for (const [id, s, e] of (CIDX[c[0]] || [])) { if (id === f.id || s > my1 || e < my0) continue; const k = id + ':' + c[0]; if (!seen.has(k)) { seen.add(k); add(id, 'committees', commOf(c[0])[0]); } } } }
-  if (netstate.rel.bills) for (const bi of f.bills) { const b = BILLS[bi]; for (const id of b[6]) add(id, 'bills', b[0] + ' ' + b[2]); }
-  if (netstate.rel.cabinet) { const mine = new Set(f.roles.filter(r => r[0] !== 'MP' && r[1]).map(r => r[1])); for (const cab of mine) for (const id of (CABM[cab] || [])) add(id, 'cabinet', cab); }
-  if (netstate.rel.supporters) { for (const s of f.supporters) add(s[0], 'supporters', (REL[s[1]] || s[1]) + ' of ' + f.forename); for (const id of (SUPBY[f.id] || [])) { const row = byId.get(id).supporters.find(s => s[0] === f.id); add(id, 'supporters', f.forename + ' is their ' + (row ? (REL[row[1]] || row[1]).toLowerCase() : 'leader')); } }
-  const out = [];
-  for (const [id, e] of m) { const strength = RELK.reduce((s, k) => s + e[k].length, 0); if (strength >= netstate.min) out.push({id, a: byId.get(id), e, strength}); }
-  return out.sort((x, y) => y.strength - x.strength || x.a.surname.localeCompare(y.a.surname));
+  const items = new Map(), people = new Map();
+  const add = (rel, key, label, id) => {
+    if (id === f.id || !byId.has(id)) return;
+    let it = items.get(key); if (!it) { it = {key, rel, label, ids: new Set()}; items.set(key, it); }
+    it.ids.add(id);
+    let p = people.get(id); if (!p) { p = {id, a: byId.get(id), items: []}; people.set(id, p); }
+    if (!p.items.includes(it)) p.items.push(it);
+  };
+  if (f.wd && f.wd.education) for (const inst of f.wd.education) for (const id of (EDU[inst] || [])) add('education', 'e:' + inst, inst, id);
+  for (const c of f.committees) { const my0 = c[3] || '1900-01-01', my1 = c[4] || '2099-12-31'; for (const [id, s, e] of (CIDX[c[0]] || [])) if (id !== f.id && s <= my1 && e >= my0) add('committees', 'c:' + c[0], commOf(c[0])[0], id); }
+  for (const bi of f.bills) { const b = BILLS[bi]; for (const id of b[6]) add('bills', 'b:' + b[0], b[2], id); }
+  for (const cab of new Set(f.roles.filter(r => r[0] !== 'MP' && r[1]).map(r => r[1]))) for (const id of (CABM[cab] || [])) add('cabinet', 'k:' + cab, 'Cabinet ' + cab, id);
+  for (const s of f.supporters) add('supporters', 's:' + s[1], (REL[s[1]] || s[1]) + ' of ' + (f.forename || f.name), s[0]);
+  for (const id of (SUPBY[f.id] || [])) { const row = byId.get(id).supporters.find(s => s[0] === f.id); const lab = row ? (REL[row[1]] || row[1]).toLowerCase() : 'leader'; add('supporters', 'r:' + lab, (f.forename || f.name) + ' is their ' + lab, id); }
+  return {items: [...items.values()], people: [...people.values()]};
 }
-function layoutNet(nodes, edges, W, H) {
-  const cx = W / 2, cy = H / 2, n = nodes.length;
-  nodes[0].x = cx; nodes[0].y = cy;
-  for (let i = 1; i < n; i++) { const ang = 2 * Math.PI * i / (n - 1); const r = 140 + 130 * (((i * 7919) % 100) / 100); nodes[i].x = cx + r * Math.cos(ang); nodes[i].y = cy + r * Math.sin(ang); }
-  const IT = 240;
-  for (let it = 0; it < IT; it++) {
-    const t = 1 - it / IT;
-    for (const nd of nodes) { nd.vx = 0; nd.vy = 0; }
-    for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) { const a = nodes[i], b = nodes[j]; let dx = b.x - a.x, dy = b.y - a.y; const d2 = dx * dx + dy * dy + 1; const d = Math.sqrt(d2); const f = 2600 / d2; dx /= d; dy /= d; a.vx -= dx * f; a.vy -= dy * f; b.vx += dx * f; b.vy += dy * f; }
-    for (const e of edges) { const a = nodes[e.s], b = nodes[e.t]; let dx = b.x - a.x, dy = b.y - a.y; const d = Math.sqrt(dx * dx + dy * dy) + 0.01; const rest = e.focus ? 80 + 220 / (1 + e.w) : 70; const k = e.focus ? 0.03 : 0.006; const f = k * (d - rest); dx /= d; dy /= d; a.vx += dx * f; a.vy += dy * f; b.vx -= dx * f; b.vy -= dy * f; }
-    for (const nd of nodes) { nd.vx += (cx - nd.x) * 0.004; nd.vy += (cy - nd.y) * 0.004; }
-    for (let i = 1; i < n; i++) { const nd = nodes[i]; nd.x += Math.max(-14, Math.min(14, nd.vx)) * t; nd.y += Math.max(-14, Math.min(14, nd.vy)) * t; nd.x = Math.max(18, Math.min(W - 18, nd.x)); nd.y = Math.max(18, Math.min(H - 18, nd.y)); }
-  }
+function lensOf(all, lens) {
+  const items = all.items.filter(i => lens === 'all' || i.rel === lens).sort((x, y) => y.ids.size - x.ids.size || x.label.localeCompare(y.label));
+  const keep = new Set(items.map(i => i.key));
+  const people = all.people.map(p => ({...p, items: p.items.filter(i => keep.has(i.key))})).filter(p => p.items.length)
+    .map(p => ({...p, strength: p.items.length})).sort((x, y) => y.strength - x.strength || x.a.surname.localeCompare(y.a.surname));
+  return {items, people};
 }
-function cssVar(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
-function drawNet() {
-  const cv = $('#netcanvas'); if (!cv.getContext) return;
-  const dpr = window.devicePixelRatio || 1, W = cv.clientWidth, H = cv.clientHeight;
-  cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
-  const ctx = cv.getContext('2d'); ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H);
-  const ink = cssVar('--ink'), muted = cssVar('--muted'), line = cssVar('--line'), surface = cssVar('--surface'), accent = cssVar('--accent');
-  const nodes = netstate.nodes, edges = netstate.edges, hov = netstate.hover;
-  ctx.lineCap = 'round';
-  for (const e of edges) { if (e.focus) continue; const a = nodes[e.s], b = nodes[e.t]; ctx.strokeStyle = line; ctx.globalAlpha = .7; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
-  for (const e of edges) { if (!e.focus) continue; const a = nodes[e.s], b = nodes[e.t]; const hi = hov != null && (e.s === hov || e.t === hov); ctx.strokeStyle = hi ? accent : muted; ctx.globalAlpha = hi ? .9 : .45; ctx.lineWidth = 1 + Math.min(7, e.w); ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
-  ctx.globalAlpha = 1;
-  nodes.forEach((nd, i) => { const r = i === 0 ? 15 : Math.min(13, 4 + 2 * Math.sqrt(nd.w)); ctx.beginPath(); ctx.arc(nd.x, nd.y, r, 0, 2 * Math.PI); ctx.fillStyle = nd.color; ctx.fill(); ctx.lineWidth = i === 0 || i === hov ? 3 : 1.5; ctx.strokeStyle = i === 0 || i === hov ? accent : surface; ctx.stroke(); nd.r = r; });
-  ctx.font = '500 11.5px ' + (cssVar('--sans') || 'sans-serif'); ctx.textBaseline = 'middle'; ctx.fillStyle = ink;
-  const labelled = new Set([0, hov].filter(x => x != null)); nodes.slice(1, 13).forEach((nd, i) => labelled.add(i + 1));
-  for (const i of labelled) { const nd = nodes[i]; if (!nd) continue; const txt = i === 0 ? nd.name : nd.name.split(' ').slice(-1)[0]; const w = ctx.measureText(txt).width; ctx.fillStyle = surface; ctx.globalAlpha = .85; ctx.fillRect(nd.x + nd.r + 3, nd.y - 8, w + 6, 16); ctx.globalAlpha = 1; ctx.fillStyle = ink; ctx.fillText(txt, nd.x + nd.r + 6, nd.y); }
+function netDiagram(f, view, width) {
+  const items = view.items.slice(0, 12);
+  const keep = new Set(items.map(i => i.key));
+  const people = view.people.filter(p => p.items.some(i => keep.has(i.key))).slice(0, 28);
+  if (!items.length || !people.length) return '';
+  const W = Math.max(640, width), rowH = 26, nRows = Math.max(items.length, people.length, 6), H = nRows * rowH + 36;
+  const xF = 16, xI = Math.round(W * 0.30), wI = Math.round(W * 0.34), xP = Math.round(W * 0.72);
+  const yF = H / 2, yAt = (i, n) => 18 + (i + 0.5) * (H - 36) / n;
+  const pidx = new Map(people.map((p, i) => [p.id, i]));
+  const shown = new Set(people.map(p => p.id));
+  const cut = s => s.length > 46 ? s.slice(0, 44) + '…' : s;
+  let g = '';
+  // links focus -> item
+  items.forEach((it, i) => { const y = yAt(i, items.length); const n = it.ids.size; g += `<path class="lnk" data-i="${esc(it.key)}" d="M${xF + 150} ${yF} C ${xF + 220} ${yF}, ${xI - 70} ${y}, ${xI} ${y}" stroke-width="${1 + Math.min(8, Math.sqrt(n))}"/>`; });
+  // links item -> person
+  items.forEach((it, i) => { const y = yAt(i, items.length); for (const id of it.ids) { if (!shown.has(id)) continue; const j = pidx.get(id); const yp = yAt(j, people.length); g += `<path class="lnk" data-i="${esc(it.key)}" data-p="${id}" d="M${xI + wI} ${y} C ${xI + wI + 60} ${y}, ${xP - 60} ${yp}, ${xP - 8} ${yp}" stroke-width="1.2"/>`; } });
+  // focus
+  g += `<g><circle cx="${xF + 14}" cy="${yF}" r="14" fill="${pcol(f.party)}" stroke="var(--surface)" stroke-width="2"/><text x="${xF + 34}" y="${yF - 4}" font-weight="600" fill="var(--ink)">${esc(f.name)}</text><text x="${xF + 34}" y="${yF + 12}" fill="var(--muted)" font-size="11">${esc(f.party || '')}</text></g>`;
+  // items
+  items.forEach((it, i) => { const y = yAt(i, items.length); const extra = it.ids.size - [...it.ids].filter(id => shown.has(id)).length; g += `<g class="inode" data-i="${esc(it.key)}" data-tip="${esc(it.label + '\n' + plural(it.ids.size, 'person').replace('persons', 'people') + (extra ? ` (${extra} listed below only)` : ''))}"><rect x="${xI}" y="${y - 11}" width="${wI}" height="22" rx="5" fill="var(--surface)" stroke="var(--line)"/><rect x="${xI}" y="${y - 11}" width="5" height="22" rx="2" fill="${RELCOL[it.rel]}"/><text x="${xI + 12}" y="${y + 4}" fill="var(--ink)">${esc(cut(it.label))}</text><text x="${xI + wI - 8}" y="${y + 4}" text-anchor="end" fill="var(--muted)" font-size="11">${it.ids.size}</text></g>`; });
+  // people
+  people.forEach((p, j) => { const y = yAt(j, people.length); g += `<g class="pnode" data-p="${p.id}" data-tip="${esc(p.a.name + ' · ' + (p.a.party || 'no party') + '\n' + p.items.map(i => i.label).slice(0, 4).join('\n') + (p.items.length > 4 ? '\n…' : '') + '\nclick to make ' + (p.a.forename || p.a.name) + ' the focus')}"><circle cx="${xP}" cy="${y}" r="6" fill="${pcol(p.a.party)}" stroke="var(--surface)" stroke-width="1.5"/><text x="${xP + 12}" y="${y + 4}" fill="var(--ink)">${esc(p.a.name)}</text><text x="${W - 8}" y="${y + 4}" text-anchor="end" fill="var(--muted)" font-size="11">${p.strength}</text></g>`; });
+  return `<svg class="netsvg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Connections of ${esc(f.name)}">${g}</svg>`;
 }
 function renderNetwork() {
   const f = byId.get(netstate.focus || state.sel); if (!f) return; netstate.focus = f.id;
   $('#net-focus').value = f.name;
-  const cons = connections(f); const shown = cons.slice(0, 120);
-  const nodes = [{id: f.id, name: f.name, party: f.party, color: pcol(f.party) === 'var(--muted)' ? cssVar('--muted') : pcol(f.party), w: 8}];
-  const idx = new Map([[f.id, 0]]);
-  shown.forEach((c, i) => { nodes.push({id: c.id, name: c.a.name, party: c.a.party, color: pcol(c.a.party) === 'var(--muted)' ? cssVar('--muted') : pcol(c.a.party), w: c.strength, c}); idx.set(c.id, i + 1); });
-  const edges = shown.map(c => ({s: 0, t: idx.get(c.id), w: c.strength, focus: true}));
-  const groups = {};
-  for (const c of shown) for (const k of RELK) for (const item of c.e[k]) { const key = k + ':' + item; (groups[key] = groups[key] || []).push(idx.get(c.id)); }
-  const pair = new Map();
-  for (const key in groups) { const g = [...new Set(groups[key])]; if (g.length < 2 || g.length > 40) continue; for (let i = 0; i < g.length; i++) for (let j = i + 1; j < g.length; j++) { const pk = g[i] + '-' + g[j]; pair.set(pk, (pair.get(pk) || 0) + 1); } }
-  for (const [pk, w] of pair) { const [s, t] = pk.split('-').map(Number); edges.push({s, t, w, focus: false}); }
-  const cv = $('#netcanvas'); const W = cv.clientWidth || 800, H = cv.clientHeight || 560;
-  layoutNet(nodes, edges, W, H);
-  netstate.nodes = nodes; netstate.edges = edges; netstate.hover = null;
-  drawNet();
-  const tot = RELK.map(k => [k, cons.reduce((s, c) => s + c.e[k].length, 0)]).filter(x => x[1]);
-  $('#net-summary').textContent = `${f.name}: ${cons.length} connected ${cons.length === 1 ? 'person' : 'people'}${cons.length > 120 ? ', the 120 strongest drawn' : ''} · ${tot.map(([k, n]) => `${n} ${RELL[k]}${n === 1 ? '' : (k === 'studied at' ? '' : 's')}`.replace('studied ats', 'studied at')).join(' · ') || 'no shared items with the current relations'}`;
-  $('#net-legend').innerHTML = `<span>node size = shared items with ${esc(f.forename || f.name)} · thick lines = ties to ${esc(f.forename || f.name)} · thin lines = people who share the same item with each other · colour = party</span>`;
-  $('#netlist').innerHTML = shown.length ? `<ul class="plain">${shown.map(c => `<li class="item"><div><div class="t"><a href="#agent=${c.id}" data-go="${c.id}">${esc(c.a.name)}</a> ${chip(c.a.party)}</div><div class="m">${RELK.filter(k => c.e[k].length).map(k => `${c.e[k].length} ${RELL[k]}${c.e[k].length === 1 || k === 'education' ? '' : 's'}: ${esc(c.e[k].slice(0, 3).map(x => x.length > 60 ? x.slice(0, 57) + '…' : x).join('; '))}${c.e[k].length > 3 ? ` and ${c.e[k].length - 3} more` : ''}`).join('<br>')}</div></div><div class="right"><b>${c.strength}</b><br><button class="btn" type="button" data-focus="${c.id}">Focus</button></div></li>`).join('')}</ul>` : '<p class="muted">No connections with the current relations. Tick more relation types or lower the minimum.</p>';
+  for (const b of document.querySelectorAll('#net-lens button')) b.setAttribute('aria-selected', String(b.dataset.lens === netstate.lens));
+  const all = connections(f);
+  const view = lensOf(all, netstate.lens);
+  const perRel = RELK.map(k => [k, all.people.filter(p => p.items.some(i => i.rel === k)).length]).filter(x => x[1]);
+  const closest = view.people.slice(0, 3).map(p => `<a href="#agent=${p.id}" data-go="${p.id}">${esc(p.a.name)}</a> (${p.strength})`).join(', ');
+  $('#net-head').innerHTML = `<div class="nethead"><h2>${esc(f.name)}</h2>${chip(f.party)}<a class="btn" href="#agent=${f.id}" data-go="${f.id}">Open profile</a><p>${all.people.length ? `Connected to <b>${all.people.length}</b> people on this site: ${perRel.map(([k, n]) => `${n} ${RELT[k].toLowerCase()}`).join(', ')}.${view.people.length ? ` Closest${netstate.lens === 'all' ? '' : ' in this view'}: ${closest}.` : ' Nothing in this view; choose another kind of connection.'}` : 'No recorded connection with anyone on this site.'}</p></div>`;
+  const width = Math.max(640, ($('#net-diagram').clientWidth || 900) - 4);
+  const dia = netDiagram(f, view, width);
+  $('#net-diagram').innerHTML = dia ? dia + `<p class="small muted" style="margin:6px 0 0">Left: ${esc(f.forename || f.name)}. Middle: what is shared, with the number of people. Right: the ${Math.min(28, view.people.length)} people with the most in common${view.people.length > 28 ? ` of ${view.people.length}; everyone is listed below` : ''}. Hover to trace a line; click a name to move the focus.</p>` : '';
+  const cards = RELK.filter(k => netstate.lens === 'all' || k === netstate.lens).map(k => {
+    const ppl = all.people.filter(p => p.items.some(i => i.rel === k)).map(p => ({p, n: p.items.filter(i => i.rel === k).length})).sort((x, y) => y.n - x.n || x.p.a.surname.localeCompare(y.p.a.surname));
+    if (!ppl.length) return '';
+    const items = all.items.filter(i => i.rel === k);
+    const chips = ppl.slice(0, 60).map(({p, n}) => `<button class="namechip" type="button" data-focus="${p.id}" title="${esc(p.items.filter(i => i.rel === k).map(i => i.label).join('; '))}"><i style="background:${pcol(p.a.party)}"></i>${esc(p.a.name)}${n > 1 ? `<b>${n}</b>` : ''}</button>`).join('');
+    return `<div class="card relcard"><h3><i style="background:${RELCOL[k]}"></i>${esc(RELT[k])} <span class="muted" style="font-weight:400;text-transform:none;letter-spacing:0">· ${ppl.length} ${ppl.length === 1 ? 'person' : 'people'} · ${plural(items.length, RELN[k])}</span></h3><p class="sub">${esc(items.slice(0, 4).map(i => i.label.length > 70 ? i.label.slice(0, 68) + '…' : i.label).join(' · '))}${items.length > 4 ? ` · and ${items.length - 4} more` : ''}</p><div>${chips}${ppl.length > 60 ? `<span class="small muted"> and ${ppl.length - 60} more</span>` : ''}</div></div>`;
+  }).join('');
+  $('#net-cards').innerHTML = cards;
 }
 function renderEdu() {
   const rows = Object.entries(EDU).map(([k, v]) => [k, v.length]).sort((x, y) => y[1] - x[1]).slice(0, 18); const max = rows.length ? rows[0][1] : 1;
@@ -1220,21 +1244,19 @@ function renderEdu() {
   $('#agent-names').innerHTML = AG.map(a => `<option value="${esc(a.name)}">`).join('');
 }
 $('#net-focus').addEventListener('change', e => { const a = AG.find(p => p.name.toLowerCase() === e.target.value.trim().toLowerCase()); if (a) { netstate.focus = a.id; renderNetwork(); } });
-$('#net-use-sel').addEventListener('click', () => { netstate.focus = state.sel; renderNetwork(); });
-for (const k of RELK) $('#rel-' + k).addEventListener('change', e => { netstate.rel[k] = e.target.checked; renderNetwork(); });
-$('#net-min').addEventListener('input', e => { netstate.min = +e.target.value; $('#net-min-v').textContent = e.target.value; renderNetwork(); });
+$('#net-lens').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { netstate.lens = b.dataset.lens; renderNetwork(); } });
 document.addEventListener('click', e => {
-  const fb = e.target.closest && e.target.closest('[data-focus]'); if (fb) { netstate.focus = +fb.dataset.focus; renderNetwork(); return; }
-  const ib = e.target.closest && e.target.closest('[data-inst]'); if (ib) { const inst = ib.dataset.inst; const ids = EDU[inst] || []; $('#netlist').innerHTML = `<div class="small" style="font-weight:500;margin-bottom:6px">${esc(inst)}: ${ids.length} ${ids.length === 1 ? 'person' : 'people'}</div><ul class="plain">${ids.map(id => byId.get(id)).sort((x, y) => x.surname.localeCompare(y.surname)).map(a => `<li class="item"><div><span class="t"><a href="#agent=${a.id}" data-go="${a.id}">${esc(a.name)}</a></span> ${chip(a.party)}</div><div class="right"><button class="btn" type="button" data-focus="${a.id}">Focus</button></div></li>`).join('')}</ul>`; $('#netlist').scrollTop = 0; }
+  const fb = e.target.closest && e.target.closest('[data-focus]'); if (fb) { netstate.focus = +fb.dataset.focus; renderNetwork(); $('#net-head').scrollIntoView({block: 'start', behavior: 'smooth'}); return; }
+  const pn = e.target.closest && e.target.closest('.pnode'); if (pn) { netstate.focus = +pn.dataset.p; renderNetwork(); return; }
+  const ib = e.target.closest && e.target.closest('[data-inst]'); if (ib) { const inst = ib.dataset.inst; const ids = (EDU[inst] || []).map(id => byId.get(id)).sort((x, y) => x.surname.localeCompare(y.surname)); $('#edu-list').innerHTML = `<div class="small" style="font-weight:500;margin-bottom:4px">${esc(inst)}: ${ids.length} ${ids.length === 1 ? 'person' : 'people'}</div>${ids.map(a => `<button class="namechip" type="button" data-focus="${a.id}"><i style="background:${pcol(a.party)}"></i>${esc(a.name)}</button>`).join('')}`; }
 });
-{
-  const cv = $('#netcanvas');
-  const nearest = e => { const r = cv.getBoundingClientRect(); const x = e.clientX - r.left, y = e.clientY - r.top; let best = null, bd = 1e9; netstate.nodes.forEach((nd, i) => { const d = Math.hypot(nd.x - x, nd.y - y); if (d < Math.max(14, (nd.r || 6) + 4) && d < bd) { bd = d; best = i; } }); return best; };
-  cv.addEventListener('mousemove', e => { const i = nearest(e); if (i !== netstate.hover) { netstate.hover = i; drawNet(); } cv.style.cursor = i == null ? 'default' : 'pointer'; if (i != null) { const nd = netstate.nodes[i]; cv.dataset.tip = i === 0 ? `${nd.name} (focus)` : `${nd.name} · ${nd.party || 'no party'}\n${RELK.filter(k => nd.c.e[k].length).map(k => `${nd.c.e[k].length} ${RELL[k]}${nd.c.e[k].length === 1 || k === 'education' ? '' : 's'}`).join(' · ')}\nclick to focus · double-click for the profile`; } else delete cv.dataset.tip; });
-  cv.addEventListener('mouseleave', () => { if (netstate.hover != null) { netstate.hover = null; drawNet(); } delete cv.dataset.tip; });
-  cv.addEventListener('click', e => { const i = nearest(e); if (i != null && i !== 0) { netstate.focus = netstate.nodes[i].id; renderNetwork(); } });
-  cv.addEventListener('dblclick', e => { const i = nearest(e); if (i != null) select(netstate.nodes[i].id); });
-}
+$('#net-diagram').addEventListener('mouseover', e => {
+  const p = e.target.closest('.pnode'), it = e.target.closest('.inode'); const svg = e.currentTarget.querySelector('svg'); if (!svg) return;
+  if (!p && !it) return;
+  const key = p ? p.dataset.p : it.dataset.i;
+  for (const l of svg.querySelectorAll('.lnk')) { const hit = p ? l.dataset.p === key : l.dataset.i === key; l.classList.toggle('hi', hit); l.classList.toggle('dim', !hit); }
+});
+$('#net-diagram').addEventListener('mouseout', e => { if (e.target.closest('.pnode') || e.target.closest('.inode')) for (const l of e.currentTarget.querySelectorAll('.lnk')) { l.classList.remove('hi'); l.classList.remove('dim'); } });
 
 // ---------------------------------------------------------------- boot
 function route() {
