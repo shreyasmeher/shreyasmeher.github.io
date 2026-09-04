@@ -240,6 +240,15 @@ ul.plain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;g
 .tcard .c{font-size:11.5px;color:var(--muted);margin-top:2px}
 .tcard .tag{float:right;margin-left:8px}
 
+/* ---------- charts ---------- */
+.chartcard{max-width:1040px}
+.chartcard .toolbar h3{margin:0}
+.reading{color:var(--ink-2);max-width:82ch;margin:0 0 10px;font-size:13px}
+.pt{cursor:pointer}
+.pt:hover{stroke:var(--accent);stroke-width:2}
+.focusline{font-size:14px;line-height:1.55;margin:0;max-width:90ch}
+.focusline b{font-weight:600}
+
 /* tooltip */
 .tooltip{position:fixed;z-index:20;pointer-events:none;background:var(--ink);color:var(--bg);padding:7px 9px;border-radius:6px;font-size:12px;line-height:1.35;max-width:320px;white-space:pre-line;box-shadow:var(--shadow)}
 
@@ -271,6 +280,7 @@ ul.plain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;g
     <nav class="tabs" role="tablist" id="tabs">
       <button class="tab-btn" role="tab" data-tab="agents" aria-selected="true">People</button>
       <button class="tab-btn" role="tab" data-tab="network" aria-selected="false">Connections</button>
+      <button class="tab-btn" role="tab" data-tab="charts" aria-selected="false">Charts</button>
       <button class="tab-btn" role="tab" data-tab="bills" aria-selected="false">Bills &amp; Raad van State</button>
       <button class="tab-btn" role="tab" data-tab="parties" aria-selected="false">Parties</button>
       <button class="tab-btn" role="tab" data-tab="method" aria-selected="false">How the numbers are made</button>
@@ -289,7 +299,7 @@ ul.plain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;g
         <ol class="steps">
           <li><b>Pick a person</b> from the list on the left, or search by name, party or group. Filters narrow the list to, say, ministers under Rutte III.</li>
           <li><b>Read the profile</b>: offices over time, the stance index with its plain-language summary, background, committees, supporters, and the bills they sponsored with the Raad van State's advice.</li>
-          <li><b>Follow the links</b>: every co-signer, supporter and leader is clickable; the Connections tab draws who studied, sat and legislated with whom; Bills &amp; Raad van State lets you search all 4,309 bills by topic and advice.</li>
+          <li><b>Follow the links</b>: every co-signer, supporter and leader is clickable; the Connections tab shows who studied, sat and legislated with whom; Charts places every person in the party landscape and against their own party; Bills &amp; Raad van State lets you search all 4,309 bills by topic and advice.</li>
         </ol>
         <div class="try">Try:
           <button class="btn" type="button" data-go="1">Mark Rutte</button>
@@ -366,6 +376,12 @@ ul.plain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;g
       <div class="bars" id="edu-bars"></div>
       <div id="edu-list" style="margin-top:10px"></div>
     </div>
+  </section>
+
+  <section id="tab-charts" hidden>
+    <p class="lede" style="margin:0 0 14px">Six pictures that place people rather than parties: where they sit in the party landscape, how far they are from their own party, what happens to their speech when their party enters government, whose bills draw objections, and how the speech index compares with what experts say about their party. The selected person is ringed and named in every picture; click any dot to open that person.</p>
+    <div id="charts-focus" class="card" style="margin-bottom:16px;max-width:1040px"></div>
+    <div id="charts" style="display:flex;flex-direction:column;gap:16px"></div>
   </section>
 
   <section id="tab-bills" hidden>
@@ -537,6 +553,7 @@ function showTab(name, push) {
   for (const sec of document.querySelectorAll('main > section')) sec.hidden = sec.id !== 'tab-' + name;
   if (push !== false && name !== 'agents') history.replaceState(null, '', '#tab=' + name);
   if (name === 'network' && typeof renderNetwork === 'function') requestAnimationFrame(() => renderNetwork());
+  if (name === 'charts' && typeof renderCharts === 'function') requestAnimationFrame(() => renderCharts());
 }
 tabs.addEventListener('click', e => { const b = e.target.closest('.tab-btn'); if (b) { showTab(b.dataset.tab); scrollTo({top: 0}); } });
 document.addEventListener('click', e => { const x = e.target.closest && e.target.closest('[data-tab-go]'); if (x) { e.preventDefault(); showTab(x.dataset.tabGo); const t = x.dataset.anchor && document.getElementById(x.dataset.anchor); if (t) t.scrollIntoView({block: 'start'}); else scrollTo({top: 0}); } });
@@ -1258,6 +1275,162 @@ $('#net-diagram').addEventListener('mouseover', e => {
 });
 $('#net-diagram').addEventListener('mouseout', e => { if (e.target.closest('.pnode') || e.target.closest('.inode')) for (const l of e.currentTarget.querySelectorAll('.lnk')) { l.classList.remove('hi'); l.classList.remove('dim'); } });
 
+// ---------------------------------------------------------------- charts
+const PBY = Object.fromEntries(D.parties.map(p => [p.short, p]));
+const CHES_FALLBACK = {'GroenLinks-PvdA': ['GL', 'PvdA']};
+function chesOf(short) {
+  const srcs = CHES_FALLBACK[short] || [short];
+  const rows = srcs.map(s => PBY[s] && PBY[s].ches ? PBY[s].ches : null).filter(Boolean);
+  if (!rows.length) return null;
+  const pick = (c, keys) => { const ys = Object.keys(c).sort(); for (let i = ys.length - 1; i >= 0; i--) if (keys.every(k => c[ys[i]][k] != null)) return {...c[ys[i]], wave: ys[i]}; return null; };
+  const latest = rows.map(c => pick(c, ['lrgen', 'lrecon', 'galtan'])).filter(Boolean);
+  const w24 = rows.map(c => c['2024']).filter(c => c && c.executive_power != null);
+  const avg = (arr, k) => arr.length ? arr.reduce((s, x) => s + x[k], 0) / arr.length : null;
+  return {lrgen: avg(latest, 'lrgen'), lrecon: avg(latest, 'lrecon'), galtan: avg(latest, 'galtan'), wave: latest.length ? latest.map(x => x.wave).sort().slice(-1)[0] : null, exec24: avg(w24, 'executive_power'), merged: srcs.length > 1};
+}
+const hash01 = id => (((id * 2654435761) >>> 0) % 1000) / 1000;
+const hexMix = (a, b, t) => { const p = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16)); const A = p(a), B = p(b); return '#' + A.map((v, i) => Math.round(v + (B[i] - v) * t).toString(16).padStart(2, '0')).join(''); };
+const DIVC = {neg: '#2a78d6', mid: '#b8bec6', pos: '#e34948'};
+const divColor = r => r < .5 ? hexMix(DIVC.neg, DIVC.mid, r / .5) : hexMix(DIVC.mid, DIVC.pos, (r - .5) / .5);
+function statusOfYear(r) {
+  if ((r[2] || '').split(';').some(k => k && k !== 'MP')) return 'gov';
+  const cab = cabOfDate(`${r[0]}-07-01`); const p = r[1] && PBY[r[1]]; const pos = cab && p ? p.positions[cab] : null;
+  return pos === 'government' ? 'gov' : pos === 'opposition' ? 'opp' : null;
+}
+const meanOf = rows => rows.length ? rows.reduce((s, r) => s + r[8], 0) / rows.length : null;
+for (const a of AG) {
+  const sp = a.opinion.filter(r => r[9] === 'speech');
+  const g = sp.filter(r => statusOfYear(r) === 'gov'), o = sp.filter(r => statusOfYear(r) === 'opp'), rec = sp.filter(r => r[0] >= 2021);
+  const bills = a.bills.map(i => BILLS[i]); const withR = bills.filter(b => b[8] != null); const obj = withR.filter(b => ['C_Adapt', 'D_Reject'].includes(RVS[b[8]].cls));
+  a.der = {ches: chesOf(a.party), gov: meanOf(g), nGov: g.length, opp: meanOf(o), nOpp: o.length, recent: meanOf(rec), nRecent: rec.length,
+           nBills: bills.length, nRvs: withR.length, nObj: obj.length, objShare: withR.length ? obj.length / withR.length : null, rank: a.stance_mean == null ? null : rankOf(a.stance_mean)};
+}
+function scatter(o) {
+  const L = 48, R = 16, T = 14, B = 42, W = o.w, H = o.h;
+  const X = v => L + (v - o.x.min) / (o.x.max - o.x.min) * (W - L - R), Y = v => T + (o.y.max - v) / (o.y.max - o.y.min) * (H - T - B);
+  let g = '';
+  for (const t of o.x.ticks) g += `<line x1="${X(t)}" x2="${X(t)}" y1="${T}" y2="${H-B}" stroke="var(--grid)"/><text x="${X(t)}" y="${H-B+16}" text-anchor="middle" font-size="10.5" fill="var(--muted)">${o.x.fmt ? o.x.fmt(t) : t}</text>`;
+  for (const t of o.y.ticks) g += `<line x1="${L}" x2="${W-R}" y1="${Y(t)}" y2="${Y(t)}" stroke="var(--grid)"/><text x="${L-6}" y="${Y(t)+4}" text-anchor="end" font-size="10.5" fill="var(--muted)">${o.y.fmt ? o.y.fmt(t) : t}</text>`;
+  if (o.xline != null) g += `<line x1="${X(o.xline)}" x2="${X(o.xline)}" y1="${T}" y2="${H-B}" stroke="var(--axis)"/>`;
+  if (o.yline != null) g += `<line x1="${L}" x2="${W-R}" y1="${Y(o.yline)}" y2="${Y(o.yline)}" stroke="var(--axis)"/>`;
+  g += `<text x="${(L+W-R)/2}" y="${H-6}" text-anchor="middle" font-size="11" fill="var(--ink-2)">${esc(o.x.label)}</text>`;
+  g += `<text transform="translate(12 ${(T+H-B)/2}) rotate(-90)" text-anchor="middle" font-size="11" fill="var(--ink-2)">${esc(o.y.label)}</text>`;
+  let selp = null;
+  for (const p of o.pts) { if (p.id === o.sel) { selp = p; continue; } g += `<circle class="pt" cx="${X(p.x).toFixed(1)}" cy="${Y(p.y).toFixed(1)}" r="${p.r || 4}" fill="${p.fill || 'var(--s1)'}" fill-opacity="${p.op == null ? .75 : p.op}" stroke="${p.stroke || 'var(--surface)'}" stroke-width="1" data-tip="${esc(p.tip)}" data-go="${p.id}"/>`; }
+  for (const m of (o.marks || [])) g += `<rect x="${X(m.x)-5}" y="${Y(m.y)-5}" width="10" height="10" rx="2" fill="${m.color || 'var(--s2)'}" stroke="var(--surface)" stroke-width="1.5" data-tip="${esc(m.tip || m.label)}"/><text x="${X(m.x)+8}" y="${Y(m.y)+4}" font-size="10.5" fill="var(--ink-2)">${esc(m.label)}</text>`;
+  for (const p of o.pts) if (p.text && p.id !== o.sel) g += `<text x="${X(p.x)+7}" y="${Y(p.y)-6}" font-size="10.5" fill="var(--ink-2)">${esc(p.text)}</text>`;
+  if (selp) g += `<circle cx="${X(selp.x)}" cy="${Y(selp.y)}" r="${(selp.r || 4) + 4}" fill="none" stroke="var(--accent)" stroke-width="2.5"/><circle class="pt" cx="${X(selp.x)}" cy="${Y(selp.y)}" r="${selp.r || 4}" fill="${selp.fill || 'var(--s1)'}" stroke="var(--surface)" data-tip="${esc(selp.tip)}" data-go="${selp.id}"/><text x="${X(selp.x)+11}" y="${Y(selp.y)-9}" font-size="11.5" font-weight="600" fill="var(--ink)">${esc(selp.label || '')}</text>`;
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="${esc(o.aria || '')}">${g}</svg>`;
+}
+const TBL = {};
+function chartCard(id, title, reading, svg, table, extra) { TBL[id] = table; return `<div class="card chartcard"><div class="toolbar"><h3>${esc(title)}</h3>${table ? `<button class="btn" type="button" data-tgl="${id}">Show data</button>` : ''}</div><p class="reading">${reading}</p><div id="${id}-c">${svg}</div>${extra || ''}<div id="${id}-t" hidden></div></div>`; }
+document.addEventListener('click', e => { const b = e.target.closest && e.target.closest('[data-tgl]'); if (!b) return; const id = b.dataset.tgl; const t = $('#' + id + '-t'), c = $('#' + id + '-c'); if (t.hidden && !t.innerHTML) t.innerHTML = TBL[id](); t.hidden = !t.hidden; c.hidden = !t.hidden; b.textContent = t.hidden ? 'Show data' : 'Show chart'; });
+const tbl = (heads, rows) => `<div class="scroll"><table class="tbl"><thead><tr>${heads.map((h, i) => `<th${i ? ' class="r"' : ''}>${esc(h)}</th>`).join('')}</tr></thead><tbody>${rows.map(r => `<tr>${r.map((c, i) => `<td class="${i ? 'r num' : ''}">${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+const linkName = a => `<a href="#agent=${a.id}" data-go="${a.id}">${esc(a.name)}</a>`;
+const pct1 = v => v == null ? '–' : (100 * v).toFixed(0) + '%';
+
+function renderCharts() {
+  const sel = byId.get(state.sel); const W = Math.min(1000, Math.max(560, ($('#charts').clientWidth || 900) - 40));
+  const withS = AG.filter(a => a.stance_mean != null);
+  // ---- focus sentence
+  if (sel) {
+    const d = sel.der; const parts = [];
+    parts.push(`<b>${esc(sel.name)}</b>${sel.party ? ` (${esc(sel.party)})` : ''}: stance index <b>${signed(sel.stance_mean)}</b>${d.rank != null ? `, lower than ${pct(1 - d.rank)} of people` : ' (every year filled in; no own-speech index)'}.`);
+    if (d.ches && d.ches.lrecon != null) parts.push(`${esc(sel.party)} sits at ${d.ches.lrecon.toFixed(1)} on the economic and ${d.ches.galtan.toFixed(1)} on the cultural scale (CHES ${d.ches.wave}${d.ches.merged ? ', averaged over the merged parties' : ''}).`);
+    if (d.gov != null && d.opp != null) parts.push(`In government years the index averaged <b>${signed(d.gov)}</b> (${d.nGov} years), in opposition years <b>${signed(d.opp)}</b> (${d.nOpp}).`);
+    else if (d.gov != null) parts.push(`All ${d.nGov} own-speech years fall in government years (index ${signed(d.gov)}).`);
+    else if (d.opp != null) parts.push(`All ${d.nOpp} own-speech years fall in opposition years (index ${signed(d.opp)}).`);
+    if (d.nBills) parts.push(`${d.nBills} sponsored bill${d.nBills === 1 ? '' : 's'}${d.nRvs ? `, ${pct1(d.objShare)} of the ${d.nRvs} with a Raad van State opinion drew objections (class C or D)` : ''}.`);
+    if (d.ches && d.ches.exec24 != null) parts.push(`Experts rate ${esc(sel.party)}'s support for executive power at ${d.ches.exec24.toFixed(1)} of 10 (2024)${d.recent != null ? `; the index over 2021–2025 is ${signed(d.recent)}` : ''}.`);
+    $('#charts-focus').innerHTML = `<p class="focusline">${parts.join(' ')} <span class="muted small">Pick another person on the People tab to move the highlight.</span></p>`;
+  }
+  const out = [];
+  // ---- A. party space
+  {
+    const pts = AG.filter(a => a.der.ches && a.der.ches.lrecon != null).map(a => ({x: a.der.ches.lrecon + (hash01(a.id) - .5) * .8, y: a.der.ches.galtan + (hash01(a.id * 7 + 3) - .5) * .8, r: 4.5, fill: a.der.rank == null ? 'var(--surface)' : divColor(a.der.rank), stroke: a.der.rank == null ? 'var(--muted)' : 'var(--surface)', op: .9, id: a.id, label: a.name, a,
+      tip: `${a.name} · ${a.party}\nparty position: economic ${a.der.ches.lrecon.toFixed(1)}, cultural ${a.der.ches.galtan.toFixed(1)} (CHES ${a.der.ches.wave})\nstance index ${signed(a.stance_mean)}${a.der.rank != null ? ` · ${pct(a.der.rank)} of people score lower` : ' (no own-speech year)'}`}));
+    const parties = Object.entries(countBy(pts, p => p.a.party)).filter(([p, n]) => n >= 3).map(([p]) => p);
+    const marks = parties.map(p => { const c = chesOf(p); return {x: c.lrecon, y: c.galtan, label: p, color: pcol(p), tip: `${p}: economic ${c.lrecon.toFixed(1)}, cultural ${c.galtan.toFixed(1)} (CHES ${c.wave})`}; });
+    const svg = scatter({w: W, h: 520, sel: state.sel, aria: 'People in the party landscape', pts, marks, x: {min: 0, max: 10, ticks: [0, 2, 4, 6, 8, 10], label: 'party position on the economy (0 left … 10 right, CHES)'}, y: {min: 0, max: 10, ticks: [0, 2, 4, 6, 8, 10], label: 'party position on culture (0 libertarian … 10 traditional, CHES)'}, xline: 5, yline: 5});
+    const legend = `<div class="legend"><span><svg width="120" height="10" style="vertical-align:middle"><defs><linearGradient id="dg"><stop offset="0" stop-color="${DIVC.neg}"/><stop offset=".5" stop-color="${DIVC.mid}"/><stop offset="1" stop-color="${DIVC.pos}"/></linearGradient></defs><rect width="120" height="10" rx="3" fill="url(#dg)"/></svg> dot colour: rank of the person's stance index, from most checks-oriented (blue) to most discretion-oriented (red)</span><span><i style="background:var(--surface);border:1.5px solid var(--muted);border-radius:50%"></i>no own-speech index</span><span><i style="background:var(--s2)"></i>party position (labelled)</span></div>`;
+    out.push(chartCard('chA', 'People in the party landscape', 'Each dot is a person placed at their party\'s expert-rated position, spread a little so that colleagues do not overlap. The two axes are the ones the Chapel Hill Expert Survey uses for Europe: the economy left to right, and culture from libertarian to traditional. Colour is the person\'s own stance index rank, so the picture answers two questions at once: where the parties stand, and whether discretion-oriented speech clusters in one corner of the landscape or is scattered across it.', svg,
+      () => tbl(['Person', 'Party', 'Economic', 'Cultural', 'Index', 'Rank'], pts.sort((x, y) => x.a.surname.localeCompare(y.a.surname)).map(p => [linkName(p.a), esc(p.a.party), p.a.der.ches.lrecon.toFixed(1), p.a.der.ches.galtan.toFixed(1), signed(p.a.stance_mean), p.a.der.rank == null ? '–' : pct(p.a.der.rank)])), legend));
+  }
+  // ---- B. strips per party
+  {
+    const groups = [...group(withS, a => a.party || '∅').entries()].filter(([p, arr]) => arr.length >= 3).map(([p, arr]) => { const v = arr.map(a => a.stance_mean).sort((x, y) => x - y); return {p, arr, med: v[Math.floor(v.length / 2)], n: v.length}; }).sort((x, y) => x.med - y.med);
+    const L = 120, R = 40, T = 10, rowH = 24, B = 30, H = T + groups.length * rowH + B;
+    const X = v => L + (v + 1) / 2 * (W - L - R);
+    let g = '';
+    for (const v of [-1, -.5, 0, .5, 1]) g += `<line x1="${X(v)}" x2="${X(v)}" y1="${T}" y2="${H-B}" stroke="${v === 0 ? 'var(--axis)' : 'var(--grid)'}"/><text x="${X(v)}" y="${H-B+16}" text-anchor="middle" font-size="10.5" fill="var(--muted)">${v > 0 ? '+' + v : v}</text>`;
+    g += `<text x="${(L+W-R)/2}" y="${H-4}" text-anchor="middle" font-size="11" fill="var(--ink-2)">mean stance index per person (own-speech years)</text>`;
+    let selHtml = '';
+    groups.forEach((gr, i) => {
+      const y = T + i * rowH + rowH / 2;
+      g += `<text x="${L-8}" y="${y+4}" text-anchor="end" font-size="11.5" fill="var(--ink)">${esc(gr.p === '∅' ? 'no party' : gr.p)}</text><text x="${W-R+6}" y="${y+4}" font-size="10.5" fill="var(--muted)">${gr.n}</text>`;
+      for (const a of gr.arr) { const jy = y + (hash01(a.id * 13 + 5) - .5) * 14; const tip = `${a.name} · ${a.party || 'no party'}\nindex ${signed(a.stance_mean)} over ${a.n_speech_years} own-speech year${a.n_speech_years === 1 ? '' : 's'}`; if (a.id === state.sel) selHtml = `<circle cx="${X(a.stance_mean)}" cy="${jy}" r="8.5" fill="none" stroke="var(--accent)" stroke-width="2.5"/><circle class="pt" cx="${X(a.stance_mean)}" cy="${jy}" r="4.5" fill="var(--s1)" stroke="var(--surface)" data-tip="${esc(tip)}" data-go="${a.id}"/><text x="${X(a.stance_mean)+12}" y="${jy-9}" font-size="11.5" font-weight="600" fill="var(--ink)">${esc(a.name)}</text>`; else g += `<circle class="pt" cx="${X(a.stance_mean).toFixed(1)}" cy="${jy.toFixed(1)}" r="4" fill="var(--s1)" fill-opacity=".6" stroke="var(--surface)" stroke-width="1" data-tip="${esc(tip)}" data-go="${a.id}"/>`; }
+      g += `<rect x="${X(gr.med)-1.5}" y="${y-10}" width="3" height="20" rx="1" fill="var(--s2)" data-tip="${esc(gr.p + ': median ' + signed(gr.med) + ' over ' + gr.n + ' people')}"/>`;
+    });
+    g += selHtml;
+    const svg = `<svg class="chart" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Stance index by party">${g}</svg>`;
+    out.push(chartCard('chB', 'How much people differ inside their party', 'One row per party with at least three people who have an own-speech index, ordered from the most checks-oriented median at the top to the most discretion-oriented at the bottom. Each dot is a person; the orange tick is the party median. Wide rows mean the party label predicts little about how a member talks about executive power; narrow rows mean the members sound alike. Compare the spread of the large parties with the position of the small ones.', svg,
+      () => tbl(['Party', 'People', 'Median', 'Lowest', 'Highest'], groups.map(gr => { const v = gr.arr.map(a => a.stance_mean); return [esc(gr.p === '∅' ? 'no party' : gr.p), gr.n, signed(gr.med), signed(Math.min(...v)), signed(Math.max(...v))]; })),
+      `<div class="legend"><span><i class="dot"></i>a person</span><span><i style="background:var(--s2)"></i>party median</span></div>`));
+  }
+  // ---- C. left-right vs stance
+  {
+    const pts = withS.filter(a => a.der.ches && a.der.ches.lrgen != null).map(a => ({x: a.der.ches.lrgen + (hash01(a.id * 3 + 1) - .5) * .5, y: a.stance_mean, r: 4, id: a.id, label: a.name, a, tip: `${a.name} · ${a.party}\nparty left–right ${a.der.ches.lrgen.toFixed(1)} (CHES ${a.der.ches.wave})\nstance index ${signed(a.stance_mean)}`}));
+    const byP = group(pts, p => p.a.party); const marks = [...byP.entries()].filter(([p, arr]) => arr.length >= 3).map(([p, arr]) => ({x: chesOf(p).lrgen, y: arr.reduce((s, q) => s + q.y, 0) / arr.length, label: p, color: 'var(--s2)', tip: `${p}: mean index ${signed(arr.reduce((s, q) => s + q.y, 0) / arr.length)} over ${arr.length} people`}));
+    const svg = scatter({w: W, h: 440, sel: state.sel, aria: 'Stance index against party left-right position', pts, marks, x: {min: 0, max: 10, ticks: [0, 2, 4, 6, 8, 10], label: 'party left–right position (0 left … 10 right, CHES)'}, y: {min: -1, max: 1, ticks: [-1, -.5, 0, .5, 1], fmt: v => v > 0 ? '+' + v : v, label: 'mean stance index (own speech)'}, yline: MEANS[Math.floor(MEANS.length / 2)]});
+    out.push(chartCard('chC', 'Is executive-discretion talk a left or a right thing?', 'The CHES chapter plots parties\' EU support against their left–right position and finds an inverted U. Here the vertical axis is each person\'s stance index and the horizontal axis is their party\'s expert-rated left–right position; orange squares are party means and the grey line is the median person. If the discretion vocabulary belonged to one side of politics the cloud would slope; if it belonged to the centre or the extremes it would bend. Read the party means first, then look at how far individuals stray from them.', svg,
+      () => tbl(['Person', 'Party', 'Left–right', 'Index'], pts.sort((x, y) => x.a.surname.localeCompare(y.a.surname)).map(p => [linkName(p.a), esc(p.a.party), p.a.der.ches.lrgen.toFixed(1), signed(p.y)])),
+      `<div class="legend"><span><i class="dot"></i>a person</span><span><i style="background:var(--s2)"></i>party mean (three or more people)</span><span><i class="line"></i>median person</span></div>`));
+  }
+  // ---- D. government vs opposition
+  {
+    const q = AG.filter(a => a.der.nGov >= 2 && a.der.nOpp >= 2).map(a => ({a, shift: a.der.gov - a.der.opp})).sort((x, y) => y.shift - x.shift);
+    const avg = q.length ? q.reduce((s, r) => s + r.shift, 0) / q.length : 0; const up = q.filter(r => r.shift > 0).length;
+    let rows = q.length > 40 ? [...q.slice(0, 20), ...q.slice(-20)] : q.slice();
+    if (sel && q.some(r => r.a.id === sel.id) && !rows.some(r => r.a.id === sel.id)) rows.push(q.find(r => r.a.id === sel.id));
+    rows.sort((x, y) => y.shift - x.shift);
+    const L = 170, R = 24, T = 10, rowH = 18, B = 30, H = T + rows.length * rowH + B;
+    const X = v => L + (v + 1) / 2 * (W - L - R);
+    let g = '';
+    for (const v of [-1, -.5, 0, .5, 1]) g += `<line x1="${X(v)}" x2="${X(v)}" y1="${T}" y2="${H-B}" stroke="${v === 0 ? 'var(--axis)' : 'var(--grid)'}"/><text x="${X(v)}" y="${H-B+16}" text-anchor="middle" font-size="10.5" fill="var(--muted)">${v > 0 ? '+' + v : v}</text>`;
+    g += `<text x="${(L+W-R)/2}" y="${H-4}" text-anchor="middle" font-size="11" fill="var(--ink-2)">mean stance index in opposition years (hollow) and in government years (filled)</text>`;
+    rows.forEach((r, i) => {
+      const y = T + i * rowH + rowH / 2; const isSel = r.a.id === state.sel; const tip = `${r.a.name} · ${r.a.party || ''}\nopposition years: ${signed(r.a.der.opp)} (${r.a.der.nOpp})\ngovernment years: ${signed(r.a.der.gov)} (${r.a.der.nGov})\nshift ${signed(r.shift)}`;
+      g += `<text x="${L-8}" y="${y+4}" text-anchor="end" font-size="11" font-weight="${isSel ? 600 : 400}" fill="${isSel ? 'var(--accent)' : 'var(--ink)'}">${esc(r.a.name)}</text>`;
+      g += `<line x1="${X(r.a.der.opp)}" x2="${X(r.a.der.gov)}" y1="${y}" y2="${y}" stroke="${r.shift > 0 ? 'var(--pos)' : 'var(--neg)'}" stroke-opacity=".55" stroke-width="2"/>`;
+      g += `<circle class="pt" cx="${X(r.a.der.opp)}" cy="${y}" r="4.5" fill="var(--surface)" stroke="var(--s1)" stroke-width="2" data-tip="${esc(tip)}" data-go="${r.a.id}"/><circle class="pt" cx="${X(r.a.der.gov)}" cy="${y}" r="4.5" fill="var(--s1)" stroke="var(--surface)" stroke-width="1.5" data-tip="${esc(tip)}" data-go="${r.a.id}"/>`;
+      if (isSel) g += `<circle cx="${X(r.a.der.gov)}" cy="${y}" r="8.5" fill="none" stroke="var(--accent)" stroke-width="2"/>`;
+    });
+    const svg = `<svg class="chart" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Stance in government versus opposition">${g}</svg>`;
+    out.push(chartCard('chD', 'The same person, in and out of power', `${q.length} people have at least two own-speech years on each side: years when they held a cabinet post or their party was in government, and years when their party was in opposition. Each line joins the person's mean index in opposition (hollow) to their mean index in government (filled); red lines move toward discretion, blue toward checks. On average the index is <b>${signed(avg)}</b> higher in government years, and ${up} of ${q.length} people move toward discretion. ${q.length > 40 ? 'The twenty largest shifts in each direction are drawn; the data view lists everyone.' : ''} The selected person is added when they qualify.`, svg,
+      () => tbl(['Person', 'Party', 'Opposition', 'Years', 'Government', 'Years', 'Shift'], q.map(r => [linkName(r.a), esc(r.a.party), signed(r.a.der.opp), r.a.der.nOpp, signed(r.a.der.gov), r.a.der.nGov, signed(r.shift)]))));
+  }
+  // ---- E. bills vs objections
+  {
+    const pts = AG.filter(a => a.der.nRvs >= 3).map(a => ({x: Math.log10(a.der.nBills), y: a.der.objShare, r: 3.5 + Math.sqrt(a.der.nRvs) * .7, id: a.id, label: a.name, a, tip: `${a.name} · ${a.party || ''}\n${a.der.nBills} bills, ${a.der.nRvs} with a Raad van State opinion\n${a.der.nObj} drew objections (class C or D): ${pct1(a.der.objShare)}`}));
+    const top = [...pts].sort((x, y) => y.a.der.nBills - x.a.der.nBills).slice(0, 6); for (const p of top) p.text = p.a.surname;
+    const all = AG.reduce((s, a) => [s[0] + a.der.nObj, s[1] + a.der.nRvs], [0, 0]);
+    const svg = scatter({w: W, h: 440, sel: state.sel, aria: 'Bills sponsored against share with objections', pts, x: {min: Math.log10(2), max: Math.log10(300), ticks: [Math.log10(3), 1, Math.log10(30), 2], fmt: v => Math.round(Math.pow(10, v)), label: 'bills sponsored since 2008 (log scale)'}, y: {min: 0, max: 1, ticks: [0, .25, .5, .75, 1], fmt: v => (v * 100) + '%', label: 'share of reviewed bills with objections (C or D)'}, yline: all[1] ? all[0] / all[1] : null});
+    out.push(chartCard('chE', 'Whose bills draw objections', `People who sponsored at least three bills reviewed by the Raad van State. Right means more bills, higher means a larger share that received objections (class C, adapt first, or D, serious objections); dot size grows with the number of reviewed bills, and the grey line is the overall share (${pct1(all[1] ? all[0] / all[1] : null)}). The heaviest sponsors are ministers, whose departments draft most legislation; the interesting dots are the ones well above the line with many bills, and the initiative-bill authors on the left.`, svg,
+      () => tbl(['Person', 'Party', 'Bills', 'Reviewed', 'Objections', 'Share'], pts.sort((x, y) => y.a.der.nBills - x.a.der.nBills).map(p => [linkName(p.a), esc(p.a.party), p.a.der.nBills, p.a.der.nRvs, p.a.der.nObj, pct1(p.a.der.objShare)]))));
+  }
+  // ---- G. experts vs speech
+  {
+    const pts = AG.filter(a => a.der.ches && a.der.ches.exec24 != null && a.der.recent != null).map(a => ({x: a.der.ches.exec24 + (hash01(a.id * 5 + 2) - .5) * .5, y: a.der.recent, r: 4, id: a.id, label: a.name, a, tip: `${a.name} · ${a.party}\nexperts on ${a.party}: support for executive power ${a.der.ches.exec24.toFixed(1)} of 10 (CHES 2024)\nspeech index 2021–2025: ${signed(a.der.recent)} over ${a.der.nRecent} year${a.der.nRecent === 1 ? '' : 's'}`}));
+    const byP = group(pts, p => p.a.party); const marks = [...byP.entries()].filter(([p, arr]) => arr.length >= 2).map(([p, arr]) => ({x: chesOf(p).exec24, y: arr.reduce((s, q) => s + q.y, 0) / arr.length, label: p, tip: `${p}: mean speech index ${signed(arr.reduce((s, q) => s + q.y, 0) / arr.length)} over ${arr.length} people; experts ${chesOf(p).exec24.toFixed(1)}`}));
+    const svg = scatter({w: W, h: 440, sel: state.sel, aria: 'Expert rating against speech index', pts, marks, x: {min: 0, max: 10, ticks: [0, 2, 4, 6, 8, 10], label: 'experts: the party favours strengthening the executive (0 … 10, CHES 2024)'}, y: {min: -1, max: 1, ticks: [-1, -.5, 0, .5, 1], fmt: v => v > 0 ? '+' + v : v, label: 'speech index 2021–2025 (own speech)'}});
+    out.push(chartCard('chG', 'What experts say about the party, what members say in the chamber', 'The 2024 Chapel Hill survey asked experts how far each party favours strengthening the executive. Here that rating is the horizontal axis and each person\'s own recent speech index (2021 to 2025) is the vertical one, with orange squares for party means. Agreement between the two would show as a rising cloud. Where the party mean sits high on the expert scale but low on the speech index, the party\'s members defend checks in the chamber while experts see them as executive-friendly, or the word lists miss how that party talks; either way it is the place to read passages.', svg,
+      () => tbl(['Person', 'Party', 'Experts 2024', 'Speech index 2021–25', 'Years'], pts.sort((x, y) => x.a.surname.localeCompare(y.a.surname)).map(p => [linkName(p.a), esc(p.a.party), p.a.der.ches.exec24.toFixed(1), signed(p.y), p.a.der.nRecent])),
+      `<div class="legend"><span><i class="dot"></i>a person</span><span><i style="background:var(--s2)"></i>party mean (two or more people)</span></div>`));
+  }
+  for (const k in TBL) { const t = $('#' + k + '-t'); if (t) t.innerHTML = ''; }
+  $('#charts').innerHTML = out.join('');
+}
+
 // ---------------------------------------------------------------- boot
 function route() {
   const h = new URLSearchParams(location.hash.replace(/^#/, ''));
@@ -1269,6 +1442,6 @@ renderList(); renderParties(); renderMethod(); renderAbout(); renderBillsTab(); 
 route();
 if (!state.sel) select(byId.has(1) ? 1 : AG[0].id, false);
 addEventListener('hashchange', route);
-let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { if (state.sel) renderProfile(byId.get(state.sel)); renderParties(); const w = Math.max(320, ($('#rvs-chart').clientWidth || 600)); const rc = rvsYearChart(w); $('#rvs-chart').innerHTML = rc.svg; if (!$('#tab-network').hidden) renderNetwork(); }, 150); });
+let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { if (state.sel) renderProfile(byId.get(state.sel)); renderParties(); const w = Math.max(320, ($('#rvs-chart').clientWidth || 600)); const rc = rvsYearChart(w); $('#rvs-chart').innerHTML = rc.svg; if (!$('#tab-network').hidden) renderNetwork(); if (!$('#tab-charts').hidden) renderCharts(); }, 150); });
 })();
 </script>
