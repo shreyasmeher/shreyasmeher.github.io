@@ -160,6 +160,26 @@ ul.plain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;g
 .summary b{font-weight:600}
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:6px;font-size:12.5px;box-shadow:var(--shadow);z-index:30}
 
+/* ---------- intro ---------- */
+.intro{grid-column:1/-1;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 18px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 24px;align-items:start}
+.intro h2{margin:0 0 4px;font-size:16px;font-weight:600}
+.intro p{margin:0;color:var(--ink-2);max-width:78ch}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px 18px;margin:10px 0 0;padding:0;list-style:none;counter-reset:s}
+.steps li{position:relative;padding-left:30px;font-size:13px;color:var(--ink-2)}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:22px;height:22px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.steps b{color:var(--ink)}
+.try{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:10px;font-size:12.5px;color:var(--muted)}
+.try .btn{padding:3px 9px}
+
+/* ---------- connections ---------- */
+.netwrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;align-items:start}
+.netcanvas{width:100%;height:560px;display:block;border:1px solid var(--line-2);border-radius:6px;background:var(--surface-2)}
+.netlist{max-height:560px;overflow:auto}
+.netlist .item{grid-template-columns:minmax(0,1fr) auto}
+.range{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--ink-2)}
+.edu .bar{grid-template-columns:230px 1fr 50px;cursor:pointer}
+.edu .bar:hover span:first-child{color:var(--accent)}
+
 /* ---------- parties ---------- */
 .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px}
 .pcard{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:10px;min-width:0}
@@ -213,8 +233,10 @@ ul.plain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;g
   .workspace{grid-template-columns:1fr}
   .roster{position:static;max-height:60vh}
   .joins{grid-template-columns:1fr}
-  .two,.charts2,.method-grid{grid-template-columns:1fr}
+  .two,.charts2,.method-grid,.netwrap,.intro{grid-template-columns:1fr}
   .toc{position:static}
+  .netcanvas,.netlist{height:420px;max-height:420px}
+  .edu .bar{grid-template-columns:150px 1fr 44px}
   .cov .bar{grid-template-columns:150px 1fr 80px}
   .topics .bar{grid-template-columns:130px 1fr 50px}
 }
@@ -228,21 +250,42 @@ ul.plain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;g
     <div>
       <div class="eyebrow">Dutch national politics · Tweede Kamer and cabinet · 2008–2025</div>
       <h1>NL Agent Explorer</h1>
-      <p class="lede">Everyone who held a seat in the Tweede Kamer or a cabinet post between 2008 and 2025: the offices they held, their party and parliamentary group, background, committee seats, political supporters, named votes, the bills they sponsored with their topics and the Raad van State's advice, and a yearly index of how their own plenary speech leans between executive discretion and checks on the executive.</p>
+      <p class="lede">Everyone who held a seat in the Tweede Kamer or a cabinet post between 2008 and 2025: their offices, party, background, committees, connections, the bills they sponsored with the Raad van State's advice on them, and a yearly index of how their own plenary speech leans between executive discretion and checks on the executive.</p>
     </div>
     <div class="stats" id="stats"></div>
     <nav class="tabs" role="tablist" id="tabs">
       <button class="tab-btn" role="tab" data-tab="agents" aria-selected="true">People</button>
+      <button class="tab-btn" role="tab" data-tab="network" aria-selected="false">Connections</button>
       <button class="tab-btn" role="tab" data-tab="bills" aria-selected="false">Bills &amp; Raad van State</button>
       <button class="tab-btn" role="tab" data-tab="parties" aria-selected="false">Parties</button>
       <button class="tab-btn" role="tab" data-tab="method" aria-selected="false">How the numbers are made</button>
       <button class="tab-btn" role="tab" data-tab="about" aria-selected="false">About the data</button>
+      <button class="tab-btn" type="button" id="help-btn" style="margin-left:auto">Start here</button>
     </nav>
   </div>
 </header>
 
 <main>
   <section id="tab-agents" class="workspace">
+    <div class="intro" id="intro" hidden>
+      <div>
+        <h2>Start here</h2>
+        <p>This site describes the 674 people who sat in the Tweede Kamer or in a Dutch cabinet between 2008 and 2025, one profile per person, with everything traced back to public records.</p>
+        <ol class="steps">
+          <li><b>Pick a person</b> from the list on the left, or search by name, party or group. Filters narrow the list to, say, ministers under Rutte III.</li>
+          <li><b>Read the profile</b>: offices over time, the stance index with its plain-language summary, background, committees, supporters, and the bills they sponsored with the Raad van State's advice.</li>
+          <li><b>Follow the links</b>: every co-signer, supporter and leader is clickable; the Connections tab draws who studied, sat and legislated with whom; Bills &amp; Raad van State lets you search all 4,309 bills by topic and advice.</li>
+        </ol>
+        <div class="try">Try:
+          <button class="btn" type="button" data-go="1">Mark Rutte</button>
+          <button class="btn" type="button" data-go-name="Geert Wilders">Geert Wilders</button>
+          <button class="btn" type="button" data-go-name="Sigrid Kaag">Sigrid Kaag</button>
+          <button class="btn" type="button" data-go-name="Pieter Omtzigt">Pieter Omtzigt</button>
+          <span>· The stance index counts words; <a href="#tab=method" data-tab-go="method" data-anchor="m-stance">read how it is made</a> before comparing people.</span>
+        </div>
+      </div>
+      <button class="btn" type="button" id="intro-close">Got it, hide this</button>
+    </div>
     <aside class="roster" aria-label="People">
       <div class="roster-head">
         <input class="search" id="q" type="search" placeholder="Search name, party or group" autocomplete="off">
@@ -280,6 +323,33 @@ ul.plain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;g
       <div class="hint">Click a person, or use ↑ ↓ and Enter. The sparkline is the yearly stance index.</div>
     </aside>
     <article class="profile" id="profile" aria-live="polite"></article>
+  </section>
+
+  <section id="tab-network" hidden>
+    <p class="lede" style="margin:0 0 14px">Who is connected to whom, and through what: the same university, the same committee at the same time, bills signed together, the same cabinet, or a supporter tie. Pick a person to see their connections; click a node to move the focus, double-click to open the profile.</p>
+    <div class="card">
+      <div class="filterrow">
+        <input class="search" id="net-focus" list="agent-names" placeholder="Focus person" autocomplete="off">
+        <datalist id="agent-names"></datalist>
+        <button class="btn" type="button" id="net-use-sel">Use the selected person</button>
+        <label class="small" style="display:inline-flex;gap:4px;align-items:center"><input type="checkbox" id="rel-education" checked> studied at the same place</label>
+        <label class="small" style="display:inline-flex;gap:4px;align-items:center"><input type="checkbox" id="rel-committees" checked> same committee, same time</label>
+        <label class="small" style="display:inline-flex;gap:4px;align-items:center"><input type="checkbox" id="rel-bills" checked> co-signed bills</label>
+        <label class="small" style="display:inline-flex;gap:4px;align-items:center"><input type="checkbox" id="rel-cabinet" checked> same cabinet</label>
+        <label class="small" style="display:inline-flex;gap:4px;align-items:center"><input type="checkbox" id="rel-supporters" checked> supporter ties</label>
+        <span class="range">min. shared items <input type="range" id="net-min" min="1" max="8" value="1" style="width:90px"> <b id="net-min-v">1</b></span>
+      </div>
+      <p class="sub" id="net-summary"></p>
+      <div class="netwrap">
+        <div><canvas class="netcanvas" id="netcanvas"></canvas><div class="legend" id="net-legend"></div></div>
+        <div class="netlist" id="netlist"></div>
+      </div>
+    </div>
+    <div class="card edu" style="margin-top:16px">
+      <h3>Where they studied</h3>
+      <p class="sub">Institutions recorded on Wikidata for the people on this site. Click an institution to list its alumni.</p>
+      <div class="bars" id="edu-bars"></div>
+    </div>
   </section>
 
   <section id="tab-bills" hidden>
@@ -334,7 +404,8 @@ ul.plain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;g
         <a href="#m-flag">Bills flagged for executive power</a>
         <a href="#m-influence">Influence weight</a>
         <a href="#m-supporters">Political supporters</a>
-        <a href="#m-limits">What this does not measure</a>
+        <a href="#m-network">Connections</a>
+        <a href="#m-limits">Outside the scope</a>
       </nav>
     </div>
   </section>
@@ -352,13 +423,13 @@ ul.plain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;g
           <div class="scroll"><table class="tbl" id="files"></table></div>
         </div>
         <div class="card">
-          <h3>What the Dutch case cannot supply</h3>
+          <h3>Limits of the Dutch record</h3>
           <ul style="margin:6px 0 0;padding-left:18px;color:var(--ink-2);display:flex;flex-direction:column;gap:6px">
-            <li><b>Districts.</b> The Netherlands is one national constituency, so there is no district and no district-level opinion.</li>
-            <li><b>Named votes for every act.</b> Votes are recorded per party group; named roll-calls exist for 73 sessions only.</li>
-            <li><b>Social-media text.</b> Not lawfully re-collectable; only office handles exist and they are not shown here.</li>
-            <li><b>Individual judges.</b> Raad van State opinions are collegial with no dissents, and profiling judges is barred by the ethics review; the court signal is per opinion and per year.</li>
-            <li><b>A binding court gate for laws.</b> The Raad van State advises before deposit and Dutch courts do not review laws against the constitution; the A to D class is a resistance signal, not a veto.</li>
+            <li><b>Districts.</b> The Netherlands is one national constituency, so everything here is national.</li>
+            <li><b>Votes.</b> Votes are recorded per party group; named roll-calls exist for 73 sessions.</li>
+            <li><b>Social media.</b> Data-protection rules keep post text out of reach, so the stance index rests on plenary speech.</li>
+            <li><b>Judges.</b> Raad van State opinions are signed collectively without dissents, and the ethics review rules out profiling individual judges; the court signal is per opinion and per year.</li>
+            <li><b>Courts and laws.</b> The Raad van State advises before deposit, and the constitutionality of laws rests with parliament; the A to D class records the adviser's resistance.</li>
           </ul>
         </div>
       </div>
@@ -449,6 +520,7 @@ function showTab(name, push) {
   for (const b of tabs.querySelectorAll('.tab-btn')) b.setAttribute('aria-selected', String(b.dataset.tab === name));
   for (const sec of document.querySelectorAll('main > section')) sec.hidden = sec.id !== 'tab-' + name;
   if (push !== false && name !== 'agents') history.replaceState(null, '', '#tab=' + name);
+  if (name === 'network' && typeof renderNetwork === 'function') requestAnimationFrame(() => renderNetwork());
 }
 tabs.addEventListener('click', e => { const b = e.target.closest('.tab-btn'); if (b) { showTab(b.dataset.tab); scrollTo({top: 0}); } });
 document.addEventListener('click', e => { const x = e.target.closest && e.target.closest('[data-tab-go]'); if (x) { e.preventDefault(); showTab(x.dataset.tabGo); const t = x.dataset.anchor && document.getElementById(x.dataset.anchor); if (t) t.scrollIntoView({block: 'start'}); else scrollTo({top: 0}); } });
@@ -596,7 +668,6 @@ function stanceChart(a, width) {
   const maxW = Math.max(...o.map(r => r[4]), 1); const Yw = w => T + H1 + GAP + H2 - (w / maxW) * H2;
   let g = '';
   for (const v of [1, .5, 0, -.5, -1]) g += `<line x1="${L}" x2="${width-R}" y1="${Y(v)}" y2="${Y(v)}" stroke="${v === 0 ? 'var(--axis)' : 'var(--grid)'}" stroke-width="1"/><text x="${L-6}" y="${Y(v)+4}" text-anchor="end" font-size="10.5" fill="var(--muted)">${v > 0 ? '+' + v : v}</text>`;
-  g += `<text x="${L}" y="${T-2}" font-size="10" fill="var(--muted)">↑ words favouring executive discretion</text><text x="${L}" y="${Y(-1)+12}" font-size="10" fill="var(--muted)">↓ words defending checks on the executive</text>`;
   // party average line
   const pp = o.map(r => (r[1] && PY[r[1]] && PY[r[1]][r[0]] != null) ? [X(r[0]), Y(PY[r[1]][r[0]])] : null);
   let pd = ''; pp.forEach((p, i) => { if (!p) return; pd += (pd && pp[i-1] ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1); });
@@ -620,7 +691,7 @@ function stanceChart(a, width) {
   });
   const last = o[o.length-1];
   g += `<text x="${pts[pts.length-1][0] + 9}" y="${pts[pts.length-1][1] + 4}" font-size="11" fill="var(--ink)" font-weight="500">${signed(last[8])}</text>`;
-  g += `<text x="${L}" y="${T + H1 + GAP - 6}" font-size="10" fill="var(--muted)">words spoken per year (max ${fmtM(maxW)})</text>`;
+  g += `<text x="${L}" y="${T + H1 + GAP - 7}" font-size="10" fill="var(--muted)">words spoken per year (largest bar ${fmtM(maxW)})</text>`;
   return `<svg class="chart" viewBox="0 0 ${width} ${H}" width="${width}" height="${H}" role="img" aria-label="Yearly stance index">${g}</svg>`;
 }
 
@@ -701,7 +772,7 @@ function billItem(b, self) {
 }
 function stanceSummary(a) {
   const sp = a.opinion.filter(r => r[9] === 'speech');
-  if (!sp.length) return `<p class="summary">${esc(a.name)} never has enough plenary speech in a single year (2,000 words and 5 signal words) for an own-speech index, so every year is filled in from the party average or the overall average. Treat the line as a placeholder.</p>`;
+  if (!sp.length) return `<p class="summary">${esc(a.name)} has fewer than 2,000 words of plenary speech or fewer than 5 signal words in every year, so each year shows the party average or the overall average instead of an own-speech index.</p>`;
   const pro = sp.reduce((s, r) => s + r[5], 0), anti = sp.reduce((s, r) => s + r[6], 0);
   const words = sp.reduce((s, r) => s + r[4], 0);
   const hi = sp.reduce((m, r) => r[8] > m[8] ? r : m, sp[0]), lo = sp.reduce((m, r) => r[8] < m[8] ? r : m, sp[0]);
@@ -765,7 +836,7 @@ function renderProfile(a) {
     ${stanceSummary(a)}
     <div id="stance-chart">${stanceChart(a, width)}</div>
     <div id="stance-table" hidden>${stanceTable(a)}</div>
-    <div class="legend"><span><i class="dot"></i>own speech (≥ 2,000 words and ≥ 5 signal words that year)</span><span><i class="hollow"></i>filled in from the party average or the overall average</span><span><i class="line"></i>party average that year</span><span><i style="background:var(--s1);opacity:.5"></i>words spoken that year</span></div>
+    <div class="legend"><span>higher = more words favouring executive discretion · lower = more words defending checks</span><span><i class="dot"></i>own speech (≥ 2,000 words and ≥ 5 signal words that year)</span><span><i class="hollow"></i>filled in from the party average or the overall average</span><span><i class="line"></i>party average that year</span><span><i style="background:var(--s1);opacity:.5"></i>words spoken that year</span></div>
     ${a.stance_mean != null ? `<div style="margin-top:14px"><div class="small muted" style="margin-bottom:2px">Where ${esc(a.name)}'s mean index sits among the ${MEANS.length} people with an own-speech index</div>${positionStrip(a, width)}</div>` : ''}
   </div>
 
@@ -817,7 +888,7 @@ function renderProfile(a) {
 
     <div class="card">
       <h3>Political supporters</h3>
-      <p class="sub">People this person depends on to stay in office: the leader of their party, the prime minister who appointed them, and the leaders of coalition partners. The weights are model settings. <a href="#tab=method" data-tab-go="method" data-anchor="m-supporters">How this is built</a></p>
+      <p class="sub">People this person depends on to stay in office: the leader of their party, the prime minister who appointed them, and the leaders of coalition partners. <a href="#tab=method" data-tab-go="method" data-anchor="m-supporters">How this is built</a></p>
       ${a.supporters.length ? [...supByRel.entries()].map(([rel, rows]) => `<div style="margin-bottom:8px"><div class="small" style="font-weight:500;color:var(--ink-2)">${esc(REL[rel] || rel)} <span class="muted">· weight ${rows[0][2]}</span></div><ul class="plain">${rows.sort((x, y) => (x[3]||'').localeCompare(y[3]||'')).map(s => `<li class="item"><div><span class="t"><a href="#agent=${s[0]}" data-go="${s[0]}">${esc(nameOf(s[0]))}</a></span> <span class="m">${esc((s[5]||'').replace(/^Kabinet-/i,''))}</span></div><div class="right">${period(s[3], s[4])}</div></li>`).join('')}</ul></div>`).join('') : '<p class="muted">No supporter relation (no party label, or party without a leader record).</p>'}
       ${a.n_supported ? `<p class="note">This person is the supporter of ${a.n_supported} person-spell${a.n_supported === 1 ? '' : 's'} as party leader or Prime Minister.</p>` : ''}
     </div>
@@ -918,7 +989,7 @@ function renderMethod() {
   const med = MEANS[Math.floor(MEANS.length / 2)];
   $('#method').innerHTML = `
   <h2 id="m-stance">The stance index</h2>
-  <p>The index summarises how a person talks about executive power in the plenary of the Tweede Kamer. It is not a survey answer and not a vote-based ideal point. It is a count of words.</p>
+  <p>The index summarises how a person talks about executive power in the plenary of the Tweede Kamer. It counts words.</p>
   <ol>
     <li><b>Source.</b> Every speaker turn in the plenary transcripts (Handelingen) from 2008 to 2025, linked to the person who spoke through the dated office roster: ${fmtM(S.n_turns)} turns and ${fmtM(S.n_words)} words.</li>
     <li><b>Two word lists.</b> One list holds words and phrases that favour executive discretion (decisiveness, emergency powers, delegation to decrees and ministerial rules, fewer rules). The other holds words that defend checks on the executive (parliamentary control, the rule of law, constitutional safeguards, the Raad van State, accountability). The full lists are below.</li>
@@ -939,10 +1010,10 @@ function renderMethod() {
 
   <h3 id="m-reading">How to read it</h3>
   <ul>
-    <li><b>Compare, do not absolutise.</b> The checks list contains everyday parliamentary vocabulary (<i>rechtsstaat</i>, <i>grondwet</i>, <i>waarborg</i>, <i>zorgvuldigheid</i>, <i>transparantie</i>), so most people score below zero: the median of the ${MEANS.length} people with an own-speech index is ${signed(med)}, and only ${pct(MEANS.filter(v => v > 0).length / MEANS.length)} score above zero. A negative index does not mean a person opposes executive power; what carries information is the position relative to other people, to the same person's other years, and to the party average drawn in grey on each chart.</li>
+    <li><b>Compare across people and years.</b> The checks list contains everyday parliamentary vocabulary (<i>rechtsstaat</i>, <i>grondwet</i>, <i>waarborg</i>, <i>zorgvuldigheid</i>, <i>transparantie</i>), so most people score below zero: the median of the ${MEANS.length} people with an own-speech index is ${signed(med)}, and ${pct(MEANS.filter(v => v > 0).length / MEANS.length)} score above zero. The information lies in a person's position relative to other people, to their own other years, and to the party average drawn in grey on each chart.</li>
     <li><b>The rank and the band</b> shown on each profile place the person's mean index among all people with an own-speech index (fifths of the distribution).</li>
-    <li><b>Cabinet members</b> speak in the plenary to defend their own bills, which often means citing the safeguards in them; their vocabulary is therefore not directly comparable with an opposition member's.</li>
-    <li><b>This is version 1.</b> A second version replaces the word lists with a language-model label on each passage that touches executive power (a five-point stance from "strongly defends checks" to "strongly favours executive discretion"), aggregated per person-year and checked against a hand-coded sample. It is being produced and will replace the lexicon index here when validated.</li>
+    <li><b>Cabinet members</b> speak in the plenary to defend their own bills, which often means citing the safeguards in them, so the fairest comparison for a minister is another minister.</li>
+    <li><b>Version 2 is in production.</b> It replaces the word lists with a language-model label on each passage that touches executive power (a five-point stance from "strongly defends checks" to "strongly favours executive discretion"), aggregated per person-year and checked against a hand-coded sample of 200 passages. It will replace the word-list index here once the agreement statistic is in.</li>
   </ul>
 
   <h3 id="m-missing">Years without enough speech</h3>
@@ -959,11 +1030,11 @@ function renderMethod() {
   <p>Before a bill is deposited, the Advisory Division of the Raad van State publishes an opinion. Each published opinion was read by a language model and placed in one of four classes according to its dictum, the closing formula that states the Division's overall judgement:</p>
   <ul>
     <li><b>A, no remarks</b> ("geen opmerkingen"): the proposal can proceed as it is.</li>
-    <li><b>B, remarks to consider</b> ("opmerkingen"): observations or technical comments; the proposal is not fundamentally flawed.</li>
-    <li><b>C, objections</b> ("bezwaren"): concrete objections to the content, structure or legal basis; do not proceed unless adapted.</li>
+    <li><b>B, remarks to consider</b> ("opmerkingen"): observations or technical comments on a proposal that is sound in its basics.</li>
+    <li><b>C, objections</b> ("bezwaren"): concrete objections to the content, structure or legal basis; adapt before proceeding.</li>
     <li><b>D, serious objections</b> ("ernstige bezwaren", "afzien"): the proposal is fundamentally flawed and should be withdrawn. Rare, about 3% of opinions.</li>
   </ul>
-  <p>${fmt(S.n_rvs)} opinions are classified; where a dossier has several, the latest is shown. Hover a class label anywhere on the site to read the model's one-line reasoning. The advice is public and non-binding, and Dutch courts do not review laws against the constitution, so these classes are a resistance signal from the state's own legal adviser, not a judicial veto.</p>
+  <p>${fmt(S.n_rvs)} opinions are classified; where a dossier has several, the latest is shown. Hover a class label anywhere on the site to read the model's one-line reasoning. The advice is public and advisory, and the constitutionality of laws rests with parliament rather than the courts, so the classes record the resistance of the state's own legal adviser at the moment a bill is drafted.</p>
 
   <h2 id="m-flag" style="margin-top:22px">Bills flagged for executive power</h2>
   <p>Each law dossier since 2000 was scored on how densely its text uses the vocabulary of shifting power toward the executive: delegation to decrees, ministerial discretion, limits on oversight, and bypassing of parliament, the courts, lower governments or citizens. Two flags are shipped side by side so that the threshold is a visible choice:</p>
@@ -984,14 +1055,25 @@ function renderMethod() {
     <li><b>Appointing Prime Minister</b> (weight 0.8): every cabinet member to the Prime Minister of that cabinet.</li>
     <li><b>Coalition partner leaders</b> (weight 0.5): every cabinet member to the political leaders of the other government parties.</li>
   </ul>
-  <p>The weights are settings, not measurements.</p>
+  <p>The weights can be changed in the model that uses them.</p>
 
-  <h2 id="m-limits" style="margin-top:22px">What this does not measure</h2>
+  <h2 id="m-network" style="margin-top:22px">Connections</h2>
+  <p>The Connections tab links two people when they share something on record:</p>
+  <ul>
+    <li><b>Studied at the same place</b>: the same institution in both people's Wikidata "educated at" entries.</li>
+    <li><b>Same committee, same time</b>: both held a seat in the same Tweede Kamer committee with overlapping dates. Each shared committee counts once.</li>
+    <li><b>Co-signed bills</b>: both are among the submitters of the same bill. Each bill counts once.</li>
+    <li><b>Same cabinet</b>: both held a post in the same cabinet.</li>
+    <li><b>Supporter ties</b>: one is the other's party leader, appointing prime minister or coalition partner leader.</li>
+  </ul>
+  <p>The strength of a connection is the number of shared items across the selected relations. The graph shows the strongest 120 connections of the focus person; people who share the same item with the focus are also linked to each other, which is what forms the clusters.</p>
+
+  <h2 id="m-limits" style="margin-top:22px">Outside the scope</h2>
   <ul>
     <li>Votes per person on every act: Dutch votes are recorded per party group, and named roll-calls exist for ${fmt(S.n_named_sessions)} sessions only.</li>
-    <li>Opinions expressed outside the plenary: committee meetings, written questions, social media and interviews are not scored.</li>
+    <li>Opinions expressed outside the plenary: committee meetings, written questions, social media and interviews stay outside the index.</li>
     <li>Opinions of individual judges or councillors of state: the Raad van State signs collectively and publishes no dissents.</li>
-    <li>Opinion from the Eerste Kamer: only the Tweede Kamer's plenary is scored.</li>
+    <li>The Eerste Kamer: only the Tweede Kamer's plenary is scored.</li>
   </ul>`;
 }
 
@@ -1049,6 +1131,111 @@ function renderAbout() {
   $('#joins').innerHTML = layers.map(([t, k, rows]) => `<div class="layer"><h3>${esc(t)}</h3><span class="key">${esc(k)}</span>${rows.map(r => `<div class="tcard"><div class="f">${esc(r[0])}</div><div class="g">${esc(r[1])}</div><div class="c">${esc(r[2])}</div></div>`).join('')}</div>`).join('');
 }
 
+// ---------------------------------------------------------------- intro
+const INTRO_KEY = 'nlx-intro-dismissed';
+function showIntro(force) { let dismissed = false; try { dismissed = localStorage.getItem(INTRO_KEY) === '1'; } catch (e) {} $('#intro').hidden = dismissed && !force; }
+$('#intro-close').addEventListener('click', () => { try { localStorage.setItem(INTRO_KEY, '1'); } catch (e) {} $('#intro').hidden = true; });
+$('#help-btn').addEventListener('click', () => { showTab('agents', false); showIntro(true); scrollTo({top: 0, behavior: 'smooth'}); });
+document.addEventListener('click', e => { const x = e.target.closest && e.target.closest('[data-go-name]'); if (x) { const a = AG.find(p => p.name === x.dataset.goName); if (a) select(a.id); } });
+
+// ---------------------------------------------------------------- connections
+const netstate = {focus: null, rel: {education:true, committees:true, bills:true, cabinet:true, supporters:true}, min: 1, nodes: [], edges: [], hover: null};
+const CIDX = {}, CABM = {}, EDU = {}, SUPBY = {};
+for (const a of AG) {
+  for (const c of a.committees) (CIDX[c[0]] = CIDX[c[0]] || []).push([a.id, c[3] || '1900-01-01', c[4] || '2099-12-31']);
+  for (const r of a.roles) if (r[0] !== 'MP' && r[1]) (CABM[r[1]] = CABM[r[1]] || new Set()).add(a.id);
+  if (a.wd && a.wd.education) for (const e of a.wd.education) (EDU[e] = EDU[e] || []).push(a.id);
+  for (const s of a.supporters) (SUPBY[s[0]] = SUPBY[s[0]] || new Set()).add(a.id);
+}
+const RELK = ['education', 'committees', 'bills', 'cabinet', 'supporters'];
+const RELL = {education:'studied at', committees:'committee', bills:'bill', cabinet:'cabinet', supporters:'supporter tie'};
+function connections(f) {
+  const m = new Map();
+  const add = (id, k, item) => { if (id === f.id || !byId.has(id)) return; let e = m.get(id); if (!e) { e = {education:[], committees:[], bills:[], cabinet:[], supporters:[]}; m.set(id, e); } e[k].push(item); };
+  if (netstate.rel.education && f.wd && f.wd.education) for (const inst of f.wd.education) for (const id of (EDU[inst] || [])) add(id, 'education', inst);
+  if (netstate.rel.committees) { const seen = new Set(); for (const c of f.committees) { const my0 = c[3] || '1900-01-01', my1 = c[4] || '2099-12-31'; for (const [id, s, e] of (CIDX[c[0]] || [])) { if (id === f.id || s > my1 || e < my0) continue; const k = id + ':' + c[0]; if (!seen.has(k)) { seen.add(k); add(id, 'committees', commOf(c[0])[0]); } } } }
+  if (netstate.rel.bills) for (const bi of f.bills) { const b = BILLS[bi]; for (const id of b[6]) add(id, 'bills', b[0] + ' ' + b[2]); }
+  if (netstate.rel.cabinet) { const mine = new Set(f.roles.filter(r => r[0] !== 'MP' && r[1]).map(r => r[1])); for (const cab of mine) for (const id of (CABM[cab] || [])) add(id, 'cabinet', cab); }
+  if (netstate.rel.supporters) { for (const s of f.supporters) add(s[0], 'supporters', (REL[s[1]] || s[1]) + ' of ' + f.forename); for (const id of (SUPBY[f.id] || [])) { const row = byId.get(id).supporters.find(s => s[0] === f.id); add(id, 'supporters', f.forename + ' is their ' + (row ? (REL[row[1]] || row[1]).toLowerCase() : 'leader')); } }
+  const out = [];
+  for (const [id, e] of m) { const strength = RELK.reduce((s, k) => s + e[k].length, 0); if (strength >= netstate.min) out.push({id, a: byId.get(id), e, strength}); }
+  return out.sort((x, y) => y.strength - x.strength || x.a.surname.localeCompare(y.a.surname));
+}
+function layoutNet(nodes, edges, W, H) {
+  const cx = W / 2, cy = H / 2, n = nodes.length;
+  nodes[0].x = cx; nodes[0].y = cy;
+  for (let i = 1; i < n; i++) { const ang = 2 * Math.PI * i / (n - 1); const r = 140 + 130 * (((i * 7919) % 100) / 100); nodes[i].x = cx + r * Math.cos(ang); nodes[i].y = cy + r * Math.sin(ang); }
+  const IT = 240;
+  for (let it = 0; it < IT; it++) {
+    const t = 1 - it / IT;
+    for (const nd of nodes) { nd.vx = 0; nd.vy = 0; }
+    for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) { const a = nodes[i], b = nodes[j]; let dx = b.x - a.x, dy = b.y - a.y; const d2 = dx * dx + dy * dy + 1; const d = Math.sqrt(d2); const f = 2600 / d2; dx /= d; dy /= d; a.vx -= dx * f; a.vy -= dy * f; b.vx += dx * f; b.vy += dy * f; }
+    for (const e of edges) { const a = nodes[e.s], b = nodes[e.t]; let dx = b.x - a.x, dy = b.y - a.y; const d = Math.sqrt(dx * dx + dy * dy) + 0.01; const rest = e.focus ? 80 + 220 / (1 + e.w) : 70; const k = e.focus ? 0.03 : 0.006; const f = k * (d - rest); dx /= d; dy /= d; a.vx += dx * f; a.vy += dy * f; b.vx -= dx * f; b.vy -= dy * f; }
+    for (const nd of nodes) { nd.vx += (cx - nd.x) * 0.004; nd.vy += (cy - nd.y) * 0.004; }
+    for (let i = 1; i < n; i++) { const nd = nodes[i]; nd.x += Math.max(-14, Math.min(14, nd.vx)) * t; nd.y += Math.max(-14, Math.min(14, nd.vy)) * t; nd.x = Math.max(18, Math.min(W - 18, nd.x)); nd.y = Math.max(18, Math.min(H - 18, nd.y)); }
+  }
+}
+function cssVar(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+function drawNet() {
+  const cv = $('#netcanvas'); if (!cv.getContext) return;
+  const dpr = window.devicePixelRatio || 1, W = cv.clientWidth, H = cv.clientHeight;
+  cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+  const ctx = cv.getContext('2d'); ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H);
+  const ink = cssVar('--ink'), muted = cssVar('--muted'), line = cssVar('--line'), surface = cssVar('--surface'), accent = cssVar('--accent');
+  const nodes = netstate.nodes, edges = netstate.edges, hov = netstate.hover;
+  ctx.lineCap = 'round';
+  for (const e of edges) { if (e.focus) continue; const a = nodes[e.s], b = nodes[e.t]; ctx.strokeStyle = line; ctx.globalAlpha = .7; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
+  for (const e of edges) { if (!e.focus) continue; const a = nodes[e.s], b = nodes[e.t]; const hi = hov != null && (e.s === hov || e.t === hov); ctx.strokeStyle = hi ? accent : muted; ctx.globalAlpha = hi ? .9 : .45; ctx.lineWidth = 1 + Math.min(7, e.w); ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
+  ctx.globalAlpha = 1;
+  nodes.forEach((nd, i) => { const r = i === 0 ? 15 : Math.min(13, 4 + 2 * Math.sqrt(nd.w)); ctx.beginPath(); ctx.arc(nd.x, nd.y, r, 0, 2 * Math.PI); ctx.fillStyle = nd.color; ctx.fill(); ctx.lineWidth = i === 0 || i === hov ? 3 : 1.5; ctx.strokeStyle = i === 0 || i === hov ? accent : surface; ctx.stroke(); nd.r = r; });
+  ctx.font = '500 11.5px ' + (cssVar('--sans') || 'sans-serif'); ctx.textBaseline = 'middle'; ctx.fillStyle = ink;
+  const labelled = new Set([0, hov].filter(x => x != null)); nodes.slice(1, 13).forEach((nd, i) => labelled.add(i + 1));
+  for (const i of labelled) { const nd = nodes[i]; if (!nd) continue; const txt = i === 0 ? nd.name : nd.name.split(' ').slice(-1)[0]; const w = ctx.measureText(txt).width; ctx.fillStyle = surface; ctx.globalAlpha = .85; ctx.fillRect(nd.x + nd.r + 3, nd.y - 8, w + 6, 16); ctx.globalAlpha = 1; ctx.fillStyle = ink; ctx.fillText(txt, nd.x + nd.r + 6, nd.y); }
+}
+function renderNetwork() {
+  const f = byId.get(netstate.focus || state.sel); if (!f) return; netstate.focus = f.id;
+  $('#net-focus').value = f.name;
+  const cons = connections(f); const shown = cons.slice(0, 120);
+  const nodes = [{id: f.id, name: f.name, party: f.party, color: pcol(f.party) === 'var(--muted)' ? cssVar('--muted') : pcol(f.party), w: 8}];
+  const idx = new Map([[f.id, 0]]);
+  shown.forEach((c, i) => { nodes.push({id: c.id, name: c.a.name, party: c.a.party, color: pcol(c.a.party) === 'var(--muted)' ? cssVar('--muted') : pcol(c.a.party), w: c.strength, c}); idx.set(c.id, i + 1); });
+  const edges = shown.map(c => ({s: 0, t: idx.get(c.id), w: c.strength, focus: true}));
+  const groups = {};
+  for (const c of shown) for (const k of RELK) for (const item of c.e[k]) { const key = k + ':' + item; (groups[key] = groups[key] || []).push(idx.get(c.id)); }
+  const pair = new Map();
+  for (const key in groups) { const g = [...new Set(groups[key])]; if (g.length < 2 || g.length > 40) continue; for (let i = 0; i < g.length; i++) for (let j = i + 1; j < g.length; j++) { const pk = g[i] + '-' + g[j]; pair.set(pk, (pair.get(pk) || 0) + 1); } }
+  for (const [pk, w] of pair) { const [s, t] = pk.split('-').map(Number); edges.push({s, t, w, focus: false}); }
+  const cv = $('#netcanvas'); const W = cv.clientWidth || 800, H = cv.clientHeight || 560;
+  layoutNet(nodes, edges, W, H);
+  netstate.nodes = nodes; netstate.edges = edges; netstate.hover = null;
+  drawNet();
+  const tot = RELK.map(k => [k, cons.reduce((s, c) => s + c.e[k].length, 0)]).filter(x => x[1]);
+  $('#net-summary').textContent = `${f.name}: ${cons.length} connected ${cons.length === 1 ? 'person' : 'people'}${cons.length > 120 ? ', the 120 strongest drawn' : ''} · ${tot.map(([k, n]) => `${n} ${RELL[k]}${n === 1 ? '' : (k === 'studied at' ? '' : 's')}`.replace('studied ats', 'studied at')).join(' · ') || 'no shared items with the current relations'}`;
+  $('#net-legend').innerHTML = `<span>node size = shared items with ${esc(f.forename || f.name)} · thick lines = ties to ${esc(f.forename || f.name)} · thin lines = people who share the same item with each other · colour = party</span>`;
+  $('#netlist').innerHTML = shown.length ? `<ul class="plain">${shown.map(c => `<li class="item"><div><div class="t"><a href="#agent=${c.id}" data-go="${c.id}">${esc(c.a.name)}</a> ${chip(c.a.party)}</div><div class="m">${RELK.filter(k => c.e[k].length).map(k => `${c.e[k].length} ${RELL[k]}${c.e[k].length === 1 || k === 'education' ? '' : 's'}: ${esc(c.e[k].slice(0, 3).map(x => x.length > 60 ? x.slice(0, 57) + '…' : x).join('; '))}${c.e[k].length > 3 ? ` and ${c.e[k].length - 3} more` : ''}`).join('<br>')}</div></div><div class="right"><b>${c.strength}</b><br><button class="btn" type="button" data-focus="${c.id}">Focus</button></div></li>`).join('')}</ul>` : '<p class="muted">No connections with the current relations. Tick more relation types or lower the minimum.</p>';
+}
+function renderEdu() {
+  const rows = Object.entries(EDU).map(([k, v]) => [k, v.length]).sort((x, y) => y[1] - x[1]).slice(0, 18); const max = rows.length ? rows[0][1] : 1;
+  $('#edu-bars').innerHTML = rows.map(([k, n]) => `<div class="bar" data-inst="${esc(k)}"><span>${esc(k)}</span><div class="track"><div class="fill" style="width:${(100*n/max).toFixed(1)}%"></div></div><span class="val num">${n}</span></div>`).join('');
+  $('#agent-names').innerHTML = AG.map(a => `<option value="${esc(a.name)}">`).join('');
+}
+$('#net-focus').addEventListener('change', e => { const a = AG.find(p => p.name.toLowerCase() === e.target.value.trim().toLowerCase()); if (a) { netstate.focus = a.id; renderNetwork(); } });
+$('#net-use-sel').addEventListener('click', () => { netstate.focus = state.sel; renderNetwork(); });
+for (const k of RELK) $('#rel-' + k).addEventListener('change', e => { netstate.rel[k] = e.target.checked; renderNetwork(); });
+$('#net-min').addEventListener('input', e => { netstate.min = +e.target.value; $('#net-min-v').textContent = e.target.value; renderNetwork(); });
+document.addEventListener('click', e => {
+  const fb = e.target.closest && e.target.closest('[data-focus]'); if (fb) { netstate.focus = +fb.dataset.focus; renderNetwork(); return; }
+  const ib = e.target.closest && e.target.closest('[data-inst]'); if (ib) { const inst = ib.dataset.inst; const ids = EDU[inst] || []; $('#netlist').innerHTML = `<div class="small" style="font-weight:500;margin-bottom:6px">${esc(inst)}: ${ids.length} ${ids.length === 1 ? 'person' : 'people'}</div><ul class="plain">${ids.map(id => byId.get(id)).sort((x, y) => x.surname.localeCompare(y.surname)).map(a => `<li class="item"><div><span class="t"><a href="#agent=${a.id}" data-go="${a.id}">${esc(a.name)}</a></span> ${chip(a.party)}</div><div class="right"><button class="btn" type="button" data-focus="${a.id}">Focus</button></div></li>`).join('')}</ul>`; $('#netlist').scrollTop = 0; }
+});
+{
+  const cv = $('#netcanvas');
+  const nearest = e => { const r = cv.getBoundingClientRect(); const x = e.clientX - r.left, y = e.clientY - r.top; let best = null, bd = 1e9; netstate.nodes.forEach((nd, i) => { const d = Math.hypot(nd.x - x, nd.y - y); if (d < Math.max(14, (nd.r || 6) + 4) && d < bd) { bd = d; best = i; } }); return best; };
+  cv.addEventListener('mousemove', e => { const i = nearest(e); if (i !== netstate.hover) { netstate.hover = i; drawNet(); } cv.style.cursor = i == null ? 'default' : 'pointer'; if (i != null) { const nd = netstate.nodes[i]; cv.dataset.tip = i === 0 ? `${nd.name} (focus)` : `${nd.name} · ${nd.party || 'no party'}\n${RELK.filter(k => nd.c.e[k].length).map(k => `${nd.c.e[k].length} ${RELL[k]}${nd.c.e[k].length === 1 || k === 'education' ? '' : 's'}`).join(' · ')}\nclick to focus · double-click for the profile`; } else delete cv.dataset.tip; });
+  cv.addEventListener('mouseleave', () => { if (netstate.hover != null) { netstate.hover = null; drawNet(); } delete cv.dataset.tip; });
+  cv.addEventListener('click', e => { const i = nearest(e); if (i != null && i !== 0) { netstate.focus = netstate.nodes[i].id; renderNetwork(); } });
+  cv.addEventListener('dblclick', e => { const i = nearest(e); if (i != null) select(netstate.nodes[i].id); });
+}
+
 // ---------------------------------------------------------------- boot
 function route() {
   const h = new URLSearchParams(location.hash.replace(/^#/, ''));
@@ -1056,10 +1243,10 @@ function route() {
   const id = +h.get('agent');
   if (id && byId.has(id)) select(id, false);
 }
-renderList(); renderParties(); renderMethod(); renderAbout(); renderBillsTab();
+renderList(); renderParties(); renderMethod(); renderAbout(); renderBillsTab(); renderEdu(); showIntro(false);
 route();
 if (!state.sel) select(byId.has(1) ? 1 : AG[0].id, false);
 addEventListener('hashchange', route);
-let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { if (state.sel) renderProfile(byId.get(state.sel)); renderParties(); const w = Math.max(320, ($('#rvs-chart').clientWidth || 600)); const rc = rvsYearChart(w); $('#rvs-chart').innerHTML = rc.svg; }, 150); });
+let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { if (state.sel) renderProfile(byId.get(state.sel)); renderParties(); const w = Math.max(320, ($('#rvs-chart').clientWidth || 600)); const rc = rvsYearChart(w); $('#rvs-chart').innerHTML = rc.svg; if (!$('#tab-network').hidden) renderNetwork(); }, 150); });
 })();
 </script>
