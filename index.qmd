@@ -13,7 +13,7 @@ toc: false
 
 On the [TWIN4DEM](https://twin4dem.eu/) project (Horizon Europe), I build machine learning models of democratic resilience and executive aggrandizement in parliamentary democracies. My broader work uses fine-tuned language models and causal research designs to study censorship, digital governance, and political conflict, including the NSF-funded [ConfliBERT](https://eventdata.utdallas.edu/) family of models.
 
-My research has appeared in *Political Analysis*, *Research & Politics*, and *Behavioral Sciences*. I received my Ph.D. in Public Policy & Political Economy from the University of Texas at Dallas in 2025.
+My research has appeared in *Political Analysis*, *Research & Politics*, and *Behavioral Sciences*, and is forthcoming in *International Political Science Review*. I received my Ph.D. in Public Policy & Political Economy from the University of Texas at Dallas in 2025.
 
 ::: {.hero-links}
 [Research](research.qmd) [Teaching](teaching.qmd) [CV](CV.pdf)
