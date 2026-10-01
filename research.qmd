@@ -42,6 +42,16 @@ aliases:
 </details>
 :::
 
+## Conference Proceedings
+
+::: {.pub-entry}
+[Preferential Delegation: How Rulemaking Authority Concentrates in the Dutch Law-to-Regulation Network]{.pub-title}
+[Forthcoming, *Proceedings of the 15th International Conference on Complex Networks and Their Applications (COMPLEX NETWORKS 2026)*, Springer Studies in Computational Intelligence]{.pub-meta}
+<details class="abstract"><summary>Abstract</summary>
+<p>Executive power in parliamentary democracies grows through ordinary lawmaking: a statute delegates rulemaking authority, and decrees and regulations exercise it. We study this process as a growing network. Each of 13,945 Dutch government decrees and ministerial regulations published between 2010 and 2025 is linked to the instruments it cites as its legal basis, giving 22,157 delegation edges among 1,687 parent instruments. Parent out-degree is heavy-tailed and better described by a lognormal than a power law. Using the dated arrival of each document, we estimate the attachment kernel and a discrete-choice model of parent selection. Attachment is close to linear in a parent's existing degree (exponent 0.89 net of age, ministry and framework status) and strengthened after 2017; the within-year Gini of delegation rose from 0.50 to 0.58. Communities align with ministries but cut across them. A language model, validated against a twelve-model committee, rates every edge for aggrandizement risk: risk rises only weakly with a parent's size and concentrates on substantive regulatory statutes rather than on the framework acts that absorb most delegation.</p>
+</details>
+:::
+
 ::: {.pub-entry}
 [The Political Returns to ICT Investment: Information Control of Authoritarian Regimes]{.pub-title}
 [with P. Zhang · Forthcoming, *Proceedings of the International Congress on Information and Communication Technology (ICICT 2027)*, Springer Lecture Notes in Networks and Systems]{.pub-meta}
@@ -50,6 +60,8 @@ aliases:
 </details>
 :::
 
+## Under Review
+
 ::: {.pub-entry}
 [Selective Scrutiny: Single-Party Majority and the Strategic Withdrawal of Parliamentary Oversight in India]{.pub-title}
 [Revise & resubmit, *The Journal of Legislative Studies*]{.pub-meta}
@@ -57,8 +69,6 @@ aliases:
 <p>That executive aggrandizement proceeds through legal, procedural channels is well established. This paper asks whether governments that withdraw legislative scrutiny do so indiscriminately, or target the legislation that expands their own power. I develop a theory of strategic procedural aggrandizement for parliamentary systems in which scrutiny is discretionary to the government, and test it by linking 653 Indian parliamentary bills (2009–2026) to the full text of the statutes they became, each scored with a 316-phrase dictionary of executive aggrandizement. Under coalition government, scrutiny tracked stakes: power-expanding bills were referred to committee more often and passed more slowly. Under the single-party majority since 2014, this relationship inverted. Committee referral fell from 74% to 17%, median passage time from 255 to 18 days, and the most aggrandizing statutes cleared parliament in days. The pattern is institutional, not ideological: scrutiny recovered when the majority shrank in 2024. The mechanism generalizes to Westminster-heritage parliaments.</p>
 </details>
 :::
-
-## Under Review
 
 ::: {.pub-entry}
 [Electoral Accountability and the Channeling of Content Removal: Theory and Evidence from Google Transparency Reports]{.pub-title}
