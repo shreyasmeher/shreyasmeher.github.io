@@ -35,6 +35,34 @@ as of July 2026.
 [[GitHub](https://github.com/shreyasmeher/ConfliBERT-gui)]{.pub-links}
 :::
 
+## Fine-Tuned Language Models
+
+Open-weight models for conflict and political text, all on [Hugging Face](https://huggingface.co/shreyasmeher).
+
+::: {.pub-entry}
+[ConflLlama]{.pub-title}
+[Llama 3 8B fine-tuned on the Global Terrorism Database for attack-type classification. Also available with a more neutral chat template and in four time-period variants.]{.pub-meta}
+[[Hugging Face](https://huggingface.co/shreyasmeher/ConflLlama) [Paper](https://doi.org/10.1177/20531680251356282)]{.pub-links}
+:::
+
+::: {.pub-entry}
+[ConflLlama-NER]{.pub-title}
+[Llama 3.1 8B Instruct fine-tuned for named entity recognition in conflict event narratives: the source, target, and related actors of each event.]{.pub-meta}
+[[Hugging Face](https://huggingface.co/shreyasmeher/ConflLlama-NER)]{.pub-links}
+:::
+
+::: {.pub-entry}
+[ConflLlama-NER-TOI]{.pub-title}
+[Named entity recognition for Indian news (locations, organisations, people, and time expressions), trained on 100,000 Times of India articles.]{.pub-meta}
+[[Hugging Face](https://huggingface.co/shreyasmeher/ConflLlama-NER-TOI)]{.pub-links}
+:::
+
+::: {.pub-entry}
+[Qwen-GLOCON-Reasoning]{.pub-title}
+[Qwen2.5-3B trained with GRPO reinforcement learning to classify conflict events into five categories with structured reasoning.]{.pub-meta}
+[[Hugging Face](https://huggingface.co/shreyasmeher/Qwen-GLOCON-Reasoning)]{.pub-links}
+:::
+
 ::: {.pub-entry}
 [Confli-mBERT]{.pub-title}
 [ModernBERT fine-tuned on the Global Terrorism Database for conflict event classification; companion model to the paper on NLP model selection in computational social science.]{.pub-meta}

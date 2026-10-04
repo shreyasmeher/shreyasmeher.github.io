@@ -105,6 +105,14 @@ aliases:
 </details>
 :::
 
+::: {.pub-entry}
+[Using Messy Text in Future LLM Annotations]{.pub-title}
+[with P.T. Brandt, P. Cuellar-Cuellar & X. Zhao]{.pub-meta}
+<details class="abstract"><summary>Abstract</summary>
+<p>When working with real-world text, researchers often inherit corpora and annotations with costly human judgments but were not collected, organized, or annotated for modern text-as-data workflows. This is especially common in social science domains where web-scraped documents are noisy, incomplete, or misaligned with the unit of analysis. We propose codebook attention: a codebook-guided turn-by-turn extractive summarization pipeline that reuses valuable annotations without requiring full re-annotation. For each victim in a corpus of disappearance reports from Mexico, the model processes documents sequentially, extracts verbatim evidence spans for each codebook category, and updates a running structured summary to produce a clean and evidence-traceable document-level representation. Using the codebook as the task schema focuses model attention on the fields that matter for downstream classification and reconnects prior human annotations to contemporary language model workflows. We evaluate the resulting summaries by classifying and comparing the predicted labels with human annotations across multiple open-source models including Llama 3.1, Gemma 3 and Ministral 3. Results suggest that hours of computation can approximate weeks of human coding effort while producing evidence-traceable summaries suitable for downstream human rights and event data research.</p>
+</details>
+:::
+
 ## Working Papers
 
 ::: {.pub-entry}
@@ -128,26 +136,6 @@ aliases:
 <details class="abstract"><summary>Abstract</summary>
 <p>Three decades of research on parliamentary questions have mapped who asks them, and almost never what askers get back. I turn to the answers, and to a puzzle: the Dutch government replies to its fiercest critics fastest. Opposition and populist members are answered as quickly as the coalition's own backbenchers, or quicker, and three answers in four miss the 21-day deadline for everyone alike. Timing the answers makes the government look even-handed. Reading them does not. Scoring more than 130,000 question–answer pairs (2010–2025) with a validated large-language-model measure of evasion, I find that critics are answered no more slowly, yet 0.20 to 0.47 standard deviations more evasively, net of cabinet, topic, and ministry. The emptiness is aimed: within a single reply, the substantive sub-questions that demand an account are evaded most, and more so when the asker is a critic. Two probes trace the pattern to its incentives. When a question arrives with a news story attached, critics are answered faster still, yet no more fully; and evasive answers draw no more follow-up questions than responsive ones, so evasion costs a minister nothing. One logic runs through all of it, and it is visibility. Delay is public and punished; evasion is buried, unread, and unpriced. A government that treats some askers worse than others does so through the channel where the discrimination will not be seen. Ministers answer on time, and empty the answer instead.</p>
 </details>
-:::
-
-::: {.pub-entry}
-[Between the Documents: Unit Choice in Corpus-Scale Political Text Analysis]{.pub-title}
-<details class="abstract"><summary>Abstract</summary>
-<p>Many constructs in political analysis are realised at corpus scale across thousands of legal artefacts, and the substantive phenomenon often spans the relationship between documents rather than residing within any single one. Computational text analysis nonetheless inherits document- and sentence-level units from earlier hand-coding traditions, leaving the unit choice as an unexamined default. I work through the consequences for executive aggrandizement, the incremental and legally formal expansion of executive power. Applied to Dutch legislation between 2007 and 2026 (3,443 bills, 12,884 parent-implementing edges, 488 chains with consensus labels), I compare four methods spanning the design space: a keyword density, a directional grid, a twelve-flag composite combining textual and procedural signal, and a multi-model LLM committee that scores delegation chains on a five-dimension schema. Document-level and chain-level scores are weakly negatively correlated, and the divergence is asymmetric: 28% of chains with a top-decile parent law receive a low chain rating, while only 2.3% show the reverse pattern. Document-level methods narrow the universe of candidate concerns; chain-level methods calibrate within it. The two answer different questions, and conflating them produces conclusions the data do not support.</p>
-</details>
-:::
-
-::: {.pub-entry}
-[Using Messy Text in Future LLM Annotations]{.pub-title}
-[with P.T. Brandt, P. Cuellar-Cuellar & X. Zhao]{.pub-meta}
-<details class="abstract"><summary>Abstract</summary>
-<p>When working with real-world text, researchers often inherit corpora and annotations with costly human judgments but were not collected, organized, or annotated for modern text-as-data workflows. This is especially common in social science domains where web-scraped documents are noisy, incomplete, or misaligned with the unit of analysis. We propose codebook attention: a codebook-guided turn-by-turn extractive summarization pipeline that reuses valuable annotations without requiring full re-annotation. For each victim in a corpus of disappearance reports from Mexico, the model processes documents sequentially, extracts verbatim evidence spans for each codebook category, and updates a running structured summary to produce a clean and evidence-traceable document-level representation. Using the codebook as the task schema focuses model attention on the fields that matter for downstream classification and reconnects prior human annotations to contemporary language model workflows. We evaluate the resulting summaries by classifying and comparing the predicted labels with human annotations across multiple open-source models including Llama 3.1, Gemma 3 and Ministral 3. Results suggest that hours of computation can approximate weeks of human coding effort while producing evidence-traceable summaries suitable for downstream human rights and event data research.</p>
-</details>
-:::
-
-::: {.pub-entry}
-[Event Horizon: Revolutionizing Data Annotation with Reinforcement Learning]{.pub-title}
-[[Model](https://huggingface.co/shreyasmeher/Qwen-GLOCON-Reasoning)]{.pub-links}
 :::
 
 ## Dissertation
