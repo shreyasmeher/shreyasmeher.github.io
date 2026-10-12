@@ -9,3 +9,10 @@
 
 .DS_Store
 **/.DS_Store
+
+# local Claude Code settings
+.claude/
+
+# AppleDouble files from the external drive
+._*
+**/._*

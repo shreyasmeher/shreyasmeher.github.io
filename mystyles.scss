@@ -31,6 +31,7 @@ $footer-fg: #6b6b6b;
 
 $muted: #6b6b6b;
 $hairline: #e6e6e6;
+$rr: #B45309; // revise & resubmit accent (matches CV cvrr, RGB 180,83,9)
 
 body {
   -webkit-font-smoothing: antialiased;
@@ -199,6 +200,13 @@ h1.hero-name {
     em, i { color: $muted; }
 
     a { color: $muted; }
+
+    &.rr {
+      color: $rr;
+      font-weight: 600;
+
+      em, i { color: $rr; }
+    }
   }
 
   .pub-links {
