@@ -1,0 +1,47 @@
+/*-- scss:defaults --*/
+
+// Light theme tokens. Values are contrast-checked in the lookbook (WCAG 2.2 AA).
+
+$font-family-sans-serif: "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+$font-family-monospace: "Geist Mono", ui-monospace, Menlo, monospace;
+$headings-font-family: "Gambetta", "Iowan Old Style", Georgia, serif;
+$headings-font-weight: 500;
+$font-size-root: 16px;
+$font-size-base: 1.0625rem;
+$line-height-base: 1.6;
+
+$body-bg: #ffffff;
+$body-color: #15181e;
+$primary: #284678;
+$link-color: #284678;
+$link-hover-color: #284678;
+$link-decoration: underline;
+$text-muted: #5d6573;
+$border-color: #dfe3e9;
+$code-color: #15181e;
+$code-bg: #f4f5f7;
+
+$navbar-bg: #ffffff;
+$navbar-fg: #3a404b;
+$navbar-hl: #15181e;
+$footer-bg: #ffffff;
+$footer-fg: #5d6573;
+
+/*-- scss:rules --*/
+
+:root {
+  --sm-paper: #ffffff;
+  --sm-sunk: #f4f5f7;
+  --sm-ink: #15181e;
+  --sm-ink-2: #3a404b;
+  --sm-muted: #5d6573;
+  --sm-rule: #dfe3e9;
+  --sm-control: #7d8594;
+  --sm-accent: #284678;
+  --sm-accent-ul: #8fa3c4;
+  --sm-on-accent: #ffffff;
+  --sm-ochre: #8a5a00;
+  --sm-teal: #1f6b66;
+  --sm-focus: #2f6fdb;
+  color-scheme: light;
+}

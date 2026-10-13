@@ -1,12 +1,14 @@
 ---
+image: "assets/og/home.png"
+description: "Postdoctoral researcher at Erasmus University Rotterdam studying information control, executive power, and language models for political text."
 title: ""
 pagetitle: "Shreyas Meher"
 toc: false
+body-classes: home
 ---
 
 ::: {.home-hero}
-::: {.grid}
-::: {.g-col-12 .g-col-md-7}
+::: {.hero-text}
 # Shreyas Meher {.hero-name}
 
 [Postdoctoral researcher at Erasmus University Rotterdam. I study how governments control information online, and how democratic institutions erode.]{.hero-lede}
@@ -16,12 +18,12 @@ On the [TWIN4DEM](https://twin4dem.eu/) project (Horizon Europe), I build machin
 My research has appeared in *Political Analysis*, *Research & Politics*, and *Behavioral Sciences*, and is forthcoming in *International Political Science Review*. I received my Ph.D. in Public Policy & Political Economy from the University of Texas at Dallas in 2025.
 
 ::: {.hero-links}
-[Research](research.qmd) [Teaching](teaching.qmd) [CV](CV.pdf)
+[Research](research.qmd) [Software](software.qmd) [Teaching](teaching.qmd) [CV (PDF)](CV.pdf)
 :::
 :::
 
-::: {.g-col-12 .g-col-md-5}
-![](headshot.jpg){#img-me fig-alt="Portrait of Shreyas Meher"}
+::: {.hero-portrait}
+![](headshot.jpg){fig-alt="Portrait of Shreyas Meher"}
 
 ::: {.hero-contact}
 [meher@essb.eur.nl](mailto:meher@essb.eur.nl)<br>
@@ -29,4 +31,6 @@ Rotterdam, the Netherlands
 :::
 :::
 :::
+
+::: {.pattern .pattern-band .home-band data-seed="2017" data-density="1.2"}
 :::

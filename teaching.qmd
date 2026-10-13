@@ -1,31 +1,69 @@
 ---
+image: "assets/og/teaching.png"
+description: "Teaching at Erasmus University Rotterdam and the University of Texas at Dallas."
 title: "Teaching"
 toc: false
 ---
 
+::: {.pattern .pattern-band data-seed="31"}
+:::
+
 ## Instructor
 
-::: {.teaching-entry}
-#### Global Development Issues
-[Erasmus University Rotterdam · 2025--2026]{.teaching-meta}
-Quantitative research design for policy evaluation, including causal inference and panel data estimation, with hands-on R programming labs using real policy datasets.
+::: {.teach}
+[2026–2027]{.when}
+
+::: {}
+### Political Philosophy & Democracy
+Erasmus University Rotterdam.
+:::
 :::
 
-::: {.teaching-entry}
-#### Bachelor Project: Digital Governance, Platform Labour, and Power in the Digital Economy
-[Erasmus University Rotterdam · 2025--2026]{.teaching-meta}
-Supervising the MISOC Bachelor Project (Group 16). [Course materials](bachelor-project/) (password protected).
+::: {.teach}
+[2025–2026]{.when}
+
+::: {}
+### Global Development Issues
+Erasmus University Rotterdam. Quantitative research design for policy evaluation, including causal inference and panel data estimation, with hands-on R programming labs using real policy datasets.
+:::
 :::
 
-::: {.teaching-entry}
-#### EPPS Math & Coding Camp
-[The University of Texas at Dallas · August 2024]{.teaching-meta}
-Five-day intensive for incoming Ph.D. students: R programming, data manipulation, and visualization. Course website: [eppsmathandcodingcamp.com](https://eppsmathandcodingcamp.com/).
+::: {.teach}
+[2025–2026]{.when}
+
+::: {}
+### Bachelor Project: Digital Governance, Platform Labour, and Power in the Digital Economy
+Erasmus University Rotterdam. Supervised the MISOC Bachelor Project (Group 16).
+:::
+:::
+
+::: {.teach}
+[August 2024]{.when}
+
+::: {}
+### EPPS Math & Coding Camp
+The University of Texas at Dallas. Five-day intensive for incoming Ph.D. students: R programming, data manipulation, and visualization. Course website: [eppsmathandcodingcamp.com](https://eppsmathandcodingcamp.com/).
+:::
+:::
+
+## Assessment
+
+::: {.teach}
+[2026–2027]{.when}
+
+::: {}
+### Political Economy of Humanitarianism: State, Markets and International Institutions
+Erasmus University Rotterdam, MSc Societies in Crisis: Humanitarian Action and Policy Responses.
+:::
 :::
 
 ## Teaching Assistant
 
-::: {.teaching-entry}
-[The University of Texas at Dallas · 2020--2023]{.teaching-meta}
+::: {.teach}
+[2020–2023]{.when}
+
+::: {}
+### The University of Texas at Dallas
 Research Design (EPPS 2301) · Class, Status, and Power (SOC 4302) · Political Economy of Industrialized Countries (IPEC 4301) · Government and Politics of Afghanistan (PSCI 4396) · Applied Regression (EPPS 6316) · Political Violence and Conflict in Cyberspace (PPPE/PSCI 6302) · Introduction to Quantitative Methods (EPPS 6313) · Foreign Aid and Development (IPEC/PSCI 4318)
+:::
 :::

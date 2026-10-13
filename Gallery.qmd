@@ -1,4 +1,6 @@
 ---
+image: "assets/og/gallery.png"
+description: "A visual timeline from a PhD in Texas to research in the Netherlands."
 title: "Gallery"
 page-layout: full
 toc: false
@@ -7,178 +9,178 @@ lightbox: auto
 
 A visual timeline of my academic and personal journey, from starting my PhD in Texas to my current research in the Netherlands.
 
-<div class="gallery-filters">
-  <button class="filter-btn active" data-filter="all">All</button>
-  <button class="filter-btn" data-filter="texas">Texas Life</button>
-  <button class="filter-btn" data-filter="conferences">Conferences</button>
-  <button class="filter-btn" data-filter="graduation">Graduation</button>
-  <button class="filter-btn" data-filter="netherlands">Netherlands</button>
+<div class="gallery-filters" role="group" aria-label="Filter photos">
+  <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
+  <button type="button" class="chip" data-filter="texas" aria-pressed="false">Texas</button>
+  <button type="button" class="chip" data-filter="conferences" aria-pressed="false">Conferences</button>
+  <button type="button" class="chip" data-filter="graduation" aria-pressed="false">Graduation</button>
+  <button type="button" class="chip" data-filter="netherlands" aria-pressed="false">Netherlands</button>
 </div>
 
-::: {#gallery-container style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); grid-gap: 0.75rem;"}
+::: {#gallery-container}
 
 ::: {.gallery-item data-category="texas"}
-![Beginning the PhD journey. I was told there would be no math. I was lied to.](gallery/img1.jpg){group="gallery" loading="lazy"}
+![Beginning the PhD journey. I was told there would be no math. I was lied to.](gallery/img1.webp){group="gallery" loading="lazy" fig-alt="A black bicycle leans on a stone wall in front of The University of Texas at Dallas entrance sign at dusk."}
 :::
 
 ::: {.gallery-item data-category="texas"}
-![Social distancing on campus. My research on network effects suddenly felt very relevant.](gallery/img2.jpg){group="gallery" loading="lazy"}
+![Social distancing on campus. My research on network effects suddenly felt very relevant.](gallery/img2.webp){group="gallery" loading="lazy" fig-alt="A large lecture hall with taped-off seats, a few masked students, and a laptop open on a desk in the foreground."}
 :::
 
 ::: {.gallery-item data-category="texas"}
-![Made it through Houston traffic. NASA launches are less stressful.](gallery/img4.jpg){group="gallery" loading="lazy"}
+![Made it through Houston traffic. NASA launches are less stressful.](gallery/img4.webp){group="gallery" loading="lazy" fig-alt="Visitors walk beside a huge white Saturn V rocket marked USA, displayed on its side inside a long hangar."}
 :::
 
 ::: {.gallery-item data-category="texas"}
-![My two-wheeled, dissertation-escape vehicle. Faster than debugging code. Usually.](gallery/img6.jpg){group="gallery" loading="lazy"}
+![My two-wheeled, dissertation-escape vehicle. Faster than debugging code. Usually.](gallery/img6.webp){group="gallery" loading="lazy" fig-alt="A black road bike leans against the railing of a wooden footbridge over a creek surrounded by green trees."}
 :::
 
 ::: {.gallery-item data-category="texas"}
-![Proof that I did, occasionally, leave the library. A Texas sunset.](gallery/img7.jpg){group="gallery" loading="lazy"}
+![Proof that I did, occasionally, leave the library. A Texas sunset.](gallery/img7.webp){group="gallery" loading="lazy" fig-alt="A glass-fronted campus building glows pink in the evening light beyond a curving road and trees."}
 :::
 
 ::: {.gallery-item data-category="texas"}
-![More sunsets, for econometric modeling purposes, of course.](gallery/img8.jpg){group="gallery" loading="lazy"}
+![More sunsets, for econometric modeling purposes, of course.](gallery/img8.webp){group="gallery" loading="lazy" fig-alt="Bare tree silhouettes frame a deep orange and red sky above a wrought iron gate lit by a streetlight."}
 :::
 
 ::: {.gallery-item data-category="texas"}
-![A sign of my future move to the Netherlands? Or just a pretty flower? You decide.](gallery/img9.jpg){group="gallery" loading="lazy"}
+![A sign of my future move to the Netherlands? Or just a pretty flower? You decide.](gallery/img9.webp){group="gallery" loading="lazy" fig-alt="A spring flower bed of purple tulips and pale yellow daffodils with orange centers under a blue sky."}
 :::
 
 ::: {.gallery-item data-category="texas"}
-![Another sign? The p-value on this hypothesis is getting suspiciously low.](gallery/img10.jpg){group="gallery" loading="lazy"}
+![Another sign? The p-value on this hypothesis is getting suspiciously low.](gallery/img10.webp){group="gallery" loading="lazy" fig-alt="A Red Bull Formula 1 car roped off on a sunny campus plaza as students gather around to look."}
 :::
 
 ::: {.gallery-item data-category="conferences"}
-![MPSA Conference in Chicago. I came for the political science, I stayed for the deep-dish pizza.](gallery/img11.jpg){group="gallery" loading="lazy"}
+![MPSA Conference in Chicago. I came for the political science, I stayed for the deep-dish pizza.](gallery/img11.webp){group="gallery" loading="lazy" fig-alt="A downtown Chicago street lined with tall buildings, an elevated train track crossing it in the distance."}
 :::
 
 ::: {.gallery-item data-category="conferences"}
-![MPSA dress code: academic with a hint of resisting the dark side at the Palmer House Hotel.](gallery/img12.jpg){group="gallery" loading="lazy"}
+![MPSA dress code: academic with a hint of resisting the dark side at the Palmer House Hotel.](gallery/img12.webp){group="gallery" loading="lazy" fig-alt="Crowds of attendees fill an ornate hotel lobby with a painted, gilded ceiling and candle-style chandeliers."}
 :::
 
 ::: {.gallery-item data-category="texas"}
-![The Great North American Eclipse. My models did not predict this.](gallery/img13.jpg){group="gallery" loading="lazy"}
+![The Great North American Eclipse. My models did not predict this.](gallery/img13.webp){group="gallery" loading="lazy" fig-alt="A crowd gathers on a sunny campus plaza under a black, gray, and white balloon arch beside a glass building."}
 :::
 
 ::: {.gallery-item data-category="texas"}
-![Verifying the eclipse data with a secondary source. It was, in fact, dark.](gallery/img14.jpg){group="gallery" loading="lazy"}
+![Verifying the eclipse data with a secondary source. It was, in fact, dark.](gallery/img14.webp){group="gallery" loading="lazy" fig-alt="The dark disk of the eclipsed sun ringed by a glowing halo in a cloudy sky, with tree branches at left."}
 :::
 
 ::: {.gallery-item data-category="texas"}
-![My official submission for the next Texas tourism campaign. Howdy, y'all.](gallery/img15.jpg){group="gallery" loading="lazy"}
+![My official submission for the next Texas tourism campaign. Howdy, y'all.](gallery/img15.webp){group="gallery" loading="lazy" fig-alt="A brick Texas Roadhouse restaurant facade with red lettering, an American flag and a Texas flag above it."}
 :::
 
 ::: {.gallery-item data-category="conferences"}
-![SIOE Conference at the University of Chicago. Trying to absorb knowledge via osmosis.](gallery/img16.jpg){group="gallery" loading="lazy"}
+![SIOE Conference at the University of Chicago. Trying to absorb knowledge via osmosis.](gallery/img16.webp){group="gallery" loading="lazy" fig-alt="A tree-lined sidewalk beside an ivy-covered Gothic stone building, with pink flowers along the path."}
 :::
 
 ::: {.gallery-item data-category="conferences"}
-![SIOE, with my co-author [Pengfei Zhang](https://pengfei-zhang.com/) and Satoshi Fukuda of Bocconi University.](gallery/img17.jpg){group="gallery" loading="lazy"}
+![SIOE, with my co-author [Pengfei Zhang](https://pengfei-zhang.com/) and Satoshi Fukuda of Bocconi University.](gallery/img17.webp){group="gallery" loading="lazy" fig-alt="Shreyas with Pengfei Zhang and Satoshi Fukuda, wearing name badges on a boat deck with Chicago towers behind."}
 :::
 
 ::: {.gallery-item data-category="conferences"}
-![SIOE's dinner cruise. A statistical analysis of keeping 200 academics from falling into the Chicago River.](gallery/img18.jpg){group="gallery" loading="lazy"}
+![SIOE's dinner cruise. A statistical analysis of keeping 200 academics from falling into the Chicago River.](gallery/img18.webp){group="gallery" loading="lazy" fig-alt="Passengers board a large white and black boat named Spirit from a dock beside a glass hotel under blue sky."}
 :::
 
 ::: {.gallery-item data-category="conferences"}
-![Chicago at night: stunning enough to make you forgive the wind's personal vendetta.](gallery/img19.jpg){group="gallery" loading="lazy"}
+![Chicago at night: stunning enough to make you forgive the wind's personal vendetta.](gallery/img19.webp){group="gallery" loading="lazy" fig-alt="The Chicago skyline lit up at dusk across dark water, with a Ferris wheel at left and an orange horizon."}
 :::
 
 ::: {.gallery-item data-category="texas"}
-![Teaching R and Python at the EPPS Math & Coding Camp with the legendary Dr. Karl Ho.](gallery/img20.jpg){group="gallery" loading="lazy"}
+![Teaching R and Python at the EPPS Math & Coding Camp with the legendary Dr. Karl Ho.](gallery/img20.webp){group="gallery" loading="lazy" fig-alt="An instructor presents Welcome slides on three screens to students with laptops in a curved lecture hall."}
 :::
 
 ::: {.gallery-item data-category="conferences"}
-![APSA Annual Meeting in Philadelphia. City of brotherly love... until the Q&A session starts.](gallery/img21.jpg){group="gallery" loading="lazy"}
+![APSA Annual Meeting in Philadelphia. City of brotherly love... until the Q&A session starts.](gallery/img21.webp){group="gallery" loading="lazy" fig-alt="A street lamp banner reading Philadelphia Welcomes the American Political Science Association, under blue sky."}
 :::
 
 ::: {.gallery-item data-category="conferences"}
-![APSA attendees trying to support each other through the job market cycle.](gallery/img22.jpg){group="gallery" loading="lazy"}
+![APSA attendees trying to support each other through the job market cycle.](gallery/img22.webp){group="gallery" loading="lazy" fig-alt="Sculptures of pale human figures climb both ends of a concrete skybridge over a narrow city alley."}
 :::
 
 ::: {.gallery-item data-category="conferences"}
-![A founding father once said, "Life, liberty, and the pursuit of melted cheese."](gallery/img23.jpg){group="gallery" loading="lazy"}
+![A founding father once said, "Life, liberty, and the pursuit of melted cheese."](gallery/img23.webp){group="gallery" loading="lazy" fig-alt="Neon Carmen's Cheesesteaks and Hoagies sign hanging over a busy aisle of an indoor food market in Philadelphia."}
 :::
 
 ::: {.gallery-item data-category="texas"}
-![Explaining the finer points of PC building to my colleague, Crystal Conway. Step 1: More RGB.](gallery/img24.jpg){group="gallery" loading="lazy"}
+![Explaining the finer points of PC building to my colleague, Crystal Conway. Step 1: More RGB.](gallery/img24.webp){group="gallery" loading="lazy" fig-alt="A person wearing an anti-static wrist strap assembles a motherboard at an office desk beside an open PC case."}
 :::
 
 ::: {.gallery-item data-category="conferences"}
-![APPAM Conference at National Harbor. The weather was a strong incentive to stay inside and discuss policy.](gallery/img25.jpg){group="gallery" loading="lazy"}
+![APPAM Conference at National Harbor. The weather was a strong incentive to stay inside and discuss policy.](gallery/img25.webp){group="gallery" loading="lazy" fig-alt="A white Ferris wheel and boat marina at National Harbor on a grey day, with a long bridge across the river behind."}
 :::
 
 ::: {.gallery-item data-category="conferences"}
-![The obligatory conference headshot. Now you know what I look like in front of a blue background.](gallery/img26.jpg){group="gallery" loading="lazy"}
+![The obligatory conference headshot. Now you know what I look like in front of a blue background.](gallery/img26.webp){group="gallery" loading="lazy" fig-alt="Shreyas in a light blue button-down shirt, smiling in a studio headshot against a pale grey-blue background."}
 :::
 
 ::: {.gallery-item data-category="conferences"}
-![The Gaylord National's Christmas tree during APPAM. My data visualizations are rarely this festive.](gallery/img27.jpg){group="gallery" loading="lazy"}
+![The Gaylord National's Christmas tree during APPAM. My data visualizations are rarely this festive.](gallery/img27.webp){group="gallery" loading="lazy" fig-alt="A tall Christmas tree of stacked star shapes wrapped in lights hangs in the Gaylord National's glass atrium."}
 :::
 
 ::: {.gallery-item data-category="conferences"}
-![Views from the terminal: powered by caffeine, conference talks, and endless boarding announcements.](gallery/img28.jpg){group="gallery" loading="lazy"}
+![Views from the terminal: powered by caffeine, conference talks, and endless boarding announcements.](gallery/img28.webp){group="gallery" loading="lazy" fig-alt="American Airlines jets parked at the gates, with ground crew and baggage carts on the tarmac under a cloudy dusk sky."}
 :::
 
 ::: {.gallery-item data-category="texas"}
-![Celebrating a birthday with friends and colleagues at UT Dallas.](gallery/img29.jpg){group="gallery" loading="lazy"}
+![Celebrating a birthday with friends and colleagues at UT Dallas.](gallery/img29.webp){group="gallery" loading="lazy" fig-alt="Seven friends smile around a round table in a Chinese restaurant, sharing slices of birthday cake after dinner."}
 :::
 
 ::: {.gallery-item data-category="texas"}
-![Visiting the Crow Museum of Asian Art at UT Dallas.](gallery/img30.jpg){group="gallery" loading="lazy"}
+![Visiting the Crow Museum of Asian Art at UT Dallas.](gallery/img30.webp){group="gallery" loading="lazy" fig-alt="The angular white wing of the Crow Museum building at UT Dallas against a deep blue sky, with autumn trees below."}
 :::
 
 ::: {.gallery-item data-category="texas"}
-![The "Life is a Cosmos" installation at the Crow Museum.](gallery/img31.jpg){group="gallery" loading="lazy"}
+![The "Life is a Cosmos" installation at the Crow Museum.](gallery/img31.webp){group="gallery" loading="lazy" fig-alt="A wall-sized projection of a glowing red-orange textured form against a starry purple sky in a dark gallery."}
 :::
 
 ::: {.gallery-item data-category="graduation"}
-![Successfully defended! So grateful for my dissertation committee: (L-R) Dr. Elizabeth Searing, Dr. Pengfei Zhang, Dr. Clint Peinhardt, & Dr. Patrick Brandt.](gallery/img32.jpg){group="gallery" loading="lazy"}
+![Successfully defended! So grateful for my dissertation committee: (L-R) Dr. Elizabeth Searing, Dr. Pengfei Zhang, Dr. Clint Peinhardt, & Dr. Patrick Brandt.](gallery/img32.webp){group="gallery" loading="lazy" fig-alt="Shreyas with his dissertation committee in a classroom: Elizabeth Searing, Pengfei Zhang, Clint Peinhardt and Patrick Brandt."}
 :::
 
 ::: {.gallery-item data-category="conferences"}
-![San Francisco's iconic trams. Pretty sure this was also a sign.](gallery/img33.jpg){group="gallery" loading="lazy"}
+![San Francisco's iconic trams. Pretty sure this was also a sign.](gallery/img33.webp){group="gallery" loading="lazy" fig-alt="A Powell and Hyde cable car rounds a curve of track on a brick plaza as a crowd waits behind rope barriers."}
 :::
 
 ::: {.gallery-item data-category="graduation"}
-![Doctoral Hooding Ceremony with Pengfei and our colleague Robert Geibler.](gallery/img34.jpg){group="gallery" loading="lazy"}
+![Doctoral Hooding Ceremony with Pengfei and our colleague Robert Geibler.](gallery/img34.webp){group="gallery" loading="lazy" fig-alt="A selfie of Shreyas in doctoral cap and gown, seated in a row with Pengfei and Robert Geibler at the hooding ceremony."}
 :::
 
 ::: {.gallery-item data-category="graduation"}
-![All smiles at the hooding ceremony. The hat is more aerodynamic than it looks.](gallery/img35.jpg){group="gallery" loading="lazy"}
+![All smiles at the hooding ceremony. The hat is more aerodynamic than it looks.](gallery/img35.webp){group="gallery" loading="lazy" fig-alt="Two smiling graduates, one in green and orange UT Dallas regalia and one in red, pose by a wood-paneled wall."}
 :::
 
 ::: {.gallery-item data-category="graduation"}
-![We did it! Celebrating with fellow graduates Dohyo and Ricardo.](gallery/img36.jpg){group="gallery" loading="lazy"}
+![We did it! Celebrating with fellow graduates Dohyo and Ricardo.](gallery/img36.webp){group="gallery" loading="lazy" fig-alt="Shreyas with Dohyo and Ricardo, all in green and orange UT Dallas doctoral gowns and caps, by a wood-paneled wall."}
 :::
 
 ::: {.gallery-item data-category="netherlands"}
-![Found a serene lake just outside Rotterdam. My new favorite thinking spot.](gallery/img37.jpg){group="gallery" loading="lazy"}
+![Found a serene lake just outside Rotterdam. My new favorite thinking spot.](gallery/img37.webp){group="gallery" loading="lazy" fig-alt="Stepping stones cross a still pond reflecting clouds, with young trees and a wider lake beyond."}
 :::
 
 ::: {.gallery-item data-category="netherlands"}
-![It's not truly the Netherlands until you find a traditional windmill. Check.](gallery/img38.jpg){group="gallery" loading="lazy"}
+![It's not truly the Netherlands until you find a traditional windmill. Check.](gallery/img38.webp){group="gallery" loading="lazy" fig-alt="Low-angle view of a thatched Dutch windmill with yellow-trimmed windows and lattice sails against a blue sky."}
 :::
 
 ::: {.gallery-item data-category="netherlands"}
-![Rotterdam in bloom. The cherry blossoms have a higher R² with my mood than any of my regressions.](gallery/img39.jpg){group="gallery" loading="lazy"}
+![Rotterdam in bloom. The cherry blossoms have a higher R² with my mood than any of my regressions.](gallery/img39.webp){group="gallery" loading="lazy" fig-alt="Pink cherry blossom trees arch over a quiet Rotterdam street lined with brick houses and parked cars."}
 :::
 
 ::: {.gallery-item data-category="netherlands"}
-![Full moon rising over the Stadhuis clock tower. Rotterdam schedules its own celestial events.](gallery/img40.jpg){group="gallery" loading="lazy"}
+![Full moon rising over the Stadhuis clock tower. Rotterdam schedules its own celestial events.](gallery/img40.webp){group="gallery" loading="lazy" fig-alt="A full moon beside the green-domed Stadhuis clock tower in Rotterdam, flanked by modern high-rise towers."}
 :::
 
 ::: {.gallery-item data-category="netherlands"}
-![The dissertation-escape vehicle has a Dutch successor. Flatter terrain, stronger headwinds, same job.](gallery/img41.jpg){group="gallery" loading="lazy"}
+![The dissertation-escape vehicle has a Dutch successor. Flatter terrain, stronger headwinds, same job.](gallery/img41.webp){group="gallery" loading="lazy" fig-alt="A pale mint-green bicycle parked on a lakeside path beside a wooden jetty, under a sky full of white clouds."}
 :::
 
 ::: {.gallery-item data-category="conferences"}
-![Prague, for our TWIN4DEM consortium meeting. St. Henry's Tower: six centuries old and still meeting its deadlines.](gallery/img42.jpg){group="gallery" loading="lazy"}
+![Prague, for our TWIN4DEM consortium meeting. St. Henry's Tower: six centuries old and still meeting its deadlines.](gallery/img42.webp){group="gallery" loading="lazy" fig-alt="St. Henry's Tower, a Gothic stone bell tower with a gold clock, above a cobbled Prague street with a scooter and cars."}
 :::
 
 ::: {.gallery-item data-category="conferences"}
-![Belfast City Hall, between sessions at EPSS 2026. Copper domes age better than conference slides.](gallery/img43.jpg){group="gallery" loading="lazy"}
+![Belfast City Hall, between sessions at EPSS 2026. Copper domes age better than conference slides.](gallery/img43.webp){group="gallery" loading="lazy" fig-alt="The green copper dome and carved stone facade of Belfast City Hall against a cloudy blue sky."}
 :::
 
 :::
@@ -186,22 +188,15 @@ A visual timeline of my academic and personal journey, from starting my PhD in T
 ```{=html}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
+  const filterButtons = document.querySelectorAll('.gallery-filters .chip');
   const galleryItems = document.querySelectorAll('.gallery-item');
 
   filterButtons.forEach(button => {
     button.addEventListener('click', () => {
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-
-      const filter = button.getAttribute('data-filter');
-
+      filterButtons.forEach(btn => btn.setAttribute('aria-pressed', String(btn === button)));
+      const filter = button.dataset.filter;
       galleryItems.forEach(item => {
-        if (filter === 'all' || item.getAttribute('data-category') === filter) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
+        item.hidden = !(filter === 'all' || item.dataset.category === filter);
       });
     });
   });

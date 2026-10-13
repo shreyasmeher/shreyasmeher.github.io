@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="conflibertR, the NL Agent Explorer, ConfliBERT GUI and open-weight language models for conflict text.">
 
 <title>Software – Shreyas Meher</title>
 <style>
@@ -39,10 +40,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-6e1e7af397bdecfb37a96c76f2aae9e7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-ae1c0b4d6c155046acde6d7424dcdb0e.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-6e1e7af397bdecfb37a96c76f2aae9e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b1e05fce326df1a16ead683f3ab06033.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-cb1995526a1acbe48a0ba943043101c4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-5cead9fbe3111bc76f516e5b8de84041.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-cb1995526a1acbe48a0ba943043101c4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -59,32 +64,206 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin="">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=gambetta@400,500,401&amp;f[]=satoshi@400,500,700,401&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&amp;display=swap">
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
 <link rel="manifest" href="./site.webmanifest">
 
 
-<meta property="og:title" content="Shreyas Meher">
-<meta property="og:description" content="Postdoctoral Researcher in Computational Social Science, Erasmus University Rotterdam.">
-<meta property="og:image" content="https://shreyasmeher.github.io/images/conflibertr-hex.png">
+<meta property="og:title" content="Software – Shreyas Meher">
+<meta property="og:description" content="conflibertR, the NL Agent Explorer, ConfliBERT GUI and open-weight language models for conflict text.">
+<meta property="og:image" content="https://shreyasmeher.com/assets/og/software.png">
 <meta property="og:site_name" content="Shreyas Meher">
-<meta property="og:image:alt" content="conflibertR hex logo">
-<meta property="og:image:height" content="1000">
-<meta property="og:image:width" content="866">
-<meta name="twitter:title" content="Shreyas Meher">
-<meta name="twitter:description" content="Postdoctoral Researcher in Computational Social Science, Erasmus University Rotterdam.">
-<meta name="twitter:image" content="https://shreyasmeher.github.io/images/conflibertr-hex.png">
+<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1200">
+<meta name="twitter:title" content="Software – Shreyas Meher">
+<meta name="twitter:description" content="conflibertR, the NL Agent Explorer, ConfliBERT GUI and open-weight language models for conflict text.">
+<meta name="twitter:image" content="https://shreyasmeher.com/assets/og/software.png">
 <meta name="twitter:creator" content="@shreyasmhr">
-<meta name="twitter:image:alt" content="conflibertR hex logo">
-<meta name="twitter:image-height" content="1000">
-<meta name="twitter:image-width" content="866">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="630">
+<meta name="twitter:image-width" content="1200">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -99,11 +278,7 @@ ul.task-list li input[type="checkbox"] {
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="./research.html"> 
 <span class="menu-text">Research</span></a>
@@ -127,6 +302,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -139,11 +315,18 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<a class="skip-link" href="#quarto-document-content">Skip to content</a>
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Software</h1>
 </div>
 
+<div>
+  <div class="description">
+    conflibertR, the NL Agent Explorer, ConfliBERT GUI and open-weight language models for conflict text.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -158,40 +341,92 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Research software for computational conflict analysis. Everything is open source; bug reports and contributions are welcome on GitHub.</p>
-<div class="software-feature">
-<div class="software-hex">
+<div class="pattern pattern-band" data-seed="88">
+
+</div>
+<p><span class="page-intro">Research software for computational conflict analysis and Dutch politics. Everything is open source; bug reports and contributions are welcome on GitHub.</span></p>
+<section id="tools" class="level2">
+<h2 class="anchored" data-anchor-id="tools">Tools</h2>
+<div class="soft">
+<div class="soft-mark">
 <p><a href="./software/conflibertr.html"><img src="images/conflibertr-hex.png" class="img-fluid" alt="conflibertR hex logo"></a></p>
 </div>
-<div class="software-body">
-<p><span class="software-name">conflibertR</span></p>
-<p>An R package bringing <a href="https://eventdata.utdallas.edu/">ConfliBERT</a>, the NSF-funded language model for political conflict and violence, to the R ecosystem: entity recognition, event classification, question answering, fine-tuning, model comparison, and active learning, all from R. On CRAN as of July 2026.</p>
-<p><span class="pub-links"><a href="./software/conflibertr.html">Package page</a> <a href="https://CRAN.R-project.org/package=conflibertR">CRAN</a> <a href="https://github.com/shreyasmeher/conflibertR">GitHub</a> <a href="software/conflibertR-cheatsheet.pdf">Cheatsheet (PDF)</a> <a href="https://doi.org/10.1017/pan.2025.10027">Paper</a></span></p>
+<section id="conflibertr" class="level3">
+<h3 class="anchored" data-anchor-id="conflibertr">conflibertR</h3>
+<p>An R package bringing <a href="https://eventdata.utdallas.edu/">ConfliBERT</a>, the NSF-funded language model for political conflict and violence, to the R ecosystem: entity recognition, event classification, question answering, fine-tuning, model comparison, and active learning, all from R. On CRAN since July 2026.</p>
+<div class="pub-links">
+<p><a href="./software/conflibertr.html">Package page</a> <a href="https://CRAN.R-project.org/package=conflibertR">CRAN</a> <a href="https://github.com/shreyasmeher/conflibertR">GitHub</a> <a href="software/conflibertR-cheatsheet.pdf">Cheatsheet (PDF)</a> <a href="https://doi.org/10.1017/pan.2025.10027">Paper</a></p>
+</div>
+</section>
+</div>
+<div class="soft">
+<div class="soft-mark">
+<div class="pattern pattern-tile" data-seed="2008" data-density="2.4">
+
 </div>
 </div>
-<div class="pub-entry">
-<p><span class="pub-title">NL Agent Explorer</span> <span class="pub-meta">Interactive explorer of agent-level data on Dutch national politics, 2008 to 2025: every Tweede Kamer member and cabinet minister with offices held, party and parliamentary group, background, committee seats, bills sponsored with their Tweede Kamer topics and Raad van State advice, and a yearly stance on executive power estimated from plenary speech. Built for the TWIN4DEM project.</span> <span class="pub-links"><a href="https://shreyasmeher.com/nl-agent-explorer/">Open the explorer</a></span></p>
+<section id="nl-agent-explorer" class="level3">
+<h3 class="anchored" data-anchor-id="nl-agent-explorer">NL Agent Explorer</h3>
+<p>Interactive explorer of agent-level data on Dutch national politics, 2008 to 2025: every Tweede Kamer member and cabinet minister with offices held, party and parliamentary group, background, committee seats, bills sponsored with their Tweede Kamer topics and Raad van State advice, and a yearly stance on executive power estimated from plenary speech. Built for the TWIN4DEM project.</p>
+<div class="pub-links">
+<p><a href="https://shreyasmeher.com/nl-agent-explorer/">Open the explorer</a></p>
 </div>
-<div class="pub-entry">
-<p><span class="pub-title">ConfliBERT GUI</span> <span class="pub-meta">Browser-based NLP toolkit for conflict and political violence text analysis: NER, classification, question answering, and LoRA/QLoRA fine-tuning.</span> <span class="pub-links"><a href="https://github.com/shreyasmeher/ConfliBERT-gui">GitHub</a></span></p>
+</section>
 </div>
+<div class="soft">
+<div class="soft-mark">
+<div class="pattern pattern-tile" data-seed="4242" data-density="2.4">
+
+</div>
+</div>
+<section id="conflibert-gui" class="level3">
+<h3 class="anchored" data-anchor-id="conflibert-gui">ConfliBERT GUI</h3>
+<p>Browser-based NLP toolkit for conflict and political violence text analysis: named entity recognition, classification, question answering, and LoRA/QLoRA fine-tuning.</p>
+<div class="pub-links">
+<p><a href="https://github.com/shreyasmeher/ConfliBERT-gui">GitHub</a></p>
+</div>
+</section>
+</div>
+</section>
 <section id="fine-tuned-language-models" class="level2">
-<h2 class="anchored" data-anchor-id="fine-tuned-language-models">Fine-Tuned Language Models</h2>
+<h2 class="anchored" data-anchor-id="fine-tuned-language-models">Fine-tuned language models</h2>
 <p>Open-weight models for conflict and political text, all on <a href="https://huggingface.co/shreyasmeher">Hugging Face</a>.</p>
-<div class="pub-entry">
-<p><span class="pub-title">ConflLlama</span> <span class="pub-meta">Llama 3 8B fine-tuned on the Global Terrorism Database for attack-type classification. Also available with a more neutral chat template and in four time-period variants.</span> <span class="pub-links"><a href="https://huggingface.co/shreyasmeher/ConflLlama">Hugging Face</a> <a href="https://doi.org/10.1177/20531680251356282">Paper</a></span></p>
+<div class="models">
+<section id="conflllama" class="level3 model">
+<h3 class="anchored" data-anchor-id="conflllama">ConflLlama</h3>
+<p>Llama 3 8B fine-tuned on the Global Terrorism Database for attack-type classification. Also available with a more neutral chat template and in four time-period variants.</p>
+<div class="pub-links">
+<p><a href="https://huggingface.co/shreyasmeher/ConflLlama">Hugging Face</a> <a href="https://doi.org/10.1177/20531680251356282">Paper</a></p>
 </div>
-<div class="pub-entry">
-<p><span class="pub-title">ConflLlama-NER</span> <span class="pub-meta">Llama 3.1 8B Instruct fine-tuned for named entity recognition in conflict event narratives: the source, target, and related actors of each event.</span> <span class="pub-links"><a href="https://huggingface.co/shreyasmeher/ConflLlama-NER">Hugging Face</a></span></p>
+</section>
+<section id="conflllama-ner" class="level3 model">
+<h3 class="anchored" data-anchor-id="conflllama-ner">ConflLlama-NER</h3>
+<p>Llama 3.1 8B Instruct fine-tuned for named entity recognition in conflict event narratives: the source, target, and related actors of each event.</p>
+<div class="pub-links">
+<p><a href="https://huggingface.co/shreyasmeher/ConflLlama-NER">Hugging Face</a></p>
 </div>
-<div class="pub-entry">
-<p><span class="pub-title">ConflLlama-NER-TOI</span> <span class="pub-meta">Named entity recognition for Indian news (locations, organisations, people, and time expressions), trained on 100,000 Times of India articles.</span> <span class="pub-links"><a href="https://huggingface.co/shreyasmeher/ConflLlama-NER-TOI">Hugging Face</a></span></p>
+</section>
+<section id="conflllama-ner-toi" class="level3 model">
+<h3 class="anchored" data-anchor-id="conflllama-ner-toi">ConflLlama-NER-TOI</h3>
+<p>Named entity recognition for Indian news (locations, organisations, people, and time expressions), trained on 100,000 Times of India articles.</p>
+<div class="pub-links">
+<p><a href="https://huggingface.co/shreyasmeher/ConflLlama-NER-TOI">Hugging Face</a></p>
 </div>
-<div class="pub-entry">
-<p><span class="pub-title">Qwen-GLOCON-Reasoning</span> <span class="pub-meta">Qwen2.5-3B trained with GRPO reinforcement learning to classify conflict events into five categories with structured reasoning.</span> <span class="pub-links"><a href="https://huggingface.co/shreyasmeher/Qwen-GLOCON-Reasoning">Hugging Face</a></span></p>
+</section>
+<section id="qwen-glocon-reasoning" class="level3 model">
+<h3 class="anchored" data-anchor-id="qwen-glocon-reasoning">Qwen-GLOCON-Reasoning</h3>
+<p>Qwen2.5-3B trained with GRPO reinforcement learning to classify conflict events into five categories with structured reasoning.</p>
+<div class="pub-links">
+<p><a href="https://huggingface.co/shreyasmeher/Qwen-GLOCON-Reasoning">Hugging Face</a></p>
 </div>
-<div class="pub-entry">
-<p><span class="pub-title">Confli-mBERT</span> <span class="pub-meta">ModernBERT fine-tuned on the Global Terrorism Database for conflict event classification; companion model to the paper on NLP model selection in computational social science.</span> <span class="pub-links"><a href="https://huggingface.co/shreyasmeher/Confli-mBERT">Hugging Face</a></span></p>
+</section>
+<section id="confli-mbert" class="level3 model">
+<h3 class="anchored" data-anchor-id="confli-mbert">Confli-mBERT</h3>
+<p>ModernBERT fine-tuned on the Global Terrorism Database for conflict event classification; companion model to the paper on NLP model selection in computational social science.</p>
+<div class="pub-links">
+<p><a href="https://huggingface.co/shreyasmeher/Confli-mBERT">Hugging Face</a></p>
+</div>
+</section>
 </div>
 
 
@@ -200,6 +435,19 @@ ul.task-list li input[type="checkbox"] {
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -271,7 +519,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/shreyasmeher\.github\.io");
+        var filterRegex = new RegExp("https:\/\/shreyasmeher\.com");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -285,11 +533,6 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
-            // target, if specified
-            link.setAttribute("target", "_blank");
-            if (link.getAttribute("rel") === null) {
-              link.setAttribute("rel", "noopener");
-            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -607,16 +850,17 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© 2026 Shreyas Meher</p>
+<p><span title="No information was controlled in the making of this website.">©</span> 2026 Shreyas Meher, Erasmus University Rotterdam</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p><a href="mailto:meher@essb.eur.nl">Email</a> · <a href="https://github.com/shreyasmeher">GitHub</a> · <a href="https://x.com/shreyasmhr">X</a> · <a href="https://www.linkedin.com/in/shreyasmeher/">LinkedIn</a></p>
+<p><a href="mailto:meher@essb.eur.nl">Email</a> · <a href="https://github.com/shreyasmeher">GitHub</a> · <a href="https://huggingface.co/shreyasmeher">Hugging Face</a> · <a href="https://www.linkedin.com/in/shreyasmeher/">LinkedIn</a> · <a href="https://x.com/shreyasmhr">X</a></p>
 </div>
   </div>
 </footer>
+<script src="./assets/site.js" defer=""></script>
 
 
 

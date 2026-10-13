@@ -5,38 +5,36 @@ project:
     - "*.qmd"
     - "!drafts/"
   resources:
-    - CNAME
-    - bachelor-project/slides/**
-    - nl-agent-explorer/**
-    - favicon-16x16.png
-    - favicon-32x32.png
-    - apple-touch-icon.png
-    - android-chrome-192x192.png
-    - android-chrome-512x512.png
-    - site.webmanifest
+    - /CNAME
+    - /assets/**
+    - /favicon.svg
+    - /nl-agent-explorer/**
+    - /favicon-16x16.png
+    - /favicon-32x32.png
+    - /apple-touch-icon.png
+    - /android-chrome-192x192.png
+    - /android-chrome-512x512.png
+    - /site.webmanifest
 
 website:
   title: "Shreyas Meher"
   description: "Postdoctoral Researcher in Computational Social Science"
   favicon: favicon.ico
-  site-url: "https://shreyasmeher.github.io"
+  site-url: "https://shreyasmeher.com"
   repo-url: "https://github.com/shreyasmeher/shreyasmeher.github.io"
   search: false
 
+  # Each page sets its own title, description and image (assets/og/*.png)
   twitter-card:
     creator: "@shreyasmhr"
-    title: "Shreyas Meher"
-    description: "Postdoctoral Researcher in Computational Social Science, Erasmus University Rotterdam."
+    card-style: summary_large_image
 
   open-graph:
-    title: "Shreyas Meher"
-    description: "Postdoctoral Researcher in Computational Social Science, Erasmus University Rotterdam."
+    site-name: "Shreyas Meher"
 
   navbar:
-    background: light
-    left:
-      - text: "Home"
-        href: index.qmd
+    title: "Shreyas Meher"
+    right:
       - text: "Research"
         href: research.qmd
       - text: "Software"
@@ -49,23 +47,39 @@ website:
         href: CV.pdf
 
   page-footer:
-    left: "&copy; 2026 Shreyas Meher"
-    right: "[Email](mailto:meher@essb.eur.nl) · [GitHub](https://github.com/shreyasmeher) · [X](https://x.com/shreyasmhr) · [LinkedIn](https://www.linkedin.com/in/shreyasmeher/)"
+    left: "<span title=\"No information was controlled in the making of this website.\">&copy;</span> 2026 Shreyas Meher, Erasmus University Rotterdam"
+    right: "[Email](mailto:meher@essb.eur.nl) · [GitHub](https://github.com/shreyasmeher) · [Hugging Face](https://huggingface.co/shreyasmeher) · [LinkedIn](https://www.linkedin.com/in/shreyasmeher/) · [X](https://x.com/shreyasmhr)"
 
 format:
   html:
+    lang: en
     grid:
-      body-width: 800px
+      body-width: 820px
     theme:
-      light: [default, mystyles.scss]
+      light: [default, styles/light.scss, styles/site.scss]
+      dark: [default, styles/dark.scss, styles/site.scss]
+    respect-user-color-scheme: true
+    highlight-style:
+      light: a11y
+      dark: a11y-dark
     toc: false
     smooth-scroll: true
-    link-external-newwindow: true
     include-in-header:
       text: |
+        <link rel="preconnect" href="https://api.fontshare.com">
+        <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=gambetta@400,500,401&f[]=satoshi@400,500,700,401&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap">
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="manifest" href="/site.webmanifest">
+    include-before-body:
+      text: |
+        <a class="skip-link" href="#quarto-document-content">Skip to content</a>
+    include-after-body:
+      text: |
+        <script src="/assets/site.js" defer></script>

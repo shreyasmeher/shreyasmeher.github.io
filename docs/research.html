@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Publications, proceedings and working papers on censorship, executive aggrandizement and language models for political text.">
 
 <title>Research – Shreyas Meher</title>
 <style>
@@ -32,6 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <link href="./favicon.ico" rel="icon">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -39,10 +42,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-6e1e7af397bdecfb37a96c76f2aae9e7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-ae1c0b4d6c155046acde6d7424dcdb0e.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-6e1e7af397bdecfb37a96c76f2aae9e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b1e05fce326df1a16ead683f3ab06033.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-cb1995526a1acbe48a0ba943043101c4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-5cead9fbe3111bc76f516e5b8de84041.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-cb1995526a1acbe48a0ba943043101c4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -58,25 +65,265 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-papers .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-slug','listing-section','listing-status','listing-topics','listing-with','listing-venue','listing-year','listing-doi','listing-links','listing-abstract','listing-bibtex',{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: ["listing-title","listing-slug","listing-section","listing-status","listing-topics","listing-with","listing-venue","listing-year","listing-doi","listing-links","listing-abstract","listing-bibtex"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-papers'] = new List('listing-papers', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <style>html{ scroll-behavior: smooth; }</style>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin="">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=gambetta@400,500,401&amp;f[]=satoshi@400,500,700,401&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&amp;display=swap">
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
 <link rel="manifest" href="./site.webmanifest">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
-<meta property="og:title" content="Shreyas Meher">
-<meta property="og:description" content="Postdoctoral Researcher in Computational Social Science, Erasmus University Rotterdam.">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Research – Shreyas Meher">
+<meta property="og:description" content="Publications, proceedings and working papers on censorship, executive aggrandizement and language models for political text.">
+<meta property="og:image" content="https://shreyasmeher.com/assets/og/research.png">
 <meta property="og:site_name" content="Shreyas Meher">
-<meta name="twitter:title" content="Shreyas Meher">
-<meta name="twitter:description" content="Postdoctoral Researcher in Computational Social Science, Erasmus University Rotterdam.">
+<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1200">
+<meta name="twitter:title" content="Research – Shreyas Meher">
+<meta name="twitter:description" content="Publications, proceedings and working papers on censorship, executive aggrandizement and language models for political text.">
+<meta name="twitter:image" content="https://shreyasmeher.com/assets/og/research.png">
 <meta name="twitter:creator" content="@shreyasmhr">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="630">
+<meta name="twitter:image-width" content="1200">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -91,11 +338,7 @@ ul.task-list li input[type="checkbox"] {
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link active" href="./research.html" aria-current="page"> 
 <span class="menu-text">Research</span></a>
@@ -119,6 +362,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -131,11 +375,18 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<a class="skip-link" href="#quarto-document-content">Skip to content</a>
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Research</h1>
 </div>
 
+<div>
+  <div class="description">
+    Publications, proceedings and working papers on censorship, executive aggrandizement and language models for political text.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -150,198 +401,205 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="publications" class="level2">
-<h2 class="anchored" data-anchor-id="publications">Publications</h2>
-<div class="pub-entry">
-<span class="pub-title">Extractive versus Generative Language Models for Political Conflict Text Classification</span> <span class="pub-meta">with P.T. Brandt, S. Alsarra, V. D’Orazio, D. Heintze, L. Khan, J. Osorio &amp; M. Sianan · <em>Political Analysis</em>, 2025</span> <span class="pub-links"><a href="https://doi.org/10.1017/pan.2025.10027">Article</a> <a href="https://doi.org/10.7910/DVN/KDO5AM">Code</a> <a href="research/ConfliBERT_Presentation.pdf">Slides</a></span>
-<details class="abstract">
-<summary>
-Abstract
-</summary>
-<p>
-We develop specialized language models for political conflict analysis that outperform general-purpose LLMs like Gemma 2, Llama 3.1, and Qwen 2.5 in accuracy, precision, and recall while being hundreds of times faster.
-</p>
-</details>
+<div class="pattern pattern-band" data-seed="556">
+
 </div>
-<div class="pub-entry">
-<span class="pub-title">ConflLlama: Domain-Specific Adaptation of Large Language Models for Conflict Event Classification</span> <span class="pub-meta">with P.T. Brandt · <em>Research &amp; Politics</em>, 2025</span> <span class="pub-links"><a href="https://doi.org/10.1177/20531680251356282">Article</a> <a href="https://doi.org/10.7910/DVN/0MUGE6">Code</a> <a href="research/APSA___ConflLlama.pdf">Slides</a></span>
-<details class="abstract">
-<summary>
-Abstract
-</summary>
-<p>
-We introduce ConflLlama, a specialized variant of Llama 3.1 fine-tuned for political conflict classification, demonstrating superior performance in event coding and conflict analysis tasks compared to traditional approaches.
-</p>
-</details>
+<p><span class="page-intro">Peer-reviewed articles, proceedings and work in progress on information control, executive power, and language models for political text. Filter by topic or status, or search titles and co-authors.</span></p>
+<div class="research-filters" id="research-filters" hidden="">
+  <div class="filter-row">
+    <label for="paper-search" class="visually-hidden">Search titles and co-authors</label>
+    <input class="search-input" id="paper-search" type="search" placeholder="Search titles and co-authors" autocomplete="off">
+  </div>
+  <div class="filter-row" role="group" aria-labelledby="topic-k">
+    <span class="filter-k" id="topic-k">Topic</span>
+    <button type="button" class="chip" data-group="topic" data-k="info" aria-pressed="false">Information control<span class="n"></span></button>
+    <button type="button" class="chip" data-group="topic" data-k="exec" aria-pressed="false">Executive power<span class="n"></span></button>
+    <button type="button" class="chip" data-group="topic" data-k="nlp" aria-pressed="false">Language models and conflict<span class="n"></span></button>
+    <button type="button" class="chip" data-group="topic" data-k="comm" aria-pressed="false">Political communication<span class="n"></span></button>
+  </div>
+  <div class="filter-row" role="group" aria-labelledby="status-k">
+    <span class="filter-k" id="status-k">Status</span>
+    <button type="button" class="chip" data-group="status" data-k="published" aria-pressed="false">Published<span class="n"></span></button>
+    <button type="button" class="chip" data-group="status" data-k="forthcoming" aria-pressed="false">Forthcoming<span class="n"></span></button>
+    <button type="button" class="chip" data-group="status" data-k="rr" aria-pressed="false">Revise &amp; resubmit<span class="n"></span></button>
+    <button type="button" class="chip" data-group="status" data-k="review" aria-pressed="false">Under review<span class="n"></span></button>
+    <button type="button" class="chip" data-group="status" data-k="working" aria-pressed="false">Working paper<span class="n"></span></button>
+  </div>
+  <div class="filter-row">
+    <span class="count" id="paper-count" role="status" aria-live="polite"></span>
+    <button type="button" class="linkish" id="clear-filters" style="font-size: var(--sm-s-1)">Clear filters</button>
+  </div>
 </div>
-<div class="pub-entry">
-<span class="pub-title">Public Health Advocacy in Times of Pandemic: An Analysis of the Medicare-For-All Debate on Twitter During COVID-19</span> <span class="pub-meta">with S. Kumar &amp; P. Zhang · <em>Behavioral Sciences</em>, 2025</span> <span class="pub-links"><a href="https://doi.org/10.3390/bs15020223">Article</a> <a href="https://doi.org/10.7910/DVN/OWVD70">Code</a></span>
-<details class="abstract">
-<summary>
-Abstract
-</summary>
-<p>
-We analyze how health advocacy groups adapted their Medicare-For-All messaging on Twitter during the COVID-19 pandemic, revealing distinct approaches to public engagement and narrative adaptation.
-</p>
-</details>
-</div>
-<div class="pub-entry">
-<span class="pub-title">Framework Laws and Fading Oversight: How the Dutch Executive Expanded Its Lawmaking Authority</span> <span class="pub-meta">with C. Egger &amp; A. Zhelyazkova · Forthcoming, <em>International Political Science Review</em></span>
-<details class="abstract">
-<summary>
-Abstract
-</summary>
-<p>
-This paper examines patterns of executive dominance and expansion in the Netherlands, a least-likely case of executive aggrandizement given its strong coalitional governance and consensus culture. Drawing on a legislative dataset, our findings show that executive dominance over the legislative agenda and the overall volume of delegated lawmaking are longstanding and stable: roughly 75% of legislation takes the form of secondary executive acts, a level that does not increase over our study period. What has expanded is the legal technique underpinning this dominance: framework laws have become an increasingly cited basis for transferring regulatory authority to individual ministers, with citations of framework instruments in new executive acts rising markedly since 2017. Weak oversight tools such as motions and parliamentary questions remain the opposition’s primary (and historically stable) mode of engagement, but coalition MPs have grown markedly more vocal in using these same tools since 2017, reflecting tensions within fragmented governing coalitions. While large, diverse coalitions create internal checks against outright aggrandizement, the growing reliance on framework laws as a delegation device represents a gradual but consequential shift in how, rather than how much, executive dominance is exercised.
-</p>
-</details>
-</div>
+<div id="listing-papers" class="quarto-listing quarto-listing-container-custom">
+<section class="pub-section" id="publications" data-section="">
+<h2 class="anchored">Publications</h2>
+<article class="pub" id="extractive-vs-generative" data-status="published" data-topics="nlp">
+<h3 class="pub-title anchored"><a href="https://doi.org/10.1017/pan.2025.10027">Extractive versus Generative Language Models for Political Conflict Text Classification</a></h3>
+<div class="pub-row"><span class="status published">Published</span><span class="pub-venue">with P.T. Brandt, S. Alsarra, V. D'Orazio, D. Heintze, L. Khan, J. Osorio &amp; M. Sianan, <i>Political Analysis</i>, 2025</span></div>
+<div class="pub-links"><a href="https://doi.org/10.1017/pan.2025.10027">Article</a><a href="https://doi.org/10.7910/DVN/KDO5AM">Code and data</a><a href="research/ConfliBERT_Presentation.pdf">Slides (PDF)</a><button type="button" class="linkish cite-btn" hidden="">Copy citation</button><a href="#extractive-vs-generative" aria-label="Link to this paper: Extractive versus Generative Language Models for Political Conflict Text Classification">Link</a></div>
+<pre class="bibtex" hidden="">@article{brandt2025extractive,
+  title   = {Extractive versus Generative Language Models for Political Conflict Text Classification},
+  author  = {Brandt, Patrick T. and Alsarra, Sultan and D'Orazio, Vito and Heintze, Dagmar and Khan, Latifur and Meher, Shreyas and Osorio, Javier and Sianan, Marcus},
+  journal = {Political Analysis},
+  volume  = {34},
+  number  = {3},
+  pages   = {344--372},
+  year    = {2025},
+  doi     = {10.1017/pan.2025.10027}
+}</pre><p class="pub-toast" role="status" aria-live="polite"></p>
+<details class="abstract"><summary><span>Abstract</span></summary><p>We develop specialized language models for political conflict analysis that outperform general-purpose LLMs like Gemma 2, Llama 3.1, and Qwen 2.5 in accuracy, precision, and recall while being hundreds of times faster.</p></details>
+</article>
+<article class="pub" id="confllama" data-status="published" data-topics="nlp">
+<h3 class="pub-title anchored"><a href="https://doi.org/10.1177/20531680251356282">ConflLlama: Domain-Specific Adaptation of Large Language Models for Conflict Event Classification</a></h3>
+<div class="pub-row"><span class="status published">Published</span><span class="pub-venue">with P.T. Brandt, <i>Research &amp; Politics</i>, 2025</span></div>
+<div class="pub-links"><a href="https://doi.org/10.1177/20531680251356282">Article</a><a href="https://doi.org/10.7910/DVN/0MUGE6">Code and data</a><a href="research/APSA___ConflLlama.pdf">Slides (PDF)</a><button type="button" class="linkish cite-btn" hidden="">Copy citation</button><a href="#confllama" aria-label="Link to this paper: ConflLlama: Domain-Specific Adaptation of Large Language Models for Conflict Event Classification">Link</a></div>
+<pre class="bibtex" hidden="">@article{meher2025confllama,
+  title   = {ConflLlama: Domain-Specific Adaptation of Large Language Models for Conflict Event Classification},
+  author  = {Meher, Shreyas and Brandt, Patrick T.},
+  journal = {Research \&amp; Politics},
+  volume  = {12},
+  number  = {3},
+  year    = {2025},
+  doi     = {10.1177/20531680251356282}
+}</pre><p class="pub-toast" role="status" aria-live="polite"></p>
+<details class="abstract"><summary><span>Abstract</span></summary><p>We introduce ConflLlama, a specialized variant of Llama 3.1 fine-tuned for political conflict classification, demonstrating superior performance in event coding and conflict analysis tasks compared to traditional approaches.</p></details>
+</article>
+<article class="pub" id="medicare-for-all" data-status="published" data-topics="comm">
+<h3 class="pub-title anchored"><a href="https://doi.org/10.3390/bs15020223">Public Health Advocacy in Times of Pandemic: An Analysis of the Medicare-For-All Debate on Twitter During COVID-19</a></h3>
+<div class="pub-row"><span class="status published">Published</span><span class="pub-venue">with S. Kumar &amp; P. Zhang, <i>Behavioral Sciences</i>, 2025</span></div>
+<div class="pub-links"><a href="https://doi.org/10.3390/bs15020223">Article</a><a href="https://doi.org/10.7910/DVN/OWVD70">Code and data</a><button type="button" class="linkish cite-btn" hidden="">Copy citation</button><a href="#medicare-for-all" aria-label="Link to this paper: Public Health Advocacy in Times of Pandemic: An Analysis of the Medicare-For-All Debate on Twitter During COVID-19">Link</a></div>
+<pre class="bibtex" hidden="">@article{kumar2025public,
+  title   = {Public Health Advocacy in Times of Pandemic: An Analysis of the Medicare-For-All Debate on Twitter During COVID-19},
+  author  = {Kumar, Sushant and Meher, Shreyas and Zhang, Pengfei},
+  journal = {Behavioral Sciences},
+  volume  = {15},
+  number  = {2},
+  pages   = {223},
+  year    = {2025},
+  doi     = {10.3390/bs15020223}
+}</pre><p class="pub-toast" role="status" aria-live="polite"></p>
+<details class="abstract"><summary><span>Abstract</span></summary><p>We analyze how health advocacy groups adapted their Medicare-For-All messaging on Twitter during the COVID-19 pandemic, revealing distinct approaches to public engagement and narrative adaptation.</p></details>
+</article>
+<article class="pub" id="framework-laws" data-status="forthcoming" data-topics="exec">
+<h3 class="pub-title anchored">Framework Laws and Fading Oversight: How the Dutch Executive Expanded Its Lawmaking Authority</h3>
+<div class="pub-row"><span class="status forthcoming">Forthcoming</span><span class="pub-venue">with C. Egger &amp; A. Zhelyazkova, <i>International Political Science Review</i></span></div>
+<div class="pub-links"><a href="#framework-laws" aria-label="Link to this paper: Framework Laws and Fading Oversight: How the Dutch Executive Expanded Its Lawmaking Authority">Link</a></div>
+<details class="abstract"><summary><span>Abstract</span></summary><p>This paper examines patterns of executive dominance and expansion in the Netherlands, a least-likely case of executive aggrandizement given its strong coalitional governance and consensus culture. Drawing on a legislative dataset, our findings show that executive dominance over the legislative agenda and the overall volume of delegated lawmaking are longstanding and stable: roughly 75% of legislation takes the form of secondary executive acts, a level that does not increase over our study period. What has expanded is the legal technique underpinning this dominance: framework laws have become an increasingly cited basis for transferring regulatory authority to individual ministers, with citations of framework instruments in new executive acts rising markedly since 2017. Weak oversight tools such as motions and parliamentary questions remain the opposition's primary (and historically stable) mode of engagement, but coalition MPs have grown markedly more vocal in using these same tools since 2017, reflecting tensions within fragmented governing coalitions. While large, diverse coalitions create internal checks against outright aggrandizement, the growing reliance on framework laws as a delegation device represents a gradual but consequential shift in how, rather than how much, executive dominance is exercised.</p></details>
+</article>
 </section>
-<section id="conference-proceedings" class="level2">
-<h2 class="anchored" data-anchor-id="conference-proceedings">Conference Proceedings</h2>
-<div class="pub-entry">
-<span class="pub-title">Preferential Delegation: How Rulemaking Authority Concentrates in the Dutch Law-to-Regulation Network</span> <span class="pub-meta">Forthcoming, <em>Proceedings of the 15th International Conference on Complex Networks and Their Applications (COMPLEX NETWORKS 2026)</em>, Springer Studies in Computational Intelligence</span>
-<details class="abstract">
-<summary>
-Abstract
-</summary>
-<p>
-Executive power in parliamentary democracies grows through ordinary lawmaking: a statute delegates rulemaking authority, and decrees and regulations exercise it. This paper studies that process as a growing network. Each of 13,945 Dutch government decrees and ministerial regulations published between 2010 and 2025 is linked to the instruments it cites as its legal basis, giving 22,157 delegation edges among 1,687 parent instruments. Parent out-degree is heavy-tailed and better described by a lognormal than a power law. Dated arrivals allow estimation of an attachment kernel and a discrete-choice model of parent selection. Attachment is close to linear in a parent’s existing degree (exponent 0.89 net of age, ministry and framework status, 0.85 for new instruments alone). Since 2017 fewer new bases have been opened and the within-year Gini of delegation has risen from 0.50 to 0.58. New rulemaking increasingly rests on a few bases that parliament approved once. Communities align with ministries but cut across them. Risk labels assigned by a language model and checked against a twelve-model committee rise only weakly with a parent’s size and concentrate on substantive regulatory statutes rather than on the framework acts that absorb most delegation.
-</p>
-</details>
-</div>
-<div class="pub-entry">
-<span class="pub-title">The Political Returns to ICT Investment: Information Control of Authoritarian Regimes</span> <span class="pub-meta">with P. Zhang · Forthcoming, <em>Proceedings of the International Congress on Information and Communication Technology (ICICT 2027)</em>, Springer Lecture Notes in Networks and Systems</span>
-<details class="abstract">
-<summary>
-Abstract
-</summary>
-<p>
-Why does ICT investment appear to generate lower economic returns in autocracies than in democracies? We argue that authoritarian governments invest in ICT for political as well as economic purposes, and that one important political return is enhanced capacity for information control. Using panel data from Freedom House, V-Dem, and the Open Observatory of Network Interference (OONI), we identify two distinct modes of authoritarian information control through cluster analysis: a <em>Strong Control</em> regime, characterized by extensive state-run filtering and blocking, and a <em>Weak Control</em> regime, which is less infrastructure-intensive. We show that these regimes correspond to systematically different censorship behaviors. More importantly, greater state ICT capacity predicts the adoption of Strong Control: governments with stronger operational capabilities rely more on direct Internet blocking and less on private platforms. The results are consistent with a mechanism in which ICT investment expands state capacity, which in turn facilitates infrastructure-intensive information control and is consequently associated with lower Internet freedom. Conventional measures of economic return may understate the value authoritarian governments derive from ICT investment because they omit its political return.
-</p>
-</details>
-</div>
+<section class="pub-section" id="conference-proceedings" data-section="">
+<h2 class="anchored">Conference proceedings</h2>
+<article class="pub" id="preferential-delegation" data-status="forthcoming" data-topics="exec">
+<h3 class="pub-title anchored">Preferential Delegation: How Rulemaking Authority Concentrates in the Dutch Law-to-Regulation Network</h3>
+<div class="pub-row"><span class="status forthcoming">Forthcoming</span><span class="pub-venue"><i>Proceedings of the 15th International Conference on Complex Networks and Their Applications (COMPLEX NETWORKS 2026), Springer Studies in Computational Intelligence</i></span></div>
+<div class="pub-links"><a href="#preferential-delegation" aria-label="Link to this paper: Preferential Delegation: How Rulemaking Authority Concentrates in the Dutch Law-to-Regulation Network">Link</a></div>
+<details class="abstract"><summary><span>Abstract</span></summary><p>Executive power in parliamentary democracies grows through ordinary lawmaking: a statute delegates rulemaking authority, and decrees and regulations exercise it. This paper studies that process as a growing network. Each of 13,945 Dutch government decrees and ministerial regulations published between 2010 and 2025 is linked to the instruments it cites as its legal basis, giving 22,157 delegation edges among 1,687 parent instruments. Parent out-degree is heavy-tailed and better described by a lognormal than a power law. Dated arrivals allow estimation of an attachment kernel and a discrete-choice model of parent selection. Attachment is close to linear in a parent's existing degree (exponent 0.89 net of age, ministry and framework status, 0.85 for new instruments alone). Since 2017 fewer new bases have been opened and the within-year Gini of delegation has risen from 0.50 to 0.58. New rulemaking increasingly rests on a few bases that parliament approved once. Communities align with ministries but cut across them. Risk labels assigned by a language model and checked against a twelve-model committee rise only weakly with a parent's size and concentrate on substantive regulatory statutes rather than on the framework acts that absorb most delegation.</p></details>
+</article>
+<article class="pub" id="political-returns-ict" data-status="forthcoming" data-topics="info">
+<h3 class="pub-title anchored">The Political Returns to ICT Investment: Information Control of Authoritarian Regimes</h3>
+<div class="pub-row"><span class="status forthcoming">Forthcoming</span><span class="pub-venue">with P. Zhang, <i>Proceedings of the International Congress on Information and Communication Technology (ICICT 2027), Springer Lecture Notes in Networks and Systems</i></span></div>
+<div class="pub-links"><a href="#political-returns-ict" aria-label="Link to this paper: The Political Returns to ICT Investment: Information Control of Authoritarian Regimes">Link</a></div>
+<details class="abstract"><summary><span>Abstract</span></summary><p>Why does ICT investment appear to generate lower economic returns in autocracies than in democracies? We argue that authoritarian governments invest in ICT for political as well as economic purposes, and that one important political return is enhanced capacity for information control. Using panel data from Freedom House, V-Dem, and the Open Observatory of Network Interference (OONI), we identify two distinct modes of authoritarian information control through cluster analysis: a <em>Strong Control</em> regime, characterized by extensive state-run filtering and blocking, and a <em>Weak Control</em> regime, which is less infrastructure-intensive. We show that these regimes correspond to systematically different censorship behaviors. More importantly, greater state ICT capacity predicts the adoption of Strong Control: governments with stronger operational capabilities rely more on direct Internet blocking and less on private platforms. The results are consistent with a mechanism in which ICT investment expands state capacity, which in turn facilitates infrastructure-intensive information control and is consequently associated with lower Internet freedom. Conventional measures of economic return may understate the value authoritarian governments derive from ICT investment because they omit its political return.</p></details>
+</article>
 </section>
-<section id="under-review" class="level2">
-<h2 class="anchored" data-anchor-id="under-review">Under Review</h2>
-<div class="pub-entry">
-<span class="pub-title">Selective Scrutiny: Single-Party Majority and the Strategic Withdrawal of Parliamentary Oversight in India</span> <span class="pub-meta rr">Revise &amp; resubmit, <em>The Journal of Legislative Studies</em></span>
-<details class="abstract">
-<summary>
-Abstract
-</summary>
-<p>
-That executive aggrandizement proceeds through legal, procedural channels is well established. This paper asks whether governments that withdraw legislative scrutiny do so indiscriminately, or target the legislation that expands their own power. I develop a theory of strategic procedural aggrandizement for parliamentary systems in which scrutiny is discretionary to the government, and test it by linking 653 Indian parliamentary bills (2009–2026) to the full text of the statutes they became, each scored with a 316-phrase dictionary of executive aggrandizement. Under coalition government, scrutiny tracked stakes: power-expanding bills were referred to committee more often and passed more slowly. Under the single-party majority since 2014, this relationship inverted. Committee referral fell from 74% to 17%, median passage time from 255 to 18 days, and the most aggrandizing statutes cleared parliament in days. The pattern is institutional, not ideological: scrutiny recovered when the majority shrank in 2024. The mechanism generalizes to Westminster-heritage parliaments.
-</p>
-</details>
-</div>
-<div class="pub-entry">
-<span class="pub-title">Silencing the Silencing: The Uneven Amplification of Internet Shutdowns in India’s English-Language Press</span> <span class="pub-meta rr">Revise &amp; resubmit, <em>Political Communication</em></span>
-<details class="abstract">
-<summary>
-Abstract
-</summary>
-<p>
-India imposes more internet shutdowns than any other country, yet whether its national press places these events before readers has been measured only for single outlets, leaving open whether the silence belongs to the press or to a newspaper. I measure per-event coverage of 556 state-level shutdowns (2013–2024) across three English-language national dailies: the <em>Times of India</em> (TOI), India’s largest, through a 1.5 million-article full-text corpus, and <em>The Hindu</em> and <em>The Indian Express</em>, titles editorially more adversarial to the current government, through 3.3 million archive headlines and 32,014 targeted full texts, all classified under one validated rule. In TOI, shutdowns in Jammu and Kashmir receive roughly 2.7 times fewer articles than comparable shutdowns elsewhere. The gap does not replicate: <em>The Hindu</em> shows no detectable J&amp;K deficit, the <em>Express</em> less than half of TOI’s, with both interaction estimates significantly above TOI under identical text exposure. During the first seven months of the 2019–20 Kashmir blackout, the longest ever imposed in a democracy, TOI published 23 shutdown articles against 102 in the <em>Express</em> and 118 in <em>The Hindu</em>. Because the outlets face the same reporting conditions, the divergence cannot reflect newsgathering constraints: the silence is a property of one outlet’s editorial choices, not of the press field. Whether alignment or audience demand motivates those choices, the accountability reach of a formally free press depends on which outlet dominates its audience, a stratification that indices scoring a press system as a single unit do not register.
-</p>
-</details>
-</div>
-<div class="pub-entry">
-<span class="pub-title">Electoral Accountability and the Channeling of Content Removal: Theory and Evidence from Google Transparency Reports</span> <span class="pub-meta">with P. Zhang</span>
-<details class="abstract">
-<summary>
-Abstract
-</summary>
-<p>
-How does regime type shape a state’s intervention in its information environment? We argue that democracies and non-democracies differ not only in the quantity but, more importantly, in the institutional channel of content removal. To that end, we develop a political agency model and show that a democratic government would refrain from direct executive takedown and instead delegate to the court. This is because electoral accountability disciplines politicians’ behavior by providing incentives for reputation-building. We test our hypotheses using data from Google transparency reports. Exploiting quasi-experimental variation in the timing of constitutionally scheduled elections, we provide supporting evidence that compared to non-democracies, takedown requests from democratic governments decline significantly as elections approach. This reputational discipline effect is not observed in authoritarian regimes or other types of requests.
-</p>
-</details>
-</div>
-<div class="pub-entry">
-<p><span class="pub-title">Two Types of Censorship? An Assessment of the Informational Autocracy Thesis</span> <span class="pub-meta">with P. Zhang</span></p>
-</div>
-<div class="pub-entry">
-<span class="pub-title">Build, Borrow, or Just Fine-Tune? Empirical Guidelines for NLP Model Selection in Computational Social Science</span> <span class="pub-links"><a href="https://huggingface.co/shreyasmeher/Confli-mBERT">Model</a></span>
-<details class="abstract">
-<summary>
-Abstract
-</summary>
-<p>
-Researchers in computational social science increasingly face a consequential choice when adopting natural language processing tools: build a domain-specific model from scratch, borrow and adapt an existing one, or simply fine-tune a general-purpose model on task data? Each approach occupies a different point on the spectrum of performance, cost, and required expertise, yet the discipline has offered little empirical guidance on how to navigate this trade-off. This paper provides such guidance. Using conflict event classification as a test case, I fine-tune ModernBERT on the Global Terrorism Database (GTD) to create Confli-mBERT and systematically compare it against ConfliBERT, a domain-specific pretrained model that represents the current gold standard. Confli-mBERT achieves 75.46% accuracy compared to ConfliBERT’s 79.34%. Critically, the four-percentage-point gap is not uniform: on high-frequency attack types such as Bombing/Explosion and Kidnapping, the models are nearly indistinguishable. Performance differences concentrate in rare event categories comprising fewer than 2% of all incidents. I use these findings to develop a practical decision framework applicable to any NLP-assisted classification task: when does the research question demand a specialized model, and when does an accessible fine-tuned alternative suffice? The marginal value of domain-specific pretraining, I show, is a predictable function of class prevalence, error tolerance, and available resources. The model, training code, and data are publicly available on Hugging Face.
-</p>
-</details>
-</div>
-<div class="pub-entry">
-<span class="pub-title">“Why Aren’t We Talking About This?” The Attention Trap in Networked Protest</span>
-<details class="abstract">
-<summary>
-Abstract
-</summary>
-<p>
-On 2 February 2021, the musician Rihanna tweeted about the Indian farmer protests to her 100 million followers, producing the largest attention spike in the movement’s yearlong history. Using 1.02 million tweets classified by a large language model, I show that the intervention displaced the movement’s own discourse rather than diluting it with newcomers. Benchmarked against 277 placebo dates, the celebrity share of conversation rose 33 percentage points while the policy share fell 8 points, and a within-user decomposition attributes most of the shift to established participants changing their own speech. The shift carried costs: participants who pivoted hardest toward celebrity content were half as likely to remain active a month later, and a coordinated pro-government campaign penetrated the movement’s hashtags for the first time. Comparison with six domestic events shows the pattern is specific to the celebrity shock. I call this dynamic the attention trap.
-</p>
-</details>
-</div>
-<div class="pub-entry">
-<span class="pub-title">Using Messy Text in Future LLM Annotations</span> <span class="pub-meta">with P.T. Brandt, P. Cuellar-Cuellar &amp; X. Zhao</span>
-<details class="abstract">
-<summary>
-Abstract
-</summary>
-<p>
-When working with real-world text, researchers often inherit corpora and annotations with costly human judgments but were not collected, organized, or annotated for modern text-as-data workflows. This is especially common in social science domains where web-scraped documents are noisy, incomplete, or misaligned with the unit of analysis. We propose codebook attention: a codebook-guided turn-by-turn extractive summarization pipeline that reuses valuable annotations without requiring full re-annotation. For each victim in a corpus of disappearance reports from Mexico, the model processes documents sequentially, extracts verbatim evidence spans for each codebook category, and updates a running structured summary to produce a clean and evidence-traceable document-level representation. Using the codebook as the task schema focuses model attention on the fields that matter for downstream classification and reconnects prior human annotations to contemporary language model workflows. We evaluate the resulting summaries by classifying and comparing the predicted labels with human annotations across multiple open-source models including Llama 3.1, Gemma 3 and Ministral 3. Results suggest that hours of computation can approximate weeks of human coding effort while producing evidence-traceable summaries suitable for downstream human rights and event data research.
-</p>
-</details>
-</div>
+<section class="pub-section" id="under-review" data-section="">
+<h2 class="anchored">Under review</h2>
+<article class="pub" id="selective-scrutiny" data-status="rr" data-topics="exec">
+<h3 class="pub-title anchored">Selective Scrutiny: Single-Party Majority and the Strategic Withdrawal of Parliamentary Oversight in India</h3>
+<div class="pub-row"><span class="status rr">Revise &amp; resubmit</span><span class="pub-venue"><i>The Journal of Legislative Studies</i></span></div>
+<div class="pub-links"><a href="#selective-scrutiny" aria-label="Link to this paper: Selective Scrutiny: Single-Party Majority and the Strategic Withdrawal of Parliamentary Oversight in India">Link</a></div>
+<details class="abstract"><summary><span>Abstract</span></summary><p>That executive aggrandizement proceeds through legal, procedural channels is well established. This paper asks whether governments that withdraw legislative scrutiny do so indiscriminately, or target the legislation that expands their own power. I develop a theory of strategic procedural aggrandizement for parliamentary systems in which scrutiny is discretionary to the government, and test it by linking 653 Indian parliamentary bills (2009–2026) to the full text of the statutes they became, each scored with a 316-phrase dictionary of executive aggrandizement. Under coalition government, scrutiny tracked stakes: power-expanding bills were referred to committee more often and passed more slowly. Under the single-party majority since 2014, this relationship inverted. Committee referral fell from 74% to 17%, median passage time from 255 to 18 days, and the most aggrandizing statutes cleared parliament in days. The pattern is institutional, not ideological: scrutiny recovered when the majority shrank in 2024. The mechanism generalizes to Westminster-heritage parliaments.</p></details>
+</article>
+<article class="pub" id="silencing-the-silencing" data-status="rr" data-topics="info comm">
+<h3 class="pub-title anchored">Silencing the Silencing: The Uneven Amplification of Internet Shutdowns in India's English-Language Press</h3>
+<div class="pub-row"><span class="status rr">Revise &amp; resubmit</span><span class="pub-venue"><i>Political Communication</i></span></div>
+<div class="pub-links"><a href="#silencing-the-silencing" aria-label="Link to this paper: Silencing the Silencing: The Uneven Amplification of Internet Shutdowns in India's English-Language Press">Link</a></div>
+<details class="abstract"><summary><span>Abstract</span></summary><p>India imposes more internet shutdowns than any other country, yet whether its national press places these events before readers has been measured only for single outlets, leaving open whether the silence belongs to the press or to a newspaper. I measure per-event coverage of 556 state-level shutdowns (2013–2024) across three English-language national dailies: the <em>Times of India</em> (TOI), India's largest, through a 1.5 million-article full-text corpus, and <em>The Hindu</em> and <em>The Indian Express</em>, titles editorially more adversarial to the current government, through 3.3 million archive headlines and 32,014 targeted full texts, all classified under one validated rule. In TOI, shutdowns in Jammu and Kashmir receive roughly 2.7 times fewer articles than comparable shutdowns elsewhere. The gap does not replicate: <em>The Hindu</em> shows no detectable J&amp;K deficit, the <em>Express</em> less than half of TOI's, with both interaction estimates significantly above TOI under identical text exposure. During the first seven months of the 2019–20 Kashmir blackout, the longest ever imposed in a democracy, TOI published 23 shutdown articles against 102 in the <em>Express</em> and 118 in <em>The Hindu</em>. Because the outlets face the same reporting conditions, the divergence cannot reflect newsgathering constraints: the silence is a property of one outlet's editorial choices, not of the press field. Whether alignment or audience demand motivates those choices, the accountability reach of a formally free press depends on which outlet dominates its audience, a stratification that indices scoring a press system as a single unit do not register.</p></details>
+</article>
+<article class="pub" id="electoral-accountability-content-removal" data-status="review" data-topics="info">
+<h3 class="pub-title anchored">Electoral Accountability and the Channeling of Content Removal: Theory and Evidence from Google Transparency Reports</h3>
+<div class="pub-row"><span class="status review">Under review</span><span class="pub-venue">with P. Zhang</span></div>
+<div class="pub-links"><a href="#electoral-accountability-content-removal" aria-label="Link to this paper: Electoral Accountability and the Channeling of Content Removal: Theory and Evidence from Google Transparency Reports">Link</a></div>
+<details class="abstract"><summary><span>Abstract</span></summary><p>How does regime type shape a state's intervention in its information environment? We argue that democracies and non-democracies differ not only in the quantity but, more importantly, in the institutional channel of content removal. To that end, we develop a political agency model and show that a democratic government would refrain from direct executive takedown and instead delegate to the court. This is because electoral accountability disciplines politicians' behavior by providing incentives for reputation-building. We test our hypotheses using data from Google transparency reports. Exploiting quasi-experimental variation in the timing of constitutionally scheduled elections, we provide supporting evidence that compared to non-democracies, takedown requests from democratic governments decline significantly as elections approach. This reputational discipline effect is not observed in authoritarian regimes or other types of requests.</p></details>
+</article>
+<article class="pub" id="two-types-of-censorship" data-status="review" data-topics="info">
+<h3 class="pub-title anchored">Two Types of Censorship? An Assessment of the Informational Autocracy Thesis</h3>
+<div class="pub-row"><span class="status review">Under review</span><span class="pub-venue">with P. Zhang</span></div>
+<div class="pub-links"><a href="#two-types-of-censorship" aria-label="Link to this paper: Two Types of Censorship? An Assessment of the Informational Autocracy Thesis">Link</a></div>
+</article>
+<article class="pub" id="build-borrow-fine-tune" data-status="review" data-topics="nlp">
+<h3 class="pub-title anchored">Build, Borrow, or Just Fine-Tune? Empirical Guidelines for NLP Model Selection in Computational Social Science</h3>
+<div class="pub-row"><span class="status review">Under review</span><span class="pub-venue"></span></div>
+<div class="pub-links"><a href="https://huggingface.co/shreyasmeher/Confli-mBERT">Model</a><a href="#build-borrow-fine-tune" aria-label="Link to this paper: Build, Borrow, or Just Fine-Tune? Empirical Guidelines for NLP Model Selection in Computational Social Science">Link</a></div>
+<details class="abstract"><summary><span>Abstract</span></summary><p>Researchers in computational social science increasingly face a consequential choice when adopting natural language processing tools: build a domain-specific model from scratch, borrow and adapt an existing one, or simply fine-tune a general-purpose model on task data? Each approach occupies a different point on the spectrum of performance, cost, and required expertise, yet the discipline has offered little empirical guidance on how to navigate this trade-off. This paper provides such guidance. Using conflict event classification as a test case, I fine-tune ModernBERT on the Global Terrorism Database (GTD) to create Confli-mBERT and systematically compare it against ConfliBERT, a domain-specific pretrained model that represents the current gold standard. Confli-mBERT achieves 75.46% accuracy compared to ConfliBERT's 79.34%. Critically, the four-percentage-point gap is not uniform: on high-frequency attack types such as Bombing/Explosion and Kidnapping, the models are nearly indistinguishable. Performance differences concentrate in rare event categories comprising fewer than 2% of all incidents. I use these findings to develop a practical decision framework applicable to any NLP-assisted classification task: when does the research question demand a specialized model, and when does an accessible fine-tuned alternative suffice? The marginal value of domain-specific pretraining, I show, is a predictable function of class prevalence, error tolerance, and available resources. The model, training code, and data are publicly available on Hugging Face.</p></details>
+</article>
+<article class="pub" id="attention-trap" data-status="review" data-topics="comm">
+<h3 class="pub-title anchored">“Why Aren't We Talking About This?” The Attention Trap in Networked Protest</h3>
+<div class="pub-row"><span class="status review">Under review</span><span class="pub-venue"></span></div>
+<div class="pub-links"><a href="#attention-trap" aria-label="Link to this paper: “Why Aren't We Talking About This?” The Attention Trap in Networked Protest">Link</a></div>
+<details class="abstract"><summary><span>Abstract</span></summary><p>On 2 February 2021, the musician Rihanna tweeted about the Indian farmer protests to her 100 million followers, producing the largest attention spike in the movement's yearlong history. Using 1.02 million tweets classified by a large language model, I show that the intervention displaced the movement's own discourse rather than diluting it with newcomers. Benchmarked against 277 placebo dates, the celebrity share of conversation rose 33 percentage points while the policy share fell 8 points, and a within-user decomposition attributes most of the shift to established participants changing their own speech. The shift carried costs: participants who pivoted hardest toward celebrity content were half as likely to remain active a month later, and a coordinated pro-government campaign penetrated the movement's hashtags for the first time. Comparison with six domestic events shows the pattern is specific to the celebrity shock. I call this dynamic the attention trap.</p></details>
+</article>
+<article class="pub" id="messy-text" data-status="review" data-topics="nlp">
+<h3 class="pub-title anchored">Using Messy Text in Future LLM Annotations</h3>
+<div class="pub-row"><span class="status review">Under review</span><span class="pub-venue">with P.T. Brandt, P. Cuellar-Cuellar &amp; X. Zhao</span></div>
+<div class="pub-links"><a href="#messy-text" aria-label="Link to this paper: Using Messy Text in Future LLM Annotations">Link</a></div>
+<details class="abstract"><summary><span>Abstract</span></summary><p>When working with real-world text, researchers often inherit corpora and annotations with costly human judgments but were not collected, organized, or annotated for modern text-as-data workflows. This is especially common in social science domains where web-scraped documents are noisy, incomplete, or misaligned with the unit of analysis. We propose codebook attention: a codebook-guided turn-by-turn extractive summarization pipeline that reuses valuable annotations without requiring full re-annotation. For each victim in a corpus of disappearance reports from Mexico, the model processes documents sequentially, extracts verbatim evidence spans for each codebook category, and updates a running structured summary to produce a clean and evidence-traceable document-level representation. Using the codebook as the task schema focuses model attention on the fields that matter for downstream classification and reconnects prior human annotations to contemporary language model workflows. We evaluate the resulting summaries by classifying and comparing the predicted labels with human annotations across multiple open-source models including Llama 3.1, Gemma 3 and Ministral 3. Results suggest that hours of computation can approximate weeks of human coding effort while producing evidence-traceable summaries suitable for downstream human rights and event data research.</p></details>
+</article>
 </section>
-<section id="working-papers" class="level2">
-<h2 class="anchored" data-anchor-id="working-papers">Working Papers</h2>
-<div class="pub-entry">
-<span class="pub-title">Building Capacity or Building Checks? What EU Enlargement Reports Emphasise and Democratic Backsliding</span> <span class="pub-meta">with A. Zhelyazkova &amp; C. Egger</span>
-<details class="abstract">
-<summary>
-Abstract
-</summary>
-<p>
-Does the European Commission’s enlargement reporting emphasise executive strength over institutional checks on executive power, and does that emphasis track later democratic backsliding? Building on Meyerrose’s argument that international democracy support can strengthen executives at the expense of the institutions meant to constrain them, we use large language models to content-analyse the Commission’s progress reports for 23 candidate countries (105,971 sentences across 207 country-years, 1998 to 2023), separating what each report emphasises (compliance and state capacity versus judicial, legislative, civic, and media checks) from how it assesses each domain. Relating both measures to the V-Dem Liberal Democracy Index, we find that the Commission’s assessments track subsequent democratic outcomes while its relative emphasis does not, a contrast that survives bootstrap inference and a coder-based correction for measurement error. Emphasis is nonetheless associated with later decline where judicial constraints are weak.
-</p>
-</details>
-</div>
-<div class="pub-entry">
-<span class="pub-title">Strategic Anticipation and Expert Review: The Determinants of Critical Advisory Opinions from the Dutch Council of State</span> <span class="pub-meta">with C. Egger &amp; A. Zhelyazkova</span>
-<details class="abstract">
-<summary>
-Abstract
-</summary>
-<p>
-What determines whether an expert advisory body issues a critical opinion on a legislative proposal? This paper investigates the conditions under which the Dutch Council of State (<em>Raad van State</em>) issues critical advisory opinions, testing five competing theoretical mechanisms: institutional learning within coalition governments, legislative experience of the proposing actor, the coalition position of the sponsoring party, ideological distance from the governing majority, and the type of legislative instrument under review. Drawing on 2,898 advisory opinions issued between 2004 and 2025, comprising 2,111 opinions on laws and 785 on executive decrees, we find that instrument type is the strongest predictor of opinion severity: executive decrees receive dramatically milder treatment than laws, with 69% receiving no objections compared to just 13% for laws. Among laws, junior coalition partners attract significantly less critical opinions than leading parties, consistent with anticipatory compliance. Ideological distance from the cabinet median is positively associated with opinion severity, though the effect is modest. These findings suggest that the Council’s most consequential effects operate through two channels: institutional deference to delegated legislation, and the anticipatory self-discipline of politically exposed actors.
-</p>
-</details>
-</div>
-<div class="pub-entry">
-<span class="pub-title">On Time, but Empty: How Dutch Ministers Answer Their Critics</span>
-<details class="abstract">
-<summary>
-Abstract
-</summary>
-<p>
-Three decades of research on parliamentary questions have mapped who asks them, and almost never what askers get back. I turn to the answers, and to a puzzle: the Dutch government replies to its fiercest critics fastest. Opposition and populist members are answered as quickly as the coalition’s own backbenchers, or quicker, and three answers in four miss the 21-day deadline for everyone alike. Timing the answers makes the government look even-handed. Reading them does not. Scoring more than 130,000 question–answer pairs (2010–2025) with a validated large-language-model measure of evasion, I find that critics are answered no more slowly, yet 0.20 to 0.47 standard deviations more evasively, net of cabinet, topic, and ministry. The emptiness is aimed: within a single reply, the substantive sub-questions that demand an account are evaded most, and more so when the asker is a critic. Two probes trace the pattern to its incentives. When a question arrives with a news story attached, critics are answered faster still, yet no more fully; and evasive answers draw no more follow-up questions than responsive ones, so evasion costs a minister nothing. One logic runs through all of it, and it is visibility. Delay is public and punished; evasion is buried, unread, and unpriced. A government that treats some askers worse than others does so through the channel where the discrimination will not be seen. Ministers answer on time, and empty the answer instead.
-</p>
-</details>
-</div>
+<section class="pub-section" id="working-papers" data-section="">
+<h2 class="anchored">Working papers</h2>
+<article class="pub" id="enlargement-reports" data-status="working" data-topics="exec">
+<h3 class="pub-title anchored">Building Capacity or Building Checks? What EU Enlargement Reports Emphasise and Democratic Backsliding</h3>
+<div class="pub-row"><span class="status working">Working paper</span><span class="pub-venue">with A. Zhelyazkova &amp; C. Egger</span></div>
+<div class="pub-links"><a href="#enlargement-reports" aria-label="Link to this paper: Building Capacity or Building Checks? What EU Enlargement Reports Emphasise and Democratic Backsliding">Link</a></div>
+<details class="abstract"><summary><span>Abstract</span></summary><p>Does the European Commission's enlargement reporting emphasise executive strength over institutional checks on executive power, and does that emphasis track later democratic backsliding? Building on Meyerrose's argument that international democracy support can strengthen executives at the expense of the institutions meant to constrain them, we use large language models to content-analyse the Commission's progress reports for 23 candidate countries (105,971 sentences across 207 country-years, 1998 to 2023), separating what each report emphasises (compliance and state capacity versus judicial, legislative, civic, and media checks) from how it assesses each domain. Relating both measures to the V-Dem Liberal Democracy Index, we find that the Commission's assessments track subsequent democratic outcomes while its relative emphasis does not, a contrast that survives bootstrap inference and a coder-based correction for measurement error. Emphasis is nonetheless associated with later decline where judicial constraints are weak.</p></details>
+</article>
+<article class="pub" id="council-of-state" data-status="working" data-topics="exec">
+<h3 class="pub-title anchored">Strategic Anticipation and Expert Review: The Determinants of Critical Advisory Opinions from the Dutch Council of State</h3>
+<div class="pub-row"><span class="status working">Working paper</span><span class="pub-venue">with C. Egger &amp; A. Zhelyazkova</span></div>
+<div class="pub-links"><a href="#council-of-state" aria-label="Link to this paper: Strategic Anticipation and Expert Review: The Determinants of Critical Advisory Opinions from the Dutch Council of State">Link</a></div>
+<details class="abstract"><summary><span>Abstract</span></summary><p>What determines whether an expert advisory body issues a critical opinion on a legislative proposal? This paper investigates the conditions under which the Dutch Council of State (<em>Raad van State</em>) issues critical advisory opinions, testing five competing theoretical mechanisms: institutional learning within coalition governments, legislative experience of the proposing actor, the coalition position of the sponsoring party, ideological distance from the governing majority, and the type of legislative instrument under review. Drawing on 2,898 advisory opinions issued between 2004 and 2025, comprising 2,111 opinions on laws and 785 on executive decrees, we find that instrument type is the strongest predictor of opinion severity: executive decrees receive dramatically milder treatment than laws, with 69% receiving no objections compared to just 13% for laws. Among laws, junior coalition partners attract significantly less critical opinions than leading parties, consistent with anticipatory compliance. Ideological distance from the cabinet median is positively associated with opinion severity, though the effect is modest. These findings suggest that the Council's most consequential effects operate through two channels: institutional deference to delegated legislation, and the anticipatory self-discipline of politically exposed actors.</p></details>
+</article>
+<article class="pub" id="on-time-but-empty" data-status="working" data-topics="exec">
+<h3 class="pub-title anchored">On Time, but Empty: How Dutch Ministers Answer Their Critics</h3>
+<div class="pub-row"><span class="status working">Working paper</span><span class="pub-venue"></span></div>
+<div class="pub-links"><a href="#on-time-but-empty" aria-label="Link to this paper: On Time, but Empty: How Dutch Ministers Answer Their Critics">Link</a></div>
+<details class="abstract"><summary><span>Abstract</span></summary><p>Three decades of research on parliamentary questions have mapped who asks them, and almost never what askers get back. I turn to the answers, and to a puzzle: the Dutch government replies to its fiercest critics fastest. Opposition and populist members are answered as quickly as the coalition's own backbenchers, or quicker, and three answers in four miss the 21-day deadline for everyone alike. Timing the answers makes the government look even-handed. Reading them does not. Scoring more than 130,000 question–answer pairs (2010–2025) with a validated large-language-model measure of evasion, I find that critics are answered no more slowly, yet 0.20 to 0.47 standard deviations more evasively, net of cabinet, topic, and ministry. The emptiness is aimed: within a single reply, the substantive sub-questions that demand an account are evaded most, and more so when the asker is a critic. Two probes trace the pattern to its incentives. When a question arrives with a news story attached, critics are answered faster still, yet no more fully; and evasive answers draw no more follow-up questions than responsive ones, so evasion costs a minister nothing. One logic runs through all of it, and it is visibility. Delay is public and punished; evasion is buried, unread, and unpriced. A government that treats some askers worse than others does so through the channel where the discrimination will not be seen. Ministers answer on time, and empty the answer instead.</p></details>
+</article>
 </section>
-<section id="dissertation" class="level2">
-<h2 class="anchored" data-anchor-id="dissertation">Dissertation</h2>
-<div class="pub-entry">
-<p><span class="pub-title">Digital Sovereignty: The Political Economy of Internet Governance</span> <span class="pub-meta">The University of Texas at Dallas, 2025</span> <span class="pub-links"><a href="research/Dissertation_March-31.pdf">Slides</a></span></p>
+<section class="pub-section" id="dissertation" data-section="">
+<h2 class="anchored">Dissertation</h2>
+<article class="pub" id="digital-sovereignty" data-status="thesis" data-topics="info">
+<h3 class="pub-title anchored">Digital Sovereignty: The Political Economy of Internet Governance</h3>
+<div class="pub-row"><span class="status thesis">Dissertation</span><span class="pub-venue"><i>The University of Texas at Dallas</i>, 2025</span></div>
+<div class="pub-links"><a href="research/Dissertation_March-31.pdf">Slides (PDF)</a><a href="#digital-sovereignty" aria-label="Link to this paper: Digital Sovereignty: The Political Economy of Internet Governance">Link</a></div>
+</article>
+</section>
+
+<div class="listing-no-matching d-none">No matching items</div>
 </div>
+<p class="research-empty" id="research-empty" hidden="">No papers match these filters. Clear a filter or the search to see more.</p>
+<script src="assets/research.js" defer=""></script>
 
 
-</section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -413,7 +671,7 @@ Three decades of research on parliamentary questions have mapped who asks them, 
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/shreyasmeher\.github\.io");
+        var filterRegex = new RegExp("https:\/\/shreyasmeher\.com");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -427,11 +685,6 @@ Three decades of research on parliamentary questions have mapped who asks them, 
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
-            // target, if specified
-            link.setAttribute("target", "_blank");
-            if (link.getAttribute("rel") === null) {
-              link.setAttribute("rel", "noopener");
-            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -749,16 +1002,17 @@ Three decades of research on parliamentary questions have mapped who asks them, 
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© 2026 Shreyas Meher</p>
+<p><span title="No information was controlled in the making of this website.">©</span> 2026 Shreyas Meher, Erasmus University Rotterdam</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p><a href="mailto:meher@essb.eur.nl">Email</a> · <a href="https://github.com/shreyasmeher">GitHub</a> · <a href="https://x.com/shreyasmhr">X</a> · <a href="https://www.linkedin.com/in/shreyasmeher/">LinkedIn</a></p>
+<p><a href="mailto:meher@essb.eur.nl">Email</a> · <a href="https://github.com/shreyasmeher">GitHub</a> · <a href="https://huggingface.co/shreyasmeher">Hugging Face</a> · <a href="https://www.linkedin.com/in/shreyasmeher/">LinkedIn</a> · <a href="https://x.com/shreyasmhr">X</a></p>
 </div>
   </div>
 </footer>
+<script src="./assets/site.js" defer=""></script>
 
 
 

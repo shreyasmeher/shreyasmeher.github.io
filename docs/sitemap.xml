@@ -1,47 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://shreyasmeher.github.io/teaching.html</loc>
-    <lastmod>2026-07-02T11:17:18.000Z</lastmod>
+    <loc>https://shreyasmeher.com/teaching.html</loc>
+    <lastmod>2026-10-13T13:26:21.380Z</lastmod>
   </url>
   <url>
-    <loc>https://shreyasmeher.github.io/software.html</loc>
-    <lastmod>2026-10-04T09:44:08.000Z</lastmod>
+    <loc>https://shreyasmeher.com/software.html</loc>
+    <lastmod>2026-10-13T13:26:21.380Z</lastmod>
   </url>
   <url>
-    <loc>https://shreyasmeher.github.io/index.html</loc>
-    <lastmod>2026-09-08T17:40:13.000Z</lastmod>
+    <loc>https://shreyasmeher.com/index.html</loc>
+    <lastmod>2026-10-13T13:26:21.370Z</lastmod>
   </url>
   <url>
-    <loc>https://shreyasmeher.github.io/bachelor-project/walkthroughs/ols-regression.html</loc>
-    <lastmod>2026-05-10T15:15:40.000Z</lastmod>
+    <loc>https://shreyasmeher.com/Gallery.html</loc>
+    <lastmod>2026-10-13T13:26:21.380Z</lastmod>
   </url>
   <url>
-    <loc>https://shreyasmeher.github.io/bachelor-project/walkthroughs/data-merging.html</loc>
-    <lastmod>2026-05-18T13:48:34.000Z</lastmod>
+    <loc>https://shreyasmeher.com/research.html</loc>
+    <lastmod>2026-10-13T13:26:21.370Z</lastmod>
   </url>
   <url>
-    <loc>https://shreyasmeher.github.io/Gallery.html</loc>
-    <lastmod>2026-07-02T11:37:19.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shreyasmeher.github.io/bachelor-project/index.html</loc>
-    <lastmod>2026-06-04T09:31:53.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shreyasmeher.github.io/bachelor-project/walkthroughs/nlp-methods.html</loc>
-    <lastmod>2026-05-10T15:19:43.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shreyasmeher.github.io/bachelor-project/walkthroughs/panel-data.html</loc>
-    <lastmod>2026-05-10T15:17:16.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shreyasmeher.github.io/research.html</loc>
-    <lastmod>2026-10-12T20:52:19.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shreyasmeher.github.io/software/conflibertr.html</loc>
-    <lastmod>2026-07-11T19:28:32.000Z</lastmod>
+    <loc>https://shreyasmeher.com/software/conflibertr.html</loc>
+    <lastmod>2026-07-11T19:28:32.800Z</lastmod>
   </url>
 </urlset>

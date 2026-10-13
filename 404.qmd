@@ -1,0 +1,16 @@
+---
+title: ""
+pagetitle: "Page not found"
+toc: false
+---
+
+::: {.not-found}
+::: {.pattern .pattern-band data-seed="404" data-density="2.2"}
+:::
+
+# This page has been redacted
+
+Or it never existed. The link may be out of date, or the page may have moved during the redesign.
+
+[Home](/index.html) · [Research](/research.html) · [Software](/software.html) · [Teaching](/teaching.html)
+:::
