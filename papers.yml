@@ -2,7 +2,8 @@
 # section: publications | proceedings | review | working | dissertation
 # status:  published | forthcoming | rr | review | working | thesis
 # topics:  info (information control) | exec (executive power) | nlp (language models and conflict) | comm (political communication)
-# abstract is HTML; bibtex only for papers with a DOI (from doi.org, cleaned by hand).
+# abstract is HTML: the published abstract (from Crossref) for published papers, the author's own text otherwise.
+# bibtex only for papers with a DOI (from doi.org, cleaned by hand).
 
 - title: "Extractive versus Generative Language Models for Political Conflict Text Classification"
   slug: extractive-vs-generative
@@ -16,7 +17,7 @@
   links:
     - { text: "Code and data", href: "https://doi.org/10.7910/DVN/KDO5AM" }
     - { text: "Slides (PDF)", href: "research/ConfliBERT_Presentation.pdf" }
-  abstract: "We develop specialized language models for political conflict analysis that outperform general-purpose LLMs like Gemma 2, Llama 3.1, and Qwen 2.5 in accuracy, precision, and recall while being hundreds of times faster."
+  abstract: "We review our recent ConfliBERT language model (Hu et al. 2022 [ConfliBERT: A Pre-Trained Language Model for Political Conflict and Violence]) to process political and violence-related texts. When fine-tuned, results show that ConfliBERT has superior performance in accuracy, precision, and recall over other large language models (LLMs) like Google’s Gemma 2 (9B), Meta’s Llama 3.1 (7B), and Alibaba’s Qwen 2.5 (14B) within its relevant domains. It is also hundreds of times faster than these more generalist LLMs. These results are illustrated using texts from the BBC, re3d, and the Global Terrorism Database. We demonstrate that open, fine-tuned models can outperform the more general models in terms of accuracy, precision, and recall, and at a fraction of the cost."
   bibtex: |
     @article{brandt2025extractive,
       title   = {Extractive versus Generative Language Models for Political Conflict Text Classification},
@@ -41,7 +42,7 @@
   links:
     - { text: "Code and data", href: "https://doi.org/10.7910/DVN/0MUGE6" }
     - { text: "Slides (PDF)", href: "research/APSA___ConflLlama.pdf" }
-  abstract: "We introduce ConflLlama, a specialized variant of Llama 3.1 fine-tuned for political conflict classification, demonstrating superior performance in event coding and conflict analysis tasks compared to traditional approaches."
+  abstract: "We present ConflLlama, demonstrating how efficient fine-tuning of large language models can advance automated classification tasks in political science research. While classification of political events has traditionally relied on manual coding or rigid rule-based systems, modern language models offer the potential for more nuanced, context-aware analysis. However, deploying these models requires overcoming significant technical and resource barriers. We demonstrate how to adapt open-source language models to specialized political science tasks, using conflict event classification as our proof of concept. Through quantization and efficient fine-tuning techniques, we show state-of-the-art performance while minimizing computational requirements. Our approach achieves a macro-averaged AUC of 0.791 and a weighted F1-score of 0.753, representing a 37.6% improvement over the base model, with accuracy gains of up to 1463% in challenging classifications. We offer a roadmap for political scientists to adapt these methods to their own research domains, democratizing access to advanced NLP capabilities across the discipline. This work bridges the gap between cutting-edge AI developments and practical political science research needs, enabling broader adoption of these powerful analytical tools."
   bibtex: |
     @article{meher2025confllama,
       title   = {ConflLlama: Domain-Specific Adaptation of Large Language Models for Conflict Event Classification},
@@ -64,7 +65,7 @@
   doi: "10.3390/bs15020223"
   links:
     - { text: "Code and data", href: "https://doi.org/10.7910/DVN/OWVD70" }
-  abstract: "We analyze how health advocacy groups adapted their Medicare-For-All messaging on Twitter during the COVID-19 pandemic, revealing distinct approaches to public engagement and narrative adaptation."
+  abstract: "COVID-19 has reinvigorated the policy debate for a universal healthcare system, attracting much attention on social media. In this paper, we study the online discourse of Medicare-For-All before and after COVID-19 by examining the Twitter feeds of two opposing health advocacy groups—Physicians for a National Health Program (PNHP) and Partnership for America’s Healthcare Future (P4AHCF). Our empirical results show a sharp contrast between the two interest groups’ communication strategies. PNHP showed a consistent narrative before and after the onset of COVID-19 on 11 March 2020, marked by personalized stories, references to diverse demographic groups, and a growing number of Medicare-For-All tweets. In contrast, P4AHCF showed more scientific terminology and data-centric tweets and had an inconsistent narrative with a sudden surge in positive sentiments and a complete silence on Medicare-For-All right after 11 March. The difference in communication strategies is consequential. PNHP has higher engagement with Twitter users and is more adaptive to a pandemic narrative than P4AHCF. We discuss how distinctive social media strategies can be explained by the groups’ different audiences and resources. The findings add to our understanding of healthcare advocacy campaigns on social media and the implication of a pandemic for health policy reform."
   bibtex: |
     @article{kumar2025public,
       title   = {Public Health Advocacy in Times of Pandemic: An Analysis of the Medicare-For-All Debate on Twitter During COVID-19},
