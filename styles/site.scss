@@ -253,6 +253,11 @@ svg .pd { fill: var(--sm-accent); font-family: var(--sm-f-mono); font-size: 10px
   .hero-portrait img {
     width: 100%;
     border-radius: var(--sm-radius);
+    // deterrent only: no context menu / drag / iOS long-press save on the headshot
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
   }
 
   @media (max-width: 640px) { .hero-portrait { max-width: 240px; } }
