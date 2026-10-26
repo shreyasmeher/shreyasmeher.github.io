@@ -7,8 +7,6 @@ toc: false
 lightbox: auto
 ---
 
-A visual timeline of my academic and personal journey, from starting my PhD in Texas to my current research in the Netherlands.
-
 <div class="gallery-filters" role="group" aria-label="Filter photos">
   <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
   <button type="button" class="chip" data-filter="texas" aria-pressed="false">Texas</button>

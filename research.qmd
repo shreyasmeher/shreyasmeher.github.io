@@ -18,8 +18,6 @@ listing:
 ::: {.pattern .pattern-band data-seed="556"}
 :::
 
-[Peer-reviewed articles, proceedings and work in progress on information control, executive power, and language models for political text.]{.page-intro}
-
 ::: {#papers}
 :::
 

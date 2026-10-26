@@ -8,8 +8,6 @@ toc: false
 ::: {.pattern .pattern-band data-seed="88"}
 :::
 
-[Research software for computational conflict analysis and Dutch politics. Everything is open source; bug reports and contributions are welcome on GitHub.]{.page-intro}
-
 ## Tools
 
 ::: {.soft}
