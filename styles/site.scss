@@ -301,31 +301,8 @@ svg .pd { fill: var(--sm-accent); font-family: var(--sm-f-mono); font-size: 10px
 }
 
 // ---------------------------------------------------------------------------
-// Research: filters and entries
+// Research: entries
 // ---------------------------------------------------------------------------
-
-.research-filters {
-  display: grid;
-  gap: 0.75rem;
-  margin: 0 0 1rem 0;
-
-  .filter-row { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
-  .filter-k { font-size: var(--sm-s-1); color: var(--sm-muted); width: 4.5rem; }
-  @media (max-width: 560px) { .filter-k { width: 100%; } }
-  .count { font-size: var(--sm-s-1); color: var(--sm-muted); }
-}
-
-.search-input {
-  font: inherit;
-  font-size: 0.95rem;
-  color: var(--sm-ink);
-  background: var(--sm-paper);
-  border: 1px solid var(--sm-control);
-  border-radius: var(--sm-radius);
-  padding: 6px 10px;
-  min-height: 38px;
-  width: min(100%, 24rem);
-}
 
 .chip {
   font: inherit;
@@ -435,8 +412,6 @@ svg .pd { fill: var(--sm-accent); font-family: var(--sm-f-mono); font-size: 10px
     }
   }
 }
-
-.research-empty { color: var(--sm-muted); padding: 1.5rem 0; }
 
 // ---------------------------------------------------------------------------
 // Teaching

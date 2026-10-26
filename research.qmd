@@ -18,40 +18,11 @@ listing:
 ::: {.pattern .pattern-band data-seed="556"}
 :::
 
-[Peer-reviewed articles, proceedings and work in progress on information control, executive power, and language models for political text. Filter by topic or status, or search titles and co-authors.]{.page-intro}
-
-```{=html}
-<div class="research-filters" id="research-filters" hidden>
-  <div class="filter-row">
-    <label for="paper-search" class="visually-hidden">Search titles and co-authors</label>
-    <input class="search-input" id="paper-search" type="search" placeholder="Search titles and co-authors" autocomplete="off">
-  </div>
-  <div class="filter-row" role="group" aria-labelledby="topic-k">
-    <span class="filter-k" id="topic-k">Topic</span>
-    <button type="button" class="chip" data-group="topic" data-k="info" aria-pressed="false">Information control<span class="n"></span></button>
-    <button type="button" class="chip" data-group="topic" data-k="exec" aria-pressed="false">Executive power<span class="n"></span></button>
-    <button type="button" class="chip" data-group="topic" data-k="nlp" aria-pressed="false">Language models and conflict<span class="n"></span></button>
-    <button type="button" class="chip" data-group="topic" data-k="comm" aria-pressed="false">Political communication<span class="n"></span></button>
-  </div>
-  <div class="filter-row" role="group" aria-labelledby="status-k">
-    <span class="filter-k" id="status-k">Status</span>
-    <button type="button" class="chip" data-group="status" data-k="published" aria-pressed="false">Published<span class="n"></span></button>
-    <button type="button" class="chip" data-group="status" data-k="forthcoming" aria-pressed="false">Forthcoming<span class="n"></span></button>
-    <button type="button" class="chip" data-group="status" data-k="rr" aria-pressed="false">Revise &amp; resubmit<span class="n"></span></button>
-    <button type="button" class="chip" data-group="status" data-k="review" aria-pressed="false">Under review<span class="n"></span></button>
-    <button type="button" class="chip" data-group="status" data-k="working" aria-pressed="false">Working paper<span class="n"></span></button>
-  </div>
-  <div class="filter-row">
-    <span class="count" id="paper-count" role="status" aria-live="polite"></span>
-    <button type="button" class="linkish" id="clear-filters" style="font-size: var(--sm-s-1)">Clear filters</button>
-  </div>
-</div>
-```
+[Peer-reviewed articles, proceedings and work in progress on information control, executive power, and language models for political text.]{.page-intro}
 
 ::: {#papers}
 :::
 
 ```{=html}
-<p class="research-empty" id="research-empty" hidden>No papers match these filters. Clear a filter or the search to see more.</p>
 <script src="assets/research.js" defer></script>
 ```
