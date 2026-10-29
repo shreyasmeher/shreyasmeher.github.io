@@ -9,7 +9,7 @@ const SECTIONS = [
 ];
 // Keep the anchors of the old hand-written page working.
 const IDS = { publications: "publications", proceedings: "conference-proceedings", review: "under-review", working: "working-papers", dissertation: "dissertation" };
-const STATUS = { published: "Published", forthcoming: "Forthcoming", rr: "Revise & resubmit", review: "Under review", working: "Working paper", thesis: "Dissertation" };
+const STATUS = { published: "Published", forthcoming: "Forthcoming", conditional: "Conditionally accepted", rr: "Revise & resubmit", review: "Under review", working: "Working paper", thesis: "Dissertation" };
 const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
 for (const [key, heading] of SECTIONS) {

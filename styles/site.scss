@@ -284,7 +284,7 @@ svg .pd { fill: var(--sm-accent); font-family: var(--sm-f-mono); font-size: 10px
   white-space: nowrap;
 
   &.published { color: var(--sm-ink); box-shadow: inset 0 0 0 1px var(--sm-ink); }
-  &.forthcoming { color: var(--sm-teal); box-shadow: inset 0 0 0 1px var(--sm-teal); }
+  &.forthcoming, &.conditional { color: var(--sm-teal); box-shadow: inset 0 0 0 1px var(--sm-teal); }
   &.rr { color: var(--sm-on-accent); background: var(--sm-accent); }
   &.review { color: var(--sm-ink-2); box-shadow: inset 0 0 0 1px var(--sm-control); }
   &.working {
