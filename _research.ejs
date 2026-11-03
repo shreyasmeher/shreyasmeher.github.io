@@ -26,7 +26,6 @@ for (const [key, heading] of SECTIONS) {
     if (p.doi) links.push(`<a href="https://doi.org/${esc(p.doi)}">Article</a>`);
     for (const l of (p.links || [])) links.push(`<a href="${esc(l.href)}">${esc(l.text)}</a>`);
     if (p.bibtex) links.push(`<button type="button" class="linkish cite-btn" hidden>Copy citation</button>`);
-    links.push(`<a class="copy-link" href="#${esc(p.slug)}" aria-label="Copy a link to this paper: ${esc(p.title)}">Copy link</a>`);
     print(`<article class="pub" id="${esc(p.slug)}" data-status="${esc(p.status)}" data-topics="${esc((p.topics || []).join(" "))}">\n`);
     print(`<h3 class="pub-title">${title}</h3>\n`);
     print(`<div class="pub-row"><span class="status ${esc(p.status)}">${esc(STATUS[p.status])}</span><span class="pub-venue">${meta.join(", ")}</span></div>\n`);

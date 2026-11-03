@@ -5,15 +5,6 @@
 # abstract is HTML: the published abstract (from Crossref) for published papers, the author's own text otherwise.
 # bibtex only for papers with a DOI (from doi.org, cleaned by hand).
 
-- title: "Selective Scrutiny: Single-Party Majority and the Strategic Withdrawal of Parliamentary Oversight in India"
-  slug: selective-scrutiny
-  section: publications
-  status: conditional
-  topics: [exec]
-  venue: "The Journal of Legislative Studies"
-  abstract: "That executive aggrandizement proceeds through legal, procedural channels is well established. This paper asks whether governments that withdraw legislative scrutiny do so indiscriminately, or target the legislation that expands their own power. I develop a theory of strategic procedural aggrandizement for parliamentary systems in which scrutiny is discretionary to the government, and test it by linking 653 Indian parliamentary bills (2009–2026) to the full text of the statutes they became, each scored with a 316-phrase dictionary of executive aggrandizement. Under coalition government, scrutiny tracked stakes: power-expanding bills were referred to committee more often and passed more slowly. Under the single-party majority since 2014, this relationship inverted. Committee referral fell from 74% to 17%, median passage time from 255 to 18 days, and the most aggrandizing statutes cleared parliament in days. The pattern is institutional, not ideological: scrutiny recovered when the majority shrank in 2024. The mechanism generalizes to Westminster-heritage parliaments."
-
-
 - title: "Extractive versus Generative Language Models for Political Conflict Text Classification"
   slug: extractive-vs-generative
   section: publications
@@ -95,6 +86,14 @@
   with: "with C. Egger & A. Zhelyazkova"
   venue: "International Political Science Review"
   abstract: "This paper examines patterns of executive dominance and expansion in the Netherlands, a least-likely case of executive aggrandizement given its strong coalitional governance and consensus culture. Drawing on a legislative dataset, our findings show that executive dominance over the legislative agenda and the overall volume of delegated lawmaking are longstanding and stable: roughly 75% of legislation takes the form of secondary executive acts, a level that does not increase over our study period. What has expanded is the legal technique underpinning this dominance: framework laws have become an increasingly cited basis for transferring regulatory authority to individual ministers, with citations of framework instruments in new executive acts rising markedly since 2017. Weak oversight tools such as motions and parliamentary questions remain the opposition's primary (and historically stable) mode of engagement, but coalition MPs have grown markedly more vocal in using these same tools since 2017, reflecting tensions within fragmented governing coalitions. While large, diverse coalitions create internal checks against outright aggrandizement, the growing reliance on framework laws as a delegation device represents a gradual but consequential shift in how, rather than how much, executive dominance is exercised."
+
+- title: "Selective Scrutiny: Single-Party Majority and the Strategic Withdrawal of Parliamentary Oversight in India"
+  slug: selective-scrutiny
+  section: publications
+  status: conditional
+  topics: [exec]
+  venue: "The Journal of Legislative Studies"
+  abstract: "That executive aggrandizement proceeds through legal, procedural channels is well established. This paper asks whether governments that withdraw legislative scrutiny do so indiscriminately, or target the legislation that expands their own power. I develop a theory of strategic procedural aggrandizement for parliamentary systems in which scrutiny is discretionary to the government, and test it by linking 653 Indian parliamentary bills (2009–2026) to the full text of the statutes they became, each scored with a 316-phrase dictionary of executive aggrandizement. Under coalition government, scrutiny tracked stakes: power-expanding bills were referred to committee more often and passed more slowly. Under the single-party majority since 2014, this relationship inverted. Committee referral fell from 74% to 17%, median passage time from 255 to 18 days, and the most aggrandizing statutes cleared parliament in days. The pattern is institutional, not ideological: scrutiny recovered when the majority shrank in 2024. The mechanism generalizes to Westminster-heritage parliaments."
 
 - title: "Preferential Delegation: How Rulemaking Authority Concentrates in the Dutch Law-to-Regulation Network"
   slug: preferential-delegation
